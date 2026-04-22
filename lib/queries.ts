@@ -1,0 +1,49 @@
+import { client } from './sanity'
+
+export async function getAllDiseases() {
+  return client.fetch(`*[_type == "disease"] | order(publishedAt desc) {
+    title, slug, hindiName, heroText, metaDescription
+  }`)
+}
+
+export async function getDiseaseBySlug(slug: string) {
+  return client.fetch(`*[_type == "disease" && slug.current == $slug][0]`, { slug })
+}
+
+export async function getAllMedicines() {
+  return client.fetch(`*[_type == "medicine"] | order(name asc) {
+    name, slug, commonUses
+  }`)
+}
+
+export async function getMedicineBySlug(slug: string) {
+  return client.fetch(`*[_type == "medicine" && slug.current == $slug][0]`, { slug })
+}
+
+export async function getAllSymptoms() {
+  return client.fetch(`*[_type == "symptom"] | order(name asc) {
+    name, slug, shortDescription
+  }`)
+}
+
+export async function getSymptomBySlug(slug: string) {
+  return client.fetch(`*[_type == "symptom" && slug.current == $slug][0]`, { slug })
+}
+
+export async function getDiseaseTypeBySlug(diseaseSlug: string, typeSlug: string) {
+  return client.fetch(
+    `*[_type == "disease" && slug.current == $diseaseSlug][0]{
+      title, hindiName, slug,
+      "type": types[typeSlug == $typeSlug][0],
+      "otherTypes": types[typeSlug != $typeSlug]{ name, typeSlug, description, percentage }
+    }`,
+    { diseaseSlug, typeSlug }
+  )
+}
+
+export async function searchAll(query: string) {
+  return client.fetch(`*[
+    (_type == "disease" || _type == "medicine" || _type == "symptom") &&
+    (title match $query || name match $query)
+  ] | order(_type asc) { _type, title, name, slug }`, { query: `${query}*` } as any)
+}

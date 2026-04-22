@@ -1,0 +1,167 @@
+================================================================
+HOMEOPEDIA — DISEASE TEMPLATE PROFORMA
+================================================================
+Ye file copy karo, disease ka naam se save karo (jaise: sciatica.txt)
+Phir Claude ko do — website pe automatically upload ho jaayega
+================================================================
+
+DISEASE NAME: [Angrezi naam — e.g. Sciatica]
+HINDI NAME: [Hindi/Urdu naam — e.g. Nass Ka Dard / Kamar Dard]
+YOUTUBE URL: [Agar is bimari pe aapka YouTube video hai to URL dalo, warna khali chhod do]
+
+--- INTRO ---
+[50-80 words mein bimari ka introduction. Kya hai, India mein kitna common, homeopathy mein kya approach hai. Hinglish mein likhein.]
+
+--- QUICK FACTS ---
+Kya hai: [Ek line mein — kya hoti hai ye bimari]
+India mein kitna common: [kitne % population, approximate numbers]
+Treatment duration: [kitne months mein improvement]
+CCRH success rate: [agar CCRH data hai — X% patients mein improvement]
+
+--- SYMPTOMS ---
+[Categories mein likho. Category ka naam colon ke saath, phir - se items]
+
+Pehla Category Naam:
+- Symptom 1
+- Symptom 2
+- Symptom 3
+
+Doosra Category Naam:
+- Symptom 1
+- Symptom 2
+
+[3-5 categories banana — jaise: Main Symptoms, Pain Characteristics, Nerve Symptoms, etc.]
+
+--- TYPES ---
+[Naye format mein — har TYPE: se start karo, phir BRIEF, FULL, SYMPTOMS, TRIGGERS, TREATMENT, WHOGETS, SKINCARE]
+[Agar types nahi hote (jaise sciatica mein sirf ek type) toh ek hi type likho]
+[Pipe | se list items alag karo]
+
+TYPE: [Type ka naam] | [kitne % cases] | [url-slug-lowercase-hyphens]
+BRIEF: [Ek-do line mein kya hai ye type]
+FULL: [2-3 paragraph mein poori detail. Yahan bahut detail likho. Paragraph alag line pe.]
+SYMPTOMS: [Symptom 1] | [Symptom 2] | [Symptom 3] | [aur]
+TRIGGERS: [Trigger 1] | [Trigger 2] | [Trigger 3] | [aur]
+TREATMENT: [Konsi homeopathic medicines, kyun, kab. Ek paragraph mein.]
+WHOGETS: [Age group, gender, risk factors. Ek-do lines.]
+SKINCARE: [Kya kare kya na kare physically. Pipe se alag karo] | [tip 2] | [tip 3]
+
+TYPE: [Doosra type] | [X% cases] | [slug]
+BRIEF: ...
+[isi tarah aage]
+
+--- CCRH EVIDENCE ---
+Improvement rate: [X%]
+Avg treatment period: [X months]
+Citation: [Journal name, year — ya "CCRH Clinical Guidelines" likhein]
+Key findings:
+- [Finding 1]
+- [Finding 2]
+- [Finding 3]
+
+--- HOMEOPATHY BENEFITS ---
+- [Benefit 1 — kyun homeopathy better hai is bimari ke liye]
+- [Benefit 2]
+- [Benefit 3]
+- [3-6 benefits]
+
+--- HONEST LIMITATIONS ---
+- [Limitation 1 — honest raho]
+- [Limitation 2 — kab doctor ke paas jana chahiye]
+- [3-5 limitations]
+
+--- MEDICINES ---
+[Format: Medicine Name | Potency | Best for: description]
+[Phir niche - se indications]
+
+Medicine1 | 30/200/1M | Best for: [kab dena hai]
+Indications:
+- [Indication 1]
+- [Indication 2]
+- [Indication 3]
+
+Medicine2 | 30/200 | Best for: [kab dena hai]
+Indications:
+- [Indication 1]
+- [Indication 2]
+
+[5-7 medicines likhein]
+
+--- DIET INCLUDE ---
+[Format: Category Name | Emoji:]
+[Phir - se items]
+
+Category Naam | 🥬:
+- Food item (reason kyun acha hai)
+- Food item
+- Food item
+
+Doosri Category | 🍎:
+- Food item
+- Food item
+
+[4-6 categories — vegetables, fruits, proteins, healthy fats, spices, drinks]
+
+--- DIET AVOID ---
+[Same format as DIET INCLUDE]
+
+Category Naam | 🍖:
+- Food item (reason kyun avoid karna hai)
+- Food item
+
+[3-5 categories — foods to avoid with reasons]
+
+--- LIFESTYLE TIPS ---
+[Format: Tip Title:]
+[Phir ek paragraph description. Title ke baad colon, description agle line pe]
+
+Morning Walk:
+[Description paragraph]
+
+Yoga:
+[Description paragraph]
+
+Painkillers Se Bachao:
+[Description paragraph]
+
+[4-6 lifestyle tips]
+
+--- CASE STUDIES ---
+[Format: Patient: description]
+[Problem duration: time]
+[Treatment: kya diya]
+[Result: kya hua]
+
+Patient: [Age, profession, city — e.g. 38-year-old software engineer, Pune]
+Problem duration: [kitne saal se]
+Treatment: [kya treatment diya, kitne months]
+Result: [kya result aya — percentage improvement, etc.]
+
+Patient: [doosra patient]
+Problem duration: [...]
+Treatment: [...]
+Result: [...]
+
+[2-4 case studies]
+
+--- FAQs ---
+[Format: Q: question]
+[A: answer]
+
+Q: [Question in Hinglish]
+A: [Answer in Hinglish — 2-4 sentences, informative]
+
+Q: [Doosra question]
+A: [Answer]
+
+[30-40 FAQs target karo. Categories: basic, treatment, diet, lifestyle, type-specific, children, pregnancy, cost]
+
+================================================================
+TIPS FOR BETTER CONTENT:
+- Hinglish mein likho — Hindi words English mein
+- Medical terms explain karo simple language mein
+- Specific numbers do (X% patients, X months, etc.)
+- Honest raho — limitations bhi likho
+- FAQs mein wo questions jo patients actually poochte hain
+- CCRH ya aur research cite karo where possible
+================================================================
