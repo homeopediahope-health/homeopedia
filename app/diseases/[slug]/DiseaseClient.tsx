@@ -392,6 +392,58 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 <Link href="/diet" style={{ display: 'inline-block', marginTop: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>Sabhi Diet Charts Dekhein →</Link>
               </div>
             )}
+
+            {/* Diet Tip + Note boxes */}
+            {disease.dietTip && (
+              <div style={{ marginTop: 20, padding: '16px 20px', background: 'rgba(184,145,42,.08)', border: '1px solid rgba(184,145,42,.25)', borderRadius: 12, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                <span style={{ fontSize: 20, flexShrink: 0 }}>💡</span>
+                <div>
+                  <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>Pro Tip</p>
+                  <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{disease.dietTip}</p>
+                </div>
+              </div>
+            )}
+            {disease.dietNote && (
+              <div style={{ marginTop: 12, padding: '16px 20px', background: 'rgba(58,125,82,.06)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 12, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                <span style={{ fontSize: 20, flexShrink: 0 }}>⚠️</span>
+                <div>
+                  <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>Important Note</p>
+                  <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{disease.dietNote}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Weekly Meal Plan */}
+            {disease.weeklyPlan?.length > 0 && (
+              <div style={{ marginTop: 32 }}>
+                <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>7 Din Ka Diet Chart</h3>
+                <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 18, fontWeight: 300 }}>Ek haafte ka complete meal plan — {disease.title} ke patients ke liye</p>
+                <div style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
+                    <thead>
+                      <tr style={{ background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))' }}>
+                        {['Din', 'Subah (Naashta)', 'Mid Morning', 'Dopahar (Lunch)', 'Shaam (4-5 PM)', 'Raat (Dinner)'].map((h) => (
+                          <th key={h} style={{ padding: '12px 14px', fontSize: 11, fontWeight: 700, color: '#fff', textAlign: 'left', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {disease.weeklyPlan.map((row: any, i: number) => (
+                        <tr key={i} style={{ background: i % 2 === 0 ? 'var(--bg)' : 'var(--bg2)', borderBottom: '1px solid var(--border)' }}>
+                          <td style={{ padding: '12px 14px', fontSize: 13, fontWeight: 700, color: 'var(--gold-dk)', whiteSpace: 'nowrap' }}>{row.day}</td>
+                          <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.breakfast || '—'}</td>
+                          <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.midMorning || '—'}</td>
+                          <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.lunch || '—'}</td>
+                          <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.evening || '—'}</td>
+                          <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.dinner || '—'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 10, fontWeight: 300 }}>* Ye ek sample plan hai. Apne homoeopath ya nutritionist se apni zaroorat ke hisab se modify karein.</p>
+              </div>
+            )}
           </section>
 
           {/* DOS & DON'TS */}

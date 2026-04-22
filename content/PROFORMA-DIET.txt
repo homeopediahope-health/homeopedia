@@ -1,0 +1,151 @@
+============================================================
+HOMEOPEDIA.IN — DIET PAGE PROFORMA
+(Weekly Diet Chart for Disease Pages)
+Ye template Sanity Studio me Diet section ke liye hai.
+============================================================
+
+DISEASE KA NAAM: ___________________________
+
+---
+
+DIET INCLUDE (Kya Khayein) — Har Category Alag Likho
+Format: Category Name | Emoji | Items (comma separated)
+
+Category 1:
+  Naam: ___________________________  (e.g., Vegetables / Sabziyaan)
+  Emoji: ___  (e.g., 🥦)
+  Items:
+    - ___________________________
+    - ___________________________
+    - ___________________________
+
+Category 2:
+  Naam: ___________________________  (e.g., Fruits / Phal)
+  Emoji: ___
+  Items:
+    - ___________________________
+    - ___________________________
+    - ___________________________
+
+Category 3:
+  Naam: ___________________________  (e.g., Grains / Anaj)
+  Emoji: ___
+  Items:
+    - ___________________________
+    - ___________________________
+    - ___________________________
+
+Category 4:
+  Naam: ___________________________  (e.g., Drinks / Paani aur Peena)
+  Emoji: ___
+  Items:
+    - ___________________________
+    - ___________________________
+
+---
+
+DIET AVOID (Kya Na Khayein)
+
+Category 1:
+  Naam: ___________________________  (e.g., Processed Foods)
+  Emoji: ___
+  Items:
+    - ___________________________
+    - ___________________________
+    - ___________________________
+
+Category 2:
+  Naam: ___________________________  (e.g., Dairy / Dudh Products)
+  Emoji: ___
+  Items:
+    - ___________________________
+    - ___________________________
+
+Category 3:
+  Naam: ___________________________  (e.g., Spicy & Oily Foods)
+  Emoji: ___
+  Items:
+    - ___________________________
+    - ___________________________
+
+---
+
+DIET PRO TIP (Gold Box — 1-2 lines):
+___________________________________________________________
+___________________________________________________________
+
+(Example: "Subah uthke khali pet 2 glass lukewarm paani piyo — body detox hoti hai aur skin clear rehti hai.")
+
+---
+
+DIET IMPORTANT NOTE (Green Box — 1-2 lines):
+___________________________________________________________
+___________________________________________________________
+
+(Example: "Har patient ki condition alag hoti hai. Ye chart ek general guide hai — apne doctor se apni specific zaroorat ke hisab se modify karein.")
+
+---
+
+7 DIN KA DIET CHART (Weekly Meal Plan)
+Har din ke liye 5 meals bhar do. Agar koi meal nhi to "—" likh do.
+
+SOMWAR / MONDAY:
+  Subah Ka Naashta (7-8 AM):    ___________________________
+  Mid Morning (10-11 AM):       ___________________________
+  Dopahar Ka Khaana (1-2 PM):   ___________________________
+  Shaam Ka Naashta (4-5 PM):    ___________________________
+  Raat Ka Khaana (8-9 PM):      ___________________________
+
+MANGALWAR / TUESDAY:
+  Subah Ka Naashta:    ___________________________
+  Mid Morning:         ___________________________
+  Dopahar Ka Khaana:   ___________________________
+  Shaam Ka Naashta:    ___________________________
+  Raat Ka Khaana:      ___________________________
+
+BUDHWAR / WEDNESDAY:
+  Subah Ka Naashta:    ___________________________
+  Mid Morning:         ___________________________
+  Dopahar Ka Khaana:   ___________________________
+  Shaam Ka Naashta:    ___________________________
+  Raat Ka Khaana:      ___________________________
+
+GURUWAR / THURSDAY:
+  Subah Ka Naashta:    ___________________________
+  Mid Morning:         ___________________________
+  Dopahar Ka Khaana:   ___________________________
+  Shaam Ka Naashta:    ___________________________
+  Raat Ka Khaana:      ___________________________
+
+SHUKRAWAR / FRIDAY:
+  Subah Ka Naashta:    ___________________________
+  Mid Morning:         ___________________________
+  Dopahar Ka Khaana:   ___________________________
+  Shaam Ka Naashta:    ___________________________
+  Raat Ka Khaana:      ___________________________
+
+SHANIWAR / SATURDAY:
+  Subah Ka Naashta:    ___________________________
+  Mid Morning:         ___________________________
+  Dopahar Ka Khaana:   ___________________________
+  Shaam Ka Naashta:    ___________________________
+  Raat Ka Khaana:      ___________________________
+
+RAVIWAR / SUNDAY:
+  Subah Ka Naashta:    ___________________________
+  Mid Morning:         ___________________________
+  Dopahar Ka Khaana:   ___________________________
+  Shaam Ka Naashta:    ___________________________
+  Raat Ka Khaana:      ___________________________
+
+---
+
+TIPS FOR FILLING THIS PROFORMA:
+- Har meal me season ke hisab se change kar sakte ho (summer/winter)
+- Indian foods use karo: daliya, poha, khichdi, sabzi-roti, etc.
+- Jis food se is disease me problem ho vo avoid list me zaroor likho
+- Weekly chart me variety rakho — same food baar baar mat likho
+- Agar patient vegetarian hai to vegi options do (majority Indian patients)
+- Mid morning aur Shaam me fruits, herbal tea, nuts jaise light options best hai
+
+============================================================
