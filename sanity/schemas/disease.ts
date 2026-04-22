@@ -155,6 +155,43 @@ export const disease = defineType({
         ],
       })],
     }),
+    defineField({ name: 'category', title: 'Category', type: 'string', options: { list: ['Skin','Joints','Digestive','Mental','Women\'s','Respiratory','Hair','Endocrine'] } }),
+    defineField({ name: 'relatedDiseases', title: 'Related Diseases (names)', type: 'array', of: [{ type: 'string' }] }),
+    defineField({
+      name: 'exercise',
+      title: 'Exercise Guide',
+      type: 'object',
+      fields: [
+        { name: 'dailyWalk', title: 'Daily Walk', type: 'text', rows: 2 },
+        { name: 'yogaAsanas', title: 'Yoga Asanas', type: 'text', rows: 2 },
+        { name: 'pranayama', title: 'Pranayama', type: 'text', rows: 2 },
+        { name: 'avoid', title: 'Exercises to Avoid', type: 'array', of: [{ type: 'string' }] },
+      ],
+    }),
+    defineField({
+      name: 'seasonalCare',
+      title: 'Seasonal Care',
+      type: 'object',
+      fields: [
+        { name: 'summer', title: 'Summer Tips', type: 'text', rows: 2 },
+        { name: 'winter', title: 'Winter Tips', type: 'text', rows: 2 },
+        { name: 'monsoon', title: 'Monsoon Tips', type: 'text', rows: 2 },
+      ],
+    }),
+    defineField({
+      name: 'sources',
+      title: 'Sources & Citations',
+      type: 'array',
+      of: [defineArrayMember({
+        type: 'object',
+        fields: [
+          { name: 'name', title: 'Source Name', type: 'string' },
+          { name: 'url', title: 'URL', type: 'string' },
+          { name: 'year', title: 'Year', type: 'string' },
+        ],
+      })],
+    }),
+    defineField({ name: 'selfCheck', title: 'Self Check Message', type: 'string' }),
     defineField({ name: 'youtubeUrl', title: 'YouTube Video URL', type: 'url' }),
     defineField({ name: 'publishedAt', title: 'Publish Date', type: 'datetime' }),
   ],

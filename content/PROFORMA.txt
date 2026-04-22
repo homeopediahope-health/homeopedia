@@ -1,167 +1,162 @@
 ================================================================
-HOMEOPEDIA — DISEASE TEMPLATE PROFORMA
+HOMEOPEDIA — DISEASE TEMPLATE PROFORMA v2
 ================================================================
 Ye file copy karo, disease ka naam se save karo (jaise: sciatica.txt)
 Phir Claude ko do — website pe automatically upload ho jaayega
 ================================================================
 
 DISEASE NAME: [Angrezi naam — e.g. Sciatica]
-HINDI NAME: [Hindi/Urdu naam — e.g. Nass Ka Dard / Kamar Dard]
-YOUTUBE URL: [Agar is bimari pe aapka YouTube video hai to URL dalo, warna khali chhod do]
+HINDI NAME: [Hindi/Urdu naam — e.g. Nass Ka Dard]
+CATEGORY: [Skin / Joints / Digestive / Mental / Women's / Respiratory / Hair / Endocrine]
+YOUTUBE URL: [YouTube video URL — warna khali chhod do]
+RELATED DISEASES: [Disease1] | [Disease2] | [Disease3]
+
+--- SEO ---
+Meta Title: [55-60 chars — e.g. "Sciatica Treatment in Homeopathy | HomeoPedia"]
+Meta Description: [150-155 chars — keyword + CCRH mention + CTA]
+Primary Keyword: [e.g. sciatica homeopathy treatment]
+Secondary Keywords: [3-5 keywords comma separated]
 
 --- INTRO ---
-[50-80 words mein bimari ka introduction. Kya hai, India mein kitna common, homeopathy mein kya approach hai. Hinglish mein likhein.]
+[50-80 words. Kya hai, India mein kitna common, homeopathy approach.
+Hinglish mein.]
 
 --- QUICK FACTS ---
-Kya hai: [Ek line mein — kya hoti hai ye bimari]
-India mein kitna common: [kitne % population, approximate numbers]
-Treatment duration: [kitne months mein improvement]
-CCRH success rate: [agar CCRH data hai — X% patients mein improvement]
+Kya hai: [Ek line]
+India mein kitna common: [X% population, numbers]
+Treatment duration: [X-Y months]
+CCRH success rate: [X% patients mein improvement]
 
 --- SYMPTOMS ---
-[Categories mein likho. Category ka naam colon ke saath, phir - se items]
+[3-5 categories. Category naam colon ke baad, phir - se items]
 
-Pehla Category Naam:
-- Symptom 1
-- Symptom 2
-- Symptom 3
-
-Doosra Category Naam:
+Category 1:
 - Symptom 1
 - Symptom 2
 
-[3-5 categories banana — jaise: Main Symptoms, Pain Characteristics, Nerve Symptoms, etc.]
+Category 2:
+- Symptom 1
+- Symptom 2
+
+SELF CHECK:
+[Simple line — "Agar ye 3+ symptoms hain to homeopathy consult helpful ho sakti hai"]
 
 --- TYPES ---
-[Naye format mein — har TYPE: se start karo, phir BRIEF, FULL, SYMPTOMS, TRIGGERS, TREATMENT, WHOGETS, SKINCARE]
-[Agar types nahi hote (jaise sciatica mein sirf ek type) toh ek hi type likho]
-[Pipe | se list items alag karo]
+[Har TYPE: se start karo]
 
-TYPE: [Type ka naam] | [kitne % cases] | [url-slug-lowercase-hyphens]
-BRIEF: [Ek-do line mein kya hai ye type]
-FULL: [2-3 paragraph mein poori detail. Yahan bahut detail likho. Paragraph alag line pe.]
-SYMPTOMS: [Symptom 1] | [Symptom 2] | [Symptom 3] | [aur]
-TRIGGERS: [Trigger 1] | [Trigger 2] | [Trigger 3] | [aur]
-TREATMENT: [Konsi homeopathic medicines, kyun, kab. Ek paragraph mein.]
-WHOGETS: [Age group, gender, risk factors. Ek-do lines.]
-SKINCARE: [Kya kare kya na kare physically. Pipe se alag karo] | [tip 2] | [tip 3]
-
-TYPE: [Doosra type] | [X% cases] | [slug]
-BRIEF: ...
-[isi tarah aage]
+TYPE: [Naam] | [X% cases] | [url-slug]
+BRIEF: [1-2 line summary]
+FULL: [2-3 paragraphs — detail mein]
+SYMPTOMS: [S1] | [S2] | [S3]
+TRIGGERS: [T1] | [T2] | [T3]
+TREATMENT: [Medicines + approach — 1 paragraph]
+WHOGETS: [Age, gender, risk factors]
+SKINCARE: [Tip 1] | [Tip 2] | [Tip 3]
 
 --- CCRH EVIDENCE ---
 Improvement rate: [X%]
 Avg treatment period: [X months]
-Citation: [Journal name, year — ya "CCRH Clinical Guidelines" likhein]
+Citation: [Journal, year]
 Key findings:
 - [Finding 1]
 - [Finding 2]
 - [Finding 3]
 
 --- HOMEOPATHY BENEFITS ---
-- [Benefit 1 — kyun homeopathy better hai is bimari ke liye]
+- [Benefit 1]
 - [Benefit 2]
-- [Benefit 3]
 - [3-6 benefits]
 
 --- HONEST LIMITATIONS ---
-- [Limitation 1 — honest raho]
-- [Limitation 2 — kab doctor ke paas jana chahiye]
+- [Limitation 1]
+- [Limitation 2]
 - [3-5 limitations]
 
 --- MEDICINES ---
-[Format: Medicine Name | Potency | Best for: description]
-[Phir niche - se indications]
-
-Medicine1 | 30/200/1M | Best for: [kab dena hai]
-Indications:
-- [Indication 1]
-- [Indication 2]
-- [Indication 3]
-
-Medicine2 | 30/200 | Best for: [kab dena hai]
+Medicine1 | 30/200/1M | Best for: [description]
 Indications:
 - [Indication 1]
 - [Indication 2]
 
-[5-7 medicines likhein]
+[5-7 medicines]
 
 --- DIET INCLUDE ---
-[Format: Category Name | Emoji:]
-[Phir - se items]
+Category | 🥬:
+- Item (reason)
+- Item
 
-Category Naam | 🥬:
-- Food item (reason kyun acha hai)
-- Food item
-- Food item
-
-Doosri Category | 🍎:
-- Food item
-- Food item
-
-[4-6 categories — vegetables, fruits, proteins, healthy fats, spices, drinks]
+[4-6 categories]
 
 --- DIET AVOID ---
-[Same format as DIET INCLUDE]
+Category | 🚫:
+- Item (reason)
+- Item
 
-Category Naam | 🍖:
-- Food item (reason kyun avoid karna hai)
-- Food item
+[3-5 categories]
 
-[3-5 categories — foods to avoid with reasons]
+--- EXERCISE ---
+Daily Walk:
+[Description — duration, timing, benefits]
+
+Yoga Asanas:
+[Specific asana names — Sarvangasana, etc. — kyon helpful]
+
+Pranayama:
+[Which breathing exercises, how long]
+
+AVOID:
+- [Exercise 1 - reason]
+- [Exercise 2 - reason]
 
 --- LIFESTYLE TIPS ---
-[Format: Tip Title:]
-[Phir ek paragraph description. Title ke baad colon, description agle line pe]
-
-Morning Walk:
+Tip Title:
 [Description paragraph]
 
-Yoga:
-[Description paragraph]
+[4-6 tips]
 
-Painkillers Se Bachao:
-[Description paragraph]
+--- SEASONAL CARE ---
+Summer:
+[Tips for hot weather]
 
-[4-6 lifestyle tips]
+Winter:
+[Tips for cold — most important for skin/joint diseases]
+
+Monsoon:
+[Rainy season precautions]
 
 --- CASE STUDIES ---
-[Format: Patient: description]
-[Problem duration: time]
-[Treatment: kya diya]
-[Result: kya hua]
-
-Patient: [Age, profession, city — e.g. 38-year-old software engineer, Pune]
-Problem duration: [kitne saal se]
-Treatment: [kya treatment diya, kitne months]
-Result: [kya result aya — percentage improvement, etc.]
-
-Patient: [doosra patient]
-Problem duration: [...]
-Treatment: [...]
-Result: [...]
+Patient: [Age, profession, city]
+Problem duration: [time]
+Treatment: [kya diya, kitne months]
+Result: [outcome]
 
 [2-4 case studies]
 
 --- FAQs ---
-[Format: Q: question]
-[A: answer]
+[TARGET: 30-40 FAQs]
+[CATEGORIES:]
+[BASIC (5-6): kya hai, common, contagious, genetic]
+[TREATMENT (8-10): duration, cost, online, medicine delivery, allopathy ke saath]
+[DIET (4-5): kya khaye, avoid, kitne strict]
+[LIFESTYLE (4-5): exercise, yoga, work, travel]
+[SPECIAL (4-5): pregnancy, children, elderly]
+[RECURRENCE (3-4): dobara hoga, long-term, triggers]
 
-Q: [Question in Hinglish]
-A: [Answer in Hinglish — 2-4 sentences, informative]
+Q: [Question — Hinglish mein]
+A: [Answer — 2-4 sentences]
 
-Q: [Doosra question]
-A: [Answer]
-
-[30-40 FAQs target karo. Categories: basic, treatment, diet, lifestyle, type-specific, children, pregnancy, cost]
+--- SOURCES ---
+[Source Name] | [URL ya "ccrhindia.ayush.gov.in"] | [Year]
+[2-3 minimum sources]
 
 ================================================================
-TIPS FOR BETTER CONTENT:
-- Hinglish mein likho — Hindi words English mein
-- Medical terms explain karo simple language mein
-- Specific numbers do (X% patients, X months, etc.)
+TIPS:
+- Hinglish mein likho naturally
+- Medical terms explain karo simple language mein  
+- Specific numbers do (X%, X months)
 - Honest raho — limitations bhi likho
-- FAQs mein wo questions jo patients actually poochte hain
-- CCRH ya aur research cite karo where possible
+- FAQs mein real patient questions likho
+- Exercise section mein specific asana names do
+- Seasonal care India-specific rakho (summer/winter/monsoon)
+- SEO fields carefully bharo — site ki ranking depend karti hai
 ================================================================

@@ -196,14 +196,83 @@ function parseTemplate(text) {
 
   const slug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '')
 
+  // SEO section
+  const seoRaw = get('SEO')
+  const seoLine = (name) => {
+    const m = seoRaw.match(new RegExp(`${name}:\\s*(.+)`, 'i'))
+    return m ? m[1].trim() : ''
+  }
+  const metaTitleSeo = seoLine('Meta Title')
+  const metaDescSeo = seoLine('Meta Description')
+
+  // Category + Related Diseases from header
+  const category = field('CATEGORY')
+  const relatedDiseases = (field('RELATED DISEASES') || '').split('|').map(s => s.trim()).filter(Boolean)
+
+  // Self Check from symptoms section
+  const sympRawFull = get('SYMPTOMS')
+  const selfCheckMatch = sympRawFull.match(/SELF CHECK:\s*(.+)/i)
+  const selfCheck = selfCheckMatch ? selfCheckMatch[1].trim() : ''
+
+  // Exercise section
+  const exRaw = get('EXERCISE')
+  const exLine = (name) => {
+    const idx = exRaw.split('\n').findIndex(l => l.trim().startsWith(name + ':'))
+    if (idx === -1) return ''
+    const nextLines = exRaw.split('\n').slice(idx + 1)
+    const desc = []
+    for (const l of nextLines) {
+      if (l.trim().match(/^[A-Z][a-z]+:/) || l.trim().match(/^AVOID:/)) break
+      if (l.trim()) desc.push(l.trim())
+    }
+    return desc.join(' ')
+  }
+  const exercise = {
+    dailyWalk: exLine('Daily Walk'),
+    yogaAsanas: exLine('Yoga Asanas'),
+    pranayama: exLine('Pranayama'),
+    avoid: bullets(exRaw.split(/AVOID:/i)[1] || ''),
+  }
+
+  // Seasonal Care
+  const seasonRaw = get('SEASONAL CARE')
+  const seasonLine = (name) => {
+    const idx = seasonRaw.split('\n').findIndex(l => l.trim().startsWith(name + ':'))
+    if (idx === -1) return ''
+    const nextLines = seasonRaw.split('\n').slice(idx + 1)
+    const desc = []
+    for (const l of nextLines) {
+      if (l.trim().match(/^(Summer|Winter|Monsoon):/i)) break
+      if (l.trim()) desc.push(l.trim())
+    }
+    return desc.join(' ')
+  }
+  const seasonalCare = {
+    summer: seasonLine('Summer'),
+    winter: seasonLine('Winter'),
+    monsoon: seasonLine('Monsoon'),
+  }
+
+  // Sources
+  const sourcesRaw = get('SOURCES')
+  const sources = lines(sourcesRaw)
+    .filter(l => l.includes('|'))
+    .map(l => {
+      const parts = l.split('|').map(s => s.trim())
+      return { name: parts[0] || '', url: parts[1] || '', year: parts[2] || '' }
+    })
+
   return {
     _type: 'disease',
     title,
     hindiName,
     slug: { _type: 'slug', current: slug },
-    metaTitle: `${title} Treatment | Symptoms, Diet & Homeopathy | HomeoPedia`,
-    metaDescription: get('INTRO').substring(0, 155),
+    metaTitle: metaTitleSeo || `${title} Treatment | Symptoms, Diet & Homeopathy | HomeoPedia`,
+    metaDescription: metaDescSeo || get('INTRO').substring(0, 155),
     heroText: get('INTRO'),
+    category: category || undefined,
+    relatedDiseases: relatedDiseases.length ? relatedDiseases : undefined,
+    selfCheck: selfCheck || undefined,
     quickFacts: {
       whatItIs: qfLine('Kya hai'),
       howCommon: qfLine('India mein kitna common'),
@@ -223,9 +292,12 @@ function parseTemplate(text) {
     medicines,
     dietInclude,
     dietAvoid,
+    exercise: (exercise.dailyWalk || exercise.yogaAsanas) ? exercise : undefined,
     lifestyle,
+    seasonalCare: (seasonalCare.summer || seasonalCare.winter) ? seasonalCare : undefined,
     caseStudies,
     faqs,
+    sources: sources.length ? sources : undefined,
     youtubeUrl: youtubeUrl || undefined,
     publishedAt: new Date().toISOString(),
   }
