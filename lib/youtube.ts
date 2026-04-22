@@ -19,7 +19,13 @@ export async function getLatestYouTubeVideos(channelId: string, count = 5): Prom
 
     const entries = xml.match(/<entry>([\s\S]*?)<\/entry>/g) || []
 
-    return entries.slice(0, count).map(entry => {
+    // Filter out YouTube Shorts (titles with #shorts or duration hints)
+    const filtered = entries.filter(e => {
+      const title = (e.match(/<title>([^<]+)<\/title>/) || [])[1] || ''
+      return !title.toLowerCase().includes('#short') && !title.toLowerCase().includes('shorts')
+    })
+
+    return filtered.slice(0, count).map(entry => {
       const id = (entry.match(/<yt:videoId>([^<]+)<\/yt:videoId>/) || [])[1] || ''
       const title = (entry.match(/<title>([^<]+)<\/title>/) || [])[1] || ''
       const published = (entry.match(/<published>([^<]+)<\/published>/) || [])[1] || ''

@@ -62,6 +62,17 @@ h1, h2, h3, h4 {
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .hero-grid > div:last-child { display: none; } /* hide right card on mobile */
+  .categories-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .articles-grid { grid-template-columns: 1fr !important; }
+  .yt-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .expert-section { grid-template-columns: 1fr !important; }
+  .expert-section > img { max-width: 160px; margin: 0 auto; }
+}
+
 /* Hover cards */
 .category-card { transition: all 0.2s; }
 .category-card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); border-color: var(--sage-mid) !important; }

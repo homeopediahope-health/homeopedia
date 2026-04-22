@@ -6,6 +6,15 @@ export async function getAllDiseases() {
   }`)
 }
 
+export async function getRelatedDiseases(currentSlug: string, limit = 4) {
+  return client.fetch(
+    `*[_type == "disease" && slug.current != $currentSlug] | order(publishedAt desc) [0...$limit] {
+      title, slug, metaDescription
+    }`,
+    { currentSlug, limit }
+  )
+}
+
 export async function getDiseaseBySlug(slug: string) {
   return client.fetch(`*[_type == "disease" && slug.current == $slug][0]`, { slug })
 }

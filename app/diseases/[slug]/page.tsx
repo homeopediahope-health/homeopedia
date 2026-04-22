@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, use } from 'react'
-import { getDiseaseBySlug } from '@/lib/queries'
+import { getDiseaseBySlug, getRelatedDiseases } from '@/lib/queries'
 import FAQAccordion from '@/components/FAQAccordion'
 import DietCards from '@/components/DietCards'
 import MedicineCards from '@/components/MedicineCards'
@@ -13,6 +13,7 @@ const tabs = ['Symptoms', 'Ilaaj', 'Diet', 'Lifestyle', 'FAQ']
 export default function DiseasePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params)
   const [disease, setDisease] = useState<any>(null)
+  const [related, setRelated] = useState<any[]>([])
   const [activeTab, setActiveTab] = useState(0)
   const [loading, setLoading] = useState(true)
 
@@ -21,6 +22,7 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
       setDisease(d)
       setLoading(false)
     })
+    getRelatedDiseases(slug, 4).then(setRelated)
   }, [slug])
 
   if (loading) return (
@@ -330,6 +332,22 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
           </div>
         )}
       </div>
+
+      {/* Related Diseases — Internal Linking */}
+      {related.length > 0 && (
+        <div className="mt-10 pt-6 border-t border-gray-100">
+          <h3 className="font-bold text-gray-900 mb-3 text-base">Related Conditions</h3>
+          <div className="grid grid-cols-2 gap-2">
+            {related.map((r: any) => (
+              <a key={r.slug?.current} href={`/diseases/${r.slug?.current}`}
+                className="bg-gray-50 hover:bg-green-50 border border-gray-200 hover:border-green-300 rounded-lg p-3 transition-colors no-underline">
+                <p className="text-sm font-semibold text-gray-800">{r.title}</p>
+                {r.metaDescription && <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">{r.metaDescription}</p>}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Inline Consult CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-40 md:hidden">
