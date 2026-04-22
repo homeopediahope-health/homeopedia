@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { getAllDiseases } from '@/lib/queries'
 
-const BASE = 'https://homeopedia.vercel.app'
+const BASE = 'https://homeopedia.in'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const diseases = await getAllDiseases().catch(() => [])
