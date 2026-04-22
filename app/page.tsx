@@ -48,8 +48,44 @@ export default async function HomePage() {
       ? rawVideos.map((v: any) => ({ id: v.id, title: v.title, date: v.published || v.date || '', topic: v.topic || 'General' }))
       : VIDEOS_FALLBACK
 
+  const orgLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'MedicalOrganization',
+        name: 'HomeoPedia.in',
+        url: 'https://homeopedia.in',
+        logo: 'https://homeopedia.in/favicon.ico',
+        description: "India's patient-first homeopathy knowledge portal — evidence-based, CCRH-backed, always free.",
+        medicalSpecialty: 'Homeopathic Medicine',
+        founder: { '@type': 'Physician', name: 'Dr. Shadab Khan', honorificSuffix: 'MD Homoeopathy' },
+      },
+      {
+        '@type': 'Physician',
+        name: 'Dr. Shadab Khan',
+        honorificSuffix: 'MD Homoeopathy',
+        description: '15+ years experience, 10,000+ patients treated. Specialization in chronic diseases.',
+        medicalSpecialty: 'Homeopathic Medicine',
+        worksFor: { '@type': 'MedicalOrganization', name: 'HomeoPedia.in' },
+        url: 'https://homeopedia.in/about',
+        sameAs: ['https://www.youtube.com/@drshadabshomoeopathy', 'https://drshadabs.com'],
+      },
+      {
+        '@type': 'WebSite',
+        name: 'HomeoPedia.in',
+        url: 'https://homeopedia.in',
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: { '@type': 'EntryPoint', urlTemplate: 'https://homeopedia.in/diseases?q={search_term_string}' },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+    ],
+  }
+
   return (
     <div style={{ background: 'var(--bg)' }} className="page-in">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgLd) }} />
 
       {/* ── HERO ── */}
       <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '100px 32px 80px', textAlign: 'center', position: 'relative', overflow: 'hidden', background: 'linear-gradient(170deg,var(--bg) 0%,var(--bg2) 100%)' }}>

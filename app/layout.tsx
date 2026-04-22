@@ -8,9 +8,29 @@ const inter = Inter({ subsets: ['latin'] })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', style: ['normal', 'italic'] })
 
 export const metadata: Metadata = {
-  title: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
-  description: 'Evidence-based homeopathy information for Indian patients. Disease guides, medicines, symptoms — CCRH-backed. By Dr. Shadab Khan MD.',
-  keywords: 'homeopathy, homeopathic treatment, CCRH, India, Dr Shadab Khan',
+  metadataBase: new URL('https://homeopedia.in'),
+  title: {
+    default: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
+    template: '%s | HomeoPedia.in',
+  },
+  description: 'Evidence-based homeopathy information for Indian patients. Disease guides, diet charts, medicines — CCRH-backed. Free. By Dr. Shadab Khan MD Homoeopathy.',
+  keywords: ['homeopathy', 'homeopathic treatment', 'CCRH', 'India', 'Dr Shadab Khan', 'homeopathy in hindi', 'homeopathic medicine'],
+  authors: [{ name: 'Dr. Shadab Khan MD Homoeopathy' }],
+  creator: 'Dr. Shadab Khan',
+  openGraph: {
+    type: 'website',
+    locale: 'hi_IN',
+    url: 'https://homeopedia.in',
+    siteName: 'HomeoPedia.in',
+    title: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
+    description: 'Evidence-based homeopathy. Disease guides, diet charts, medicines — CCRH-backed. Free. By Dr. Shadab Khan MD.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
+    description: 'Evidence-based homeopathy. Disease guides, diet charts, medicines — Free. By Dr. Shadab Khan MD.',
+  },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
