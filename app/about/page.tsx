@@ -89,9 +89,9 @@ export default function AboutPage() {
         <div style={{ marginBottom: 40 }}>
           <h2 style={{ fontSize: '1.4rem', marginBottom: 16 }}>About Dr. Shadab Khan</h2>
           <div style={{ fontSize: '1rem', lineHeight: 1.8, color: '#374151', display: 'flex', flexDirection: 'column', gap: 16 }}>
-            <p>Dr. Shadab Khan, MD (Homoeopathy) ek experienced homeopathic physician hain jo Akola, Maharashtra mein practice karte hain. Maharashtra Council of Homoeopathy ke registered practitioner hain (Reg. No. 54130) aur 15+ saalon ke clinical experience ke saath unhone 10,000 se zyada patients ko treat kiya hai.</p>
-            <p>Unki specialization chronic conditions mein hai — psoriasis, rheumatoid arthritis, PCOD, thyroid disorders, anxiety, depression aur digestive disorders. Evidence-based homeopathy mein believe karte hain aur CCRH (Central Council for Research in Homoeopathy) ke research ko apne practice mein integrate karte hain.</p>
-            <p>HomeoPedia pe published har article Dr. Shadab Khan ki personal expertise aur clinical experience pe based hai. Content specifically CCRH guidelines, peer-reviewed research, aur clinical evidence ke saath align kiya gaya hai — taaki patients ko accurate, trustworthy information mile.</p>
+            <p>Dr. Shadab Khan is a registered MD Homoeopath based in Akola, Maharashtra, with over 15 years of clinical experience treating chronic and complex conditions. Registered with the Maharashtra Council of Homoeopathy (Reg. No. 54130), he has successfully treated more than 10,000 patients across India through both in-person and online consultations.</p>
+            <p>His clinical focus includes chronic skin conditions such as psoriasis and eczema, autoimmune disorders, hormonal imbalances including PCOD and thyroid dysfunction, anxiety, depression, and digestive disorders. He integrates evidence-based homeopathy with CCRH (Central Council for Research in Homoeopathy) research guidelines in every case.</p>
+            <p>Every article published on HomeoPedia is personally reviewed by Dr. Shadab Khan to ensure clinical accuracy, practical relevance, and alignment with current homeopathic research. His goal is to make reliable, doctor-reviewed homeopathy information freely accessible to patients across India.</p>
           </div>
         </div>
 
@@ -109,7 +109,7 @@ export default function AboutPage() {
         <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 16, padding: 24, marginBottom: 40 }}>
           <h3 style={{ fontSize: '1.1rem', color: '#166534', marginBottom: 10 }}>CCRH-Aligned Content</h3>
           <p style={{ fontSize: '0.95rem', color: '#15803D', lineHeight: 1.7 }}>
-            HomeoPedia pe sabhi disease guides CCRH (Central Council for Research in Homoeopathy), Ministry of AYUSH, Government of India ke research aur guidelines ke saath aligned hain. Har guide mein scientific evidence citations shamil hain.
+            All disease guides on HomeoPedia are aligned with CCRH (Central Council for Research in Homoeopathy), Ministry of AYUSH, Government of India research and clinical guidelines. Every guide includes scientific evidence citations and references.
           </p>
         </div>
 
@@ -117,7 +117,7 @@ export default function AboutPage() {
         <div style={{ background: '#FEF3C7', border: '1px solid #FCD34D', borderRadius: 16, padding: 24, marginBottom: 40 }}>
           <h3 style={{ fontSize: '1rem', color: '#92400E', marginBottom: 10 }}>Medical Disclaimer</h3>
           <p style={{ fontSize: '0.875rem', color: '#78350F', lineHeight: 1.7 }}>
-            HomeoPedia pe di gayi information educational purposes ke liye hai. Ye professional medical advice, diagnosis, ya treatment ka substitute nahi hai. Kisi bhi health condition ke liye hamesha qualified healthcare professional se consult karein. Emergency mein turant emergency medical services se contact karein.
+            Information on HomeoPedia is for educational purposes only and does not constitute professional medical advice, diagnosis, or treatment. Always consult a qualified healthcare professional for any health condition. In case of emergency, contact emergency medical services immediately.
           </p>
         </div>
 

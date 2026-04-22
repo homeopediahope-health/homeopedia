@@ -73,7 +73,6 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
       {/* Hero */}
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-gray-900 mb-1">{disease.title}</h1>
-        {disease.hindiName && <p className="text-gray-500 text-sm mb-3">{disease.hindiName}</p>}
         {disease.heroText && <p className="text-gray-600 text-sm leading-relaxed">{disease.heroText}</p>}
 
         <div className="flex flex-wrap gap-2 mt-3">

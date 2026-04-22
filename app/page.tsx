@@ -184,8 +184,8 @@ export default async function HomePage() {
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#FEE2E2', color: '#DC2626', padding: '4px 12px', borderRadius: 100, fontSize: '0.8rem', fontWeight: 600, marginBottom: 12 }}>
                   ▶ YouTube
                 </div>
-                <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.75rem)', marginBottom: 6 }}>Dr. Shadab ke Latest Videos</h2>
-                <p style={{ color: 'var(--gray-text)', fontSize: '0.95rem' }}>Homeopathy explained simply — subscribe for new videos</p>
+                <h2 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.75rem)', marginBottom: 6 }}>Watch & Learn — Dr. Shadab Explains</h2>
+                <p style={{ color: 'var(--gray-text)', fontSize: '0.95rem' }}>Homeopathy explained in simple language — new videos every week</p>
               </div>
               <a href="https://www.youtube.com/@drshadabshomoeopathy" target="_blank" rel="noopener noreferrer"
                 style={{ color: '#DC2626', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem', background: '#FEE2E2', padding: '8px 16px', borderRadius: 8 }}>
