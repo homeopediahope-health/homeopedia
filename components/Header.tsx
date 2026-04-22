@@ -15,7 +15,7 @@ export default function Header() {
 
         <div style={{ display: 'flex', gap: 32, alignItems: 'center' }}>
           <div className="desktop-nav" style={{ display: 'flex', gap: 32 }}>
-            {[['Diseases', '/diseases'], ['Medicines', '/medicines'], ['Symptoms', '/symptoms']].map(([label, href]) => (
+            {[['Diseases', '/diseases'], ['Medicines', '/medicines'], ['About', '/about']].map(([label, href]) => (
               <Link key={href} href={href} style={{ color: 'var(--charcoal)', textDecoration: 'none', fontSize: '0.95rem', fontWeight: 500 }}>
                 {label}
               </Link>

@@ -35,7 +35,34 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
     </div>
   )
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalCondition',
+    name: disease.title,
+    alternateName: disease.hindiName,
+    description: disease.heroText,
+    url: `https://homeopedia.vercel.app/diseases/${slug}`,
+    recognizingAuthority: { '@type': 'Organization', name: 'CCRH — Ministry of AYUSH, Government of India' },
+    relevantSpecialty: 'Homoeopathy',
+    medicineSystem: 'Homeopathic',
+    author: {
+      '@type': 'Physician',
+      name: 'Dr. Shadab Khan',
+      description: 'MD (Homoeopathy), Maharashtra Council Reg. No. 54130',
+    },
+    publisher: { '@type': 'Organization', name: 'HomeoPedia', url: 'https://homeopedia.vercel.app' },
+    ...(disease.faqs?.length > 0 && {
+      mainEntity: disease.faqs.map((f: any) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+    }),
+  }
+
   return (
+    <>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <div className="max-w-3xl mx-auto px-4 py-6 disease-body" style={{ fontSize: '1rem' }}>
 
       {/* Breadcrumb */}
@@ -325,5 +352,6 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
         </div>
       </div>
     </div>
+    </>
   )
 }

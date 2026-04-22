@@ -6,12 +6,16 @@ export interface YTVideo {
   url: string
 }
 
+// Fallback video IDs if RSS is blocked on server
+const FALLBACK_IDS = ['44gt-Fu1XdU','c29pSyE5apE','NKHq9F0bVSs','DUGyLQhEsxw','sJ9rrU7Xuoc']
+
 export async function getLatestYouTubeVideos(channelId: string, count = 5): Promise<YTVideo[]> {
   try {
     const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`
-    const res = await fetch(rssUrl, { next: { revalidate: 3600 } }) // refresh every hour
-    if (!res.ok) return []
+    const res = await fetch(rssUrl, { next: { revalidate: 3600 }, headers: { 'User-Agent': 'Mozilla/5.0' } })
+    if (!res.ok) return buildFallback(count)
     const xml = await res.text()
+    if (!xml.includes('<entry>')) return buildFallback(count)
 
     const entries = xml.match(/<entry>([\s\S]*?)<\/entry>/g) || []
 
@@ -28,6 +32,16 @@ export async function getLatestYouTubeVideos(channelId: string, count = 5): Prom
       }
     }).filter(v => v.id)
   } catch {
-    return []
+    return buildFallback(count)
   }
+}
+
+function buildFallback(count: number): YTVideo[] {
+  return FALLBACK_IDS.slice(0, count).map(id => ({
+    id,
+    title: 'Dr. Shadab Khan — Homeopathy Guide',
+    published: new Date().toISOString(),
+    thumbnail: `https://img.youtube.com/vi/${id}/mqdefault.jpg`,
+    url: `https://www.youtube.com/watch?v=${id}`,
+  }))
 }
