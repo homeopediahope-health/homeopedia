@@ -132,9 +132,16 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
                   <h3 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 16 }}>Main Symptoms</h3>
                   <div style={{ display: 'grid', gap: 10 }}>
                     {disease.symptoms.map((s: any, i: number) => (
-                      <div key={i} style={{ display: 'flex', gap: 14, padding: '14px 18px', background: 'var(--card)', borderRadius: 10, border: '1px solid var(--border)' }}>
-                        <Starsvg s={14} o={0.7} />
-                        <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.65 }}>{typeof s === 'string' ? s : s.text || s.symptom}</span>
+                      <div key={i} style={{ marginBottom: 8 }}>
+                        {s.category && (
+                          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{s.category}</div>
+                        )}
+                        {s.items?.map((item: string, j: number) => (
+                          <div key={j} style={{ display: 'flex', gap: 14, padding: '10px 16px', background: 'var(--card)', borderRadius: 9, border: '1px solid var(--border)', marginBottom: 6 }}>
+                            <Starsvg s={14} o={0.7} />
+                            <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.65 }}>{item}</span>
+                          </div>
+                        ))}
                       </div>
                     ))}
                   </div>
@@ -278,8 +285,18 @@ export default function DiseasePage({ params }: { params: Promise<{ slug: string
                 <div style={{ display: 'grid', gap: 14 }}>
                   {disease.medicines.map((m: any, i: number) => (
                     <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '20px 22px' }}>
-                      <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>{m.name || m.medicine}</div>
-                      <div style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.75, fontWeight: 300 }}>{m.use || m.description}</div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+                        <span style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>{m.name}</span>
+                        {m.potency && <span style={{ fontSize: 11, padding: '3px 10px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.3)' }}>{m.potency}</span>}
+                      </div>
+                      {m.bestFor && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', marginBottom: 8 }}>Best for: {m.bestFor}</div>}
+                      {m.keyIndications?.length > 0 && (
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                          {m.keyIndications.map((ind: string, j: number) => (
+                            <span key={j} style={{ fontSize: 12, padding: '4px 10px', borderRadius: 7, background: 'var(--bg2)', color: 'var(--ink3)', border: '1px solid var(--border)' }}>{ind}</span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

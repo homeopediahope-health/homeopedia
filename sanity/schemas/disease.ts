@@ -130,6 +130,18 @@ export const disease = defineType({
       })],
     }),
     defineField({
+      name: 'dos',
+      title: "Dos — Ye Zaroor Karein",
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
+      name: 'donts',
+      title: "Don'ts — Ye Bilkul Mat Karein",
+      type: 'array',
+      of: [{ type: 'string' }],
+    }),
+    defineField({
       name: 'caseStudies',
       title: 'Case Studies (Anonymized)',
       type: 'array',
