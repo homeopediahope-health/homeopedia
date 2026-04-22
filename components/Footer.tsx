@@ -40,7 +40,7 @@ export default function Footer() {
           {/* About */}
           <div>
             <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--gold-dk)', letterSpacing: 1.5, marginBottom: 14, textTransform: 'uppercase' }}>About</div>
-            {[['About Dr. Shadab', '/about'], ['Medical Disclaimer', '/about']].map(([l, h]) => (
+            {[['About Dr. Shadab', '/about'], ['Contact Us', '/contact'], ['Privacy Policy', '/privacy-policy'], ['Medical Disclaimer', '/about']].map(([l, h]) => (
               <Link key={l} href={h} style={{ display: 'block', fontSize: 13, color: 'var(--ink4)', marginBottom: 9, fontWeight: 300, textDecoration: 'none' }}>{l}</Link>
             ))}
           </div>
