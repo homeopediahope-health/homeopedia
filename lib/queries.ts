@@ -2,7 +2,22 @@ import { client } from './sanity'
 
 export async function getAllDiseases() {
   return client.fetch(`*[_type == "disease"] | order(publishedAt desc) {
-    title, slug, hindiName, heroText, metaDescription
+    title, slug, hindiName, heroText, metaDescription, category
+  }`)
+}
+
+export async function getDiseaseDiet(slug: string) {
+  return client.fetch(`*[_type == "disease" && slug.current == $slug][0]{
+    title, hindiName, slug, category,
+    dietInclude, dietAvoid
+  }`, { slug })
+}
+
+export async function getAllDiseasesDiet() {
+  return client.fetch(`*[_type == "disease" && defined(dietInclude)] | order(publishedAt desc) {
+    title, slug, hindiName, category,
+    "includeCount": count(dietInclude[].items[]),
+    "avoidCount": count(dietAvoid[].items[])
   }`)
 }
 

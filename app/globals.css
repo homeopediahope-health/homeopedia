@@ -1,17 +1,41 @@
 @import "tailwindcss";
 
 :root {
+  /* New design system from designer */
+  --bg: #faf8f4;
+  --bg2: #f4f0e8;
+  --bg3: #ede8dc;
+  --card: #fff;
+  --card2: #fdfcf9;
+  --border: #e8e0d0;
+  --border2: #d4c9b0;
+  --gold: #b8912a;
+  --gold-lt: #d4a83c;
+  --gold-dk: #8c6d1e;
+  --gold-bg: rgba(184,145,42,0.08);
+  --gold-bg2: rgba(184,145,42,0.15);
+  --ink: #1a1510;
+  --ink2: #3d3628;
+  --ink3: #6b6050;
+  --ink4: #a09078;
+  --green: #3a7d52;
+  --red: #b04040;
+  --sh-sm: 0 2px 8px rgba(26,21,16,0.06);
+  --sh: 0 6px 24px rgba(26,21,16,0.08);
+  --sh-lg: 0 16px 48px rgba(26,21,16,0.12);
+  --r: 14px;
+  /* Keep sage for disease pages */
   --sage-deep: #2D5F4F;
   --sage-light: #E8F0EB;
   --sage-mid: #5B8574;
-  --charcoal: #1A1F2E;
-  --gray-text: #6B7280;
-  --gray-light: #E5E7EB;
-  --coral: #E07856;
-  --coral-light: #F4B8A0;
-  --cream: #FAF7F2;
+  --charcoal: #1a1510;
+  --gray-text: #6b6050;
+  --gray-light: #e8e0d0;
+  --cream: #faf8f4;
   color-scheme: light only;
 }
+
+.font-playfair { font-family: var(--font-playfair), Georgia, serif; }
 
 @media (prefers-color-scheme: dark) {
   :root { color-scheme: light; }
@@ -20,15 +44,15 @@
 * { box-sizing: border-box; }
 
 html, body {
-  background: #FAF7F2 !important;
-  color: #1A1F2E !important;
+  background: var(--bg) !important;
+  color: var(--ink) !important;
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: var(--sans), 'Inter', -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
 }
 
@@ -65,12 +89,13 @@ h1, h2, h3, h4 {
 /* ── Mobile Responsive ── */
 @media (max-width: 768px) {
   .hero-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
-  .hero-grid > div:last-child { display: none; } /* hide right card on mobile */
+  .hero-photo { display: none; }
   .categories-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .articles-grid { grid-template-columns: 1fr !important; }
   .yt-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .expert-section { grid-template-columns: 1fr !important; }
-  .expert-section > img { max-width: 160px; margin: 0 auto; }
+  .stats-bar { gap: 0; }
+  .stat-item { padding: 12px 24px !important; border-right: none !important; border-bottom: 1px solid var(--gray-light); width: 50%; }
 }
 
 /* Hover cards */
@@ -80,4 +105,14 @@ h1, h2, h3, h4 {
 .article-card { transition: all 0.2s; }
 .article-card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
 
-.suggestion-chip:hover { border-color: var(--sage-mid) !important; color: var(--sage-deep) !important; background: var(--sage-light) !important; }
+.suggestion-chip:hover { border-color: var(--border2) !important; color: var(--gold-dk) !important; background: var(--gold-bg) !important; }
+
+.cat-card:hover { box-shadow: var(--sh) !important; transform: translateY(-3px); border-color: var(--border2) !important; }
+.hot-card:hover { box-shadow: var(--sh) !important; transform: translateY(-3px); }
+
+@media (max-width: 768px) {
+  .hero-stats { grid-template-columns: repeat(2, 1fr) !important; }
+  .hero-stats > div:nth-child(2) { border-right: none !important; }
+  .hero-stats > div:nth-child(1), .hero-stats > div:nth-child(2) { border-bottom: 1px solid var(--border); }
+  .desktop-nav { display: none !important; }
+}
