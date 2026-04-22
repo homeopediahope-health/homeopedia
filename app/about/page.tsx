@@ -60,9 +60,7 @@ export default function AboutPage() {
         {/* Hero */}
         <div style={{ background: 'linear-gradient(135deg, var(--sage-light) 0%, #fff 100%)', borderRadius: 24, padding: '48px', marginBottom: 40, border: '1px solid var(--gray-light)' }}>
           <div style={{ display: 'flex', gap: 40, alignItems: 'center', flexWrap: 'wrap' }}>
-            <div style={{ width: 120, height: 120, background: 'linear-gradient(135deg, var(--sage-mid), var(--sage-deep))', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '3.5rem', flexShrink: 0 }}>
-              👨‍⚕️
-            </div>
+            <img src="/dr-shadab.png" alt="Dr. Shadab Khan MD Homeopath" style={{ width: 140, height: 140, borderRadius: '50%', objectFit: 'cover', objectPosition: 'top', flexShrink: 0, border: '4px solid white', boxShadow: '0 4px 16px rgba(0,0,0,0.12)' }} />
             <div>
               <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--sage-deep)', background: 'var(--sage-light)', display: 'inline-block', padding: '4px 12px', borderRadius: 100, marginBottom: 12 }}>
                 Medically Reviewed Content

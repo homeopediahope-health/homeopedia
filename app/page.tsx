@@ -224,9 +224,7 @@ export default async function HomePage() {
       <section style={{ padding: '0 0 80px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
           <div style={{ background: 'white', borderRadius: 24, padding: 48, display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 48, alignItems: 'center', border: '1px solid var(--gray-light)' }} className="expert-section">
-            <div style={{ aspectRatio: '1', background: 'linear-gradient(135deg, var(--sage-light), var(--coral-light))', borderRadius: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '6rem' }}>
-              👨‍⚕️
-            </div>
+            <img src="/dr-shadab.png" alt="Dr. Shadab Khan MD Homeopath" style={{ width: '100%', aspectRatio: '1', borderRadius: 20, objectFit: 'cover', objectPosition: 'top' }} />
             <div>
               <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', marginBottom: 8 }}>Medically Reviewed Content</h2>
               <p style={{ color: 'var(--sage-deep)', fontWeight: 600, marginBottom: 20 }}>by Dr. Shadab Khan, MD Homeopath</p>
