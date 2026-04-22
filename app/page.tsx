@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { getAllDiseases } from '@/lib/queries'
 import { getLatestYouTubeVideos } from '@/lib/youtube'
+import YouTubeSection from '@/components/YouTubeSection'
 
 const YT_CHANNEL_ID = 'UCkC9ovyrfM4RA-axYQ5Gflw'
 
@@ -192,30 +194,7 @@ export default async function HomePage() {
                 Subscribe →
               </a>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }} className="yt-grid">
-              {ytVideos.map(v => (
-                <a key={v.id} href={v.url} target="_blank" rel="noopener noreferrer"
-                  className="card-premium"
-                  style={{ background: 'white', borderRadius: 14, overflow: 'hidden', textDecoration: 'none', display: 'block' }}>
-                  <div style={{ position: 'relative' }}>
-                    <img src={v.thumbnail} alt={v.title} style={{ width: '100%', aspectRatio: '16/9', objectFit: 'cover', display: 'block' }} />
-                    <div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <div style={{ width: 40, height: 40, background: 'rgba(220,38,38,0.9)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <span style={{ color: 'white', fontSize: '1rem', marginLeft: 3 }}>▶</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div style={{ padding: '12px 14px' }}>
-                    <p style={{ fontSize: '0.82rem', fontWeight: 600, color: 'var(--charcoal)', lineHeight: 1.4, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                      {v.title}
-                    </p>
-                    <p style={{ fontSize: '0.75rem', color: 'var(--gray-text)', marginTop: 6 }}>
-                      {new Date(v.published).toLocaleDateString('hi-IN', { day: 'numeric', month: 'short', year: 'numeric' })}
-                    </p>
-                  </div>
-                </a>
-              ))}
-            </div>
+            <YouTubeSection videos={ytVideos} />
           </div>
         </section>
       )}
@@ -224,7 +203,7 @@ export default async function HomePage() {
       <section style={{ padding: '0 0 80px' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 24px' }}>
           <div style={{ background: 'white', borderRadius: 24, padding: 48, display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 48, alignItems: 'center', border: '1px solid var(--gray-light)' }} className="expert-section">
-            <img src="/dr-shadab.png" alt="Dr. Shadab Khan MD Homeopath" style={{ width: '100%', aspectRatio: '1', borderRadius: 20, objectFit: 'cover', objectPosition: 'top' }} />
+            <Image src="/dr-shadab.png" alt="Dr. Shadab Khan MD Homeopath" width={400} height={400} style={{ width: '100%', height: 'auto', borderRadius: 20, objectFit: 'cover', objectPosition: 'top' }} priority />
             <div>
               <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', marginBottom: 8 }}>Medically Reviewed Content</h2>
               <p style={{ color: 'var(--sage-deep)', fontWeight: 600, marginBottom: 20 }}>by Dr. Shadab Khan, MD Homeopath</p>
