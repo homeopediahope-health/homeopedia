@@ -65,6 +65,19 @@ export async function getDiseaseTypeBySlug(diseaseSlug: string, typeSlug: string
   )
 }
 
+export async function getAllDiets() {
+  return client.fetch(`*[_type == "diet"] | order(publishedAt desc) {
+    title, hindiName, slug, category, heroText, metaDescription, keyRule,
+    "hasWeeklyPlan": defined(weeklyPlan) && length(weeklyPlan) > 0,
+    "includeCount": count(dietInclude[].items[]),
+    "avoidCount": count(dietAvoid[].items[])
+  }`)
+}
+
+export async function getDietBySlug(slug: string) {
+  return client.fetch(`*[_type == "diet" && slug.current == $slug][0]`, { slug })
+}
+
 export async function searchAll(query: string) {
   return client.fetch(`*[
     (_type == "disease" || _type == "medicine" || _type == "symptom") &&
