@@ -2,60 +2,53 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 mt-16">
-      <div className="max-w-5xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
-          <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xs">H</span>
-              </div>
-              <span className="font-bold text-white">HomeoPedia.in</span>
+    <footer style={{ borderTop: '1px solid var(--border)', padding: '56px clamp(16px,4vw,32px) 28px', background: 'var(--bg2)' }}>
+      <div style={{ maxWidth: 1160, margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 32, marginBottom: 40 }} className="footer-grid">
+          {/* Brand */}
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
+              <div style={{ width: 34, height: 34, borderRadius: 8, background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-playfair,Georgia,serif)', fontWeight: 700, color: '#fff', fontSize: 15 }}>H</div>
+              <span style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 17, fontWeight: 700, color: 'var(--ink)' }}>HomeoPedia.in</span>
             </div>
-            <p className="text-xs text-gray-400 leading-relaxed">
-              India&apos;s patient-first homeopathy knowledge portal. Evidence-based, CCRH-backed.
-            </p>
+            <p style={{ fontSize: 13, color: 'var(--ink4)', lineHeight: 1.8, maxWidth: 260, fontWeight: 300 }}>India&apos;s patient-first homeopathy knowledge portal. Evidence-based, CCRH-backed. Always free.</p>
+            <div style={{ marginTop: 14, padding: '11px 14px', background: 'var(--gold-bg)', borderRadius: 9, border: '1px solid rgba(184,145,42,.2)' }}>
+              <p style={{ fontSize: 11, color: 'var(--ink4)', lineHeight: 1.7 }}>⚕️ Sirf educational purpose ke liye. Treatment ke liye qualified doctor se milein.</p>
+            </div>
           </div>
 
+          {/* Content */}
           <div>
-            <h4 className="font-semibold text-white text-sm mb-3">Content</h4>
-            <ul className="space-y-2 text-xs">
-              <li><Link href="/diseases" className="hover:text-green-400 transition-colors">All Diseases</Link></li>
-              <li><Link href="/medicines" className="hover:text-green-400 transition-colors">All Medicines</Link></li>
-              <li><Link href="/symptoms" className="hover:text-green-400 transition-colors">Symptoms</Link></li>
-            </ul>
+            <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--gold-dk)', letterSpacing: 1.5, marginBottom: 14, textTransform: 'uppercase' }}>Content</div>
+            {[['All Diseases', '/diseases'], ['Diet Charts', '/diet'], ['Medicines', '/medicines'], ['Videos & Blog', '/blog']].map(([l, h]) => (
+              <Link key={l} href={h} className="tap" style={{ display: 'block', fontSize: 13, color: 'var(--ink4)', marginBottom: 9, fontWeight: 300, textDecoration: 'none' }}>{l}</Link>
+            ))}
           </div>
 
+          {/* Consult */}
           <div>
-            <h4 className="font-semibold text-white text-sm mb-3">Consult</h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">
-                  WhatsApp Dr. Shadab
-                </a>
-              </li>
-              <li>
-                <a href="tel:+918983458889" className="hover:text-green-400 transition-colors">
-                  Call: 8983458889
-                </a>
-              </li>
-            </ul>
+            <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--gold-dk)', letterSpacing: 1.5, marginBottom: 14, textTransform: 'uppercase' }}>Consult</div>
+            {[
+              ['WhatsApp Dr. Shadab', 'https://wa.me/918983458889'],
+              ['Call: 8983458889', 'tel:+918983458889'],
+              ['YouTube Channel', 'https://www.youtube.com/@drshadabshomoeopathy'],
+            ].map(([l, h]) => (
+              <a key={l} href={h} target={h.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ display: 'block', fontSize: 13, color: 'var(--ink4)', marginBottom: 9, fontWeight: 300, textDecoration: 'none' }}>{l}</a>
+            ))}
           </div>
 
+          {/* About */}
           <div>
-            <h4 className="font-semibold text-white text-sm mb-3">About</h4>
-            <ul className="space-y-2 text-xs">
-              <li><Link href="/about" className="hover:text-green-400 transition-colors">About Dr. Shadab</Link></li>
-              <li><Link href="/disclaimer" className="hover:text-green-400 transition-colors">Medical Disclaimer</Link></li>
-            </ul>
+            <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--gold-dk)', letterSpacing: 1.5, marginBottom: 14, textTransform: 'uppercase' }}>About</div>
+            {[['About Dr. Shadab', '/about'], ['Medical Disclaimer', '/about']].map(([l, h]) => (
+              <Link key={l} href={h} style={{ display: 'block', fontSize: 13, color: 'var(--ink4)', marginBottom: 9, fontWeight: 300, textDecoration: 'none' }}>{l}</Link>
+            ))}
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-6 text-xs text-gray-500">
-          <p className="mb-1">
-            <strong className="text-gray-400">Medical Disclaimer:</strong> Ye website sirf educational purpose ke liye hai. Koi bhi treatment shuru karne se pehle qualified doctor se consult karein.
-          </p>
-          <p>Medically reviewed by <strong className="text-gray-400">Dr. Shadab Khan, MD Homeopath</strong> · © 2026 HomeoPedia.in</p>
+        <div style={{ borderTop: '1px solid var(--border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
+          <div style={{ fontSize: 12, color: 'var(--ink4)' }}>Medically reviewed by <strong style={{ color: 'var(--ink3)' }}>Dr. Shadab Khan, MD Homeopath</strong> · © 2026 HomeoPedia.in</div>
+          <div style={{ fontSize: 12, color: 'var(--ink4)' }}>✓ CCRH Aligned · ✓ Evidence Based · ✓ Free to Read</div>
         </div>
       </div>
     </footer>

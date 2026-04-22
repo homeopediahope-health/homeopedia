@@ -1,222 +1,294 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { getAllDiseases } from '@/lib/queries'
 import { getLatestYouTubeVideos } from '@/lib/youtube'
-import YouTubeSection from '@/components/YouTubeSection'
+import Starsvg from '@/components/Starsvg'
+import SL from '@/components/SL'
+import Orn from '@/components/Orn'
+import Sparkles from '@/components/Sparkles'
+import HeroSearch from '@/components/HeroSearch'
 
 const YT_CHANNEL_ID = 'UCkC9ovyrfM4RA-axYQ5Gflw'
 export const revalidate = 3600
 
-const categories = [
-  { label: 'Skin Diseases', desc: 'Psoriasis, Eczema, Vitiligo', count: 8, href: '/diseases' },
-  { label: 'Joints & Muscles', desc: 'Arthritis, Sciatica, Back Pain', count: 6, href: '/diseases' },
-  { label: 'Digestive Health', desc: 'IBS, Fissure, Acidity', count: 5, href: '/diseases' },
-  { label: 'Mental Health', desc: 'Anxiety, Depression, Insomnia', count: 5, href: '/diseases' },
-  { label: "Women's Health", desc: 'PCOD, Periods, Menopause', count: 5, href: '/diseases' },
-  { label: 'Hair Problems', desc: 'Hair fall, Alopecia, Dandruff', count: 4, href: '/diseases' },
-  { label: 'Respiratory', desc: 'Asthma, Allergies, Sinusitis', count: 4, href: '/diseases' },
-  { label: 'Endocrine', desc: 'Thyroid, Diabetes, Obesity', count: 4, href: '/diseases' },
+const catGrid = [
+  { id: 'skin',        title: 'Skin Diseases',   sub: 'Psoriasis, Eczema, Vitiligo',    n: 8 },
+  { id: 'joints',      title: 'Joints & Muscles', sub: 'Arthritis, Sciatica, Gout',      n: 6 },
+  { id: 'digestive',   title: 'Digestive Health', sub: 'IBS, Piles, Acidity',            n: 5 },
+  { id: 'mental',      title: 'Mental Health',    sub: 'Anxiety, Depression, Migraine',  n: 5 },
+  { id: "women's",     title: "Women's Health",   sub: 'PCOD, Periods, Menopause',       n: 5 },
+  { id: 'hair',        title: 'Hair Problems',    sub: 'Hair Fall, Alopecia',            n: 4 },
+  { id: 'respiratory', title: 'Respiratory',      sub: 'Asthma, Allergies, Sinusitis',  n: 4 },
+  { id: 'endocrine',   title: 'Endocrine',        sub: 'Thyroid, Diabetes, Obesity',    n: 4 },
 ]
 
-const hotDiseases = [
-  { title: 'Psoriasis', hindiName: 'Psoriasis / Chambal', category: 'Skin', slug: 'psoriasis', mins: 12 },
-  { title: 'Sciatica', hindiName: 'Nass Ka Dard', category: 'Joints', slug: 'sciatica', mins: 10 },
-  { title: 'Thyroid', hindiName: 'Thyroid Rog', category: 'Endocrine', slug: 'thyroid', mins: 9 },
-  { title: 'PCOD / PCOS', hindiName: 'Mahila Rog', category: "Women's", slug: 'pcod', mins: 11 },
+const featured = [
+  { slug: 'psoriasis', title: 'Psoriasis', hindi: 'सोरायसिस', cat: 'Skin',     min: 7 },
+  { slug: 'sciatica',  title: 'Sciatica',  hindi: 'सायटिका',  cat: 'Joints',   min: 5 },
+  { slug: 'pcod',      title: 'PCOD/PCOS', hindi: 'पीसीओडी', cat: "Women's",  min: 8 },
+  { slug: 'migraine',  title: 'Migraine',  hindi: 'माइग्रेन', cat: 'Mental',   min: 5 },
 ]
 
-const popular = ['Psoriasis', 'Sciatica', 'Thyroid', 'PCOD', 'Migraine', 'Arthritis']
+const dietPromo = [
+  { slug: 'psoriasis', disease: 'Psoriasis', hindi: 'सोरायसिस', eat: 8, avoid: 6 },
+  { slug: 'pcod',      disease: 'PCOD/PCOS', hindi: 'पीसीओडी', eat: 8, avoid: 6 },
+  { slug: 'thyroid',   disease: 'Thyroid',   hindi: 'थायरॉइड',  eat: 8, avoid: 6 },
+  { slug: 'ibs',       disease: 'IBS',       hindi: 'आईबीएस',  eat: 8, avoid: 6 },
+]
+
+const VIDEOS_FALLBACK = [
+  { id: '44gt-Fu1XdU', title: 'IBS mein Normal Reports? Brain-Gut Connection', date: '17 Apr 2026', topic: 'Digestive' },
+  { id: 'c29pSyE5apE', title: 'Skin Problem Se Asthma — Atopic March Kya Hai', date: '10 Apr 2026', topic: 'Skin' },
+  { id: 'NKHq9F0bVSs', title: 'Glutathione Kab Kaam Karta Hai? Liver Secret', date: '3 Apr 2026', topic: 'General' },
+  { id: 'DUGyLQhEsxw', title: 'PCOD, Belly Fat, Kala Daag — Insulin Resistance', date: '27 Mar 2026', topic: "Women's" },
+]
 
 export default async function HomePage() {
-  const diseases = await getAllDiseases().catch(() => [])
-  const ytVideos = await getLatestYouTubeVideos(YT_CHANNEL_ID, 5)
+  const rawVideos = await getLatestYouTubeVideos(YT_CHANNEL_ID, 4).catch(() => [])
+  const videos: Array<{ id: string; title: string; date: string; topic: string }> =
+    rawVideos.length > 0
+      ? rawVideos.map((v: any) => ({ id: v.id, title: v.title, date: v.published || v.date || '', topic: v.topic || 'General' }))
+      : VIDEOS_FALLBACK
 
   return (
-    <div style={{ background: 'var(--bg)' }}>
+    <div style={{ background: 'var(--bg)' }} className="page-in">
 
       {/* ── HERO ── */}
-      <section style={{ position: 'relative', padding: 'clamp(80px,10vw,120px) clamp(16px,4vw,32px) clamp(60px,8vw,100px)', textAlign: 'center', overflow: 'hidden', background: 'linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%)' }}>
-        {/* Decorative blobs */}
-        <div style={{ position: 'absolute', top: -80, right: -80, width: 320, height: 320, borderRadius: '50%', background: 'radial-gradient(circle, var(--gold-bg2) 0%, transparent 70%)', pointerEvents: 'none' }} />
-        <div style={{ position: 'absolute', bottom: -60, left: -60, width: 280, height: 280, borderRadius: '50%', background: 'radial-gradient(circle, var(--gold-bg) 0%, transparent 70%)', pointerEvents: 'none' }} />
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '100px 32px 80px', textAlign: 'center', position: 'relative', overflow: 'hidden', background: 'linear-gradient(170deg,var(--bg) 0%,var(--bg2) 100%)' }}>
+        {/* Background blobs */}
+        <div style={{ position: 'absolute', top: '-8%', right: '-8%', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle,rgba(184,145,42,.13) 0%,transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', bottom: 0, left: '-10%', width: 480, height: 480, borderRadius: '50%', background: 'radial-gradient(circle,rgba(184,145,42,.07) 0%,transparent 70%)', pointerEvents: 'none' }} />
+        {/* Grid pattern */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px)', backgroundSize: '60px 60px', opacity: 0.22, pointerEvents: 'none' }} />
+        {/* Sparkles */}
+        <Sparkles />
 
-        <div style={{ position: 'relative', maxWidth: 800, margin: '0 auto' }}>
+        <div style={{ position: 'relative', maxWidth: 800, width: '100%', zIndex: 1 }}>
           {/* Badge */}
-          <div style={{ display: 'inline-block', background: 'var(--gold-bg)', color: 'var(--gold-dk)', padding: '6px 18px', borderRadius: 100, fontSize: '0.82rem', fontWeight: 600, marginBottom: 28, border: '1px solid rgba(184,145,42,0.25)', fontStyle: 'italic', letterSpacing: '0.02em' }}>
-            ✦ Medically Reviewed &nbsp;•&nbsp; CCRH Certified
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 18px', border: '1px solid rgba(184,145,42,.4)', borderRadius: 100, marginBottom: 28, background: 'rgba(184,145,42,.06)' }}>
+            <Starsvg s={9} />
+            <span style={{ fontSize: 11, color: 'var(--gold-dk)', letterSpacing: 2.2, fontWeight: 600 }}>CCRH ALIGNED · EVIDENCE BASED · DOCTOR REVIEWED</span>
           </div>
 
-          {/* H1 */}
-          <h1 className="font-playfair" style={{ fontSize: 'clamp(36px, 5.5vw, 68px)', lineHeight: 1.12, marginBottom: 20, color: 'var(--ink)', letterSpacing: '-0.01em' }}>
-            India&apos;s Trusted Guide to<br />
-            <em style={{ color: 'var(--gold)', fontStyle: 'italic' }}>Homeopathic Healing</em>
+          {/* H1 with shimmer */}
+          <h1 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(36px,5.5vw,70px)', fontWeight: 700, lineHeight: 1.12, marginBottom: 22, color: 'var(--ink)' }}>
+            India&apos;s Trusted Guide<br />
+            to{' '}
+            <span className="gold-shimmer" style={{ fontFamily: 'inherit', fontWeight: 'inherit', fontSize: '1em', lineHeight: 'inherit', display: 'inline' }}>
+              Homeopathic Healing
+            </span>
           </h1>
 
-          {/* Subtext */}
-          <p style={{ fontSize: '1.05rem', lineHeight: 1.8, marginBottom: 36, color: 'var(--ink3)', maxWidth: 560, margin: '0 auto 36px' }}>
+          <p style={{ fontSize: 17, color: 'var(--ink3)', maxWidth: 520, margin: '0 auto 40px', lineHeight: 1.8, fontWeight: 300 }}>
             Simple language mein disease guides, diet charts, dos &amp; don&apos;ts, aur homeopathy ka science. Free, doctor reviewed.
           </p>
 
-          {/* Search bar */}
-          <div style={{ position: 'relative', maxWidth: 540, margin: '0 auto 20px' }}>
-            <input
-              type="text"
-              placeholder="Search disease, symptom, or medicine..."
-              style={{ width: '100%', padding: '17px 140px 17px 22px', borderRadius: 100, border: '1.5px solid var(--border2)', fontSize: '1rem', background: 'white', color: 'var(--ink)', outline: 'none', boxShadow: 'var(--sh)', boxSizing: 'border-box' }}
-            />
-            <button style={{ position: 'absolute', right: 6, top: 6, bottom: 6, padding: '0 24px', background: 'linear-gradient(135deg, var(--gold-dk) 0%, var(--gold-lt) 100%)', color: 'white', border: 'none', borderRadius: 100, fontWeight: 600, fontSize: '0.9rem', cursor: 'pointer', whiteSpace: 'nowrap' }}>
-              Search
-            </button>
-          </div>
+          {/* Search */}
+          <HeroSearch />
+        </div>
 
-          {/* Popular tags */}
-          <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap', marginBottom: 48 }}>
-            <span style={{ fontSize: '0.82rem', color: 'var(--ink4)', alignSelf: 'center' }}>Popular:</span>
-            {popular.map(p => (
-              <Link key={p} href={`/diseases/${p.toLowerCase()}`} style={{ background: 'white', border: '1px solid var(--border)', padding: '5px 14px', borderRadius: 100, fontSize: '0.82rem', color: 'var(--ink3)', textDecoration: 'none', boxShadow: 'var(--sh-sm)' }}>
-                {p}
+        {/* Stats bar */}
+        <div style={{ position: 'relative', zIndex: 1, marginTop: 60, background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', boxShadow: 'var(--sh)', display: 'flex', flexWrap: 'wrap', maxWidth: 600, width: '100%' }} className="hero-stats">
+          {[['200+', 'Disease Guides'], ['80+', 'Medicines'], ['1000+', 'FAQs'], ['100%', 'Doctor Reviewed']].map(([n, l], i, arr) => (
+            <div key={l} style={{ flex: 1, textAlign: 'center', padding: '20px 10px', borderRight: i < arr.length - 1 ? '1px solid var(--border)' : 'none' }}>
+              <div style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 28, fontWeight: 700, color: 'var(--gold)', lineHeight: 1 }}>{n}</div>
+              <div style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 4 }}>{l}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── CATEGORIES ── */}
+      <section style={{ padding: 'clamp(52px,8vw,90px) clamp(16px,4vw,32px)', maxWidth: 1160, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 50 }}>
+          <SL c="Browse by Body System" />
+          <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(28px,4vw,42px)', fontWeight: 700, color: 'var(--ink)' }}>Find Your Disease Category</h2>
+          <Orn />
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(250px,1fr))', gap: 16 }} className="grid-auto">
+          {catGrid.map(cat => (
+            <Link key={cat.id} href="/diseases" style={{ textDecoration: 'none' }}>
+              <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '26px 22px', cursor: 'pointer', height: '100%' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--gold-bg)', border: '1px solid rgba(184,145,42,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Starsvg s={16} o={0.7} />
+                  </div>
+                  <span style={{ fontSize: 11, color: 'var(--ink4)', fontWeight: 500 }}>{cat.n} guides</span>
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 17, fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>{cat.title}</h3>
+                <p style={{ fontSize: 12, color: 'var(--ink3)', lineHeight: 1.6, marginBottom: 14 }}>{cat.sub}</p>
+                <div style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>Explore →</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ── FEATURED DISEASES ── */}
+      <section style={{ padding: '0 clamp(16px,4vw,32px) clamp(52px,8vw,90px)', maxWidth: 1160, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 50 }}>
+          <SL c="Most Read" />
+          <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(28px,4vw,42px)', fontWeight: 700, color: 'var(--ink)' }}>Popular Disease Guides</h2>
+          <Orn />
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(270px,1fr))', gap: 18 }} className="grid-auto">
+          {featured.map(d => (
+            <Link key={d.slug} href={`/diseases/${d.slug}`} style={{ textDecoration: 'none' }}>
+              <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '26px', cursor: 'pointer', height: '100%' }}>
+                <div style={{ display: 'flex', gap: 8, marginBottom: 14, alignItems: 'center' }}>
+                  <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 12px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)' }}>{d.cat}</span>
+                  <span style={{ fontSize: 11, color: 'var(--ink4)' }}>📖 {d.min} min</span>
+                </div>
+                <h3 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>{d.title}</h3>
+                <div style={{ fontSize: 14, color: 'var(--gold-dk)', fontFamily: 'var(--font-playfair, Georgia, serif)', fontStyle: 'italic', marginBottom: 12 }}>{d.hindi}</div>
+                <div style={{ marginTop: 16, fontSize: 13, color: 'var(--gold)', fontWeight: 600 }}>Read full guide →</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 32 }}>
+          <Link href="/diseases" style={{ display: 'inline-block', padding: '12px 28px', border: '1px solid var(--border2)', background: 'var(--card)', color: 'var(--ink2)', borderRadius: 100, fontSize: 14, fontWeight: 500, textDecoration: 'none', transition: 'all 0.2s' }}
+            onMouseEnter={undefined}>
+            View All 33+ Diseases →
+          </Link>
+        </div>
+      </section>
+
+      {/* ── DIET CHARTS PROMO ── */}
+      <section style={{ background: 'linear-gradient(135deg,rgba(184,145,42,.1) 0%,rgba(184,145,42,.03) 100%)', borderTop: '1px solid rgba(184,145,42,.15)', borderBottom: '1px solid rgba(184,145,42,.15)', padding: '60px clamp(16px,4vw,32px)' }}>
+        <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 32, alignItems: 'center' }}>
+          <div>
+            <SL c="Free Resource" />
+            <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(22px,4vw,36px)', fontWeight: 700, color: 'var(--ink)', margin: '10px 0 12px' }}>Disease-Wise Diet Charts</h2>
+            <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.8, fontWeight: 300, marginBottom: 20 }}>
+              Psoriasis, PCOD, Thyroid, IBS, Sciatica, Hair Fall — har disease ke liye detailed diet chart. Kya khayein, kya nahi, sample day plan — bilkul free.
+            </p>
+            <Link href="/diet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', color: '#fff', borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: 'none', boxShadow: '0 3px 14px rgba(184,145,42,.35)' }}>
+              🥗 Dekhein Diet Charts →
+            </Link>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+            {dietPromo.map(d => (
+              <Link key={d.slug} href="/diet" style={{ textDecoration: 'none' }}>
+                <div className="hov" style={{ background: 'var(--card)', border: '1px solid rgba(184,145,42,.2)', borderRadius: 12, padding: '14px 16px', cursor: 'pointer' }}>
+                  <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', fontFamily: 'var(--font-playfair, Georgia, serif)', marginBottom: 3 }}>{d.disease}</div>
+                  <div style={{ fontSize: 10, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-playfair, Georgia, serif)' }}>{d.hindi}</div>
+                  <div style={{ fontSize: 10, color: 'var(--ink4)', marginTop: 4 }}>✓{d.eat} foods · ✕{d.avoid} avoid</div>
+                </div>
               </Link>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Stats row */}
-          <div style={{ display: 'inline-grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 0, background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', boxShadow: 'var(--sh)', overflow: 'hidden', maxWidth: 600, width: '100%' }} className="hero-stats">
+      {/* ── WHY HOMEOPATHY ── */}
+      <section style={{ background: 'var(--bg2)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: 'clamp(52px,8vw,90px) clamp(16px,4vw,32px)' }}>
+        <div style={{ maxWidth: 1160, margin: '0 auto' }}>
+          <div style={{ textAlign: 'center', marginBottom: 50 }}>
+            <SL c="Why Homeopathy?" />
+            <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(28px,4vw,42px)', fontWeight: 700, color: 'var(--ink)' }}>Root Cause vs Symptom Suppression</h2>
+            <Orn />
+            <p style={{ fontSize: 15, color: 'var(--ink3)', maxWidth: 520, margin: '12px auto 0', lineHeight: 1.8, fontWeight: 300 }}>
+              Homeopathy sirf symptoms band nahi karta — poori body ki healing trigger karta hai.
+            </p>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, maxWidth: 860, margin: '0 auto 48px' }} className="why-grid">
             {[
-              { n: '200+', l: 'Disease Guides' },
-              { n: '80+', l: 'Medicines' },
-              { n: '1000+', l: 'FAQs' },
-              { n: '100%', l: 'Doctor Reviewed' },
-            ].map((s, i) => (
-              <div key={s.l} style={{ padding: '20px 16px', textAlign: 'center', borderRight: i < 3 ? '1px solid var(--border)' : 'none' }}>
-                <div className="font-playfair" style={{ fontSize: '1.6rem', fontWeight: 700, color: 'var(--gold)', lineHeight: 1, marginBottom: 6 }}>{s.n}</div>
-                <div style={{ fontSize: '0.72rem', color: 'var(--ink4)', fontWeight: 500, lineHeight: 1.3 }}>{s.l}</div>
+              { t: 'Allopathy Approach', color: 'var(--red)', bg: 'rgba(176,64,64,.05)', border: 'rgba(176,64,64,.2)', mark: '✕', pts: ['Symptoms suppress karta hai', 'Steroids — temporary but harmful', 'Side effects common', 'Root cause address nahi hoti', 'Life-long drug dependency'] },
+              { t: 'Homeopathy Approach', color: 'var(--green)', bg: 'rgba(58,125,82,.05)', border: 'rgba(58,125,82,.2)', mark: '✓', pts: ['Root cause treat karta hai', 'Natural, 100% safe medicines', 'Zero side effects — even for kids', 'Immune system strengthen karta hai', 'Long-lasting, deep results'] },
+            ].map(col => (
+              <div key={col.t} style={{ background: col.bg, border: `1px solid ${col.border}`, borderRadius: 'var(--r)', padding: '28px' }}>
+                <h3 style={{ fontSize: 16, fontWeight: 600, color: col.color, marginBottom: 18 }}>{col.mark} {col.t}</h3>
+                {col.pts.map(p => (
+                  <div key={p} style={{ display: 'flex', gap: 10, marginBottom: 11 }}>
+                    <span style={{ color: col.color, flexShrink: 0 }}>{col.mark}</span>
+                    <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.65 }}>{p}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+          {/* 4 benefits */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 16 }} className="grid-4">
+            {[
+              { ic: '🎯', t: 'Root Cause',       d: 'Sirf symptoms nahi — underlying trigger ko heal karta hai permanently.' },
+              { ic: '🧬', t: 'Constitutional',    d: 'Har patient ke liye alag medicine — aapki nature ke hisaab se.' },
+              { ic: '🌿', t: 'Zero Side Effects', d: 'Natural medicines — safe for children, elderly, pregnant women.' },
+              { ic: '📊', t: 'CCRH Backed',       d: 'Government of India ke research council ki scientific approval.' },
+            ].map(b => (
+              <div key={b.t} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '22px', textAlign: 'center' }}>
+                <div style={{ fontSize: 28, marginBottom: 12 }}>{b.ic}</div>
+                <div style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 8 }}>{b.t}</div>
+                <div style={{ fontSize: 12, color: 'var(--ink3)', lineHeight: 1.65 }}>{b.d}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── CATEGORIES ── */}
-      <section style={{ padding: 'clamp(52px,8vw,90px) clamp(16px,4vw,32px)' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 40 }}>
-            <p style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 10 }}>Browse by Body System</p>
-            <h2 className="font-playfair" style={{ fontSize: 'clamp(26px, 4vw, 40px)', color: 'var(--ink)', marginBottom: 0 }}>Find Your Disease Category</h2>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: 16 }}>
-            {categories.map(cat => (
-              <Link key={cat.label} href={cat.href} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '26px 22px', textDecoration: 'none', display: 'block', position: 'relative', transition: 'all 0.2s', boxShadow: 'var(--sh-sm)' }} className="cat-card">
-                <div style={{ position: 'absolute', top: 16, right: 18, fontSize: '0.7rem', color: 'var(--ink4)', fontWeight: 500 }}>{cat.count} guides</div>
-                <h3 style={{ fontFamily: 'var(--font-playfair), Georgia, serif', fontSize: '1.05rem', fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>{cat.label}</h3>
-                <p style={{ fontSize: '0.78rem', color: 'var(--ink3)', lineHeight: 1.6 }}>{cat.desc}</p>
-                <div style={{ marginTop: 14, fontSize: '0.78rem', color: 'var(--gold)', fontWeight: 600 }}>Explore →</div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── HOT DISEASES ── */}
-      <section style={{ padding: '0 clamp(16px,4vw,32px) clamp(52px,8vw,90px)' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, flexWrap: 'wrap', gap: 12 }}>
-            <div>
-              <p style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--gold)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: 8 }}>Most Read</p>
-              <h2 className="font-playfair" style={{ fontSize: 'clamp(24px, 3.5vw, 36px)', color: 'var(--ink)', marginBottom: 0 }}>Popular Disease Guides</h2>
-            </div>
-            <Link href="/diseases" style={{ display: 'inline-block', padding: '10px 24px', border: '1px solid var(--border2)', borderRadius: 100, fontSize: '0.85rem', color: 'var(--ink2)', textDecoration: 'none', fontWeight: 500 }}>
-              View All {diseases.length > 0 ? diseases.length + '+' : ''} Diseases →
-            </Link>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: 18 }}>
-            {hotDiseases.map(d => (
-              <Link key={d.slug} href={`/diseases/${d.slug}`} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: 26, textDecoration: 'none', display: 'block', boxShadow: 'var(--sh-sm)', transition: 'all 0.2s' }} className="hot-card">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
-                  <span style={{ background: 'var(--gold-bg)', color: 'var(--gold-dk)', padding: '3px 10px', borderRadius: 100, fontSize: '0.7rem', fontWeight: 600 }}>{d.category}</span>
-                  <span style={{ fontSize: '0.72rem', color: 'var(--ink4)' }}>📖 {d.mins} min</span>
-                </div>
-                <h3 className="font-playfair" style={{ fontSize: '1.35rem', fontWeight: 700, color: 'var(--ink)', marginBottom: 6, lineHeight: 1.2 }}>{d.title}</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--gold-dk)', fontFamily: 'var(--font-playfair), Georgia, serif', fontStyle: 'italic', marginBottom: 16 }}>{d.hindiName}</p>
-                <div style={{ borderTop: '1px solid var(--border)', paddingTop: 14, fontSize: '0.82rem', color: 'var(--gold)', fontWeight: 600 }}>Read full guide →</div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── CCRH TRUST BAND ── */}
-      <section style={{ padding: '0 clamp(16px,4vw,32px) clamp(52px,8vw,90px)' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <div style={{ background: 'linear-gradient(135deg, var(--sage-deep) 0%, #1A3D30 100%)', borderRadius: 20, padding: 'clamp(36px,6vw,56px) clamp(24px,5vw,64px)', textAlign: 'center', boxShadow: 'var(--sh-lg)' }}>
-            <div style={{ display: 'inline-block', background: 'var(--gold-bg)', color: 'var(--gold-lt)', padding: '5px 16px', borderRadius: 100, fontSize: '0.78rem', fontWeight: 600, marginBottom: 16, border: '1px solid rgba(184,145,42,0.3)' }}>
-              🏛️ Ministry of AYUSH, Government of India
-            </div>
-            <h2 className="font-playfair" style={{ color: 'white', marginBottom: 14, fontSize: 'clamp(22px, 3.5vw, 36px)' }}>Evidence-Based, Not Just Traditional</h2>
-            <p style={{ color: 'rgba(255,255,255,0.8)', maxWidth: 560, margin: '0 auto 36px', fontSize: '1rem', lineHeight: 1.75 }}>
-              All content aligns with CCRH (Central Council for Research in Homoeopathy). Every disease guide includes scientific citations and clinical evidence.
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: 48, flexWrap: 'wrap' }}>
-              {[{ n: '70+', l: 'CCRH Studies Referenced' }, { n: '15+', l: 'Years Clinical Review' }, { n: '100%', l: 'Doctor Reviewed' }].map(s => (
-                <div key={s.l}>
-                  <div className="font-playfair" style={{ fontSize: '2.2rem', fontWeight: 800, color: 'var(--gold-lt)', marginBottom: 4 }}>{s.n}</div>
-                  <div style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.7)' }}>{s.l}</div>
-                </div>
+      {/* ── DR. SHADAB ── */}
+      <section style={{ padding: 'clamp(52px,8vw,90px) clamp(16px,4vw,32px)', maxWidth: 1160, margin: '0 auto' }}>
+        <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 20, padding: 'clamp(24px,4vw,52px) clamp(20px,4vw,48px)', display: 'grid', gridTemplateColumns: '220px 1fr', gap: 48, alignItems: 'center', boxShadow: 'var(--sh)' }} className="doc-grid">
+          <div style={{ textAlign: 'center' }}>
+            <div style={{ width: 120, height: 120, borderRadius: '50%', margin: '0 auto 18px', background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 38, color: '#fff', fontWeight: 700, boxShadow: '0 4px 24px rgba(184,145,42,.3)' }}>Dr</div>
+            <div style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>Dr. Shadab Khan</div>
+            <div style={{ fontSize: 12, color: 'var(--gold-dk)', marginTop: 5, fontStyle: 'italic' }}>MD Homeopath · Reg. No. 54130</div>
+            <div style={{ display: 'flex', gap: 6, justifyContent: 'center', flexWrap: 'wrap', marginTop: 12 }}>
+              {['15+ Years', '10,000+ Patients', 'Maharashtra Council'].map(b => (
+                <span key={b} style={{ fontSize: 10, padding: '3px 9px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)' }}>{b}</span>
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ── YOUTUBE ── */}
-      {ytVideos.length > 0 && (
-        <section style={{ padding: '0 clamp(16px,4vw,32px) clamp(52px,8vw,90px)' }}>
-          <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 32, flexWrap: 'wrap', gap: 12 }}>
-              <div>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#FEE2E2', color: '#DC2626', padding: '4px 12px', borderRadius: 100, fontSize: '0.75rem', fontWeight: 600, marginBottom: 10 }}>▶ YouTube</div>
-                <h2 className="font-playfair" style={{ fontSize: 'clamp(22px, 3vw, 32px)', color: 'var(--ink)', marginBottom: 0 }}>Watch &amp; Learn — Dr. Shadab Explains</h2>
-              </div>
-              <a href="https://www.youtube.com/@drshadabshomoeopathy" target="_blank" rel="noopener noreferrer"
-                style={{ color: '#DC2626', textDecoration: 'none', fontWeight: 600, fontSize: '0.85rem', background: '#FEE2E2', padding: '8px 16px', borderRadius: 8 }}>
-                Subscribe →
-              </a>
-            </div>
-            <YouTubeSection videos={ytVideos} />
-          </div>
-        </section>
-      )}
-
-      {/* ── DR. SHADAB ── */}
-      <section style={{ padding: '0 clamp(16px,4vw,32px) clamp(60px,9vw,100px)' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 20, padding: 'clamp(32px,5vw,48px)', display: 'grid', gridTemplateColumns: '240px 1fr', gap: 40, alignItems: 'center', boxShadow: 'var(--sh)' }} className="expert-section">
-            <Image src="/dr-shadab.png" alt="Dr. Shadab Khan MD Homeopath" width={240} height={280} style={{ width: '100%', height: '280px', borderRadius: 16, objectFit: 'cover', objectPosition: 'top', border: '2px solid var(--border2)' }} />
-            <div>
-              <div style={{ display: 'inline-block', background: 'var(--gold-bg)', color: 'var(--gold-dk)', padding: '4px 14px', borderRadius: 100, fontSize: '0.75rem', fontWeight: 600, marginBottom: 14, fontStyle: 'italic' }}>✦ Medically Reviewed Content</div>
-              <h2 className="font-playfair" style={{ fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', marginBottom: 6, color: 'var(--ink)' }}>Dr. Shadab Khan</h2>
-              <p style={{ color: 'var(--gold-dk)', fontWeight: 600, marginBottom: 16, fontSize: '0.9rem' }}>MD (Homoeopathy) • Reg. No. 54130 • 15+ Years</p>
-              <p style={{ marginBottom: 20, fontSize: '0.95rem', lineHeight: 1.8, color: 'var(--ink3)' }}>
-                Every article on HomeoPedia is personally reviewed by Dr. Shadab Khan. He has treated 10,000+ patients across India through in-person and online consultations.
-              </p>
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 24 }}>
-                {['MD Homeopath', '15+ Years', '10,000+ Patients', 'CCRH Aligned'].map(tag => (
-                  <span key={tag} style={{ background: 'var(--sage-light)', color: 'var(--sage-deep)', padding: '5px 13px', borderRadius: 100, fontSize: '0.78rem', fontWeight: 600 }}>{tag}</span>
-                ))}
-              </div>
-              <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-                <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer"
-                  style={{ background: '#22C55E', color: 'white', padding: '11px 22px', borderRadius: 10, fontWeight: 600, textDecoration: 'none', fontSize: '0.88rem' }}>
-                  💬 WhatsApp Consultation
-                </a>
-                <Link href="/about" style={{ background: 'var(--bg2)', color: 'var(--ink2)', padding: '11px 22px', borderRadius: 10, fontWeight: 600, textDecoration: 'none', border: '1px solid var(--border)', fontSize: '0.88rem' }}>
-                  Know More →
-                </Link>
-              </div>
-            </div>
+          <div>
+            <SL c="Medically Reviewed" />
+            <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 30, fontWeight: 700, color: 'var(--ink)', margin: '12px 0 16px' }}>Every Article Personally Reviewed</h2>
+            <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, fontWeight: 300, marginBottom: 24 }}>
+              HomeoPedia pe har article Dr. Shadab Khan ne personally review kiya hai. 15+ saal ki clinical experience aur 10,000+ patients ki real-world knowledge se backed content — sirf aapke liye, bilkul free.
+            </p>
+            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600, boxShadow: '0 4px 16px rgba(37,162,68,.3)' }}>
+              📲 WhatsApp Consultation
+            </a>
           </div>
         </div>
       </section>
 
+      {/* ── YOUTUBE SECTION ── */}
+      <section style={{ padding: '0 clamp(16px,4vw,32px) clamp(52px,8vw,90px)', maxWidth: 1160, margin: '0 auto' }}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <SL c="Watch & Learn" />
+          <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(28px,4vw,42px)', fontWeight: 700, color: 'var(--ink)' }}>Dr. Shadab Explains</h2>
+          <Orn />
+          <p style={{ fontSize: 14, color: 'var(--ink3)', marginTop: 8, fontWeight: 300 }}>Simple language mein — new videos every week on YouTube</p>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 16 }} className="grid-auto">
+          {videos.slice(0, 4).map((v) => (
+            <a key={v.id} href={`https://youtube.com/watch?v=${v.id}`} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', overflow: 'hidden' }}>
+                <div style={{ position: 'relative' }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`https://img.youtube.com/vi/${v.id}/mqdefault.jpg`} alt={v.title} style={{ width: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', inset: 0, background: 'rgba(26,21,16,.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <div style={{ width: 44, height: 44, borderRadius: '50%', background: 'rgba(255,255,255,.92)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 2px 12px rgba(0,0,0,.2)' }}>
+                      <span style={{ color: 'var(--gold-dk)', fontSize: 16, marginLeft: 3 }}>▶</span>
+                    </div>
+                  </div>
+                </div>
+                <div style={{ padding: '14px 16px' }}>
+                  <div style={{ fontSize: 11, color: 'var(--gold-dk)', fontWeight: 500, marginBottom: 5 }}>{v.topic}</div>
+                  <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--ink)', lineHeight: 1.55, marginBottom: 6 }}>{v.title}</div>
+                  <div style={{ fontSize: 11, color: 'var(--ink4)' }}>{v.date}</div>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 24 }}>
+          <Link href="/blog" style={{ display: 'inline-block', padding: '12px 26px', border: '1px solid var(--border2)', background: 'var(--card)', color: 'var(--ink2)', borderRadius: 100, fontSize: 14, fontWeight: 500, textDecoration: 'none' }}>
+            ▶ View All Videos
+          </Link>
+        </div>
+      </section>
+
+      {/* WhatsApp FAB */}
+      <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="fab">📲</a>
     </div>
   )
 }
