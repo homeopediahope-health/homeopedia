@@ -11,6 +11,9 @@ export const disease = defineType({
     defineField({ name: 'metaTitle', title: 'SEO Title', type: 'string' }),
     defineField({ name: 'metaDescription', title: 'SEO Description (150 chars)', type: 'text', rows: 2 }),
     defineField({ name: 'heroText', title: 'Intro Text (50 words)', type: 'text', rows: 3 }),
+    defineField({ name: 'causes', title: 'Causes — Ye Bimari Kyun Hoti Hai', type: 'array', of: [{ type: 'string' }] }),
+    defineField({ name: 'riskFactors', title: 'Risk Factors — Kise Zyada Hoti Hai', type: 'array', of: [{ type: 'string' }] }),
+    defineField({ name: 'complications', title: 'Complications — Agar Treat Na Karein To', type: 'array', of: [{ type: 'string' }] }),
     defineField({
       name: 'quickFacts',
       title: 'Quick Facts Box',
