@@ -225,7 +225,19 @@ export const disease = defineType({
       })],
     }),
     defineField({ name: 'selfCheck', title: 'Self Check Message', type: 'string' }),
-    defineField({ name: 'youtubeUrl', title: 'YouTube Video URL', type: 'url' }),
+    defineField({ name: 'youtubeUrl', title: 'YouTube Video URL (Main)', type: 'url' }),
+    defineField({
+      name: 'youtubeVideos',
+      title: 'YouTube Videos (Multiple — 2, 3, 4 videos)',
+      type: 'array',
+      of: [defineArrayMember({
+        type: 'object',
+        fields: [
+          { name: 'title', title: 'Video Title (e.g. Sciatica ka ilaj)', type: 'string' },
+          { name: 'url', title: 'YouTube URL', type: 'url' },
+        ],
+      })],
+    }),
     defineField({ name: 'publishedAt', title: 'Publish Date', type: 'datetime' }),
   ],
   preview: {

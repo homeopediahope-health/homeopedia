@@ -254,12 +254,38 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                   ))}
                 </div>
               ))}
-              {disease.youtubeUrl && (
+              {/* Videos — single or multiple */}
+              {(disease.youtubeUrl || disease.youtubeVideos?.length > 0) && (
                 <div style={{ marginTop: 28 }}>
-                  <div style={{ aspectRatio: '16/9', borderRadius: 12, overflow: 'hidden', background: '#000' }}>
-                    <iframe src={(() => { const u = disease.youtubeUrl; const m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/); return m ? `https://www.youtube.com/embed/${m[1]}` : u })()} style={{ width: '100%', height: '100%' }} allowFullScreen title={`Dr. Shadab explains ${disease.title}`} />
-                  </div>
-                  <p style={{ fontSize: 12, color: 'var(--ink4)', textAlign: 'center', marginTop: 8 }}>Dr. Shadab Khan explains {disease.title}</p>
+                  <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)', marginBottom: 14 }}>📺 Dr. Shadab Khan ke Videos</h3>
+                  {/* Multiple videos grid */}
+                  {disease.youtubeVideos?.length > 0 ? (
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16 }}>
+                      {disease.youtubeVideos.map((v: any, i: number) => {
+                        const m = v.url?.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
+                        const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : v.url
+                        return (
+                          <div key={i}>
+                            <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
+                              <iframe src={embedUrl} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={v.title || `Video ${i + 1}`} />
+                            </div>
+                            {v.title && <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 6, textAlign: 'center', fontWeight: 400 }}>{v.title}</p>}
+                          </div>
+                        )
+                      })}
+                    </div>
+                  ) : disease.youtubeUrl ? (
+                    /* Single video */
+                    (() => {
+                      const m = disease.youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
+                      const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : disease.youtubeUrl
+                      return (
+                        <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
+                          <iframe src={embedUrl} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={`Dr. Shadab explains ${disease.title}`} />
+                        </div>
+                      )
+                    })()
+                  ) : null}
                 </div>
               )}
             </section>
