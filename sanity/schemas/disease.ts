@@ -120,6 +120,24 @@ export const disease = defineType({
         ],
       })],
     }),
+    defineField({ name: 'dietTip', title: 'Diet Pro Tip (gold box)', type: 'text', rows: 2 }),
+    defineField({ name: 'dietNote', title: 'Diet Important Note (green box)', type: 'text', rows: 2 }),
+    defineField({
+      name: 'weeklyPlan',
+      title: 'Weekly Meal Plan (7 Din Ka Chart)',
+      type: 'array',
+      of: [defineArrayMember({
+        type: 'object',
+        fields: [
+          { name: 'day', title: 'Din (e.g. Somwar / Monday)', type: 'string' },
+          { name: 'breakfast', title: 'Subah Ka Naashta', type: 'string' },
+          { name: 'midMorning', title: 'Mid Morning (10-11 AM)', type: 'string' },
+          { name: 'lunch', title: 'Dopahar Ka Khaana', type: 'string' },
+          { name: 'evening', title: 'Shaam Ka Naashta (4-5 PM)', type: 'string' },
+          { name: 'dinner', title: 'Raat Ka Khaana', type: 'string' },
+        ],
+      })],
+    }),
     defineField({
       name: 'lifestyle',
       title: 'Lifestyle Tips',
@@ -170,7 +188,7 @@ export const disease = defineType({
         ],
       })],
     }),
-    defineField({ name: 'category', title: 'Category', type: 'string', options: { list: ['Skin','Joints','Digestive','Mental','Women\'s','Respiratory','Hair','Endocrine'] } }),
+    defineField({ name: 'category', title: 'Category', type: 'string', options: { list: ['Skin','Joints','Digestive','Mental','Women\'s','Respiratory','Hair','Endocrine','Neurological'] } }),
     defineField({ name: 'relatedDiseases', title: 'Related Diseases (names)', type: 'array', of: [{ type: 'string' }] }),
     defineField({
       name: 'exercise',
