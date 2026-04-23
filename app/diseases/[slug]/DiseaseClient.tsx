@@ -109,13 +109,12 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
-  const facts = [
-    ['Condition', disease.quickFacts?.whatItIs || 'Chronic'],
-    ['India Prevalence', disease.quickFacts?.howCommon || 'Common'],
-    ['CCRH Research', disease.ccrhEvidence?.citation ? `✓ ${(disease.ccrhEvidence.citation.match(/\d{4}/) || [''])[0]} Peer-Reviewed Study` : '✓ Evidence Based'],
-    ['Treatment', disease.quickFacts?.treatmentDuration || '4-12 months'],
-    ['Success Rate', disease.ccrhEvidence?.improvementRate || '60-70%'],
-  ]
+  const WOW_FACTS = [
+    disease.quickFacts?.whatItIs   && { emoji: '🧠', label: 'Ye Bimari Kya Hai',       value: disease.quickFacts.whatItIs },
+    disease.quickFacts?.howCommon  && { emoji: '🇮🇳', label: 'India Mein Kitni Common', value: disease.quickFacts.howCommon },
+    disease.quickFacts?.treatmentDuration && { emoji: '🕐', label: 'Treatment Duration', value: disease.quickFacts.treatmentDuration },
+    disease.ccrhEvidence?.citation && { emoji: '🔬', label: 'Research',                 value: `Peer-Reviewed Study (${(disease.ccrhEvidence.citation.match(/\d{4}/) || [''])[0]})` },
+  ].filter(Boolean) as { emoji: string; label: string; value: string }[]
 
   const reviewDate = disease.publishedAt
     ? new Date(disease.publishedAt).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })
@@ -157,14 +156,19 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
 
           {/* Quick Facts */}
           <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '26px', boxShadow: 'var(--sh)' }}>
-            <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--gold-dk)', fontWeight: 600, marginBottom: 14, textTransform: 'uppercase' }}>Quick Facts</div>
-            {facts.map(([k, v]) => (
-              <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '9px 0', borderBottom: '1px solid var(--border)', fontSize: 13 }}>
-                <span style={{ color: 'var(--ink4)' }}>{k}</span>
-                <span style={{ color: 'var(--ink2)', fontWeight: 500 }}>{v}</span>
-              </div>
-            ))}
-            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', marginTop: 18, padding: '13px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, boxShadow: '0 3px 12px rgba(37,162,68,.25)' }}>
+            <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--gold-dk)', fontWeight: 600, marginBottom: 16, textTransform: 'uppercase' }}>✦ Did You Know?</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 18 }}>
+              {WOW_FACTS.map((f, i) => (
+                <div key={i} style={{ display: 'flex', gap: 12, padding: '12px 14px', background: i % 2 === 0 ? 'rgba(184,145,42,.05)' : 'var(--bg2)', borderRadius: 10, border: '1px solid var(--border)', alignItems: 'flex-start' }}>
+                  <span style={{ fontSize: 20, flexShrink: 0, lineHeight: 1 }}>{f.emoji}</span>
+                  <div>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 3 }}>{f.label}</div>
+                    <div style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55, fontWeight: 400 }}>{f.value}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', padding: '13px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, boxShadow: '0 3px 12px rgba(37,162,68,.25)' }}>
               📲 Consult Dr. Shadab
             </a>
           </div>
