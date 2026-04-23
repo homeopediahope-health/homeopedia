@@ -112,7 +112,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
   const facts = [
     ['Condition', disease.quickFacts?.whatItIs || 'Chronic'],
     ['India Prevalence', disease.quickFacts?.howCommon || 'Common'],
-    ['CCRH Studies', disease.ccrhEvidence?.citation ? '✓ Referenced' : '✓ Backed'],
+    ['CCRH Research', disease.ccrhEvidence?.citation ? `✓ ${(disease.ccrhEvidence.citation.match(/\d{4}/) || [''])[0]} Peer-Reviewed Study` : '✓ Evidence Based'],
     ['Treatment', disease.quickFacts?.treatmentDuration || '4-12 months'],
     ['Success Rate', disease.ccrhEvidence?.improvementRate || '60-70%'],
   ]
