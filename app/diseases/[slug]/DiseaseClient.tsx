@@ -257,7 +257,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
               {disease.youtubeUrl && (
                 <div style={{ marginTop: 28 }}>
                   <div style={{ aspectRatio: '16/9', borderRadius: 12, overflow: 'hidden', background: '#000' }}>
-                    <iframe src={disease.youtubeUrl.replace('watch?v=', 'embed/')} style={{ width: '100%', height: '100%' }} allowFullScreen title={`Dr. Shadab explains ${disease.title}`} />
+                    <iframe src={(() => { const u = disease.youtubeUrl; const m = u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/); return m ? `https://www.youtube.com/embed/${m[1]}` : u })()} style={{ width: '100%', height: '100%' }} allowFullScreen title={`Dr. Shadab explains ${disease.title}`} />
                   </div>
                   <p style={{ fontSize: 12, color: 'var(--ink4)', textAlign: 'center', marginTop: 8 }}>Dr. Shadab Khan explains {disease.title}</p>
                 </div>
