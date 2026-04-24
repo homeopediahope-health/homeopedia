@@ -12,6 +12,7 @@ const ALL_DISEASES = [
   { slug: 'lichen',      title: 'Lichen Planus',       hindi: 'लाइकेन',           cat: 'Skin',        min: 5 },
   { slug: 'sciatica',    title: 'Sciatica',            hindi: 'सायटिका',          cat: 'Joints',      min: 5, hot: true },
   { slug: 'arthritis',   title: 'Arthritis',           hindi: 'गठिया',            cat: 'Joints',      min: 6 },
+  { slug: 'disc-bulge',  title: 'Disc Bulge',          hindi: 'डिस्क खिसकना',     cat: 'Joints',      min: 7 },
   { slug: 'backpain',    title: 'Back Pain',           hindi: 'कमर दर्द',         cat: 'Joints',      min: 5 },
   { slug: 'rheumatoid-arthritis', title: 'Rheumatoid Arthritis', hindi: 'रूमेटाइड आर्थराइटिस', cat: 'Joints', min: 7, hot: true },
   { slug: 'gout',        title: 'Gout',                hindi: 'गाउट',             cat: 'Joints',      min: 5 },
