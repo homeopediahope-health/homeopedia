@@ -1,7 +1,14 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getDiseaseBySlug, getRelatedDiseases } from '@/lib/queries'
+import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases } from '@/lib/queries'
 import DiseaseClient from './DiseaseClient'
+
+export const revalidate = 86400
+
+export async function generateStaticParams() {
+  const diseases = await getAllDiseases()
+  return diseases.map((d: any) => ({ slug: d.slug.current }))
+}
 
 type Props = { params: Promise<{ slug: string }> }
 
