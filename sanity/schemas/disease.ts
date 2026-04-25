@@ -54,6 +54,7 @@ export const disease = defineType({
           { name: 'treatmentApproach', title: 'Homeopathy Treatment Approach', type: 'text', rows: 3 },
           { name: 'whoGetsIt', title: 'Who Gets It (demographics)', type: 'string' },
           { name: 'skincareTips', title: 'Skincare Tips for this type', type: 'array', of: [{ type: 'string' }] },
+          { name: 'diseasePageSlug', title: 'Link to Disease Page (slug, e.g. psoriatic-arthritis)', type: 'string' },
         ],
       })],
     }),

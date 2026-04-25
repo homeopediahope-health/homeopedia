@@ -52,47 +52,6 @@ function SecHead({ title, sub }: { title: string; sub?: string }) {
 export default function DiseaseClient({ disease, related }: { disease: any; related: any[] }) {
   const [activeSection, setActiveSection] = useState('overview')
 
-  // JSON-LD structured data
-  useEffect(() => {
-    document.querySelectorAll('script[data-ld]').forEach(s => s.remove())
-
-    if (disease.faqs?.length > 0) {
-      const s = document.createElement('script')
-      s.type = 'application/ld+json'
-      s.setAttribute('data-ld', 'faq')
-      s.text = JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'FAQPage',
-        mainEntity: disease.faqs.map((f: any) => ({
-          '@type': 'Question',
-          name: f.question,
-          acceptedAnswer: { '@type': 'Answer', text: f.answer }
-        }))
-      })
-      document.head.appendChild(s)
-    }
-
-    const s2 = document.createElement('script')
-    s2.type = 'application/ld+json'
-    s2.setAttribute('data-ld', 'medical')
-    s2.text = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'MedicalCondition',
-      name: disease.title,
-      alternateName: disease.hindiName,
-      description: disease.heroText,
-      relevantSpecialty: 'Homeopathy',
-      possibleTreatment: {
-        '@type': 'MedicalTherapy',
-        name: 'Homeopathic Treatment',
-        description: 'Homeopathic treatment by Dr. Shadab Khan MD Homoeopathy, Reg. No. 54130'
-      }
-    })
-    document.head.appendChild(s2)
-
-    return () => { document.querySelectorAll('script[data-ld]').forEach(s => s.remove()) }
-  }, [disease])
-
   // Scroll spy
   useEffect(() => {
     const handler = () => {
@@ -238,6 +197,27 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
               </div>
             )}
           </section>
+
+          {/* TYPES */}
+          {disease.types?.length > 0 && (
+            <section id="types" style={{ marginBottom: 52 }}>
+              <SecHead title={`${disease.title} Ke Prakar`} sub="Har type alag hoti hai — sahi diagnosis treatment ko guide karta hai" />
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
+                {disease.types.map((t: any) => (
+                  <div key={t._key} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px', position: 'relative' }}>
+                    {t.percentage && <span style={{ position: 'absolute', top: 14, right: 14, fontSize: 10, padding: '3px 8px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', fontWeight: 600 }}>{t.percentage}</span>}
+                    <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 16, fontWeight: 700, color: 'var(--ink)', marginBottom: 8, paddingRight: t.percentage ? 60 : 0 }}>{t.name}</div>
+                    {t.description && <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>{t.description}</p>}
+                    {t.diseasePageSlug && (
+                      <Link href={`/diseases/${t.diseasePageSlug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 12, fontSize: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>
+                        Poora guide padhein →
+                      </Link>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* SYMPTOMS */}
           {disease.symptoms?.length > 0 && (
@@ -510,6 +490,16 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             </div>
           </section>
 
+          {/* Mid-content WhatsApp CTA */}
+          <div style={{ background: 'linear-gradient(135deg,#1a6b33,#25a244)', borderRadius: 14, padding: '22px 24px', marginBottom: 52, display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
+            <div style={{ fontSize: 34, flexShrink: 0 }}>📲</div>
+            <div style={{ flex: 1, minWidth: 200 }}>
+              <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 4 }}>Online Consultation — Dr. Shadab Khan</div>
+              <p style={{ fontSize: 13, color: 'rgba(255,255,255,.8)', fontWeight: 300, margin: 0 }}>{disease.title} ka personalized homeopathic treatment plan — apna case WhatsApp pe share karein</p>
+            </div>
+            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ flexShrink: 0, padding: '12px 22px', background: '#fff', color: '#1a6b33', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap' }}>WhatsApp Karein →</a>
+          </div>
+
           {/* FAQ */}
           <section id="faq" style={{ marginBottom: 52 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6 }}>
@@ -540,9 +530,28 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
               {disease.sources.map((s: any, i: number) => (
                 <div key={i} style={{ display: 'flex', gap: 8, fontSize: 12, color: 'var(--ink4)', marginBottom: 6 }}>
                   <span style={{ flexShrink: 0 }}>[{i + 1}]</span>
-                  <span>{s.url ? <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold-dk)', textDecoration: 'underline' }}>{s.name}</a> : s.name}{s.year && ` (${s.year})`}</span>
+                  <span>{s.name}{s.year && ` (${s.year})`}</span>
                 </div>
               ))}
+            </section>
+          )}
+          {/* Ye Bhi Padein */}
+          {related.length > 0 && (
+            <section style={{ marginBottom: 40 }}>
+              <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>Ye Bhi Padein</h2>
+              <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 20, fontWeight: 300 }}>Related conditions jo aapke kaam aa sakti hain</p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(190px,1fr))', gap: 12 }}>
+                {related.map((r: any) => (
+                  <Link key={r.slug?.current} href={`/diseases/${r.slug?.current}`} style={{ textDecoration: 'none' }}>
+                    <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '18px', cursor: 'pointer', height: '100%' }}>
+                      <div style={{ fontSize: 11, color: 'var(--ink4)', marginBottom: 8 }}>{r.category || 'Homeopathy'}</div>
+                      <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{r.title}</div>
+                      {r.hindiName && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-playfair,Georgia,serif)', marginBottom: 10 }}>{r.hindiName}</div>}
+                      <div style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>Read guide →</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
             </section>
           )}
         </div>
@@ -553,7 +562,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             <div style={{ fontSize: 28, marginBottom: 8 }}>📲</div>
             <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>Consult Dr. Shadab</div>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,.7)', marginBottom: 16, fontWeight: 300 }}>Personal consultation — case dekh ke treatment plan</p>
-            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '12px', background: '#25d366', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>WhatsApp — Free</a>
+            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '12px', background: '#25d366', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>WhatsApp Karein</a>
             <a href="tel:+918983458889" style={{ display: 'block', padding: '10px', background: 'rgba(255,255,255,.1)', color: 'rgba(255,255,255,.85)', borderRadius: 9, textDecoration: 'none', fontSize: 12, border: '1px solid rgba(255,255,255,.15)' }}>📞 8983458889</a>
           </div>
 

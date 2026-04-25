@@ -1,0 +1,61 @@
+================================================================
+HOMEOPEDIA.IN — BLOG ARTICLE PROFORMA TEMPLATE
+Ye Claude AI mein bharo, review karo, fir mujhe do
+Main SEO title, headings, meta sab optimize karke
+blog mein daal dunga
+================================================================
+
+TOPIC / MAIN IDEA:
+
+
+TARGET KEYWORD (jo log Google mein search karte hain):
+(e.g. "psoriasis stress se kaise hota hai")
+
+ARTICLE TYPE:
+[ ] Disease awareness     [ ] Diet guide
+[ ] Homeopathy vs Allopathy comparison
+[ ] Symptom guide         [ ] Patient story / case
+[ ] Lifestyle tips        [ ] Myth vs Fact
+
+----------------------------------------------------------------
+HOOK — Pehla sentence jo reader ko rokde:
+(e.g. "Kya aapka psoriasis har tension ke baad badh jaata hai?")
+
+
+----------------------------------------------------------------
+MAIN CONTENT
+(Points mein likhein — main jo website pe alag alag heading
+se likhega. Jitna detail do utna achha.)
+
+POINT 1 — Heading:
+Content:
+
+POINT 2 — Heading:
+Content:
+
+POINT 3 — Heading:
+Content:
+
+POINT 4 — Heading:
+Content:
+
+POINT 5 — Heading (optional):
+Content:
+
+----------------------------------------------------------------
+AAPKA CLINICAL ANGLE
+(Ek real anonymous patient ka experience ya aapki observation
+— ye E-E-A-T ke liye bahut important hai):
+
+
+----------------------------------------------------------------
+CONCLUSION + CALL TO ACTION:
+(Reader ko agle step kya lena chahiye — WhatsApp, diet, etc.)
+
+
+----------------------------------------------------------------
+INTERNAL LINKS (kaunse pages se link hoga):
+(e.g. Psoriasis disease page, Diet chart page)
+
+
+================================================================

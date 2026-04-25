@@ -3,7 +3,7 @@ import SL from '@/components/SL'
 
 export const metadata: Metadata = {
   title: 'Contact Dr. Shadab Khan — Homeopathy Consultation',
-  description: 'Dr. Shadab Khan MD Homoeopathy se consultation lein — WhatsApp, phone ya clinic visit. Akola, Maharashtra. Free first advice on WhatsApp.',
+  description: 'Dr. Shadab Khan MD Homoeopathy se consultation lein — WhatsApp, phone ya clinic visit. Akola, Maharashtra.',
 }
 
 export default function ContactPage() {

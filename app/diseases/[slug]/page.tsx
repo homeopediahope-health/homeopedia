@@ -48,5 +48,35 @@ export default async function DiseasePage({ params }: Props) {
 
   if (!disease) notFound()
 
-  return <DiseaseClient disease={disease} related={related} />
+  const faqSchema = disease.faqs?.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: disease.faqs.map((f: any) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer }
+    }))
+  } : null
+
+  const medicalSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalCondition',
+    name: disease.title,
+    alternateName: disease.hindiName,
+    description: disease.heroText,
+    relevantSpecialty: 'Homeopathy',
+    possibleTreatment: {
+      '@type': 'MedicalTherapy',
+      name: 'Homeopathic Treatment',
+      description: 'Homeopathic treatment by Dr. Shadab Khan MD Homoeopathy, Reg. No. 54130'
+    }
+  }
+
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
+      {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
+      <DiseaseClient disease={disease} related={related} />
+    </>
+  )
 }

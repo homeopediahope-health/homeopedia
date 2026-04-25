@@ -342,7 +342,7 @@ export default async function HomePage() {
             </p>
             <a href="https://wa.me/918983458889?text=Namaste%20Dr.%20Shadab%2C%20maine%20sab%20try%20kar%20liya%20hai%2C%20ek%20baar%20aapse%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 30px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 4px 20px rgba(37,162,68,.4)' }}>
-              📲 Free Second Opinion Lein — WhatsApp Pe
+              📲 Consultation Lein — WhatsApp Pe
             </a>
           </div>
         </div>

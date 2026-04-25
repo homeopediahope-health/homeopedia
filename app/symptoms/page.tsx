@@ -57,8 +57,8 @@ export default async function SymptomsPage() {
         {/* CTA */}
         <div style={{ marginTop: 48, textAlign: 'center', padding: '32px', background: 'rgba(184,145,42,.06)', border: '1px solid rgba(184,145,42,.2)', borderRadius: 14 }}>
           <p style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 17, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Apna Symptom Nahi Mila?</p>
-          <p style={{ fontSize: 13, color: 'var(--ink3)', marginBottom: 16, fontWeight: 300 }}>Dr. Shadab se seedha poochho — WhatsApp pe free guidance milti hai</p>
-          <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 13, fontWeight: 600 }}>📲 WhatsApp — Free</a>
+          <p style={{ fontSize: 13, color: 'var(--ink3)', marginBottom: 16, fontWeight: 300 }}>Dr. Shadab se seedha poochho — apna case WhatsApp pe share karein</p>
+          <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 13, fontWeight: 600 }}>📲 WhatsApp Karein</a>
         </div>
       </div>
 

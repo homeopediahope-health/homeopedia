@@ -4,7 +4,7 @@ import Link from 'next/link'
 import SL from '@/components/SL'
 
 const ALL_DISEASES = [
-  { slug: 'psoriasis',   title: 'Psoriasis',          hindi: 'सोरायसिस',          cat: 'Skin',        min: 7, hot: true },
+  { slug: 'psoriasis',   title: 'Psoriasis',          hindi: 'चम्बल (सोरायसिस)', cat: 'Skin',        min: 12, hot: true },
   { slug: 'eczema',      title: 'Eczema',              hindi: 'एक्जिमा',           cat: 'Skin',        min: 5 },
   { slug: 'vitiligo',    title: 'Vitiligo',            hindi: 'सफेद दाग',          cat: 'Skin',        min: 6 },
   { slug: 'acne',        title: 'Acne',                hindi: 'मुहांसे',           cat: 'Skin',        min: 4 },
@@ -14,6 +14,7 @@ const ALL_DISEASES = [
   { slug: 'arthritis',   title: 'Arthritis',           hindi: 'गठिया',            cat: 'Joints',      min: 6 },
   { slug: 'disc-bulge',  title: 'Disc Bulge',          hindi: 'डिस्क खिसकना',     cat: 'Joints',      min: 7 },
   { slug: 'backpain',    title: 'Back Pain',           hindi: 'कमर दर्द',         cat: 'Joints',      min: 5 },
+  { slug: 'psoriatic-arthritis', title: 'Psoriatic Arthritis', hindi: 'चम्बल वाला गठिया', cat: 'Joints', min: 10 },
   { slug: 'rheumatoid-arthritis', title: 'Rheumatoid Arthritis', hindi: 'रूमेटाइड आर्थराइटिस', cat: 'Joints', min: 7, hot: true },
   { slug: 'gout',        title: 'Gout',                hindi: 'गाउट',             cat: 'Joints',      min: 5 },
   { slug: 'ibs',         title: 'IBS',                 hindi: 'आईबीएस',           cat: 'Digestive',   min: 6, hot: true },
@@ -28,13 +29,14 @@ const ALL_DISEASES = [
   { slug: 'menstrual',   title: 'Irregular Periods',   hindi: 'अनियमित माहवारी',  cat: "Women's",     min: 5 },
   { slug: 'menopause',   title: 'Menopause',           hindi: 'रजोनिवृत्ति',      cat: "Women's",     min: 6 },
   { slug: 'leucorrhoea', title: 'Leucorrhoea',         hindi: 'श्वेत प्रदर',      cat: "Women's",     min: 4 },
-  { slug: 'hairfall',    title: 'Hair Fall',           hindi: 'बाल झड़ना',        cat: 'Hair',        min: 4 },
+  { slug: 'hairfall',    title: 'Hair Fall',           hindi: 'बाल झड़ना',        cat: 'Hair',        min: 8 },
   { slug: 'alopecia',    title: 'Alopecia Areata',     hindi: 'गंजापन',           cat: 'Hair',        min: 6, hot: true },
   { slug: 'dandruff',    title: 'Dandruff',            hindi: 'रूसी',             cat: 'Hair',        min: 3 },
   { slug: 'asthma',      title: 'Asthma',              hindi: 'दमा',              cat: 'Respiratory', min: 6 },
   { slug: 'allergy',     title: 'Allergic Rhinitis',   hindi: 'एलर्जी',           cat: 'Respiratory', min: 4 },
   { slug: 'sinusitis',   title: 'Sinusitis',           hindi: 'साइनसाइटिस',       cat: 'Respiratory', min: 5 },
-  { slug: 'thyroid',     title: 'Thyroid',             hindi: 'थायरॉइड',          cat: 'Endocrine',   min: 6, hot: true },
+  { slug: 'thyroid',       title: 'Hypothyroidism',      hindi: 'थायरॉइड की कमी',    cat: 'Endocrine',   min: 10, hot: true },
+  { slug: 'hyperthyroidism', title: 'Hyperthyroidism',  hindi: 'थायरॉइड का बढ़ना',  cat: 'Endocrine',   min: 9 },
   { slug: 'diabetes',    title: 'Diabetes',            hindi: 'मधुमेह',           cat: 'Endocrine',   min: 6 },
   { slug: 'obesity',     title: 'Obesity',             hindi: 'मोटापा',           cat: 'Endocrine',   min: 5 },
   { slug: 'kidney',      title: 'Kidney Stones',       hindi: 'पथरी',             cat: 'Urinary',     min: 5 },

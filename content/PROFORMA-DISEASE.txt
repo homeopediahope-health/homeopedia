@@ -1,0 +1,194 @@
+================================================================
+HOMEOPEDIA.IN — DISEASE PROFORMA TEMPLATE
+Ye Claude AI mein bharo, review karo, fir mujhe do
+================================================================
+
+DISEASE NAME (English):
+HINDI NAME (e.g. Chambal, Vaat Rog):
+CATEGORY: [Skin / Joints / Digestive / Mental / Women's / Respiratory / Hair / Endocrine / Urinary]
+
+SEO TITLE (60 chars max):
+SEO DESCRIPTION (150 chars max):
+
+----------------------------------------------------------------
+YE BIMARI KYA HAI (3-4 lines, simple Hinglish):
+
+
+----------------------------------------------------------------
+CAUSES (4-6 points):
+-
+-
+-
+-
+
+RISK FACTORS — Kise zyada hoti hai (4-6):
+-
+-
+-
+-
+
+COMPLICATIONS — Agar treat na karein to (3-4):
+-
+-
+-
+
+----------------------------------------------------------------
+SYMPTOMS
+
+GROUP 1 NAME:
+-
+-
+-
+
+GROUP 2 NAME:
+-
+-
+-
+
+GROUP 3 NAME (optional):
+-
+-
+
+----------------------------------------------------------------
+HOMEOPATHY KAISE KAAM KARTA HAI IS BIMARI MEIN
+(2-3 lines — patient level, reason ke saath):
+
+
+CCRH IMPROVEMENT RATE (e.g. 72% patients):
+CCRH AVG TREATMENT PERIOD:
+CCRH CITATION (journal + year):
+CCRH KEY FINDINGS:
+-
+-
+-
+
+HOMEOPATHY BENEFITS (3-5, is disease ke liye specific):
+-
+-
+-
+
+HONEST LIMITATIONS (1-2 — kab kam kaam karta hai):
+-
+-
+
+----------------------------------------------------------------
+MEDICINES
+(Potency NAHI — sirf naam, kiske liye, aur hope kyun hai)
+
+MEDICINE 1:
+  Naam:
+  Kis Type Ke Patient Ke Liye (1 line — symptoms/nature):
+  Ye Hope Kyun Hai (1-2 lines — simply explain):
+
+MEDICINE 2:
+  Naam:
+  Kis Type Ke Patient Ke Liye:
+  Ye Hope Kyun Hai:
+
+MEDICINE 3:
+  Naam:
+  Kis Type Ke Patient Ke Liye:
+  Ye Hope Kyun Hai:
+
+MEDICINE 4 (optional):
+  Naam:
+  Kis Type Ke Patient Ke Liye:
+  Ye Hope Kyun Hai:
+
+MEDICINE 5 (optional):
+  Naam:
+  Kis Type Ke Patient Ke Liye:
+  Ye Hope Kyun Hai:
+
+[Note jo automatically page pe aayega:
+"Ye medicines is bimari mein kaam karti hain — lekin
+aapke liye kaun si sahi hai, ye sirf ek qualified
+homoeopath decide kar sakta hai. Potency aur dose
+har patient ke hisaab se alag hoti hai."]
+
+----------------------------------------------------------------
+DIET
+
+KYA KHAYEIN:
+Category 1 — Naam + Emoji:
+- [food] — [kyun helpful, 1 line]
+- [food] — [reason]
+- [food] — [reason]
+
+Category 2 — Naam + Emoji:
+- [food] — [reason]
+- [food] — [reason]
+
+Category 3 — Naam + Emoji:
+- [food] — [reason]
+- [food] — [reason]
+
+KYA NA KHAYEIN:
+Category 1 — Naam + Emoji:
+- [food] — [kyun avoid, 1 line]
+- [food] — [reason]
+
+Category 2 — Naam + Emoji:
+- [food] — [reason]
+- [food] — [reason]
+
+Category 3 — Naam + Emoji:
+- [food] — [reason]
+- [food] — [reason]
+
+----------------------------------------------------------------
+DOS & DON'TS
+
+DOS — YE ZAROOR KAREIN:
+- [kya karein] — [kyun, 1 line]
+- [kya karein] — [kyun]
+- [kya karein] — [kyun]
+- [kya karein] — [kyun]
+- [kya karein] — [kyun]
+
+DON'TS — YE BILKUL MAT KAREIN:
+- [kya nahi] — [kyun nahi, 1 line]
+- [kya nahi] — [kyun nahi]
+- [kya nahi] — [kyun nahi]
+- [kya nahi] — [kyun nahi]
+- [kya nahi] — [kyun nahi]
+
+----------------------------------------------------------------
+FAQs (minimum 7 — exactly jaise patient clinic mein poochta hai)
+
+Q1:
+A1:
+
+Q2:
+A2:
+
+Q3:
+A3:
+
+Q4:
+A4:
+
+Q5:
+A5:
+
+Q6:
+A6:
+
+Q7:
+A7:
+
+----------------------------------------------------------------
+SOURCES
+Source 1: [naam] | [year] | [URL optional]
+Source 2: [naam] | [year]
+
+----------------------------------------------------------------
+EXTRAS
+YOUTUBE VIDEO URL (agar is disease pe aapka video ho):
+QUICK FACT — Condition:
+QUICK FACT — India Prevalence:
+QUICK FACT — Treatment Duration:
+REVIEW DATE:
+DOCTOR NOTE (1-2 lines — aapka personal clinical experience):
+
+================================================================

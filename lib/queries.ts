@@ -22,11 +22,17 @@ export async function getAllDiseasesDiet() {
 }
 
 export async function getRelatedDiseases(currentSlug: string, limit = 4) {
+  const current = await client.fetch(
+    `*[_type == "disease" && slug.current == $currentSlug][0]{ category }`,
+    { currentSlug }
+  )
+  const category = current?.category
+  // Same category + diseases that cross-link to this page via types[].diseasePageSlug
   return client.fetch(
-    `*[_type == "disease" && slug.current != $currentSlug] | order(publishedAt desc) [0...$limit] {
-      title, slug, metaDescription
+    `*[_type == "disease" && slug.current != $currentSlug && (category == $category || $currentSlug in types[].diseasePageSlug)] | order(publishedAt desc) [0...$limit] {
+      title, slug, hindiName, category
     }`,
-    { currentSlug, limit }
+    { currentSlug, category, limit }
   )
 }
 
