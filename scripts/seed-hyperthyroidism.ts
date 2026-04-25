@@ -36,6 +36,7 @@ async function seed() {
       { _key: 'type4', name: 'Thyroiditis', description: 'Gland mein sujan se stored hormone blood mein aa jaata hai. Ye temporary ho sakta hai — kuch mahino mein theek bhi ho jaata hai. Subacute, Hashimoto\'s, aur postpartum thyroiditis is category mein hain.' },
       { _key: 'type5', name: 'Iodine-Induced Hyperthyroidism', description: 'Zyada iodine (supplements, contrast dye, certain medicines) se trigger hota hai — especially unhe jinhein pehle se thyroid problem hai (Jod-Basedow Phenomenon).' },
       { _key: 'type6', name: 'Medication-Induced Hyperthyroidism', description: 'Thyroid ki medicines zyada dose mein lene se ya kuch dil ki dawaaon (jaise Amiodarone) se bhi temporarily hyperthyroidism ho sakta hai.' },
+      { _key: 'type7', name: 'Hypothyroidism (Thyroid ki Kami)', description: 'Thyroid jab kam hormone banaye — thakaan, weight gain, sardi zyada lagna, yaaddasht kamzor hona, kabj. Hyperthyroidism se bilkul ulta. Ye ek alag condition hai.', diseasePageSlug: 'thyroid' },
     ],
 
     causes: [

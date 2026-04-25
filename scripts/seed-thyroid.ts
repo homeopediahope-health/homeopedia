@@ -38,6 +38,7 @@ async function seed() {
       { _key: 'type6', name: 'Hashimoto\'s Thyroiditis', description: 'India mein hypothyroidism ka #1 karan. Body ki immune cells thyroid tissue ko attack karti hain. TPO antibodies se confirm hota hai. Homeopathy is type mein khaas kaam karta hai kyunki ye immune system ko address karta hai.' },
       { _key: 'type7', name: 'Postpartum Hypothyroidism', description: 'Delivery ke baad kuch mahilaaon ki thyroid temporarily ya permanently underactive ho jaati hai. Depression jaisi symptoms hoti hain isliye kai baar misdiagnose ho jaata hai.' },
       { _key: 'type8', name: 'Drug-Induced Hypothyroidism', description: 'Lithium, amiodarone jaise medicines thyroid function suppress kar sakte hain. Doctor ko saari dawaaon ke baare mein batana zaroori hai.' },
+      { _key: 'type9', name: 'Hyperthyroidism (Thyroid ka Badhna)', description: 'Thyroid jab zyada hormone banaye — tez dhadkan, wazn giarna, haath kaanpna, neend na aana. Hypothyroidism se bilkul ulta. Ye bhi ek alag condition hai jiska alag ilaaj hai.', diseasePageSlug: 'hyperthyroidism' },
     ],
 
     causes: [

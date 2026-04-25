@@ -336,7 +336,6 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                   <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '20px 22px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                       <span style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>{m.name}</span>
-                      {m.potency && <span style={{ fontSize: 11, padding: '3px 10px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.3)' }}>{m.potency}</span>}
                     </div>
                     {m.bestFor && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', marginBottom: 10 }}>Best for: {m.bestFor}</div>}
                     {m.keyIndications?.length > 0 && (
