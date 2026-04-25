@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     description: 'Evidence-based homeopathy. Disease guides, diet charts, medicines — Free. By Dr. Shadab Khan MD.',
   },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  verification: { google: '-_QyWD5Ay3ZNemUkyeHcF4XpPsHXWp-C9KxbBm1JOpQ' },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
