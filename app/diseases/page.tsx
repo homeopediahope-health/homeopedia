@@ -9,7 +9,7 @@ const ALL_DISEASES = [
   { slug: 'vitiligo',    title: 'Vitiligo',            hindi: 'सफेद दाग',          cat: 'Skin',        min: 6 },
   { slug: 'acne',        title: 'Acne',                hindi: 'मुहांसे',           cat: 'Skin',        min: 4 },
   { slug: 'urticaria',   title: 'Urticaria',           hindi: 'पित्ती',            cat: 'Skin',        min: 4 },
-  { slug: 'lichen',      title: 'Lichen Planus',       hindi: 'लाइकेन',           cat: 'Skin',        min: 5 },
+  { slug: 'lichen',      title: 'Lichen Planus',       hindi: 'लाइकेन',           cat: 'Skin',        min: 9 },
   { slug: 'sciatica',    title: 'Sciatica',            hindi: 'सायटिका',          cat: 'Joints',      min: 5, hot: true },
   { slug: 'arthritis',   title: 'Arthritis',           hindi: 'गठिया',            cat: 'Joints',      min: 6 },
   { slug: 'disc-bulge',  title: 'Disc Bulge',          hindi: 'डिस्क खिसकना',     cat: 'Joints',      min: 7 },
