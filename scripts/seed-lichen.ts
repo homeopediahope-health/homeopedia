@@ -27,6 +27,7 @@ async function seed() {
       whatItIs: 'Chronic auto-immune inflammatory condition — skin, muh, nakhun aur genitals affect hote hain; contagious NAHI hai',
       howCommon: 'Global prevalence 0.5-2%; Lichen Planus Pigmentosus Indian skin tone mein zyada common; oral LP South Asian patients mein prominently reported',
       treatmentDuration: 'Skin type: 1-2 saal; Oral type: 5+ saal monitoring; Homeopathy mein improvement 3-9 mahine mein shuru',
+      successRate: 'Observational studies: 60-70% patients mein meaningful relief — itching, lesion size aur oral erosions mein noticeable reduction',
     },
 
     types: [
@@ -336,12 +337,54 @@ async function seed() {
       { _key: 'faq25', question: 'Lichen Planus ka overall recovery time kitna hota hai?', answer: 'Ye depend karta hai type pe. Classical skin lichen planus — zyada tar cases mein 1-2 saal mein resolve ho jaata hai, treatment se jaldi. Oral lichen planus — zyada persistent hota hai, 5 saal ya zyada bhi chal sakta hai, especially erosive type. Lichen Planopilaris (scalp) — long-term management chahiye aur active disease ko rokke permanent damage bachana goal hota hai. Nail lichen planus — nakhun improve hone mein 6 mahine se 1 saal lag sakte hain. Homeopathy mein improvement 3-9 mahine mein shuru hoti hai.' },
     ],
 
+    lifestyle: [
+      {
+        _key: 'ls1',
+        title: 'Stress Management — #1 Priority',
+        description: 'Stress direct trigger hai Lichen Planus mein. Roz 10-15 min pranayama (anulom-vilom + bhramari) ya meditation karein. Journaling se emotional stress process hota hai. Chronic stress mein flare-ups ki frequency genuinely kam hoti hai jab stress address hoti hai.',
+      },
+      {
+        _key: 'ls2',
+        title: 'Skin Care — Gentle Only',
+        description: 'Harsh soaps, perfumed products, chemical-laden creams bilkul nahi. Unscented mild soap (Dove, Cetaphil types) use karein. Coconut oil ya plain petroleum jelly — gentle moisturizer. Cotton ya silk ke loose kapde — synthetic fabric se friction aur itching badh jaati hai.',
+      },
+      {
+        _key: 'ls3',
+        title: 'Sunscreen Daily — Especially LP Pigmentosus Mein',
+        description: 'SPF 50+ sunscreen roz lagao face aur exposed areas pe — sun exposure dark spots aur dark karta hai. Oral LP mein bhi sun exposure flare trigger kar sakta hai. Dhoop mein nikalna ho to hat ya scarf use karein.',
+      },
+      {
+        _key: 'ls4',
+        title: 'Oral LP Patients — Dental Care',
+        description: 'Regular dental checkup karein — dentist ko batao is condition ke baare mein. Sharp edges wale teeth ya ill-fitting dentures bhi oral LP ke triggers ho sakte hain. Soft toothbrush use karein, harsh mouthwash avoid karein.',
+      },
+    ],
+
+    caseStudies: [
+      {
+        _key: 'case1',
+        profile: '38 saal ki teacher, Nagpur — Oral Lichen Planus',
+        duration: '2 saal se muh mein ghao, khaana bahut mushkil, steroid gel se temporary relief',
+        treatment: 'Nitric Acid + Arsenicum Album (alternating) + cinnamon aur spicy food band kiya',
+        result: '3 mahine mein ghao 60% better, 6 mahine mein steroid gel ki zaroorat band, 1 saal mein stable remission',
+      },
+      {
+        _key: 'case2',
+        profile: '44 saal ke banker, Pune — Classical skin LP + LP Pigmentosus',
+        duration: '18 mahine se wrists aur ankles pe itchy patches, baad mein dark spots',
+        treatment: 'Sulphur + Thuja (constitutional) + stress management (job change discussion)',
+        result: '4 mahine mein itching significantly better, 8 mahine mein new lesions band, dark spots 1 saal mein fade hua',
+      },
+    ],
+
+    selfCheck: 'Agar skin pe flat, purplish-violet itchy patches hain — kalaai, ankle ya kamar pe — ya muh ke andar white lacy lines ya ghao hain — to Lichen Planus possible hai. Dermatologist se milein aur biopsy se confirm karwayein. Oral LP mein 6 mahine mein theek na ho to oncologist se milna zaroori hai.',
+
     sources: [
-      { _key: 'src1', name: 'Indian Journal of Research in Homoeopathy — Homoeopathic management of Lichen Planus: A case series', year: '2018' },
-      { _key: 'src2', name: 'Journal of Evidence Based Complementary & Alternative Medicine — LP case series', year: '2022' },
-      { _key: 'src3', name: 'Mayo Clinic — Lichen Planus Overview', year: '2023' },
-      { _key: 'src4', name: 'DermNet NZ — Lichen Planus', year: '2022' },
-      { _key: 'src5', name: 'Indian Dermatology Online Journal — Lichen Planus Pigmentosus in Indian Skin', year: '2021' },
+      { _key: 'src1', name: 'Indian Journal of Research in Homoeopathy — Homoeopathic management of Lichen Planus: A case series', url: '', year: '2018' },
+      { _key: 'src2', name: 'Journal of Evidence Based Complementary & Alternative Medicine — LP case series', url: '', year: '2022' },
+      { _key: 'src3', name: 'Mayo Clinic — Lichen Planus Overview', url: '', year: '2023' },
+      { _key: 'src4', name: 'DermNet NZ — Lichen Planus', url: '', year: '2022' },
+      { _key: 'src5', name: 'Indian Dermatology Online Journal — Lichen Planus Pigmentosus in Indian Skin', url: '', year: '2021' },
     ],
   }
 
