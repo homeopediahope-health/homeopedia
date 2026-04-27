@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -125,7 +126,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 </div>
               ))}
             </div>
-            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', padding: '13px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, boxShadow: '0 3px 12px rgba(37,162,68,.25)' }}>
+            <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ display: 'block', textAlign: 'center', padding: '13px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, boxShadow: '0 3px 12px rgba(37,162,68,.25)' }}>
               📲 Consult Dr. Shadab
             </a>
           </div>
@@ -494,7 +495,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
               <div style={{ fontSize: 16, fontWeight: 700, color: '#fff', marginBottom: 4 }}>Online Consultation — Dr. Shadab Khan</div>
               <p style={{ fontSize: 13, color: 'rgba(255,255,255,.8)', fontWeight: 300, margin: 0 }}>{disease.title} ka personalized homeopathic treatment plan — apna case WhatsApp pe share karein</p>
             </div>
-            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ flexShrink: 0, padding: '12px 22px', background: '#fff', color: '#1a6b33', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap' }}>WhatsApp Karein →</a>
+            <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ flexShrink: 0, padding: '12px 22px', background: '#fff', color: '#1a6b33', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 700, whiteSpace: 'nowrap' }}>WhatsApp Karein →</a>
           </div>
 
           {/* FAQ */}
@@ -572,7 +573,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             <div style={{ fontSize: 28, marginBottom: 8 }}>📲</div>
             <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>Consult Dr. Shadab</div>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,.7)', marginBottom: 16, fontWeight: 300 }}>Personal consultation — case dekh ke treatment plan</p>
-            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '12px', background: '#25d366', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>WhatsApp Karein</a>
+            <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '12px', background: '#25d366', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>WhatsApp Karein</a>
             <a href="tel:+918983458889" style={{ display: 'block', padding: '10px', background: 'rgba(255,255,255,.1)', color: 'rgba(255,255,255,.85)', borderRadius: 9, textDecoration: 'none', fontSize: 12, border: '1px solid rgba(255,255,255,.15)' }}>📞 8983458889</a>
           </div>
 
@@ -596,7 +597,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
         </div>
       </div>
 
-      <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
     </div>
   )
 }

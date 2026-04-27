@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -184,7 +185,7 @@ export default async function DietDetailPage({ params }: Props) {
             <p style={{ color: 'rgba(255,255,255,.75)', fontSize: '0.88rem', margin: 0 }}>Dr. Shadab aapki condition dekh ke customized plan banate hain</p>
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <a href={`https://wa.me/918983458889?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(diet.title)}%20ke%20liye%20diet%20advice%20chahiye`} target="_blank" rel="noopener noreferrer"
+            <a href={`${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(diet.title)}%20ke%20liye%20diet%20advice%20chahiye`} target="_blank" rel="noopener noreferrer"
               style={{ background: '#25d366', color: '#fff', padding: '12px 22px', borderRadius: 10, fontWeight: 600, textDecoration: 'none', fontSize: '0.88rem' }}>
               💬 WhatsApp Dr. Shadab
             </a>
@@ -202,7 +203,7 @@ export default async function DietDetailPage({ params }: Props) {
         </div>
       </div>
 
-      <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
     </div>
   )
 }

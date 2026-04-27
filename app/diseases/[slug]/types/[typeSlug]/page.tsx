@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { getDiseaseTypeBySlug } from '@/lib/queries'
 import { notFound } from 'next/navigation'
 import { Shield, ChevronRight, Phone } from 'lucide-react'
@@ -161,7 +162,7 @@ export default async function DiseaseTypePage({
       <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-3 z-40 md:hidden">
         <div className="flex gap-2 max-w-3xl mx-auto">
           <a
-            href="https://wa.me/918983458889?text=Namaste%20Dr.%20Shadab"
+            href="${WA_BASE}?text=Namaste%20Dr.%20Shadab"
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 bg-green-500 text-white text-sm font-semibold py-3 rounded-xl text-center"

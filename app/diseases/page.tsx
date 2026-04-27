@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
@@ -98,7 +99,7 @@ export default function DiseasesPage() {
         </div>
       </div>
 
-      <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
     </div>
   )
 }

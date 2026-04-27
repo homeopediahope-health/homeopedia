@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import SL from '@/components/SL'
 import { Metadata } from 'next'
 
@@ -42,7 +43,7 @@ export default function AboutPage() {
           <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 24, fontWeight: 700, color: 'var(--ink)', margin: '12px 0 24px', textAlign: 'center' }}>Appointment Lein</h2>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
             {[
-              { label: '📲 WhatsApp', val: '8983458889', href: 'https://wa.me/918983458889', bg: '#25d366' },
+              { label: '📲 WhatsApp', val: '8983458889', href: WA_BASE, bg: '#25d366' },
               { label: '📞 Phone Call', val: '8983458889', href: 'tel:+918983458889', bg: 'var(--gold)' },
               { label: '🎥 YouTube', val: '@drshadabshomoeopathy', href: 'https://www.youtube.com/@drshadabshomoeopathy', bg: '#ff0000' },
               { label: '🌐 Website', val: 'drshadabs.com', href: 'https://drshadabs.com', bg: 'var(--ink)' },
@@ -58,7 +59,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
     </div>
   )
 }

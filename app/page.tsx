@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import Link from 'next/link'
 import { getLatestYouTubeVideos } from '@/lib/youtube'
 import Starsvg from '@/components/Starsvg'
@@ -279,7 +280,7 @@ export default async function HomePage() {
             <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, fontWeight: 300, marginBottom: 24 }}>
               HomeoPedia pe har article Dr. Shadab Khan ne personally review kiya hai. 15+ saal ki clinical experience aur 10,000+ patients ki real-world knowledge se backed content — sirf aapke liye, bilkul free.
             </p>
-            <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600, boxShadow: '0 4px 16px rgba(37,162,68,.3)' }}>
+            <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600, boxShadow: '0 4px 16px rgba(37,162,68,.3)' }}>
               📲 WhatsApp Consultation
             </a>
           </div>
@@ -340,7 +341,7 @@ export default async function HomePage() {
             <p style={{ fontSize: 16, color: '#fff', fontWeight: 300, lineHeight: 1.8, marginBottom: 20, maxWidth: 540, margin: '0 auto 20px' }}>
               <strong style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontStyle: 'italic', color: 'var(--gold-lt)' }}>Homeopathy guarantee nahi deta</strong> — lekin ek honest second opinion deta hai. Pehle case dekho, fir decide karo.
             </p>
-            <a href="https://wa.me/918983458889?text=Namaste%20Dr.%20Shadab%2C%20maine%20sab%20try%20kar%20liya%20hai%2C%20ek%20baar%20aapse%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer"
+            <a href="${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20maine%20sab%20try%20kar%20liya%20hai%2C%20ek%20baar%20aapse%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 30px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 4px 20px rgba(37,162,68,.4)' }}>
               📲 Consultation Lein — WhatsApp Pe
             </a>
@@ -386,7 +387,7 @@ export default async function HomePage() {
       </section>
 
       {/* WhatsApp FAB */}
-      <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
     </div>
   )
 }

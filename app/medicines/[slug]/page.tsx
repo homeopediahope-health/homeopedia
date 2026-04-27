@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 'use client'
 
 import { useEffect, useState } from 'react'
@@ -95,7 +96,7 @@ export default function MedicinePage({ params }: { params: { slug: string } }) {
       <div className="mt-8 bg-green-50 border border-green-200 rounded-xl p-4 text-center">
         <p className="text-sm text-green-800 font-medium mb-3">Apne liye sahi medicine jaanein</p>
         <a
-          href="https://wa.me/918983458889?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20medicine%20ke%20baare%20mein%20guidance%20chahiye."
+          href="${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20medicine%20ke%20baare%20mein%20guidance%20chahiye."
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white text-sm font-semibold px-5 py-2 rounded-xl hover:bg-green-700 transition-colors"

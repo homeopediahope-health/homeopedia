@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import Link from 'next/link'
 
 export default function DiseaseNotFound() {
@@ -11,7 +12,7 @@ export default function DiseaseNotFound() {
       </p>
       <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
         <Link href="/diseases" style={{ padding: '12px 24px', background: 'var(--gold)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>Sabhi Diseases Dekhein</Link>
-        <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" style={{ padding: '12px 24px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>📲 WhatsApp Dr. Shadab</a>
+        <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ padding: '12px 24px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>📲 WhatsApp Dr. Shadab</a>
       </div>
     </div>
   )

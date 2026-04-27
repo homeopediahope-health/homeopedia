@@ -2,11 +2,11 @@
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { WA_CONSULT } from '@/lib/constants'
 
 const NAV = [
-  ['/', 'Diseases'],
+  ['/diseases', 'Diseases'],
   ['/diet', 'Diet Charts'],
-  ['/diseases', 'All Diseases'],
   ['/medicines', 'Medicines'],
   ['/blog', 'Videos'],
   ['/about', 'About'],
@@ -47,14 +47,14 @@ export default function Header() {
               onMouseLeave={e => (e.currentTarget.style.color = pathname === href ? 'var(--gold)' : 'var(--ink3)')}
             >{lbl}</Link>
           ))}
-          <a href="https://wa.me/918983458889?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20consultation%20chahiye." target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '9px 18px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 13, fontWeight: 600, boxShadow: '0 3px 12px rgba(37,162,68,.3)' }}>
+          <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '9px 18px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 13, fontWeight: 600, boxShadow: '0 3px 12px rgba(37,162,68,.3)' }}>
             📲 Consult
           </a>
         </div>
 
         {/* Mobile right */}
         <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 10 }}>
-          <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="mob-menu-btn" style={{ display: 'none', alignItems: 'center', gap: 6, padding: '8px 14px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 12, fontWeight: 600 }}>📲</a>
+          <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" className="mob-menu-btn" style={{ display: 'none', alignItems: 'center', gap: 6, padding: '8px 14px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 12, fontWeight: 600 }}>📲</a>
           <button className="mob-menu-btn" onClick={() => setMopen(!mopen)} style={{ display: 'none', background: 'none', border: '1px solid var(--border2)', borderRadius: 8, padding: '7px 10px', cursor: 'pointer', flexDirection: 'column', gap: 4, alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ width: 18, height: 2, background: 'var(--ink2)', borderRadius: 2, transition: 'all .2s', transform: mopen ? 'rotate(45deg) translate(4px,4px)' : 'none' }} />
             <div style={{ width: 18, height: 2, background: 'var(--ink2)', borderRadius: 2, opacity: mopen ? 0 : 1, transition: 'all .2s' }} />

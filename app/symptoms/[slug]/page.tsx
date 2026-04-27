@@ -1,3 +1,4 @@
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -110,14 +111,14 @@ export default async function SymptomPage({ params }: Props) {
         <div style={{ background: 'linear-gradient(135deg,#1a3d30 0%,#0f2a1e 100%)', borderRadius: 16, padding: '32px 36px', textAlign: 'center' }}>
           <p style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', color: 'white', fontSize: '1.15rem', fontWeight: 700, marginBottom: 6 }}>Is Symptom Ke Baare Mein Expert Se Baat Karein</p>
           <p style={{ color: 'rgba(255,255,255,.75)', fontSize: '0.88rem', marginBottom: 18 }}>Dr. Shadab Khan se WhatsApp pe consult karein — FREE initial guidance</p>
-          <a href={`https://wa.me/918983458889?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(symptom.name)}%20ke%20baare%20mein%20jaanna%20hai`} target="_blank" rel="noopener noreferrer"
+          <a href={`${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(symptom.name)}%20ke%20baare%20mein%20jaanna%20hai`} target="_blank" rel="noopener noreferrer"
             style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 28px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>
             💬 WhatsApp Dr. Shadab
           </a>
         </div>
       </div>
 
-      <a href="https://wa.me/918983458889" target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
     </div>
   )
 }
