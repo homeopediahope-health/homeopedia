@@ -246,7 +246,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                         return (
                           <div key={i}>
                             <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                              <iframe src={embedUrl} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={v.title || `Video ${i + 1}`} />
+                              <iframe src={embedUrl} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={v.title || `Video ${i + 1}`} />
                             </div>
                             {v.title && <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 6, textAlign: 'center', fontWeight: 400 }}>{v.title}</p>}
                           </div>
@@ -260,7 +260,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                       const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : disease.youtubeUrl
                       return (
                         <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                          <iframe src={embedUrl} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={`Dr. Shadab explains ${disease.title}`} />
+                          <iframe src={embedUrl} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={`Dr. Shadab explains ${disease.title}`} />
                         </div>
                       )
                     })()
@@ -511,7 +511,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             {disease.faqs?.length > 0 ? (
               <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px 24px' }}>
                 {disease.faqs.map((f: any, i: number) => (
-                  <FaqItem key={i} q={f.question || f.q} a={f.answer || f.a} defaultOpen={i === 0} />
+                  <FaqItem key={i} q={f.question || f.q} a={f.answer || f.a} />
                 ))}
               </div>
             ) : (
@@ -528,7 +528,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
               {disease.sources.map((s: any, i: number) => (
                 <div key={i} style={{ display: 'flex', gap: 8, fontSize: 12, color: 'var(--ink4)', marginBottom: 6 }}>
                   <span style={{ flexShrink: 0 }}>[{i + 1}]</span>
-                  <span>{s.name}{s.year && ` (${s.year})`}</span>
+                  <span>{s.title || s.name}{s.year && ` (${s.year})`}</span>
                 </div>
               ))}
             </section>
