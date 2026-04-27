@@ -1,13 +1,17 @@
 import { google } from 'googleapis'
 import * as fs from 'fs'
-import * as http from 'http'
-import * as url from 'url'
-import * as readline from 'readline'
 
-const CLIENT_ID = process.env.GOOGLE_OAUTH_CLIENT_ID!
-const CLIENT_SECRET = process.env.GOOGLE_OAUTH_CLIENT_SECRET!
+const CREDS_FILE = '/Users/dr.shadabshomoeopathy/Documents/ Claude Homeopedia/client_secret_572467145988-n9lssrl4tlusfceiaf4ahh4396g01ujs.apps.googleusercontent.com.json'
+const creds = JSON.parse(fs.readFileSync(CREDS_FILE, 'utf8')).installed
+const CLIENT_ID = creds.client_id
+const CLIENT_SECRET = creds.client_secret
 const TOKEN_PATH = '/Users/dr.shadabshomoeopathy/Documents/ Claude Homeopedia/indexing-token.json'
 const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
+
+// Usage:
+//   npx tsx scripts/indexing-api.ts          → shows auth URL (if no token)
+//   npx tsx scripts/indexing-api.ts <CODE>   → saves token and submits all URLs
+const CODE_ARG = process.argv[2]
 
 const URLS = [
   'https://homeopedia.in/',
@@ -31,11 +35,13 @@ const URLS = [
   'https://homeopedia.in/diseases/disc-bulge',
   'https://homeopedia.in/diseases/fissure',
   'https://homeopedia.in/diseases/allergy',
+  'https://homeopedia.in/diseases/vitiligo',
 ]
 
 async function getOAuthClient() {
   const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
 
+  // Token already saved — use it directly
   if (fs.existsSync(TOKEN_PATH)) {
     const token = JSON.parse(fs.readFileSync(TOKEN_PATH, 'utf8'))
     oauth2Client.setCredentials(token)
@@ -47,24 +53,21 @@ async function getOAuthClient() {
     scope: ['https://www.googleapis.com/auth/indexing'],
   })
 
+  // If code passed as argument — exchange it for token
+  if (CODE_ARG) {
+    const { tokens } = await oauth2Client.getToken(CODE_ARG)
+    oauth2Client.setCredentials(tokens)
+    fs.writeFileSync(TOKEN_PATH, JSON.stringify(tokens))
+    console.log('✅ Token save ho gaya!\n')
+    return oauth2Client
+  }
+
+  // No code — just show the URL and exit
   console.log('\n🔗 Ye link browser mein kholo:\n')
   console.log(authUrl)
-  console.log('\n')
-
-  const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
-  const code = await new Promise<string>((resolve) => {
-    rl.question('Browser se code copy karke yahan paste karo: ', (ans) => {
-      rl.close()
-      resolve(ans.trim())
-    })
-  })
-
-  const { tokens } = await oauth2Client.getToken(code)
-  oauth2Client.setCredentials(tokens)
-  fs.writeFileSync(TOKEN_PATH, JSON.stringify(tokens))
-  console.log('✅ Token save ho gaya — agli baar seedha chalega\n')
-
-  return oauth2Client
+  console.log('\nCode milne ke baad run karo:')
+  console.log('npx tsx scripts/indexing-api.ts PASTE_CODE_HERE\n')
+  process.exit(0)
 }
 
 async function submitUrls() {
