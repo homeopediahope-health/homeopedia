@@ -38,6 +38,7 @@ const URLS = [
   'https://homeopedia.in/diseases/vitiligo',
   'https://homeopedia.in/diseases/dandruff',
   'https://homeopedia.in/diseases/urticaria',
+  'https://homeopedia.in/diseases/anxiety',
 ]
 
 async function getOAuthClient() {
