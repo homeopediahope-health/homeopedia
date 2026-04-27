@@ -107,7 +107,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             {/* Medically Reviewed badge */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 20, padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 8, fontSize: 12, color: 'var(--ink3)' }}>
               <span style={{ color: 'var(--green)' }}>✓</span>
-              <span>Medically reviewed by <strong style={{ color: 'var(--ink2)' }}>Dr. Shadab Khan MD Homoeopathy</strong>{reviewDate ? ` · ${reviewDate}` : ''}</span>
+              <span>Medically reviewed by <strong style={{ color: 'var(--ink2)' }}>Dr. Shadab Khan MD Homoeopath</strong>{reviewDate ? ` · ${reviewDate}` : ''}</span>
             </div>
           </div>
 
