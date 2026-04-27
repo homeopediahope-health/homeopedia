@@ -11,15 +11,20 @@ export default function Icon() {
         style={{
           width: '32px',
           height: '32px',
-          borderRadius: '8px',
-          background: 'linear-gradient(135deg, #1a3d30, #0f2419)',
+          borderRadius: '6px',
+          background: '#1a3d30',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontSize: '20px',
         }}
       >
-        🌿
+        <span style={{
+          fontSize: '22px',
+          fontWeight: 800,
+          color: '#b8912a',
+          fontFamily: 'serif',
+          lineHeight: 1,
+        }}>H</span>
       </div>
     ),
     { ...size }
