@@ -14,7 +14,7 @@ const ocd = {
 
   title: 'OCD – Obsessive Compulsive Disorder',
   hindiName: 'Waswase Ki Bimari / Baar Baar Sochne Ki Bimari',
-  slug: { _type: 'slug', current: 'ocd' },
+  slug: { _type: 'slug', current: 'obsessive-compulsive-disorder' },
 
   metaTitle: 'OCD Treatment in Hindi | Homeopathic Ilaaj | Homeopedia',
   metaDescription: 'OCD (Waswase ki bimari) ka homeopathic treatment, types, causes, diet aur 25+ FAQs — simple Hinglish mein. Verified info, doctor-reviewed.',
@@ -440,7 +440,7 @@ async function main() {
   try {
     await client.createOrReplace(ocd)
     console.log('✅ OCD disease document created/updated: disease-ocd')
-    console.log('🌐 Live at: https://homeopedia.in/diseases/ocd')
+    console.log('🌐 Live at: https://homeopedia.in/diseases/obsessive-compulsive-disorder')
   } catch (err) {
     console.error('❌ Error:', err)
     process.exit(1)

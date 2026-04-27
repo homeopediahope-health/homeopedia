@@ -41,7 +41,7 @@ const URLS = [
   'https://homeopedia.in/diseases/anxiety',
   'https://homeopedia.in/diseases/depression',
   'https://homeopedia.in/diseases/back-pain',
-  'https://homeopedia.in/diseases/ocd',
+  'https://homeopedia.in/diseases/obsessive-compulsive-disorder',
 ]
 
 async function getOAuthClient() {
