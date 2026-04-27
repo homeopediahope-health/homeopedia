@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     default: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
     template: '%s | HomeoPedia.in',
   },
-  description: 'Evidence-based homeopathy information for Indian patients. Disease guides, diet charts, medicines — CCRH-backed. Free. By Dr. Shadab Khan MD Homoeopathy.',
+  description: 'Evidence-based homeopathy information for Indian patients. Disease guides, diet charts, medicines — CCRH-backed. Free. By Dr. Shadab Khan MD Homoeopath.',
   keywords: ['homeopathy', 'homeopathic treatment', 'CCRH', 'India', 'Dr Shadab Khan', 'homeopathy in hindi', 'homeopathic medicine'],
-  authors: [{ name: 'Dr. Shadab Khan MD Homoeopathy' }],
+  authors: [{ name: 'Dr. Shadab Khan MD Homoeopath' }],
   creator: 'Dr. Shadab Khan',
   openGraph: {
     type: 'website',
