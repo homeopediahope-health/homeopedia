@@ -11,9 +11,15 @@ const REDIRECT_URI = 'urn:ietf:wg:oauth:2.0:oob'
 // Usage:
 //   npx tsx scripts/indexing-api.ts          → shows auth URL (if no token)
 //   npx tsx scripts/indexing-api.ts <CODE>   → saves token and submits all URLs
+//   npx tsx scripts/indexing-api.ts new      → sirf NEW_URLS submit karta hai (quota save)
 const CODE_ARG = process.argv[2]
 
-const URLS = [
+// Sirf naye URLs — har baar naye disease add hone pe yahan add karo
+const NEW_URLS = [
+  'https://homeopedia.in/diseases/sjogrens-syndrome',
+]
+
+const ALL_URLS = [
   'https://homeopedia.in/',
   'https://homeopedia.in/diseases',
   'https://homeopedia.in/diseases/psoriasis',
@@ -44,6 +50,8 @@ const URLS = [
   'https://homeopedia.in/diseases/obsessive-compulsive-disorder',
   'https://homeopedia.in/diseases/sjogrens-syndrome',
 ]
+
+const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS
 
 async function getOAuthClient() {
   const oauth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
