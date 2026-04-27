@@ -1,5 +1,5 @@
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { Metadata } from 'next'
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import SL from '@/components/SL'
 
 export const metadata: Metadata = {
@@ -123,7 +123,7 @@ export default function ContactPage() {
 
       </div>
 
-      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
     </div>
   )
 }

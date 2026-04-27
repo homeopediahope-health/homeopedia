@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import BottomNav from '@/components/BottomNav'
 
-const inter = Inter({ subsets: ['latin'] })
+const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--font-sans' })
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', style: ['normal', 'italic'] })
 
 export const metadata: Metadata = {
@@ -37,10 +38,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="hi" style={{ colorScheme: 'light' }}>
-      <body className={`${inter.className} ${playfair.variable}`} style={{ background: 'var(--bg)', color: 'var(--ink)', fontFamily: 'var(--font-sans,Inter,system-ui,sans-serif)' }}>
+      <body className={`${jakarta.variable} ${playfair.variable}`} style={{ background: 'var(--bg)', color: 'var(--ink)', fontFamily: 'var(--font-sans,"Plus Jakarta Sans",system-ui,sans-serif)' }}>
         <Header />
         <main style={{ minHeight: '100vh' }}>{children}</main>
         <Footer />
+        <BottomNav />
       </body>
     </html>
   )

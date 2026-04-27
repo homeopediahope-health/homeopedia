@@ -1,6 +1,6 @@
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 'use client'
 import { useState } from 'react'
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import SL from '@/components/SL'
 
 const BLOGS = [
@@ -17,7 +17,7 @@ const BLOGS = [
     title: 'Psoriasis Mein Steroids Kyu Nahi — Homeopathy Ka Sach',
     summary: 'Steroid creams temporary relief deti hain lekin long-term mein skin thin karti hain aur psoriasis rebound mein aur zyada aata hai. Homeopathy ki approach samjho.',
     date: '10 Apr 2026', author: 'Dr. Shadab Khan', readMin: 5,
-    cats: ['Skin', 'psoriasis', 'Homeopathy'],
+    cats: ['Skin', 'psoriasis', 'Homoeopathy'],
     cover: 'https://img.youtube.com/vi/Coq2SiVWtsI/mqdefault.jpg',
   },
   {
@@ -33,7 +33,7 @@ const BLOGS = [
     title: 'Thyroid Aur Homeopathy — Kya Sach Mein Kaam Karta Hai?',
     summary: 'Hypothyroid ya hyperthyroid — homeopathy dono conditions mein kaise kaam karta hai? CCRH studies aur clinical experience ke basis pe Dr. Shadab explain karte hain.',
     date: '28 Mar 2026', author: 'Dr. Shadab Khan', readMin: 6,
-    cats: ['Endocrine', 'thyroid', 'Homeopathy'],
+    cats: ['Endocrine', 'thyroid', 'Homoeopathy'],
     cover: 'https://img.youtube.com/vi/NKHq9F0bVSs/mqdefault.jpg',
   },
   {
@@ -174,7 +174,7 @@ export default function BlogPage() {
         )}
       </div>
 
-      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
     </div>
   )
 }

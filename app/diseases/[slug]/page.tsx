@@ -64,7 +64,7 @@ export default async function DiseasePage({ params }: Props) {
     name: disease.title,
     alternateName: disease.hindiName,
     description: disease.heroText,
-    relevantSpecialty: 'Homeopathy',
+    relevantSpecialty: 'Homoeopathy',
     possibleTreatment: {
       '@type': 'MedicalTherapy',
       name: 'Homeopathic Treatment',

@@ -1,10 +1,10 @@
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import SL from '@/components/SL'
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Dr. Shadab Khan MD Homeopath | HomeoPedia',
-  description: 'Dr. Shadab Khan MD Homeopath — 15+ years experience, 10,000+ patients. HomeoPedia ke founder aur medical reviewer.',
+  title: 'About Dr. Shadab Khan MD Homoeopath | HomeoPedia',
+  description: 'Dr. Shadab Khan MD Homoeopath — 15+ years experience, 10,000+ patients. HomeoPedia ke founder aur medical reviewer.',
 }
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
       <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: '72px clamp(16px,4vw,32px)', textAlign: 'center' }}>
         <div style={{ width: 100, height: 100, borderRadius: '50%', margin: '0 auto 20px', background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 34, color: '#fff', fontWeight: 700, boxShadow: '0 4px 24px rgba(184,145,42,.35)' }}>Dr</div>
         <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>Dr. Shadab Khan</h1>
-        <div style={{ fontSize: 14, color: 'var(--gold-dk)', fontStyle: 'italic', marginBottom: 16 }}>MD Homeopath · Reg. No. 54130 · Maharashtra Medical Council</div>
+        <div style={{ fontSize: 14, color: 'var(--gold-dk)', fontStyle: 'italic', marginBottom: 16 }}>MD Homoeopath · Reg. No. 54130 · Maharashtra Medical Council</div>
         <div style={{ display: 'flex', gap: 8, justifyContent: 'center', flexWrap: 'wrap' }}>
           {['15+ Years Experience', '10,000+ Patients', 'MD Homoeopathy', 'CCRH Certified', 'Maharashtra Council'].map(b => (
             <span key={b} style={{ fontSize: 12, padding: '5px 14px', borderRadius: 100, background: 'var(--card)', color: 'var(--ink2)', border: '1px solid var(--border)' }}>{b}</span>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
     </div>
   )
 }

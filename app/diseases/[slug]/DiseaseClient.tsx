@@ -1,15 +1,15 @@
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 'use client'
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Starsvg from '@/components/Starsvg'
 import SL from '@/components/SL'
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 
 const SECTIONS = [
   { id: 'overview',  l: 'Overview' },
   { id: 'symptoms',  l: 'Symptoms' },
-  { id: 'homeo',     l: 'Homeopathy' },
+  { id: 'homeo',     l: 'Homoeopathy' },
   { id: 'medicines', l: 'Medicines' },
   { id: 'diet',      l: 'Diet Chart' },
   { id: 'dosdont',   l: "Dos & Don'ts" },
@@ -50,6 +50,24 @@ function SecHead({ title, sub }: { title: string; sub?: string }) {
   )
 }
 
+function MobConsultBar({ title }: { title: string }) {
+  const [show, setShow] = useState(false)
+  useEffect(() => {
+    const fn = () => setShow(window.scrollY > 300)
+    window.addEventListener('scroll', fn, { passive: true })
+    return () => window.removeEventListener('scroll', fn)
+  }, [])
+  return (
+    <div className="mob-cta" style={{ display: show ? undefined : 'none' }}>
+      <div>
+        <div style={{ fontSize: 13, fontWeight: 600, color: '#fff' }}>Personal consultation chahiye?</div>
+        <div style={{ fontSize: 11, color: 'rgba(255,255,255,.75)' }}>{title} — Dr. Shadab se seedha poochho</div>
+      </div>
+      <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ flexShrink: 0, padding: '9px 16px', background: 'rgba(255,255,255,.15)', border: '1px solid rgba(255,255,255,.35)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 12, fontWeight: 600, whiteSpace: 'nowrap' }}>💬 Chat Now</a>
+    </div>
+  )
+}
+
 export default function DiseaseClient({ disease, related }: { disease: any; related: any[] }) {
   const [activeSection, setActiveSection] = useState('overview')
 
@@ -80,6 +98,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
 
   return (
     <div className="page-in" style={{ paddingTop: 66, background: 'var(--bg)', minHeight: '100vh' }}>
+      <MobConsultBar title={disease.title} />
 
       {/* Breadcrumb */}
       <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', padding: '11px clamp(16px,4vw,32px)' }}>
@@ -98,7 +117,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
         <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '3fr 2fr', gap: 48, alignItems: 'center', position: 'relative' }} className="dis-hero">
           <div>
             <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 18, flexWrap: 'wrap' }}>
-              <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.3)' }}>🌿 {disease.category || 'Homeopathy'}</span>
+              <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.3)' }}>🌿 {disease.category || 'Homoeopathy'}</span>
               <span style={{ fontSize: 12, color: 'var(--ink4)' }}>· ✓ CCRH Backed · Doctor Reviewed</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 700, lineHeight: 1.12, color: 'var(--ink)', marginBottom: 8 }}>{disease.title}</h1>
@@ -521,6 +540,13 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             )}
           </section>
 
+          {/* Post-FAQ CTA */}
+          <div style={{ marginBottom: 52, padding: '28px', background: 'linear-gradient(135deg,rgba(184,145,42,.08),rgba(184,145,42,.02))', border: '1px solid rgba(184,145,42,.25)', borderRadius: 16, textAlign: 'center' }}>
+            <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 20, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>Abhi bhi confusion hai?</div>
+            <p style={{ fontSize: 14, color: 'var(--ink3)', marginBottom: 20, fontWeight: 300 }}>Dr. Shadab se seedha poochho — free WhatsApp consultation</p>
+            <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', background: 'var(--ink)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>📲 Book Free Consultation</a>
+          </div>
+
           {/* SOURCES */}
           {disease.sources?.length > 0 && (
             <section style={{ marginBottom: 40 }}>
@@ -555,7 +581,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 {related.map((r: any) => (
                   <Link key={r.slug?.current} href={`/diseases/${r.slug?.current}`} style={{ textDecoration: 'none' }}>
                     <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '18px', cursor: 'pointer', height: '100%' }}>
-                      <div style={{ fontSize: 11, color: 'var(--ink4)', marginBottom: 8 }}>{r.category || 'Homeopathy'}</div>
+                      <div style={{ fontSize: 11, color: 'var(--ink4)', marginBottom: 8 }}>{r.category || 'Homoeopathy'}</div>
                       <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{r.title}</div>
                       {r.hindiName && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-playfair,Georgia,serif)', marginBottom: 10 }}>{r.hindiName}</div>}
                       <div style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>Read guide →</div>
@@ -597,7 +623,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
         </div>
       </div>
 
-      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
     </div>
   )
 }

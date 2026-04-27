@@ -1,6 +1,6 @@
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 'use client'
 import { useState } from 'react'
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import SL from '@/components/SL'
 
 const MEDS = [
@@ -72,7 +72,7 @@ export default function MedicinesPage() {
         </div>
       </div>
 
-      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
     </div>
   )
 }

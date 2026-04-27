@@ -1,5 +1,5 @@
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { Metadata } from 'next'
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { getAllSymptoms } from '@/lib/queries'
 import Link from 'next/link'
 
@@ -63,7 +63,7 @@ export default async function SymptomsPage() {
         </div>
       </div>
 
-      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
     </div>
   )
 }

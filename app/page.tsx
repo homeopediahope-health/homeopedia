@@ -106,11 +106,10 @@ export default async function HomePage() {
           </div>
 
           {/* H1 with shimmer */}
-          <h1 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(36px,5.5vw,70px)', fontWeight: 700, lineHeight: 1.12, marginBottom: 22, color: 'var(--ink)' }}>
-            India&apos;s Trusted Guide<br />
-            to{' '}
+          <h1 className="hero-title" style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(36px,5.5vw,70px)', fontWeight: 700, lineHeight: 1.15, marginBottom: 22, color: 'var(--ink)' }}>
+            Homoeopathy<br />
             <span className="gold-shimmer" style={{ fontFamily: 'inherit', fontWeight: 'inherit', fontSize: '1em', lineHeight: 'inherit', display: 'inline' }}>
-              Homeopathic Healing
+              Hope is Here.
             </span>
           </h1>
 
@@ -184,7 +183,7 @@ export default async function HomePage() {
         <div style={{ textAlign: 'center', marginTop: 32 }}>
           <Link href="/diseases" style={{ display: 'inline-block', padding: '12px 28px', border: '1px solid var(--border2)', background: 'var(--card)', color: 'var(--ink2)', borderRadius: 100, fontSize: 14, fontWeight: 500, textDecoration: 'none', transition: 'all 0.2s' }}
             onMouseEnter={undefined}>
-            View All 33+ Diseases →
+            View All 200+ Diseases →
           </Link>
         </div>
       </section>
@@ -267,7 +266,7 @@ export default async function HomePage() {
           <div style={{ textAlign: 'center' }}>
             <div style={{ width: 120, height: 120, borderRadius: '50%', margin: '0 auto 18px', background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 38, color: '#fff', fontWeight: 700, boxShadow: '0 4px 24px rgba(184,145,42,.3)' }}>Dr</div>
             <div style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>Dr. Shadab Khan</div>
-            <div style={{ fontSize: 12, color: 'var(--gold-dk)', marginTop: 5, fontStyle: 'italic' }}>MD Homeopath · Reg. No. 54130</div>
+            <div style={{ fontSize: 12, color: 'var(--gold-dk)', marginTop: 5, fontStyle: 'italic' }}>MD Homoeopath · Reg. No. 54130</div>
             <div style={{ display: 'flex', gap: 6, justifyContent: 'center', flexWrap: 'wrap', marginTop: 12 }}>
               {['15+ Years', '10,000+ Patients', 'Maharashtra Council'].map(b => (
                 <span key={b} style={{ fontSize: 10, padding: '3px 9px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)' }}>{b}</span>
@@ -341,7 +340,7 @@ export default async function HomePage() {
             <p style={{ fontSize: 16, color: '#fff', fontWeight: 300, lineHeight: 1.8, marginBottom: 20, maxWidth: 540, margin: '0 auto 20px' }}>
               <strong style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontStyle: 'italic', color: 'var(--gold-lt)' }}>Homeopathy guarantee nahi deta</strong> — lekin ek honest second opinion deta hai. Pehle case dekho, fir decide karo.
             </p>
-            <a href="${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20maine%20sab%20try%20kar%20liya%20hai%2C%20ek%20baar%20aapse%20baat%20karni%20hai." target="_blank" rel="noopener noreferrer"
+            <a href={`${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20maine%20sab%20try%20kar%20liya%20hai%2C%20ek%20baar%20aapse%20baat%20karni%20hai.`} target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 30px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 4px 20px rgba(37,162,68,.4)' }}>
               📲 Consultation Lein — WhatsApp Pe
             </a>
@@ -386,8 +385,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* WhatsApp FAB */}
-      <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲</a>
+      {/* Desktop FAB */}
+      <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
     </div>
   )
 }
