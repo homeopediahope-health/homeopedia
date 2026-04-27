@@ -42,6 +42,7 @@ const URLS = [
   'https://homeopedia.in/diseases/depression',
   'https://homeopedia.in/diseases/back-pain',
   'https://homeopedia.in/diseases/obsessive-compulsive-disorder',
+  'https://homeopedia.in/diseases/sjogrens-syndrome',
 ]
 
 async function getOAuthClient() {
