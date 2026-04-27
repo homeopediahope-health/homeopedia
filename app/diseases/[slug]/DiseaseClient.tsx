@@ -75,9 +75,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
     disease.ccrhEvidence?.citation && { emoji: '🔬', label: 'Research',                 value: `Peer-Reviewed Study (${(disease.ccrhEvidence.citation.match(/\d{4}/) || [''])[0]})` },
   ].filter(Boolean) as { emoji: string; label: string; value: string }[]
 
-  const reviewDate = disease.publishedAt
-    ? new Date(disease.publishedAt).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })
-    : null
+  const reviewDate = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long' })
 
   return (
     <div className="page-in" style={{ paddingTop: 66, background: 'var(--bg)', minHeight: '100vh' }}>
@@ -534,6 +532,19 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
               ))}
             </section>
           )}
+          {/* Disclaimer */}
+          <section style={{ marginBottom: 40, background: 'rgba(184,145,42,.06)', border: '1px solid rgba(184,145,42,.25)', borderRadius: 12, padding: '20px 22px' }}>
+            <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+              <span style={{ fontSize: 20, flexShrink: 0 }}>⚕️</span>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Medical Disclaimer</div>
+                <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>
+                  Ye content sirf educational aur informational purpose ke liye hai. Is page par di gayi koi bhi jaankari professional medical advice, diagnosis, ya treatment ka substitute nahi hai. Kisi bhi treatment se pehle ek qualified homoeopath ya doctor se consult karein. Emergency mein turant medical help lein.
+                </p>
+              </div>
+            </div>
+          </section>
+
           {/* Ye Bhi Padein */}
           {related.length > 0 && (
             <section style={{ marginBottom: 40 }}>
