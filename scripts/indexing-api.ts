@@ -40,6 +40,7 @@ const URLS = [
   'https://homeopedia.in/diseases/urticaria',
   'https://homeopedia.in/diseases/anxiety',
   'https://homeopedia.in/diseases/depression',
+  'https://homeopedia.in/diseases/back-pain',
 ]
 
 async function getOAuthClient() {
