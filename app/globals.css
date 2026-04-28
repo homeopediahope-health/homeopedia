@@ -205,7 +205,9 @@ h1, h2, h3, h4 {
   .hero-stats > div:nth-child(3),
   .hero-stats > div:nth-child(4) { border-bottom: none; }
   .grid-auto { grid-template-columns: 1fr !important; }
-  .grid-2   { grid-template-columns: 1fr !important; }
+  .grid-2   { display: block !important; }
+  .grid-2 > * { margin-bottom: 16px; }
+  .grid-2 > *:last-child { margin-bottom: 0; }
   .grid-4   { grid-template-columns: 1fr 1fr !important; }
   .dis-layout { grid-template-columns: 1fr !important; }
   .dis-sidebar { display: none !important; }

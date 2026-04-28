@@ -28,8 +28,8 @@ function FaqItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
   const [open, setOpen] = useState(defaultOpen)
   return (
     <div style={{ borderBottom: '1px solid var(--border)', padding: '18px 0' }}>
-      <button onClick={() => setOpen(!open)} style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 16 }}>
-        <span style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.5 }}>{q}</span>
+      <button onClick={() => setOpen(!open)} style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
+        <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.5, minWidth: 0, flex: 1 }}>{q}</span>
         <span style={{ color: 'var(--gold)', fontSize: 22, fontWeight: 700, flexShrink: 0, transition: 'transform .2s', transform: open ? 'rotate(45deg)' : 'none', marginTop: 2 }}>+</span>
       </button>
       {!open && (
@@ -367,7 +367,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 )}
               </div>
             )}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }}>
+            <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }}>
               {[
                 { i: '🎯', h: 'Root Cause Treatment', b: 'Sirf symptoms nahi — underlying immune trigger ko address karta hai.' },
                 { i: '🧬', h: 'Constitutional Medicine', b: 'Har patient ke liye unique medicine — symptoms, nature, triggers ke hisaab se.' },
@@ -433,12 +433,15 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
 
           {/* DIET */}
           <CollapsibleSection id="diet" icon="🥗" title="Diet Chart" sub={`${disease.title} ke patients ke liye doctor-recommended diet`} defaultOpen={false}>
-            {(disease.dietInclude?.length > 0 || disease.dietAvoid?.length > 0) ? (
+            {(() => {
+              const dietInclude = disease.dietInclude || disease.dietRecommended
+              const dietAvoid = disease.dietAvoid
+              return (dietInclude?.length > 0 || dietAvoid?.length > 0) ? (
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="grid-2">
-                {disease.dietInclude?.length > 0 && (
+                {dietInclude?.length > 0 && (
                   <div style={{ background: 'rgba(58,125,82,.04)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 16, padding: '22px' }}>
                     <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--green)', marginBottom: 14 }}>✓ Ye Zaroor Khayein</h3>
-                    {disease.dietInclude.map((cat: any) => (
+                    {dietInclude.map((cat: any) => (
                       <div key={cat.category} style={{ marginBottom: 14 }}>
                         <p style={{ fontSize: 11, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{cat.category} {cat.emoji}</p>
                         {cat.items?.map((item: string) => (
@@ -451,10 +454,10 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                     ))}
                   </div>
                 )}
-                {disease.dietAvoid?.length > 0 && (
+                {dietAvoid?.length > 0 && (
                   <div style={{ background: 'rgba(176,64,64,.04)', border: '1px solid rgba(176,64,64,.2)', borderRadius: 16, padding: '22px' }}>
                     <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--red)', marginBottom: 14 }}>✕ Ye Bilkul Mat Khayein</h3>
-                    {disease.dietAvoid.map((cat: any) => (
+                    {dietAvoid.map((cat: any) => (
                       <div key={cat.category} style={{ marginBottom: 14 }}>
                         <p style={{ fontSize: 11, fontWeight: 600, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{cat.category} {cat.emoji}</p>
                         {cat.items?.map((item: string) => (
@@ -474,7 +477,8 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 <p style={{ color: 'var(--ink3)', fontWeight: 300 }}>Is disease ka diet chart jald add hoga.</p>
                 <Link href="/diet" style={{ display: 'inline-block', marginTop: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>Sabhi Diet Charts Dekhein →</Link>
               </div>
-            )}
+            )
+            })()}
 
             {/* Diet Tip + Note boxes */}
             {disease.dietTip && (
@@ -583,7 +587,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Sabse Zyada Pooche Jaane Wale Sawal</h2>
             <p style={{ fontSize: 14, color: 'var(--ink4)', fontWeight: 300, marginBottom: 24 }}>Clinic mein patients jo questions poochte hain — unke honest jawab</p>
             {disease.faqs?.length > 0 ? (
-              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px 24px' }}>
+              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px clamp(12px,4vw,24px)' }}>
                 {(showAllFaqs ? disease.faqs : disease.faqs.slice(0, FAQ_PREVIEW)).map((f: any, i: number) => (
                   <FaqItem key={i} q={f.question || f.q} a={f.answer || f.a} />
                 ))}
