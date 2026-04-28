@@ -210,6 +210,8 @@ h1, h2, h3, h4 {
   .dis-layout { grid-template-columns: 1fr !important; }
   .dis-sidebar { display: none !important; }
   .dis-hero { grid-template-columns: 1fr !important; }
+  .mob-hide-facts { display: none !important; }
+  .mob-hide-tabs { display: none !important; }
   .doc-grid { grid-template-columns: 1fr !important; }
   .footer-grid { grid-template-columns: 1fr 1fr !important; }
   .why-grid { grid-template-columns: 1fr !important; }

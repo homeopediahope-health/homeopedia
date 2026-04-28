@@ -112,6 +112,8 @@ function MobConsultBar({ title }: { title: string }) {
 
 export default function DiseaseClient({ disease, related }: { disease: any; related: any[] }) {
   const [activeSection, setActiveSection] = useState('overview')
+  const [showAllFaqs, setShowAllFaqs] = useState(false)
+  const FAQ_PREVIEW = 7
 
   // Scroll spy
   useEffect(() => {
@@ -174,8 +176,8 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             </div>
           </div>
 
-          {/* Quick Facts */}
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '26px', boxShadow: 'var(--sh)' }}>
+          {/* Quick Facts — desktop only */}
+          <div className="mob-hide-facts" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '26px', boxShadow: 'var(--sh)' }}>
             <div style={{ fontSize: 10, letterSpacing: 2, color: 'var(--gold-dk)', fontWeight: 600, marginBottom: 16, textTransform: 'uppercase' }}>✦ Did You Know?</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 18 }}>
               {WOW_FACTS.map((f, i) => (
@@ -195,8 +197,8 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
         </div>
       </div>
 
-      {/* Jump Navigation — Desktop: horizontal tabs | Mobile: hidden (grid below) */}
-      <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 64, zIndex: 100 }}>
+      {/* Jump Navigation — Desktop tabs | Mobile: hidden, jump grid used instead */}
+      <div className="mob-hide-tabs" style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 64, zIndex: 100 }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', display: 'flex', overflowX: 'auto', padding: '0 clamp(16px,4vw,32px)' }} className="hide-scrollbar tabs-bar">
           {SECTIONS.map(s => (
             <button key={s.id} onClick={() => scrollTo(s.id)} style={{ background: 'none', border: 'none', padding: '16px 18px', cursor: 'pointer', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap', color: activeSection === s.id ? 'var(--gold)' : 'var(--ink4)', borderBottom: activeSection === s.id ? '2px solid var(--gold)' : '2px solid transparent', transition: 'all .2s', display: 'flex', alignItems: 'center', gap: 5 }}>
@@ -209,9 +211,9 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
         </div>
       </div>
 
-      {/* Mobile Quick-Jump Grid — visible only on mobile, replaces need to drag tabs */}
-      <div className="mob-section-grid" style={{ display: 'none', padding: '16px', gap: 10, gridTemplateColumns: '1fr 1fr', background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
-        {SECTIONS.map(s => (
+      {/* Mobile Quick-Jump Grid — visible only on mobile */}
+      <div className="mob-section-grid" style={{ display: 'none', padding: '14px 16px', gap: 10, gridTemplateColumns: '1fr 1fr', background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
+        {SECTIONS.filter(s => s.id !== 'videos').map(s => (
           <button key={s.id} onClick={() => scrollTo(s.id)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '13px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, cursor: 'pointer', textAlign: 'left', transition: 'all .2s' }}>
             <span style={{ fontSize: 20, flexShrink: 0 }}>{s.icon}</span>
             <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink2)', lineHeight: 1.3 }}>{s.l}</span>
@@ -582,9 +584,16 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             <p style={{ fontSize: 14, color: 'var(--ink4)', fontWeight: 300, marginBottom: 24 }}>Clinic mein patients jo questions poochte hain — unke honest jawab</p>
             {disease.faqs?.length > 0 ? (
               <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px 24px' }}>
-                {disease.faqs.map((f: any, i: number) => (
+                {(showAllFaqs ? disease.faqs : disease.faqs.slice(0, FAQ_PREVIEW)).map((f: any, i: number) => (
                   <FaqItem key={i} q={f.question || f.q} a={f.answer || f.a} />
                 ))}
+                {disease.faqs.length > FAQ_PREVIEW && (
+                  <div style={{ padding: '16px 0', borderTop: '1px solid var(--border)', textAlign: 'center' }}>
+                    <button onClick={() => setShowAllFaqs(!showAllFaqs)} style={{ background: 'none', border: '1px solid var(--border2)', borderRadius: 100, padding: '10px 24px', cursor: 'pointer', fontSize: 13, fontWeight: 600, color: 'var(--gold-dk)', transition: 'all .2s' }}>
+                      {showAllFaqs ? '▲ Kam Sawaal Dikhao' : `▼ Aur ${disease.faqs.length - FAQ_PREVIEW} Sawaal Dekhein`}
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
               <div style={{ textAlign: 'center', padding: '36px', background: 'var(--bg2)', borderRadius: 12, border: '1px dashed var(--border2)' }}>
