@@ -6,55 +6,55 @@ import SL from '@/components/SL'
 
 const ALL_DISEASES = [
   // Skin
-  { slug: 'psoriasis',               title: 'Psoriasis',                hindi: 'चम्बल (सोरायसिस)',         cat: 'Skin',        min: 12, hot: true },
-  { slug: 'eczema',                  title: 'Eczema',                   hindi: 'एक्जिमा',                  cat: 'Skin',        min: 5 },
-  { slug: 'vitiligo',                title: 'Vitiligo',                 hindi: 'सफेद दाग',                 cat: 'Skin',        min: 6 },
-  { slug: 'acne',                    title: 'Acne',                     hindi: 'मुहांसे',                  cat: 'Skin',        min: 4 },
-  { slug: 'urticaria',               title: 'Urticaria',                hindi: 'पित्ती',                   cat: 'Skin',        min: 4 },
-  { slug: 'lichen',                  title: 'Lichen Planus',            hindi: 'लाइकेन',                  cat: 'Skin',        min: 9 },
+  { slug: 'psoriasis',                  title: 'Psoriasis',               hindi: 'चम्बल (सोरायसिस)',         cat: 'Skin',        min: 12, hot: true,  h: 'chambal chanbmal' },
+  { slug: 'eczema',                     title: 'Eczema',                  hindi: 'एक्जिमा',                  cat: 'Skin',        min: 5,              h: 'khujli rash' },
+  { slug: 'vitiligo',                   title: 'Vitiligo',                hindi: 'सफेद दाग',                 cat: 'Skin',        min: 6,              h: 'safed daag' },
+  { slug: 'acne',                       title: 'Acne',                    hindi: 'मुहांसे',                  cat: 'Skin',        min: 4,              h: 'muhanse pimple' },
+  { slug: 'urticaria',                  title: 'Urticaria',               hindi: 'पित्ती',                   cat: 'Skin',        min: 4,              h: 'pitti' },
+  { slug: 'lichen',                     title: 'Lichen Planus',           hindi: 'लाइकेन',                  cat: 'Skin',        min: 9,              h: 'laichen' },
   // Joints
-  { slug: 'sciatica',                title: 'Sciatica',                 hindi: 'सायटिका',                 cat: 'Joints',      min: 5, hot: true },
-  { slug: 'disc-bulge',              title: 'Disc Bulge',               hindi: 'डिस्क खिसकना',            cat: 'Joints',      min: 7 },
-  { slug: 'back-pain',               title: 'Back Pain',                hindi: 'कमर दर्द',                cat: 'Joints',      min: 5 },
-  { slug: 'psoriatic-arthritis',     title: 'Psoriatic Arthritis',      hindi: 'चम्बल वाला गठिया',        cat: 'Joints',      min: 10 },
-  { slug: 'rheumatoid-arthritis',    title: 'Rheumatoid Arthritis',     hindi: 'रूमेटाइड आर्थराइटिस',    cat: 'Joints',      min: 7, hot: true },
-  { slug: 'gout',                    title: 'Gout',                     hindi: 'गाउट',                    cat: 'Joints',      min: 5 },
-  { slug: 'cervical-spondylosis',    title: 'Cervical Spondylosis',     hindi: 'सर्वाइकल / गर्दन दर्द',  cat: 'Joints',      min: 6 },
-  { slug: 'ankylosing-spondylitis',  title: 'Ankylosing Spondylitis',   hindi: 'रीढ़ की सूजन',            cat: 'Joints',      min: 8 },
-  { slug: 'frozen-shoulder',         title: 'Frozen Shoulder',          hindi: 'जमा हुआ कंधा',           cat: 'Joints',      min: 7 },
+  { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
+  { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',            cat: 'Joints',      min: 7,              h: 'disc slip' },
+  { slug: 'back-pain',                  title: 'Back Pain',               hindi: 'कमर दर्द',                cat: 'Joints',      min: 5,              h: 'kamar dard' },
+  { slug: 'psoriatic-arthritis',        title: 'Psoriatic Arthritis',     hindi: 'चम्बल वाला गठिया',        cat: 'Joints',      min: 10,             h: 'chambal gathiya' },
+  { slug: 'rheumatoid-arthritis',       title: 'Rheumatoid Arthritis',    hindi: 'रूमेटाइड आर्थराइटिस',    cat: 'Joints',      min: 7,  hot: true,  h: 'gathiya RA joints' },
+  { slug: 'gout',                       title: 'Gout',                    hindi: 'गाउट',                    cat: 'Joints',      min: 5,              h: 'uric acid gathiya' },
+  { slug: 'cervical-spondylosis',       title: 'Cervical Spondylosis',    hindi: 'सर्वाइकल / गर्दन दर्द',  cat: 'Joints',      min: 6,              h: 'gardan dard cervical' },
+  { slug: 'ankylosing-spondylitis',     title: 'Ankylosing Spondylitis',  hindi: 'रीढ़ की सूजन',            cat: 'Joints',      min: 8,              h: 'ridh ki haddi dard' },
+  { slug: 'frozen-shoulder',            title: 'Frozen Shoulder',         hindi: 'जमा हुआ कंधा',           cat: 'Joints',      min: 7,              h: 'kandha dard shoulder' },
   // Digestive
-  { slug: 'ibs',                     title: 'IBS',                      hindi: 'आईबीएस',                  cat: 'Digestive',   min: 6, hot: true },
-  { slug: 'piles',                   title: 'Piles',                    hindi: 'बवासीर',                  cat: 'Digestive',   min: 5 },
-  { slug: 'fissure',                 title: 'Anal Fissure',             hindi: 'फिशर',                    cat: 'Digestive',   min: 4 },
-  { slug: 'ulcerative-colitis',      title: 'Ulcerative Colitis',       hindi: 'अल्सरेटिव कोलाइटिस',     cat: 'Digestive',   min: 6 },
+  { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',                  cat: 'Digestive',   min: 6,  hot: true,  h: 'pet dard loose motion' },
+  { slug: 'piles',                      title: 'Piles',                   hindi: 'बवासीर',                  cat: 'Digestive',   min: 5,              h: 'bavasir bawasir' },
+  { slug: 'fissure',                    title: 'Anal Fissure',            hindi: 'फिशर',                    cat: 'Digestive',   min: 4,              h: 'fishure' },
+  { slug: 'ulcerative-colitis',         title: 'Ulcerative Colitis',      hindi: 'अल्सरेटिव कोलाइटिस',     cat: 'Digestive',   min: 6,              h: 'colitis aant' },
   // Mental
-  { slug: 'migraine',                title: 'Migraine',                 hindi: 'माइग्रेन',                cat: 'Mental',      min: 5, hot: true },
-  { slug: 'anxiety',                 title: 'Anxiety',                  hindi: 'चिंता',                   cat: 'Mental',      min: 5 },
-  { slug: 'depression',              title: 'Depression',               hindi: 'अवसाद',                   cat: 'Mental',      min: 6 },
-  { slug: 'insomnia',                title: 'Insomnia',                 hindi: 'अनिद्रा',                 cat: 'Mental',      min: 4 },
-  { slug: 'obsessive-compulsive-disorder', title: 'OCD',               hindi: 'ओसीडी',                   cat: 'Mental',      min: 7 },
+  { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',                cat: 'Mental',      min: 5,  hot: true,  h: 'sar dard headache' },
+  { slug: 'anxiety',                    title: 'Anxiety',                 hindi: 'चिंता',                   cat: 'Mental',      min: 5,              h: 'chinta tension ghabrahat' },
+  { slug: 'depression',                 title: 'Depression',              hindi: 'अवसाद',                   cat: 'Mental',      min: 6,              h: 'udaasi' },
+  { slug: 'insomnia',                   title: 'Insomnia',                hindi: 'अनिद्रा',                 cat: 'Mental',      min: 4,              h: 'neend nahi aati' },
+  { slug: 'obsessive-compulsive-disorder', title: 'OCD',                  hindi: 'ओसीडी',                  cat: 'Mental',      min: 7,              h: 'obsessive compulsive' },
   // Women's Health
-  { slug: 'pcod',                    title: 'PCOD/PCOS',                hindi: 'पीसीओडी',                 cat: "Women's",     min: 8, hot: true },
-  { slug: 'leucorrhoea',             title: 'Leucorrhoea',              hindi: 'श्वेत प्रदर',             cat: "Women's",     min: 4 },
-  { slug: 'endometriosis',           title: 'Endometriosis',            hindi: 'एंडोमेट्रियोसिस',         cat: "Women's",     min: 7 },
+  { slug: 'pcod',                       title: 'PCOD/PCOS',               hindi: 'पीसीओडी',                 cat: "Women's",     min: 8,  hot: true,  h: 'periods irregular mahavari' },
+  { slug: 'leucorrhoea',                title: 'Leucorrhoea',             hindi: 'श्वेत प्रदर',             cat: "Women's",     min: 4,              h: 'safed pani leucorrhea' },
+  { slug: 'endometriosis',              title: 'Endometriosis',           hindi: 'एंडोमेट्रियोसिस',         cat: "Women's",     min: 7,              h: 'periods dard uterus' },
   // Hair
-  { slug: 'hairfall',                title: 'Hair Fall',                hindi: 'बाल झड़ना',               cat: 'Hair',        min: 8 },
-  { slug: 'alopecia',                title: 'Alopecia Areata',          hindi: 'गंजापन',                  cat: 'Hair',        min: 6, hot: true },
-  { slug: 'dandruff',                title: 'Dandruff',                 hindi: 'रूसी',                    cat: 'Hair',        min: 3 },
+  { slug: 'hairfall',                   title: 'Hair Fall',               hindi: 'बाल झड़ना',               cat: 'Hair',        min: 8,              h: 'baal jhadna' },
+  { slug: 'alopecia',                   title: 'Alopecia Areata',         hindi: 'गंजापन',                  cat: 'Hair',        min: 6,  hot: true,  h: 'ganjapan baal' },
+  { slug: 'dandruff',                   title: 'Dandruff',                hindi: 'रूसी',                    cat: 'Hair',        min: 3,              h: 'rusi' },
   // Respiratory
-  { slug: 'asthma',                  title: 'Asthma',                   hindi: 'दमा',                     cat: 'Respiratory', min: 6 },
-  { slug: 'allergy',                 title: 'Allergic Rhinitis',        hindi: 'एलर्जी',                  cat: 'Respiratory', min: 4 },
-  { slug: 'sinusitis',               title: 'Sinusitis',                hindi: 'साइनसाइटिस',              cat: 'Respiratory', min: 5 },
+  { slug: 'asthma',                     title: 'Asthma',                  hindi: 'दमा',                     cat: 'Respiratory', min: 6,              h: 'dama saans' },
+  { slug: 'allergy',                    title: 'Allergic Rhinitis',       hindi: 'एलर्जी',                  cat: 'Respiratory', min: 4,              h: 'naak allergy' },
+  { slug: 'sinusitis',                  title: 'Sinusitis',               hindi: 'साइनसाइटिस',              cat: 'Respiratory', min: 5,              h: 'sinus naak band' },
   // Endocrine
-  { slug: 'thyroid',                 title: 'Hypothyroidism',           hindi: 'थायरॉइड की कमी',          cat: 'Endocrine',   min: 10, hot: true },
-  { slug: 'hyperthyroidism',         title: 'Hyperthyroidism',          hindi: 'थायरॉइड का बढ़ना',        cat: 'Endocrine',   min: 9 },
-  { slug: 'hashimoto-thyroiditis',   title: 'Hashimoto Thyroiditis',    hindi: 'हाशिमोटो थायरॉइड',       cat: 'Endocrine',   min: 7 },
+  { slug: 'thyroid',                    title: 'Hypothyroidism',          hindi: 'थायरॉइड की कमी',          cat: 'Endocrine',   min: 10, hot: true,  h: 'thyroid' },
+  { slug: 'hyperthyroidism',            title: 'Hyperthyroidism',         hindi: 'थायरॉइड का बढ़ना',        cat: 'Endocrine',   min: 9,              h: 'thyroid badhna' },
+  { slug: 'hashimoto-thyroiditis',      title: 'Hashimoto Thyroiditis',   hindi: 'हाशिमोटो थायरॉइड',       cat: 'Endocrine',   min: 7,              h: 'hashimoto thyroid' },
   // Autoimmune
-  { slug: 'sjogrens-syndrome',       title: "Sjogren's Syndrome",       hindi: 'स्जोग्रेन सिंड्रोम',     cat: 'Autoimmune',  min: 8 },
+  { slug: 'sjogrens-syndrome',          title: "Sjogren's Syndrome",      hindi: 'स्जोग्रेन सिंड्रोम',     cat: 'Autoimmune',  min: 8,              h: 'dry eyes mouth' },
   // Children's Health
-  { slug: 'adenoids',                title: 'Adenoids',                 hindi: 'नाक की गांठ',            cat: "Children's",  min: 7, hot: true },
-  { slug: 'tonsillitis',             title: 'Tonsillitis',              hindi: 'टॉन्सिल की सूजन',        cat: "Children's",  min: 6, hot: true },
-  { slug: 'bedwetting',              title: 'Bedwetting',               hindi: 'बिस्तर गीला करना',       cat: "Children's",  min: 6 },
+  { slug: 'adenoids',                   title: 'Adenoids',                hindi: 'नाक की गांठ',            cat: "Children's",  min: 7,  hot: true,  h: 'naak ki gaanthi bacche' },
+  { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',        cat: "Children's",  min: 6,  hot: true,  h: 'tonsil gala dard' },
+  { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',       cat: "Children's",  min: 6,              h: 'bistar geela bacche' },
 ]
 
 const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's"]
@@ -62,9 +62,14 @@ const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair',
 export default function DiseasesPage() {
   const [cat, setCat] = useState('All')
   const [q, setQ] = useState('')
+  const qL = q.toLowerCase()
   const shown = ALL_DISEASES.filter(d =>
     (cat === 'All' || d.cat === cat) &&
-    (q === '' || d.title.toLowerCase().includes(q.toLowerCase()) || d.hindi.includes(q))
+    (q === '' ||
+      d.title.toLowerCase().includes(qL) ||
+      d.hindi.includes(q) ||
+      d.h.toLowerCase().includes(qL) ||
+      d.slug.replace(/-/g, ' ').includes(qL))
   )
 
   return (

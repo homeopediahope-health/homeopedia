@@ -3,49 +3,60 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 const ALL_DISEASES = [
-  { slug: 'psoriasis', title: 'Psoriasis', hindi: 'सोरायसिस' },
-  { slug: 'eczema', title: 'Eczema', hindi: 'एक्जिमा' },
-  { slug: 'vitiligo', title: 'Vitiligo', hindi: 'सफेद दाग' },
-  { slug: 'acne', title: 'Acne', hindi: 'मुहांसे' },
-  { slug: 'urticaria', title: 'Urticaria', hindi: 'पित्ती' },
-  { slug: 'lichen', title: 'Lichen Planus', hindi: 'लाइकेन' },
-  { slug: 'sciatica', title: 'Sciatica', hindi: 'सायटिका' },
-  { slug: 'arthritis', title: 'Arthritis', hindi: 'गठिया' },
-  { slug: 'backpain', title: 'Back Pain', hindi: 'कमर दर्द' },
-  { slug: 'gout', title: 'Gout', hindi: 'गाउट' },
-  { slug: 'ibs', title: 'IBS', hindi: 'आईबीएस' },
-  { slug: 'piles', title: 'Piles', hindi: 'बवासीर' },
-  { slug: 'acidity', title: 'Acidity/GERD', hindi: 'एसिडिटी' },
-  { slug: 'fissure', title: 'Anal Fissure', hindi: 'फिशर' },
-  { slug: 'migraine', title: 'Migraine', hindi: 'माइग्रेन' },
-  { slug: 'anxiety', title: 'Anxiety', hindi: 'चिंता' },
-  { slug: 'depression', title: 'Depression', hindi: 'अवसाद' },
-  { slug: 'insomnia', title: 'Insomnia', hindi: 'अनिद्रा' },
-  { slug: 'pcod', title: 'PCOD/PCOS', hindi: 'पीसीओडी' },
-  { slug: 'menstrual', title: 'Irregular Periods', hindi: 'अनियमित माहवारी' },
-  { slug: 'menopause', title: 'Menopause', hindi: 'रजोनिवृत्ति' },
-  { slug: 'leucorrhoea', title: 'Leucorrhoea', hindi: 'श्वेत प्रदर' },
-  { slug: 'hairfall', title: 'Hair Fall', hindi: 'बाल झड़ना' },
-  { slug: 'alopecia', title: 'Alopecia Areata', hindi: 'गंजापन' },
-  { slug: 'dandruff', title: 'Dandruff', hindi: 'रूसी' },
-  { slug: 'asthma', title: 'Asthma', hindi: 'दमा' },
-  { slug: 'allergy', title: 'Allergic Rhinitis', hindi: 'एलर्जी' },
-  { slug: 'sinusitis', title: 'Sinusitis', hindi: 'साइनसाइटिस' },
-  { slug: 'thyroid', title: 'Thyroid', hindi: 'थायरॉइड' },
-  { slug: 'diabetes', title: 'Diabetes', hindi: 'मधुमेह' },
-  { slug: 'obesity', title: 'Obesity', hindi: 'मोटापा' },
-  { slug: 'kidney', title: 'Kidney Stones', hindi: 'पथरी' },
-  { slug: 'uti', title: 'UTI', hindi: 'मूत्र संक्रमण' },
+  { slug: 'psoriasis',                  title: 'Psoriasis',               hindi: 'सोरायसिस',              hinglish: 'chanbmal chambal' },
+  { slug: 'eczema',                     title: 'Eczema',                  hindi: 'एक्जिमा',               hinglish: 'khujli rash' },
+  { slug: 'vitiligo',                   title: 'Vitiligo',                hindi: 'सफेद दाग',              hinglish: 'safed daag' },
+  { slug: 'acne',                       title: 'Acne',                    hindi: 'मुहांसे',               hinglish: 'muhanse pimple' },
+  { slug: 'urticaria',                  title: 'Urticaria',               hindi: 'पित्ती',                hinglish: 'pitti' },
+  { slug: 'lichen',                     title: 'Lichen Planus',           hindi: 'लाइकेन',               hinglish: 'laichen' },
+  { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',              hinglish: 'kamar pair dard' },
+  { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',         hinglish: 'disc slip' },
+  { slug: 'back-pain',                  title: 'Back Pain',               hindi: 'कमर दर्द',             hinglish: 'kamar dard' },
+  { slug: 'psoriatic-arthritis',        title: 'Psoriatic Arthritis',     hindi: 'चम्बल वाला गठिया',     hinglish: 'chambal gathiya' },
+  { slug: 'rheumatoid-arthritis',       title: 'Rheumatoid Arthritis',    hindi: 'रूमेटाइड आर्थराइटिस', hinglish: 'gathiya RA' },
+  { slug: 'gout',                       title: 'Gout',                    hindi: 'गाउट',                 hinglish: 'gathiya uric acid' },
+  { slug: 'cervical-spondylosis',       title: 'Cervical Spondylosis',    hindi: 'सर्वाइकल',             hinglish: 'gardan dard cervical' },
+  { slug: 'ankylosing-spondylitis',     title: 'Ankylosing Spondylitis',  hindi: 'रीढ़ की सूजन',         hinglish: 'ridh dard' },
+  { slug: 'frozen-shoulder',            title: 'Frozen Shoulder',         hindi: 'जमा हुआ कंधा',        hinglish: 'kandha dard' },
+  { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',               hinglish: 'pet dard loose motion' },
+  { slug: 'piles',                      title: 'Piles',                   hindi: 'बवासीर',               hinglish: 'bavasir hemorrhoids' },
+  { slug: 'fissure',                    title: 'Anal Fissure',            hindi: 'फिशर',                 hinglish: 'fishure' },
+  { slug: 'ulcerative-colitis',         title: 'Ulcerative Colitis',      hindi: 'अल्सरेटिव कोलाइटिस',  hinglish: 'colitis' },
+  { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',             hinglish: 'sar dard headache' },
+  { slug: 'anxiety',                    title: 'Anxiety',                 hindi: 'चिंता',                hinglish: 'chinta tension' },
+  { slug: 'depression',                 title: 'Depression',              hindi: 'अवसाद',                hinglish: 'udaasi' },
+  { slug: 'insomnia',                   title: 'Insomnia',                hindi: 'अनिद्रा',              hinglish: 'neend nahi aati' },
+  { slug: 'obsessive-compulsive-disorder', title: 'OCD',                  hindi: 'ओसीडी',               hinglish: 'obsessive' },
+  { slug: 'pcod',                       title: 'PCOD/PCOS',               hindi: 'पीसीओडी',              hinglish: 'periods irregular' },
+  { slug: 'leucorrhoea',                title: 'Leucorrhoea',             hindi: 'श्वेत प्रदर',          hinglish: 'safed pani' },
+  { slug: 'endometriosis',              title: 'Endometriosis',           hindi: 'एंडोमेट्रियोसिस',      hinglish: 'periods dard' },
+  { slug: 'hairfall',                   title: 'Hair Fall',               hindi: 'बाल झड़ना',            hinglish: 'baal jhadna' },
+  { slug: 'alopecia',                   title: 'Alopecia Areata',         hindi: 'गंजापन',               hinglish: 'ganjapan baal' },
+  { slug: 'dandruff',                   title: 'Dandruff',                hindi: 'रूसी',                 hinglish: 'rusi' },
+  { slug: 'asthma',                     title: 'Asthma',                  hindi: 'दमा',                  hinglish: 'dama saans' },
+  { slug: 'allergy',                    title: 'Allergic Rhinitis',       hindi: 'एलर्जी',               hinglish: 'naak allergy' },
+  { slug: 'sinusitis',                  title: 'Sinusitis',               hindi: 'साइनसाइटिस',           hinglish: 'sinus naak band' },
+  { slug: 'thyroid',                    title: 'Hypothyroidism',          hindi: 'थायरॉइड की कमी',       hinglish: 'thyroid' },
+  { slug: 'hyperthyroidism',            title: 'Hyperthyroidism',         hindi: 'थायरॉइड का बढ़ना',     hinglish: 'thyroid badhna' },
+  { slug: 'hashimoto-thyroiditis',      title: 'Hashimoto Thyroiditis',   hindi: 'हाशिमोटो थायरॉइड',    hinglish: 'hashimoto' },
+  { slug: 'sjogrens-syndrome',          title: "Sjogren's Syndrome",      hindi: 'स्जोग्रेन',            hinglish: 'dry eyes mouth' },
+  { slug: 'adenoids',                   title: 'Adenoids',                hindi: 'नाक की गांठ',         hinglish: 'naak ki gaanthi' },
+  { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',     hinglish: 'tonsil gala dard' },
+  { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',    hinglish: 'bistar geela' },
 ]
 
-const popular = ['Psoriasis', 'Sciatica', 'Thyroid', 'PCOD', 'Migraine', 'Arthritis']
+const popular = ['Psoriasis', 'Sciatica', 'Thyroid', 'PCOD', 'Migraine', 'Tonsillitis']
 
 export default function HeroSearch() {
   const [q, setQ] = useState('')
   const router = useRouter()
+  const qLow = q.toLowerCase()
   const sugg = q.length > 1
     ? ALL_DISEASES.filter(d =>
-        d.title.toLowerCase().includes(q.toLowerCase()) || d.hindi.includes(q)
+        d.title.toLowerCase().includes(qLow) ||
+        d.hindi.includes(q) ||
+        d.hinglish.toLowerCase().includes(qLow) ||
+        d.slug.replace(/-/g, ' ').includes(qLow)
       ).slice(0, 6)
     : []
 
@@ -61,10 +72,11 @@ export default function HeroSearch() {
         <input
           value={q}
           onChange={e => setQ(e.target.value)}
-          placeholder="Search disease — Psoriasis, Thyroid, PCOD..."
+          onKeyDown={e => { if (e.key === 'Enter' && sugg.length > 0) goDisease(sugg[0].slug) }}
+          placeholder="Search disease — Psoriasis, Kandha, Tonsil..."
           style={{ width: '100%', padding: '17px 130px 17px 22px', background: 'var(--card)', border: '1px solid var(--border2)', borderRadius: 100, color: 'var(--ink)', fontSize: 15, boxShadow: 'var(--sh)', outline: 'none', transition: 'border-color 0.2s, box-shadow 0.2s', fontFamily: 'inherit' }}
           onFocus={e => { e.target.style.borderColor = 'var(--gold)'; e.target.style.boxShadow = '0 0 0 4px rgba(184,145,42,0.1)' }}
-          onBlur={e => { setTimeout(() => setQ(prev => prev), 200); e.target.style.borderColor = 'var(--border2)'; e.target.style.boxShadow = 'var(--sh)' }}
+          onBlur={e => { setTimeout(() => setQ(''), 200); e.target.style.borderColor = 'var(--border2)'; e.target.style.boxShadow = 'var(--sh)' }}
         />
         <button
           onClick={() => { if (sugg.length > 0) goDisease(sugg[0].slug) }}
@@ -96,7 +108,10 @@ export default function HeroSearch() {
         {popular.map(d => (
           <span
             key={d}
-            onClick={() => router.push(`/diseases/${d.toLowerCase()}`)}
+            onClick={() => {
+              const found = ALL_DISEASES.find(x => x.title.toLowerCase().startsWith(d.toLowerCase()))
+              if (found) router.push(`/diseases/${found.slug}`)
+            }}
             style={{ padding: '5px 14px', borderRadius: 100, fontSize: 12, cursor: 'pointer', border: '1px solid var(--border2)', color: 'var(--ink3)', background: 'var(--card)', transition: 'all 0.2s' }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--gold)'; e.currentTarget.style.color = 'var(--gold)'; e.currentTarget.style.background = 'var(--gold-bg)' }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border2)'; e.currentTarget.style.color = 'var(--ink3)'; e.currentTarget.style.background = 'var(--card)' }}
