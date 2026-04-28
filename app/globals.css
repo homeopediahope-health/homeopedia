@@ -197,6 +197,7 @@ h1, h2, h3, h4 {
 
 /* ── Mobile ── */
 @media (max-width: 768px) {
+  .mob-section-grid { display: grid !important; }
   .nav-links { display: none !important; }
   .mob-menu-btn { display: flex !important; }
   .hero-stats { flex-wrap: wrap !important; }

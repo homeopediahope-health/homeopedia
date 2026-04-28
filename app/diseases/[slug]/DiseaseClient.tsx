@@ -7,13 +7,13 @@ import SL from '@/components/SL'
 import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 
 const SECTIONS = [
-  { id: 'overview',  l: 'Overview' },
-  { id: 'symptoms',  l: 'Symptoms' },
-  { id: 'homeo',     l: 'Homoeopathy' },
-  { id: 'medicines', l: 'Medicines' },
-  { id: 'diet',      l: 'Diet Chart' },
-  { id: 'dosdont',   l: "Dos & Don'ts" },
-  { id: 'faq',       l: 'FAQ' },
+  { id: 'overview',  l: 'Overview',     icon: '🧬' },
+  { id: 'symptoms',  l: 'Symptoms',     icon: '🩺' },
+  { id: 'homeo',     l: 'Homoeopathy',  icon: '💊' },
+  { id: 'medicines', l: 'Medicines',    icon: '🌿' },
+  { id: 'diet',      l: 'Diet Chart',   icon: '🥗' },
+  { id: 'dosdont',   l: "Dos & Don'ts", icon: '✅' },
+  { id: 'faq',       l: 'FAQ',          icon: '❓' },
 ]
 
 function scrollTo(id: string) {
@@ -32,7 +32,7 @@ function FaqItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
         <span style={{ color: 'var(--gold)', fontSize: 22, fontWeight: 700, flexShrink: 0, transition: 'transform .2s', transform: open ? 'rotate(45deg)' : 'none', marginTop: 2 }}>+</span>
       </button>
       {!open && (
-        <p style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 6, fontWeight: 300, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>{a}</p>
+        <p style={{ fontSize: 13, color: 'var(--ink2)', marginTop: 6, fontWeight: 400, overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' as const }}>{a}</p>
       )}
       {open && (
         <div style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.9, marginTop: 12, fontWeight: 300, borderLeft: '3px solid var(--gold)', paddingLeft: 16 }}>{a}</div>
@@ -62,7 +62,7 @@ function ReadingProgress() {
     return () => window.removeEventListener('scroll', fn)
   }, [])
   return (
-    <div style={{ position: 'fixed', top: 64, left: 0, width: `${progress}%`, height: 3, background: 'linear-gradient(90deg,var(--gold-dk),var(--gold-lt))', zIndex: 999, transition: 'width .1s', pointerEvents: 'none' }} />
+    <div style={{ position: 'fixed', top: 0, left: 0, width: `${progress}%`, height: 4, background: 'linear-gradient(90deg,var(--gold-dk),var(--gold-lt))', zIndex: 9999, transition: 'width .1s', pointerEvents: 'none' }} />
   )
 }
 
@@ -194,19 +194,28 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
         </div>
       </div>
 
-      {/* Jump Navigation */}
+      {/* Jump Navigation — Desktop: horizontal tabs | Mobile: hidden (grid below) */}
       <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 64, zIndex: 100 }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto', display: 'flex', overflowX: 'auto', padding: '0 clamp(16px,4vw,32px)' }} className="hide-scrollbar">
+        <div style={{ maxWidth: 1160, margin: '0 auto', display: 'flex', overflowX: 'auto', padding: '0 clamp(16px,4vw,32px)' }} className="hide-scrollbar tabs-bar">
           {SECTIONS.map(s => (
-            <button key={s.id} onClick={() => scrollTo(s.id)} style={{ background: 'none', border: 'none', padding: '16px 22px', cursor: 'pointer', fontSize: 14, fontWeight: 500, whiteSpace: 'nowrap', color: activeSection === s.id ? 'var(--gold)' : 'var(--ink4)', borderBottom: activeSection === s.id ? '2px solid var(--gold)' : '2px solid transparent', transition: 'all .2s' }}>
-              {s.l}
+            <button key={s.id} onClick={() => scrollTo(s.id)} style={{ background: 'none', border: 'none', padding: '16px 18px', cursor: 'pointer', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap', color: activeSection === s.id ? 'var(--gold)' : 'var(--ink4)', borderBottom: activeSection === s.id ? '2px solid var(--gold)' : '2px solid transparent', transition: 'all .2s', display: 'flex', alignItems: 'center', gap: 5 }}>
+              <span style={{ fontSize: 14 }}>{s.icon}</span>{s.l}
             </button>
           ))}
-          {/* WhatsApp share */}
           <a href={`https://wa.me/?text=${encodeURIComponent(`${disease.title} ka homeopathic ilaj padho — homeopedia.in/diseases/${disease.slug?.current}`)}`} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: 6, padding: '10px 16px', background: '#25d366', color: '#fff', borderRadius: 8, textDecoration: 'none', fontSize: 12, fontWeight: 600, flexShrink: 0, alignSelf: 'center', margin: 'auto 0 auto auto' }}>
             📲 Share
           </a>
         </div>
+      </div>
+
+      {/* Mobile Quick-Jump Grid — visible only on mobile, replaces need to drag tabs */}
+      <div className="mob-section-grid" style={{ display: 'none', padding: '16px', gap: 10, gridTemplateColumns: '1fr 1fr', background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
+        {SECTIONS.map(s => (
+          <button key={s.id} onClick={() => scrollTo(s.id)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '13px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, cursor: 'pointer', textAlign: 'left', transition: 'all .2s' }}>
+            <span style={{ fontSize: 20, flexShrink: 0 }}>{s.icon}</span>
+            <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink2)', lineHeight: 1.3 }}>{s.l}</span>
+          </button>
+        ))}
       </div>
 
       {/* Main Content + Sidebar */}
