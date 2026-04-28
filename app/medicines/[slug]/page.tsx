@@ -1,6 +1,6 @@
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 'use client'
 
+import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import { useEffect, useState } from 'react'
 import { getMedicineBySlug } from '@/lib/queries'
 import FAQAccordion from '@/components/FAQAccordion'
