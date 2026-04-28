@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/bedwetting',
+  'https://homeopedia.in/diseases/adenoids',
 ]
 
 const ALL_URLS = [
@@ -59,6 +59,7 @@ const ALL_URLS = [
   'https://homeopedia.in/diseases/cervical-spondylosis',
   'https://homeopedia.in/diseases/acne',
   'https://homeopedia.in/diseases/bedwetting',
+  'https://homeopedia.in/diseases/adenoids',
 ]
 
 const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS
