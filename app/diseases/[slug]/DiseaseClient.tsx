@@ -9,6 +9,7 @@ import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 const SECTIONS = [
   { id: 'overview',  l: 'Overview',     icon: '🧬' },
   { id: 'symptoms',  l: 'Symptoms',     icon: '🩺' },
+  { id: 'videos',    l: 'Videos',       icon: '📺' },
   { id: 'homeo',     l: 'Homoeopathy',  icon: '💊' },
   { id: 'medicines', l: 'Medicines',    icon: '🌿' },
   { id: 'diet',      l: 'Diet Chart',   icon: '🥗' },
@@ -300,42 +301,50 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                   ))}
                 </div>
               ))}
-              {/* Videos — single or multiple */}
-              {(disease.youtubeUrl || disease.youtubeVideos?.length > 0) && (
-                <div style={{ marginTop: 28 }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)', marginBottom: 14 }}>📺 Dr. Shadab Khan ke Videos</h3>
-                  {/* Multiple videos grid */}
-                  {disease.youtubeVideos?.length > 0 ? (
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16 }}>
-                      {disease.youtubeVideos.map((v: any, i: number) => {
-                        const m = v.url?.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
-                        const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : v.url
-                        return (
-                          <div key={i}>
-                            <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                              <iframe src={embedUrl} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={v.title || `Video ${i + 1}`} />
-                            </div>
-                            {v.title && <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 6, textAlign: 'center', fontWeight: 400 }}>{v.title}</p>}
-                          </div>
-                        )
-                      })}
-                    </div>
-                  ) : disease.youtubeUrl ? (
-                    /* Single video */
-                    (() => {
-                      const m = disease.youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
-                      const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : disease.youtubeUrl
-                      return (
-                        <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                          <iframe src={embedUrl} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={`Dr. Shadab explains ${disease.title}`} />
-                        </div>
-                      )
-                    })()
-                  ) : null}
-                </div>
-              )}
             </CollapsibleSection>
           )}
+
+          {/* VIDEOS — standalone section, always shows channel link */}
+          <CollapsibleSection id="videos" icon="📺" title="Dr. Shadab Khan ke Videos" sub="YouTube pe aur bhi videos dekhein — free education" defaultOpen={true}>
+            {/* Specific video(s) for this disease */}
+            {disease.youtubeVideos?.length > 0 ? (
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16, marginBottom: 20 }}>
+                {disease.youtubeVideos.map((v: any, i: number) => {
+                  const m = v.url?.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
+                  const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : v.url
+                  return (
+                    <div key={i}>
+                      <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
+                        <iframe src={embedUrl} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={v.title || `Video ${i + 1}`} />
+                      </div>
+                      {v.title && <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 6, textAlign: 'center', fontWeight: 400 }}>{v.title}</p>}
+                    </div>
+                  )
+                })}
+              </div>
+            ) : disease.youtubeUrl ? (
+              <div style={{ marginBottom: 20 }}>
+                {(() => {
+                  const m = disease.youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
+                  const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : disease.youtubeUrl
+                  return (
+                    <div style={{ position: 'relative', paddingBottom: '56.25%', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
+                      <iframe src={embedUrl} loading="lazy" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={`Dr. Shadab explains ${disease.title}`} />
+                    </div>
+                  )
+                })()}
+              </div>
+            ) : null}
+            {/* YouTube channel promo — always visible */}
+            <a href="https://www.youtube.com/@drshadabshomoeopathy" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 14, padding: '16px 20px', background: 'rgba(255,0,0,0.04)', border: '1px solid rgba(255,0,0,0.15)', borderRadius: 12, textDecoration: 'none', transition: 'all .2s' }}>
+              <span style={{ fontSize: 32, flexShrink: 0 }}>▶️</span>
+              <div>
+                <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)', marginBottom: 3 }}>@drshadabshomoeopathy</div>
+                <div style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>{disease.title} aur aur bimariyon ke baare mein free videos — subscribe karein</div>
+              </div>
+              <span style={{ marginLeft: 'auto', fontSize: 12, fontWeight: 600, color: '#cc0000', flexShrink: 0 }}>Subscribe →</span>
+            </a>
+          </CollapsibleSection>
 
           {/* HOMEOPATHY */}
           <CollapsibleSection id="homeo" icon="🌿" title="Homoeopathy Se Kaise Thik Hoga?" sub="Sirf symptoms nahi — root cause treat hota hai" defaultOpen={false}>
