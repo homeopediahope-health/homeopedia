@@ -16,12 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/ankylosing-spondylitis',
-  'https://homeopedia.in/diseases/ulcerative-colitis',
-  'https://homeopedia.in/diseases/hashimoto-thyroiditis',
-  'https://homeopedia.in/diseases/endometriosis',
-  'https://homeopedia.in/diseases/sinusitis',
-  'https://homeopedia.in/diseases/gout',
+  'https://homeopedia.in/diseases/bedwetting',
 ]
 
 const ALL_URLS = [
@@ -60,6 +55,10 @@ const ALL_URLS = [
   'https://homeopedia.in/diseases/endometriosis',
   'https://homeopedia.in/diseases/sinusitis',
   'https://homeopedia.in/diseases/gout',
+  'https://homeopedia.in/diseases/leucorrhoea',
+  'https://homeopedia.in/diseases/cervical-spondylosis',
+  'https://homeopedia.in/diseases/acne',
+  'https://homeopedia.in/diseases/bedwetting',
 ]
 
 const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS
