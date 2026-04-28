@@ -139,6 +139,12 @@
 
 .bottom-nav { display: none; }
 
+/* Collapsible sections — desktop always open */
+.sec-toggle { display: none !important; }
+.sec-toggle-hidden { display: block; }
+.sec-body-open { display: block; }
+.sec-body-closed { display: block; }
+
 .mob-cta {
   display: none;
   position: fixed;
@@ -208,6 +214,11 @@ h1, h2, h3, h4 {
   .why-grid { grid-template-columns: 1fr !important; }
   /* Bottom nav */
   .bottom-nav { display: flex !important; }
+  /* Collapsible sections on mobile */
+  .sec-toggle { display: flex !important; }
+  .sec-toggle-hidden { display: none !important; }
+  .sec-body-closed { display: none !important; }
+  .sec-body-open { display: block !important; }
   .fab { display: none !important; }
   /* Content clears bottom nav */
   .page-in { padding-bottom: 80px !important; }

@@ -50,6 +50,47 @@ function SecHead({ title, sub }: { title: string; sub?: string }) {
   )
 }
 
+function ReadingProgress() {
+  const [progress, setProgress] = useState(0)
+  useEffect(() => {
+    const fn = () => {
+      const el = document.documentElement
+      const pct = (el.scrollTop / (el.scrollHeight - el.clientHeight)) * 100
+      setProgress(Math.min(100, pct))
+    }
+    window.addEventListener('scroll', fn, { passive: true })
+    return () => window.removeEventListener('scroll', fn)
+  }, [])
+  return (
+    <div style={{ position: 'fixed', top: 64, left: 0, width: `${progress}%`, height: 3, background: 'linear-gradient(90deg,var(--gold-dk),var(--gold-lt))', zIndex: 999, transition: 'width .1s', pointerEvents: 'none' }} />
+  )
+}
+
+function CollapsibleSection({ id, icon, title, sub, defaultOpen = true, children }: { id: string; icon: string; title: string; sub?: string; defaultOpen?: boolean; children: React.ReactNode }) {
+  const [open, setOpen] = useState(defaultOpen)
+  return (
+    <section id={id} style={{ marginBottom: 52 }}>
+      <button
+        className="sec-toggle"
+        onClick={() => setOpen(!open)}
+        style={{ width: '100%', background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'none', justifyContent: 'space-between', alignItems: 'center', marginBottom: open ? 20 : 0 }}
+      >
+        <div>
+          <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 8 }}><span>{icon}</span>{title}</div>
+          {sub && !open && <div style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 3, fontWeight: 300 }}>{sub}</div>}
+        </div>
+        <span style={{ fontSize: 22, color: 'var(--gold)', fontWeight: 700, flexShrink: 0, marginLeft: 12, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform .2s' }}>+</span>
+      </button>
+      <div className="sec-toggle-hidden" style={{}}>
+        <SecHead title={`${icon} ${title}`} sub={sub} />
+      </div>
+      <div className={open ? 'sec-body-open' : 'sec-body-closed'}>
+        {children}
+      </div>
+    </section>
+  )
+}
+
 function MobConsultBar({ title }: { title: string }) {
   const [show, setShow] = useState(false)
   useEffect(() => {
@@ -98,6 +139,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
 
   return (
     <div className="page-in" style={{ paddingTop: 66, background: 'var(--bg)', minHeight: '100vh' }}>
+      <ReadingProgress />
       <MobConsultBar title={disease.title} />
 
       {/* Breadcrumb */}
@@ -172,8 +214,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
         <div>
 
           {/* OVERVIEW */}
-          <section id="overview" style={{ marginBottom: 52 }}>
-            <SecHead title={`${disease.title} Kya Hai?`} />
+          <CollapsibleSection id="overview" icon="🧬" title={`${disease.title} Kya Hai?`} defaultOpen={true}>
             <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.9, marginBottom: 28, fontWeight: 300 }}>{disease.heroText || 'Ye ek chronic condition hai jo homeopathic treatment se bahut achhi response deti hai.'}</p>
 
             {disease.causes?.length > 0 && (
@@ -214,12 +255,11 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 </div>
               </div>
             )}
-          </section>
+          </CollapsibleSection>
 
           {/* TYPES */}
           {disease.types?.length > 0 && (
-            <section id="types" style={{ marginBottom: 52 }}>
-              <SecHead title={`${disease.title} Ke Prakar`} sub="Har type alag hoti hai — sahi diagnosis treatment ko guide karta hai" />
+            <CollapsibleSection id="types" icon="📋" title={`${disease.title} Ke Prakar`} sub="Har type alag hoti hai — sahi diagnosis treatment ko guide karta hai" defaultOpen={false}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
                 {disease.types.map((t: any) => (
                   <div key={t._key} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px', position: 'relative' }}>
@@ -234,13 +274,12 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                   </div>
                 ))}
               </div>
-            </section>
+            </CollapsibleSection>
           )}
 
           {/* SYMPTOMS */}
           {disease.symptoms?.length > 0 && (
-            <section id="symptoms" style={{ marginBottom: 52 }}>
-              <SecHead title="Symptoms — Kya Mehsoos Hota Hai?" sub="In symptoms mein se kuch aapko hain? Ek baar doctor se zaroor milein." />
+            <CollapsibleSection id="symptoms" icon="🩺" title="Symptoms — Kya Mehsoos Hota Hai?" sub="In symptoms mein se kuch aapko hain? Ek baar doctor se zaroor milein." defaultOpen={false}>
               {disease.symptoms.map((s: any, i: number) => (
                 <div key={i} style={{ marginBottom: 16 }}>
                   {s.category && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{s.category}</div>}
@@ -286,12 +325,11 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                   ) : null}
                 </div>
               )}
-            </section>
+            </CollapsibleSection>
           )}
 
           {/* HOMEOPATHY */}
-          <section id="homeo" style={{ marginBottom: 52 }}>
-            <SecHead title="Homeopathy Se Kaise Thik Hoga?" sub="Sirf symptoms nahi — root cause treat hota hai" />
+          <CollapsibleSection id="homeo" icon="🌿" title="Homoeopathy Se Kaise Thik Hoga?" sub="Sirf symptoms nahi — root cause treat hota hai" defaultOpen={false}>
             {disease.ccrhEvidence && (
               <div style={{ padding: '22px 24px', background: 'var(--gold-bg)', border: '1px solid rgba(184,145,42,.25)', borderRadius: 12, marginBottom: 24 }}>
                 <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--gold-dk)', letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 10 }}>CCRH Research Evidence</div>
@@ -340,11 +378,10 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 ))}
               </div>
             )}
-          </section>
+          </CollapsibleSection>
 
           {/* MEDICINES */}
-          <section id="medicines" style={{ marginBottom: 52 }}>
-            <SecHead title="Homeopathic Medicines" sub={`${disease.title} mein commonly used medicines — doctor guidance ke saath`} />
+          <CollapsibleSection id="medicines" icon="💊" title="Homoeopathic Medicines" sub={`${disease.title} mein commonly used medicines — doctor guidance ke saath`} defaultOpen={false}>
             <div style={{ padding: '12px 18px', background: 'rgba(184,145,42,.07)', border: '1px solid rgba(184,145,42,.2)', borderRadius: 9, marginBottom: 20, fontSize: 13, color: 'var(--gold-dk)' }}>
               ⚠️ Ye sirf educational information hai — doctor se consult ke bina koi bhi medicine mat lein
             </div>
@@ -372,11 +409,10 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 <Link href="/medicines" style={{ display: 'inline-block', marginTop: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>Medicine Library Dekhein →</Link>
               </div>
             )}
-          </section>
+          </CollapsibleSection>
 
           {/* DIET */}
-          <section id="diet" style={{ marginBottom: 52 }}>
-            <SecHead title="Diet Chart" sub={`${disease.title} ke patients ke liye doctor-recommended diet`} />
+          <CollapsibleSection id="diet" icon="🥗" title="Diet Chart" sub={`${disease.title} ke patients ke liye doctor-recommended diet`} defaultOpen={false}>
             {(disease.dietInclude?.length > 0 || disease.dietAvoid?.length > 0) ? (
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="grid-2">
                 {disease.dietInclude?.length > 0 && (
@@ -471,11 +507,10 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 <p style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 10, fontWeight: 300 }}>* Ye ek sample plan hai. Apne homoeopath ya nutritionist se apni zaroorat ke hisab se modify karein.</p>
               </div>
             )}
-          </section>
+          </CollapsibleSection>
 
           {/* DOS & DON'TS */}
-          <section id="dosdont" style={{ marginBottom: 52 }}>
-            <SecHead title="Dos & Don'ts" sub="Lifestyle changes jo treatment mein help karte hain" />
+          <CollapsibleSection id="dosdont" icon="✅" title="Dos & Don'ts" sub="Lifestyle changes jo treatment mein help karte hain" defaultOpen={false}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="grid-2">
               {disease.dos?.length > 0 && (
                 <div style={{ background: 'rgba(58,125,82,.04)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 16, padding: '22px' }}>
@@ -505,7 +540,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 </div>
               )}
             </div>
-          </section>
+          </CollapsibleSection>
 
           {/* Mid-content WhatsApp CTA */}
           <div style={{ background: 'linear-gradient(135deg,#1a6b33,#25a244)', borderRadius: 14, padding: '22px 24px', marginBottom: 52, display: 'flex', gap: 20, alignItems: 'center', flexWrap: 'wrap' }}>
