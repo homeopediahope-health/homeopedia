@@ -16,6 +16,7 @@ const ALL_DISEASES = [
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
   { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',            cat: 'Joints',      min: 7,              h: 'disc slip' },
   { slug: 'back-pain',                  title: 'Back Pain',               hindi: 'कमर दर्द',                cat: 'Joints',      min: 5,              h: 'kamar dard' },
+  { slug: 'arthritis',                   title: 'Arthritis',               hindi: 'गठिया / वात रोग',          cat: 'Joints',      min: 8,  hot: true,  h: 'gathiya jodon ka dard vaat' },
   { slug: 'psoriatic-arthritis',        title: 'Psoriatic Arthritis',     hindi: 'चम्बल वाला गठिया',        cat: 'Joints',      min: 10,             h: 'chambal gathiya' },
   { slug: 'rheumatoid-arthritis',       title: 'Rheumatoid Arthritis',    hindi: 'रूमेटाइड आर्थराइटिस',    cat: 'Joints',      min: 7,  hot: true,  h: 'gathiya RA joints' },
   { slug: 'gout',                       title: 'Gout',                    hindi: 'गाउट',                    cat: 'Joints',      min: 5,              h: 'uric acid gathiya' },
