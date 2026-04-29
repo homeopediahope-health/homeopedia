@@ -23,6 +23,7 @@ const ALL_DISEASES = [
   { slug: 'cervical-spondylosis',       title: 'Cervical Spondylosis',    hindi: 'सर्वाइकल / गर्दन दर्द',  cat: 'Joints',      min: 6,              h: 'gardan dard cervical' },
   { slug: 'ankylosing-spondylitis',     title: 'Ankylosing Spondylitis',  hindi: 'रीढ़ की सूजन',            cat: 'Joints',      min: 8,              h: 'ridh ki haddi dard' },
   { slug: 'frozen-shoulder',            title: 'Frozen Shoulder',         hindi: 'जमा हुआ कंधा',           cat: 'Joints',      min: 7,              h: 'kandha dard shoulder' },
+  { slug: 'plantar-fasciitis',          title: 'Plantar Fasciitis',       hindi: 'एड़ी का दर्द',             cat: 'Joints',      min: 7,              h: 'edi ka dard paon tale heel pain' },
   // Digestive
   { slug: 'acidity',                    title: 'Acidity / GERD',          hindi: 'तेज़ाब / सीने की जलन',    cat: 'Digestive',   min: 6,  hot: true,  h: 'seene ki jalan khatta dakaar tezaab acid reflux' },
   { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',                  cat: 'Digestive',   min: 6,  hot: true,  h: 'pet dard loose motion' },
