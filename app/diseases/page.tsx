@@ -12,6 +12,7 @@ const ALL_DISEASES = [
   { slug: 'acne',                       title: 'Acne',                    hindi: 'मुहांसे',                  cat: 'Skin',        min: 4,              h: 'muhanse pimple' },
   { slug: 'urticaria',                  title: 'Urticaria',               hindi: 'पित्ती',                   cat: 'Skin',        min: 4,              h: 'pitti' },
   { slug: 'lichen',                     title: 'Lichen Planus',           hindi: 'लाइकेन',                  cat: 'Skin',        min: 9,              h: 'laichen' },
+  { slug: 'acanthosis-nigricans',       title: 'Acanthosis Nigricans',    hindi: 'काली गठीली त्वचा',         cat: 'Skin',        min: 8,              h: 'kaali gathili skin gardan kaali kala pan insulin resistance' },
   // Joints
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
   { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',            cat: 'Joints',      min: 7,              h: 'disc slip' },
