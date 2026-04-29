@@ -53,6 +53,7 @@ const ALL_DISEASES = [
   // Autoimmune
   { slug: 'sjogrens-syndrome',          title: "Sjogren's Syndrome",      hindi: 'स्जोग्रेन सिंड्रोम',     cat: 'Autoimmune',  min: 8,              h: 'dry eyes mouth' },
   // Children's Health
+  { slug: 'autism',                      title: 'Autism (ASD)',            hindi: 'ऑटिज्म',                  cat: "Children's",  min: 10, hot: true,  h: 'autism asd bachcha bolna nahi' },
   { slug: 'adenoids',                   title: 'Adenoids',                hindi: 'नाक की गांठ',            cat: "Children's",  min: 7,  hot: true,  h: 'naak ki gaanthi bacche' },
   { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',        cat: "Children's",  min: 6,  hot: true,  h: 'tonsil gala dard' },
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',       cat: "Children's",  min: 6,              h: 'bistar geela bacche' },

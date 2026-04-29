@@ -41,6 +41,7 @@ const ALL_DISEASES = [
   { slug: 'hyperthyroidism',            title: 'Hyperthyroidism',         hindi: 'थायरॉइड का बढ़ना',     hinglish: 'thyroid badhna' },
   { slug: 'hashimoto-thyroiditis',      title: 'Hashimoto Thyroiditis',   hindi: 'हाशिमोटो थायरॉइड',    hinglish: 'hashimoto' },
   { slug: 'sjogrens-syndrome',          title: "Sjogren's Syndrome",      hindi: 'स्जोग्रेन',            hinglish: 'dry eyes mouth' },
+  { slug: 'autism',                      title: 'Autism (ASD)',            hindi: 'ऑटिज्म',              hinglish: 'autism asd bachcha bolna nahi speech delay' },
   { slug: 'adenoids',                   title: 'Adenoids',                hindi: 'नाक की गांठ',         hinglish: 'naak ki gaanthi' },
   { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',     hinglish: 'tonsil gala dard' },
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',    hinglish: 'bistar geela' },
