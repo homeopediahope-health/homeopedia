@@ -50,6 +50,7 @@ const ALL_DISEASES = [
   { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',     hinglish: 'tonsil gala dard' },
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',    hinglish: 'bistar geela' },
   { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',         hinglish: 'naso ki sujan phuli hui naasein paon dard vein' },
+  { slug: 'kidney-stone',             title: 'Kidney Stone (Pathri)',   hindi: 'गुर्दे की पथरी',        hinglish: 'pathri gurde ki pathri stone uric acid calcium renal' },
 ]
 
 const popular = ['Psoriasis', 'Sciatica', 'Thyroid', 'PCOD', 'Migraine', 'Tonsillitis']
