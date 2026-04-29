@@ -19,6 +19,7 @@ const ALL_DISEASES = [
   { slug: 'cervical-spondylosis',       title: 'Cervical Spondylosis',    hindi: 'सर्वाइकल',             hinglish: 'gardan dard cervical' },
   { slug: 'ankylosing-spondylitis',     title: 'Ankylosing Spondylitis',  hindi: 'रीढ़ की सूजन',         hinglish: 'ridh dard' },
   { slug: 'frozen-shoulder',            title: 'Frozen Shoulder',         hindi: 'जमा हुआ कंधा',        hinglish: 'kandha dard' },
+  { slug: 'acidity',                     title: 'Acidity / GERD',          hindi: 'तेज़ाब / सीने की जलन',  hinglish: 'seene ki jalan khatta dakaar tezaab acid reflux gerd' },
   { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',               hinglish: 'pet dard loose motion' },
   { slug: 'piles',                      title: 'Piles',                   hindi: 'बवासीर',               hinglish: 'bavasir hemorrhoids' },
   { slug: 'fissure',                    title: 'Anal Fissure',            hindi: 'फिशर',                 hinglish: 'fishure' },

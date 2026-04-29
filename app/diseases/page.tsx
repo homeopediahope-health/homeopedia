@@ -24,6 +24,7 @@ const ALL_DISEASES = [
   { slug: 'ankylosing-spondylitis',     title: 'Ankylosing Spondylitis',  hindi: 'रीढ़ की सूजन',            cat: 'Joints',      min: 8,              h: 'ridh ki haddi dard' },
   { slug: 'frozen-shoulder',            title: 'Frozen Shoulder',         hindi: 'जमा हुआ कंधा',           cat: 'Joints',      min: 7,              h: 'kandha dard shoulder' },
   // Digestive
+  { slug: 'acidity',                    title: 'Acidity / GERD',          hindi: 'तेज़ाब / सीने की जलन',    cat: 'Digestive',   min: 6,  hot: true,  h: 'seene ki jalan khatta dakaar tezaab acid reflux' },
   { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',                  cat: 'Digestive',   min: 6,  hot: true,  h: 'pet dard loose motion' },
   { slug: 'piles',                      title: 'Piles',                   hindi: 'बवासीर',                  cat: 'Digestive',   min: 5,              h: 'bavasir bawasir' },
   { slug: 'fissure',                    title: 'Anal Fissure',            hindi: 'फिशर',                    cat: 'Digestive',   min: 4,              h: 'fishure' },
