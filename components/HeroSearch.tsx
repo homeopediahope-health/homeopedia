@@ -45,6 +45,7 @@ const ALL_DISEASES = [
   { slug: 'adenoids',                   title: 'Adenoids',                hindi: 'नाक की गांठ',         hinglish: 'naak ki gaanthi' },
   { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',     hinglish: 'tonsil gala dard' },
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',    hinglish: 'bistar geela' },
+  { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',         hinglish: 'naso ki sujan phuli hui naasein paon dard vein' },
 ]
 
 const popular = ['Psoriasis', 'Sciatica', 'Thyroid', 'PCOD', 'Migraine', 'Tonsillitis']

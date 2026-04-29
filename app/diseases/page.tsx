@@ -57,9 +57,11 @@ const ALL_DISEASES = [
   { slug: 'adenoids',                   title: 'Adenoids',                hindi: 'नाक की गांठ',            cat: "Children's",  min: 7,  hot: true,  h: 'naak ki gaanthi bacche' },
   { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',        cat: "Children's",  min: 6,  hot: true,  h: 'tonsil gala dard' },
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',       cat: "Children's",  min: 6,              h: 'bistar geela bacche' },
+  // Circulatory
+  { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',            cat: 'Circulatory', min: 7,              h: 'naso ki sujan phuli hui naasein paon dard' },
 ]
 
-const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's"]
+const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's", 'Circulatory']
 
 export default function DiseasesPage() {
   const [cat, setCat] = useState('All')
