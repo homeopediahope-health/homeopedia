@@ -31,6 +31,7 @@ const ALL_DISEASES = [
   { slug: 'piles',                      title: 'Piles',                   hindi: 'बवासीर',                  cat: 'Digestive',   min: 5,              h: 'bavasir bawasir' },
   { slug: 'fissure',                    title: 'Anal Fissure',            hindi: 'फिशर',                    cat: 'Digestive',   min: 4,              h: 'fishure' },
   { slug: 'ulcerative-colitis',         title: 'Ulcerative Colitis',      hindi: 'अल्सरेटिव कोलाइटिस',     cat: 'Digestive',   min: 6,              h: 'colitis aant' },
+  { slug: 'fatty-liver',               title: 'Fatty Liver / NAFLD',     hindi: 'जिगर में चर्बी',           cat: 'Digestive',   min: 9,  hot: true,  h: 'fatty liver jigar charbi NAFLD SGPT SGOT grade 1 2' },
   // Mental
   { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',                cat: 'Mental',      min: 5,  hot: true,  h: 'sar dard headache' },
   { slug: 'anxiety',                    title: 'Anxiety',                 hindi: 'चिंता',                   cat: 'Mental',      min: 5,              h: 'chinta tension ghabrahat' },
