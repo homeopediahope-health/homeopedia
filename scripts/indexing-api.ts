@@ -20,8 +20,16 @@ const NEW_URLS = [
 ]
 
 const ALL_URLS = [
+  // Static pages
   'https://homeopedia.in/',
   'https://homeopedia.in/diseases',
+  'https://homeopedia.in/about',
+  'https://homeopedia.in/contact',
+  'https://homeopedia.in/diet',
+  'https://homeopedia.in/medicines',
+  'https://homeopedia.in/blog',
+  'https://homeopedia.in/symptoms',
+  // 50 diseases
   'https://homeopedia.in/diseases/psoriasis',
   'https://homeopedia.in/diseases/psoriatic-arthritis',
   'https://homeopedia.in/diseases/thyroid',
