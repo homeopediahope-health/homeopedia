@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import { getAllDiseases } from '@/lib/queries'
 
+export const revalidate = 3600
+
 const BASE = 'https://homeopedia.in'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
