@@ -14,14 +14,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   })
 
   return [
-    { url: BASE,                  lastModified: new Date(), changeFrequency: 'daily'   as const, priority: 1.0 },
-    { url: `${BASE}/diseases`,    lastModified: new Date(), changeFrequency: 'daily'   as const, priority: 0.9 },
-    { url: `${BASE}/diet`,        lastModified: new Date(), changeFrequency: 'weekly'  as const, priority: 0.8 },
-    { url: `${BASE}/medicines`,   lastModified: new Date(), changeFrequency: 'weekly'  as const, priority: 0.8 },
-    { url: `${BASE}/blog`,        lastModified: new Date(), changeFrequency: 'weekly'  as const, priority: 0.7 },
-    { url: `${BASE}/about`,        lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${BASE}/contact`,     lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: `${BASE}/symptoms`,    lastModified: new Date(), changeFrequency: 'weekly'  as const, priority: 0.6 },
+    { url: BASE,                  lastModified: new Date('2026-04-30'), changeFrequency: 'daily'   as const, priority: 1.0 },
+    { url: `${BASE}/diseases`,    lastModified: new Date('2026-04-30'), changeFrequency: 'daily'   as const, priority: 0.9 },
+    { url: `${BASE}/diet`,        lastModified: new Date('2026-04-30'), changeFrequency: 'weekly'  as const, priority: 0.8 },
+    { url: `${BASE}/medicines`,   lastModified: new Date('2026-04-30'), changeFrequency: 'weekly'  as const, priority: 0.8 },
+    { url: `${BASE}/blog`,        lastModified: new Date('2026-03-01'), changeFrequency: 'weekly'  as const, priority: 0.7 },
+    { url: `${BASE}/about`,       lastModified: new Date('2026-01-01'), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${BASE}/contact`,     lastModified: new Date('2026-01-01'), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${BASE}/symptoms`,    lastModified: new Date('2026-04-01'), changeFrequency: 'weekly'  as const, priority: 0.6 },
     ...diseaseUrls,
   ]
 }
