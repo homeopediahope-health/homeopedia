@@ -43,6 +43,7 @@ const ALL_DISEASES = [
   { slug: 'endometriosis',              title: 'Endometriosis',           hindi: 'एंडोमेट्रियोसिस',      hinglish: 'periods dard' },
   { slug: 'uterine-fibroid',            title: 'Uterine Fibroid',         hindi: 'बच्चेदानी की गांठ',    hinglish: 'bacchedani ki ganth rasoli fibroid bina operation surgery' },
   { slug: 'menopause',                  title: 'Menopause',               hindi: 'रजोवृत्ति / महावारी बंद', hinglish: 'rajovritti mahavari band hot flashes mood swings menopause ke upay periods band' },
+  { slug: 'ovarian-cyst',               title: 'Ovarian Cyst',            hindi: 'अंडाशय की गांठ / सिस्ट',  hinglish: 'andashay ki ganthi ovarian cyst ka ilaj bina surgery pcod aur cyst mein fark ovary mein ganth' },
   { slug: 'hairfall',                   title: 'Hair Fall',               hindi: 'बाल झड़ना',            hinglish: 'baal jhadna' },
   { slug: 'alopecia',                   title: 'Alopecia Areata',         hindi: 'गंजापन',               hinglish: 'ganjapan baal' },
   { slug: 'dandruff',                   title: 'Dandruff',                hindi: 'रूसी',                 hinglish: 'rusi' },

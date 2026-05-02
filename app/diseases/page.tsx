@@ -50,6 +50,7 @@ const ALL_DISEASES = [
   { slug: 'endometriosis',              title: 'Endometriosis',           hindi: 'एंडोमेट्रियोसिस',         cat: "Women's",     min: 7,              h: 'periods dard uterus' },
   { slug: 'uterine-fibroid',            title: 'Uterine Fibroid',         hindi: 'बच्चेदानी की गांठ / रसौली', cat: "Women's",  min: 9,  hot: true,  h: 'bacchedani ki ganth rasoli fibroid bina operation' },
   { slug: 'menopause',                  title: 'Menopause',               hindi: 'रजोवृत्ति / महावारी बंद',   cat: "Women's",  min: 10, hot: true,  h: 'rajovritti mahavari band hot flashes mood swings menopause ke upay 45 ke baad' },
+  { slug: 'ovarian-cyst',               title: 'Ovarian Cyst',            hindi: 'अंडाशय की गांठ / सिस्ट',    cat: "Women's",  min: 10, hot: true,  h: 'andashay ki ganthi ovarian cyst ka ilaj bina surgery ovarian cyst homeopathy pcod aur cyst mein fark' },
   // Hair
   { slug: 'hairfall',                   title: 'Hair Fall',               hindi: 'बाल झड़ना',               cat: 'Hair',        min: 8,              h: 'baal jhadna' },
   { slug: 'alopecia',                   title: 'Alopecia Areata',         hindi: 'गंजापन',                  cat: 'Hair',        min: 6,  hot: true,  h: 'ganjapan baal' },
