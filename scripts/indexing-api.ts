@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/alopecia',
+  'https://homeopedia.in/diseases/uterine-fibroid',
 ]
 
 const ALL_URLS = [
@@ -79,6 +79,7 @@ const ALL_URLS = [
   'https://homeopedia.in/diseases/fatty-liver',
   'https://homeopedia.in/diseases/kidney-stone',
   'https://homeopedia.in/diseases/osteoarthritis',
+  'https://homeopedia.in/diseases/uterine-fibroid',
 ]
 
 const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS

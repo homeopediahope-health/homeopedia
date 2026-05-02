@@ -43,6 +43,7 @@ const ALL_DISEASES = [
   { slug: 'pcod',                       title: 'PCOD/PCOS',               hindi: 'पीसीओडी',                 cat: "Women's",     min: 8,  hot: true,  h: 'periods irregular mahavari' },
   { slug: 'leucorrhoea',                title: 'Leucorrhoea',             hindi: 'श्वेत प्रदर',             cat: "Women's",     min: 4,              h: 'safed pani leucorrhea' },
   { slug: 'endometriosis',              title: 'Endometriosis',           hindi: 'एंडोमेट्रियोसिस',         cat: "Women's",     min: 7,              h: 'periods dard uterus' },
+  { slug: 'uterine-fibroid',            title: 'Uterine Fibroid',         hindi: 'बच्चेदानी की गांठ / रसौली', cat: "Women's",  min: 9,  hot: true,  h: 'bacchedani ki ganth rasoli fibroid bina operation' },
   // Hair
   { slug: 'hairfall',                   title: 'Hair Fall',               hindi: 'बाल झड़ना',               cat: 'Hair',        min: 8,              h: 'baal jhadna' },
   { slug: 'alopecia',                   title: 'Alopecia Areata',         hindi: 'गंजापन',                  cat: 'Hair',        min: 6,  hot: true,  h: 'ganjapan baal' },
