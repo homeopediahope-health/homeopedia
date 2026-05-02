@@ -37,6 +37,7 @@ const ALL_DISEASES = [
   { slug: 'depression',                 title: 'Depression',              hindi: 'अवसाद',                hinglish: 'udaasi' },
   { slug: 'insomnia',                   title: 'Insomnia',                hindi: 'अनिद्रा',              hinglish: 'neend nahi aati' },
   { slug: 'obsessive-compulsive-disorder', title: 'OCD',                  hindi: 'ओसीडी',               hinglish: 'obsessive' },
+  { slug: 'chronic-fatigue-syndrome',     title: 'Chronic Fatigue Syndrome (CFS)', hindi: 'Chronic Thakan Rog', hinglish: 'hamesha thakaan rehna CFS chronic fatigue post covid thakaan brain fog kaam ke baad thakaan lambai thakaan' },
   { slug: 'pcod',                       title: 'PCOD/PCOS',               hindi: 'पीसीओडी',              hinglish: 'periods irregular' },
   { slug: 'leucorrhoea',                title: 'Leucorrhoea',             hindi: 'श्वेत प्रदर',          hinglish: 'safed pani' },
   { slug: 'endometriosis',              title: 'Endometriosis',           hindi: 'एंडोमेट्रियोसिस',      hinglish: 'periods dard' },
