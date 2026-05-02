@@ -10,6 +10,7 @@ const ALL_DISEASES = [
   { slug: 'urticaria',                  title: 'Urticaria',               hindi: 'पित्ती',                hinglish: 'pitti' },
   { slug: 'lichen',                     title: 'Lichen Planus',           hindi: 'लाइकेन',               hinglish: 'laichen' },
   { slug: 'acanthosis-nigricans',       title: 'Acanthosis Nigricans',    hindi: 'काली गठीली त्वचा',     hinglish: 'kaali gathili skin gardan kaali kala pan insulin resistance' },
+  { slug: 'ringworm',                   title: 'Ringworm (Daad)',          hindi: 'दाद / दाद-खाज',        hinglish: 'daad daad khaj tinea fungal skin athlete foot jock itch' },
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',              hinglish: 'kamar pair dard' },
   { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',         hinglish: 'disc slip' },
   { slug: 'back-pain',                  title: 'Back Pain',               hindi: 'कमर दर्द',             hinglish: 'kamar dard' },
