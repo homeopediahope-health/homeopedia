@@ -38,6 +38,7 @@ const ALL_DISEASES = [
   { slug: 'leucorrhoea',                title: 'Leucorrhoea',             hindi: 'श्वेत प्रदर',          hinglish: 'safed pani' },
   { slug: 'endometriosis',              title: 'Endometriosis',           hindi: 'एंडोमेट्रियोसिस',      hinglish: 'periods dard' },
   { slug: 'uterine-fibroid',            title: 'Uterine Fibroid',         hindi: 'बच्चेदानी की गांठ',    hinglish: 'bacchedani ki ganth rasoli fibroid bina operation surgery' },
+  { slug: 'menopause',                  title: 'Menopause',               hindi: 'रजोवृत्ति / महावारी बंद', hinglish: 'rajovritti mahavari band hot flashes mood swings menopause ke upay periods band' },
   { slug: 'hairfall',                   title: 'Hair Fall',               hindi: 'बाल झड़ना',            hinglish: 'baal jhadna' },
   { slug: 'alopecia',                   title: 'Alopecia Areata',         hindi: 'गंजापन',               hinglish: 'ganjapan baal' },
   { slug: 'dandruff',                   title: 'Dandruff',                hindi: 'रूसी',                 hinglish: 'rusi' },
