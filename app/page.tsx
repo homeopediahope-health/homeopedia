@@ -286,68 +286,6 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── LAST RESORT SECTION ── */}
-      <section style={{ background: 'linear-gradient(135deg,#0f2419 0%,#1a3d30 100%)', padding: 'clamp(52px,8vw,80px) clamp(16px,4vw,32px)', margin: '0 0 clamp(52px,8vw,80px)' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 48 }}>
-            <div style={{ display: 'inline-block', padding: '6px 18px', borderRadius: 100, border: '1px solid rgba(184,145,42,.4)', color: 'var(--gold-lt)', fontSize: 12, fontStyle: 'italic', marginBottom: 18 }}>Aap Akele Nahi Hain</div>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(26px,4vw,42px)', fontWeight: 700, color: '#fff', marginBottom: 16, lineHeight: 1.2 }}>
-              Kya Aap Bhi Yahan Tak Pahunche Ho<br />
-              <span style={{ color: 'var(--gold-lt)', fontStyle: 'italic' }}>Sab Try Karne Ke Baad?</span>
-            </h2>
-            <p style={{ fontSize: 15, color: 'rgba(255,255,255,.7)', maxWidth: 580, margin: '0 auto', lineHeight: 1.85, fontWeight: 300 }}>
-              Bahut saare patients pehle allopathic treatment karte hain — steroids, painkillers, surgery. Jab wahan se koi permanent solution nahi milta, tab yahan aate hain. Aur ye bilkul sahi hai.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 20, marginBottom: 40 }}>
-            {[
-              {
-                icon: '💊',
-                q: '"Doctor ne lifelong steroids boli hain..."',
-                a: 'Steroids symptoms suppress karte hain temporarily. Homeopathy immune system ki root cause fix karne ki koshish karta hai — steroids ke bina.',
-                diseases: 'Psoriasis, Eczema, Arthritis',
-              },
-              {
-                icon: '🔪',
-                q: '"Operation recommend kiya hai..."',
-                a: 'Piles, kidney stones, thyroid, pcos — kai cases mein surgery avoid ho sakti hai. Homeopathy pehle try karna samajhdaari hai.',
-                diseases: 'Piles, Fibroids, Gallstones',
-              },
-              {
-                icon: '😮‍💨',
-                q: '"Saalon se medicine kha raha hoon, koi fark nahi..."',
-                a: 'Chronic diseases mein allopathy management karta hai, cure nahi. Homeopathy long-term mein body ko heal karne ki koshish karta hai.',
-                diseases: 'IBS, Migraine, Skin conditions',
-              },
-              {
-                icon: '🧪',
-                q: '"Reports normal hain, fir bhi takleef hai..."',
-                a: 'Ye functional disorders hain — allopathy mein limited treatment hoti hai. Homeopathy individual constitution dekh ke treat karta hai.',
-                diseases: 'IBS, Anxiety, Hair Fall, Fatigue',
-              },
-            ].map(c => (
-              <div key={c.q} style={{ background: 'rgba(255,255,255,.06)', border: '1px solid rgba(255,255,255,.12)', borderRadius: 14, padding: '24px' }}>
-                <div style={{ fontSize: 28, marginBottom: 12 }}>{c.icon}</div>
-                <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 15, fontWeight: 600, color: '#fff', marginBottom: 10, lineHeight: 1.4 }}>{c.q}</div>
-                <div style={{ fontSize: 13, color: 'rgba(255,255,255,.65)', lineHeight: 1.75, fontWeight: 300, marginBottom: 12 }}>{c.a}</div>
-                <div style={{ fontSize: 11, color: 'var(--gold-lt)', opacity: 0.8 }}>Common in: {c.diseases}</div>
-              </div>
-            ))}
-          </div>
-
-          <div style={{ textAlign: 'center', padding: '32px', background: 'rgba(255,255,255,.05)', borderRadius: 16, border: '1px solid rgba(184,145,42,.3)' }}>
-            <p style={{ fontSize: 16, color: '#fff', fontWeight: 300, lineHeight: 1.8, marginBottom: 20, maxWidth: 540, margin: '0 auto 20px' }}>
-              <strong style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontStyle: 'italic', color: 'var(--gold-lt)' }}>Homeopathy guarantee nahi deta</strong> — lekin ek honest second opinion deta hai. Pehle case dekho, fir decide karo.
-            </p>
-            <a href={`${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20maine%20sab%20try%20kar%20liya%20hai%2C%20ek%20baar%20aapse%20baat%20karni%20hai.`} target="_blank" rel="noopener noreferrer"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 30px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 700, boxShadow: '0 4px 20px rgba(37,162,68,.4)' }}>
-              📲 Consultation Lein — WhatsApp Pe
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* ── YOUTUBE SECTION ── */}
       <section style={{ padding: '0 clamp(16px,4vw,32px) clamp(52px,8vw,90px)', maxWidth: 1160, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 48 }}>

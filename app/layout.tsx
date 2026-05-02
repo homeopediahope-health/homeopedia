@@ -10,6 +10,9 @@ const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://homeopedia.in'),
+  alternates: {
+    canonical: 'https://homeopedia.in',
+  },
   title: {
     default: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
     template: '%s | HomeoPedia.in',

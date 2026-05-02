@@ -24,6 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://homeopedia.in/diseases/${slug}`,
+    },
     openGraph: {
       title,
       description,
@@ -72,9 +75,34 @@ export default async function DiseasePage({ params }: Props) {
     }
   }
 
+  const authorSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalWebPage',
+    name: disease.title,
+    url: `https://homeopedia.in/diseases/${slug}`,
+    description: disease.metaDescription || disease.heroText,
+    author: {
+      '@type': 'Physician',
+      name: 'Dr. Shadab Khan',
+      honorificSuffix: 'MD Homoeopathy',
+      description: '15+ years clinical experience, 10,000+ patients. Maharashtra Council Reg. No. 54130.',
+      url: 'https://homeopedia.in/about',
+      sameAs: ['https://www.youtube.com/@drshadabshomoeopathy'],
+      worksFor: { '@type': 'MedicalOrganization', name: 'HomeoPedia.in', url: 'https://homeopedia.in' },
+    },
+    reviewedBy: {
+      '@type': 'Physician',
+      name: 'Dr. Shadab Khan',
+      honorificSuffix: 'MD Homoeopathy',
+    },
+    medicalAudience: { '@type': 'MedicalAudience', audienceType: 'Patient' },
+    specialty: { '@type': 'MedicalSpecialty', name: 'Homeopathic Medicine' },
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <DiseaseClient disease={disease} related={related} />
     </>

@@ -2,7 +2,7 @@ import { client } from './sanity'
 
 export async function getAllDiseases() {
   return client.fetch(`*[_type == "disease"] | order(publishedAt desc) {
-    title, slug, hindiName, heroText, metaDescription, category
+    title, slug, hindiName, heroText, metaDescription, category, publishedAt
   }`)
 }
 
