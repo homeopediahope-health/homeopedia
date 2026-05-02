@@ -14,6 +14,7 @@ const ALL_DISEASES = [
   { slug: 'lichen',                     title: 'Lichen Planus',           hindi: 'लाइकेन',                  cat: 'Skin',        min: 9,              h: 'laichen' },
   { slug: 'acanthosis-nigricans',       title: 'Acanthosis Nigricans',    hindi: 'काली गठीली त्वचा',         cat: 'Skin',        min: 8,              h: 'kaali gathili skin gardan kaali kala pan insulin resistance' },
   { slug: 'ringworm',                   title: 'Ringworm (Daad)',          hindi: 'दाद / दाद-खाज / Tinea',    cat: 'Skin',        min: 8,  hot: true,  h: 'daad daad khaj tinea fungal infection athlete foot jock itch scalp' },
+  { slug: 'wart',                       title: 'Wart (Masar)',             hindi: 'मस्सा / मसा / गड्ढा मसा',  cat: 'Skin',        min: 7,  hot: true,  h: 'masar masa wart hatane ka upay haath pair chehre pe wart removal bina surgery' },
   // Joints
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
   { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',            cat: 'Joints',      min: 7,              h: 'disc slip' },
