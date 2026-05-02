@@ -33,6 +33,7 @@ const ALL_DISEASES = [
   { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',                  cat: 'Digestive',   min: 6,  hot: true,  h: 'pet dard loose motion' },
   { slug: 'piles',                      title: 'Piles',                   hindi: 'बवासीर',                  cat: 'Digestive',   min: 5,              h: 'bavasir bawasir' },
   { slug: 'fissure',                    title: 'Anal Fissure',            hindi: 'फिशर',                    cat: 'Digestive',   min: 4,              h: 'fishure' },
+  { slug: 'constipation',               title: 'Constipation (Kabz)',     hindi: 'कब्ज / क़ब्ज़',            cat: 'Digestive',   min: 8,  hot: true,  h: 'kabz qabz pet saaf nahi hona roz subah toilet nahi aata laxative' },
   { slug: 'ulcerative-colitis',         title: 'Ulcerative Colitis',      hindi: 'अल्सरेटिव कोलाइटिस',     cat: 'Digestive',   min: 6,              h: 'colitis aant' },
   { slug: 'fatty-liver',               title: 'Fatty Liver / NAFLD',     hindi: 'जिगर में चर्बी',           cat: 'Digestive',   min: 9,  hot: true,  h: 'fatty liver jigar charbi NAFLD SGPT SGOT grade 1 2' },
   // Mental

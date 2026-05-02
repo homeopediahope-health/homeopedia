@@ -28,6 +28,7 @@ const ALL_DISEASES = [
   { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',               hinglish: 'pet dard loose motion' },
   { slug: 'piles',                      title: 'Piles',                   hindi: 'बवासीर',               hinglish: 'bavasir hemorrhoids' },
   { slug: 'fissure',                    title: 'Anal Fissure',            hindi: 'फिशर',                 hinglish: 'fishure' },
+  { slug: 'constipation',               title: 'Constipation (Kabz)',     hindi: 'कब्ज / क़ब्ज़',          hinglish: 'kabz qabz pet saaf nahi hona toilet nahi aata kabz ka ilaaj' },
   { slug: 'ulcerative-colitis',         title: 'Ulcerative Colitis',      hindi: 'अल्सरेटिव कोलाइटिस',  hinglish: 'colitis' },
   { slug: 'fatty-liver',               title: 'Fatty Liver / NAFLD',     hindi: 'जिगर में चर्बी',        hinglish: 'fatty liver jigar charbi NAFLD SGPT grade 1 2' },
   { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',             hinglish: 'sar dard headache' },
