@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/ringworm',
+  'https://homeopedia.in/diseases/nasal-polyp',
 ]
 
 const ALL_URLS = [
@@ -81,6 +81,7 @@ const ALL_URLS = [
   'https://homeopedia.in/diseases/osteoarthritis',
   'https://homeopedia.in/diseases/uterine-fibroid',
   'https://homeopedia.in/diseases/ringworm',
+  'https://homeopedia.in/diseases/nasal-polyp',
 ]
 
 const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS

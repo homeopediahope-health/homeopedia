@@ -44,6 +44,7 @@ const ALL_DISEASES = [
   { slug: 'asthma',                     title: 'Asthma',                  hindi: 'दमा',                  hinglish: 'dama saans' },
   { slug: 'allergy',                    title: 'Allergic Rhinitis',       hindi: 'एलर्जी',               hinglish: 'naak allergy' },
   { slug: 'sinusitis',                  title: 'Sinusitis',               hindi: 'साइनसाइटिस',           hinglish: 'sinus naak band' },
+  { slug: 'nasal-polyp',               title: 'Nasal Polyp',             hindi: 'नाक की रसौली / गांठ',  hinglish: 'naak ki rasoli naak ki gaanth polyp surgery ke bina nasal polyp treatment' },
   { slug: 'thyroid',                    title: 'Hypothyroidism',          hindi: 'थायरॉइड की कमी',       hinglish: 'thyroid' },
   { slug: 'hyperthyroidism',            title: 'Hyperthyroidism',         hindi: 'थायरॉइड का बढ़ना',     hinglish: 'thyroid badhna' },
   { slug: 'hashimoto-thyroiditis',      title: 'Hashimoto Thyroiditis',   hindi: 'हाशिमोटो थायरॉइड',    hinglish: 'hashimoto' },
