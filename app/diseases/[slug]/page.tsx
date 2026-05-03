@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     (disease.heroText ? disease.heroText.slice(0, 155) : `${disease.title} mein homeopathic treatment, diet chart, medicines aur dos & don'ts — Dr. Shadab Khan MD Homoeopathy.`)
 
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: {
       canonical: `https://homeopedia.in/diseases/${slug}`,
