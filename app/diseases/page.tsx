@@ -83,9 +83,17 @@ const ALL_DISEASES = [
   { slug: 'male-infertility',            title: 'Male Infertility',        hindi: 'पुरुष निःशक्तता / बीज दोष', cat: "Men's",      min: 10, hot: true,  h: 'male infertility purush nishfalta sperm count badhana shukranu beej dosh mardana kamzori homeopathy' },
   // Urinary
   { slug: 'kidney-stone',             title: 'Kidney Stone (Pathri)',   hindi: 'गुर्दे की पथरी',           cat: 'Urinary',     min: 9,  hot: true,  h: 'pathri gurde ki pathri stone NAFLD uric acid calcium' },
+  { slug: 'recurrent-uti',            title: 'Recurrent UTI',           hindi: 'बार बार मूत्र संक्रमण',      cat: 'Urinary',     min: 8,  hot: true,  h: 'baar baar peshab infection UTI burning urine mahila urinary tract infection' },
+  { slug: 'bph',                      title: 'BPH (Prostate)',          hindi: 'प्रोस्टेट का बढ़ना',         cat: "Men's",       min: 10, hot: true,  h: 'prostate badhna BPH benighn prostatic hyperplasia peshab ki takleef buzurg mard' },
+  // Neurological
+  { slug: 'bells-palsy',              title: "Bell's Palsy",            hindi: 'चेहरे का लकवा',             cat: 'Neurological', min: 10,            h: 'chehre ka lakwa face paralysis ek taraf chehra tedha' },
+  { slug: 'carpal-tunnel-syndrome',   title: 'Carpal Tunnel Syndrome',  hindi: 'हाथ सुन्नपन / CTS',         cat: 'Neurological', min: 9,  hot: true, h: 'haath sunnapan jhanjhanahat CTS karpal tunal computer use office worker' },
+  { slug: 'trigeminal-neuralgia',     title: 'Trigeminal Neuralgia',    hindi: 'चेहरे में बिजली का दर्द',    cat: 'Neurological', min: 10, hot: true, h: 'chehra bijli dard face pain TN tic douloureux nerve pain jaw teeth pain' },
+  { slug: 'vertigo',                  title: "Vertigo / Meniere's",     hindi: 'चक्कर आना / सर घूमना',      cat: 'Neurological', min: 9,  hot: true, h: 'chakkar aana sar ghoomna vertigo menieres BPPV vestibular' },
+  { slug: 'dysmenorrhoea',            title: 'Dysmenorrhoea',           hindi: 'माहवारी का दर्द',             cat: "Women's",     min: 8,  hot: true,  h: 'mahavari ka dard periods mein dard dysmenorrhea masik dard period pain' },
 ]
 
-const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's", 'Circulatory', 'Urinary']
+const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's", 'Circulatory', 'Urinary', 'Neurological', "Men's"]
 
 export default function DiseasesPage() {
   const [cat, setCat] = useState('All')
