@@ -104,11 +104,6 @@ const fissure = {
     'Long-term bowel health sudharti hai — sirf ek symptom nahi, poora digestive pattern better hota hai',
   ],
 
-  homeopathyLimitations: [
-    'Bahut purani (1 saal se zyada) chronic fissure mein surgery (sphincterotomy) faster aur more definitive hoti hai — homeopathy wahan supporting role mein zyada useful hai',
-    'Severe bleeding ya infection ke saath fissure mein turant doctor se milna zaroori hai — akele homeopathy pe rely mat karein',
-  ],
-
   medicines: [
     {
       _key: 'med1',

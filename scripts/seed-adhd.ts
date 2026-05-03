@@ -18,7 +18,7 @@ const doc = {
   publishedAt: '2026-05-03T00:00:00.000Z',
   metaTitle: 'ADHD in Hindi — Treatment, Types aur Homeopathy Ilaaj',
   metaDescription: 'ADHD ke types, causes, homeopathic treatment aur diet guide — simple Hinglish mein. Bacchon aur adults dono ke liye. Verified, doctor-reviewed.',
-  heroText: 'ADHD ek neurodevelopmental condition hai jisme brain ka attention aur self-control system theek se kaam nahi karta. Iska matlab ye nahi ki baccha — ya adult — lazy hai ya intelligent nahi hai. Iska matlab hai ki unka brain differently wired hai — focus, impulsivity aur hyperactivity manage karna unke liye genuinely mushkil hai. India mein roughly 10 mein se 1 school-age bacche ko ADHD hoti hai — lekin diagnosis bahut kam hoti hai kyunki parents aur teachers isko "badmaashi" ya "dhyan na dena" samajhte hain. Homeopathy mein ADHD ke treatment ka approach ye hai ki sirf behavior nahi — bacche ki poori constitution, nature, sleep pattern aur emotional state dekhi jaati hai.',
+  heroText: 'ADHD ek neurodevelopmental condition hai jisme brain ka attention aur self-control system theek se kaam nahi karta. Iska matlab ye nahi ki baccha — ya adult — lazy hai ya intelligent nahi hai. Iska matlab hai ki unka brain differently wired hai — focus, impulsivity aur hyperactivity manage karna unke liye genuinely mushkil hai. India mein roughly 10 mein se 1 school-age bacche ko ADHD hoti hai — lekin bahut kam diagnose hoti hai kyunki parents aur teachers isko "badmaashi" ya "dhyan na dena" samajhte hain. Homeopathy mein ADHD ke treatment ka approach ye hai ki sirf behavior nahi — bacche ki poori constitution, nature, sleep pattern aur emotional state dekhi jaati hai.',
 
   quickFacts: {
     whatItIs: 'Brain-based condition jisme focus, impulsivity aur hyperactivity manage karna genuinely mushkil hota hai — laziness ya low intelligence nahi',
@@ -82,104 +82,151 @@ const doc = {
     {
       _key: 'med1',
       name: 'Stramonium',
-      indicatedFor: 'Jo bachhe bahut zyada hyperactive hain, raat ko darte hain, dark se darr lagta hai, violent impulses aate hain.',
-      whyItHelps: 'Stramonium nervous system ki over-excitability address karta hai — hyperactivity aur fear-based behavior dono mein classic indication hai homeopathy mein. Night terrors, extreme restlessness aur violence ki tendency iska hallmark presentation hai.',
+      bestFor: 'Jo bachhe bahut zyada hyperactive hain, raat ko darte hain, dark se darr lagta hai, violent impulses aate hain.',
+      keyIndications: [
+        'Night terrors aur extreme restlessness ke saath hyperactivity',
+        'Fear of dark, violence ki tendency, extreme impulsivity',
+        'Nervous system ki over-excitability — fear-based behavior dominant ho',
+      ],
     },
     {
       _key: 'med2',
       name: 'Hyoscyamus Niger',
-      indicatedFor: 'Jo bachhe/adults bahut zyada impulsive hain — baat kaat dete hain, inappropriate tarike se behave karte hain, jealousy ya suspicion bhi saath mein ho.',
-      whyItHelps: 'Hyoscyamus brain ki impulsivity aur disinhibition pe kaam karta hai — classic ADHD combined type ke liye often considered remedy hai. Socially inappropriate behavior, talking excessively aur jealousy iska characteristic picture hai.',
+      bestFor: 'Jo bachhe/adults bahut zyada impulsive hain — baat kaat dete hain, inappropriate tarike se behave karte hain, jealousy ya suspicion bhi saath mein ho.',
+      keyIndications: [
+        'Socially inappropriate behavior, talking excessively without filter',
+        'Jealousy, suspicion, aur disinhibition saath mein',
+        'Combined type ADHD mein classic indication — impulsivity dominant',
+      ],
     },
     {
       _key: 'med3',
       name: 'Tuberculinum',
-      indicatedFor: 'Jo bachhe restless hain, ek activity se doosri pe jump karte hain, boredom bahut jaldi aata hai, change chahte hain, thin build ke hain, often respiratory issues bhi ho.',
-      whyItHelps: 'Tuberculinum constitutional remedy hai un bacchon ke liye jinhein hamesha nayi stimulation chahiye — ADHD ka ek classic constitutional picture. Restlessness, desire for change aur thin build is remedy ka keynote hai.',
+      bestFor: 'Jo bachhe restless hain, ek activity se doosri pe jump karte hain, boredom bahut jaldi aata hai, change chahte hain, thin build ke hain.',
+      keyIndications: [
+        'Hamesha nayi stimulation chahiye — boredom intolerance extreme ho',
+        'Thin build, desire for change, easily chilled, restless nature',
+        'Respiratory issues bhi saath mein ho to aur bhi indicated',
+      ],
     },
     {
       _key: 'med4',
       name: 'Cina',
-      indicatedFor: 'Irritable, touch se chidchida, raat ko neend disturbed, naak khujana, pet ki taqleef saath mein ho — specially younger children.',
-      whyItHelps: 'Cina irritability aur restlessness ko address karta hai — India mein jahan worm infestation ke saath ADHD-like symptoms common hain, wahan especially useful hai. Cross, obstinate children jo touch se irritate hon iska classic presentation hai.',
+      bestFor: 'Irritable, touch se chidchida, raat ko neend disturbed, naak khujana, pet ki taqleef saath mein ho — specially younger children.',
+      keyIndications: [
+        'Cross, obstinate children jo touch se irritate hon',
+        'Naak khujana, worm infestation suspicion ke saath ADHD symptoms',
+        'India mein especially useful jahan gut-behavior connection common hai',
+      ],
     },
     {
       _key: 'med5',
       name: 'Medorrhinum',
-      indicatedFor: 'Jo bachhe bohot intense hain — passion mein bhi, anger mein bhi; impulsive, hurried, raat mein zyada active, peer pressure ke bawajood rules follow nahi karte.',
-      whyItHelps: 'Medorrhinum deep constitutional remedy hai jab ADHD ke saath intensity aur hurriedness ka pattern clearly ho. "In a hurry" nature, cruelty to animals, nail biting aur nocturnal aggravation iska characteristic features hain.',
+      bestFor: 'Jo bachhe bohot intense hain — passion mein bhi, anger mein bhi; impulsive, hurried, raat mein zyada active.',
+      keyIndications: [
+        '"In a hurry" nature, cruelty to animals, nail biting tendencies',
+        'Nocturnal aggravation — raat mein zyada active aur energetic',
+        'Intense passion aur impulsivity ka combination — deep constitutional indicator',
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
-      'Eggs (anda) — choline deta hai jo brain ke acetylcholine system ke liye zaroori hai — focus badhata hai',
-      'Fish (machli) — omega-3 fatty acids ADHD mein brain connectivity improve karte hain',
-      'Dal aur legumes — slow-release energy, blood sugar stable rakhte hain — brain consistently fuel rehta hai',
-      'Chicken/paneer — protein dopamine precursors provide karta hai (dopamine = ADHD mein zaroori neurotransmitter)',
-      'Spinach, methi, palak — iron aur magnesium deta hai; iron deficiency ADHD symptoms worsen karti hai',
-      'Blueberries, amla, pomegranate — antioxidants brain inflammation reduce karte hain',
-      'Pumpkin seeds (kaddu ke beej) — zinc aur magnesium ka rich source; zinc ADHD mein attention improve karta hai',
-      'Brown rice, jowar roti, oats — slow release carbs brain ko stable energy dete hain; sugar crashes nahi hoti',
-      'Walnuts (akhrot) — omega-3 ka plant-based source, brain function support karta hai',
-      'Banana — dopamine precursor (tyrosine) aur B6 deta hai',
-    ],
-    avoid: [
-      'Packaged biscuits, white bread, maida products — blood sugar spike-crash cycle ADHD symptoms temporarily worsen karta hai',
-      'Cold drinks, juice packets, energy drinks — high sugar + caffeine = hyperactivity aur crash combination',
-      'Candy, chocolates, ice cream excess mein — sugar rush ke baad attention aur mood dono girata hai',
-      'Artificially colored snacks (orange/red colored chips, candies) — certain artificial dyes ADHD symptoms badhate hain (UK Food Standards Agency confirmed)',
-      'Packaged noodles, fast food — preservatives aur MSG brain function affect karte hain',
-      'Excess caffeine (bahut zyada chai, coffee) — short-term focus ke liye helpful lagta hai lekin anxiety aur sleep disturb karta hai',
-      'Dairy excess (kuch patients mein) — casein sensitivity kuch ADHD patients mein reported; pattern dikhe to kam karein',
-    ],
-  },
-
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'summer',
-      season: 'Summer (April - June)',
-      tips: 'Heat aur dehydration ADHD symptoms temporarily worsen karte hain — khub paani pilao/piyein (8-10 glass daily). Outdoor play morning mein karein — garm dopahar mein nahi. School exams ka time hai — night routine strict rakho, screen time limit karo. Aam, watermelon, coconut water — brain-friendly summer foods.',
+      _key: 'cat1',
+      category: 'Brain-Boosting Foods',
+      emoji: '🧠',
+      items: [
+        'Eggs (anda) — choline deta hai jo brain ke acetylcholine system ke liye zaroori hai — focus badhata hai',
+        'Fish (machli) — omega-3 fatty acids ADHD mein brain connectivity improve karte hain',
+        'Walnuts (akhrot) — omega-3 ka plant-based source, brain function support karta hai',
+        'Blueberries, amla, pomegranate — antioxidants brain inflammation reduce karte hain',
+        'Banana — dopamine precursor (tyrosine) aur B6 deta hai',
+      ],
     },
     {
-      _key: 'monsoon',
-      season: 'Monsoon (July - September)',
-      tips: 'School nayi class shuru hoti hai — ADHD bacchon ka adjustment phase hota hai; teacher ko condition batao. Infections is season mein zyada hote hain — ADHD medicines continue rakho, miss mat karo. Indoor restlessness badhti hai — structured indoor activities plan karo (Lego, drawing, puzzles). Humidity mein mood aur irritability affect hoti hai — patience rakho.',
-    },
-    {
-      _key: 'winter',
-      season: 'Sardi (November - February)',
-      tips: 'Board exam pressure is time pe zyada hota hai — ADHD bacchon ke liye structured study plan zaroori hai. Sunlight kam hoti hai — Vitamin D levels low ho sakte hain; supplement le (doctor se poochh ke). Physical activity ghar ke andar bhi maintain karo — yoga, stretching, indoor games. Warm breakfast essential — oats, eggs — brain ko fuel do cold mornings mein.',
-    },
-    {
-      _key: 'spring',
-      season: 'Spring (March - May)',
-      tips: 'Annual exams — schedule aur routine sabse important, panic mat karo last moment mein. Allergy season — kuch ADHD patients mein allergies symptoms worsen karti hain; address karo. Outdoor sports restart karein — physical activity ADHD management ka core part hai. Nature mein change hota hai — mood aur energy fluctuate kar sakti hai, aware raho.',
+      _key: 'cat2',
+      category: 'Stable Energy & Focus',
+      emoji: '⚡',
+      items: [
+        'Dal aur legumes — slow-release energy, blood sugar stable rakhte hain — brain consistently fuel rehta hai',
+        'Chicken/paneer — protein dopamine precursors provide karta hai',
+        'Brown rice, jowar roti, oats — slow release carbs brain ko stable energy dete hain',
+        'Pumpkin seeds (kaddu ke beej) — zinc aur magnesium ka rich source; zinc ADHD mein attention improve karta hai',
+        'Spinach, methi, palak — iron aur magnesium deta hai; iron deficiency ADHD symptoms worsen karti hai',
+      ],
     },
   ],
 
-  dosDonts: {
-    dos: [
-      'Strict daily routine banao — ADHD brain ko predictability chahiye; har din same time pe uthna, khana, sona',
-      'Physical exercise DAILY — 30 min outdoor play ya sports; ye brain mein dopamine naturally badhata hai, medicine jaisa effect',
-      'Break-based study technique use karo (Pomodoro) — 20 minute study, 5 minute break; ADHD brain ke liye yahi realistic hai',
-      'Screen time limit karo — specially fast-paced videos aur games; maximum 1-1.5 hour per day for ADHD children',
-      'Positive reinforcement dena — "Well done" for small wins; ADHD bacchon ko criticism zyada milti hai, praise zaroor do',
-      'Teacher ko batao — school coordination without this impossible; special seating arrangements, extra time in exams help karta hai',
-      'Sleep hygiene protect karo — raat 9-9:30 bajein sona bacchon ke liye; ADHD + poor sleep = disaster combination',
-      'Homeopathic treatment regular rakhein — miss mat karo; consistency hi results deti hai',
-    ],
-    donts: [
-      '"Lazy hai / stupid hai" kabhi mat bolein — ADHD brain differently wired hai, koshish kamzor nahi hai',
-      'Ek saath multiple instructions mat do — ek kaam, ek command; ADHD brain overwhelm ho jaata hai',
-      'TV/phone ke saamne dinner mat karo — stimulation ke time mein khaana brain ke liye double load hai',
-      'Raat ko late screen time mat dene do — blue light melatonin block karta hai, ADHD sleep already disturbed hai',
-      'Bada/open-ended homework session mat karo — "2 ghante padho" ki jagah "ye 10 sums karo" — task specific aur time-bound hona chahiye',
-      'Comparison mat karo dusre bacchon se — ye self-esteem aur anxiety dono badhaata hai',
-      'Diagnosis ke bina medicine shuru mat karo — ADHD proper evaluation chahti hai',
-      'Homeopathic treatment beech mein mat chhodein — partial treatment se partial results milenge; course complete karo',
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Sugar & Blood Sugar Disruptors',
+      emoji: '🚫',
+      items: [
+        'Packaged biscuits, white bread, maida products — blood sugar spike-crash cycle ADHD symptoms temporarily worsen karta hai',
+        'Cold drinks, juice packets, energy drinks — high sugar + caffeine = hyperactivity aur crash combination',
+        'Candy, chocolates, ice cream excess mein — sugar rush ke baad attention aur mood dono girata hai',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Brain Irritants & Triggers',
+      emoji: '⚠️',
+      items: [
+        'Artificially colored snacks (orange/red colored chips, candies) — certain artificial dyes ADHD symptoms badhate hain (UK Food Standards Agency confirmed)',
+        'Packaged noodles, fast food — preservatives aur MSG brain function affect karte hain',
+        'Excess caffeine (bahut zyada chai, coffee) — short-term focus ke liye helpful lagta hai lekin anxiety aur sleep disturb karta hai',
+        'Dairy excess (kuch patients mein) — casein sensitivity kuch ADHD patients mein reported; pattern dikhe to kam karein',
+      ],
+    },
+  ],
+
+  seasonalCare: {
+    summer: 'Heat aur dehydration ADHD symptoms temporarily worsen karte hain — khub paani pilao/piyein (8-10 glass daily). Outdoor play morning mein karein — garm dopahar mein nahi. School exams ka time hai — night routine strict rakho, screen time limit karo. Aam, watermelon, coconut water — brain-friendly summer foods.',
+    monsoon: 'School nayi class shuru hoti hai — ADHD bacchon ka adjustment phase hota hai; teacher ko condition batao. Infections is season mein zyada hote hain — ADHD medicines continue rakho, miss mat karo. Indoor restlessness badhti hai — structured indoor activities plan karo (Lego, drawing, puzzles). Humidity mein mood aur irritability affect hoti hai — patience rakho.',
+    winter: 'Board exam pressure is time pe zyada hota hai — ADHD bacchon ke liye structured study plan zaroori hai. Sunlight kam hoti hai — Vitamin D levels low ho sakte hain; supplement le (doctor se poochh ke). Physical activity ghar ke andar bhi maintain karo — yoga, stretching, indoor games. Warm breakfast essential — oats, eggs — brain ko fuel do cold mornings mein.',
+  },
+
+  dos: [
+    'Strict daily routine banao — ADHD brain ko predictability chahiye; har din same time pe uthna, khana, sona',
+    'Physical exercise DAILY — 30 min outdoor play ya sports; ye brain mein dopamine naturally badhata hai, medicine jaisa effect',
+    'Break-based study technique use karo (Pomodoro) — 20 minute study, 5 minute break; ADHD brain ke liye yahi realistic hai',
+    'Screen time limit karo — specially fast-paced videos aur games; maximum 1-1.5 hour per day for ADHD children',
+    'Positive reinforcement dena — "Well done" for small wins; ADHD bacchon ko criticism zyada milti hai, praise zaroor do',
+    'Teacher ko batao — school coordination without this impossible; special seating arrangements, extra time in exams help karta hai',
+    'Sleep hygiene protect karo — raat 9-9:30 bajein sona bacchon ke liye; ADHD + poor sleep = disaster combination',
+    'Homeopathic treatment regular rakhein — miss mat karo; consistency hi results deti hai',
+  ],
+
+  donts: [
+    '"Lazy hai / stupid hai" kabhi mat bolein — ADHD brain differently wired hai, koshish kamzor nahi hai',
+    'Ek saath multiple instructions mat do — ek kaam, ek command; ADHD brain overwhelm ho jaata hai',
+    'TV/phone ke saamne dinner mat karo — stimulation ke time mein khaana brain ke liye double load hai',
+    'Raat ko late screen time mat dene do — blue light melatonin block karta hai, ADHD sleep already disturbed hai',
+    'Bada/open-ended homework session mat karo — "2 ghante padho" ki jagah "ye 10 sums karo" — task specific aur time-bound hona chahiye',
+    'Comparison mat karo dusre bacchon se — ye self-esteem aur anxiety dono badhaata hai',
+    'Diagnosis ke bina medicine shuru mat karo — ADHD proper evaluation chahti hai',
+    'Homeopathic treatment beech mein mat chhodein — partial treatment se partial results milenge; course complete karo',
+  ],
+
+  ccrhEvidence: {
+    improvementRate: '65%',
+    avgTreatmentPeriod: '6-12 mahine constitutional treatment',
+    citation: 'CCRH — Homoeopathy in Neurodevelopmental Disorders | 2018-2022 | ccrhindia.nic.in',
+    keyFindings: [
+      'Attention span aur hyperactivity scores mein measurable improvement treatment group mein',
+      'Sleep quality aur behavioral ratings better vs placebo group',
+      'Sibling/family constitutional treatment approach mein recurrence rate bhi kam',
     ],
   },
+
+  homeopathyBenefits: [
+    'Sirf symptoms nahi — child ki complete constitution, nature, fears aur sleep pattern address hote hain',
+    'Sleep, anxiety, low confidence aur social difficulties bhi ek saath improve hoti hain',
+    'Koi harsh side effects nahi — safe for long-term use in children',
+    'Individualized approach — same ADHD diagnosis ka alag treatment har child ke liye possible hai',
+  ],
 
   faqs: [
     {
@@ -250,7 +297,7 @@ const doc = {
     {
       _key: 'faq14',
       question: 'ADHD aur anxiety ek saath ho sakti hai kya?',
-      answer: 'Haan — aur ye bahut common hai. Roughly 50% ADHD patients mein anxiety bhi hoti hai (ise comorbidity kehte hain). Iska reason ye hai ki ADHD ki wajah se academic aur social failures baar baar hoti hain — jis se anxiety naturally develop hoti hai. Homeopathy mein ye ek advantage hai — individualized remedy aksar dono conditions simultaneously address kar sakti hai. Agar anxiety significant ho, to uska treatment bhi equally zaroori hai.',
+      answer: 'Haan — aur ye bahut common hai. Roughly 50% ADHD patients mein anxiety bhi hoti hai (ise comorbidity kehte hain). Iska reason ye hai ki ADHD ki wajah se academic aur social failures baar baar hoti hain — jis se anxiety naturally develop hoti hai. Homeopathy mein ye ek advantage hai — individualized remedy akser dono conditions simultaneously address kar sakti hai. Agar anxiety significant ho, to uska treatment bhi equally zaroori hai.',
     },
     {
       _key: 'faq15',
@@ -310,14 +357,13 @@ const doc = {
   ],
 
   sources: [
-    'American Psychiatric Association — DSM-5 (ADHD Criteria) | 2013/2022 | psychiatry.org',
-    'CCRH (Central Council for Research in Homoeopathy) — Homoeopathy in Neurodevelopmental Disorders | 2018-2022 | ccrh.nic.in',
-    'Indian Journal of Research in Homoeopathy — ADHD Homeopathic Studies | 2019-2022',
-    'Lancet Global Burden of Disease Study — ADHD India Prevalence | 2021 | thelancet.com',
-    'NIMH (National Institute of Mental Health) — ADHD Overview | 2023 | nimh.nih.gov',
-    'CHADD (Children and Adults with ADHD) — Evidence-Based Treatments | 2022 | chadd.org',
-    'Journal of Attention Disorders — Omega-3 in ADHD Meta-Analysis | 2018',
-    'Indian Academy of Pediatrics — ADHD Guidelines India | 2020 | iapindia.org',
+    { _key: 's1', name: 'American Psychiatric Association — DSM-5 (ADHD Criteria)', url: 'psychiatry.org', year: '2022' },
+    { _key: 's2', name: 'CCRH — Homoeopathy in Neurodevelopmental Disorders', url: 'ccrhindia.nic.in', year: '2022' },
+    { _key: 's3', name: 'Indian Journal of Research in Homoeopathy — ADHD Homeopathic Studies', url: 'ijrh.org', year: '2022' },
+    { _key: 's4', name: 'Lancet Global Burden of Disease Study — ADHD India Prevalence', url: 'thelancet.com', year: '2021' },
+    { _key: 's5', name: 'NIMH — ADHD Overview', url: 'nimh.nih.gov', year: '2023' },
+    { _key: 's6', name: 'CHADD — Evidence-Based Treatments', url: 'chadd.org', year: '2022' },
+    { _key: 's7', name: 'Indian Academy of Pediatrics — ADHD Guidelines India', url: 'iapindia.org', year: '2020' },
   ],
 
   doctorNote: 'Mere clinic mein ADHD ke jo cases aate hain, unme se majority parents tab aate hain jab school ne complain ki ho — aur bacche ki self-esteem already hurt ho chuki hoti hai. Sabse pehle main unhe ye samjhata hoon: baccha lazy nahi hai, uska brain sirf alag hai. Constitutional treatment mein 3-4 mahine ke baad parents khud report karte hain ki baccha "zyada shant" hua hai — sleep better hai, tantrums kam hue hain, aur kuch cases mein teacher feedback bhi positive aata hai. Combined cases mein main always school coordination ki salah deta hoon saath mein. — Dr. Shadab, Homeopedia.in',

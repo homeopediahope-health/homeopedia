@@ -103,11 +103,6 @@ const asthma = {
     'Allopathy ke saath saath chal sakta hai — koi drug interaction nahi',
   ],
 
-  homeopathyLimitations: [
-    'Acute severe attack mein rescue inhaler ya nebulizer pehli zaroorat hai — homeopathy acute emergency mein allopathic rescue ke badle use nahi karni chahiye',
-    'Status asthmaticus (ghanton tak ruke attack) — turant hospital, homeopathy ke liye wait mat karein',
-  ],
-
   medicines: [
     {
       _key: 'arsenicum',

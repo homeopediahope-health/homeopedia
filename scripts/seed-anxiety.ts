@@ -110,11 +110,6 @@ const anxiety = {
     'Stress-triggered physical symptoms (IBS, palpitations, BP) bhi saath mein address hote hain',
   ],
 
-  homeopathyLimitations: [
-    'Severe anxiety disorder ya active suicidal ideation mein psychiatrist ke saath immediate consultation zaroori hai — homeopathy supplementary hai, emergency replacement nahi',
-    'OCD aur PTSD mein CBT therapy ke saath combination approach best results deta hai — homeopathy alone sufficient nahi ho sakti severe cases mein',
-  ],
-
   medicines: [
     {
       _key: 'aconite',

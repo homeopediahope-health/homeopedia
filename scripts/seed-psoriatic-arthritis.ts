@@ -116,11 +116,6 @@ async function seed() {
       'Pregnancy-safe option jab conventional immunosuppressants avoid karne hote hain (doctor ki supervision mein)',
     ],
 
-    homeopathyLimitations: [
-      'Severe, rapidly progressive cases (arthritis mutilans type) mein conventional DMARDs ya biologics ke saath combination zaroori hai',
-      'Uveitis (aankhon ki complication) mein turant ophthalmologist se milna zaroori hai — fir homoeopath ko dikhayein',
-    ],
-
     medicines: [
       {
         _key: 'med1',

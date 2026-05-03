@@ -106,11 +106,6 @@ const discBulge = {
     'Allopathic treatment ke saath bhi saath chal sakta hai — doctor ki salaah se combination approach effective hoti hai',
   ],
 
-  homeopathyLimitations: [
-    'Severe nerve compression ya large disc herniation mein jab muscle weakness ya bladder control affected ho, conventional treatment (physiotherapy, epidural injection, ya surgery) pehle zaroori hai — homeopathy supplementary role mein kaam karta hai',
-    'Turant ya emergency pain relief ke liye conventional analgesics homeopathy se faster hain — acute severe episodes mein allopathy se shuruat karke homeopathy parallel ya baad mein add karna practical approach hai',
-  ],
-
   medicines: [
     {
       _key: 'med1',

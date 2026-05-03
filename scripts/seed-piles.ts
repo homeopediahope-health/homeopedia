@@ -167,11 +167,6 @@ const piles = {
     'Recurrence prevention — proper course ke baad dobara hone ki tendency kam hoti hai',
   ],
 
-  homeopathyLimitations: [
-    'Grade 3-4 advanced piles mein surgery hi primary treatment hai — homeopathy supportive role mein kaam karta hai',
-    'Thrombosed piles mein turant doctor se milna zaroori — homeopathy akele sufficient nahi',
-  ],
-
   medicines: [
     {
       _key: 'med1',

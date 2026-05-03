@@ -125,37 +125,56 @@ const sjogrens = {
     {
       _key: 'med1',
       name: 'Natrum Muriaticum',
-      forWhom: 'Jo log emotionally reserved hain, dard ko andar rakhte hain, aankhon mein extreme dryness hai — aankhein jaise desert jaisi — aur skin bhi dry aur cracked hai.',
-      whyHope: "Natrum Mur is bimari mein sabse frequently indicated medicine hai kyunki ye body ki fluid distribution ko address karta hai. Glands jo moisture produce karna band kar deti hain, unhe stimulate karne mein ye medicine khas jagah rakhti hai. Emotionally withdrawn, grief-suppressed patients mein ye particularly effective dekha gaya hai.",
+      bestFor: 'Jo log emotionally reserved hain, dard ko andar rakhte hain, aankhon mein extreme dryness hai — aankhein jaise desert jaisi — aur skin bhi dry aur cracked hai.',
+      keyIndications: [
+
+        "Natrum Mur is bimari mein sabse frequently indicated medicine hai kyunki ye body ki fluid distribution ko address karta hai. Glands jo moisture produce karna band kar deti hain, unhe stimulate karne mein ye medicine khas jagah rakhti hai. Emotionally withdrawn, grief-suppressed patients mein ye particularly effective dekha gaya hai.",
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Bryonia Alba',
-      forWhom: 'Jab har mucous membrane dry ho — muh, naak, aankhein sab — aur thodi bhi movement se taklif badhe. Joints mein dard aur extreme thirst ke saath dry symptoms.',
-      whyHope: "Bryonia specifically mucous membrane dryness ko address karta hai. Sjogren's mein jab systemic dryness joint involvement ke saath combine ho, Bryonia ek important tool hai. Patient paani peena chahta hai par rarely — ek saath zyada paani — ye Bryonia ka characteristic sign hai.",
+      bestFor: 'Jab har mucous membrane dry ho — muh, naak, aankhein sab — aur thodi bhi movement se taklif badhe. Joints mein dard aur extreme thirst ke saath dry symptoms.',
+      keyIndications: [
+
+        "Bryonia specifically mucous membrane dryness ko address karta hai. Sjogren's mein jab systemic dryness joint involvement ke saath combine ho, Bryonia ek important tool hai. Patient paani peena chahta hai par rarely — ek saath zyada paani — ye Bryonia ka characteristic sign hai.",
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Belladonna',
-      forWhom: 'Jab aankhein bahut dry aur simultaneously red, inflamed, aur light sensitive hon — acute flare-up phase mein. Thakaan ke saath sudden symptoms aayein.',
-      whyHope: 'Belladonna glandular inflammation aur dryness ke acute episodes mein kaam karta hai. Salivary gland swelling ke acute phase mein bhi indicated hai.',
+      bestFor: 'Jab aankhein bahut dry aur simultaneously red, inflamed, aur light sensitive hon — acute flare-up phase mein. Thakaan ke saath sudden symptoms aayein.',
+      keyIndications: [
+
+        'Belladonna glandular inflammation aur dryness ke acute episodes mein kaam karta hai. Salivary gland swelling ke acute phase mein bhi indicated hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Alumina',
-      forWhom: 'Extreme dryness jo progressive ho — skin, muh, aankhein, even digestion slow ho. Older patients ya jin mein chronic constipation bhi saath ho.',
-      whyHope: 'Alumina body ki mucous membranes aur glands ki progressive dryness ko address karta hai. Ye nervous system level pe bhi kaam karta hai — Sjogren\'s ke neurological symptoms (numbness, brain fog) mein bhi role hai.',
+      bestFor: 'Extreme dryness jo progressive ho — skin, muh, aankhein, even digestion slow ho. Older patients ya jin mein chronic constipation bhi saath ho.',
+      keyIndications: [
+
+        'Alumina body ki mucous membranes aur glands ki progressive dryness ko address karta hai. Ye nervous system level pe bhi kaam karta hai — Sjogren\'s ke neurological symptoms (numbness, brain fog) mein bhi role hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Pulsatilla',
-      forWhom: 'Gentle, emotional nature ki mahilaein jisme symptoms hormonal changes ke saath badh-ghatte hon. Dry eyes jo evening mein worse hon. Post-menopausal Sjogren\'s mein commonly indicated.',
-      whyHope: 'Pulsatilla hormonal aur glandular system ke beech ka bridge hai. Post-menopause mein estrogen drop ke baad jo Sjogren\'s symptoms aggravate hoti hain, usme Pulsatilla ek important medicine hai. Emotional sensitivity aur weeping tendency bhi iske indicators hain.',
+      bestFor: 'Gentle, emotional nature ki mahilaein jisme symptoms hormonal changes ke saath badh-ghatte hon. Dry eyes jo evening mein worse hon. Post-menopausal Sjogren\'s mein commonly indicated.',
+      keyIndications: [
+
+        'Pulsatilla hormonal aur glandular system ke beech ka bridge hai. Post-menopause mein estrogen drop ke baad jo Sjogren\'s symptoms aggravate hoti hain, usme Pulsatilla ek important medicine hai. Emotional sensitivity aur weeping tendency bhi iske indicators hain.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Anti-Inflammatory Foods',
@@ -193,8 +212,9 @@ const sjogrens = {
           'Leafy greens (palak, methi) — Vitamin K aur folate jo glandular health support karte hain',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'Dehydrating Foods',
@@ -203,7 +223,7 @@ const sjogrens = {
           'Excess coffee/chai (3+ cups) — diuretic effect se dryness badhti hai; 1-2 cups tak limit karein',
           'Soda aur energy drinks — phosphoric acid aur caffeine combination glands pe stress dalta hai',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Inflammatory Trigger Foods',
@@ -223,8 +243,6 @@ const sjogrens = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: "Indoor heater aur dry cold air — WORST combination for Sjogren's; humidifier ghar mein zaroor rakhein. Warm (not hot) soups aur liquids — moisture intake natural tarike se badhata hai. Raynaud's patients extra precaution lein — haath, pair dhake rakhein; cold exposure ungliyon mein blood flow block kar sakta hai. Vitamin D supplement doctor advice se — winter mein sun exposure kam hota hai aur Sjogren's patients mein Vitamin D deficiency common hai. Lip balm, moisturizer, aur eye drops winter mein zyada frequently use karein.",
     summer: "Har 30-40 minute mein paani peena — dehydration dryness dramatically worse kar deta hai. Aankhon ke liye lubricating drops (preservative-free) zyada frequently use karein — garmi mein evaporation fast hoti hai. AC directly aankhon pe na aane de — indirect air flow prefer karein. UV-protective sunglasses mandatory — sun exposure dry eyes mein pain aur inflammation badhaata hai. Outdoor exercise early morning ya evening mein.",
@@ -235,7 +253,6 @@ const sjogrens = {
       'Raat ko eye mask aur room humidifier saath use karein — raat ko evaporation se aankhon ka moisture zyada ghatta hai',
     ],
   },
-
   dos: [
     'Preservative-free artificial tears (eye drops) har doctor-recommended schedule pe use karein — dry cornea ko damage se bachana priority hai',
     'Humidifier ghar ya office mein lagayein — indoor air ka moisture level 40-50% maintain karna chahiye',
@@ -392,42 +409,9 @@ const sjogrens = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: "Sjogren's Foundation, USA",
-      year: '2023',
-      url: 'https://www.sjogrens.org',
-    },
-    {
-      _key: 'src2',
-      title: 'CCRH Annual Research Report — Autoimmune Conditions Division',
-      year: '2022-23',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src3',
-      title: 'Indian Journal of Research in Homoeopathy — Autoimmune Research Review Vol 16',
-      year: '2022',
-      url: 'https://www.ijrh.org',
-    },
-    {
-      _key: 'src4',
-      title: "National Institute of Dental and Craniofacial Research (NIDCR) — Sjogren's Syndrome Overview",
-      year: '2023',
-      url: 'https://www.nidcr.nih.gov',
-    },
-    {
-      _key: 'src5',
-      title: "Rheumatology (Oxford) — Primary Sjogren's Syndrome Clinical Review | Vol 62",
-      year: '2023',
-      url: '',
-    },
-    {
-      _key: 'src6',
-      title: 'Arthritis & Rheumatology — Vitamin D and Autoimmune Disease',
-      year: '2022',
-      url: '',
-    },
+    { _key: 's1', name: "CCRH — Homeopathic Management of Autoimmune Conditions", url: 'ccrhindia.nic.in', year: '2022' },
+    { _key: 's2', name: "Sjogren's Foundation — Disease Management Guidelines", url: 'sjogrens.org', year: '2022' },
+    { _key: 's3', name: 'British Homeopathic Association — Autoimmune Disease Research', url: 'britishhomeopathic.org', year: '2020' },
   ],
 
   doctorNote: "Clinic mein jo zyada common pattern dekha hai wo ye hai ki Sjogren's ki mahila patient kaafi saal dry eyes aur muh ki taklif ke saath rehti hai — aankh ke specialist se drops leti hai, dental problems hote hain, aur thakaan ko 'umra ka asar' samajhti hai. Jab diagnosis hoti hai tab tak gland damage ho chuka hota hai. Is liye early detection aur integrated approach — homeopathy + conventional care saath — mein believe karta hoon. Sabse bada fayda jo maine individually dekha hai: Sjogren's ki chronic thakaan aur brain fog mein homeopathic treatment se jo improvement hoti hai, wo conventional medicines mein aise results nahi deti.",

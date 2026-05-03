@@ -135,7 +135,7 @@ const doc = {
 
   homeopathyExplainer: 'Kabz mein homeopathy ka approach sirf "stool loose karna" nahi hai — balki aapki intestine ki underlying function ko restore karna hai. Homeopathy mein ye dekhte hain ki aapki kabz kaisi hai — baar baar aati hai ya kabhi kabhi, subah zyada hai ya sham ko, stress se trigger hoti hai ya khane ke baad, stool kaisi shape mein aati hai — ye sab milake individualized treatment hoti hai jo gut ki natural motility wapas laati hai. Homeopathic medicines gut ke nervous system aur muscular layer par kaam karti hain — tone aur sensitivity dono restore karte hain — bina dependency ke.',
 
-  ccrhData: {
+  ccrhEvidence: {
     improvementRate: 'CCRH ke chronic functional constipation study mein, treatment group mein average weekly bowel frequency 1.4 se badh ke 3.8 ho gayi — jabki placebo group mein 1.5 se 2.1 par ruki. Stool consistency (Bristol Stool Scale) mein bhi better scores aaye.',
     avgTreatmentPeriod: '3 se 6 mahine (chronic cases mein)',
     citation: 'Journal of Evidence-Based Complementary & Alternative Medicine | CCRH Functional Constipation Clinical Study | 2018-2019',
@@ -152,76 +152,128 @@ const doc = {
     {
       _key: 'med1',
       name: 'Nux Vomica',
-      forWhom: 'Jo log baar baar jaana chahte hain lekin thodi thodi hi potty hoti hai, incomplete feeling rehti hai; acidity, stress, irregular eating habits wale; office goers.',
-      whyHope: 'Nux Vomica gut ki spasmodic, irregular activity ko regulate karta hai. Especially un logon mein kaafi effective hai jinki kabz stress, coffee, alcohol, ya irregular diet ki wajah se trigger hoti hai. Rectal spasm aur "aana chahta hai lekin nahi nikalta" feeling is medicine ka classic case hai.',
+      bestFor: 'Jo log baar baar jaana chahte hain lekin thodi thodi hi potty hoti hai, incomplete feeling rehti hai; acidity, stress, irregular eating habits wale; office goers.',
+      keyIndications: [
+
+        'Nux Vomica gut ki spasmodic, irregular activity ko regulate karta hai. Especially un logon mein kaafi effective hai jinki kabz stress, coffee, alcohol, ya irregular diet ki wajah se trigger hoti hai. Rectal spasm aur "aana chahta hai lekin nahi nikalta" feeling is medicine ka classic case hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Bryonia Alba',
-      forWhom: 'Bahut dry, hard, dark stool jaise jali hui hoti hai; thodi si bhi movement se takleef; paani bilkul nahi piye — pyaas zyada; kabz ke saath headache.',
-      whyHope: 'Bryonia intestine ki mucous lining ko hydrate aur lubricate karne mein madadgar hai. Stool bahut dry aur hard ho to ye classic choice hai. Warmth se takleef badhti hai aur complete rest se achha lagta hai — ye Bryonia ka characteristic hai.',
+      bestFor: 'Bahut dry, hard, dark stool jaise jali hui hoti hai; thodi si bhi movement se takleef; paani bilkul nahi piye — pyaas zyada; kabz ke saath headache.',
+      keyIndications: [
+
+        'Bryonia intestine ki mucous lining ko hydrate aur lubricate karne mein madadgar hai. Stool bahut dry aur hard ho to ye classic choice hai. Warmth se takleef badhti hai aur complete rest se achha lagta hai — ye Bryonia ka characteristic hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Alumina',
-      forWhom: 'Bahut purani, chronic kabz; potty aane ki urge hi nahi hoti; stool pass karne ke liye bahut effort karna padta hai chahe stool soft ho; elderly ya weak nervous system wale.',
-      whyHope: 'Alumina rectal muscles ki tonicity restore karta hai jab urge reflex khatam ho jaata hai. Ye medicine un cases mein bahut acha kaam karti hai jahan intestine ki natural reflex hi nahi rahi — laxatives ke long-term use ya age ke kaaran.',
+      bestFor: 'Bahut purani, chronic kabz; potty aane ki urge hi nahi hoti; stool pass karne ke liye bahut effort karna padta hai chahe stool soft ho; elderly ya weak nervous system wale.',
+      keyIndications: [
+
+        'Alumina rectal muscles ki tonicity restore karta hai jab urge reflex khatam ho jaata hai. Ye medicine un cases mein bahut acha kaam karti hai jahan intestine ki natural reflex hi nahi rahi — laxatives ke long-term use ya age ke kaaran.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Lycopodium Clavatum',
-      forWhom: 'Kabz ke saath bahut zyada gas, bloating; shaam 4-8 baje discomfort zyada; liver function weak; khane ke baad pet phool jaata hai.',
-      whyHope: 'Lycopodium liver aur gut function dono address karta hai. Jab kabz ke saath flatulence aur right-sided abdominal discomfort ho to ye classic medicine hai. Gut ki sluggishness ko liver angle se treat karta hai.',
+      bestFor: 'Kabz ke saath bahut zyada gas, bloating; shaam 4-8 baje discomfort zyada; liver function weak; khane ke baad pet phool jaata hai.',
+      keyIndications: [
+
+        'Lycopodium liver aur gut function dono address karta hai. Jab kabz ke saath flatulence aur right-sided abdominal discomfort ho to ye classic medicine hai. Gut ki sluggishness ko liver angle se treat karta hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Opium (Homeopathic)',
-      forWhom: 'Bowel ki complete inactivity — koi urge hi nahi aata; post-operative ya post-anesthesia kabz; opiate/painkiller se induced constipation; stool balls jaise, dark.',
-      whyHope: 'Opium (highly diluted homeopathic form) bowel ki paralytic inactivity ko address karta hai — ye wahan kaam karta hai jahan intestine ne completely "kaam karna band kar diya" hota hai.',
+      bestFor: 'Bowel ki complete inactivity — koi urge hi nahi aata; post-operative ya post-anesthesia kabz; opiate/painkiller se induced constipation; stool balls jaise, dark.',
+      keyIndications: [
+
+        'Opium (highly diluted homeopathic form) bowel ki paralytic inactivity ko address karta hai — ye wahan kaam karta hai jahan intestine ne completely "kaam karna band kar diya" hota hai.',
+
+      ],
     },
     {
       _key: 'med6',
       name: 'Natrum Muriaticum',
-      forWhom: 'Emotional stress, grief ya loneliness se trigger hone wali kabz; IBS-C pattern; stool hard aur dry, rectum dry; namak ki craving ya aversion.',
-      whyHope: 'Natrum Mur mind-gut connection ko address karta hai. Jab emotional state directly bowel function affect kar raha ho to ye medicine bahut effective hoti hai. Stress aur grief se chronic kabz mein ye excellent choice hai.',
+      bestFor: 'Emotional stress, grief ya loneliness se trigger hone wali kabz; IBS-C pattern; stool hard aur dry, rectum dry; namak ki craving ya aversion.',
+      keyIndications: [
+
+        'Natrum Mur mind-gut connection ko address karta hai. Jab emotional state directly bowel function affect kar raha ho to ye medicine bahut effective hoti hai. Stress aur grief se chronic kabz mein ye excellent choice hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    eat: [
-      { category: 'High Fiber Foods', items: ['Isabgol (Psyllium husk) — best natural stool softener, paani ke saath lena, stool ka bulk badhata hai', 'Daliya / Oats — soluble fiber jo gut bacteria ke liye prebiotic bhi hai', 'Brown rice — white rice se better, bran layer intact hoti hai', 'Rajma, chana, moong dal — fiber aur protein dono, gut microbiome ke liye excellent'] },
-      { category: 'Fruits & Vegetables', items: ['Papaya — papain enzyme hoti hai, subah khaali pet best', 'Guava (amrood) — seeds ke saath khaao, excellent fiber source', 'Anjeer (fig) — 2-3 soak karke raat ko, subah khaao', 'Prunes (sookhe aloo bhukhara) — natural laxative effect, sorbitol content', 'Palak — magnesium aur fiber dono — natural muscle relaxant', 'Lauki, tinda — easy to digest aur fiber rich'] },
-      { category: 'Liquids & Probiotics', items: ['Garam paani subah uthke — bowel reflex trigger hota hai', 'Chaas (buttermilk) — gut bacteria ke liye probiotics', 'Coconut water — electrolytes, hydration, gut soothing', 'Nimbu paani (warm water + lemon) — gut stimulate karta hai'] },
-    ],
-    avoid: [
-      { category: 'Constipating Foods', items: ['Maida products (bread, biscuits, pizza, paratha maida ka) — no fiber, stool compact kar deta hai', 'White rice zyada — low fiber, binding effect', 'Unripe kela — tannins stool harden karta hai', 'Cheese, paneer zyada matra mein — casein protein slow digestion karta hai'] },
-      { category: 'Dehydrating & Processed Items', items: ['Chai / Coffee zyada — diuretic hai, stool dry karta hai', 'Cold drinks, packaged juices — no fiber, sugar gut bacteria ko harm karta hai', 'Chips, namkeen, processed snacks — salt + low fiber = worst combination', 'Red meat zyada — slow digest hota hai, colon transit time badha deta hai'] },
-      { category: 'Common Indian Habits Jo Avoid Karein', items: ['Khana khate hue paani peena — digestion dilute hoti hai', 'Raat ko bahut late khana — gut ko rest chahiye', 'Oil mein tali cheezein zyada — fat slow gastric emptying karta hai'] },
-    ],
-    dietTip: 'Subah uthke khali pet ek bada glass garam paani peeyein — ye sabse simple aur powerful kabz remedy hai. Isabgol roz lein — lekin paani zyada peena ZAROORI hai saath mein. Papaya subah khaana habit banao.',
-    dietNote: 'Kabz mein diet ka golden rule: fiber badhao aur paani zyada peeo — ye do cheezein ek saath. Sirf fiber badhane se gas ho sakti hai agar paani kam ho. Daily 2-2.5 litre paani + fiber-rich diet = natural bowel movement.',
+  seasonalCare: {
+    summer: 'Ye season dehydration ki wajah se constipation worst hoti hai. Paani ki zaroorat 10-12 glasses tak badhti hai. Coconut water, chaas, nimbu paani din mein 2-3 baar. Papaya aur watermelon daily khaao. Isabgol use karein to paani ki matra badhaao — warna gas hogi.',
+    monsoon: 'Gut infections ka season — diarrhoea se recover ke baad aksar kabz aati hai. Probiotics important hain — dahi, chaas daily lein. Raw salad avoid karein — cooked veggies better. Is season mein homeopathic treatment particularly effective hai.',
+    winter: 'Physical activity ghatti hai — sedentary lifestyle worst combination with cold weather. Paani peene ki ichha kam hoti hai — fir bhi 7-8 glass zaroor peeyein. Dry fruits soak karke khaao — anjeer, kishmish, akhrot. Ghee thoda sa roz khaana is season mein particularly achha hai — natural lubricant.',
   },
 
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'sc1',
-      season: 'Garmi (Summer — April to June)',
-      tip: 'Ye season dehydration ki wajah se constipation worst hoti hai. Paani ki zaroorat 10-12 glasses tak badhti hai. Coconut water, chaas, nimbu paani din mein 2-3 baar. Papaya aur watermelon daily khaao. Isabgol use karein to paani ki matra badhaao — warna gas hogi.',
+      _key: 'inc1',
+      category: 'High-Fiber & Gut-Motility Foods',
+      emoji: '🌿',
+      items: [
+        'Isabgol (Psyllium husk) — 1-2 tsp garam paani mein, India ka #1 natural stool softener',
+        'Papaya — papain enzyme bowel movement smooth karta hai, subah khali pet best',
+        'Oats (dalia) — soluble fiber jo stool mein paani retain karta hai, soften karta hai',
+        'Palak, methi, saag — magnesium + fiber dono bowel motility improve karte hain',
+        'Moong dal, chana, rajma — plant fiber jo gut bacteria ko feed karta hai',
+        'Anjeer (figs) 2-3 raat bhar paani mein bhigo ke — natural laxative effect',
+        'Kale angoor aur prunes (dried plums) — sorbitol gut mein paani attract karta hai',
+        'Flaxseeds (1 tbsp) — soluble + insoluble fiber dono, gut motility ke liye',
+        'Chukandar (beetroot) — fiber + betaine liver aur gut dono ke liye helpful',
+        'Banana (pakka hua) — pectin fiber stool bulk badhata hai',
+      ],
     },
     {
-      _key: 'sc2',
-      season: 'Barsaat (Monsoon — July to September)',
-      tip: 'Gut infections ka season — diarrhoea se recover ke baad aksar kabz aati hai. Probiotics important hain — dahi, chaas daily lein. Raw salad avoid karein — cooked veggies better. Is season mein homeopathic treatment particularly effective hai.',
+      _key: 'inc2',
+      category: 'Hydration & Gut Healers',
+      emoji: '💧',
+      items: [
+        'Garam paani subah uthte hi — bowel reflex trigger karta hai, din ki best start',
+        'Nariyal pani — electrolytes + hydration, gut ke liye gentle',
+        'Lassi ya chaach — probiotics gut bacteria balance karte hain, motility improve hoti hai',
+        'Sabji ka soup — light, hydrating, easy to digest',
+        'Ghee 1-2 tsp roti ke saath — natural lubricant hai intestine ka, purani kabz mein helpful',
+      ],
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Constipation-Causing Foods',
+      emoji: '🚫',
+      items: [
+        'Maida products — white bread, naan, samosa, biscuits — zero fiber + gut slowing',
+        'Processed aur packaged food — preservatives gut bacteria disturb karte hain',
+        'Refined sugar aur mithai — gut motility slow hoti hai, inflammation badhti hai',
+        'Excess dairy — paneer, cheese, mawa in large quantity stool hard karte hain',
+        'Banana (kacha/unripe) — tannins kabz worse karte hain, sirf pakka khao',
+        'Red meat (lamb, beef) — high fat + low fiber = slow gut transit',
+        'Fried food — tel gut lining ko coat karta hai, absorption aur motility dono affect',
+        'Chay/coffee zyada — mild dehydration se stool dry ho jaata hai',
+      ],
     },
     {
-      _key: 'sc3',
-      season: 'Sardi (Winter — November to February)',
-      tip: 'Physical activity ghatti hai — sedentary lifestyle worst combination with cold weather. Paani peene ki ichha kam hoti hai — fir bhi 7-8 glass zaroor peeyein. Dry fruits soak karke khaao — anjeer, kishmish, akhrot. Ghee thoda sa roz khaana is season mein particularly achha hai — natural lubricant.',
-    },
-    {
-      _key: 'sc4',
-      season: 'Spring (March)',
-      tip: 'Weather change ka time — gut sensitivity zyada hoti hai. Diet clean karein — winter ki heavy foods se light ki taraf shift. Fruits zyada shuru karein. Homeopathic constitutional treatment start karne ka best season.',
+      _key: 'avd2',
+      category: 'Habits That Worsen Constipation',
+      emoji: '⚠️',
+      items: [
+        'Paani kam peena — dehydration kabz ka #1 cause hai, 8-10 glass daily zaroor',
+        'Raat ka late heavy khana — gut ko repair time chahiye, late meal = sluggish morning',
+        'Urge aane pe rokna — yahi aadat rectal tone bigaadti hai aur chronic kabz banati hai',
+      ],
     },
   ],
 
@@ -376,13 +428,13 @@ const doc = {
   ],
 
   sources: [
-    'Central Council for Research in Homoeopathy (CCRH) | Clinical Study on Functional Constipation | 2018-2019 | ccrhindia.org',
-    'World Gastroenterology Organisation — Global Guidelines on Constipation | WGO | 2010 (Updated 2020)',
-    'American College of Gastroenterology — Chronic Idiopathic Constipation Guidelines | ACG | 2021',
-    'Mayo Clinic — Constipation: Symptoms, Causes, Treatment',
-    'Lancet GBD Study — Digestive Disease Burden in India | 2019',
-    'National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) — Constipation Fact Sheet',
-    'Indian Journal of Gastroenterology — Prevalence of Constipation in India: A Systematic Review | 2020',
+    { _key: 's1', name: 'Central Council for Research in Homoeopathy (CCRH) | Clinical Study on Functiona', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's2', name: 'World Gastroenterology Organisation — Global Guidelines on Constipation | WGO | ', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's3', name: 'American College of Gastroenterology — Chronic Idiopathic Constipation Guideline', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's4', name: 'Mayo Clinic — Constipation: Symptoms, Causes, Treatment', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's5', name: 'Lancet GBD Study — Digestive Disease Burden in India | 2019', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's6', name: 'National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) — Const', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's7', name: 'Indian Journal of Gastroenterology — Prevalence of Constipation in India: A Syst', url: 'ccrhindia.nic.in', year: '2024' },
   ],
 
   doctorNote: 'Clinic mein kabz ke jo cases aate hain, unme 60-70% patients zyada samay se laxatives use kar rahe hote hain — aur natural bowel reflex almost khatam ho chuka hota hai. Nux Vomica se shuru karke Alumina par aana often kafi productive hota hai chronic cases mein. Sabse zaroori kaam jo main karta hoon: patient ko laxatives se slowly wean off karna aur gut ko re-train karna — homeopathy is process mein excellent support deti hai. 3 mahine ke consistent treatment mein majority patients mein laxative dependency tootti hai aur natural bowel rhythm wapas aata hai.',

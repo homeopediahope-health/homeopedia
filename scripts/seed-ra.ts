@@ -106,11 +106,6 @@ const ra = {
     'Conventional treatment ke saath saath chal sakta hai — doctor ki salaah se dono ek saath lena possible aur safer hai',
   ],
 
-  homeopathyLimitations: [
-    'Severe active RA mein (high DAS-28, erosive disease) conventional DMARDs (methotrexate) ke saath combination approach zyada effective hoti hai — homeopathy akele sufficient nahi ho sakti',
-    'Joint deformity aa jaaye to homeopathy deformity reverse nahi kar sakti — physical therapy aur orthopedic evaluation bhi zaroori hai',
-  ],
-
   medicines: [
     {
       _key: 'rhustox',

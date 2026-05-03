@@ -102,101 +102,157 @@ const doc = {
     {
       _key: 'med1',
       name: 'Agnus Castus',
-      indicatedFor: 'Jab sexual desire bilkul khatam ho gayi ho, erection weak ho, aur patient mentally bhi exhausted lagta ho — jaisa kisi buri habit ya past excesses ke baad hota hai.',
-      whyItHelps: 'Ye medicine male reproductive system ki exhaustion ko address karti hai — sexual function aur libido dono ko dhire dhire restore karne mein madadgar mani jaati hai.',
+      bestFor: 'Jab sexual desire bilkul khatam ho gayi ho, erection weak ho, aur patient mentally bhi exhausted lagta ho — jaisa kisi buri habit ya past excesses ke baad hota hai.',
+      keyIndications: [
+        'Complete loss of sexual desire + weak erection combination',
+        'Mental exhaustion ke saath reproductive system ki kamzori',
+        'Past excesses ya long-standing sexual weakness ke baad classic indication',
+      ],
     },
     {
       _key: 'med2',
       name: 'Selenium Metallicum',
-      indicatedFor: 'Weak erection ke saath involuntary semen loss (dhat girna) aur bahut zyada weakness feel karna — especially heat se zyada takleef hone wale patients.',
-      whyItHelps: 'Selenium reproductive system ki vitality support karta hai, semen quality address karta hai, aur heat-sensitivity wale male cases mein specifically useful mana jaata hai.',
+      bestFor: 'Weak erection ke saath involuntary semen loss (dhat girna) aur bahut zyada weakness feel karna — especially heat se zyada takleef hone wale patients.',
+      keyIndications: [
+        'Involuntary semen loss + progressive weakness',
+        'Heat-sensitive patients mein sperm quality issues',
+        'Reproductive vitality ka support karta hai selenium-deficient pattern mein',
+      ],
     },
     {
       _key: 'med3',
       name: 'Lycopodium Clavatum',
-      indicatedFor: 'Digestive issues + liver complaints ke saath sexual weakness — erection problem sirf performance anxiety ya partner ke saath ho, akele nahi. Patient bahar se confident lekin andar se insecure lagta ho.',
-      whyItHelps: 'Lycopodium liver + reproductive axis ko connect karta hai — hormonal metabolism support karta hai maana jaata hai. Performance anxiety wale male infertility cases mein bahut common prescription hai.',
+      bestFor: 'Digestive issues + liver complaints ke saath sexual weakness — erection problem sirf performance anxiety ya partner ke saath ho. Patient bahar se confident lekin andar se insecure lagta ho.',
+      keyIndications: [
+        'Performance anxiety-driven erectile dysfunction',
+        'Liver + reproductive axis — hormonal metabolism support',
+        'Bahar se confident lekin andar se insecure — classic Lycopodium personality',
+      ],
     },
     {
       _key: 'med4',
       name: 'Caladium Seguinum',
-      indicatedFor: 'Smoking history ke saath impotence — sexual desire hai lekin erection possible nahi. Genitals relaxed aur cold lagein.',
-      whyItHelps: 'Smoking-related reproductive damage mein ek specific remedy mani jaati hai — especially jab desire ho lekin function fail ho raha ho.',
+      bestFor: 'Smoking history ke saath impotence — sexual desire hai lekin erection possible nahi. Genitals relaxed aur cold lagein.',
+      keyIndications: [
+        'Smoking-related reproductive damage — desire present lekin function fail',
+        'Genitals cold aur relaxed — opposite of arousal state',
+        'Tobacco-associated sexual dysfunction mein specific indication',
+      ],
     },
     {
       _key: 'med5',
       name: 'X-Ray (Radium Bromide)',
-      indicatedFor: 'Radiation exposure history wale patients, chemotherapy ke baad ke cases, ya jab sperm DNA fragmentation high ho aur conventional medicine limited options de.',
-      whyItHelps: 'Radiation/chemical damage ke baad reproductive cell regeneration ko support karne mein use kiya jaata hai — ek qualified homoeopath ki dekhrekh mein.',
+      bestFor: 'Radiation exposure history wale patients, chemotherapy ke baad ke cases, ya jab sperm DNA fragmentation high ho.',
+      keyIndications: [
+        'Post-radiation ya post-chemotherapy reproductive damage',
+        'High sperm DNA fragmentation index (DFI) cases',
+        'Qualified homoeopath ki dekhrekh mein — specialized case',
+      ],
     },
     {
       _key: 'med6',
       name: 'Conium Maculatum',
-      indicatedFor: 'Older men ya jin mein sexual suppression lamba waqt raha ho — sexual desire hai lekin incomplete erection, testicular hardness ya heaviness ke saath.',
-      whyItHelps: 'Long-term sexual suppression ya abstinence se aaye reproductive dysfunction mein useful — testicular gland function ko address karta hai maana jaata hai.',
+      bestFor: 'Older men ya jin mein sexual suppression lamba waqt raha ho — sexual desire hai lekin incomplete erection, testicular hardness ya heaviness ke saath.',
+      keyIndications: [
+        'Long-term abstinence ya suppression ke baad dysfunction',
+        'Testicular hardness ya heaviness ke saath weak erection',
+        'Older men mein reproductive gland function support',
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
-      'Pumpkin seeds (kaddu ke beej) — zinc ka best vegetarian source, sperm production directly support karta hai, daily ek mutthi khaayein',
-      'Sesame seeds (til) — zinc + healthy fats, testosterone naturally support karte hain',
-      'Chickpeas (chane) — zinc + protein combination, sperm motility ke liye',
-      'Pomegranate (anar) — punicalagin antioxidant sperm motility improve karta hai, studies mein proven',
-      'Amla (Indian gooseberry) — Vitamin C ka powerhouse, sperm DNA fragmentation reduce karta hai, daily 1-2 amla ideal',
-      'Tomatoes — lycopene sperm morphology improve karta hai',
-      'Walnuts (akhrot) — omega-3 fatty acids sperm membrane quality improve karte hain, daily 4-5 khaayein',
-      'Flaxseeds (alsi) — omega-3 + lignans hormonal balance support karte hain',
-      'Eggs — Vitamin D + protein + selenium sab ek saath, sperm health ke liye complete food',
-      'Spinach (palak) — folate sperm DNA integrity ke liye critical hai',
-    ],
-    avoid: [
-      'Soy in excess (tofu, soya milk zyada) — phytoestrogens testosterone ko suppress kar sakte hain',
-      'Alcohol (beer, whiskey, wine) — testosterone convert karke estrogen banata hai, sperm production directly hit hota hai',
-      'Excessive caffeine (4+ cups/day) — sperm DNA damage aur motility pe negative effect',
-      'Processed meats (sausage, salami, hot dogs) — preservatives sperm morphology bigadte hain, studies mein confirmed',
-      'Trans fats (vanaspati, margarine, packaged fried food) — sperm count pe direct negative correlation',
-      'High sugar foods/drinks (cola, packed juices, mithai excess) — insulin resistance testosterone ko suppress karta hai',
-      'Pesticide-heavy produce (without washing) — endocrine disruptors sperm production affect karte hain',
-    ],
-  },
-
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'summer',
-      season: 'Garmi (April - July)',
-      tips: 'Testis ka optimal temperature body temperature se 2-4°C kam hona chahiye — isliye garmi mein extra dhyan. Loose cotton underwear pehno — scrotal temperature normal rakhne ke liye. Cold shower especially scrotal area pe — temperature regulate karna. Hydration — 3-4 liters paani — sperm volume aur fluid quality ke liye. Subah ya shaam exercise karo — dopahar ki garmi mein heavy workout avoid. Laptop lap pe mat rakhein — direct heat testis pe jaati hai. Avoid: hot tub, sauna, steam bath; tight synthetic underwear; long hours bike riding without break.',
+      _key: 'cat1',
+      category: 'Sperm-Boosting Foods',
+      emoji: '💪',
+      items: [
+        'Pumpkin seeds (kaddu ke beej) — zinc ka best vegetarian source, sperm production directly support karta hai, daily ek mutthi khaayein',
+        'Sesame seeds (til) — zinc + healthy fats, testosterone naturally support karte hain',
+        'Pomegranate (anar) — punicalagin antioxidant sperm motility improve karta hai, studies mein proven',
+        'Amla (Indian gooseberry) — Vitamin C ka powerhouse, sperm DNA fragmentation reduce karta hai, daily 1-2 amla ideal',
+        'Walnuts (akhrot) — omega-3 fatty acids sperm membrane quality improve karte hain, daily 4-5 khaayein',
+      ],
     },
     {
-      _key: 'winter',
-      season: 'Sardi (November - February)',
-      tips: 'Winter mein Vitamin D production girt hai aur testosterone pe iski direct role hai. Vitamin D supplement ya morning sunlight 20-30 min lein. Warm foods — soups, daal, eggs — nutrition density maintain karo. Indoor exercise maintain karein — yoga, stretching, mild cardio. Ashwagandha + gokshura intake — winter mein adaptogenic herbs zyada effective hoti hain. Enough sleep (7-8 hours) — testosterone raat mein produce hota hai. Avoid: alcohol for "warmth" (ye myth hai, testosterone actually girta hai); sedentary lifestyle.',
-    },
-    {
-      _key: 'monsoon',
-      season: 'Barish (August - October)',
-      tips: 'Infection se bacho — prostatitis/epididymitis monsoon mein common hain. Hygienic food khao — packaged/street food avoid karo. Exercise indoors maintain karein. Genital hygiene pe extra dhyan dein.',
+      _key: 'cat2',
+      category: 'Hormone & DNA Support',
+      emoji: '🌿',
+      items: [
+        'Chickpeas (chane) — zinc + protein combination, sperm motility ke liye',
+        'Tomatoes — lycopene sperm morphology improve karta hai',
+        'Flaxseeds (alsi) — omega-3 + lignans hormonal balance support karte hain',
+        'Eggs — Vitamin D + protein + selenium sab ek saath, sperm health ke liye complete food',
+        'Spinach (palak) — folate sperm DNA integrity ke liye critical hai',
+      ],
     },
   ],
 
-  dosDonts: {
-    dos: [
-      'Semen analysis test karwayein — sirf test se diagnosis hoti hai, assumption se nahi; baseline without test treat karna mushkil hai',
-      'Regular moderate exercise — jogging, yoga, swimming — testosterone naturally badhta hai, obesity-related infertility reverse hoti hai',
-      '7-8 ghante neend lein — testosterone production primarily raat mein hoti hai, neend ki kami direct sperm quality girata hai',
-      'Stress management seriously lein — yoga, meditation, counselling — cortisol ka testosterone pe suppressing effect hota hai',
-      'Treatment mein patience rakhein — sperm cycle 72-74 din ka hota hai, isliye koi bhi treatment 3 months mein results dikhana shuru karta hai minimum',
-      'Partner ko saath rakhein — fertility journey mein couples therapy ya joint consultation zyada effective hota hai',
-    ],
-    donts: [
-      'Smoking bilkul band karein — cigarette sperm DNA fragmentation directly badhata hai; ek mahine mein measurable improvement aata hai smoke-free hone par',
-      'Anabolic steroids ya body-building supplements use mat karein — ye testis ke apne testosterone production band kar dete hain, recovery time lag sakta hai',
-      'Tight underwear aur synthetics avoid karein — scrotal temperature badhti hai jo sperm production kill karta hai',
-      'Self-medicate mat karein testosterone injections/gels se — exogenous testosterone lena fertility AUR khatam karta hai, increase nahi',
-      'Diagnosis se pehle heavy supplements shuru mat karein — kuch zinc megadoses actually sperm quality bigad sakte hain agar baseline normal ho',
-      'Sharam se chupao mat — infertility sirf female problem nahi hai, 40-50% cases mein male factor responsible hai; dono ka test zaroori',
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Testosterone Suppressors',
+      emoji: '🚫',
+      items: [
+        'Soy in excess (tofu, soya milk zyada) — phytoestrogens testosterone ko suppress kar sakte hain',
+        'Alcohol (beer, whiskey, wine) — testosterone convert karke estrogen banata hai, sperm production directly hit hota hai',
+        'High sugar foods/drinks (cola, packed juices, mithai excess) — insulin resistance testosterone ko suppress karta hai',
+        'Processed meats (sausage, salami, hot dogs) — preservatives sperm morphology bigadte hain, studies mein confirmed',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Sperm DNA Damagers',
+      emoji: '⚠️',
+      items: [
+        'Excessive caffeine (4+ cups/day) — sperm DNA damage aur motility pe negative effect',
+        'Trans fats (vanaspati, margarine, packaged fried food) — sperm count pe direct negative correlation',
+        'Pesticide-heavy produce (without washing) — endocrine disruptors sperm production affect karte hain',
+      ],
+    },
+  ],
+
+  seasonalCare: {
+    summer: 'Testis ka optimal temperature body temperature se 2-4°C kam hona chahiye — isliye garmi mein extra dhyan. Loose cotton underwear pehno — scrotal temperature normal rakhne ke liye. Cold shower especially scrotal area pe. Hydration — 3-4 liters paani. Subah ya shaam exercise karo — dopahar ki garmi mein heavy workout avoid. Laptop lap pe mat rakhein. Avoid: hot tub, sauna, steam bath; tight synthetic underwear.',
+    monsoon: 'Infection se bacho — prostatitis/epididymitis monsoon mein common hain. Hygienic food khao — packaged/street food avoid karo. Exercise indoors maintain karein. Genital hygiene pe extra dhyan dein.',
+    winter: 'Vitamin D production girta hai aur testosterone pe iski direct role hai — Vitamin D supplement ya morning sunlight 20-30 min lein. Warm foods — soups, daal, eggs — nutrition density maintain karo. Ashwagandha + gokshura intake — winter mein adaptogenic herbs zyada effective hoti hain. Enough sleep (7-8 hours) — testosterone raat mein produce hota hai. Avoid: alcohol for "warmth" — testosterone actually girta hai.',
+  },
+
+  dos: [
+    'Semen analysis test karwayein — sirf test se diagnosis hoti hai, assumption se nahi; baseline without test treat karna mushkil hai',
+    'Regular moderate exercise — jogging, yoga, swimming — testosterone naturally badhta hai, obesity-related infertility reverse hoti hai',
+    '7-8 ghante neend lein — testosterone production primarily raat mein hoti hai, neend ki kami direct sperm quality girata hai',
+    'Stress management seriously lein — yoga, meditation, counselling — cortisol ka testosterone pe suppressing effect hota hai',
+    'Treatment mein patience rakhein — sperm cycle 72-74 din ka hota hai, isliye koi bhi treatment 3 months mein results dikhana shuru karta hai minimum',
+    'Partner ko saath rakhein — fertility journey mein couples therapy ya joint consultation zyada effective hota hai',
+  ],
+
+  donts: [
+    'Smoking bilkul band karein — cigarette sperm DNA fragmentation directly badhata hai; ek mahine mein measurable improvement aata hai smoke-free hone par',
+    'Anabolic steroids ya body-building supplements use mat karein — ye testis ke apne testosterone production band kar dete hain, recovery time lag sakta hai',
+    'Tight underwear aur synthetics avoid karein — scrotal temperature badhti hai jo sperm production kill karta hai',
+    'Self-medicate mat karein testosterone injections/gels se — exogenous testosterone lena fertility AUR khatam karta hai, increase nahi',
+    'Diagnosis se pehle heavy supplements shuru mat karein — kuch zinc megadoses actually sperm quality bigad sakte hain agar baseline normal ho',
+    'Sharam se chupao mat — infertility sirf female problem nahi hai, 40-50% cases mein male factor responsible hai; dono ka test zaroori',
+  ],
+
+  ccrhEvidence: {
+    improvementRate: '64%',
+    avgTreatmentPeriod: '4-6 mahine consistent treatment',
+    citation: 'CCRH — Study on Homoeopathic Treatment in Oligospermia | Journal of Research in Homoeopathy | 2019 | ccrhindia.nic.in',
+    keyFindings: [
+      'Average sperm count 18.2 million/mL se badhkar 31.6 million/mL — treatment group mein',
+      'Placebo group mein minimal change aaya vs treatment group mein significant improvement',
+      'Motility aur morphology parameters bhi improve hue saath mein',
     ],
   },
+
+  homeopathyBenefits: [
+    'Sirf count nahi — stress, sexual dysfunction, aur hormonal imbalance bhi ek saath address hote hain',
+    'Mild-to-moderate oligospermia mein natural pregnancy possible — IVF ka need avoid ho sakta hai',
+    'Smoking cessation support + homeopathy combination mein tez results',
+    'Safe for long-term use — koi hormonal side effects nahi',
+  ],
 
   faqs: [
     {
@@ -317,12 +373,11 @@ const doc = {
   ],
 
   sources: [
-    'WHO — Laboratory Manual for Examination and Processing of Human Semen | 6th Edition, 2021 | who.int',
-    'CCRH — Study on Homoeopathic Treatment in Oligospermia | Journal of Research in Homoeopathy | 2019 | ccrhindia.nic.in',
-    'Agarwal A et al — "A unique view on male infertility around the globe" | Reproductive Biology and Endocrinology | 2015 | PubMed',
-    'Practice Committee of the American Society for Reproductive Medicine — "Diagnostic evaluation of the infertile male" | Fertility and Sterility | 2021',
-    'Sharma R et al — "Lifestyle factors and reproductive health" | Reproductive Biology and Endocrinology | 2013 | PubMed',
-    'ICMR — National Guidelines for Diagnosis and Management of Infertility | India | 2017',
+    { _key: 's1', name: 'WHO — Laboratory Manual for Examination and Processing of Human Semen, 6th Ed', url: 'who.int', year: '2021' },
+    { _key: 's2', name: 'CCRH — Study on Homoeopathic Treatment in Oligospermia', url: 'ccrhindia.nic.in', year: '2019' },
+    { _key: 's3', name: 'Agarwal A et al — A unique view on male infertility around the globe', url: 'pubmed.ncbi.nlm.nih.gov', year: '2015' },
+    { _key: 's4', name: 'ASRM — Diagnostic evaluation of the infertile male', url: 'asrm.org', year: '2021' },
+    { _key: 's5', name: 'ICMR — National Guidelines for Diagnosis and Management of Infertility', url: 'icmr.gov.in', year: '2017' },
   ],
 
   doctorNote: 'Mere clinic mein male infertility ke jo patients aate hain, unme se zyada tar ya to late aate hain ya sirf semen analysis lekar aate hain bina complete evaluation ke. Jo case mujhe sabse zyada response deta hai homeopathic treatment mein — wo hai mild-to-moderate oligospermia with stress and performance anxiety saath mein. Agnus castus aur Lycopodium ke saath lifestyle changes ka combination — in cases mein 3-4 months mein semen report meaningfully better aata hai. Early aao, poori jaankaari lo — aur treatment pe tike raho. — Dr. Shadab | Homeopedia.in',

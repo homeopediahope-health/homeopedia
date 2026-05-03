@@ -83,42 +83,46 @@ const doc = {
     {
       _key: 'med1',
       name: 'Fluoric Acid (Acidum Fluoricum)',
-      forWhom: 'Jinke baal patches mein jhadte hain, especially alopecia areata – aur saath mein scalp pe itching ya burning ho',
-      hope: 'Fluoric acid ka deep affinity hai baalon aur naakhunon ke liye. Ye follicles ko stimulate karne mein kaam karta hai aur inflammatory scalp conditions mein bhi helpful hai. Patches ke surrounding regrowth shuru karne ke liye frequently selected remedy hai.',
+      bestFor: 'Jinke baal patches mein jhadte hain, especially alopecia areata – aur saath mein scalp pe itching ya burning ho',
+      keyIndications: ['Fluoric acid ka deep affinity hai baalon aur naakhunon ke liye. Ye follicles ko stimulate karne mein kaam karta hai aur inflammatory scalp conditions mein bhi helpful hai. Patches ke surrounding regrowth shuru karne ke liye frequently selected remedy hai.'],
     },
     {
       _key: 'med2',
       name: 'Phosphorus',
-      forWhom: 'Baal thokon mein jhadte hain, scalp pe dandruff bhi ho, patient emotionally sensitive aur easily fatigued ho',
-      hope: 'Phosphorus ka hair follicles ke blood supply ke saath connection hai – nutrition-related aur circulation-related hair loss mein ek go-to remedy hai. Saath hi emotionally reactive patients mein stress-linked shedding pe bhi kaam karta hai.',
+      bestFor: 'Baal thokon mein jhadte hain, scalp pe dandruff bhi ho, patient emotionally sensitive aur easily fatigued ho',
+      keyIndications: ['Phosphorus ka hair follicles ke blood supply ke saath connection hai – nutrition-related aur circulation-related hair loss mein ek go-to remedy hai. Saath hi emotionally reactive patients mein stress-linked shedding pe bhi kaam karta hai.'],
     },
     {
       _key: 'med3',
       name: 'Natrum Muriaticum',
-      forWhom: 'Grief, suppressed emotions, ya long-term emotional stress ke baad baal jhadna shuru hua ho – specially auraton mein',
-      hope: 'Natrum mur ek deep-acting constitutional remedy hai jinmein baal jhadna mental/emotional trauma ke trigger ke baad aata hai. Hormonal dysregulation aur anaemia se linked hair loss mein bhi consider kiya jaata hai.',
+      bestFor: 'Grief, suppressed emotions, ya long-term emotional stress ke baad baal jhadna shuru hua ho – specially auraton mein',
+      keyIndications: ['Natrum mur ek deep-acting constitutional remedy hai jinmein baal jhadna mental/emotional trauma ke trigger ke baad aata hai. Hormonal dysregulation aur anaemia se linked hair loss mein bhi consider kiya jaata hai.'],
     },
     {
       _key: 'med4',
       name: 'Silicea (Silica)',
-      forWhom: 'Baal pehle se weak, dry, aur brittle hain – easily break hote hain. Nails bhi weak ho, scalp pe recurrent infections',
-      hope: 'Silica connective tissue aur follicle strength ke liye foundational remedy hai. Nutrition absorption poor hone ki wajah se weak hair wale cases mein silicea hair shaft quality aur follicle gripping dono improve karta hai.',
+      bestFor: 'Baal pehle se weak, dry, aur brittle hain – easily break hote hain. Nails bhi weak ho, scalp pe recurrent infections',
+      keyIndications: ['Silica connective tissue aur follicle strength ke liye foundational remedy hai. Nutrition absorption poor hone ki wajah se weak hair wale cases mein silicea hair shaft quality aur follicle gripping dono improve karta hai.'],
     },
     {
       _key: 'med5',
       name: 'Thuja Occidentalis',
-      forWhom: 'Post-vaccination ya post-infection ke baad achanak baal jhadna shuru hua ho. Ya scalp pe oiliness, dandruff zyada ho',
-      hope: 'Thuja ek deep immune-modulating remedy hai. Alopecia jo vaccination, infection, ya autoimmune trigger ke baad worsened ho – unmein thuja ka use clinically noted hai.',
+      bestFor: 'Post-vaccination ya post-infection ke baad achanak baal jhadna shuru hua ho. Ya scalp pe oiliness, dandruff zyada ho',
+      keyIndications: ['Thuja ek deep immune-modulating remedy hai. Alopecia jo vaccination, infection, ya autoimmune trigger ke baad worsened ho – unmein thuja ka use clinically noted hai.'],
     },
     {
       _key: 'med6',
       name: 'Lycopodium Clavatum',
-      forWhom: 'Premature graying ke saath baal jhadna, ya temples se pehle baldness. Digestive complaints bhi saath mein ho',
-      hope: 'Lycopodium liver aur digestive function se linked remedy hai – aur nutrition malabsorption se jo hair loss hota hai usme khaas role ada karta hai. Temple aur crown area ki thinning mein specifically useful dekha gaya hai.',
+      bestFor: 'Premature graying ke saath baal jhadna, ya temples se pehle baldness. Digestive complaints bhi saath mein ho',
+      keyIndications: ['Lycopodium liver aur digestive function se linked remedy hai – aur nutrition malabsorption se jo hair loss hota hai usme khaas role ada karta hai. Temple aur crown area ki thinning mein specifically useful dekha gaya hai.'],
     },
   ],
-  diet: {
-    doEat: [
+  dietInclude: [
+    {
+      _key: 'inc1',
+      category: 'Recommended Foods',
+      emoji: '🌿',
+      items: [
       'Anday (Eggs) – Biotin aur complete protein ka best source hai, follicle keratin production ke liye zaroori',
       'Moong dal / Masoor dal – plant-based protein jo iron bhi deti hai, vegetarians ke liye must-have',
       'Paneer / Tofu – leucine amino acid deta hai jo hair growth cycle mein active role karta hai',
@@ -132,7 +136,15 @@ const doc = {
       'Walnuts (Akhrot) – selenium + omega-3 – scalp health ke liye double benefit',
       'Berries / Guava – Vitamin C rich; free radical damage se follicles protect karta hai',
     ],
-    avoid: [
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Foods to Avoid',
+      emoji: '🚫',
+      items: [
       'Maida based food (bread, biscuits, naan) – insulin spike se androgens badhte hain jo DHT convert hokar follicles damage karta hai',
       'Cold drinks / packaged juice – sugar + chemicals scalp ke micro-inflammation ko badhate hain',
       'Mithai / sweets zyada – glycemic spike se hormonal imbalance worsen hota hai',
@@ -143,7 +155,28 @@ const doc = {
       'Crash dieting / very low calorie intake – body hair growth ko "luxury" function samajhkar kat deta hai',
       'Excess caffeine (4+ cups/day) – sleep aur cortisol dono affect karta hai jo hair loss worsen karte hain',
     ],
-  },
+    },
+  ],
+  dos: [
+    'Scalp ki gentle circular massage roz 5-10 minute karein (coconut ya bhringraj oil se) — blood circulation badhti hai aur follicles stimulate hote hain',
+    'Protein-rich diet lein — eggs, dal, paneer, sprouts — hair ka 95% keratin protein se banta hai',
+    'Roz 7-8 ghante ki neend zaroor lein — growth hormone neend mein release hota hai jo hair regeneration karta hai',
+    'Stress management technique adopt karein — yoga, pranayam, meditation — stress hair loss ka #1 trigger hai',
+    'Iron aur Vitamin D levels check karaayein — dono ki deficiency mein hair fall bahut common hai',
+    'Baalon mein regular oil lagayein (warm coconut/sesame) — scalp nourishment ke liye',
+    'Homeopathic treatment regularly lein — constitutional approach systemic cause ko address karta hai',
+  ],
+
+  donts: [
+    'Baalon ko geele hote hi tight baaandh mat karo — wet hair fragile hoti hai aur breakage hota hai',
+    'Bahut garam paani se sar mat dhulao — hot water scalp ke natural oils strip karta hai',
+    'Chemical treatments (colour, perming, straightening) temporarily band karein — follicles ko rest chahiye',
+    'Tight hairstyles (tight braid, ponytail) regularly mat karo — traction alopecia ho sakti hai',
+    'Crash diet ya extreme fasting bilkul nahi — sudden nutrition deficiency se massive hair shedding (telogen effluvium) hoti hai',
+    'OTC hair growth products bina dermatologist advice ke mat use karo — kuch mein harmful chemicals hote hain',
+    'Stress ko ignore mat karo — untreated anxiety/stress se hair loss cycle continue rehta hai',
+  ],
+
   faqs: [
     {
       _key: 'faq1',
@@ -272,13 +305,13 @@ const doc = {
     },
   ],
   sources: [
-    'CCRH (Central Council for Research in Homoeopathy) | Alopecia Areata Clinical Studies | 2018-2022 | ccrhindia.nic.in',
-    'Indian Journal of Research in Homoeopathy | Alopecia Areata: A Multicentric Clinical Study | 2019',
-    'Hay IC et al. – Randomized trial of aromatherapy: Successful treatment for alopecia areata | Archives of Dermatology | 1998',
-    'Sharquie KE, Al-Obaidi HK – Onion juice in alopecia areata | Journal of Dermatology | 2002',
-    'American Academy of Dermatology – Alopecia Areata Overview | aad.org',
-    'Lancet GBD Study – Prevalence of skin/hair conditions India | 2021 update',
-    'PCOD/PCOS Androgen-related hair loss – Journal of Clinical Endocrinology & Metabolism | 2020',
+    { _key: 's1', name: 'CCRH (Central Council for Research in Homoeopathy) | Alopecia Areata Clinical St', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's2', name: 'Indian Journal of Research in Homoeopathy | Alopecia Areata: A Multicentric Clin', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's3', name: 'Hay IC et al. – Randomized trial of aromatherapy: Successful treatment for alope', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's4', name: 'Sharquie KE, Al-Obaidi HK – Onion juice in alopecia areata | Journal of Dermatol', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's5', name: 'American Academy of Dermatology – Alopecia Areata Overview | aad.org', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's6', name: 'Lancet GBD Study – Prevalence of skin/hair conditions India | 2021 update', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's7', name: 'PCOD/PCOS Androgen-related hair loss – Journal of Clinical Endocrinology & Metab', url: 'ccrhindia.nic.in', year: '2024' },
   ],
   quickFacts: [
     'Alopecia ek autoimmune + hormonal + genetic spectrum condition hai – India mein 2-8% population affected',

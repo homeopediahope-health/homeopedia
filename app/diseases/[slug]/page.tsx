@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases } from '@/lib/queries'
 import DiseaseClient from './DiseaseClient'
 
-export const revalidate = 86400
+export const revalidate = 0
 
 export async function generateStaticParams() {
   const diseases = await getAllDiseases()
@@ -33,11 +33,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: 'article',
       url: `https://homeopedia.in/diseases/${slug}`,
       locale: 'hi_IN',
+      images: [{ url: `https://homeopedia.in/diseases/${slug}/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
+      images: [`https://homeopedia.in/diseases/${slug}/opengraph-image`],
     },
   }
 }

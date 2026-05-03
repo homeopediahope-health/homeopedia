@@ -108,11 +108,6 @@ const urticaria = {
     'Thyroid-linked chronic urticaria mein dono conditions simultaneously address hoti hain',
   ],
 
-  homeopathyLimitations: [
-    'Acute severe urticaria (angioedema, anaphylaxis) mein turant conventional emergency treatment ZAROOR chahiye — homeopathy supplementary hai, replacement nahi',
-    'Agar specific allergen identified hai (nuts, bee sting) to allergen avoidance + conventional management primary hai; homeopathy saath mein chal sakta hai',
-  ],
-
   medicines: [
     {
       _key: 'apis',

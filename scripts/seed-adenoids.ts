@@ -133,32 +133,52 @@ const disease = {
     {
       _key: 'med1',
       name: 'Baryta Carbonica',
-      forWhom: 'Bacche jo physically chhote lagte hain umar ke hisaab se, slow development, baar baar tonsil aur adenoid infections, shy aur timid nature',
-      whyHope: 'Baryta Carb ka pehla kaam hi lymphatic tissue ki abnormal growth ko address karna hai — adenoids aur tonsils dono mein. Jis bacche ki immunity weak ho aur har mausam badlne pe beemar pad jaata ho, uske liye ye ek of the most indicated medicines hai.',
+      bestFor: 'Bacche jo physically chhote lagte hain umar ke hisaab se, slow development, baar baar tonsil aur adenoid infections, shy aur timid nature',
+      keyIndications: [
+
+        'Baryta Carb ka pehla kaam hi lymphatic tissue ki abnormal growth ko address karna hai — adenoids aur tonsils dono mein. Jis bacche ki immunity weak ho aur har mausam badlne pe beemar pad jaata ho, uske liye ye ek of the most indicated medicines hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Calcarea Carbonica',
-      forWhom: 'Mote ya healthy-looking bacche lekin recurrent colds ke saath, sar pe pasina aata ho neend mein, khatte cheezein pasand hon, easily thak jaate hon',
-      whyHope: 'Calc Carb lymphatic system ki over-activity ko regulate karta hai. Jis bacche ka adenoid baar baar infections se bada ho raha ho aur body ki fight-back capacity weak ho, usmein ye deeply kaam karta hai.',
+      bestFor: 'Mote ya healthy-looking bacche lekin recurrent colds ke saath, sar pe pasina aata ho neend mein, khatte cheezein pasand hon, easily thak jaate hon',
+      keyIndications: [
+
+        'Calc Carb lymphatic system ki over-activity ko regulate karta hai. Jis bacche ka adenoid baar baar infections se bada ho raha ho aur body ki fight-back capacity weak ho, usmein ye deeply kaam karta hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Tuberculinum',
-      forWhom: 'Baar baar respiratory infections jo antibiotics se theek hoti hain lekin baar baar wapas aati hain, family history mein respiratory problems, restless nature ka bacha',
-      whyHope: 'Tuberculinum mein khas baat ye hai ki ye chronic, recurring infection cycle todta hai — jab conventional treatment sirf temporarily kaam kare aur problem baar baar wapas aaye, tab ye medicine underlying susceptibility address karti hai.',
+      bestFor: 'Baar baar respiratory infections jo antibiotics se theek hoti hain lekin baar baar wapas aati hain, family history mein respiratory problems, restless nature ka bacha',
+      keyIndications: [
+
+        'Tuberculinum mein khas baat ye hai ki ye chronic, recurring infection cycle todta hai — jab conventional treatment sirf temporarily kaam kare aur problem baar baar wapas aaye, tab ye medicine underlying susceptibility address karti hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Agraphis Nutans',
-      forWhom: 'Specifically adenoid hypertrophy ke saath kaan mein fluid ya hearing loss, naak lagaataar band, muh se saas lena',
-      whyHope: 'Agraphis Nutans ko specifically adenoid aur tonsil enlargement ke liye clinical experience mein bahut effective paaya gaya hai — ye ek targeted medicine hai jab naak + kaan dono affected hon.',
+      bestFor: 'Specifically adenoid hypertrophy ke saath kaan mein fluid ya hearing loss, naak lagaataar band, muh se saas lena',
+      keyIndications: [
+
+        'Agraphis Nutans ko specifically adenoid aur tonsil enlargement ke liye clinical experience mein bahut effective paaya gaya hai — ye ek targeted medicine hai jab naak + kaan dono affected hon.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Silicea',
-      forWhom: 'Thin, delicate bacche jo cold mein easily beemar padein, recurrent ear discharge, sweaty feet, low confidence',
-      whyHope: 'Silicea body ke lymphatic aur immune system ko deep level pe strengthen karta hai — chronic suppuration aur repeated infection cycle mein ye kaam aata hai.',
+      bestFor: 'Thin, delicate bacche jo cold mein easily beemar padein, recurrent ear discharge, sweaty feet, low confidence',
+      keyIndications: [
+
+        'Silicea body ke lymphatic aur immune system ko deep level pe strengthen karta hai — chronic suppuration aur repeated infection cycle mein ye kaam aata hai.',
+
+      ],
     },
   ],
 

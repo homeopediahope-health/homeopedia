@@ -138,43 +138,66 @@ const gout = {
     {
       _key: 'med1',
       name: 'Colchicum Autumnale',
-      forWhom: 'Pair ke anguthe ya joints mein intense burning + tearing dard, jo touch se aur badh jaaye; sujan aur movement se intolerance.',
-      whyHope: 'Colchicum plant se bani ye medicine classically gout attacks ke acute dard mein use hoti hai — joint inflammation aur uric acid sensitivity dono pe kaam karti hai.',
+      bestFor: 'Pair ke anguthe ya joints mein intense burning + tearing dard, jo touch se aur badh jaaye; sujan aur movement se intolerance.',
+      keyIndications: [
+
+        'Colchicum plant se bani ye medicine classically gout attacks ke acute dard mein use hoti hai — joint inflammation aur uric acid sensitivity dono pe kaam karti hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Benzoic Acid',
-      forWhom: 'Gout ke saath strong-smelling, dark urine; joints mein cracking sound; baar baar attack aane wale patients.',
-      whyHope: 'Uric acid aur urea ke metabolism se directly related medicine — kidneys ke through elimination improve karne mein helpful mani jaati hai.',
+      bestFor: 'Gout ke saath strong-smelling, dark urine; joints mein cracking sound; baar baar attack aane wale patients.',
+      keyIndications: [
+
+        'Uric acid aur urea ke metabolism se directly related medicine — kidneys ke through elimination improve karne mein helpful mani jaati hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Ledum Palustre',
-      forWhom: 'Choti joints mein dard jo upar ki taraf (upward) travel kare — pahle anguthe phir ghutne; thande paani se aaram mile.',
-      whyHope: 'Gout ka classic "ascending" pattern — pain jo neeche se upar jaaye — is medicine ka key indication hai; joint crystal deposits pe kaam karta hai.',
+      bestFor: 'Choti joints mein dard jo upar ki taraf (upward) travel kare — pahle anguthe phir ghutne; thande paani se aaram mile.',
+      keyIndications: [
+
+        'Gout ka classic "ascending" pattern — pain jo neeche se upar jaaye — is medicine ka key indication hai; joint crystal deposits pe kaam karta hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Urtica Urens',
-      forWhom: 'High uric acid blood mein; saath mein skin mein itching ya burning; kidney-gout combination.',
-      whyHope: 'Uric acid excretion promote karne ke liye widely used — kidneys ke filtering function ko support karta hai.',
+      bestFor: 'High uric acid blood mein; saath mein skin mein itching ya burning; kidney-gout combination.',
+      keyIndications: [
+
+        'Uric acid excretion promote karne ke liye widely used — kidneys ke filtering function ko support karta hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Lycopodium Clavatum',
-      forWhom: 'Right side ki joints zyada affected; digestive problems ke saath gout; gas, bloating, khana pachne ki takleef bhi ho.',
-      whyHope: 'Liver aur kidney dono pe constitutional action karta hai — jo uric acid metabolism ke liye zaroori organs hain.',
+      bestFor: 'Right side ki joints zyada affected; digestive problems ke saath gout; gas, bloating, khana pachne ki takleef bhi ho.',
+      keyIndications: [
+
+        'Liver aur kidney dono pe constitutional action karta hai — jo uric acid metabolism ke liye zaroori organs hain.',
+
+      ],
     },
     {
       _key: 'med6',
       name: 'Sabina',
-      forWhom: 'Joints mein pricking, shooting dard; motion se dard aur badhe; chalti bimari mein use hoti hai.',
-      whyHope: 'Joint inflammation ke saath metabolic disturbance mein helpful — especially jab dard constant aur severe ho.',
+      bestFor: 'Joints mein pricking, shooting dard; motion se dard aur badhe; chalti bimari mein use hoti hai.',
+      keyIndications: [
+
+        'Joint inflammation ke saath metabolic disturbance mein helpful — especially jab dard constant aur severe ho.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Paani aur Liquids (Sabse Important)',
@@ -213,8 +236,9 @@ const gout = {
           'Tofu (soy-based) — good protein with low purine content',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'High Purine Meats',
@@ -223,7 +247,7 @@ const gout = {
           'Organ meats — liver (kaleji), kidney (gurda), brain — extremely high purine',
           'Processed meats — sausage, salami, packed chicken nuggets',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Seafood',
@@ -243,8 +267,6 @@ const gout = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'Gout attacks winter mein zyada frequent hote hain — cold mein blood vessels shrink karte hain, uric acid crystals aur asaani se deposit hote hain. Garam paani ya herbal tea peeyein — paani peene ki aadat winter mein kam hoti hai. Heavy non-veg sabse zyada winter mein khaya jaata hai India mein — controlled rakhein. Exercise band mat karein — movement crystals ko break down karne mein help karta hai. Wool ya garm kapde joints pe zaroor rakhen — thandi joint mein crystal deposit fast hota hai.',
     summer: 'Paseena zyada aata hai = dehydration ka risk barhta hai = uric acid concentrate hota hai = attack chance badhta hai. Roz 4-5 liter paani ZAROOR peeyein. Aam, litchi (high fructose fruits) — limit karein; attack trigger kar sakte hain. AC mein roz rehna + kam paani peena = classic summer gout trigger. Nimbu sharbat (bina sugar), naariyal paani — best drinks. Attack hone pe ice pack mat lagayein joint pe — room temperature compress better hai.',
@@ -255,7 +277,6 @@ const gout = {
       'Regular walking karein (30 min daily) — joint ke aas paas circulation improve karta hai; crystals deposit nahi hote',
     ],
   },
-
   dos: [
     'Roz 3-4 liter paani peeyein — uric acid kidney se flush karne ka sabse sasta aur effective tarika',
     'Cherries roz khayein (fresh, frozen, ya juice bhi) — clinical studies mein gout attack frequency reduce karne mein effective prove hua hai',
@@ -390,42 +411,9 @@ const gout = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'CCRH (Central Council for Research in Homoeopathy) | Clinical Studies on Arthritis & Metabolic Disorders | Journal of Research in Homoeopathy',
-      year: '2018-2022',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src2',
-      title: 'American College of Rheumatology — Gout Management Guidelines',
-      year: '2020',
-      url: 'https://www.rheumatology.org',
-    },
-    {
-      _key: 'src3',
-      title: 'Choi HK et al. "Purine-rich foods, dairy and protein intake, and the risk of gout in men" | New England Journal of Medicine',
-      year: '2004',
-      url: '',
-    },
-    {
-      _key: 'src4',
-      title: 'Zhang Y et al. "Cherry consumption and decreased risk of recurrent gout attacks" | Arthritis & Rheumatism',
-      year: '2012',
-      url: '',
-    },
-    {
-      _key: 'src5',
-      title: 'Indian Journal of Rheumatology — Prevalence of Hyperuricemia in Urban India',
-      year: '2019',
-      url: '',
-    },
-    {
-      _key: 'src6',
-      title: 'WHO — Musculoskeletal Conditions',
-      year: '2023',
-      url: 'https://www.who.int',
-    },
+    { _key: 's1', name: 'CCRH — Clinical Studies on Metabolic Disorders including Gout', url: 'ccrhindia.nic.in', year: '2021' },
+    { _key: 's2', name: 'American College of Rheumatology — Gout Management Guidelines', url: 'rheumatology.org', year: '2020' },
+    { _key: 's3', name: 'British Homeopathic Association — Gout and Homeopathy Evidence', url: 'britishhomeopathic.org', year: '2019' },
   ],
 
   doctorNote: 'Mere clinic mein gout ke jo patients aate hain unmein se kaafi mard 35-50 saal ke non-veg + alcohol users hain — jo sochte hain "sirf uric acid hai, koi baat nahi". Lekin jo log consistently Colchicum ya Benzoic Acid pe remain karte hain aur diet seriously lete hain, unke 3-4 mahine mein attacks practically zero ho jaate hain. Sabse badi galti jo main dekhta hoon: attack ke waqt aspirin khana — ye uric acid aur badha deta hai.',

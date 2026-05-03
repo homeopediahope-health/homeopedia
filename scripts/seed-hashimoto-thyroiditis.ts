@@ -142,37 +142,56 @@ const hashimotoThyroiditis = {
     {
       _key: 'med1',
       name: 'Calcarea Carbonica',
-      forWhom: 'Moti, thaki hui, thandi, constipated patients — jinhein subah uthna mushkil lage, paseena sar pe zyada aata ho, bahut mehnat se ghabrahate ho.',
-      whyHope: 'Ye medicine hypothyroid constitution ka "classic" remedy mani jaati hai. Metabolism ko stimulate karne mein aur cold intolerance address karne mein historically effective rahi hai. Thyroid gland ki sluggishness is remedy ke core picture mein hai.',
+      bestFor: 'Moti, thaki hui, thandi, constipated patients — jinhein subah uthna mushkil lage, paseena sar pe zyada aata ho, bahut mehnat se ghabrahate ho.',
+      keyIndications: [
+
+        'Ye medicine hypothyroid constitution ka "classic" remedy mani jaati hai. Metabolism ko stimulate karne mein aur cold intolerance address karne mein historically effective rahi hai. Thyroid gland ki sluggishness is remedy ke core picture mein hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Thyroidinum',
-      forWhom: 'Jinhein directly thyroid dysfunction hai — weight gain, hair loss, fatigue, myxedema tendency, heart palpitations kabhi kabhi.',
-      whyHope: 'Ye nosode-type remedy hai jo thyroid function ko normalize karne mein kaam karta hai — especially jab thyroid gland ka size badha ho ya goiter tendency ho.',
+      bestFor: 'Jinhein directly thyroid dysfunction hai — weight gain, hair loss, fatigue, myxedema tendency, heart palpitations kabhi kabhi.',
+      keyIndications: [
+
+        'Ye nosode-type remedy hai jo thyroid function ko normalize karne mein kaam karta hai — especially jab thyroid gland ka size badha ho ya goiter tendency ho.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Sepia',
-      forWhom: 'Mahilayein jinhein Hashimoto ke saath hormonal imbalance ho — irregular periods, mood swings, indifference to loved ones, chronic fatigue, bearing down sensation.',
-      whyHope: 'Sepia endocrine-hormonal axis ko address karta hai — especially jab thyroid autoimmunity hormonal axis ko disturb kar rahi ho (common in postpartum ya perimenopausal Hashimoto).',
+      bestFor: 'Mahilayein jinhein Hashimoto ke saath hormonal imbalance ho — irregular periods, mood swings, indifference to loved ones, chronic fatigue, bearing down sensation.',
+      keyIndications: [
+
+        'Sepia endocrine-hormonal axis ko address karta hai — especially jab thyroid autoimmunity hormonal axis ko disturb kar rahi ho (common in postpartum ya perimenopausal Hashimoto).',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Natrum Muriaticum',
-      forWhom: 'Jinhein Hashimoto ke saath depression, emotional withdrawal, grief, ya hair loss (temple area) ho; thirst zyada, consolation se ghabrana.',
-      whyHope: 'Natrum Mur thyroid axis aur emotional/nervous system dono pe kaam karta hai — Hashimoto ke chronic phase mein jo depression aur social withdrawal aata hai, uske liye ye deeply acting remedy hai.',
+      bestFor: 'Jinhein Hashimoto ke saath depression, emotional withdrawal, grief, ya hair loss (temple area) ho; thirst zyada, consolation se ghabrana.',
+      keyIndications: [
+
+        'Natrum Mur thyroid axis aur emotional/nervous system dono pe kaam karta hai — Hashimoto ke chronic phase mein jo depression aur social withdrawal aata hai, uske liye ye deeply acting remedy hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Lycopodium',
-      forWhom: 'Digestive issues ke saath Hashimoto — bloating, gas, liver sluggishness; intellectually active but physically weak; 4-8 PM mein symptoms worse; confidence issues.',
-      whyHope: 'Hashimoto mein gut-thyroid axis bahut important hai. Lycopodium liver, gut aur endocrine function ko saath mein address karta hai — leaky gut + thyroid autoimmunity combination mein helpful.',
+      bestFor: 'Digestive issues ke saath Hashimoto — bloating, gas, liver sluggishness; intellectually active but physically weak; 4-8 PM mein symptoms worse; confidence issues.',
+      keyIndications: [
+
+        'Hashimoto mein gut-thyroid axis bahut important hai. Lycopodium liver, gut aur endocrine function ko saath mein address karta hai — leaky gut + thyroid autoimmunity combination mein helpful.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Selenium-Rich Foods (TPO Antibodies Kam Karta Hai)',
@@ -213,8 +232,9 @@ const hashimotoThyroiditis = {
           'Bottle gourd (Lauki), ridge gourd — easily digestible, gut inflammation kam karta hai',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'Gluten-Containing Foods (Sabse Important)',
@@ -223,7 +243,7 @@ const hashimotoThyroiditis = {
           'Suji, semolina, daliya (wheat-based) — same reason',
           'Biscuits, namkeen, processed snacks — hidden gluten + preservatives dono harmful',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Raw Goitrogenic Foods (Zyada Mat Khao, Pakake Khao)',
@@ -245,8 +265,6 @@ const hashimotoThyroiditis = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'Sardi mein hypothyroid symptoms naturally worse hote hain — thanda zyada lagana, thakaan, weight gain. TSH zyada badhta hai sardi mein (seasonal variation). Kya karein: subah dhoop mein baithen 20-30 min — Vitamin D zaroor; warm water + adrak + haldi ka kadha morning mein; layered clothing, haath-pair dhakein; TSH check October mein — agar dose adjust karni ho; exercise band mat karo — indoor workout choose karo.',
     summer: 'Dehydration se symptoms worse hote hain. Coconut water, nimbu pani, watermelon — electrolytes maintain karo. AC mein zyada time avoid karein — cold intolerance hai pehle se, AC se body temperature dysregulation. Sunscreen use karo — Hashimoto skin sensitive hoti hai. Best time for deeper homeopathic treatment — constitution level pe kaam karne ka.',
@@ -257,7 +275,6 @@ const hashimotoThyroiditis = {
       'Selenium 200 mcg daily — Brazil nuts ya supplement (doctor se confirm karo), TPO antibody pe direct effect hai',
     ],
   },
-
   dos: [
     'Gluten-free diet 8-12 weeks trial zaroor karein — kai Hashimoto patients mein TPO antibodies reduce hote hain aur symptoms dramatically improve hoti hain',
     'Selenium supplement ya selenium-rich foods daily lein — 200 mcg/day safe range, TPO antibody pe directly effect',
@@ -404,42 +421,9 @@ const hashimotoThyroiditis = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'CCRH — "Homoeopathic Management of Thyroid Disorders" | Journal of Research in Homoeopathy',
-      year: '2019-2022',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src2',
-      title: 'Ventura M et al., "Selenium and Thyroid Disease" — International Journal of Endocrinology',
-      year: '2017',
-      url: 'https://doi.org/10.1155/2017/1297658',
-    },
-    {
-      _key: 'src3',
-      title: 'Adler M et al., "Individualized Homeopathic Treatment vs. Placebo in Autoimmune Thyroiditis" — Journal of Alternative and Complementary Medicine',
-      year: '2013',
-      url: '',
-    },
-    {
-      _key: 'src4',
-      title: 'American Thyroid Association (ATA) — Hypothyroidism Guidelines',
-      year: '2023',
-      url: 'https://www.thyroid.org',
-    },
-    {
-      _key: 'src5',
-      title: 'Fasano A — "Leaky Gut and Autoimmune Disease" — Clinical Reviews in Allergy and Immunology',
-      year: '2012',
-      url: '',
-    },
-    {
-      _key: 'src6',
-      title: 'Liontiris MI et al., "A Concise Review of Hashimoto\'s Thyroiditis" — Hellenic Journal of Nuclear Medicine',
-      year: '2017',
-      url: '',
-    },
+    { _key: 's1', name: 'CCRH — Homeopathic Research on Thyroid Autoimmune Conditions', url: 'ccrhindia.nic.in', year: '2022' },
+    { _key: 's2', name: 'American Thyroid Association — Hypothyroidism Guidelines', url: 'thyroid.org', year: '2021' },
+    { _key: 's3', name: 'Witt CM et al — Homeopathic treatment of patients with autoimmune thyroid disease', url: 'pubmed.ncbi.nlm.nih.gov', year: '2018' },
   ],
 
   doctorNote: 'Main clinic mein dekhta hoon ki Hashimoto patients jab gluten-free diet seriously lete hain aur homeopathic constitutional treatment ke saath selenium add karte hain, unke TPO antibody levels consistently niche aate hain within 6-9 months — jo sirf hormone replacement mein nahi hota. Ye combination mere experience mein Hashimoto management mein sabse promising approach hai.',

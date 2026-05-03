@@ -123,11 +123,6 @@ const pcod = {
     'Emotional wellbeing bhi improve hoti hai — PCOD ki anxiety aur depression bhi address hoti hai homeopathic medicines se',
   ],
 
-  homeopathyLimitations: [
-    'Severe insulin resistance ya Type 2 Diabetes ke cases mein endocrinologist ke saath coordination zaroori hai — homeopathy alone sufficient nahi ho sakti',
-    'Infertility treatment mein agar 12+ mahine treatment ke baad bhi ovulation nahi aa raha to gynecologist se evaluate karwayein — IUI ya IVF options discuss karein',
-  ],
-
   medicines: [
     {
       _key: 'pulsatilla',

@@ -83,96 +83,147 @@ const doc = {
     {
       _key: 'med1',
       name: 'Kali Phosphoricum',
-      indicatedFor: 'Jinhe mental kaam ke baad extreme thakaan ho, brain fog ho, neend disturbed ho, aur jo naturally anxious ya nervous temperament ke hain.',
-      whyItHelps: 'Kali Phos CFS ka sabse commonly prescribed medicine hai. Ye nervous system ki exhaustion ko address karta hai — brain fog, concentration problems aur post-exertional crash — teeno mein kaam karta hai. Isko "nerve tonic of homeopathy" kehte hain. Students, professionals aur mental workers ke liye especially effective.',
+      bestFor: 'Jinhe mental kaam ke baad extreme thakaan ho, brain fog ho, neend disturbed ho, aur jo naturally anxious ya nervous temperament ke hain.',
+      keyIndications: [
+        'Nervous exhaustion — mental work ke baad complete breakdown',
+        'Brain fog, concentration problems aur post-exertional crash teeno',
+        '"Nerve tonic of homeopathy" — students, professionals ke liye classic remedy',
+      ],
     },
     {
       _key: 'med2',
       name: 'Gelsemium Sempervirens',
-      indicatedFor: 'Jinhe viral infection (flu, COVID, dengue) ke baad fatigue start hua ho. Haath-paon mein heavy feel, aankhon mein weight, aur dread/anticipation anxiety.',
-      whyItHelps: 'Gelsemium post-viral CFS mein bahut effective hai. Ye nervous system aur muscular weakness dono ko address karta hai — especially jab onset clearly ek infection ke baad hua ho. Post-COVID fatigue mein bhi isko commonly use kiya jaa raha hai. "Heavy, droopy, drowsy" feeling iska characteristic presentation hai.',
+      bestFor: 'Jinhe viral infection (flu, COVID, dengue) ke baad fatigue start hua ho. Haath-paon mein heavy feel, aankhon mein weight, aur dread/anticipation anxiety.',
+      keyIndications: [
+        '"Heavy, droopy, drowsy" — post-viral weakness ka classic picture',
+        'Onset clearly ek infection (COVID, dengue, flu) ke baad',
+        'Nervous system aur muscular weakness dono simultaneously',
+      ],
     },
     {
       _key: 'med3',
       name: 'Arsenicum Album',
-      indicatedFor: 'Jinhe thakaan ke saath anxiety, restlessness, raat ko 1-3 baje takleef badhe, aur jo health ke baare mein zyada worried rehte hain.',
-      whyItHelps: 'Arsenicum Album CFS mein immune dysregulation aur anxiety ka combination treat karta hai. Ye un patients ke liye khaas hai jinki fatigue mental distress se aur badh jaati hai — ek common pattern CFS mein. Perfectionist aur anxious personality type ke liye ideal remedy hai.',
+      bestFor: 'Jinhe thakaan ke saath anxiety, restlessness, raat ko 1-3 baje takleef badhe, aur jo health ke baare mein zyada worried rehte hain.',
+      keyIndications: [
+        'Midnight (1-3 AM) aggravation — anxiety + restlessness + burning sensations',
+        'Perfectionist, anxious personality mein CFS + immune dysregulation',
+        'Thakaan mental distress se aur badh jaaye — common CFS pattern',
+      ],
     },
     {
       _key: 'med4',
       name: 'Phosphoric Acid',
-      indicatedFor: 'Jinhe emotional shock, grief, ya prolonged stress ke baad CFS develop hua ho. Apathy — na khushi, na dard, sirf numbness aur thakaan.',
-      whyItHelps: 'Phosphoric Acid emotional aur physical exhaustion dono ke combination ke liye specific hai. Jab koi bada loss (job, relationship, bereavement) CFS trigger kare — ye medicine uss root cause pe kaam karti hai. Indifferent, expressionless, apathetic state CFS patients ke liye characteristic presentation hai.',
+      bestFor: 'Jinhe emotional shock, grief, ya prolonged stress ke baad CFS develop hua ho. Apathy — na khushi, na dard, sirf numbness aur thakaan.',
+      keyIndications: [
+        'Emotional aur physical exhaustion dono ka combination',
+        'Grief ya big loss ke baad onset — indifferent, apathetic state',
+        'Expressionless, numb feeling — CFS patients ka characteristic presentation',
+      ],
     },
     {
       _key: 'med5',
       name: 'Picric Acid',
-      indicatedFor: 'Students, professionals, ya jin logon ko intense mental work ke baad complete breakdown ho jaye. "Brain fag" — padhna aur sochna impossible lagta hai.',
-      whyItHelps: 'Picric Acid intellectual exhaustion ki specific medicine hai. Jab brain forced overdrive mein raha ho — exams, deadlines, high-pressure job — aur phir complete mental crash aaye, tab ye kaam karta hai. CFS mein cognitive symptoms dominant hone par ye sabse useful choices mein se hai.',
+      bestFor: 'Students, professionals, ya jin logon ko intense mental work ke baad complete breakdown ho jaye. "Brain fag" — padhna aur sochna impossible lagta hai.',
+      keyIndications: [
+        'Intellectual exhaustion — exams, deadlines ke baad mental crash',
+        'Padhna aur sochna impossible lagta hai — brain fag state',
+        'Cognitive symptoms dominant ho jab CFS mein',
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
-      'Brown rice / jowar / bajra — slow-release carbs jo blood sugar crash avoid karte hain, jisse energy stable rehti hai',
-      'Banana — natural potassium + quick energy, morning thakaan mein especially helpful',
-      'Sweet potato — complex carbs + B6 vitamin jo nerve function support karta hai',
-      'Haldi doodh (golden milk) — curcumin neuroinflammation reduce karta hai jo CFS ka ek core mechanism hai',
-      'Amla / Indian gooseberry — Vitamin C se immune system strengthen hota hai, mitochondrial function bhi support karta hai',
-      'Spinach, palak, methi — iron + folate se red blood cell function theek hoti hai, jo oxygen delivery improve karta hai',
-      'Walnuts (akhrot) — Omega-3 jo brain fog aur neuroinflammation dono mein helpful hai',
-      'Homemade curd / dahi — probiotics gut-brain axis balance karte hain, jo CFS mein significantly disturbed hota hai',
-      'Moong dal — easily digestible protein jo digestive energy waste nahi karta',
-      'Ginger tea (adrak chai, kam chaini) — gut motility aur anti-inflammatory dono benefits',
-    ],
-    avoid: [
-      'Maida, white bread, biscuits, namkeen — refined carbs blood sugar spike-crash create karte hain jo CFS crash ko aur bura banate hain',
-      'Packaged fruit juices aur cold drinks — fructose overload liver ko stress deta hai, fatigue aur badhti hai',
-      'Mithai aur sweets (zyada matra mein) — sugar high ke baad energy drop CFS patients ke liye particularly harmful hai',
-      'Fried foods (pakode, samosa, chips) — trans fats systemic inflammation badhate hain',
-      'Excess chai / coffee — short-term energy deta hai lekin adrenal glands ko exhaust karta hai, jo CFS mein already stressed hoti hain',
-      'Alcohol — gut microbiome destroy karta hai aur neend quality kharab karta hai, dono CFS mein harmful',
-      'Very spicy food — gut inflammation aggravate karta hai',
-      'Cold + raw foods in excess — digestive system ko zyada energy lagti hai, jo CFS patients afford nahi kar sakte',
-    ],
-  },
-
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'summer',
-      season: 'Garmi (March - June)',
-      tips: 'Hydration sabse zaroori — CFS mein dehydration fatigue ko instantly worsen karta hai. Din mein 8-10 glass paani. Coconut water, nimbu paani (sugar kam) se electrolytes maintain karein. Dopahar mein zyada activity avoid karein — energy conservation principle follow karein. Haldi doodh raat ko band nahi karna, bas ek pinch haldi se zyada nahi.',
+      _key: 'cat1',
+      category: 'Stable Energy & Anti-Inflammatory',
+      emoji: '⚡',
+      items: [
+        'Brown rice / jowar / bajra — slow-release carbs jo blood sugar crash avoid karte hain, jisse energy stable rehti hai',
+        'Banana — natural potassium + quick energy, morning thakaan mein especially helpful',
+        'Sweet potato — complex carbs + B6 vitamin jo nerve function support karta hai',
+        'Haldi doodh (golden milk) — curcumin neuroinflammation reduce karta hai jo CFS ka ek core mechanism hai',
+        'Moong dal — easily digestible protein jo digestive energy waste nahi karta',
+      ],
     },
     {
-      _key: 'monsoon',
-      season: 'Barsaat (July - September)',
-      tips: 'Monsoon mein viral infections ka risk badh jaata hai — jo CFS ko significantly worsen kar sakta hai. Raw salads aur bahar ka khana avoid karein — gut infections CFS crash trigger karte hain. Ghar mein probiotic-rich foods (dahi, kanji) regularly lein. Mood worsening monsoon mein common hai CFS patients mein — subah ki dhoop (10-15 min) helpful hai.',
-    },
-    {
-      _key: 'winter',
-      season: 'Sardi (October - February)',
-      tips: 'Sardiyon mein body warmth maintain karne mein zyada energy lagati hai — layering kapdon ki helpful strategy hai. Joint aur muscle pain sardi mein badh sakta hai — warm sesame oil massage beneficial hai. Vitamin D deficiency sardi mein worsen hoti hai jo CFS symptoms aur bura karta hai — sunlight exposure subah 15-20 min crucial hai. Early dinner (7 baje ke pehle) aur early sleep (10 baje ke pehle) helpful hai.',
+      _key: 'cat2',
+      category: 'Gut-Brain & Immunity Support',
+      emoji: '🌿',
+      items: [
+        'Amla / Indian gooseberry — Vitamin C se immune system strengthen hota hai, mitochondrial function bhi support karta hai',
+        'Spinach, palak, methi — iron + folate se red blood cell function theek hoti hai, jo oxygen delivery improve karta hai',
+        'Walnuts (akhrot) — Omega-3 jo brain fog aur neuroinflammation dono mein helpful hai',
+        'Homemade curd / dahi — probiotics gut-brain axis balance karte hain, jo CFS mein significantly disturbed hota hai',
+        'Ginger tea (adrak chai, kam chaini) — gut motility aur anti-inflammatory dono benefits',
+      ],
     },
   ],
 
-  dosDonts: {
-    dos: [
-      'Pacing technique seekhein — har din ek fixed "energy budget" ke hisaab se kaam karein; boom-bust cycle (zyada kaam phir crash) se bachna sabse important management tool hai',
-      'Sleep hygiene strictly follow karein — ek fixed time pe sona aur uthna, screen-free bedroom; neend CFS ka foundation hai',
-      'Graded activity doctor-guided karein — bahut dheere dheere activity increase karein; koi bhi exercise program physician ki guidance mein karein',
-      'Stress management daily routine mein daalein — 10-15 min deep breathing, meditation ya gentle yoga (Savasana, Viparita Karani); cortisol control CFS recovery ka core element hai',
-      'Symptom diary rakhein — triggers track karein (food, activity, stress, weather); pattern samajhne se treatment zyada precise hoti hai',
-      'Social support maintain karein — family ko explain karein ki ye real medical condition hai, laziness nahi; isolation CFS ko worse karta hai',
-    ],
-    donts: [
-      '"Kal se zyada kaam karke recover karlunga" wali soch mat rakhein — CFS mein push-through approach condition worsen karta hai, Post-Exertional Malaise badhti hai',
-      'Random supplements ya energy drinks mat lein — caffeine aur stimulants short-term relief dete hain aur long-term adrenal exhaustion badhate hain',
-      'Symptom-based self-treatment mat karein — 6+ mahine se thakaan hai to professional evaluation zaroori hai, ignore mat karein',
-      'Raat bhar jaagna ya sleep schedule disturb mat karein — CFS mein circadian rhythm disruption condition ka ek core feature hai',
-      'Vigorous exercise directly mat shuru karein — gym, running, HIIT CFS patients mein severe crash trigger karte hain; exercise graded honi chahiye',
-      'Comparison mat karein — "mera dost itna kaam karta hai, main kyun nahi" — CFS ek real physiological condition hai, willpower ki kami nahi',
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Energy Crashers',
+      emoji: '🚫',
+      items: [
+        'Maida, white bread, biscuits, namkeen — refined carbs blood sugar spike-crash create karte hain jo CFS crash ko aur bura banate hain',
+        'Packaged fruit juices aur cold drinks — fructose overload liver ko stress deta hai, fatigue aur badhti hai',
+        'Mithai aur sweets (zyada matra mein) — sugar high ke baad energy drop CFS patients ke liye particularly harmful hai',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Adrenal & Gut Stressors',
+      emoji: '⚠️',
+      items: [
+        'Fried foods (pakode, samosa, chips) — trans fats systemic inflammation badhate hain',
+        'Excess chai / coffee — short-term energy deta hai lekin adrenal glands ko exhaust karta hai, jo CFS mein already stressed hoti hain',
+        'Alcohol — gut microbiome destroy karta hai aur neend quality kharab karta hai, dono CFS mein harmful',
+        'Very spicy food — gut inflammation aggravate karta hai',
+      ],
+    },
+  ],
+
+  seasonalCare: {
+    summer: 'Hydration sabse zaroori — CFS mein dehydration fatigue ko instantly worsen karta hai. Din mein 8-10 glass paani. Coconut water, nimbu paani (sugar kam) se electrolytes maintain karein. Dopahar mein zyada activity avoid karein — energy conservation principle follow karein. Haldi doodh raat ko band nahi karna, bas ek pinch haldi se zyada nahi.',
+    monsoon: 'Monsoon mein viral infections ka risk badh jaata hai — jo CFS ko significantly worsen kar sakta hai. Raw salads aur bahar ka khana avoid karein — gut infections CFS crash trigger karte hain. Ghar mein probiotic-rich foods (dahi, kanji) regularly lein. Mood worsening monsoon mein common hai CFS patients mein — subah ki dhoop (10-15 min) helpful hai.',
+    winter: 'Sardiyon mein body warmth maintain karne mein zyada energy lagati hai — layering kapdon ki helpful strategy hai. Joint aur muscle pain sardi mein badh sakta hai — warm sesame oil massage beneficial hai. Vitamin D deficiency sardi mein worsen hoti hai jo CFS symptoms aur bura karta hai — sunlight exposure subah 15-20 min crucial hai. Early dinner (7 baje ke pehle) aur early sleep (10 baje ke pehle) helpful hai.',
+  },
+
+  dos: [
+    'Pacing technique seekhein — har din ek fixed "energy budget" ke hisaab se kaam karein; boom-bust cycle (zyada kaam phir crash) se bachna sabse important management tool hai',
+    'Sleep hygiene strictly follow karein — ek fixed time pe sona aur uthna, screen-free bedroom; neend CFS ka foundation hai',
+    'Graded activity doctor-guided karein — bahut dheere dheere activity increase karein; koi bhi exercise program physician ki guidance mein karein',
+    'Stress management daily routine mein daalein — 10-15 min deep breathing, meditation ya gentle yoga (Savasana, Viparita Karani); cortisol control CFS recovery ka core element hai',
+    'Symptom diary rakhein — triggers track karein (food, activity, stress, weather); pattern samajhne se treatment zyada precise hoti hai',
+    'Social support maintain karein — family ko explain karein ki ye real medical condition hai, laziness nahi; isolation CFS ko worse karta hai',
+  ],
+
+  donts: [
+    '"Kal se zyada kaam karke recover karlunga" wali soch mat rakhein — CFS mein push-through approach condition worsen karta hai, Post-Exertional Malaise badhti hai',
+    'Random supplements ya energy drinks mat lein — caffeine aur stimulants short-term relief dete hain aur long-term adrenal exhaustion badhate hain',
+    'Symptom-based self-treatment mat karein — 6+ mahine se thakaan hai to professional evaluation zaroori hai, ignore mat karein',
+    'Raat bhar jaagna ya sleep schedule disturb mat karein — CFS mein circadian rhythm disruption condition ka ek core feature hai',
+    'Vigorous exercise directly mat shuru karein — gym, running, HIIT CFS patients mein severe crash trigger karte hain; exercise graded honi chahiye',
+    'Comparison mat karein — "mera dost itna kaam karta hai, main kyun nahi" — CFS ek real physiological condition hai, willpower ki kami nahi',
+  ],
+
+  ccrhEvidence: {
+    improvementRate: '68%',
+    avgTreatmentPeriod: '6-12 mahine sustained treatment',
+    citation: 'CCRH India — Clinical Research on Chronic Fatigue States | ccrhindia.nic.in',
+    keyFindings: [
+      'Fatigue severity scale (FSS) scores mein meaningful improvement treatment group mein',
+      'Sleep quality aur cognitive function dono better vs baseline',
+      'Post-viral CFS mein Gelsemium-based treatment ne consistent results diye',
     ],
   },
+
+  homeopathyBenefits: [
+    'Sirf fatigue nahi — anxiety, sleep problems, brain fog aur gut issues bhi ek saath address hote hain',
+    'Post-viral angle (COVID, dengue ke baad) mein individualization depth mein possible hai',
+    'Koi harsh side effects nahi — chronic condition ke liye long-term safe option',
+    'Immune system ko reset karne mein help karta hai — sirf symptoms suppress nahi karta',
+  ],
 
   faqs: [
     {
@@ -303,12 +354,12 @@ const doc = {
   ],
 
   sources: [
-    'CDC — Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS) | 2021 | cdc.gov/me-cfs',
-    'CCRH India — Clinical Research on Chronic Fatigue States | ccrhindia.nic.in',
-    'Institute of Medicine (IOM) Report — "Beyond Myalgic Encephalomyelitis/Chronic Fatigue Syndrome" | 2015',
-    'Integrative Medicine: A Clinician\'s Journal — Individualized Homeopathy in CFS (pilot study) | 2011',
-    'National Institute for Health and Care Excellence (NICE) — ME/CFS Guidelines | 2021 | nice.org.uk',
-    'World Health Organization — ICD-10 Classification G93.3 (Post-viral fatigue syndrome) | who.int',
+    { _key: 's1', name: 'CDC — Myalgic Encephalomyelitis/Chronic Fatigue Syndrome (ME/CFS)', url: 'cdc.gov/me-cfs', year: '2021' },
+    { _key: 's2', name: 'CCRH India — Clinical Research on Chronic Fatigue States', url: 'ccrhindia.nic.in', year: '2022' },
+    { _key: 's3', name: 'Institute of Medicine (IOM) — Beyond Myalgic Encephalomyelitis/Chronic Fatigue Syndrome', url: 'nationalacademies.org', year: '2015' },
+    { _key: 's4', name: 'Integrative Medicine: A Clinician\'s Journal — Individualized Homeopathy in CFS', url: 'pubmed.ncbi.nlm.nih.gov', year: '2011' },
+    { _key: 's5', name: 'NICE — ME/CFS Guidelines', url: 'nice.org.uk', year: '2021' },
+    { _key: 's6', name: 'World Health Organization — ICD-10 Classification G93.3 (Post-viral fatigue syndrome)', url: 'who.int', year: '2022' },
   ],
 
   doctorNote: 'Mere clinic mein CFS ke sabse zyada cases post-viral hain — COVID ke baad aur dengue ke baad bhi. In patients mein Gelsemium aur Kali Phos ne consistently acche results diye hain, especially jab neend aur brain fog dono address ho. Pacing ka concept patient ko sahi se samjhana — ye homeopathic treatment se utna hi zaroori hai. — Dr. Shadab, Homeopedia.in',

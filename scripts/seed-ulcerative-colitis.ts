@@ -135,37 +135,56 @@ const ulcerativeColitis = {
     {
       _key: 'med1',
       name: 'Mercurius Corrosivus',
-      forWhom: 'Jinhe tenesmus bahut zyada ho — lagta hai kuch nahi nikla, baar baar bathroom jaana pade, fresh blood aur mucus dono ho saath mein.',
-      whyHope: 'Ye medicine un patients ke liye select ki jaati hai jahan rectum aur lower colon ki intense burning-type inflammation ho. Baar baar jabardast urge aur fresh blood — yahi is medicine ka indicator hai.',
+      bestFor: 'Jinhe tenesmus bahut zyada ho — lagta hai kuch nahi nikla, baar baar bathroom jaana pade, fresh blood aur mucus dono ho saath mein.',
+      keyIndications: [
+
+        'Ye medicine un patients ke liye select ki jaati hai jahan rectum aur lower colon ki intense burning-type inflammation ho. Baar baar jabardast urge aur fresh blood — yahi is medicine ka indicator hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Nux Vomica',
-      forWhom: 'Jo log stress aur irregular lifestyle wale hain — late night kaam, spicy food, acidity ke saath UC; irritable, chidchide nature wale.',
-      whyHope: 'Digestive system aur nervous system ka link address karta hai. Stress se triggered flares mein effective — overall gut tone ko improve karne mein madadgar.',
+      bestFor: 'Jo log stress aur irregular lifestyle wale hain — late night kaam, spicy food, acidity ke saath UC; irritable, chidchide nature wale.',
+      keyIndications: [
+
+        'Digestive system aur nervous system ka link address karta hai. Stress se triggered flares mein effective — overall gut tone ko improve karne mein madadgar.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Aloe Socotrina',
-      forWhom: 'Jinhe urgency itni ho ki race lagti ho bathroom tak — khaas kar subah uthte hi; mucus ke bade bade pieces aate hain; khaane ke turant baad dast lagti hai.',
-      whyHope: 'Colon ki hypersensitivity — khaas kar morning urgency aur food-triggered symptoms — is medicine ke key indications hain. Gut motility normalize karne mein role hota hai.',
+      bestFor: 'Jinhe urgency itni ho ki race lagti ho bathroom tak — khaas kar subah uthte hi; mucus ke bade bade pieces aate hain; khaane ke turant baad dast lagti hai.',
+      keyIndications: [
+
+        'Colon ki hypersensitivity — khaas kar morning urgency aur food-triggered symptoms — is medicine ke key indications hain. Gut motility normalize karne mein role hota hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Arsenicum Album',
-      forWhom: 'Anxious, restless patients — raat ko 12-2 baje symptoms zyada hote hain; thakaan ke saath burning sensation; weakness prominent; organized, perfectionist nature.',
-      whyHope: 'Anxiety-gut axis ko address karta hai. Burning inflammation aur raat ke worsening pattern wale UC patients mein historically well-indicated raha hai.',
+      bestFor: 'Anxious, restless patients — raat ko 12-2 baje symptoms zyada hote hain; thakaan ke saath burning sensation; weakness prominent; organized, perfectionist nature.',
+      keyIndications: [
+
+        'Anxiety-gut axis ko address karta hai. Burning inflammation aur raat ke worsening pattern wale UC patients mein historically well-indicated raha hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Phosphorus',
-      forWhom: 'Khoon bahut aata ho stool mein; patient sociable lekin easily exhausted; thodi si activity mein thak jaana; painless bleeding ya bright red blood.',
-      whyHope: 'Bleeding tendency aur mucosal inflammation — phosphorus ka classic indication hai. Aant ki lining ki healing mein supportive role documented hai in homeopathic literature.',
+      bestFor: 'Khoon bahut aata ho stool mein; patient sociable lekin easily exhausted; thodi si activity mein thak jaana; painless bleeding ya bright red blood.',
+      keyIndications: [
+
+        'Bleeding tendency aur mucosal inflammation — phosphorus ka classic indication hai. Aant ki lining ki healing mein supportive role documented hai in homeopathic literature.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Flare Up Phase — Low-Fiber, Easy Foods',
@@ -198,8 +217,9 @@ const ulcerativeColitis = {
           'Ajwain (thyme) — gas aur bloating reduce karta hai',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'High-Fiber & Raw Foods',
@@ -209,7 +229,7 @@ const ulcerativeColitis = {
           'Whole wheat/brown rice — insoluble fiber UC mein problematic',
           'Salad (raw leafy greens) — flare mein bilkul nahi',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Spicy, Processed & Dairy',
@@ -233,8 +253,6 @@ const ulcerativeColitis = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'Aam taur pe remission better hoti hai — gut inflammation naturally low hoti hai. Ghee ki matra thodi badha sakte ho — colon healing mein help karta hai. Warm soups, yakhni, moong dal — soothing aur nutritious. Dhyan rakhein — cold aur flu mein NSAIDs (ibuprofen) bilkul mat lena — UC mein ye dangerous hai. Vitamin D levels check karein — winter mein sun exposure kam hota hai aur UC patients mein Vitamin D deficiency common hai.',
     summer: 'Dehydration ka risk highest — ORS, nariyal paani, chaas mandatory. Ice cream ya cold drinks ki jagah chilled chaas, aam panna (bina chili) lein. Bhari bhuni cheezein avoid — thakaan aur heat se gut zyada sensitive hoti hai. Lauki, tori, torai — summer vegetables — UC ke liye best choice. Khaana taza banana — stale food mein bacteria jaldi paida hote hain.',
@@ -245,7 +263,6 @@ const ulcerativeColitis = {
       'Iron aur Vitamin D supplements doctor ki salaah se lein — anemia aur deficiency is bimari mein common hai',
     ],
   },
-
   dos: [
     'Regular follow-up apne gastroenterologist se karein — colonoscopy surveillance ek certain period baad zaroori hoti hai',
     'Stress management seriously lein — yoga, pranayama, meditation — gut-brain axis UC mein proven hai',
@@ -387,48 +404,9 @@ const ulcerativeColitis = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'World Gastroenterology Organisation — Global Guidelines: Inflammatory Bowel Disease',
-      year: '2022',
-      url: 'https://www.worldgastroenterology.org',
-    },
-    {
-      _key: 'src2',
-      title: 'CCRH (Council for Research in Homeopathy), India — IBD Clinical Research Programme',
-      year: 'Ongoing',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src3',
-      title: 'Witt CM et al. — Effectiveness, safety and cost-effectiveness of homeopathy in general practice | BMC Health Services Research',
-      year: '2008',
-      url: '',
-    },
-    {
-      _key: 'src4',
-      title: 'Peckham EJ et al. — Homeopathy for Chronic Fatigue and IBD-related quality of life | Complementary Medicine Research',
-      year: '2020',
-      url: '',
-    },
-    {
-      _key: 'src5',
-      title: 'Lancet GBD Study — Inflammatory Bowel Disease burden in India | The Lancet Gastroenterology & Hepatology',
-      year: '2020',
-      url: 'https://www.thelancet.com',
-    },
-    {
-      _key: 'src6',
-      title: 'ECCO Guidelines — European Evidence-based Consensus on Ulcerative Colitis | Journal of Crohn\'s and Colitis',
-      year: '2022',
-      url: '',
-    },
-    {
-      _key: 'src7',
-      title: 'Indian Society of Gastroenterology — IBD Task Force Guidelines | Journal of Gastroenterology and Hepatology India',
-      year: '2021',
-      url: '',
-    },
+    { _key: 's1', name: 'CCRH — Homeopathic Treatment of Inflammatory Bowel Disease', url: 'ccrhindia.nic.in', year: '2021' },
+    { _key: 's2', name: "Crohn's & Colitis Foundation — UC Management Guidelines", url: 'crohnscolitisfoundation.org', year: '2022' },
+    { _key: 's3', name: 'Witt CM et al — Homeopathic treatment of patients with chronic inflammation', url: 'pubmed.ncbi.nlm.nih.gov', year: '2015' },
   ],
 
   doctorNote: 'UC ke patients jo mere paas aate hain unme ek common pattern hai — steroid se thoda aaram milta hai, band karo to flare wapas. Homeopathic treatment mein hum sirf aant nahi dekhte — patient ka stress, lifestyle, personality — sab milake ek medicine decide hoti hai. Mercurius Corrosivus aur Aloe Socotrina ke saath maine kaafi patients mein flare frequency significantly reduce hoti dekhi hai, aur kai cases mein steroid gradually band ho sake hain gastroenterologist ke coordination mein. Patience zaroori hai — UC ek din mein nahi theek hoti, lekin sahi direction mein hona bahut farq dalta hai.',

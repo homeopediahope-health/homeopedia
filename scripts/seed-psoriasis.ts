@@ -125,11 +125,6 @@ async function seed() {
       'Nail aur scalp psoriasis mein bhi kaam aati hai — jo topical treatment se mushkil hota hai',
     ],
 
-    homeopathyLimitations: [
-      'Severe erythrodermic ya pustular psoriasis mein homeopathy akeli sufficient nahi — conventional emergency treatment zaroori hai',
-      'Results slow aate hain — 3-6 mahine mein clearly pata chalta hai; jinhein instant relief chahiye unhe ye samajhna zaroori hai',
-    ],
-
     medicines: [
       {
         _key: 'med1',

@@ -110,11 +110,6 @@ const dandruff = {
     'Hormonal dandruff (puberty, thyroid, PCOD) mein underlying cause bhi saath mein address hota hai',
   ],
 
-  homeopathyLimitations: [
-    'Agar dandruff ke saath patchy hair loss ho (Tinea Capitis) — fungal infection ka proper diagnosis zaroori hai; antifungal medication bhi lag sakti hai',
-    'Severe seborrheic dermatitis jo face aur body pe bhi ho — dermatologist ke saath coordinate karna better hota hai',
-  ],
-
   medicines: [
     {
       _key: 'thuja',

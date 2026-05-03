@@ -108,11 +108,6 @@ const sciatica = {
     'Stress-triggered sciatica mein especially effective — jab anxiety se muscle tension badh jaata hai to homeopathy doosre level par kaam karti hai',
   ],
 
-  homeopathyLimitations: [
-    'Severe structural causes (badi disc herniation, spinal stenosis) mein homeopathy physiotherapy ya medical management ke saath combination mein zyada effective hoti hai',
-    'Bladder/bowel symptoms ya pair mein complete weakness — ye emergency signs hain, pehle neurologist/orthopedic se milein',
-  ],
-
   medicines: [
     {
       _key: 'colocynthis',

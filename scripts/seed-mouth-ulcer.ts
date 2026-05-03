@@ -119,13 +119,14 @@ const doc = {
 
   homeopathyExplainer: 'Homeopathy munh ke chhale mein do tarahon se kaam karta hai — pahle, acute chhale ka dard aur healing accelerate karta hai; doosra aur zyada important — baar baar aane ki tendency ko address karta hai. Jab chhale baar baar aate hain, to sirf ek medicine se zyada zaroori hai body ki overall reactivity aur immune pattern samajhna. Homeopathic treatment mein aapki poori history lee jaati hai: chhale kab aate hain, kya trigger karta hai, dard ka nature kaisa hai, stress hai ya nahi — ye sab milake individualized medicine decide hoti hai.',
 
-  ccrhData: {
-    improvementRate: 'CCRH clinical studies mein RAS patients mein: average monthly episodes 4.2 se ghata kar 1.1 per month. Healing time 11.3 days se ghat kar 6.8 days. Placebo group mein frequency 4.1 se 3.7 — negligible change. Pain score (VAS): Treatment group mein 68% reduction vs placebo mein 18%.',
-    avgTreatmentPeriod: '3-6 months for significant reduction in recurrence frequency',
-    citation: 'CCRH Clinical Research Unit Studies on Recurrent Aphthous Stomatitis | Indian Journal of Research in Homoeopathy | 2018',
+  ccrhEvidence: {
+    improvementRate: '68%',
+    avgTreatmentPeriod: '3-6 mahine (monthly episodes 4.2 se ghata kar 1.1; healing time 11.3 se 6.8 days)',
+    citation: 'CCRH Clinical Research Unit — Recurrent Aphthous Stomatitis | Indian Journal of Research in Homoeopathy | 2018 | ccrhindia.nic.in',
     keyFindings: [
       'Individualised homeopathic treatment statistically superior to placebo in reducing ulcer frequency in RAS patients',
       'Constitutional medicines (Natrum Mur, Borax, Merc Sol) showed best long-term recurrence reduction',
+      'Pain score (VAS): Treatment group mein 68% reduction vs placebo mein 18%',
       'No adverse effects recorded in treatment group vs placebo',
     ],
   },
@@ -134,72 +135,120 @@ const doc = {
     {
       _key: 'med1',
       name: 'Borax Veneta (Borax)',
-      forWhom: 'Munh ke andar chhale jo bahut tender hain, hot food ya kisi bhi cheez ke touch se badh jaate hain — seedha khaana nahi kha pa rahe.',
-      whyHope: 'Borax specifically mucosal membranes ko target karta hai. Munh ke chhale jab itne sensitive hon ki baccha bhi dhoodh peene se rone lage ya adult kuch bhi khaa na sake — yahan Borax classic indication hai. Ye healing promote karta hai aur recurrence frequency bhi kum karta hai.',
+      bestFor: 'Munh ke andar chhale jo bahut tender hain, hot food ya kisi bhi cheez ke touch se badh jaate hain — seedha khaana nahi kha pa rahe.',
+      keyIndications: [
+        'Hot food ya touch se instantly worse — extreme tenderness',
+        'Bacche dhoodh peene se rone lagein — adult kuch bhi khaa na sakein',
+        'Mucosal membranes specifically target — healing promote karta hai',
+        'Recurrence frequency bhi kum karta hai',
+      ],
     },
     {
       _key: 'med2',
       name: 'Natrum Muriaticum (Nat Mur)',
-      forWhom: 'Jo log emotionally daba ke rakhte hain — grief, stress, ya emotional upset ke baad chhale aate hain; ya jis patient ke chhale jeebh ke kinare ya munh ke andar honthon pe baar baar aate hain.',
-      whyHope: 'Nat Mur ek deep constitutional medicine hai jo stress-triggered mucosal problems address karta hai. India mein ye ek common picture hai — emotionally sensitive, easily hurt, jo apna dard chhupate hain aur unhe baar baar munh ke chhale hote hain. Vitamin B12 aur Iron metabolism pe bhi positive effect dekha gaya hai.',
+      bestFor: 'Jo log emotionally daba ke rakhte hain — grief, stress, ya emotional upset ke baad chhale aate hain; chhale jeebh ke kinare ya munh ke andar honthon pe baar baar aate hain.',
+      keyIndications: [
+        'Stress aur emotional upset ke baad chhale — India ka sabse common pattern',
+        'Emotionally sensitive, apna dard chhupane wale patients',
+        'Jeebh ke kinare ya andar honthon pe recurrent ulcer',
+        'Vitamin B12 aur Iron metabolism pe positive effect',
+      ],
     },
     {
       _key: 'med3',
       name: 'Mercurius Solubilis (Merc Sol)',
-      forWhom: 'Chhale jab infected lagte hon — zyada laal, swollen, pus formation, saath mein munh se buri smell aaye, zyada laala aaye. Aksar gale mein bhi takleef.',
-      whyHope: 'Merc Sol mucosal infections aur inflammation mein classic medicine hai. Jab simple aphthous ulcer secondary infection ki taraf ja raha ho ya bacterial involvement ho, Merc Sol healing accelerate karta hai aur spreading rokta hai.',
+      bestFor: 'Chhale jab infected lagte hon — zyada laal, swollen, pus formation, munh se buri smell aaye, zyada laala aaye. Aksar gale mein bhi takleef.',
+      keyIndications: [
+        'Secondary infection ke signs — pus, buri smell, zyada laala',
+        'Chhale spreading kar rahe hain ya bahut swollen hain',
+        'Mucosal infection aur inflammation mein classic medicine',
+        'Gale mein bhi saath mein takleef',
+      ],
     },
     {
       _key: 'med4',
       name: 'Arsenicum Album',
-      forWhom: 'Bahut painful chhale jo burning sensation ke saath hain — jaisa angar rakh diya ho — jalan jo warmth se temporarily better ho. Patient anxious, restless.',
-      whyHope: 'Arsenicum Album ki burning + ulceration ki affinity well-established hai. Ye bhi immune system ko regulate karne mein helpful hai jo recurrent ulcers mein important hai.',
+      bestFor: 'Bahut painful chhale jo burning sensation ke saath hain — jaisa angar rakh diya ho — jalan jo warmth se temporarily better ho. Patient anxious, restless.',
+      keyIndications: [
+        'Burning + ulceration combination — warmth se temporarily relief',
+        'Anxious, restless patient — raat ko 1-3 baje worse',
+        'Immune system regulate karta hai — recurrent ulcers mein helpful',
+        'Intense pain with anxiety — characteristic Arsenicum picture',
+      ],
     },
     {
       _key: 'med5',
       name: 'Kali Muriaticum (Kali Mur)',
-      forWhom: 'Gaalon ke andar ya jeebh pe chhote safed patches ya chhale — saath mein white coated tongue, digestive sluggishness. Aksar fatty/rich food ke baad worse.',
-      whyHope: 'Kali Mur mucous membrane conditions mein — khaaskar jab white deposits ya sluggish digestion involved ho — helpful hai. Glandular aur mucosal health dono address karta hai.',
+      bestFor: 'Gaalon ke andar ya jeebh pe chhote safed patches ya chhale — saath mein white coated tongue, digestive sluggishness. Aksar fatty/rich food ke baad worse.',
+      keyIndications: [
+        'White deposits ya safed patches wale chhale',
+        'Fatty/rich food ke baad worse — digestive sluggishness saath',
+        'White coated tongue characteristic',
+        'Glandular aur mucosal health dono address karta hai',
+      ],
     },
   ],
 
-  diet: {
-    eat: [
-      { category: 'Cooling & Soothing Foods', items: ['Dahi (plain yogurt) — Probiotics mucosal healing mein help karte hain; natural coolant', 'Chilled coconut water — Electrolytes deta hai, alkaline nature se mucosal irritation kum karta hai', 'Banana — Soft texture se dard nahi hota; Vitamin B6 + potassium healing support', 'Soaked sabja/chia seeds — Body heat kum karta hai; fiber gut health ke liye'] },
-      { category: 'Vitamin & Healing Nutrients', items: ['Spinach (palak) ka soup ya juice — Iron + Folate — deficiency wale recurrent ulcer mein especially important', 'Amla (Indian Gooseberry) — Vitamin C ka best Indian source; mucosal immunity strengthen karta hai', 'Doodh — Vitamin B12 source; dairy intolerance nahi hai to daily lena helpful', 'Soaked almonds (badam) — Vitamin E + healthy fats — tissue repair mein help karte hain'] },
-      { category: 'Soft & Easy-to-Eat Foods', items: ['Soft khichdi — Easy to eat, nutritious, stomach bhi settle karta hai', 'Soft upma ya dalia — Bland, soothing, healing-friendly', 'Mashed potato — Soft, no irritation, energy bhi milti hai', 'Chilled milk smoothie — Nutrition + cooling ek saath'] },
-    ],
-    avoid: [
-      { category: 'Spicy & Acidic Foods', items: ['Mirchi (red/green chili) — Direct mucosal irritation, dard instantly badh jaata hai', 'Nimbu, imli, tomato sauce — Acidic nature chhale pe lage to burning tez ho jaati hai', 'Vinegar-based pickles (achar) — High acid content, healing rok deta hai', 'Orange juice — Acidic + citric acid — ulcer pe lage to jalan'] },
-      { category: 'Sharp, Rough Textures', items: ['Chips, papad, biscuit, toast — Sharp edges chhale ko physically injury karte hain, healing delay hoti hai', 'Hard namkeen, bhujia — Same reason', 'Crusty bread ya hard roti — Mucosal surface pe chhil jaata hai'] },
-      { category: 'Heat & Stimulants', items: ['Bahut garam chai/coffee — Mucosal tissue ko aur damage karta hai', 'Alcohol — Mucosal lining ko dry karta hai, healing slow', 'Gutka, pan masala, tambaku — Oral mucosal ka worst enemy; healing practically ruk jaati hai — BILKUL NAHI'] },
-    ],
-    dietTip: 'Jab chhala active ho to simple rule: jo khaate waqt dard kare wo band karo. Soft, bland, room temperature ya thanda khana — dahi, khichdi, banana, coconut water. Amla roz lena habit banao — Vitamin C se mucosal immunity strong rehti hai.',
-    dietNote: 'Baar baar chhale aate hain to ek baar B12, Iron, Folate ka blood test zaroor karwao. India mein vegetarians mein B12 deficiency bahut common trigger hai jise log ignore karte rehte hain.',
+  dietInclude: [
+    {
+      _key: 'inc1',
+      category: 'Cooling & Soothing Foods',
+      emoji: '🧊',
+      items: [
+        'Dahi (plain yogurt) — Probiotics mucosal healing mein help karte hain; natural coolant',
+        'Chilled coconut water — Electrolytes deta hai, alkaline nature se mucosal irritation kum karta hai',
+        'Banana — Soft texture se dard nahi hota; Vitamin B6 + potassium healing support karta hai',
+        'Soaked sabja/chia seeds — Body heat kum karta hai; fiber gut health ke liye',
+        'Chilled milk smoothie — Nutrition + cooling ek saath',
+      ],
+    },
+    {
+      _key: 'inc2',
+      category: 'Vitamin & Healing Nutrients',
+      emoji: '🥦',
+      items: [
+        'Spinach (palak) ka soup ya juice — Iron + Folate — deficiency wale recurrent ulcer mein especially important',
+        'Amla (Indian Gooseberry) — Vitamin C ka best Indian source; mucosal immunity strengthen karta hai',
+        'Doodh — Vitamin B12 source; dairy intolerance nahi hai to daily lena helpful',
+        'Soaked almonds (badam) — Vitamin E + healthy fats — tissue repair mein help karte hain',
+        'Egg (agar vegetarian nahi) — Complete B12 + protein source for mucosal repair',
+        'Soft khichdi — Easy to eat, nutritious, stomach bhi settle karta hai',
+        'Mashed potato — Soft, no irritation, energy bhi milti hai',
+      ],
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Spicy & Acidic Foods',
+      emoji: '🌶️',
+      items: [
+        'Mirchi (red/green chili) — Direct mucosal irritation, dard instantly badh jaata hai',
+        'Nimbu, imli, tomato sauce — Acidic nature chhale pe lage to burning tez ho jaati hai',
+        'Vinegar-based pickles (achar) — High acid content, healing rok deta hai',
+        'Orange juice — Acidic + citric acid — ulcer pe lage to jalan',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Sharp Textures & Stimulants',
+      emoji: '🚫',
+      items: [
+        'Chips, papad, biscuit, toast — Sharp edges chhale ko physically injury karte hain, healing delay hoti hai',
+        'Hard namkeen, bhujia — Same reason — mucosal surface chhil jaata hai',
+        'Bahut garam chai/coffee — Heat directly sensitive mucosal tissue ko aur damage karta hai',
+        'Alcohol — Mucosal lining ko dry karta hai, healing slow',
+        'Gutka, pan masala, tambaku — Oral mucosal ka worst enemy; healing practically ruk jaati hai — BILKUL NAHI',
+      ],
+    },
+  ],
+
+  seasonalCare: {
+    summer: 'High risk season — dehydration aur body heat se chhale badh jaate hain. Roz coconut water ya shikanji (ulcer active ho to nimbu kam karein); amla churna daily lena helpful; khub paani peeyein (7-8 glass minimum). Bahut zyada spicy aur oily food avoid karein summer mein. Vitamin C deficiency ka risk bhi garmi mein zyada hota hai — fresh fruits zaroor lein.',
+    monsoon: 'Moderate risk — digestive issues + bacterial growth season, secondary infection ka risk thoda badhta hai. Fresh raw vegetables properly wash karke khaayein. Probiotic foods (dahi) zyada zaroori is season mein. Street food avoid karein — contamination risk high hota hai.',
+    winter: 'Lower risk but vigilance zaroori — Vitamin D deficiency immune system affect karta hai. Heater/indoor heat se munh dry rehta hai — hydration zaroori. Agar garam masala zyada khaate hain winter mein to ulcer trigger ho sakta hai. Exam season (November-December, February-March) mein stress-triggered RAS ka peak time — sleep properly lena aur magnesium-rich foods (nuts, seeds, green leafy) lena helpful hai.',
   },
-
-  seasonalCare: [
-    {
-      _key: 'sc1',
-      season: 'Garmi (Summer) — High Risk Season',
-      tip: 'Dehydration aur body heat se chhale badh jaate hain. Roz coconut water ya shikanji; amla churna daily lena helpful; khub paani peeyein (7-8 glass minimum). Bahut zyada spicy aur oily food avoid karein summer mein.',
-    },
-    {
-      _key: 'sc2',
-      season: 'Monsoon (Barish) — Moderate Risk',
-      tip: 'Digestive issues + bacterial growth season — secondary infection ka risk thoda badhta hai. Fresh raw vegetables properly wash karke khaayein. Probiotic foods (dahi) zyada zaroori is season mein.',
-    },
-    {
-      _key: 'sc3',
-      season: 'Sardi (Winter) — Lower Risk But',
-      tip: 'Vitamin D deficiency immune system affect karta hai. Heater/indoor heat se munh dry rehta hai — hydration zaroori. Agar garam masala zyada khaate hain winter mein to ulcer trigger ho sakta hai.',
-    },
-    {
-      _key: 'sc4',
-      season: 'Exam Season / Stress Period — High Risk',
-      tip: 'Stress-triggered RAS ka peak time. Sleep properly lena — neend ki kami bhi ulcer trigger hai. Magnesium-rich foods (nuts, seeds, green leafy) stress reactivity kum karte hain. Is period mein homeopathic constitutional treatment especially helpful hai.',
-    },
-  ],
 
   dos: [
     'Soft bristle toothbrush use karein — sensitive time mein mucosal injury rokne ke liye; SLS-free toothpaste better hai',
@@ -335,13 +384,13 @@ const doc = {
   ],
 
   sources: [
-    'Central Council for Research in Homoeopathy (CCRH) | Annual Report & Clinical Studies on RAS | 2018-2022 | ccrhindia.nic.in',
-    'Indian Journal of Research in Homoeopathy | "Homoeopathic Treatment in Recurrent Aphthous Stomatitis" | 2018',
-    'World Health Organization — Oral Health Fact Sheet | 2022',
-    'Mayo Clinic — Canker Sore (Mouth Ulcer) Overview | 2023',
-    'Scully C, Shotts R — "Mouth ulcers and other causes of orofacial soreness and pain" — British Medical Journal | 2000',
-    'Jurge S et al — "Recurrent aphthous stomatitis" — Oral Diseases | 2006',
-    'National Institute of Dental and Craniofacial Research (NIDCR) — Canker Sores | 2023',
+    { _key: 's1', name: 'CCRH — Clinical Studies on Recurrent Aphthous Stomatitis', url: 'ccrhindia.nic.in', year: '2022' },
+    { _key: 's2', name: 'Indian Journal of Research in Homoeopathy — Homoeopathic Treatment in RAS', url: 'ijrh.org', year: '2018' },
+    { _key: 's3', name: 'World Health Organization — Oral Health Fact Sheet', url: 'who.int', year: '2022' },
+    { _key: 's4', name: 'Mayo Clinic — Canker Sore (Mouth Ulcer) Overview', url: 'mayoclinic.org', year: '2023' },
+    { _key: 's5', name: 'Scully C, Shotts R — Mouth ulcers and other causes of orofacial soreness — BMJ', url: 'pubmed.ncbi.nlm.nih.gov', year: '2000' },
+    { _key: 's6', name: 'Jurge S et al — Recurrent aphthous stomatitis — Oral Diseases', url: 'pubmed.ncbi.nlm.nih.gov', year: '2006' },
+    { _key: 's7', name: 'NIDCR — National Institute of Dental and Craniofacial Research — Canker Sores', url: 'nidcr.nih.gov', year: '2023' },
   ],
 
   doctorNote: 'Clinic mein sabse zyada jo pattern dekha hai — vitamin B12 deficiency + stress combination. Vegetarian patients mein B12 test karana aur Nat Mur constitutional treatment dono ek saath karna — zyada tar 3 mahine mein recurrence practically zero ho jaata hai. Simple aur highly satisfying cases hote hain ye.',

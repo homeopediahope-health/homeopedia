@@ -128,32 +128,52 @@ const disease = {
     {
       _key: 'med1',
       name: 'Equisetum Hyemale',
-      forWhom: 'Bachcha jo sapne mein peshab karta hai; din mein bhi frequent urge; raat ki neend mein bladder full hone ka sign nahi milta',
-      whyHope: 'Equisetum directly urinary tract ki irritability aur involuntary urination pe kaam karta hai — especially jab koi clear emotional ya physical reason obvious na ho.',
+      bestFor: 'Bachcha jo sapne mein peshab karta hai; din mein bhi frequent urge; raat ki neend mein bladder full hone ka sign nahi milta',
+      keyIndications: [
+
+        'Equisetum directly urinary tract ki irritability aur involuntary urination pe kaam karta hai — especially jab koi clear emotional ya physical reason obvious na ho.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Kreosotum',
-      forWhom: 'Raat ko gehra so jaata hai, bahut mushkil se jagta hai; pehli neend mein hi bedwetting — mostly late evening ya midnight se pehle',
-      whyHope: 'Kreosotum us pattern ke liye hai jahan bladder ka signal brain tak pahunchta hi nahi gehra sote waqt — ye neuro-bladder connection mein madadgar hai.',
+      bestFor: 'Raat ko gehra so jaata hai, bahut mushkil se jagta hai; pehli neend mein hi bedwetting — mostly late evening ya midnight se pehle',
+      keyIndications: [
+
+        'Kreosotum us pattern ke liye hai jahan bladder ka signal brain tak pahunchta hi nahi gehra sote waqt — ye neuro-bladder connection mein madadgar hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Causticum',
-      forWhom: 'Thaka hua ya anxious bachcha; saath mein daytime dribbling bhi; khanste ya hasne par bhi thoda nikal jaata hai; joint/muscular weakness bhi ho sakti hai',
-      whyHope: 'Causticum bladder sphincter ki weakness pe kaam karta hai — ye un cases mein best suited hai jahan muscular control ki problem zyada hai.',
+      bestFor: 'Thaka hua ya anxious bachcha; saath mein daytime dribbling bhi; khanste ya hasne par bhi thoda nikal jaata hai; joint/muscular weakness bhi ho sakti hai',
+      keyIndications: [
+
+        'Causticum bladder sphincter ki weakness pe kaam karta hai — ye un cases mein best suited hai jahan muscular control ki problem zyada hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Benzoicum Acidum',
-      forWhom: 'Peshab mein bahut tez, offensive smell aur dark color ho; bedwetting ke saath joint pains ya uric acid issues family mein',
-      whyHope: 'Urinary tract ke acidic/offensive state ko address karta hai — ek underrated medicine jo specific smell pattern mein kaafi effective hai.',
+      bestFor: 'Peshab mein bahut tez, offensive smell aur dark color ho; bedwetting ke saath joint pains ya uric acid issues family mein',
+      keyIndications: [
+
+        'Urinary tract ke acidic/offensive state ko address karta hai — ek underrated medicine jo specific smell pattern mein kaafi effective hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Pulsatilla',
-      forWhom: 'Timid, emotional bachcha — easily rota hai, clingy hai, mummy ke paas sona chahta hai; bedwetting stress ya change (new school, new sibling) ke baad start hui ho',
-      whyHope: 'Secondary enuresis mein jab emotional trigger clearly ho — Pulsatilla bachche ko emotionally stabilize karta hai aur bladder control indirectly better hoti hai.',
+      bestFor: 'Timid, emotional bachcha — easily rota hai, clingy hai, mummy ke paas sona chahta hai; bedwetting stress ya change (new school, new sibling) ke baad start hui ho',
+      keyIndications: [
+
+        'Secondary enuresis mein jab emotional trigger clearly ho — Pulsatilla bachche ko emotionally stabilize karta hai aur bladder control indirectly better hoti hai.',
+
+      ],
     },
   ],
 

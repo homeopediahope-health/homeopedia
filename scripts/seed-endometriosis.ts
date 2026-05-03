@@ -132,37 +132,56 @@ const endometriosis = {
     {
       _key: 'med1',
       name: 'Sepia',
-      forWhom: 'Jo mahila period mein extreme weakness, dragging pain feel kare — jaise uterus bahar khicha ja raha ho — saath mein irritability aur emotional withdrawal ho.',
-      whyHope: 'Sepia uterine congestion aur hormonal imbalance pe kaam karta hai. Pelvic floor ki sluggishness address karta hai. Historically homeopathy ki top uterine medicines mein se ek.',
+      bestFor: 'Jo mahila period mein extreme weakness, dragging pain feel kare — jaise uterus bahar khicha ja raha ho — saath mein irritability aur emotional withdrawal ho.',
+      keyIndications: [
+
+        'Sepia uterine congestion aur hormonal imbalance pe kaam karta hai. Pelvic floor ki sluggishness address karta hai. Historically homeopathy ki top uterine medicines mein se ek.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Lachesis',
-      forWhom: 'Jab period aane par dard thoda better hota ho — flow rok ho ya scanty ho to dard zyada. Left side zyada affect hoti ho. Jealousy, intensity aur heat sensitivity ho.',
-      whyHope: 'Lachesis venous congestion aur pelvic engorgement pe kaam karta hai. Left ovarian pain aur pre-menstrual aggravation ke liye strongly indicated.',
+      bestFor: 'Jab period aane par dard thoda better hota ho — flow rok ho ya scanty ho to dard zyada. Left side zyada affect hoti ho. Jealousy, intensity aur heat sensitivity ho.',
+      keyIndications: [
+
+        'Lachesis venous congestion aur pelvic engorgement pe kaam karta hai. Left ovarian pain aur pre-menstrual aggravation ke liye strongly indicated.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Pulsatilla',
-      forWhom: 'Irregular, delayed, variable periods wali mahilaen — kabhi zyada kabhi kam flow. Emotional, weepy, warm room mein worse. Young girls mein bhi kaam karta hai.',
-      whyHope: 'Pulsatilla hormonal erraticism aur pelvic congestion dono ko address karta hai. Gentle but deep-acting — sensitive constitution ke liye suited.',
+      bestFor: 'Irregular, delayed, variable periods wali mahilaen — kabhi zyada kabhi kam flow. Emotional, weepy, warm room mein worse. Young girls mein bhi kaam karta hai.',
+      keyIndications: [
+
+        'Pulsatilla hormonal erraticism aur pelvic congestion dono ko address karta hai. Gentle but deep-acting — sensitive constitution ke liye suited.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Magnesia Phosphorica',
-      forWhom: 'Jab period dard mein cramping aur spasm sabse prominent ho — dard lete se ya pressure se thoda theek ho, garam cheez se aaram mile.',
-      whyHope: 'Uterine smooth muscle spasm ko address karta hai — nerve pain aur cramping ka classic homeopathic antispasmodic.',
+      bestFor: 'Jab period dard mein cramping aur spasm sabse prominent ho — dard lete se ya pressure se thoda theek ho, garam cheez se aaram mile.',
+      keyIndications: [
+
+        'Uterine smooth muscle spasm ko address karta hai — nerve pain aur cramping ka classic homeopathic antispasmodic.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Thuja Occidentalis',
-      forWhom: 'Ovarian cysts, polycystic tendencies, aur growths wali cases — khaaskar left ovary involvement mein. Kabhi kabhi vaccination history ya hormonal medication history ke baad cases mein.',
-      whyHope: 'Abnormal tissue growth aur cystic conditions pe kaam karta hai — endometrioma (chocolate cyst) ke cases mein complementary role play karta hai.',
+      bestFor: 'Ovarian cysts, polycystic tendencies, aur growths wali cases — khaaskar left ovary involvement mein. Kabhi kabhi vaccination history ya hormonal medication history ke baad cases mein.',
+      keyIndications: [
+
+        'Abnormal tissue growth aur cystic conditions pe kaam karta hai — endometrioma (chocolate cyst) ke cases mein complementary role play karta hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Anti-Inflammatory Foods',
@@ -193,8 +212,9 @@ const endometriosis = {
           'Green Tea — EGCG compounds endometrial cell growth inhibit karte hain — ek cup daily okay',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'Estrogen-Boosting Foods',
@@ -203,7 +223,7 @@ const endometriosis = {
           'Full-fat Dairy (excess mein) — Saturated fat estrogen levels raise kar sakta hai — moderation ya low-fat better',
           'Soy Products (zyada matra mein) — Phytoestrogens already high estrogen load ko aur badha sakte hain',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Inflammatory Triggers',
@@ -223,8 +243,6 @@ const endometriosis = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'Cold weather mein muscle spasm aur cramping zyada hoti hai — period ke waqt warm clothing zaroori. Garam taaseer ka khana — til ke laddoo, ghee, methi paratha — helpful. Exercise andar hi karein — yoga, gentle stretching — pelvic circulation maintain karta hai jab bahar nahi ja sakte. Vitamin D levels check karayein — winters mein sun exposure kam hota hai, Vit D deficiency endometriosis se linked hai.',
     summer: 'Hydration most important — dehydration pelvic tension badhaata hai. Coconut water, nimbu paani, sabza seeds (sweet basil) — cooling + anti-inflammatory. Heat pe zyada exercise avoid karein — body overheating se inflammation spike kar sakti hai. Period ke time cooling compress better than hot water bag in extreme heat.',
@@ -235,7 +253,6 @@ const endometriosis = {
       'Period diary banao — dard intensity, flow, symptoms track karo — doctor ko sahi treatment decision lene mein help karta hai',
     ],
   },
-
   dos: [
     'Regular Gentle Exercise Karein (Yoga, Walking) — Pelvic circulation improve hoti hai, cortisol kam hota hai, period dard gradually reduce hoti hai',
     'Heat Therapy Use Karein Period Ke Waqt — Garam paani ki bottle ya heating pad lower abdomen pe — muscle spasm instant kam karta hai',
@@ -364,36 +381,9 @@ const endometriosis = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'Council for Scientific and Industrial Research (CCRH) — Uterine Disorder Clinical Studies | 2018-2022',
-      year: '2018-2022',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src2',
-      title: 'World Endometriosis Society — Global Prevalence Data',
-      year: '2022',
-      url: 'https://www.endometriosis.org',
-    },
-    {
-      _key: 'src3',
-      title: 'American Society for Reproductive Medicine (ASRM) — Endometriosis Classification and Guidelines',
-      year: '2021',
-      url: 'https://www.asrm.org',
-    },
-    {
-      _key: 'src4',
-      title: 'Lancet Global Burden of Disease Study — Women\'s Reproductive Health India',
-      year: '2019',
-      url: 'https://www.thelancet.com',
-    },
-    {
-      _key: 'src5',
-      title: 'Indian Journal of Research in Homoeopathy — Uterine Complaints RCT | Vol. 16',
-      year: '2022',
-      url: 'https://www.ijrh.org',
-    },
+    { _key: 's1', name: 'CCRH — Homeopathic Treatment of Endometriosis and Gynecological Disorders', url: 'ccrhindia.nic.in', year: '2020' },
+    { _key: 's2', name: 'Endometriosis Foundation of America — Clinical Guidelines', url: 'endofound.org', year: '2022' },
+    { _key: 's3', name: 'WHO — Endometriosis Fact Sheet', url: 'who.int', year: '2023' },
   ],
 
   doctorNote: 'Mere clinic mein endometriosis ke jo cases aate hain, unmein se zyaatar mahilaen pehle 3-5 saal sirf painkillers pe rahi hoti hain — kyunki pehle "normal period pain" samjha gaya. Jab properly diagnose hoke aati hain, tab Sepia ya Lachesis se shuru karke progressive improvement clearly track hota hai — period dard se lekar mood tak. Jo ek cheez main khaas notice karta hoon wo hai — jab patient diet changes seriously leta hai saath mein, to treatment response kaafi faster aata hai.',

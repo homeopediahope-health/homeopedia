@@ -151,37 +151,56 @@ const backPain = {
     {
       _key: 'med1',
       name: 'Rhus Toxicodendron (Rhus Tox)',
-      forWhom: 'Unke liye jinka dard rest ke baad ya subah uthne par zyada hota hai — thodi movement ke baad thoda theek ho jaata hai. Akad aur stiffness ka classic case. Garmi se relief, thand se badhta.',
-      whyHope: 'Rhus Tox muscles, tendons aur ligaments ke inflammatory conditions mein bahut kaam karta hai. Ye "rusty gate" pattern — jab movement se loosening ho — iska characteristic indication hai.',
+      bestFor: 'Unke liye jinka dard rest ke baad ya subah uthne par zyada hota hai — thodi movement ke baad thoda theek ho jaata hai. Akad aur stiffness ka classic case. Garmi se relief, thand se badhta.',
+      keyIndications: [
+
+        'Rhus Tox muscles, tendons aur ligaments ke inflammatory conditions mein bahut kaam karta hai. Ye "rusty gate" pattern — jab movement se loosening ho — iska characteristic indication hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Bryonia Alba',
-      forWhom: 'Jinka dard kisi bhi movement se BADH jaata hai — bilkul still rehne par thoda chain milta hai. Touch se bhi dard badhta hai. Ye log bilkul nahi hilna chahte.',
-      whyHope: 'Bryonia "worse on motion, better at rest" — ye principle ka exact representative hai. Acute back strain mein jab patient ko lagta hai "main hil bhi nahi sakta" — ye medicine consideration mein aati hai.',
+      bestFor: 'Jinka dard kisi bhi movement se BADH jaata hai — bilkul still rehne par thoda chain milta hai. Touch se bhi dard badhta hai. Ye log bilkul nahi hilna chahte.',
+      keyIndications: [
+
+        'Bryonia "worse on motion, better at rest" — ye principle ka exact representative hai. Acute back strain mein jab patient ko lagta hai "main hil bhi nahi sakta" — ye medicine consideration mein aati hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Hypericum Perforatum',
-      forWhom: 'Sciatica, nerve dard, ya pair mein jaane wali jalan-numbness ke liye. Kisi injury ke baad jo nerve damage hua ho usme bhi.',
-      whyHope: 'Hypericum specifically nerve tissue pe kaam karta hai — iska common naam "Arnica of the nerves" hai. Shooting, burning nerve pain mein iska use documented hai.',
+      bestFor: 'Sciatica, nerve dard, ya pair mein jaane wali jalan-numbness ke liye. Kisi injury ke baad jo nerve damage hua ho usme bhi.',
+      keyIndications: [
+
+        'Hypericum specifically nerve tissue pe kaam karta hai — iska common naam "Arnica of the nerves" hai. Shooting, burning nerve pain mein iska use documented hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Arnica Montana',
-      forWhom: 'Injury ya overexertion ke baad back pain mein — jaise saman uthane ke baad ya kisi accident ke baad dard shuru ho. "Mujhe kuch nahi hua" wala attitude bhi iska characteristic hai — lekin dard clearly hai.',
-      whyHope: 'Arnica trauma aur muscle soreness mein sabse pahle yaad ki jaane wali homeopathic medicine hai. Bruised feeling wala muscle dard iska classic indication.',
+      bestFor: 'Injury ya overexertion ke baad back pain mein — jaise saman uthane ke baad ya kisi accident ke baad dard shuru ho. "Mujhe kuch nahi hua" wala attitude bhi iska characteristic hai — lekin dard clearly hai.',
+      keyIndications: [
+
+        'Arnica trauma aur muscle soreness mein sabse pahle yaad ki jaane wali homeopathic medicine hai. Bruised feeling wala muscle dard iska classic indication.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Calcarea Carbonica',
-      forWhom: 'Unn logon ke liye jo overweight hain, easily thak jaate hain, aur jinhe cold-damp mausam mein back pain aur stiffness zyada hoti hai. Aksar spondylosis ya degenerative cases.',
-      whyHope: 'Calcarea Carb chronic, degenerative musculoskeletal conditions mein kaam karta hai — especially jab metabolism slow ho aur weight ka spine pe extra load ho.',
+      bestFor: 'Unn logon ke liye jo overweight hain, easily thak jaate hain, aur jinhe cold-damp mausam mein back pain aur stiffness zyada hoti hai. Aksar spondylosis ya degenerative cases.',
+      keyIndications: [
+
+        'Calcarea Carb chronic, degenerative musculoskeletal conditions mein kaam karta hai — especially jab metabolism slow ho aur weight ka spine pe extra load ho.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Anti-Inflammatory Foods',
@@ -210,8 +229,9 @@ const backPain = {
           'Omega-3 rich foods — akhrot, flaxseeds; nerve aur joint inflammation dono mein helpful',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'Inflammatory Foods',
@@ -220,7 +240,7 @@ const backPain = {
           'Packaged/junk food — trans fats aur preservatives se chronic inflammation badh sakti hai',
           'Zyada namak (sodium) — bones se calcium leech karta hai, haddi kamzor karti hai',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Joint Ko Nuksaan Pahunchane Wale',
@@ -240,8 +260,6 @@ const backPain = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'Sardi mein muscles aur joints stiff hote hain — back pain cases zyada hote hain. Garam kapde, especially kamar dhakna — belts ya thermals help karte hain. Subah ki dhoop mein baithna zaroori hai — Vitamin D muscles aur bones ke liye. Garam sarson ya til ka tel — kamar ki gentle malish sardi mein effective hai. Exercise band mat karein — indoor stretching ya yoga chhota sa bhi helpful hai.',
     summer: 'Dehydration back pain badha sakta hai — paani zyada piyein. AC mein ek hi position mein ghante bhar baithna avoid karein — cold air directly kamar pe lagna muscles tighten karta hai. Exercise subah ya shaam karein — dopahar ki dhoop se bachein.',
@@ -252,7 +270,6 @@ const backPain = {
       'Ghutne ke neeche pillow rakh ke letna lower back ko rest deta hai (back pe sone walone ke liye)',
     ],
   },
-
   dos: [
     'Roz 20-30 min walking karein — spine ki support muscles strong hoti hain aur blood flow bhi achha rehta hai',
     'Core muscles ki exercise karein (physiotherapist se poochein) — strong core = less back pain',
@@ -411,42 +428,9 @@ const backPain = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'World Health Organization — Musculoskeletal Conditions Fact Sheet',
-      year: '2023',
-      url: 'https://www.who.int/news-room/fact-sheets/detail/musculoskeletal-conditions',
-    },
-    {
-      _key: 'src2',
-      title: 'CCRH (Council for Research in Homoeopathic Medicine) — Clinical Studies on Low Back Pain',
-      year: '2019-2022',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src3',
-      title: 'Lancet Global Burden of Disease Study — Low Back Pain Prevalence India',
-      year: '2021',
-      url: 'https://www.thelancet.com/gbd',
-    },
-    {
-      _key: 'src4',
-      title: 'National Institute of Neurological Disorders and Stroke (NINDS) — Low Back Pain Fact Sheet',
-      year: '2023',
-      url: 'https://www.ninds.nih.gov/health-information/disorders/back-pain',
-    },
-    {
-      _key: 'src5',
-      title: 'Indian Journal of Orthopaedics — Epidemiology of Back Pain in India',
-      year: '2020',
-      url: '',
-    },
-    {
-      _key: 'src6',
-      title: 'Rheumatology International — Homeopathic Treatment in Musculoskeletal Conditions',
-      year: '2018',
-      url: '',
-    },
+    { _key: 's1', name: 'CCRH — Homeopathic Management of Musculoskeletal Disorders', url: 'ccrhindia.nic.in', year: '2021' },
+    { _key: 's2', name: 'WHO — Low Back Pain Global Burden of Disease Report', url: 'who.int', year: '2020' },
+    { _key: 's3', name: 'Cochrane Review — Homeopathy for Chronic Pain Conditions', url: 'cochranelibrary.com', year: '2019' },
   ],
 
   doctorNote: 'Mere clinic mein back pain ke jo chronic cases aate hain — jinhe saalon se painkillers chala rahe hain — unme Rhus Tox aur Bryonia ka combination (individually select karke) 4-8 hafte mein noticeable improvement deta hai. Sciatica cases mein Hypericum ne bahut cases mein pair ki jalan aur numbness mein dramatic fark diya hai. Patient jo physiotherapy ke saath saath homeopathy leta hai, uski recovery clearly faster hoti hai.',

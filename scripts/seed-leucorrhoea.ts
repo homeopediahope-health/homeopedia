@@ -126,32 +126,52 @@ const disease = {
     {
       _key: 'med1',
       name: 'Calcarea Carbonica',
-      forWhom: 'Milky white, thick, profuse discharge — especially puberty ya post-delivery mein; patient thaki hui, motapa prone, zyada sweating',
-      whyHope: 'Ye medicine constitutional weakness aur hormonal setup address karti hai. Jo mahilayein physically sluggish hain, jinhein cold aur damp weather mein zyada problem hoti hai — un mein discharge frequency aur intensity dono improve hote hain.',
+      bestFor: 'Milky white, thick, profuse discharge — especially puberty ya post-delivery mein; patient thaki hui, motapa prone, zyada sweating',
+      keyIndications: [
+
+        'Ye medicine constitutional weakness aur hormonal setup address karti hai. Jo mahilayein physically sluggish hain, jinhein cold aur damp weather mein zyada problem hoti hai — un mein discharge frequency aur intensity dono improve hote hain.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Sepia',
-      forWhom: 'Yellow-greenish discharge saath bearing down sensation (neeche kuch gir raha ho aisa feel) — irritable mood, indifferent to family, exhausted',
-      whyHope: 'Sepia uterine aur pelvic congestion address karta hai. Hormonal imbalance se jo chronic leucorrhoea hoti hai — especially post-pregnancy ya menopausal women mein — wahan effective.',
+      bestFor: 'Yellow-greenish discharge saath bearing down sensation (neeche kuch gir raha ho aisa feel) — irritable mood, indifferent to family, exhausted',
+      keyIndications: [
+
+        'Sepia uterine aur pelvic congestion address karta hai. Hormonal imbalance se jo chronic leucorrhoea hoti hai — especially post-pregnancy ya menopausal women mein — wahan effective.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Pulsatilla',
-      forWhom: 'Mild, non-irritating, changeable discharge — colour kabhi white kabhi yellowish; patient emotional, weepy, warmth se symptoms worse',
-      whyHope: 'Pulsatilla hormonal fluctuation ke saath aane wali leucorrhoea pe kaam karta hai. Puberty ya cycle irregularity se linked cases mein — discharge stabilize hoti hai saath mein mood bhi.',
+      bestFor: 'Mild, non-irritating, changeable discharge — colour kabhi white kabhi yellowish; patient emotional, weepy, warmth se symptoms worse',
+      keyIndications: [
+
+        'Pulsatilla hormonal fluctuation ke saath aane wali leucorrhoea pe kaam karta hai. Puberty ya cycle irregularity se linked cases mein — discharge stabilize hoti hai saath mein mood bhi.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Kreosotum',
-      forWhom: 'Offensive, corrosive discharge jisse skin pe jalan ho — cloth pe yellow stain — intense itching jo raat ko zyada ho',
-      whyHope: 'Ye medicine severe inflammatory type leucorrhoea mein kaam karti hai jahan discharge tissue irritation create kar raha ho. Infections ke baad chronic discharge jo strongly offensive ho — wahan effective.',
+      bestFor: 'Offensive, corrosive discharge jisse skin pe jalan ho — cloth pe yellow stain — intense itching jo raat ko zyada ho',
+      keyIndications: [
+
+        'Ye medicine severe inflammatory type leucorrhoea mein kaam karti hai jahan discharge tissue irritation create kar raha ho. Infections ke baad chronic discharge jo strongly offensive ho — wahan effective.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Hydrastis Canadensis',
-      forWhom: 'Thick, ropy (khichne wala), tenacious yellow discharge — cervical involvement waale cases; saath mein backache prominent',
-      whyHope: 'Cervical aur vaginal mucous membrane pe direct action. Thick, sticky discharge jo easily theek nahi hoti — wahan mucous secretion normalize karne mein helpful hai.',
+      bestFor: 'Thick, ropy (khichne wala), tenacious yellow discharge — cervical involvement waale cases; saath mein backache prominent',
+      keyIndications: [
+
+        'Cervical aur vaginal mucous membrane pe direct action. Thick, sticky discharge jo easily theek nahi hoti — wahan mucous secretion normalize karne mein helpful hai.',
+
+      ],
     },
   ],
 
@@ -190,35 +210,54 @@ const disease = {
     },
   ],
 
-  dietAvoid: [
+  dietInclude: [
     {
-      _key: 'da1',
-      category: 'Sugar & Refined Carbs',
-      emoji: '🚫',
+      _key: 'inc1',
+      category: 'Probiotic & Immunity-Boosting Foods',
+      emoji: '🌿',
       items: [
-        'Maida se bane items (white bread, naan, biscuits) — blood sugar spike karte hain jo yeast infection ka risk badhate hain',
-        'Meetha zyada — Candida sugar pe thrive karta hai, fungal leucorrhoea worse ho sakti hai',
-        'Packaged juices — hidden sugar, vaginal pH disturb karta hai',
+        'Dahi (curd) — probiotics vaginal aur gut flora balance karte hain, leucorrhoea mein most important',
+        'Amla — Vitamin C se immunity strong hoti hai, infections se fight karta hai',
+        'Haldi wala doodh (warm) — anti-fungal, anti-bacterial properties',
+        'Lehsun (garlic) — allicin antifungal aur antibacterial, internal infections mein helpful',
+        'Methi seeds soaked — hormonal balance aur vaginal health ke liye traditional remedy',
       ],
     },
     {
-      _key: 'da2',
-      category: 'Spicy, Fried & Processed Foods',
-      emoji: '🚫',
-      items: [
-        'Bahut zyada mirch, masala — vaginal tissues irritate karta hai, jalan badh sakti hai',
-        'Fried snacks, chips, junk food — inflammation badhate hain, healing slow hoti hai',
-        'Pickles (achaar) — high salt + acidity, vaginal environment disturb karta hai',
-      ],
-    },
-    {
-      _key: 'da3',
-      category: 'Foods That Worsen Dampness',
+      _key: 'inc2',
+      category: 'Cooling & Cleansing Foods',
       emoji: '💧',
       items: [
-        'Cheese, paneer zyada matra mein — heavy dairy leucorrhoea worse kar sakti hai',
-        'Alcohol — immunity kamzor karta hai, hormonal balance disturb karta hai',
-        'Bakery items — trans fats + refined sugar combined worst combination',
+        'Naariyal paani — electrolytes + hydration, internal cleansing',
+        'Kheera (cucumber) — cooling, hydrating, excess heat reduce karta hai',
+        'Lauki, turai — light, easily digestible, pitta kam karte hain',
+        'Daliya (oats) — fiber gut health ke liye, hormonal balance mein indirect help',
+        'Paani khub piyein — 8-10 glass daily — internal flush out ke liye',
+      ],
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Discharge-Worsening Foods',
+      emoji: '🚫',
+      items: [
+        'Excess dairy — doodh, paneer, cheese zyada matra mein — mucus aur discharge badhate hain',
+        'Refined sugar — yeast infections ka fuel hai, Candida-associated leucorrhoea mein especially harmful',
+        'Maida products — inflammation badhata hai, hormonal imbalance karta hai',
+        'Fried aur oily food — pitta badha deta hai, discharge worse hoti hai',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Irritating & Hormone-Disrupting Foods',
+      emoji: '⚠️',
+      items: [
+        'Tez masale (chilli, mirchi) — vaginal area mein irritation aur burning worse kar sakte hain',
+        'Alcohol — immune system weaken karta hai, infections repeat hone lagte hain',
+        'Processed/packaged food — preservatives gut bacteria disturb karte hain',
+        'Bahut meetha (sweets, mithai, cold drinks) — sugar yeast ko feed karta hai',
       ],
     },
   ],

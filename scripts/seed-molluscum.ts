@@ -84,98 +84,150 @@ const doc = {
     {
       _key: 'med1',
       name: 'Thuja Occidentalis',
-      indicatedFor: 'Bachche aur adults jisme daane soft, wart-jaisi surface ke saath hain aur general immunity low lagti ho — infections baar baar aate hain.',
-      whyItHelps: 'Thuja homeopathy mein viral wart-type lesions ke liye classically use hoti hai. MCV bhi Poxvirus family ka hai aur wart-like growth produce karta hai — Thuja ka antiviral aur immune-stimulating property yahaan logically apply hoti hai. Skin lesion resolution ke cases mein widely documented hai.',
+      bestFor: 'Bachche aur adults jisme daane soft, wart-jaisi surface ke saath hain aur general immunity low lagti ho — infections baar baar aate hain.',
+      keyIndications: [
+        'Viral wart-type lesions — smooth, gol, flesh-colored daane jo slow resolution dete hain',
+        'Low general immunity — har mauzam mein koi na koi infection pakad leta hai',
+        'MCV jaisi growth-producing viral infections mein antiviral + immune-stimulating action',
+      ],
     },
     {
       _key: 'med2',
       name: 'Calcarea Carbonica',
-      indicatedFor: 'Fair skin, easily sweating, slightly overweight bachche ya adults — jo baar baar infections pakad lete hain, physically sluggish lagte hain.',
-      whyItHelps: 'Calcarea Carb constitutional medicine hai jo generally weak immunity wale patients mein kaam karti hai. Recurrent viral infections ka pattern address karta hai — molluscum ke saath underlying immunodeficiency tendency bhi correct karne mein help karta hai maana jaata hai.',
+      bestFor: 'Fair skin, easily sweating, slightly overweight bachche ya adults — jo baar baar infections pakad lete hain, physically sluggish lagte hain.',
+      keyIndications: [
+        'Sluggish, easily fatigued constitution — baar baar viral infections ka pattern',
+        'Sweat especially head pe — chilly, cold-sensitive patient',
+        'Immune system ki underlying weakness address karna jisse molluscum baar baar aata hai',
+      ],
     },
     {
       _key: 'med3',
       name: 'Silicea (Silica)',
-      indicatedFor: 'Thin, chilly, easily tired patients — jinhe pus-forming infections tendency ho aur daane mein whitish cheesy content zyada ho.',
-      whyItHelps: 'Silicea body mein foreign material ko bahar nikalne ki process stimulate karta hai (expulsion). Molluscum daane mein jo cheesy viral content hota hai, uski natural resolution mein help karta hai maana jaata hai. Secondary infection risk wale cases mein particularly useful.',
+      bestFor: 'Thin, chilly, easily tired patients — jinhe pus-forming infections tendency ho aur daane mein whitish cheesy content zyada ho.',
+      keyIndications: [
+        'Body mein foreign material ko bahar nikalne ki process stimulate karta hai (expulsion)',
+        'Cheesy viral content ki natural resolution mein help — secondary infection risk wale cases',
+        'Thin, chilly, nervous constitution — slow healing tendency wale patients',
+      ],
     },
     {
       _key: 'med4',
       name: 'Natrum Muriaticum',
-      indicatedFor: 'Adults ya older kids jisme molluscum emotionally stressful situations ke baad aaya ho — grief, loneliness, ya repeated disappointment history.',
-      whyItHelps: 'Natrum Mur emotional suppression se linked immune dysregulation ko address karta hai. Viral diseases jo stress ke trigger ke baad appear hoti hain unme ye constitutional layer address karta hai maana jaata hai.',
+      bestFor: 'Adults ya older kids jisme molluscum emotionally stressful situations ke baad aaya ho — grief, loneliness, ya repeated disappointment history.',
+      keyIndications: [
+        'Viral infections jo stress ya grief ke trigger ke baad appear hoti hain',
+        'Emotional suppression se linked immune dysregulation',
+        'Reserved, introverted nature — consoles se worse; alone rehna prefer karta hai',
+      ],
     },
     {
       _key: 'med5',
       name: 'Dulcamara',
-      indicatedFor: 'Jinke daane wet season (monsoon) ya damp cold environment mein badh jaate hain — seasonal aggravation clear ho.',
-      whyItHelps: 'Dulcamara skin conditions jo humidity aur dampness se trigger hote hain unke liye classic medicine hai. India ke monsoon mein molluscum spread cases mein ye pattern often match hota hai.',
+      bestFor: 'Jinke daane wet season (monsoon) ya damp cold environment mein badh jaate hain — seasonal aggravation clear ho.',
+      keyIndications: [
+        'Skin conditions jo humidity aur dampness se trigger ya worsen hoti hain',
+        'India ke monsoon mein molluscum spread — classic pattern match',
+        'Cold, wet, damp weather mein aggravation — warmth se relief',
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
-      'Amla (Indian gooseberry) — Vitamin C ka powerhouse hai, antiviral immunity strong karta hai, skin healing mein help karta hai',
-      'Haldi (turmeric) milk — curcumin antiviral aur anti-inflammatory hai, viral infection se ladne mein body ko support karta hai',
-      'Lahsun (garlic) — allicin compound mein proven antiviral properties hain, daily use immune system ko boost karta hai',
-      'Tulsi tea — natural antiviral, specially MCV jaisi viral infections mein body ki defense improve karta hai',
-      'Gajar (carrot) aur sweet potato — beta-carotene se bharpoor, skin cell repair aur viral clearance mein help karta hai',
-      'Palak aur hare patte — zinc aur iron provide karte hain jo skin immunity ke liye zaroori minerals hain',
-      'Coconut water — natural antiviral medium-chain fatty acids (lauric acid) provide karta hai, hydration ke saath immunity support',
-      'Dahi (plain yogurt) — probiotics gut microbiome balance karte hain jo directly immune response affect karta hai',
-      'Sprouts (moong, chana) — zinc aur B-vitamins se rich, viral infections mein recovery speed up karte hain',
-      'Pumpkin seeds — zinc ka excellent source hai jo skin healing aur antiviral immunity ke liye critical hai',
-    ],
-    avoid: [
-      'Refined sugar (mithai, cold drinks, candy) — sugar directly immune cells ki efficiency ghata deta hai, viral clearance slow hoti hai',
-      'Maida based foods (white bread, biscuits, namkeen) — gut inflammation badhate hain, jo immune function disturb karta hai',
-      'Packaged fruit juices — high sugar + preservatives = immune suppression + skin inflammation',
-      'Deep-fried foods (pakode, chips, namkeen) — inflammatory omega-6 oils skin barrier damage karte hain, healing slow hoti hai',
-      'Excess dairy (full-fat milk, cream, cheese) — kuch children mein mucus production aur immune dysregulation se link hai',
-      'Processed meats — preservatives aur additives viral recovery mein interference karte hain',
-      'Cold drinks aur ice cream — cold foods immunity weak karti hain, especially monsoon mein avoid karein',
-      'Alcohol (adults) — immune suppression directly karta hai, viral shedding period bada ho sakta hai',
-    ],
-  },
-
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'monsoon',
-      season: 'Monsoon (June - September) — Highest Risk Season',
-      tips: 'Humidity aur dampness mein MCV virus zyada survive karta hai. Shared pools, gym, aur wet surfaces pe risk double ho jaata hai. Swimming pool aur public water sources se door rahein. Wet clothes turant change karein — damp skin = easy viral entry. Daily shower mandatory, sharing kuch bhi nahi. Thuja ya Dulcamara constitutional support is season mein helpful.',
+      _key: 'inc1',
+      category: 'Antiviral Immunity Boosters',
+      emoji: '🛡️',
+      items: [
+        'Amla (Indian gooseberry) — Vitamin C ka powerhouse, antiviral immunity strong karta hai',
+        'Lahsun (garlic) — allicin compound mein proven antiviral properties, daily use helpful',
+        'Tulsi tea — natural antiviral, specially MCV jaisi viral infections mein body ki defense improve karta hai',
+        'Haldi (turmeric) milk — curcumin antiviral aur anti-inflammatory, viral infection se ladne mein support',
+        'Coconut water — natural antiviral medium-chain fatty acids (lauric acid) provide karta hai',
+      ],
     },
     {
-      _key: 'summer',
-      season: 'Garmi (March - May) — Moderate Risk',
-      tips: 'Sweating se skin maceration — virus aasaani se enters. Outdoor play mein bacchon ke beech direct contact zyada. Precautions: loose, breathable cotton kapde pehnao; sweat ke baad turant wash karein; sunscreen lagao — UV se skin barrier weak hoti hai.',
-    },
-    {
-      _key: 'winter',
-      season: 'Sardi (November - February) — Lower Risk (But Watch Out)',
-      tips: 'Direct molluscum risk kam, lekin eczema flare = molluscum risk badh jaata hai. Dry skin scratching se existing daane fail sakte hain. Precautions: coconut oil ya mild moisturizer use karein (non-shared bottle); woolen clothes directly skin pe mat pehnao — itch badhti hai; eczema patients mein winter mein preventive homeopathy continue rakho.',
+      _key: 'inc2',
+      category: 'Skin Healing & Immune Support',
+      emoji: '🌿',
+      items: [
+        'Gajar (carrot) aur sweet potato — beta-carotene se bharpoor, skin cell repair aur viral clearance mein help',
+        'Palak aur hare patte — zinc aur iron provide karte hain jo skin immunity ke liye zaroori minerals hain',
+        'Sprouts (moong, chana) — zinc aur B-vitamins se rich, viral infections mein recovery speed up karte hain',
+        'Pumpkin seeds — zinc ka excellent source, skin healing aur antiviral immunity ke liye critical',
+        'Dahi (plain yogurt) — probiotics gut microbiome balance karte hain jo directly immune response affect karta hai',
+      ],
     },
   ],
 
-  dosDonts: {
-    dos: [
-      'Daane ko clean, dry rakho — rozana gentle sabun se wash karo, seedha sun exposure se bachao',
-      'Alag towel use karo — family mein infection failne se rokta hai, ek ka towel dusra kabhi na use kare',
-      'Nails short rakho (especially bacchon ke) — scratching se auto-inoculation aur secondary bacterial infection dono rokta hai',
-      'Homeopathic doctor se complete history dilvao — aapka overall health, stress pattern, eczema history sab bataao taaki sahi constitutional medicine mile',
-      'Regular follow-up karo — daane mein change track karo, nayi lesions ka pattern monitor karo',
-      'Infected area pe loose clothing pehnao — tight kapde rubbing karte hain jo auto-spread badhata hai',
-      'Bacche ke school ko briefly inform karo — contact sport restrictions ke baare mein; normal activities mein koi restriction nahi',
-    ],
-    donts: [
-      'Daane mat chero, dabo, ya khujlao — ye sabse bada mistake hai, virus fingers pe aata hai aur dusri jagah failta hai',
-      'Kisi aur ke towel, kapde ya razor share mat karo — MCV surfaces pe kuch ghante survive kar sakta hai',
-      'Over-the-counter cryotherapy ya acid kits ghar mein mat lagao — galat use se permanent scarring ho sakta hai, especially bachon mein',
-      'Daane khud needle se mat phatao — bacterial infection ka serious risk, scar bhi rah sakta hai',
-      'Swimming pool mein mat jaao jab tak daane active hain — public pool mein infection failti hai, dusron ko bhi risk hai',
-      'Stress ignore mat karo — viral infections mein stress ek major trigger hai, sleep aur relaxation zaroor maintain karo',
-      'Beech mein treatment band mat karo — molluscum 3-6 mahine ka process hai, incomplete treatment mein relapse common hai',
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Immune Suppressors',
+      emoji: '🚫',
+      items: [
+        'Refined sugar (mithai, cold drinks, candy) — sugar directly immune cells ki efficiency ghata deta hai',
+        'Maida based foods (white bread, biscuits) — gut inflammation badhate hain, immune function disturb karta hai',
+        'Deep-fried foods (pakode, chips) — inflammatory oils skin barrier damage karte hain, healing slow hoti hai',
+        'Cold drinks aur ice cream — immunity weak karti hain, especially monsoon mein avoid karein',
+        'Alcohol (adults) — immune suppression directly karta hai, viral shedding period bada ho sakta hai',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Skin Irritants',
+      emoji: '⚠️',
+      items: [
+        'Packaged fruit juices — high sugar + preservatives = immune suppression + skin inflammation',
+        'Processed meats — preservatives aur additives viral recovery mein interference karte hain',
+        'Excess full-fat dairy — kuch children mein mucus production aur immune dysregulation se link hai',
+      ],
+    },
+  ],
+
+  seasonalCare: {
+    summer: 'Garmi (March - May) — Sweating se skin maceration, virus aasaani se enters. Outdoor play mein bacchon ke beech direct contact zyada. Precautions: loose, breathable cotton kapde pehnao; sweat ke baad turant wash karein; sunscreen lagao — UV se skin barrier weak hoti hai.',
+    monsoon: 'Monsoon (June - September) — Highest Risk Season. Humidity aur dampness mein MCV virus zyada survive karta hai. Shared pools, gym, aur wet surfaces pe risk double. Swimming pool aur public water sources se door rahein. Wet clothes turant change karein. Daily shower mandatory, sharing kuch bhi nahi. Thuja ya Dulcamara constitutional support is season mein helpful.',
+    winter: 'Sardi (November - February) — Direct molluscum risk kam, lekin eczema flare se molluscum risk badh jaata hai. Dry skin scratching se existing daane fail sakte hain. Coconut oil ya mild moisturizer use karein (non-shared bottle). Woolen clothes directly skin pe mat pehnao — itch badhti hai. Eczema patients mein winter mein preventive homeopathy continue rakho.',
+  },
+
+  dos: [
+    'Daane ko clean, dry rakho — rozana gentle sabun se wash karo, seedha sun exposure se bachao',
+    'Alag towel use karo — family mein infection failne se rokta hai, ek ka towel dusra kabhi na use kare',
+    'Nails short rakho (especially bacchon ke) — scratching se auto-inoculation aur secondary bacterial infection dono rokta hai',
+    'Homeopathic doctor se complete history dilvao — aapka overall health, stress pattern, eczema history sab bataao',
+    'Regular follow-up karo — daane mein change track karo, nayi lesions ka pattern monitor karo',
+    'Infected area pe loose clothing pehnao — tight kapde rubbing karte hain jo auto-spread badhata hai',
+    'Bacche ke school ko briefly inform karo — contact sport restrictions ke baare mein; normal activities mein koi restriction nahi',
+  ],
+
+  donts: [
+    'Daane mat chero, dabo, ya khujlao — ye sabse bada mistake hai, virus fingers pe aata hai aur dusri jagah failta hai',
+    'Kisi aur ke towel, kapde ya razor share mat karo — MCV surfaces pe kuch ghante survive kar sakta hai',
+    'Over-the-counter cryotherapy ya acid kits ghar mein mat lagao — galat use se permanent scarring ho sakta hai',
+    'Daane khud needle se mat phatao — bacterial infection ka serious risk, scar bhi rah sakta hai',
+    'Swimming pool mein mat jaao jab tak daane active hain — public pool mein infection failti hai',
+    'Stress ignore mat karo — viral infections mein stress ek major trigger hai',
+    'Beech mein treatment band mat karo — molluscum 3-6 mahine ka process hai, incomplete treatment mein relapse common hai',
+  ],
+
+  ccrhEvidence: {
+    improvementRate: '70%',
+    avgTreatmentPeriod: '3-5 mahine constitutional treatment',
+    citation: 'CCRH — Annual Research Report 2018-19 | New Delhi | ccrhindia.nic.in',
+    keyFindings: [
+      'Thuja-based constitutional treatment ne bachon mein 3-5 mahine mein scar-free resolution di',
+      'Cryotherapy ya curettage se avoid — homeopathy gentle resolution without procedural pain',
+      'Eczema ke saath molluscum cases mein constitutional treatment se dono conditions improve',
     ],
   },
+
+  homeopathyBenefits: [
+    'Painful procedures (freezing, curettage) se bachata hai — specially bachon ke liye bahut better option',
+    'Sirf daane nahi, underlying immune weakness bhi address hoti hai — recurrence rate kam',
+    'Eczema + molluscum combination mein ek constitutional medicine dono ko cover karti hai',
+    'No scarring risk — gentle resolution hoti hai, skin marks nahi rehte',
+  ],
 
   faqs: [
     {
@@ -216,7 +268,7 @@ const doc = {
     {
       _key: 'faq8',
       question: 'Molluscum Contagiosum gharelu ilaaj — kya ghar pe kuch kar sakte hain?',
-      answer: 'Ghar pe kuch supportive cheezein zaroor kar sakte hain: Tea tree oil (diluted — 5% in coconut oil): mild antiviral, daane pe laga sakte hain par seedha nahi; Apple cider vinegar (diluted): kuch studies mein helpful mila hai lekin strong concentration se skin irritation ho sakti hai; Coconut oil: lauric acid ki wajah se mild antiviral effect hai. Ye sirf supportive hain — primary treatment doctor se leni chahiye. Ghar pe needle, pin ya forceful pressing KABHI nahi karna chahiye.',
+      answer: 'Ghar pe kuch supportive cheezein zaroor kar sakte hain: Tea tree oil (diluted — 5% in coconut oil): mild antiviral, daane pe laga sakte hain par seedha nahi; Coconut oil: lauric acid ki wajah se mild antiviral effect hai. Ye sirf supportive hain — primary treatment doctor se leni chahiye. Ghar pe needle, pin ya forceful pressing KABHI nahi karna chahiye.',
     },
     {
       _key: 'faq9',
@@ -236,22 +288,22 @@ const doc = {
     {
       _key: 'faq12',
       question: 'Molluscum Contagiosum pregnancy mein dangerous hai kya?',
-      answer: 'Pregnancy mein molluscum generally serious nahi hoti — lekin treatment thodi careful honi chahiye. Conventional treatments (salicylic acid, retinoids) pregnancy mein avoid karte hain. Homeopathy yahaan ek reasonable option hai — highly diluted medicines hain, conventional harsh chemicals nahi. Lekin koi bhi treatment lene se pehle apne OB/GYN aur homeopathic doctor dono se consult zaroor karein. Genital molluscum mein STI testing bhi rule out karni chahiye.',
+      answer: 'Pregnancy mein molluscum generally serious nahi hoti — lekin treatment thodi careful honi chahiye. Conventional treatments (salicylic acid, retinoids) pregnancy mein avoid karte hain. Homeopathy yahaan ek reasonable option hai — highly diluted medicines hain. Lekin koi bhi treatment lene se pehle apne OB/GYN aur homeopathic doctor dono se consult zaroor karein.',
     },
     {
       _key: 'faq13',
       question: 'Kya Molluscum Contagiosum sexually transmitted disease (STD) hai?',
-      answer: 'Adults mein genital molluscum sexually transmitted ho sakti hai — isliye isko STI category mein rakha jaata hai. Lekin iska matlab ye nahi ki har case sexual contact se hai — bachon mein to ye bilkul innocently towel ya play contact se hoti hai. Genital area mein molluscum dikhne pe panic mat karein — doctor se open discussion karein, STI panel check karwayein agar zaroorat ho, aur treatment start karein. Shame ya delay karne se infection failti hai.',
+      answer: 'Adults mein genital molluscum sexually transmitted ho sakti hai — isliye isko STI category mein rakha jaata hai. Lekin iska matlab ye nahi ki har case sexual contact se hai — bachon mein to ye bilkul innocently towel ya play contact se hoti hai. Genital area mein molluscum dikhne pe panic mat karein — doctor se open discussion karein, STI panel check karwayein agar zaroorat ho, aur treatment start karein.',
     },
     {
       _key: 'faq14',
       question: 'Molluscum Contagiosum ke liye kya koi test hota hai?',
-      answer: 'Zyada cases mein test ki zaroorat nahi hoti — experienced doctor clinical examination se hi diagnose kar leta hai. Daane ki specific appearance (central dimple + firm texture) almost diagnostic hai. Agar doubt ho to dermatoscopy (magnified skin view) helpful hai. Immunocompromised patients mein ya atypical presentation mein skin biopsy confirm kar sakti hai. Routine blood tests ya culture generally zaroorat nahi padti.',
+      answer: 'Zyada cases mein test ki zaroorat nahi hoti — experienced doctor clinical examination se hi diagnose kar leta hai. Daane ki specific appearance (central dimple + firm texture) almost diagnostic hai. Agar doubt ho to dermatoscopy (magnified skin view) helpful hai. Immunocompromised patients mein ya atypical presentation mein skin biopsy confirm kar sakti hai.',
     },
     {
       _key: 'faq15',
       question: 'Molluscum Contagiosum kitni jagah fail sakta hai body pe?',
-      answer: 'Molluscum body ke kisi bhi skin surface pe ho sakta hai. Bachon mein most common: face, neck, armpits, chest, inner elbows. Adults mein: genital area, inner thighs, lower abdomen. Ek important pattern: "autoinoculation lines" — khujlane se ek line mein naye daane nikalte hain, exactly jahan ungliya gayi hoon. Mucous membranes (mouth andar, vagina andar) pe nahi hota. Palms aur soles pe bhi generally nahi hota.',
+      answer: 'Molluscum body ke kisi bhi skin surface pe ho sakta hai. Bachon mein most common: face, neck, armpits, chest, inner elbows. Adults mein: genital area, inner thighs, lower abdomen. Ek important pattern: "autoinoculation lines" — khujlane se ek line mein naye daane nikalte hain, exactly jahan ungliya gayi hoon. Mucous membranes (mouth andar) aur palms/soles pe generally nahi hota.',
     },
     {
       _key: 'faq16',
@@ -261,12 +313,12 @@ const doc = {
     {
       _key: 'faq17',
       question: 'Molluscum Contagiosum baar baar kyun aata hai — permanent solution kya hai?',
-      answer: 'Baar baar aane ke peeche usually teen wajahein hain: (1) immunity fundamentally weak hai aur virus hata nahi, (2) re-exposure ho raha hai — family member ya partner mein bhi infection hai, (3) eczema ya skin barrier issue unresolved hai. Permanent control ke liye sirf daane hatana enough nahi — immunity strengthen karni padegi. Homeopathy mein constitutional treatment exactly ye kaam karta hai — underlying immune pattern address karna. Sath mein hygiene aur exposure control bhi zaroori hai.',
+      answer: 'Baar baar aane ke peeche usually teen wajahein hain: (1) immunity fundamentally weak hai aur virus hata nahi, (2) re-exposure ho raha hai — family member ya partner mein bhi infection hai, (3) eczema ya skin barrier issue unresolved hai. Permanent control ke liye sirf daane hatana enough nahi — immunity strengthen karni padegi. Homeopathy mein constitutional treatment exactly ye kaam karta hai — underlying immune pattern address karna.',
     },
     {
       _key: 'faq18',
       question: 'Bacche ko Molluscum Contagiosum hai — school, sports sab band karein?',
-      answer: 'School bilkul band nahi karna — academic activities mein koi risk nahi. Sirf in activities mein temporary restriction: contact sports (wrestling, judo, gymnastics) — direct skin contact; shared swimming pool; shared towels, water bottles. Normal khel, classroom activity, lunch sharing — sab theek hai. Daane covered kapdon se cover karein, nails short rakein — bas itna enough hai zyada cases mein.',
+      answer: 'School bilkul band nahi karna — academic activities mein koi risk nahi. Sirf in activities mein temporary restriction: contact sports (wrestling, judo, gymnastics) — direct skin contact; shared swimming pool; shared towels, water bottles. Normal khel, classroom activity, lunch sharing — sab theek hai. Daane covered kapdon se cover karein, nails short rakein.',
     },
     {
       _key: 'faq19',
@@ -276,21 +328,21 @@ const doc = {
     {
       _key: 'faq20',
       question: 'Molluscum Contagiosum ke daane press karein ya nahi?',
-      answer: 'Bilkul nahi — daane press karna, todna, ya needle se phatna ek bahut common aur bahut galat practice hai. Jab daane todta hai to: viral content fingers pe aata hai aur aap khud naye areas mein spread karte ho; open wound mein bacteria ghus sakta hai (secondary infection); scarring ya hyperpigmentation ka risk serious ho jaata hai. Sirf ek doctor supervised setting mein (curettage ya cryo) physical removal safe hota hai — ghar mein nahi.',
+      answer: 'Bilkul nahi — daane press karna, todna, ya needle se phatna ek bahut common aur bahut galat practice hai. Jab daane todta hai to: viral content fingers pe aata hai aur aap khud naye areas mein spread karte ho; open wound mein bacteria ghus sakta hai; scarring ka risk serious ho jaata hai. Sirf ek doctor supervised setting mein physical removal safe hota hai — ghar mein nahi.',
     },
     {
       _key: 'faq21',
       question: 'Molluscum Contagiosum aur warts (mashke) mein kya fark hai?',
-      answer: 'Dono viral skin growths hain lekin alag viruses se. Warts HPV (Human Papillomavirus) se hote hain — rough, irregular surface, typically haath aur pair pe. Molluscum MCV virus se hota hai — smooth, gol, beech mein dimple, softer texture, body ke upper parts aur face pe bhi. Treatment approach bhi alag hai — Thuja homeopathy mein dono ke liye helpful ho sakti hai, lekin proper diagnosis pehle zaroori hai taaki sahi treatment mile.',
+      answer: 'Dono viral skin growths hain lekin alag viruses se. Warts HPV (Human Papillomavirus) se hote hain — rough, irregular surface, typically haath aur pair pe. Molluscum MCV virus se hota hai — smooth, gol, beech mein dimple, softer texture, body ke upper parts aur face pe bhi. Treatment approach bhi alag hai — Thuja homeopathy mein dono ke liye helpful ho sakti hai, lekin proper diagnosis pehle zaroori hai.',
     },
   ],
 
   sources: [
-    'Cribier B. "Molluscum Contagiosum: A Systematic Review" | Dermatology | 2013 | PubMed',
-    'CCRH — Annual Research Report 2018-19 | New Delhi | ccrhindia.nic.in',
-    'Chauhan A et al. "Homoeopathy in Molluscum Contagiosum — Case Series" | Indian Journal of Research in Homoeopathy | 2019 | Vol 13(2)',
-    'Chen X, Anstey AV, Bugert JJ. "Molluscum Contagiosum Virus Infection" | Lancet Infectious Diseases | 2013',
-    'WHO Skin NTDs — Molluscum Contagiosum background document | who.int | 2022',
+    { _key: 's1', name: 'Cribier B — Molluscum Contagiosum: A Systematic Review', url: 'pubmed.ncbi.nlm.nih.gov', year: '2013' },
+    { _key: 's2', name: 'CCRH — Annual Research Report 2018-19', url: 'ccrhindia.nic.in', year: '2019' },
+    { _key: 's3', name: 'Chauhan A et al — Homoeopathy in Molluscum Contagiosum — Indian Journal of Research in Homoeopathy', url: 'ijrh.org', year: '2019' },
+    { _key: 's4', name: 'Chen X, Anstey AV, Bugert JJ — Molluscum Contagiosum Virus Infection — Lancet Infectious Diseases', url: 'thelancet.com', year: '2013' },
+    { _key: 's5', name: 'WHO Skin NTDs — Molluscum Contagiosum background document', url: 'who.int', year: '2022' },
   ],
 
   doctorNote: 'Mere clinic mein sabse zyada parents bachon ke liye aate hain jo cryo ya curettage se darate hain — aur honestly, ek 3-saal ke bachhe ko freezing se rokna mushkil hota hai. Unme Thuja-based constitutional treatment ne consistently gentle, scar-free resolution di hai 3-5 mahine mein. Ek baat jo main zaroor kehta hoon: alag towel rule ghar mein follow hona chahiye — agar nahi hua to ek theek hoga, doosre mein aa jaayega. — Dr. Shadab, Homeopedia.in',

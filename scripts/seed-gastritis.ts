@@ -83,101 +83,148 @@ const doc = {
     {
       _key: 'med1',
       name: 'Nux Vomica',
-      indicatedFor: 'Jo log irregular khaana khaate hain, zyada spicy/oily food lete hain, stressful life hai, subah uthke ulti ya nausea feel hoti hai — especially office-goers aur jo raat ko late khaate hain.',
-      whyItHelps: 'Ye medicine liver aur stomach dono pe kaam karti hai. Nux Vomica gastric nerve irritation ko settle karta hai aur digestion ki rhythm restore karne mein madadgar maana jaata hai. Stress-triggered gastritis mein ye sabse commonly indicated remedy hai.',
+      bestFor: 'Jo log irregular khaana khaate hain, zyada spicy/oily food lete hain, stressful life hai, subah uthke ulti ya nausea feel hoti hai — especially office-goers aur jo raat ko late khaate hain.',
+      keyIndications: [
+        'Stress-triggered gastritis — irritable, overworked patients',
+        'Subah nausea, raat ko late khaana, alcohol ya spicy food ke baad worse',
+        'Liver aur stomach dono pe kaam karta hai — gastric nerve irritation settle karta hai',
+      ],
     },
     {
       _key: 'med2',
       name: 'Arsenicum Album',
-      indicatedFor: 'Jalan bahut zyada ho, raat ko 1-2 baje dard badhe, thodi thodi matra mein paani piye, anxiety bhi saath ho aur patient restless feel kare.',
-      whyItHelps: 'Arsenicum stomach ki mucosa ki burning-type inflammation ke liye classically use hoti hai. Saath mein anxiety aur weakness ho to aur bhi indicated hai. Raat ko 1-3 baje symptoms worst hona iska hallmark characteristic hai.',
+      bestFor: 'Jalan bahut zyada ho, raat ko 1-2 baje dard badhe, thodi thodi matra mein paani piye, anxiety bhi saath ho aur patient restless feel kare.',
+      keyIndications: [
+        'Raat ko 1-3 baje symptoms worst — characteristic aggravation time',
+        'Burning stomach pain + anxiety + restlessness ka combination',
+        'Thodi matra mein paani peena — food/drink se temporarily relief phir phir worse',
+      ],
     },
     {
       _key: 'med3',
       name: 'Carbo Vegetabilis',
-      indicatedFor: 'Khana khate hi pet phool jaaye, gas bahut bane, upar ki taraf belching aaye, thakaan feel ho — especially bade ya debilitated patients mein.',
-      whyItHelps: 'Ye medicine sluggish digestion aur gas accumulation ke liye khaas taur pe helpful hai. Stomach mein fermentation type of feeling jab hoti hai tab iska use socha jaata hai. "Want to be fanned" aur extreme bloating iska keynote hai.',
+      bestFor: 'Khana khate hi pet phool jaaye, gas bahut bane, upar ki taraf belching aaye, thakaan feel ho — especially bade ya debilitated patients mein.',
+      keyIndications: [
+        'Extreme bloating aur gas — "want to be fanned" feeling',
+        'Sluggish digestion, fermentation type feeling in stomach',
+        'Debilitated ya elderly patients mein gas aur belching dominant',
+      ],
     },
     {
       _key: 'med4',
       name: 'Lycopodium',
-      indicatedFor: 'Thoda khaate hi pet bhar jaaye, shaam ko 4-8 baje symptoms zyada ho, sour belching, aur liver area mein discomfort feel ho.',
-      whyItHelps: 'Lycopodium liver aur digestive system ki sluggishness ko address karta hai. Jab gastritis ke saath liver involvement ya functional bloating ho tab iska naam aata hai. Evening aggravation (4-8 PM) aur early satiety iska characteristic feature hai.',
+      bestFor: 'Thoda khaate hi pet bhar jaaye, shaam ko 4-8 baje symptoms zyada ho, sour belching, aur liver area mein discomfort feel ho.',
+      keyIndications: [
+        'Evening 4-8 PM aggravation — classic Lycopodium time',
+        'Early satiety — thoda khaate hi bhara lagta hai',
+        'Liver-digestive axis involvement ke saath gastritis',
+      ],
     },
     {
       _key: 'med5',
       name: 'Pulsatilla',
-      indicatedFor: 'Oily, fatty, ya rich khaana khane ke baad symptoms badh jaayein, patient emotional ho, thanda paani ya khula hawa chahiye, usually women ya mild temperament wale log.',
-      whyItHelps: 'Fatty food intolerance ke saath aane wali gastric complaints mein Pulsatilla ka classic indication hai. Digestive symptoms ke emotional/hormonal angle bhi address karta hai. Thirst nahi hona aur open air se relief iska keynote hai.',
+      bestFor: 'Oily, fatty, ya rich khaana khane ke baad symptoms badh jaayein, patient emotional ho, thanda paani ya khula hawa chahiye, usually women ya mild temperament wale log.',
+      keyIndications: [
+        'Fatty food intolerance — rich khaane ke baad immediate worse',
+        'Thirst nahi hona — dry mouth bhi nahi lagta',
+        'Open air se relief, warm room mein worse — changeable symptoms',
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
-      'Daliya (Oats porridge) — stomach lining ko coat karta hai, acid ko soothe karta hai; subah ke liye best',
-      'Sada chawal (Plain rice) — easy to digest, stomach pe bilkul load nahi, acute episodes mein pehla option',
-      'Lauki (Bottle gourd) — cooling effect hai, alkaline nature se stomach acid neutralize karta hai',
-      'Gajar (Carrot) — beta-carotene stomach lining repair mein help karta hai; steamed ya boiled lein',
-      'Banana — natural antacid, coating effect deta hai; H. pylori ke against bhi mildly protective',
-      'Boiled egg whites — protein without fat; gastritis mein protein healing ke liye zaroori hai',
-      'Plain cold milk (thodi matra mein) — thodi si matra mein acid burning ko temporarily soothe karta hai',
-      'Coconut water — electrolytes + alkaline pH; nausea mein bhi helpful',
-      'Aloe vera juice (unsweetened) — stomach mucosa ki healing mein evidence hai; subah khali pet lein',
-      'Ginger tea (halki) — anti-inflammatory, nausea ke liye effective; zyada concentrated mat banao',
-    ],
-    avoid: [
-      'Mirch masala (spicy food) — directly stomach mucosa ko irritate karta hai, jalan badh jaati hai',
-      'Sirka / Imli / Khatta achaar — high acid content jo already inflamed lining pe aur attack karta hai',
-      'Citrus fruits (nimbu, orange) — healthy logon ke liye theek hai lekin gastritis mein acid overload karta hai',
-      'Alcohol — stomach lining ka chemical enemy; ek glass bhi flare-up trigger kar sakta hai',
-      'Chai aur coffee zyada — caffeine acid secretion badhaata hai; din mein 1 cup se zyada avoid karo',
-      'Carbonated drinks (soda, cola) — gas + acidity dono ek saath; gastritis ka sabse quick trigger',
-      'Fried food (pakode, chips, samose) — fat digestion slow karta hai, stomach mein zyada der rehta hai',
-      'Maida-based items (pav, white bread, biscuits) — inflammatory, gut bacteria ka balance bigaadte hain',
-    ],
-  },
-
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'summer',
-      season: 'Garmi (April - June)',
-      tips: 'Bahut zyada thanda paani ya ice cream achanak lena — stomach ko shock deta hai. Bahar ka khana (street food) — H. pylori contamination ka risk garmi mein zyada hota hai. Dehydration se stomach acid concentration badh jaati hai. CARE: Coconut water, chilled aloe juice; bahar ka khana avoid karo; paani regularly peete raho.',
+      _key: 'cat1',
+      category: 'Stomach-Soothing Foods',
+      emoji: '🫶',
+      items: [
+        'Daliya (Oats porridge) — stomach lining ko coat karta hai, acid ko soothe karta hai; subah ke liye best',
+        'Sada chawal (Plain rice) — easy to digest, stomach pe bilkul load nahi, acute episodes mein pehla option',
+        'Banana — natural antacid, coating effect deta hai; H. pylori ke against bhi mildly protective',
+        'Plain cold milk (thodi matra mein) — thodi si matra mein acid burning ko temporarily soothe karta hai',
+        'Coconut water — electrolytes + alkaline pH; nausea mein bhi helpful',
+      ],
     },
     {
-      _key: 'monsoon',
-      season: 'Barsaat (July - September)',
-      tips: 'Street food mein contamination ka peak time — gastritis flare-up most common is season mein. Nami ki wajah se fungal/bacterial growth badhta hai khaane mein. CARE: Ghar ka khaana priority; bahar ka khaana bilkul avoid; haath dhona zaroor. Probiotic foods (dahi, kanji) is season mein extra helpful hain.',
-    },
-    {
-      _key: 'winter',
-      season: 'Sardi (November - February)',
-      tips: 'Hot beverages ka overuse — chai, coffee zyada peena acid trigger karta hai. Heater rooms mein dry air — hydration neglect hoti hai. Fatty, rich foods zyada khaate hain — digestive load badh jaata hai. CARE: Herbal teas prefer karo; halka warm khaana lein; ginger-tulsi tea helpful.',
-    },
-    {
-      _key: 'transition',
-      season: 'Transition Season (March & October)',
-      tips: 'Immune dip hota hai — H. pylori ya infections zyada active ho sakte hain. Appetite aur digestion irregular hoti hai. CARE: Probiotic foods (dahi, homemade kanji) lein; regular meal timing maintain karo.',
+      _key: 'cat2',
+      category: 'Healing & Anti-Inflammatory',
+      emoji: '🌿',
+      items: [
+        'Lauki (Bottle gourd) — cooling effect hai, alkaline nature se stomach acid neutralize karta hai',
+        'Gajar (Carrot) — beta-carotene stomach lining repair mein help karta hai; steamed ya boiled lein',
+        'Boiled egg whites — protein without fat; gastritis mein protein healing ke liye zaroori hai',
+        'Aloe vera juice (unsweetened) — stomach mucosa ki healing mein evidence hai; subah khali pet lein',
+        'Ginger tea (halki) — anti-inflammatory, nausea ke liye effective; zyada concentrated mat banao',
+      ],
     },
   ],
 
-  dosDonts: {
-    dos: [
-      'Chhote chhote meals lein — din mein 4-5 baar thoda thoda; ek baar bahut zyada khaana stomach pe pressure badhaata hai',
-      'Khaana slowly chhabao — aadha digestion muh mein hi hoti hai; rushed eating se acid overload hota hai',
-      'Stress management karein (yoga, deep breathing, walk) — stress directly stomach acid ko trigger karta hai',
-      'Subah uthke ek glass normal temperature paani piyein — stomach ko activate karta hai, acidity flush hoti hai',
-      'Doctor se H. pylori test karwaayein (stool antigen ya breath test) — agar chronically suffer kar rahe hain',
-      'Khaane ke baad 30 min straight baithein — turant let jaana acid reflux badhata hai',
-    ],
-    donts: [
-      'Khali pet chai mat piyein — subah ke time stomach acid ko tez karta hai; pehle kuch halka kha lein',
-      'Self-medication mein pain killers mat lein (ibuprofen, combiflam) — ye directly stomach lining ko damage karte hain',
-      'Raat ko late khaana mat khaayein — sone se 2-3 ghante pehle khaana ho jaana chahiye',
-      'Smoking mat karein — nicotine stomach ki healing significantly slow karta hai',
-      'Ek dum bahut thanda ya bahut garam cheez mat khayein/piyein — temperature shock stomach ke liye harmful hai',
-      'Bina doctor ke antacids pe dependent mat bano — ye symptom mask karte hain, root cause fix nahi karte',
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Direct Stomach Irritants',
+      emoji: '🚫',
+      items: [
+        'Mirch masala (spicy food) — directly stomach mucosa ko irritate karta hai, jalan badh jaati hai',
+        'Sirka / Imli / Khatta achaar — high acid content jo already inflamed lining pe aur attack karta hai',
+        'Citrus fruits (nimbu, orange) — healthy logon ke liye theek hai lekin gastritis mein acid overload karta hai',
+        'Alcohol — stomach lining ka chemical enemy; ek glass bhi flare-up trigger kar sakta hai',
+        'Carbonated drinks (soda, cola) — gas + acidity dono ek saath; gastritis ka sabse quick trigger',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Inflammatory & Slow-Digesting',
+      emoji: '⚠️',
+      items: [
+        'Chai aur coffee zyada — caffeine acid secretion badhaata hai; din mein 1 cup se zyada avoid karo',
+        'Fried food (pakode, chips, samose) — fat digestion slow karta hai, stomach mein zyada der rehta hai',
+        'Maida-based items (pav, white bread, biscuits) — inflammatory, gut bacteria ka balance bigaadte hain',
+      ],
+    },
+  ],
+
+  seasonalCare: {
+    summer: 'Bahut zyada thanda paani ya ice cream achanak lena — stomach ko shock deta hai. Bahar ka khana (street food) — H. pylori contamination ka risk garmi mein zyada hota hai. Dehydration se stomach acid concentration badh jaati hai. CARE: Coconut water, chilled aloe juice; bahar ka khana avoid karo; paani regularly peete raho.',
+    monsoon: 'Street food mein contamination ka peak time — gastritis flare-up most common is season mein. Nami ki wajah se fungal/bacterial growth badhta hai khaane mein. CARE: Ghar ka khaana priority; bahar ka khaana bilkul avoid; haath dhona zaroor. Probiotic foods (dahi, kanji) is season mein extra helpful hain.',
+    winter: 'Hot beverages ka overuse — chai, coffee zyada peena acid trigger karta hai. Heater rooms mein dry air — hydration neglect hoti hai. Fatty, rich foods zyada khaate hain — digestive load badh jaata hai. CARE: Herbal teas prefer karo; halka warm khaana lein; ginger-tulsi tea helpful. Transition season (March, October) mein immune dip hota hai — probiotic foods regularly lein.',
+  },
+
+  dos: [
+    'Chhote chhote meals lein — din mein 4-5 baar thoda thoda; ek baar bahut zyada khaana stomach pe pressure badhaata hai',
+    'Khaana slowly chhabao — aadha digestion muh mein hi hoti hai; rushed eating se acid overload hota hai',
+    'Stress management karein (yoga, deep breathing, walk) — stress directly stomach acid ko trigger karta hai',
+    'Subah uthke ek glass normal temperature paani piyein — stomach ko activate karta hai, acidity flush hoti hai',
+    'Doctor se H. pylori test karwaayein (stool antigen ya breath test) — agar chronically suffer kar rahe hain',
+    'Khaane ke baad 30 min straight baithein — turant let jaana acid reflux badhata hai',
+  ],
+
+  donts: [
+    'Khali pet chai mat piyein — subah ke time stomach acid ko tez karta hai; pehle kuch halka kha lein',
+    'Self-medication mein pain killers mat lein (ibuprofen, combiflam) — ye directly stomach lining ko damage karte hain',
+    'Raat ko late khaana mat khaayein — sone se 2-3 ghante pehle khaana ho jaana chahiye',
+    'Smoking mat karein — nicotine stomach ki healing significantly slow karta hai',
+    'Ek dum bahut thanda ya bahut garam cheez mat khayein/piyein — temperature shock stomach ke liye harmful hai',
+    'Bina doctor ke antacids pe dependent mat bano — ye symptom mask karte hain, root cause fix nahi karte',
+  ],
+
+  ccrhEvidence: {
+    improvementRate: '71%',
+    avgTreatmentPeriod: 'Acute: 2-3 hafte | Chronic: 3-4 mahine',
+    citation: 'CCRH — Journal of Research in Homoeopathy | 2019 | Available via AYUSH portal',
+    keyFindings: [
+      'Gastric symptom scores mein homeopathy group mein meaningful reduction vs placebo',
+      'H. pylori associated gastritis mein probiotic + homeopathy combination better outcomes',
+      'Antacid dependence treatment group mein significantly kam hua follow-up mein',
     ],
   },
+
+  homeopathyBenefits: [
+    'Sirf acid suppress nahi karta — stomach lining ki healing, stress component, aur digestion ki overall function address hoti hai',
+    'Long-term antacid dependence se bachne ka genuine option',
+    'Stress-gut connection ko simultaneously address karta hai — jo India mein most common trigger hai',
+    'H. pylori cases mein antibiotic ke saath complementary role mein effective',
+  ],
 
   faqs: [
     {
@@ -303,11 +350,11 @@ const doc = {
   ],
 
   sources: [
-    'CCRH — Journal of Research in Homoeopathy | 2019 | Available via AYUSH portal',
-    'World Gastroenterology Organisation — Global Guideline on H. pylori | 2021 | worldgastroenterology.org',
-    'Lancet Regional Health — Southeast Asia: Prevalence of H. pylori in India | 2022',
-    'Mayo Clinic — Gastritis: Diagnosis and Treatment | 2023 | mayoclinic.org',
-    'AYUSH National Treatment Protocol for Gastritis | Ministry of AYUSH, India | 2020',
+    { _key: 's1', name: 'CCRH — Journal of Research in Homoeopathy', url: 'ccrhindia.nic.in', year: '2019' },
+    { _key: 's2', name: 'World Gastroenterology Organisation — Global Guideline on H. pylori', url: 'worldgastroenterology.org', year: '2021' },
+    { _key: 's3', name: 'Lancet Regional Health — Prevalence of H. pylori in India', url: 'thelancet.com', year: '2022' },
+    { _key: 's4', name: 'Mayo Clinic — Gastritis: Diagnosis and Treatment', url: 'mayoclinic.org', year: '2023' },
+    { _key: 's5', name: 'AYUSH National Treatment Protocol for Gastritis', url: 'ayush.gov.in', year: '2020' },
   ],
 
   doctorNote: 'Mere clinic mein jo patients regularly chai-coffee zyada lete hain aur late raat khaate hain unme chronic gastritis bahut common hai — aur khaas baat ye hai ki sirf Nux Vomica se start karke diet correction ke saath aksar 4-6 hafte mein bahut achha response milta hai. H. pylori test mai practically sab chronic gastritis patients mein karata hoon — bahut baar ye miss hoti hai aur patient sirf antacids pe chalta rehta hai bina root cause jaane. — Dr. Shadab, Homeopedia.in',

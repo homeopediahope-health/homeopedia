@@ -121,11 +121,6 @@ const migraine = {
     'Holistic approach — saath mein anxiety, sleep issues, aur digestion bhi theek hota hai jo migraine ke saathi hote hain',
   ],
 
-  homeopathyLimitations: [
-    'Acute severe attack mein turant relief ke liye conventional rescue medications (triptans) zyada fast kaam karti hain — homeopathy mainly preventive role mein hai',
-    'Migraine with Aura mein ya jahan neurological symptoms complex hain (weakness, speech issues), pehle neurologist se milna zaroori hai — homeopathy complementary role mein ho sakti hai',
-  ],
-
   medicines: [
     {
       _key: 'belladonna',

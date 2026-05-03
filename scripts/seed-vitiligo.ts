@@ -155,12 +155,6 @@ async function seed() {
       'Repigmentation ke baad relapse prevention mein effective — long-term stability',
     ],
 
-    homeopathyLimitations: [
-      'Universal vitiligo (80%+ skin affected) mein homoeopathy alone kaafi nahi — conventional dermatology ke saath combine karna zaroori',
-      'Results aane mein 6-18 mahine lagta hai — "jaldi" expect karna galat hai; patience zaroori hai',
-      'Active, rapidly spreading vitiligo mein pehle stabilization zaroori — homoeopathy is mein kaam karta hai lekin instant visible change nahi hota',
-    ],
-
     medicines: [
       {
         _key: 'm1',

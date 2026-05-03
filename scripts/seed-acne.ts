@@ -134,38 +134,62 @@ const disease = {
     {
       _key: 'med1',
       name: 'Sulphur',
-      forWhom: 'Oily, dirty-looking skin wale jo garmi bardaasht nahi karte; blackheads aur recurring pimples; washing ke baad bhi face oily lagta hai',
-      whyHope: 'Sulphur skin ke chronic inflammatory tendencies ko address karta hai — sebum overproduction aur pore inflammation dono pe kaam karta hai. Recurrent acne mein foundational medicine mani jaati hai.',
+      bestFor: 'Oily, dirty-looking skin wale jo garmi bardaasht nahi karte; blackheads aur recurring pimples; washing ke baad bhi face oily lagta hai',
+      keyIndications: [
+
+        'Sulphur skin ke chronic inflammatory tendencies ko address karta hai — sebum overproduction aur pore inflammation dono pe kaam karta hai. Recurrent acne mein foundational medicine mani jaati hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Hepar Sulphuris Calcareum',
-      forWhom: 'Pus-filled, dardnaak pimples jo touch karne pe bahut hurt karte hain; cystic acne; baar baar naye daane nikalte hain',
-      whyHope: 'Pus ko resolve karne aur tissue healing mein help karta hai — infected, painful acne ke liye especially useful.',
+      bestFor: 'Pus-filled, dardnaak pimples jo touch karne pe bahut hurt karte hain; cystic acne; baar baar naye daane nikalte hain',
+      keyIndications: [
+
+        'Pus ko resolve karne aur tissue healing mein help karta hai — infected, painful acne ke liye especially useful.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Pulsatilla',
-      forWhom: 'Young girls aur mahilaaen jinki acne periods se pehle bhadti hai; hormonal, cycle-linked pimples; mild, emotional nature',
-      whyHope: 'Hormonal fluctuations se linked acne ko address karta hai — PCOS ya irregular periods wali mahilaaon mein particularly helpful.',
+      bestFor: 'Young girls aur mahilaaen jinki acne periods se pehle bhadti hai; hormonal, cycle-linked pimples; mild, emotional nature',
+      keyIndications: [
+
+        'Hormonal fluctuations se linked acne ko address karta hai — PCOS ya irregular periods wali mahilaaon mein particularly helpful.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Silicea',
-      forWhom: 'Slow-healing, deep pimples jo scar chhod jaate hain; skin easily infected ho jaaye; weak immune response',
-      whyHope: 'Tissue repair aur slow-healing tendency improve karta hai — acne scars banana kam karta hai. Recurrent cystic acne mein useful.',
+      bestFor: 'Slow-healing, deep pimples jo scar chhod jaate hain; skin easily infected ho jaaye; weak immune response',
+      keyIndications: [
+
+        'Tissue repair aur slow-healing tendency improve karta hai — acne scars banana kam karta hai. Recurrent cystic acne mein useful.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Kali Bromatum',
-      forWhom: 'Face, chest aur peeth pe bade daane; acne ke baad kale aur permanent daag; stress se bhadne wali acne',
-      whyHope: 'Deep acne aur post-acne pigmentation dono pe kaam karta hai — especially jab scars prominent hon.',
+      bestFor: 'Face, chest aur peeth pe bade daane; acne ke baad kale aur permanent daag; stress se bhadne wali acne',
+      keyIndications: [
+
+        'Deep acne aur post-acne pigmentation dono pe kaam karta hai — especially jab scars prominent hon.',
+
+      ],
     },
     {
       _key: 'med6',
       name: 'Berberis Aquifolium',
-      forWhom: 'Acne ke baad kale daag (PIH), dull aur uneven skin tone',
-      whyHope: 'Skin ka natural tone aur texture improve karne mein helpful — post-acne marks ke liye commonly used.',
+      bestFor: 'Acne ke baad kale daag (PIH), dull aur uneven skin tone',
+      keyIndications: [
+
+        'Skin ka natural tone aur texture improve karne mein helpful — post-acne marks ke liye commonly used.',
+
+      ],
     },
   ],
 

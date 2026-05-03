@@ -137,38 +137,62 @@ const disease = {
     {
       _key: 'med1',
       name: 'Rhus Toxicodendron',
-      forWhom: 'Jinhe rest mein dard zyada hota hai, hilne-dulne se thoda aaram milta hai, sardi/nami mein takleef badhti hai',
-      whyHope: 'Ye medicine "restlessness with relief from motion" ke pattern pe kaam karti hai — arthritis ka yahi typical pattern hai. Subah ki akadpan aur nami se badhne wale dard mein khaas taur pe helpful.',
+      bestFor: 'Jinhe rest mein dard zyada hota hai, hilne-dulne se thoda aaram milta hai, sardi/nami mein takleef badhti hai',
+      keyIndications: [
+
+        'Ye medicine "restlessness with relief from motion" ke pattern pe kaam karti hai — arthritis ka yahi typical pattern hai. Subah ki akadpan aur nami se badhne wale dard mein khaas taur pe helpful.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Bryonia Alba',
-      forWhom: 'Jinhe hilne-dulne se dard bilkul badh jaata hai, aur rest mein aaram milta hai — bilkul Rhus Tox ka ulta',
-      whyHope: 'Joints mein stitching, tearing type ka dard, sujan ke saath — chhote se movement pe bhi tez dard. Ye medicine acute inflammatory phase mein especially effective hai.',
+      bestFor: 'Jinhe hilne-dulne se dard bilkul badh jaata hai, aur rest mein aaram milta hai — bilkul Rhus Tox ka ulta',
+      keyIndications: [
+
+        'Joints mein stitching, tearing type ka dard, sujan ke saath — chhote se movement pe bhi tez dard. Ye medicine acute inflammatory phase mein especially effective hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Calcarea Carbonica',
-      forWhom: 'Overweight, thoda slow aur thaki hui tabiyat wale log, jinhe nami aur thandi hawa bardaasht nahi hoti, ghutne ke OA mein',
-      whyHope: 'Constitutional medicine hai — sirf joints nahi, overall metabolism aur body weight bhi address karta hai. OA mein cartilage ghisne ki process pe slow-down effect.',
+      bestFor: 'Overweight, thoda slow aur thaki hui tabiyat wale log, jinhe nami aur thandi hawa bardaasht nahi hoti, ghutne ke OA mein',
+      keyIndications: [
+
+        'Constitutional medicine hai — sirf joints nahi, overall metabolism aur body weight bhi address karta hai. OA mein cartilage ghisne ki process pe slow-down effect.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Colchicum Autumnale',
-      forWhom: 'Gout patients — aksar angoothe ya ankle mein achanak tez dard, chhone se bhi dard, thoda sa hilne pe bhi takleef',
-      whyHope: 'Gout ke acute attacks mein uric acid crystal deposition se hone wale dard ke liye classic homeopathic medicine. Attack ki frequency aur intensity dono pe kaam.',
+      bestFor: 'Gout patients — aksar angoothe ya ankle mein achanak tez dard, chhone se bhi dard, thoda sa hilne pe bhi takleef',
+      keyIndications: [
+
+        'Gout ke acute attacks mein uric acid crystal deposition se hone wale dard ke liye classic homeopathic medicine. Attack ki frequency aur intensity dono pe kaam.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Actaea Spicata',
-      forWhom: 'Chote joints — haath ki ungliyan, kalaai ka arthritis, thakaan se dard badhna, thodi si activity pe sujan',
-      whyHope: 'Small joints ke arthritis mein, especially haath ki ungliyon ki deformity rokne mein aur sujan kam karne mein.',
+      bestFor: 'Chote joints — haath ki ungliyan, kalaai ka arthritis, thakaan se dard badhna, thodi si activity pe sujan',
+      keyIndications: [
+
+        'Small joints ke arthritis mein, especially haath ki ungliyon ki deformity rokne mein aur sujan kam karne mein.',
+
+      ],
     },
     {
       _key: 'med6',
       name: 'Causticum',
-      forWhom: 'Reedh ka arthritis (Ankylosing Spondylitis), chronic cases jisme joints stiff aur contracted ho chuki hoon, muscles aur tendons mein tightness',
-      whyHope: 'Chronic, long-standing joint stiffness aur contractures mein helpful — joint flexibility gradually improve hone ke chances.',
+      bestFor: 'Reedh ka arthritis (Ankylosing Spondylitis), chronic cases jisme joints stiff aur contracted ho chuki hoon, muscles aur tendons mein tightness',
+      keyIndications: [
+
+        'Chronic, long-standing joint stiffness aur contractures mein helpful — joint flexibility gradually improve hone ke chances.',
+
+      ],
     },
   ],
 

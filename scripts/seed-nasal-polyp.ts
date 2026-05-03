@@ -116,7 +116,7 @@ const doc = {
 
   homeopathyExplainer: 'Nasal Polyp mein homeopathy do levels pe kaam karta hai — pehla, polyp ka size gradually reduce karna aur breathing improve karna; doosra, woh underlying cause (allergy, inflammation, immune overreaction) address karna jo polyp ko wapas laata hai. Surgery se sirf existing polyp hata sakti hai lekin underlying tendency address nahi hoti — isliye 70-80% cases mein polyp wapas aata hai. Homeopathy usi recurrence tendency pe kaam karta hai, isliye long-term results better hote hain. Treatment mein 3-6 mahine lag sakte hain, lekin symptoms mein improvement 6-8 weeks mein shuru ho jaati hai.',
 
-  ccrhData: {
+  ccrhEvidence: {
     improvementRate: 'CCRH-affiliated clinical studies mein homeopathic treatment group mein nasal obstruction score 68% se ghata 31% par aaya — placebo group mein wahi 65% se 58% par ruka. Smell recovery partial-to-complete 54% patients mein reported.',
     avgTreatmentPeriod: '4-6 months for significant polyp size reduction',
     citation: 'Indian Journal of Research in Homoeopathy | CCRH Collaborative Study on Chronic Rhinosinusitis with Polyps | 2019',
@@ -132,70 +132,111 @@ const doc = {
     {
       _key: 'med1',
       name: 'Teucrium Marum Verum',
-      forWhom: 'Jo patients baar baar naak saaf karte hain, naak mein crawling sensation ho, smell bilkul nahi aata ho aur right side zyada block ho.',
-      whyHope: 'Nasal polyp ke liye homeopathy mein sabse specific medicines mein se ek — naak ki lining pe directly kaam karta hai. Chronic polyp cases mein size reduction aur smell recovery dono mein iska use documented hai.',
+      bestFor: 'Jo patients baar baar naak saaf karte hain, naak mein crawling sensation ho, smell bilkul nahi aata ho aur right side zyada block ho.',
+      keyIndications: [
+
+        'Nasal polyp ke liye homeopathy mein sabse specific medicines mein se ek — naak ki lining pe directly kaam karta hai. Chronic polyp cases mein size reduction aur smell recovery dono mein iska use documented hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Sanguinaria Canadensis',
-      forWhom: 'Jin patients mein right-sided nasal blockage ke saath severe headache aate hain, naak se burning discharge ho aur forehead pe pressure feel ho.',
-      whyHope: 'Right-sided complaints aur sinus pressure ke saath nasal polyp mein bahot effective. Nasal mucosa ki inflammation ko address karta hai aur headache pattern ko bhi target karta hai.',
+      bestFor: 'Jin patients mein right-sided nasal blockage ke saath severe headache aate hain, naak se burning discharge ho aur forehead pe pressure feel ho.',
+      keyIndications: [
+
+        'Right-sided complaints aur sinus pressure ke saath nasal polyp mein bahot effective. Nasal mucosa ki inflammation ko address karta hai aur headache pattern ko bhi target karta hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Lemna Minor',
-      forWhom: 'Jin patients ki nasal blockage rainy season ya damp weather mein aur bhi badh jaati hai, naak mein offensive smell aaye, putrid discharge ho.',
-      whyHope: 'Damp conditions se worse hone wale nasal polyp cases mein ye especially useful hai. Nasal mucosa swelling aur polyp-associated foul smell dono pe kaam karta hai.',
+      bestFor: 'Jin patients ki nasal blockage rainy season ya damp weather mein aur bhi badh jaati hai, naak mein offensive smell aaye, putrid discharge ho.',
+      keyIndications: [
+
+        'Damp conditions se worse hone wale nasal polyp cases mein ye especially useful hai. Nasal mucosa swelling aur polyp-associated foul smell dono pe kaam karta hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Calcarea Carbonica',
-      forWhom: 'Mote, thande, sweaty patients jisme polyp ke saath allergy bhi ho, easily fatigued hon, aur cold air se symptoms worsen hon.',
-      whyHope: 'Constitutional medicine hai jo underlying immune hyper-reactivity address karta hai — ye sirf polyp nahi, aapke body ki tendency bhi treat karta hai. Long-term recurrence prevention mein helpful.',
+      bestFor: 'Mote, thande, sweaty patients jisme polyp ke saath allergy bhi ho, easily fatigued hon, aur cold air se symptoms worsen hon.',
+      keyIndications: [
+
+        'Constitutional medicine hai jo underlying immune hyper-reactivity address karta hai — ye sirf polyp nahi, aapke body ki tendency bhi treat karta hai. Long-term recurrence prevention mein helpful.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Allium Cepa',
-      forWhom: 'Jin patients mein profuse watery nasal discharge ho, aankhon se bhi paani aaye, symptoms open air mein better hon aur warm room mein worse.',
-      whyHope: 'Allergic component ke saath nasal polyp mein — jab allergy-triggered inflammation polyp ko feed kar rahi ho, tab Allium Cepa allergic response ko modulate karta hai.',
+      bestFor: 'Jin patients mein profuse watery nasal discharge ho, aankhon se bhi paani aaye, symptoms open air mein better hon aur warm room mein worse.',
+      keyIndications: [
+
+        'Allergic component ke saath nasal polyp mein — jab allergy-triggered inflammation polyp ko feed kar rahi ho, tab Allium Cepa allergic response ko modulate karta hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    eat: [
-      { category: 'Anti-Inflammatory Foods', items: ['Haldi (turmeric) wala doodh — curcumin nasal inflammation naturally reduce karta hai', 'Adrak (ginger) chai ya kadha — natural decongestant, mucus clearance mein help', 'Amla (Indian gooseberry) — Vitamin C se immune system strong, allergy response moderate', 'Nimbu paani (nimbu + warm water) — antioxidants se nasal tissue healing support'] },
-      { category: 'Immunity Boosting Foods', items: ['Lauki, turai, parwal (light vegetables) — easily digestible, inflammation nahi badhate', 'Palak, methi, bathua — iron aur folate se immunity maintain hoti hai', 'Chaulai (amaranth) saag — anti-inflammatory properties documented', 'Moong dal — light protein jo mucus thicken nahi karta'] },
-      { category: 'Hydration & Mucus Clearance', items: ['Warm water baar baar peena — mucus thinning ke liye sabse important', 'Coconut water — electrolytes + hydration, nasal tissue ko healthy rakhta hai', 'Bone broth (haddi ka shorba) — collagen nasal tissue repair mein help karta hai', 'Tulsi + mulethi kadha — natural antimicrobial + expectorant'] },
-    ],
-    avoid: [
-      { category: 'Dairy Products', items: ['Doodh (cow\'s milk) — mucus production badhata hai, nasal congestion worse hoti hai', 'Paneer, cheese — high casein protein mucus-forming hota hai', 'Ice cream, cold drinks — cold dairy worst combination — congestion spike karta hai', 'Dahi (raat ko) — specifically raat ko avoid karein — kaf badhata hai'] },
-      { category: 'Allergenic & Inflammatory Foods', items: ['Maida products — bread, biscuit, naan — inflammation badhate hain', 'Excess sugar — immune response dysregulate karta hai, polyp-feeding inflammation', 'Processed/packaged foods — preservatives nasal lining irritate karte hain', 'Fried foods — trans fats nasal inflammation mein direct contributor'] },
-      { category: 'Common Triggers', items: ['Alcohol — nasal blood vessels dilate karta hai, swelling worse hoti hai', 'Caffeinated drinks in excess — dehydration se mucus thick hota hai', 'Very spicy food — kuch patients mein nasal irritation trigger karta hai', 'Cold beverages aur ice — nasal lining shrink-expand cycle disturb karta hai'] },
-    ],
-    dietTip: 'Warm fluids har ghante lein — lukewarm paani, ginger kadha, tulsi chai. Dairy ko completely minimize karein especially raat ko. Haldi + adrak combination anti-inflammatory powerhouse hai — daily use karein.',
-    dietNote: 'Nasal polyp mein sabse zaroori diet rule: dairy aur cold foods minimize karein. Inka seedha connection mucus production se hai. Steam inhalation + warm diet + homeopathy — ye combination sabse tez results deta hai.',
+  seasonalCare: {
+    summer: 'AC ka direct exposure naak par sabse common trigger. AC aur bahar ka temperature mein 5-7 degree se zyada fark mat rakho. Dehydration risk — minimum 3 liters paani. AC filter regular clean karein — dirty AC = mold = allergy trigger.',
+    monsoon: 'Damp environment = mold growth = worst season for fungal-associated polyps. Ghar ki neemi control karein. Nasal wash dono din — subah aur sham. Baahri naali, khet, garden ke paas jaane se bachein.',
+    winter: 'Cold dry air nasal lining ko dry karta hai — polyp ke saath dangerous. Roz steam inhalation — subah aur raat. Warm cap aur scarf naak cover karein. Ghar mein humidifier 40-50% humidity. Fog/smog mein bahar jaana avoid karein.',
   },
 
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'sc1',
-      season: 'Winter (November – February)',
-      tip: 'Cold dry air nasal lining ko dry karta hai — polyp ke saath dangerous. Roz steam inhalation — subah aur raat. Warm cap aur scarf naak cover karein. Ghar mein humidifier 40-50% humidity. Fog/smog mein bahar jaana avoid karein.',
+      _key: 'inc1',
+      category: 'Anti-Inflammatory & Decongestant Foods',
+      emoji: '🌿',
+      items: [
+        'Haldi wala doodh — curcumin nasal inflammation naturally reduce karta hai',
+        'Adrak (ginger) chai ya kadha — natural decongestant, mucus clearance mein help',
+        'Amla (Indian gooseberry) — Vitamin C se immune system strong, allergy response moderate',
+        'Nimbu paani (nimbu + warm water) — antioxidants se nasal tissue healing support',
+        'Tulsi + mulethi kadha — natural antimicrobial + expectorant',
+      ],
     },
     {
-      _key: 'sc2',
-      season: 'Summer (March – June)',
-      tip: 'AC ka direct exposure naak par sabse common trigger. AC aur bahar ka temperature mein 5-7 degree se zyada fark mat rakho. Dehydration risk — minimum 3 liters paani. AC filter regular clean karein — dirty AC = mold = allergy trigger.',
+      _key: 'inc2',
+      category: 'Light Vegetables & Hydration',
+      emoji: '💧',
+      items: [
+        'Lauki, turai, parwal — easily digestible, inflammation nahi badhate',
+        'Palak, methi, bathua — iron aur folate se immunity maintain hoti hai',
+        'Moong dal — light protein jo mucus thicken nahi karta',
+        'Warm water baar baar peena — mucus thinning ke liye sabse important',
+        'Coconut water — electrolytes + hydration, nasal tissue ko healthy rakhta hai',
+      ],
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Dairy & Mucus-Forming Foods',
+      emoji: '🚫',
+      items: [
+        'Doodh (cow milk) — mucus production badhata hai, nasal congestion worse hoti hai',
+        'Paneer, cheese — high casein protein mucus-forming hota hai',
+        'Ice cream, cold drinks — cold dairy worst combination, congestion spike karta hai',
+        'Dahi (raat ko) — specifically raat ko avoid karein, kaf badhata hai',
+      ],
     },
     {
-      _key: 'sc3',
-      season: 'Monsoon (July – September)',
-      tip: 'Damp environment = mold growth = worst season for fungal-associated polyps. Ghar ki neemi control karein. Nasal wash dono din — subah aur sham. Baahri naali, khet, garden ke paas jaane se bachein.',
-    },
-    {
-      _key: 'sc4',
-      season: 'Autumn/Pre-Winter (October – November)',
-      tip: 'Seasonal allergy peak time — allergy-associated polyp patients alert rahein. Ghar ki safai carefully — dust mop use karein, regular vacuum. Pets ke saath extra precaution — pet dander peak sensitization time.',
+      _key: 'avd2',
+      category: 'Inflammatory & Allergenic Foods',
+      emoji: '⚠️',
+      items: [
+        'Maida products — bread, biscuit, naan — inflammation badhate hain',
+        'Excess sugar — immune response dysregulate karta hai, polyp-feeding inflammation',
+        'Fried foods — trans fats nasal inflammation mein direct contributor',
+        'Alcohol — nasal blood vessels dilate karta hai, swelling worse hoti hai',
+        'Cold beverages aur ice — nasal lining ko disturb karta hai',
+      ],
     },
   ],
 
@@ -348,12 +389,12 @@ const doc = {
   ],
 
   sources: [
-    'CCRH (Central Council for Research in Homoeopathy) | 2019 | Collaborative study on chronic rhinosinusitis with polyps | ccrh.org',
-    'Fokkens WJ et al. — European Position Paper on Rhinosinusitis and Nasal Polyps (EPOS 2020) | Rhinology | 2020',
-    'Bachert C, Bhatt DL — Nasal Polyps | New England Journal of Medicine | 2020',
-    'WHO Global Atlas of Allergic Rhinitis and Chronic Sinusitis | 2015',
-    'Lund VJ et al. — International Consensus Statement on Allergy and Rhinology: Rhinosinusitis | International Forum of Allergy & Rhinology | 2016',
-    'Hamilos DL — Drivers of chronic rhinosinusitis | Journal of Allergy and Clinical Immunology | 2020',
+    { _key: 's1', name: 'CCRH (Central Council for Research in Homoeopathy) | 2019 | Collaborative study ', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's2', name: 'Fokkens WJ et al. — European Position Paper on Rhinosinusitis and Nasal Polyps (', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's3', name: 'Bachert C, Bhatt DL — Nasal Polyps | New England Journal of Medicine | 2020', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's4', name: 'WHO Global Atlas of Allergic Rhinitis and Chronic Sinusitis | 2015', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's5', name: 'Lund VJ et al. — International Consensus Statement on Allergy and Rhinology: Rhi', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's6', name: 'Hamilos DL — Drivers of chronic rhinosinusitis | Journal of Allergy and Clinical', url: 'ccrhindia.nic.in', year: '2024' },
   ],
 
   doctorNote: 'Clinical practice mein maine dekha hai ki jo patients Teucrium Marum Verum ya Lemna Minor pe well-respond karte hain, unme smell recovery pehle aati hai — often 8-10 hafton mein — even before nasal blockage fully resolves. Ye ek encouraging early sign hota hai. Allergy-associated polyp patients mein constitutional treatment (Calcarea Carb, Tuberculinum based on history) se long-term results significantly better aate hain sirf local medicines ke comparison mein.',

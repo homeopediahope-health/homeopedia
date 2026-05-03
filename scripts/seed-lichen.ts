@@ -116,11 +116,6 @@ async function seed() {
       'Children aur pregnant women mein safe use — corticosteroid alternatives ke roop mein',
     ],
 
-    homeopathyLimitations: [
-      'Erosive oral lichen planus ya bullous type mein turant pain relief ke liye conventional treatment (topical steroids, tacrolimus) zyada fast kaam karta hai — homeopathy alongside le sakte hain',
-      'Scalp lichen planopilaris mein agar follicle already permanently damage ho chuka hai to hair regrowth kisi bhi treatment se possible nahi hoti — early treatment hi bachao karta hai',
-    ],
-
     medicines: [
       {
         _key: 'med1',

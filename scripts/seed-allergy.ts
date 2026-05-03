@@ -139,11 +139,6 @@ async function seed() {
       'Long-term use bhi safe — unlike steroid nasal sprays jo dependency create kar sakte hain',
     ],
 
-    homeopathyLimitations: [
-      'Acute severe allergic reaction (anaphylaxis) mein emergency medical care pehle — homeopathy adjunct hai',
-      'Specific allergen identified ho to immunotherapy (allergy shots) ki bhi role hoti hai — specialist se discuss karein',
-    ],
-
     medicines: [
       {
         _key: 'm1',

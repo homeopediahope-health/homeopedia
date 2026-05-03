@@ -144,37 +144,56 @@ const ocd = {
     {
       _key: 'med1',
       name: 'Arsenicum Album',
-      forWhom: 'Contamination OCD ya checking OCD wale patients jinhein baar baar darr rehta hai ki kuch galat ho jayega — perfectionist, restless, zyada anxious nature.',
-      whyHope: 'Arsenicum arsenic ka ultra-diluted form hai — jo anxiety aur "controlled, orderly" rahne ki intense need wale patients ke liye historically effective raha hai. Restlessness aur midnight anxiety is medicine ka khaas indication hai.',
+      bestFor: 'Contamination OCD ya checking OCD wale patients jinhein baar baar darr rehta hai ki kuch galat ho jayega — perfectionist, restless, zyada anxious nature.',
+      keyIndications: [
+
+        'Arsenicum arsenic ka ultra-diluted form hai — jo anxiety aur "controlled, orderly" rahne ki intense need wale patients ke liye historically effective raha hai. Restlessness aur midnight anxiety is medicine ka khaas indication hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Natrum Muriaticum',
-      forWhom: 'Intrusive thoughts ya Pure OCD wale patients jinhe guilt zyada satata hai — jo apni feelings chhupa ke rakhte hain, akele mein zyada suffer karte hain, emotionally reserved hain.',
-      whyHope: 'Natrum Mur sea salt ka ultra-diluted preparation hai. Grief, suppressed emotions, aur ek khaas "control" pattern ke saath aane wale OCD mein iska use clinically noted hai. Isolation aur silent suffering is medicine ka clear picture hai.',
+      bestFor: 'Intrusive thoughts ya Pure OCD wale patients jinhe guilt zyada satata hai — jo apni feelings chhupa ke rakhte hain, akele mein zyada suffer karte hain, emotionally reserved hain.',
+      keyIndications: [
+
+        'Natrum Mur sea salt ka ultra-diluted preparation hai. Grief, suppressed emotions, aur ek khaas "control" pattern ke saath aane wale OCD mein iska use clinically noted hai. Isolation aur silent suffering is medicine ka clear picture hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Silicea (Silica)',
-      forWhom: 'Symmetry/ordering OCD ya perfectionist patients — jo ek kaam "bilkul sahi" karna chahte hain, nahi hua to phir se karte hain. Timid, self-doubting, easily embarrassed nature.',
-      whyHope: 'Silicea mein khaas baat ye hai ki ye "yielding yet obstinate" personality — jo andar se rigid hai lekin bahar se daba hua hai — ke OCD pattern mein helpful raha hai. Self-confidence build hoti hai waqt ke saath.',
+      bestFor: 'Symmetry/ordering OCD ya perfectionist patients — jo ek kaam "bilkul sahi" karna chahte hain, nahi hua to phir se karte hain. Timid, self-doubting, easily embarrassed nature.',
+      keyIndications: [
+
+        'Silicea mein khaas baat ye hai ki ye "yielding yet obstinate" personality — jo andar se rigid hai lekin bahar se daba hua hai — ke OCD pattern mein helpful raha hai. Self-confidence build hoti hai waqt ke saath.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Ignatia Amara',
-      forWhom: 'OCD jo kisi trauma, loss, ya sudden emotional shock ke baad develop hua ho — grief-triggered OCD. Mood rapid change karta hai, highly sensitive nature.',
-      whyHope: 'Ignatia St. Ignatius bean se bani hai aur acute grief, contradictory symptoms, aur sudden emotional trauma se triggered mental conditions mein classical use hai. Trauma-onset OCD mein especially noted.',
+      bestFor: 'OCD jo kisi trauma, loss, ya sudden emotional shock ke baad develop hua ho — grief-triggered OCD. Mood rapid change karta hai, highly sensitive nature.',
+      keyIndications: [
+
+        'Ignatia St. Ignatius bean se bani hai aur acute grief, contradictory symptoms, aur sudden emotional trauma se triggered mental conditions mein classical use hai. Trauma-onset OCD mein especially noted.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Thuja Occidentalis',
-      forWhom: 'Religious/moral OCD (scrupulosity) ya body-focused OCD — jinhein lagta hai "mujhme koi kami hai" ya "mujhse koi paap ho gaya." Secretive, fixed ideas, fragile self-image.',
-      whyHope: 'Thuja fixed, unchanging ideas aur religious obsessions ke saath OCD mein clinically explored medicine hai. "Something wrong inside me" feeling is medicine ka core indication hai.',
+      bestFor: 'Religious/moral OCD (scrupulosity) ya body-focused OCD — jinhein lagta hai "mujhme koi kami hai" ya "mujhse koi paap ho gaya." Secretive, fixed ideas, fragile self-image.',
+      keyIndications: [
+
+        'Thuja fixed, unchanging ideas aur religious obsessions ke saath OCD mein clinically explored medicine hai. "Something wrong inside me" feeling is medicine ka core indication hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Brain-Friendly Foods',
@@ -202,8 +221,9 @@ const ocd = {
           'Green tea / Chamomile / Ashwagandha chai — L-theanine anxiety reduce karta hai without sedation',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'Brain Excitants',
@@ -212,7 +232,7 @@ const ocd = {
           'Energy drinks — High caffeine + sugar — double trigger for OCD anxiety',
           'Alcohol — Short-term relief deta hai par next day anxiety rebound severe hoti hai; OCD definitely worse hoti hai',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Inflammation Triggers',
@@ -232,8 +252,6 @@ const ocd = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'OCD worse hoti hai winters mein kyunki sunlight kam hoti hai aur Vitamin D drop karta hai — serotonin naturally kam hota hai. Subah ki dhoop zaroor lein — 15-20 min, ye natural serotonin boost hai. Winter mein isolation zyada hoti hai — social contact maintain karein. Homeopathic treatment is season mein especially important hai maintain karna.',
     summer: 'Heat mein irritability aur anxiety naturally badh jaati hai. Hydration OCD anxiety ko manage karne mein help karta hai — paani khub piyein. AC mein bund rehne se Vitamin D deficiency ho sakti hai — balance rakho. Neem-infused water ya tulsi chai calming hoti hai in summer.',
@@ -244,7 +262,6 @@ const ocd = {
       'Har mausam mein roz ki exercise aur neend schedule fixed rakho — ye OCD ka sabse strong non-medicine support hai',
     ],
   },
-
   dos: [
     'Roz 20-30 min aerobic exercise (walk, jogging, cycling) — serotonin aur dopamine natural boost milta hai jo OCD mein low hoti hai',
     'CBT / ERP therapy ke saath saath homeopathy use karein — combination approach best results deta hai',
@@ -399,36 +416,9 @@ const ocd = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'Indian Journal of Research in Homoeopathy (IJRH) — CCRH-affiliated OCD & Anxiety Spectrum Studies',
-      year: '2018-2022',
-      url: 'https://www.ijrh.org',
-    },
-    {
-      _key: 'src2',
-      title: 'American Psychiatric Association — DSM-5 Criteria for OCD',
-      year: '2022',
-      url: '',
-    },
-    {
-      _key: 'src3',
-      title: 'National Institute of Mental Health (NIMH) — OCD Fact Sheet',
-      year: '2023',
-      url: 'https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd',
-    },
-    {
-      _key: 'src4',
-      title: 'CCRH (Central Council for Research in Homoeopathy) — Annual Reports & Clinical Studies',
-      year: '2019-2023',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src5',
-      title: 'Lancet Global Burden of Disease Study — Mental Health Disorders India Prevalence',
-      year: '2019',
-      url: 'https://www.thelancet.com',
-    },
+    { _key: 's1', name: 'CCRH — Homeopathic Approach to Mental Health Disorders', url: 'ccrhindia.nic.in', year: '2020' },
+    { _key: 's2', name: 'WHO — Mental Health Atlas — OCD Prevalence Data', url: 'who.int', year: '2020' },
+    { _key: 's3', name: 'NIMHANS — OCD Treatment Guidelines India', url: 'nimhans.ac.in', year: '2019' },
   ],
 
   doctorNote: 'Mere paas aane wale OCD patients mein sabse common pattern ye hai ki log saalon tak chup rehte hain — religious OCD aur Pure OCD wale especially, kyunki unhe lagta hai "ye sochna hi galat hai." Jab unhe samjhata hoon ki ye OCD hai, character nahi — uski relief genuinely moving hoti hai. Individualized homeopathic treatment mein mujhe Arsenicum, Natrum Mur, aur Thuja ka combination approaches mein bahut accha response mila hai — anxiety layer pehle saaf hoti hai, phir obsessive pattern dheere dheere loosens hota hai.',

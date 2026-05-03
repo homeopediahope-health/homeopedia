@@ -80,36 +80,40 @@ const doc = {
     {
       _key: 'med1',
       name: 'Berberis Vulgaris',
-      forWhom: 'Left-sided kidney ya ureter stone jisme kamar se thigh tak radiating dard ho, urine mein sediment (gad) ho, aur movement se dard badhe',
-      hope: 'Berberis vulgaris renal aur urinary tract pe specifically kaam karta hai. Ye bile aur urine ke flow ko improve karta hai aur oxalate crystals ke formation ko slow karne mein madadgar maana jaata hai. Homeopathy mein is medicine ka "urinary sphere affinity" sabse zyada established hai.',
+      bestFor: 'Left-sided kidney ya ureter stone jisme kamar se thigh tak radiating dard ho, urine mein sediment (gad) ho, aur movement se dard badhe',
+      keyIndications: ['Berberis vulgaris renal aur urinary tract pe specifically kaam karta hai. Ye bile aur urine ke flow ko improve karta hai aur oxalate crystals ke formation ko slow karne mein madadgar maana jaata hai. Homeopathy mein is medicine ka "urinary sphere affinity" sabse zyada established hai.'],
     },
     {
       _key: 'med2',
       name: 'Lycopodium Clavatum',
-      forWhom: 'Right-sided kidney stone, urine mein red sandy deposit (lycopodium sand), aur bloating ya gas ke saath stone ki problem',
-      hope: 'Lycopodium right kidney aur ureter ke symptoms mein khaas taur pe effective hai. Ye uric acid metabolism pe bhi kaam karta hai – uric acid stones mein bhi use hoti hai. Bloating + stone ka combination isme bahut characteristic hai.',
+      bestFor: 'Right-sided kidney stone, urine mein red sandy deposit (lycopodium sand), aur bloating ya gas ke saath stone ki problem',
+      keyIndications: ['Lycopodium right kidney aur ureter ke symptoms mein khaas taur pe effective hai. Ye uric acid metabolism pe bhi kaam karta hai – uric acid stones mein bhi use hoti hai. Bloating + stone ka combination isme bahut characteristic hai.'],
     },
     {
       _key: 'med3',
       name: 'Cantharis Vesicatoria',
-      forWhom: 'Jab stone movement se intense burning + cutting pain ho, urine karte waqt bahut jalan ho, aur urine mein blood aa raha ho',
-      hope: 'Cantharis urinary tract ki intense inflammation aur burning pe classic homeopathic medicine hai. Stone pass hote waqt ureteral irritation se jo extreme discomfort hoti hai, isme ye bahut relief deti hai.',
+      bestFor: 'Jab stone movement se intense burning + cutting pain ho, urine karte waqt bahut jalan ho, aur urine mein blood aa raha ho',
+      keyIndications: ['Cantharis urinary tract ki intense inflammation aur burning pe classic homeopathic medicine hai. Stone pass hote waqt ureteral irritation se jo extreme discomfort hoti hai, isme ye bahut relief deti hai.'],
     },
     {
       _key: 'med4',
       name: 'Sarsaparilla Officinalis',
-      forWhom: 'Urine ke end mein cutting pain, white sandy deposit in urine, aur right kidney area ki discomfort – especially jin patients mein pathri baar baar hoti ho',
-      hope: 'Sarsaparilla renal sand aur gravel pass karne mein help karne ke liye jaani jaati hai. Ye bladder neck aur urethra ki sensitivity kam karta hai – stone passage ko easier banata hai.',
+      bestFor: 'Urine ke end mein cutting pain, white sandy deposit in urine, aur right kidney area ki discomfort – especially jin patients mein pathri baar baar hoti ho',
+      keyIndications: ['Sarsaparilla renal sand aur gravel pass karne mein help karne ke liye jaani jaati hai. Ye bladder neck aur urethra ki sensitivity kam karta hai – stone passage ko easier banata hai.'],
     },
     {
       _key: 'med5',
       name: 'Ocimum Canum (Tulsi – Homeopathic Form)',
-      forWhom: 'Uric acid stones, jisme urine ke saath burning aur nausea/vomiting bhi ho, aur urine mein orange/brick-red deposit ho',
-      hope: 'Ocimum canum uric acid stone tendency wale patients mein particularly indicated hai. Ye uric acid deposits ko urine ke through clear karne mein aur renal colic ke acute phase ko ease karne mein useful maana jaata hai.',
+      bestFor: 'Uric acid stones, jisme urine ke saath burning aur nausea/vomiting bhi ho, aur urine mein orange/brick-red deposit ho',
+      keyIndications: ['Ocimum canum uric acid stone tendency wale patients mein particularly indicated hai. Ye uric acid deposits ko urine ke through clear karne mein aur renal colic ke acute phase ko ease karne mein useful maana jaata hai.'],
     },
   ],
-  diet: {
-    doEat: [
+  dietInclude: [
+    {
+      _key: 'inc1',
+      category: 'Recommended Foods',
+      emoji: '🌿',
+      items: [
       'Paani (8-10 glass daily, 3+ litre) – urine dilute hota hai, minerals settle nahi karte – ye akela sabse important step hai',
       'Nimbu paani (fresh lemon water) – citrate kidney stone banne se rokta hai',
       'Coconut water (nariyal paani) – natural diuretic, urine flow badhata hai',
@@ -121,7 +125,15 @@ const doc = {
       'Seb (apple) – malic acid uric acid clearance mein help karta hai',
       'Watermelon – 92% water, kidney flush karta hai',
     ],
-    avoid: [
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Foods to Avoid',
+      emoji: '🚫',
+      items: [
       'Palak (spinach) – highest oxalate content hai – calcium oxalate stone wale bilkul avoid karein',
       'Tamatar ke beej – oxalate concentrate hote hain beej mein',
       'Chocolate / cocoa – high oxalate, uric acid bhi badha sakta hai',
@@ -134,7 +146,27 @@ const doc = {
       'Calcium supplement pills bina doctor ke – stone ka risk seedha badhata hai',
       'Vitamin C supplements high dose mein (1000mg+) – ye oxalate mein convert ho jaata hai kidney mein',
     ],
-  },
+    },
+  ],
+  dos: [
+    'Paani BAHUT zyada piyein — roz minimum 3-4 liter (12-16 glasses) — ye ek rule hai jo sabse zyada zaroori hai pathri mein',
+    'Nimbu paani roz piyein (bina sugar) — citrate kidney mein crystal formation rokta hai, sabse effective natural prevention',
+    'Urine ka rang check karte rahein — pale yellow hona chahiye, dark yellow matlab paani kam hai',
+    'Regular walk ya exercise karein — physically active log jo baithe rehte hain unse kam pathri banate hain',
+    'Diet mein calcium-rich foods shamil rakhein (dahi, paneer moderate) — paradoxically, dietary calcium oxalate ko gut mein bind karta hai jisse kam absorb hota hai',
+    'Homeopathic treatment time par lein — Berberis Vulgaris jaise medicines urinary tract ki peristalsis improve karte hain',
+  ],
+
+  donts: [
+    'Paani peena bilkul mat chhodna — dehydration pathri ka #1 cause aur #1 worsening factor hai',
+    'Spinach (palak), tomato (tamatar), nut, chocolate roz bahut zyada mat khaao agar calcium oxalate stone confirmed hai',
+    'Namak zyada khaana band karo — sodium urine mein calcium badhata hai jo crystal formation karta hai',
+    'Animal protein excess mat khaao (red meat, eggs zyada) — uric acid stones ke liye especially harmful',
+    'Cold drinks bilkul nahi — phosphoric acid calcium metabolism disturb karta hai aur stone risk badhata hai',
+    'Agar dard ke saath bukhaar aaye to ghar pe mat ruko — infected stone emergency hai',
+    'Bina doctor ke stone pass hone ka wait mat karo agar stone 7mm se bada hai — medical intervention zaroori',
+  ],
+
   faqs: [
     {
       _key: 'faq2',
@@ -243,12 +275,12 @@ const doc = {
     },
   ],
   sources: [
-    'Council for Research in Homoeopathic Medicine (CCRH) – Clinical Studies on Urolithiasis | Indian Journal of Research in Homoeopathy | 2017 | www.ijrh.org',
-    'National Kidney Foundation – Kidney Stones Overview | 2023 | www.kidney.org',
-    'Urology Care Foundation – What are Kidney Stones? | 2022 | www.urologyhealth.org',
-    'NCBI / PubMed – Dietary Citrate & Kidney Stone Prevention | Journal of Urology | 2015–2022',
-    'Indian Journal of Urology – Epidemiology of Urolithiasis in India | 2020',
-    'WHO – Global Kidney Disease Burden Report | 2021',
+    { _key: 's1', name: 'Council for Research in Homoeopathic Medicine (CCRH) – Clinical Studies on Uroli', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's2', name: 'National Kidney Foundation – Kidney Stones Overview | 2023 | www.kidney.org', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's3', name: 'Urology Care Foundation – What are Kidney Stones? | 2022 | www.urologyhealth.org', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's4', name: 'NCBI / PubMed – Dietary Citrate & Kidney Stone Prevention | Journal of Urology |', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's5', name: 'Indian Journal of Urology – Epidemiology of Urolithiasis in India | 2020', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's6', name: 'WHO – Global Kidney Disease Burden Report | 2021', url: 'ccrhindia.nic.in', year: '2024' },
   ],
   quickFacts: [
     'Kidney stone (pathri) – gurde mein mineral crystals ka jama hona',

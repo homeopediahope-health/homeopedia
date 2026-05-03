@@ -134,32 +134,52 @@ const disease = {
     {
       _key: 'med1',
       name: 'Belladonna',
-      forWhom: 'Achanak shuru hua tez dard, tonsils laal-laal sooje hue, tez bukhaar, gala bahut hot feel ho — right side zyada',
-      whyHope: 'Belladonna acute inflammatory conditions mein classically indicated hai — jahan suddenly tez inflammation ho. Tonsils ki lali, heat, aur pulsating pain iske key indicators hain.',
+      bestFor: 'Achanak shuru hua tez dard, tonsils laal-laal sooje hue, tez bukhaar, gala bahut hot feel ho — right side zyada',
+      keyIndications: [
+
+        'Belladonna acute inflammatory conditions mein classically indicated hai — jahan suddenly tez inflammation ho. Tonsils ki lali, heat, aur pulsating pain iske key indicators hain.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Hepar Sulphuris Calcareum',
-      forWhom: 'Tonsils mein pus formation ho gayi ho, chhoone pe bahut dard ho, thandi hawa ya thanda paani se takleef badh jaaye, patient irritable ho',
-      whyHope: 'Hepar sulph pus ko control karne aur suppuration resolve karne mein kaam karta hai. Ye specially tab indicated hai jab tonsils par coating aa gayi ho ya abscess ban raha ho.',
+      bestFor: 'Tonsils mein pus formation ho gayi ho, chhoone pe bahut dard ho, thandi hawa ya thanda paani se takleef badh jaaye, patient irritable ho',
+      keyIndications: [
+
+        'Hepar sulph pus ko control karne aur suppuration resolve karne mein kaam karta hai. Ye specially tab indicated hai jab tonsils par coating aa gayi ho ya abscess ban raha ho.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Baryta Carbonica',
-      forWhom: 'Chote bacche ya adults jinhe baar baar tonsillitis hoti hai, slow development, gardan ki lymph nodes permanently badi rehti hon',
-      whyHope: 'Baryta carb chronic aur recurrent tonsillitis ka ek classical remedy hai — especially jab tonsils hamesha enlarged rehte hain aur immunity weak lagti hai. Long-term treatment mein recurrence rokne mein help karta hai.',
+      bestFor: 'Chote bacche ya adults jinhe baar baar tonsillitis hoti hai, slow development, gardan ki lymph nodes permanently badi rehti hon',
+      keyIndications: [
+
+        'Baryta carb chronic aur recurrent tonsillitis ka ek classical remedy hai — especially jab tonsils hamesha enlarged rehte hain aur immunity weak lagti hai. Long-term treatment mein recurrence rokne mein help karta hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Mercurius Solubilis',
-      forWhom: 'Tonsils pe safed ya dirty coating, muh se badboo, bahut zyada thook aana, raat ko dard badhe, garam aur thanda dono se takleef ho',
-      whyHope: 'Merc sol mucous membrane infections mein effective hai — especially jab gale mein ulceration ya coating ho aur salivation zyada ho. Bacterial involvement mein ek important remedy.',
+      bestFor: 'Tonsils pe safed ya dirty coating, muh se badboo, bahut zyada thook aana, raat ko dard badhe, garam aur thanda dono se takleef ho',
+      keyIndications: [
+
+        'Merc sol mucous membrane infections mein effective hai — especially jab gale mein ulceration ya coating ho aur salivation zyada ho. Bacterial involvement mein ek important remedy.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Phytolacca Decandra',
-      forWhom: 'Gala bahut dark laal, tonsils bulky, kaan mein dard jaata ho, hot drinks se dard badhe, shooting pain puri gardan mein ho',
-      whyHope: 'Phytolacca throat aur tonsil conditions mein ek specific remedy hai — especially jab pain kaan tak jaata ho aur patient hot liquids avoid karne lagey. Lymph glands ki sujan mein bhi helpful.',
+      bestFor: 'Gala bahut dark laal, tonsils bulky, kaan mein dard jaata ho, hot drinks se dard badhe, shooting pain puri gardan mein ho',
+      keyIndications: [
+
+        'Phytolacca throat aur tonsil conditions mein ek specific remedy hai — especially jab pain kaan tak jaata ho aur patient hot liquids avoid karne lagey. Lymph glands ki sujan mein bhi helpful.',
+
+      ],
     },
   ],
 

@@ -119,11 +119,6 @@ async function seed() {
       'Baaki symptoms — baal jhadna, irregular periods — inpe bhi saath saath kaam karta hai',
     ],
 
-    homeopathyLimitations: [
-      'Severe hyperthyroidism ya Thyroid Storm mein homeopathy pehla ilaaj nahi hona chahiye — yahan conventional antithyroid drugs urgent hain',
-      'Graves\' Ophthalmopathy ke severe cases mein ophthalmologist se milna zaroori hai — sirf homeopathy adequate nahi',
-    ],
-
     medicines: [
       {
         _key: 'med1',

@@ -104,11 +104,6 @@ const eczema = {
     'Saath mein asthma/hay fever bhi address hota hai — jo often eczema ke saath aate hain (atopic triad)',
   ],
 
-  homeopathyLimitations: [
-    'Severe aur infected eczema (secondary bacterial infection) mein antibiotics pehle zaroori hain — homeopathy supporting role mein kaam karta hai',
-    'Chronic longstanding cases mein improvement slow hoti hai — realistic expectation rakhein aur consistent rehein',
-  ],
-
   medicines: [
     {
       _key: 'med1',

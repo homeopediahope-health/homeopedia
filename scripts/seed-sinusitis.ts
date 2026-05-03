@@ -137,37 +137,56 @@ const sinusitis = {
     {
       _key: 'med1',
       name: 'Kali Bichromicum',
-      forWhom: 'Thick, stringy, green/yellow discharge jo naak ya gale se aata ho; chehere pe fixed points pe dard; pressure feel hoti ho.',
-      whyHope: 'Yeh medicine thick, rope-like mucus aur localized facial pain ke liye classically indicated hai. Sinusitis ke chronic cases mein jo specific spots pe dard batate hain unme ye bahut effective mani jaati hai.',
+      bestFor: 'Thick, stringy, green/yellow discharge jo naak ya gale se aata ho; chehere pe fixed points pe dard; pressure feel hoti ho.',
+      keyIndications: [
+
+        'Yeh medicine thick, rope-like mucus aur localized facial pain ke liye classically indicated hai. Sinusitis ke chronic cases mein jo specific spots pe dard batate hain unme ye bahut effective mani jaati hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Hepar Sulphuris Calcareum',
-      forWhom: 'Infected sinusitis jisme pus jaisi smell aaye, touch pe tenderness ho, aur patient ko thand se buri tarah takleef ho.',
-      whyHope: 'Jab sinus infection pus stage mein ho ya secondary bacterial infection ka shak ho, Hepar Sulph drainage promote karta hai aur infection se ladne mein help karta hai.',
+      bestFor: 'Infected sinusitis jisme pus jaisi smell aaye, touch pe tenderness ho, aur patient ko thand se buri tarah takleef ho.',
+      keyIndications: [
+
+        'Jab sinus infection pus stage mein ho ya secondary bacterial infection ka shak ho, Hepar Sulph drainage promote karta hai aur infection se ladne mein help karta hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Pulsatilla Nigricans',
-      forWhom: 'Mild, bland, creamy discharge (green/yellow), khule mein better feel karna, emotional ya sensitive nature ke patients.',
-      whyHope: 'Pulsatilla sinusitis ke woh cases mein fit hoti hai jahan discharge thick-bland ho, khuli hawa se aaram mile, aur patient temperature se zyada sensitive ho. Bachon aur young women mein common.',
+      bestFor: 'Mild, bland, creamy discharge (green/yellow), khule mein better feel karna, emotional ya sensitive nature ke patients.',
+      keyIndications: [
+
+        'Pulsatilla sinusitis ke woh cases mein fit hoti hai jahan discharge thick-bland ho, khuli hawa se aaram mile, aur patient temperature se zyada sensitive ho. Bachon aur young women mein common.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Silicea',
-      forWhom: 'Chronic sinusitis jisme baar baar relapse ho, naak band rehti ho, patient thin/chilly ho, aur zakhm ya infection slowly theek hote hon.',
-      whyHope: 'Silicea body ki natural healing process ko boost karta hai aur chronic, recurring sinusitis mein jo patients easily sick padte hain unme long-term improvement ke liye use hoti hai.',
+      bestFor: 'Chronic sinusitis jisme baar baar relapse ho, naak band rehti ho, patient thin/chilly ho, aur zakhm ya infection slowly theek hote hon.',
+      keyIndications: [
+
+        'Silicea body ki natural healing process ko boost karta hai aur chronic, recurring sinusitis mein jo patients easily sick padte hain unme long-term improvement ke liye use hoti hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Natrum Muriaticum',
-      forWhom: 'Allergic sinusitis jisme watery/egg-white jaisi discharge ho, subah naak zyada band ho, aur condition sun se ya heat se worse ho.',
-      whyHope: 'Allergic sinusitis mein jahan trigger environmental ho (dust, sunlight, heat) aur patient reserved nature ka ho, Nat Mur underlying allergic sensitivity ko address karta hai.',
+      bestFor: 'Allergic sinusitis jisme watery/egg-white jaisi discharge ho, subah naak zyada band ho, aur condition sun se ya heat se worse ho.',
+      keyIndications: [
+
+        'Allergic sinusitis mein jahan trigger environmental ho (dust, sunlight, heat) aur patient reserved nature ka ho, Nat Mur underlying allergic sensitivity ko address karta hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Immunity Boosters',
@@ -198,8 +217,9 @@ const sinusitis = {
           'Pineapple — bromelain enzyme sinus inflammation reduce karta hai, studies mein noted',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'Mucus-Producing Foods',
@@ -208,7 +228,7 @@ const sinusitis = {
           'Maida aur processed foods — inflammatory response trigger karte hain',
           'Ice cream ya cold beverages — sinus passages mein spasm aur congestion barhata hai',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Inflammatory Triggers',
@@ -228,8 +248,6 @@ const sinusitis = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'Ye sinusitis ka peak season hai India mein — temperature drop + pollution + fog combination. Subah aur raat ko naak band hona, headache zyada — common complaint. Woolen cap aur muffler naak-kaan dhak ke bahar jaayein. Ghar mein humidifier use karein — dry indoor air congestion worse karta hai. Garam liquid intake double karein — adrak chai, soups, kadha.',
     summer: 'AC aur indoor-outdoor temperature ka fark — sinusitis trigger karta hai. AC filter monthly clean karein — mold aur dust accumulate hoti hai. AC ka temperature 18-20°C se neeche mat rakhein — 24-26°C comfortable hai. Dehydration mein mucus thick hoti hai — paani zyada piyein.',
@@ -240,7 +258,6 @@ const sinusitis = {
       'Ghar ko dust-free rakhein — regular vacuum, air purifier consider karein',
     ],
   },
-
   dos: [
     'Din mein 2 baar steam inhalation karein (plain ya Eucalyptus oil add karein) — sinus passages open rehte hain, mucus thin hota hai aur drain hone lagta hai',
     'Saline nasal rinse (Neti pot ya saline spray) subah karein — naak ki safai hoti hai, allergens flush hote hain',
@@ -378,42 +395,9 @@ const sinusitis = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'CCRH (Council for Research in Homoeopathy) | Clinical Study on Chronic Rhinosinusitis | Indian Journal of Research in Homoeopathy',
-      year: '2018',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src2',
-      title: 'WHO Global Burden of Disease — Respiratory Conditions',
-      year: '2023',
-      url: '',
-    },
-    {
-      _key: 'src3',
-      title: 'American Academy of Otolaryngology — Head and Neck Surgery (AAO-HNS) | Adult Sinusitis Clinical Practice Guidelines',
-      year: '2023',
-      url: 'https://www.entnet.org',
-    },
-    {
-      _key: 'src4',
-      title: 'Indian Journal of Otolaryngology and Head & Neck Surgery — Sinusitis Prevalence India',
-      year: '2020',
-      url: '',
-    },
-    {
-      _key: 'src5',
-      title: 'CDC — Sinus Infection (Sinusitis)',
-      year: '2024',
-      url: 'https://www.cdc.gov/antibiotic-use/sinus-infection.html',
-    },
-    {
-      _key: 'src6',
-      title: 'PubMed — Nasal Saline Irrigation in Chronic Rhinosinusitis: Systematic Review',
-      year: '2019',
-      url: '',
-    },
+    { _key: 's1', name: 'CCRH — Homeopathic Treatment of Respiratory Disorders', url: 'ccrhindia.nic.in', year: '2021' },
+    { _key: 's2', name: 'Witt CM et al — Homeopathic treatment of chronic sinusitis', url: 'pubmed.ncbi.nlm.nih.gov', year: '2012' },
+    { _key: 's3', name: 'American Academy of Otolaryngology — Sinusitis Clinical Guidelines', url: 'entnet.org', year: '2023' },
   ],
 
   doctorNote: 'Mere clinic mein jo chronic sinusitis ke patients aate hain — unme se zyaatar ne saalon tak sirf antibiotics pe depend kiya hota hai, root cause kabhi treat nahi hua. Individualized homeopathic treatment se in logon mein na sirf attacks ki frequency ghatti hai balki energy bhi kaafi improve hoti hai kyunki body chronic infection ke stress se finally bahar aati hai.',

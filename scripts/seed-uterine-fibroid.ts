@@ -139,11 +139,6 @@ const doc = {
     'Stress, mood swings, aur sleep problems jo fibroid ke saath aate hain, wo bhi address hote hain',
   ],
 
-  homeopathyLimitations: [
-    'Bahut bada fibroid ya pedunculated fibroid with torsion mein surgery zyada effective hai — homeopathy akele sufficient nahi',
-    'Submucosal fibroid jo fertility block kar raha ho usmein conventional intervention ke saath milake chalana better hota hai',
-  ],
-
   medicines: [
     {
       _key: 'med1',

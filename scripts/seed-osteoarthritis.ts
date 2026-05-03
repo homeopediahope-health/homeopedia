@@ -87,36 +87,40 @@ const doc = {
     {
       _key: 'med1',
       name: 'Rhus Toxicodendron (Rhus Tox)',
-      forWhom: 'Jinhe rest ke baad ya subah uthne par dard zyada hota hai, thodi der chalte chalte dard kam ho jaata hai, aur sardi/nammi mein badhaav ho',
-      hope: 'Rhus Tox OA ka sabse commonly indicated medicine hai. Ye "rusty gate" phenomenon – yani pehle move karne mein takleef phir improvement – ke liye specifically kaam karta hai. Joint stiffness aur ligament weakness mein bhi effective hai.',
+      bestFor: 'Jinhe rest ke baad ya subah uthne par dard zyada hota hai, thodi der chalte chalte dard kam ho jaata hai, aur sardi/nammi mein badhaav ho',
+      keyIndications: ['Rhus Tox OA ka sabse commonly indicated medicine hai. Ye "rusty gate" phenomenon – yani pehle move karne mein takleef phir improvement – ke liye specifically kaam karta hai. Joint stiffness aur ligament weakness mein bhi effective hai.'],
     },
     {
       _key: 'med2',
       name: 'Bryonia Alba',
-      forWhom: 'Jinhe bilkul bhi hilna nahi chahte kyunki movement se dard badh jaata hai – complete rest mein relief milta hai. Joint sujna bhi ho aur dard zyada ho toh',
-      hope: 'Bryonia bilkul Rhus Tox ka opposite hai – "rest better, motion worse" pattern ke liye. Hot, swollen joints mein khaas taur se effective. Akser knee OA mein flare-ups ke time use hoti hai.',
+      bestFor: 'Jinhe bilkul bhi hilna nahi chahte kyunki movement se dard badh jaata hai – complete rest mein relief milta hai. Joint sujna bhi ho aur dard zyada ho toh',
+      keyIndications: ['Bryonia bilkul Rhus Tox ka opposite hai – "rest better, motion worse" pattern ke liye. Hot, swollen joints mein khaas taur se effective. Akser knee OA mein flare-ups ke time use hoti hai.'],
     },
     {
       _key: 'med3',
       name: 'Calcarea Carbonica',
-      forWhom: 'Motapa + OA combination wale patients jinhe thanda paani takleef deta ho, jaldi thak jaate ho, aur joints mein sweating bhi ho. Overweight elderly women mein specially indicated',
-      hope: 'Calc Carb calcium metabolism improve karta hai aur bone/cartilage health support karta hai. Obesity se related OA mein ye constitution medicine ki tarah kaam karti hai – sirf joint nahi, poori system address hoti hai.',
+      bestFor: 'Motapa + OA combination wale patients jinhe thanda paani takleef deta ho, jaldi thak jaate ho, aur joints mein sweating bhi ho. Overweight elderly women mein specially indicated',
+      keyIndications: ['Calc Carb calcium metabolism improve karta hai aur bone/cartilage health support karta hai. Obesity se related OA mein ye constitution medicine ki tarah kaam karti hai – sirf joint nahi, poori system address hoti hai.'],
     },
     {
       _key: 'med4',
       name: 'Colchicum Autumnale',
-      forWhom: 'Jinhe ghutne aur chhote joints dono mein dard ho, touch karne par bahut zyada tenderness ho, aur gout bhi history mein ho. Dard itna ki pakad bhi nahi sakte',
-      hope: 'Colchicum inflammatory joint conditions mein khaas hai – OA ke saath uric acid ya inflammation component ho toh ye achhi tarah kaam karta hai. Extreme sensitivity to touch aur movement is medicine ka hallmark indication hai.',
+      bestFor: 'Jinhe ghutne aur chhote joints dono mein dard ho, touch karne par bahut zyada tenderness ho, aur gout bhi history mein ho. Dard itna ki pakad bhi nahi sakte',
+      keyIndications: ['Colchicum inflammatory joint conditions mein khaas hai – OA ke saath uric acid ya inflammation component ho toh ye achhi tarah kaam karta hai. Extreme sensitivity to touch aur movement is medicine ka hallmark indication hai.'],
     },
     {
       _key: 'med5',
       name: 'Arnica Montana',
-      forWhom: 'Jinki OA injury ke baad aayi ho, ya jinhe joint mein bruised/beaten feeling ho, chhune se darr lagta ho lekin actually touch karne par thoda relief bhi milta ho',
-      hope: 'Arnica trauma-related tissue healing mein sabse proven homeopathic medicine hai. Post-injury OA mein ya acute flare-up ke dauraan ye joint inflammation aur soreness ko address karta hai.',
+      bestFor: 'Jinki OA injury ke baad aayi ho, ya jinhe joint mein bruised/beaten feeling ho, chhune se darr lagta ho lekin actually touch karne par thoda relief bhi milta ho',
+      keyIndications: ['Arnica trauma-related tissue healing mein sabse proven homeopathic medicine hai. Post-injury OA mein ya acute flare-up ke dauraan ye joint inflammation aur soreness ko address karta hai.'],
     },
   ],
-  diet: {
-    doEat: [
+  dietInclude: [
+    {
+      _key: 'inc1',
+      category: 'Recommended Foods',
+      emoji: '🌿',
+      items: [
       'Haldi (Turmeric) – Curcumin joint inflammation reduce karta hai, kali mirch ke saath lena bioavailability badhata hai',
       'Adrak (Ginger) – Natural COX-2 inhibitor, NSAID jaisa kaam karta hai bina side effects ke',
       'Methi dana – Anti-inflammatory properties + weight manage karne mein help karta hai',
@@ -130,7 +134,15 @@ const doc = {
       'Gajar, shakarkand – Beta-carotene jo antioxidant hai aur cartilage cells ko free radical damage se bachata hai',
       'Amla – Vitamin C se rich, collagen synthesis ke liye critical – cartilage collagen se bana hai',
     ],
-    avoid: [
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Foods to Avoid',
+      emoji: '🚫',
+      items: [
       'Refined sugar (meetha, mithai, cold drinks) – Sugar inflammation badh jata hai aur weight bhi badhta hai – OA ka double enemy',
       'Maida products (white bread, biscuits, namkeen) – Refined carbs inflammatory cytokines badhate hain',
       'Processed/packaged snacks – Trans fats joint inflammation seedha trigger karte hain',
@@ -141,7 +153,29 @@ const doc = {
       'Bahut zyada chai/coffee – Bone calcium absorption ko affect karta hai; din mein 2 se zyada cups avoid karein',
       'High-sodium packaged foods (papad, achar mein excess) – Sodium se joint swelling bad ho sakti hai',
     ],
-  },
+    },
+  ],
+  dos: [
+    'Roz 30-45 minute ki low-impact exercise karein — swimming, walking, cycling — joint ko zyada load diye bina strengthen karta hai',
+    'Quadriceps (thigh muscles) strengthen karne ki exercises karein — strong thigh muscles ghutne ke joint pe pressure kam karti hain',
+    'Healthy weight maintain karein — 1 kg weight kam karna ghutne ke joint pe 4 kg pressure kam karta hai',
+    'Warm compress ya hot water bag painful joint pe lagao — stiffness aur circulation dono better hoti hai',
+    'Swimming ya water aerobics try karein — paani mein weight ka 90% float hota hai, joint stress nil hota hai',
+    'Calcium aur Vitamin D pe dhyan dein — haddion ki strength ke liye zaroor',
+    'Proper footwear use karein — cushioned soles ke saath, flat/hard sole avoid karein',
+    'Homeopathic treatment regularly lein — Rhus Tox, Bryonia combination OA ke commonest medicines hain',
+  ],
+
+  donts: [
+    'High-impact activities mat karo jab tak dard ho — running, jumping, stairs zyada — cartilage further damage hoti hai',
+    'Ek jagah ghante bhar baithna ya khada rehna avoid karo — joint stiff ho jaata hai, circulation rukti hai',
+    'Excess weight gain hone do mat — every extra kilo joints pe exponential pressure badhata hai',
+    'Painkiller roz roz khud se mat lo — side effects serious hain (gut ulcer, kidney), root cause address nahi hota',
+    'Cold weather mein ghar se bahar kapde pehne bina mat jao — temperature drop joint stiffness significantly worse karta hai',
+    'Self-diagnosed exercises start mat karo — galat exercise se cartilage aur damage ho sakti hai',
+    'Pain ignore mat karo ya "mujhe toh rehna hi hai" attitude rakho — early treatment mein better outcomes aate hain',
+  ],
+
   faqs: [
     {
       _key: 'faq1',
@@ -260,12 +294,12 @@ const doc = {
     },
   ],
   sources: [
-    'CCRH (Council for Research in Homeopathy), Ministry of AYUSH | Multi-centre Clinical Study on Knee Osteoarthritis | 2019 | ccrhindia.nic.in',
-    'World Health Organization – Osteoarthritis Fact Sheet | WHO Global Burden of Disease Report | 2023 | who.int',
-    'Osteoarthritis Research Society International (OARSI) Guidelines for Management of Knee Osteoarthritis | 2019',
-    'Lancet GBD Study – India prevalence of musculoskeletal disorders | The Lancet | 2020',
-    'National Health Portal India – Osteoarthritis | Ministry of Health & Family Welfare | nhp.gov.in',
-    'Journal of Evidence-Based Integrative Medicine – Homeopathy in Osteoarthritis: Systematic Review | 2018',
+    { _key: 's1', name: 'CCRH (Council for Research in Homeopathy), Ministry of AYUSH | Multi-centre Clin', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's2', name: 'World Health Organization – Osteoarthritis Fact Sheet | WHO Global Burden of Dis', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's3', name: 'Osteoarthritis Research Society International (OARSI) Guidelines for Management ', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's4', name: 'Lancet GBD Study – India prevalence of musculoskeletal disorders | The Lancet | ', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's5', name: 'National Health Portal India – Osteoarthritis | Ministry of Health & Family Welf', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's6', name: 'Journal of Evidence-Based Integrative Medicine – Homeopathy in Osteoarthritis: S', url: 'ccrhindia.nic.in', year: '2024' },
   ],
   quickFacts: [
     'Osteoarthritis India ka #1 joint disorder hai – 60 million se zyada Indians affect hain. Diabetes ke baad dusri sabse common chronic disability cause hai India mein 45+ age group mein.',

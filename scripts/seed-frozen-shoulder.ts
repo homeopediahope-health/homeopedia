@@ -136,32 +136,52 @@ const disease = {
     {
       _key: 'med1',
       name: 'Rhus Toxicodendron',
-      forWhom: 'Jinhe rest pe zyada dard hota hai, thodi movement se dard kam ho jaata hai, subah uthne pe akadhat bahut hoti hai',
-      whyHope: 'Ye medicine joints aur connective tissue pe kaam karti hai — especially wahan jahan "rust ki tarah" akadhat ho aur warmth se aaram mile. Frozen shoulder ke initial stage mein bahut useful mani jaati hai.',
+      bestFor: 'Jinhe rest pe zyada dard hota hai, thodi movement se dard kam ho jaata hai, subah uthne pe akadhat bahut hoti hai',
+      keyIndications: [
+
+        'Ye medicine joints aur connective tissue pe kaam karti hai — especially wahan jahan "rust ki tarah" akadhat ho aur warmth se aaram mile. Frozen shoulder ke initial stage mein bahut useful mani jaati hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Bryonia Alba',
-      forWhom: 'Jinhe movement se dard zyada badh jaata hai — bilkul bhi hilana nahi chahte, rest pe better feel hota hai, dard stitching type ka ho',
-      whyHope: 'Ye medicine inflammation aur sharp pain mein use hoti hai jahan har movement pain badha de. Frozen stage mein jab movement minimum hoti hai, Bryonia kaafi helpful hai.',
+      bestFor: 'Jinhe movement se dard zyada badh jaata hai — bilkul bhi hilana nahi chahte, rest pe better feel hota hai, dard stitching type ka ho',
+      keyIndications: [
+
+        'Ye medicine inflammation aur sharp pain mein use hoti hai jahan har movement pain badha de. Frozen stage mein jab movement minimum hoti hai, Bryonia kaafi helpful hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Ferrum Metallicum',
-      forWhom: 'Kandhe ka dard jo raat ko letne pe aur bhi badh jaaye, haath neeche latkane pe thoda relief mile, anemia ya weakness bhi saath mein ho',
-      whyHope: 'Shoulder joint pe iska specific effect hai — especially raat ke dard mein aur patients jo anemic ya generally weak hain unme kaafi kaam karti hai.',
+      bestFor: 'Kandhe ka dard jo raat ko letne pe aur bhi badh jaaye, haath neeche latkane pe thoda relief mile, anemia ya weakness bhi saath mein ho',
+      keyIndications: [
+
+        'Shoulder joint pe iska specific effect hai — especially raat ke dard mein aur patients jo anemic ya generally weak hain unme kaafi kaam karti hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Sanguinaria Canadensis',
-      forWhom: 'Right-sided frozen shoulder, raat ko karvat nahi le paate right side pe, dard shoulder se neeche haath ki taraf jaata ho',
-      whyHope: 'Is medicine ka right shoulder aur brachial region pe specific action dono practitioners aur literature mein extensively documented hai. Right-sided cases mein khaas kaam karti hai.',
+      bestFor: 'Right-sided frozen shoulder, raat ko karvat nahi le paate right side pe, dard shoulder se neeche haath ki taraf jaata ho',
+      keyIndications: [
+
+        'Is medicine ka right shoulder aur brachial region pe specific action dono practitioners aur literature mein extensively documented hai. Right-sided cases mein khaas kaam karti hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Causticum',
-      forWhom: 'Lamba time se frozen shoulder, muscles tighten ho gayi hoon, patient elderly ho ya diabetes ho, tendons aur fibrous tissue involvement',
-      whyHope: 'Causticum fibrous tissue aur chronic contractures mein kaam karta hai — jo frozen shoulder mein hoti hai. Thawing stage mein movement wapas laane mein help karta hai.',
+      bestFor: 'Lamba time se frozen shoulder, muscles tighten ho gayi hoon, patient elderly ho ya diabetes ho, tendons aur fibrous tissue involvement',
+      keyIndications: [
+
+        'Causticum fibrous tissue aur chronic contractures mein kaam karta hai — jo frozen shoulder mein hoti hai. Thawing stage mein movement wapas laane mein help karta hai.',
+
+      ],
     },
   ],
 

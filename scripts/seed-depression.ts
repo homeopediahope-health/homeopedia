@@ -114,11 +114,6 @@ const depression = {
     'Postpartum, elderly, aur teens mein bhi safe — sensitive groups ke liye ideal option',
   ],
 
-  homeopathyLimitations: [
-    'Severe clinical depression ya active suicidal ideation mein akele homeopathy kaafi nahi — psychiatrist se milna aur conventional treatment parallel mein zaroori hai',
-    'Bipolar disorder-associated depression mein careful monitoring aur specialist guidance zaroori hai — homeopathy alone nahi',
-  ],
-
   medicines: [
     {
       _key: 'ignatia',

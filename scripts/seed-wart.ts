@@ -122,7 +122,7 @@ const doc = {
 
   homeopathyExplainer: 'Homeopathy wart treatment mein sirf baahri growth ko nahi, balki us HPV infection ke against body ki resistance ko strengthen karta hai. Ye approach is liye important hai kyunki agar sirf wart hataaya aur underlying viral tendency address nahi ki, to wart dobara aa sakta hai. Homeopathic medicines body ke immune response ko HPV ke against activate karti hain, saath hi jo constitution wart-prone hai usse bhi treat karti hain. Kai cases mein, sahi homeopathic remedy se wart khud-ba-khud khatam hone laga aur naye warts bhi nahi aaye.',
 
-  ccrhData: {
+  ccrhEvidence: {
     improvementRate: 'CCRH-affiliated clinical observation mein, common wart ke 68-70% cases mein homeopathic treatment group ne significant size reduction ya complete resolution dikhaaya — placebo group mein yahi rate kaafi kam tha.',
     avgTreatmentPeriod: '3 se 6 mahine (complexity aur number of warts pe depend karta hai)',
     citation: 'CCRH Clinical Research Unit Observations, Published findings in Indian Journal of Research in Homoeopathy, 2014-2019',
@@ -137,65 +137,110 @@ const doc = {
     {
       _key: 'med1',
       name: 'Thuja Occidentalis',
-      forWhom: 'Pedunculated (stem wali), soft, fleshy warts — especially genital area ya face pe; jinhe wart touch karne pe dard ya sensitivity ho.',
-      whyHope: 'Thuja wart treatment mein sabse classically indicated medicine hai. Ye HPV jaise viral infections mein body ki immune response ko modulate karne ke liye jaana jaata hai. Kai homoeopathic practitioners ne ise wart resolve karne mein most reliable find kiya hai — especially jo warts moist jagah pe hain.',
+      bestFor: 'Pedunculated (stem wali), soft, fleshy warts — especially genital area ya face pe; jinhe wart touch karne pe dard ya sensitivity ho.',
+      keyIndications: [
+
+        'Thuja wart treatment mein sabse classically indicated medicine hai. Ye HPV jaise viral infections mein body ki immune response ko modulate karne ke liye jaana jaata hai. Kai homoeopathic practitioners ne ise wart resolve karne mein most reliable find kiya hai — especially jo warts moist jagah pe hain.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Causticum',
-      forWhom: 'Hard, rough, jagged warts — khaaskar fingers, nose, ya eyelids pe; warts jo bleed karein.',
-      whyHope: 'Causticum skin tissue pe deep action karta hai. Common wart aur filiform wart jo easily bleed karte hain ya hard hain unme particularly useful hai. Ye skin ki chronic tendencies address karta hai.',
+      bestFor: 'Hard, rough, jagged warts — khaaskar fingers, nose, ya eyelids pe; warts jo bleed karein.',
+      keyIndications: [
+
+        'Causticum skin tissue pe deep action karta hai. Common wart aur filiform wart jo easily bleed karte hain ya hard hain unme particularly useful hai. Ye skin ki chronic tendencies address karta hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Antimonium Crudum',
-      forWhom: 'Horny, hard, plantar-type warts; jinhe saath mein digestive complaints bhi hain; moody ya irritable patients.',
-      whyHope: 'Antimonium Crudum talhon ke warts mein bahut effective dekha gaya hai. Ye skin ki keratinization (hardening tendency) pe act karta hai — hard, callus-jaisi warts isme respond karti hain.',
+      bestFor: 'Horny, hard, plantar-type warts; jinhe saath mein digestive complaints bhi hain; moody ya irritable patients.',
+      keyIndications: [
+
+        'Antimonium Crudum talhon ke warts mein bahut effective dekha gaya hai. Ye skin ki keratinization (hardening tendency) pe act karta hai — hard, callus-jaisi warts isme respond karti hain.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Dulcamara',
-      forWhom: 'Flat, smooth warts — haath ke peeche pe; warts jo baarish ke season mein ya nami se badhein.',
-      whyHope: 'Dulcamara ka link moisture aur damp conditions se hai. Flat warts jo monsoon ya sardi-nami mein zyada ho jaayein unme ye medicine kaafi relevant hai.',
+      bestFor: 'Flat, smooth warts — haath ke peeche pe; warts jo baarish ke season mein ya nami se badhein.',
+      keyIndications: [
+
+        'Dulcamara ka link moisture aur damp conditions se hai. Flat warts jo monsoon ya sardi-nami mein zyada ho jaayein unme ye medicine kaafi relevant hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Nitric Acid',
-      forWhom: 'Warts jo easily bleed karein touch pe; jagged, irregular surface; anal ya mucosal areas ke warts.',
-      whyHope: 'Nitric Acid skin aur mucous membrane ke junction pe hone wale warts mein bahut kaam aata hai. Bleeding tendency aur pricking/splinter-like pain is medicine ka guide hai.',
+      bestFor: 'Warts jo easily bleed karein touch pe; jagged, irregular surface; anal ya mucosal areas ke warts.',
+      keyIndications: [
+
+        'Nitric Acid skin aur mucous membrane ke junction pe hone wale warts mein bahut kaam aata hai. Bleeding tendency aur pricking/splinter-like pain is medicine ka guide hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    eat: [
-      { category: 'Immunity Boosters', items: ['Amla (Indian Gooseberry) — Vitamin C ka powerhouse, HPV ke against immune response strengthen karta hai', 'Haldi wala doodh — Curcumin antiviral property rakhta hai, skin healing mein helpful', 'Lasson (Garlic) — Allicin compound antiviral aur immunity-boosting hai', 'Adrak ki chai — Anti-inflammatory, skin immunity support karta hai'] },
-      { category: 'Zinc-Rich Foods', items: ['Kaddu ke beej (Pumpkin seeds) — Zinc se bharpur, HPV suppression mein zinc ka role research-supported hai', 'Til (Sesame seeds) — Zinc aur healthy fats dono milte hain', 'Dal (Lentils) — Plant-based zinc + protein for skin repair', 'Moong sabut — Easy to digest, zinc + folate'] },
-      { category: 'Antioxidant-Rich Foods', items: ['Tamatar — Lycopene wart-prone skin ki protection mein helpful', 'Palak aur green leafy vegetables — Beta-carotene skin immunity ke liye', 'Berries (Jamun, Shahtoot) — Antioxidants jo viral load kam karne mein madadgar', 'Gajar — Beta-carotene se skin tissue repair hoti hai'] },
-    ],
-    avoid: [
-      { category: 'Processed & Sugary Foods', items: ['Maida-based foods — Inflammation badhata hai, immune response weaken karta hai', 'Refined sugar — HPV jaise viral infections sugar se worse ho sakte hain', 'Packaged snacks, chips — Trans fats skin health kharaab karte hain'] },
-      { category: 'Immune-Suppressing Foods', items: ['Alcohol — Direct immune suppressor, wart recurrence badhata hai', 'Processed meat (sausage, salami) — Preservatives inflammation trigger karte hain', 'Fried foods — Skin inflammation aur poor immunity'] },
-      { category: 'Trigger Foods', items: ['Excess dairy (agar skin allergies hain) — Kuch patients mein HPV skin response dairy se worse hoti hai', 'High-mercury fish — Immunity pe negative impact', 'Caffeine excess — Sleep disturb karta hai, immune recovery slow'] },
-    ],
-    dietTip: 'Zinc aur Vitamin C combination HPV ke against body ki best defence hai. Roz ek amla + ek mutthi kaddu ke beej ya til khaein. Garlic aur haldi daily cooking mein zaroor use karein — ye antiviral kitchen medicines hain.',
-    dietNote: 'Wart mein sabse zaroori diet principle: refined sugar aur alcohol minimize karein — dono directly immune suppressor hain. Strong immunity = wart khud theek hone ki probability zyada + treatment faster.',
+  seasonalCare: {
+    summer: 'Paseena aur heat wart area ko macerate karta hai — anti-fungal + dry powder use karein. Pool/gym mein flip-flops compulsory — plantar wart ka peak season. Sun exposure (UV) naturally wart suppress karta hai healthy skin pe.',
+    monsoon: 'Nami mein HPV bahut tezi se phailta hai — public toilets, wet floors avoid karein. Pair hamesha dry rakhen — nami mein wart size aur number dono bad sakte hain. Rubber slippers public places pe — pair directly floor se mat lagao.',
+    winter: 'Skin dry hone se warts crack kar sakte hain — moisturize karo lekin wart par directly nahi. Immunity naturally thodi dip karti hai — homeopathic constitutional treatment ke liye best season. Heater se dry air — humidifier use karein.',
   },
 
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'sc1',
-      season: 'Monsoon (July – September) — High Risk Period',
-      tip: 'Nami mein HPV bahut tezi se phailta hai — public toilets, wet floors avoid karein. Pair hamesha dry rakhen — nami mein wart size aur number dono bad sakte hain. Rubber slippers public places pe — pair directly floor se mat lagao.',
+      _key: 'inc1',
+      category: 'Immunity & Antiviral Boosters',
+      emoji: '🛡️',
+      items: [
+        'Amla (Indian Gooseberry) — Vitamin C ka powerhouse, HPV ke against immune response strengthen karta hai',
+        'Lahsun (Garlic) — Allicin compound antiviral aur immunity-boosting hai',
+        'Haldi wala doodh — Curcumin antiviral property rakhta hai, skin healing mein helpful',
+        'Adrak ki chai — Anti-inflammatory, skin immunity support karta hai',
+        'Tamatar — Lycopene wart-prone skin ki protection mein helpful',
+      ],
     },
     {
-      _key: 'sc2',
-      season: 'Summer (March – June)',
-      tip: 'Paseena aur heat wart area ko macerate karta hai — anti-fungal + dry powder use karein. Pool/gym mein flip-flops compulsory — plantar wart ka peak season. Sun exposure (UV) naturally wart suppress karta hai healthy skin pe.',
+      _key: 'inc2',
+      category: 'Zinc-Rich & Antioxidant Foods',
+      emoji: '⚡',
+      items: [
+        'Kaddu ke beej (Pumpkin seeds) — Zinc se bharpur, HPV suppression mein zinc ka role research-supported hai',
+        'Til (Sesame seeds) — Zinc aur healthy fats dono milte hain',
+        'Moong dal — easy to digest, zinc + folate',
+        'Palak aur green leafy vegetables — Beta-carotene skin immunity ke liye',
+        'Jamun, shahtoot (berries) — antioxidants jo viral load kam karne mein madadgar',
+      ],
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Immune-Suppressing Foods',
+      emoji: '🚫',
+      items: [
+        'Refined sugar — HPV jaise viral infections sugar se worse ho sakte hain',
+        'Alcohol — Direct immune suppressor, wart recurrence badhata hai',
+        'Maida-based foods — Inflammation badhata hai, immune response weaken karta hai',
+        'Fried foods — Skin inflammation aur poor immunity',
+        'Packaged snacks, chips — Trans fats skin health kharaab karte hain',
+      ],
     },
     {
-      _key: 'sc3',
-      season: 'Winter (November – February)',
-      tip: 'Skin dry hone se warts crack kar sakte hain — moisturize karo lekin wart par directly nahi. Immunity naturally thodi dip karti hai — homeopathic constitutional treatment ke liye best season. Heater se dry air — humidifier use karein.',
+      _key: 'avd2',
+      category: 'Other Triggers',
+      emoji: '⚠️',
+      items: [
+        'Caffeine excess — Sleep disturb karta hai, immune recovery slow',
+        'Processed meat (sausage, salami) — Preservatives inflammation trigger karte hain',
+        'Excess dairy (agar skin allergies hain) — kuch patients mein HPV skin response dairy se worse',
+      ],
     },
   ],
 
@@ -333,11 +378,11 @@ const doc = {
   ],
 
   sources: [
-    'CCRH (Central Council for Research in Homoeopathy) — Clinical Observations on Skin Diseases | 2014-2019 | ccrhindia.nic.in',
-    'World Health Organization (WHO) — Human Papillomavirus and Related Diseases | 2023',
-    'American Academy of Dermatology (AAD) — Warts: Diagnosis and Treatment | 2022',
-    'Indian Journal of Research in Homoeopathy — Thuja Occidentalis in Wart Cases | Vol 10, 2016',
-    'PubMed / NIH — Topical treatment of warts with Thuja Occidentalis: a review | 2018',
+    { _key: 's1', name: 'CCRH (Central Council for Research in Homoeopathy) — Clinical Observations on Sk', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's2', name: 'World Health Organization (WHO) — Human Papillomavirus and Related Diseases | 20', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's3', name: 'American Academy of Dermatology (AAD) — Warts: Diagnosis and Treatment | 2022', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's4', name: 'Indian Journal of Research in Homoeopathy — Thuja Occidentalis in Wart Cases | V', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's5', name: 'PubMed / NIH — Topical treatment of warts with Thuja Occidentalis: a review | 20', url: 'ccrhindia.nic.in', year: '2024' },
   ],
 
   doctorNote: 'Clinic mein sabse zyada jo cases aate hain unme wart treatment ek ya do baar already try ho chuki hoti hai — ya to acid se burn, ya nakhun se kaat ke. Aur ye log isliye aate hain kyunki wart dobara aa gaya. Thuja ya Causticum se humne kai patients mein na sirf wart theek kiya, balki dobara bhi nahi aaya — constitution theek hona hi actual treatment hai.',

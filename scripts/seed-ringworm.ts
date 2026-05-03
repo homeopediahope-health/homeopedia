@@ -146,11 +146,6 @@ const doc = {
     'Skin ke saath digestive ya stress issues bhi address hote hain jo recurrence badhate hain',
   ],
 
-  homeopathyLimitations: [
-    'Severe nail ringworm (onychomycosis) mein conventional oral antifungals zyada fast kaam karte hain',
-    'Kerion ya secondary bacterial infection mein conventional antibiotics zaroori ho sakte hain',
-  ],
-
   medicines: [
     {
       _key: 'med1',

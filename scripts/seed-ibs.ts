@@ -104,11 +104,6 @@ const ibs = {
     'Long-term remission possible — symptoms sirf dabte nahi, pattern tootti hai',
   ],
 
-  homeopathyLimitations: [
-    'IBS-D ke severe acute episodes mein conventional ORS aur antidiarrheals faster relief dete hain — homeopathy parallel ya baad mein add karna practical hai',
-    'IBD (Crohn\'s, Ulcerative Colitis) se pehle clearly differentiate karna zaroori hai — colonoscopy se rule out karo, phir homeopathy shuru karo',
-  ],
-
   medicines: [
     {
       _key: 'med1',

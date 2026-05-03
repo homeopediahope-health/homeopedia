@@ -89,36 +89,40 @@ const doc = {
     {
       _key: 'med1',
       name: 'Chelidonium Majus',
-      forWhom: 'Jigar ki daayein taraf bhaari pan feel karne wale, hamesha thake hue, jaundice tendency wale, RUQ discomfort wale patients',
-      hope: 'Chelidonium directly liver aur bile duct pe kaam karta hai. Bile flow improve karta hai, liver congestion kam karta hai aur SGPT/SGOT reduce karne mein madadgar maana jaata hai.',
+      bestFor: 'Jigar ki daayein taraf bhaari pan feel karne wale, hamesha thake hue, jaundice tendency wale, RUQ discomfort wale patients',
+      keyIndications: ['Chelidonium directly liver aur bile duct pe kaam karta hai. Bile flow improve karta hai, liver congestion kam karta hai aur SGPT/SGOT reduce karne mein madadgar maana jaata hai.'],
     },
     {
       _key: 'med2',
       name: 'Carduus Marianus (Milk Thistle)',
-      forWhom: 'Jo log alcohol ya junk food ki wajah se fatty liver develop kar chuke hain, ya jinhein liver ka bhaari pan bloating ke saath rehta hai',
-      hope: 'Silymarin-like action – liver cells ko protect karta hai aur unki regeneration support karta hai. Toxin exposure ke baad liver recovery mein ek strong classical choice.',
+      bestFor: 'Jo log alcohol ya junk food ki wajah se fatty liver develop kar chuke hain, ya jinhein liver ka bhaari pan bloating ke saath rehta hai',
+      keyIndications: ['Silymarin-like action – liver cells ko protect karta hai aur unki regeneration support karta hai. Toxin exposure ke baad liver recovery mein ek strong classical choice.'],
     },
     {
       _key: 'med3',
       name: 'Lycopodium Clavatum',
-      forWhom: 'Khaane ke baad pet phoolne wale, gas ki problem, right side pe discomfort, stress aur anxiety se liver symptoms worse hone wale patients',
-      hope: 'Lycopodium liver + digestive system dono ka saath mein classical medicine hai. Jab fatty liver ke saath IBS-type symptoms aur anxiety bhi ho – ye type bahut closely match karta hai.',
+      bestFor: 'Khaane ke baad pet phoolne wale, gas ki problem, right side pe discomfort, stress aur anxiety se liver symptoms worse hone wale patients',
+      keyIndications: ['Lycopodium liver + digestive system dono ka saath mein classical medicine hai. Jab fatty liver ke saath IBS-type symptoms aur anxiety bhi ho – ye type bahut closely match karta hai.'],
     },
     {
       _key: 'med4',
       name: 'Nux Vomica',
-      forWhom: 'Office-goers jinki sedentary lifestyle hai, jo zyada chai/coffee/spicy food khaate hain, jo stress mein hote hain aur jinhein subah nausea feel hoti hai',
-      hope: 'Modern urban lifestyle se bani fatty liver ke liye ek bahut commonly matching medicine. Liver ki functional sluggishness aur toxic overload mein classical choice.',
+      bestFor: 'Office-goers jinki sedentary lifestyle hai, jo zyada chai/coffee/spicy food khaate hain, jo stress mein hote hain aur jinhein subah nausea feel hoti hai',
+      keyIndications: ['Modern urban lifestyle se bani fatty liver ke liye ek bahut commonly matching medicine. Liver ki functional sluggishness aur toxic overload mein classical choice.'],
     },
     {
       _key: 'med5',
       name: 'Phosphorus',
-      forWhom: 'Fatty liver jo aage badh ke inflammation ya early fibrosis ki taraf ja raha ho, liver enlargement wale cases, saath mein weakness aur weight loss bhi ho',
-      hope: 'Advanced liver pathology mein phosphorus ek important liver-specific medicine hai – cells ki degeneration slow karne mein aur overall liver function support karne mein madadgar.',
+      bestFor: 'Fatty liver jo aage badh ke inflammation ya early fibrosis ki taraf ja raha ho, liver enlargement wale cases, saath mein weakness aur weight loss bhi ho',
+      keyIndications: ['Advanced liver pathology mein phosphorus ek important liver-specific medicine hai – cells ki degeneration slow karne mein aur overall liver function support karne mein madadgar.'],
     },
   ],
-  diet: {
-    doEat: [
+  dietInclude: [
+    {
+      _key: 'inc1',
+      category: 'Recommended Foods',
+      emoji: '🌿',
+      items: [
       'Karela (Bitter Gourd) – liver enzymes normalize karne mein scientifically proven, bile production stimulate karta hai',
       'Lauki (Bottle Gourd) – light, alkaline, liver cooling vegetable – fatty liver mein classic choice',
       'Palak, Methi, Saag – chlorophyll-rich greens liver detox support karte hain',
@@ -135,7 +139,15 @@ const doc = {
       'Dalchini wali chai – insulin sensitivity improve karta hai',
       'Nimboo pani (no sugar) – liver flush ka natural support',
     ],
-    avoid: [
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Foods to Avoid',
+      emoji: '🚫',
+      items: [
       'Maida (white flour) – directly liver fat mein convert hota hai – naan, puri, samosa, bread sab',
       'Refined sugar, chocolates, mithai – fructose liver mein directly fat ke roop mein store hoti hai',
       'Cold drinks, packaged juices – liquid sugar ka worst form hai liver ke liye',
@@ -148,7 +160,30 @@ const doc = {
       'Packaged food with preservatives – liver ko detox karne mein zyada kaam padta hai',
       'Excess salt – water retention badhata hai, liver stress add karta hai',
     ],
-  },
+    },
+  ],
+  dos: [
+    'Subah uthte hi gunguna nimboo pani peeyein — liver detox naturally activate hota hai',
+    'Roz 30-45 min brisk walk ya moderate exercise karein — akeli walking bhi liver fat reduce karti hai',
+    'Raat ka khana 7-8 baje tak finish karein — late eating liver pe fat accumulation badhata hai',
+    'Kapalbhati 10-15 min daily karein — abdominal organs stimulate hote hain, fat metabolism boost hota hai',
+    'Amla ya amla juice daily lein — Vitamin C + antioxidants liver cells protect karte hain',
+    'Khana choti plates mein aur slow chaba ke khaayein — portion control aur digestion dono improve hote hain',
+    'Har 3 mahine mein LFT test aur har 6 mahine mein ultrasound karwaayein — actual progress track karo',
+    'Thyroid aur blood sugar control mein rakhein — ye dono fatty liver ke drivers hain',
+  ],
+
+  donts: [
+    'Alcohol bilkul band karein — alcoholic ya non-alcoholic fatty liver dono mein zero tolerance',
+    'Maida, packaged biscuits, cold drinks aur mithai avoid karein — ye liver mein fat directly store karte hain',
+    'Dalda/Vanaspati (hydrogenated oil) mein bana khana band karein — trans fat liver cells damage karta hai',
+    'Crash diet ya rapid weight loss mat karein — weekly 1 kg se zyada weight loss NASH trigger kar sakta hai',
+    'Raat 10 baje ke baad heavy khana mat khaao — liver ko repair ka time chahiye, late meal se kaam badh jaata hai',
+    'Self-medicate mat karein "liver tonics" se — bina doctor advice ke market products se nuksaan ho sakta hai',
+    'Fried food aur processed meats avoid karein — saturated fat + preservatives = liver enemy combo',
+    'Thakaan ya koi symptom feel ho to ignore mat karein — regular monitoring essential hai Grade 2+ mein',
+  ],
+
   faqs: [
     {
       _key: 'faq1',
@@ -277,12 +312,13 @@ const doc = {
     },
   ],
   sources: [
-    'CCRH (Central Council for Research in Homoeopathy) | Clinical Studies on Hepatic Conditions | 2018-2022',
-    'World Health Organization – Global Hepatitis Report | 2022 | who.int',
-    'Lancet GBD Study – India Liver Disease Burden | 2023',
-    'American Liver Foundation – NAFLD Information | liverfoundation.org',
-    'PubMed – "Exercise and NAFLD: Systematic Review" | 2021',
-    'Indian Journal of Gastroenterology – NAFLD Prevalence India | 2022',
+    { _key: 's1', name: 'CCRH (Central Council for Research in Homoeopathy) | Clinical Studies on Hepatic', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's2', name: 'World Health Organization – Global Hepatitis Report | 2022 | who.int', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's3', name: 'Lancet GBD Study – India Liver Disease Burden | 2023', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's4', name: 'American Liver Foundation – NAFLD Information | liverfoundation.org', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's5', name: 'PubMed – ', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's6', name: ' | 2021', url: 'ccrhindia.nic.in', year: '2024' },
+    { _key: 's7', name: 'Indian Journal of Gastroenterology – NAFLD Prevalence India | 2022', url: 'ccrhindia.nic.in', year: '2024' },
   ],
   quickFacts: [
     'NAFLD affects approximately 25% of Indian adults – India mein sabse underdiagnosed liver condition',

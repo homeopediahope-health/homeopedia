@@ -182,11 +182,6 @@ const insomnia = {
     'Safe for elderly, pregnant women, aur children — jab qualified doctor ke under liya jaaye',
   ],
 
-  homeopathyLimitations: [
-    'Sleep apnea mein homeopathy adequate nahi — CPAP machine ya ENT evaluation zaroori hai',
-    'Severe depression-linked insomnia mein psychiatric evaluation pehle zaroori hai — homeopathy supporting role mein kaam karta hai',
-  ],
-
   medicines: [
     {
       _key: 'med1',

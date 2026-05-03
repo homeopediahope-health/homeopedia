@@ -111,31 +111,50 @@ const doc = {
     {
       _key: 'med1',
       name: 'Rhus Toxicodendron',
-      forWhom: 'Jin logon ka dard rest ke baad — khaaskar subah uthke — bahut zyada hota hai lekin thodi activity ke baad thoda better feel hota hai. "First movement mein bahut dard, phir thoda theek" — ye inka typical pattern hai.',
+      bestFor: 'Jin logon ka dard rest ke baad — khaaskar subah uthke — bahut zyada hota hai lekin thodi activity ke baad thoda better feel hota hai. "First movement mein bahut dard, phir thoda theek" — ye inka typical pattern hai.',
+      keyIndications: [
+        'Jin logon ka dard rest ke baad — khaaskar subah uthke — bahut zyada hota hai lekin thodi activity ke baad thoda better feel hota hai. "First movement mein bahut dard',
+        'phir thoda theek" — ye inka typical pattern hai.',
+      ],
       hopeReason: 'Rhus Tox ka classic action hai stiffness aur tearing pain on first motion jo warm-up se better ho. Plantar fasciitis ka morning dard bilkul isi pattern pe fit baithta hai. Tissue level pe inflammation aur micro-damage ki healing mein bhi documented use hai.',
     },
     {
       _key: 'med2',
       name: 'Ruta Graveolens',
-      forWhom: 'Jinhein tendons aur ligaments ki weakness ya injury ki history ho — heel mein bruised, sore, achy feeling ho. Khas tor pe jinhe zyada physical activity ke baad pain badhe.',
+      bestFor: 'Jinhein tendons aur ligaments ki weakness ya injury ki history ho — heel mein bruised, sore, achy feeling ho. Khas tor pe jinhe zyada physical activity ke baad pain badhe.',
+      keyIndications: [
+        'Jinhein tendons aur ligaments ki weakness ya injury ki history ho — heel mein bruised',
+        'sore',
+        'achy feeling ho. Khas tor pe jinhe zyada physical activity ke baad pain badhe.',
+      ],
       hopeReason: 'Ruta specifically tendons, ligaments aur periosteum (bone covering) pe kaam karta hai. Plantar fascia ek tough ligamentous band hai — Ruta is tissue type ke liye homeopathy ka most specific remedy hai.',
     },
     {
       _key: 'med3',
       name: 'Calcarea Fluorica',
-      forWhom: 'Jinhein calcaneal spur (heel bone growth) confirmed ho ya jin cases mein fascia bahut thick aur hard ho gayi ho. Chronic cases jinhein badhne mein zyada waqt laga ho.',
+      bestFor: 'Jinhein calcaneal spur (heel bone growth) confirmed ho ya jin cases mein fascia bahut thick aur hard ho gayi ho. Chronic cases jinhein badhne mein zyada waqt laga ho.',
+      keyIndications: [
+        'Jinhein calcaneal spur (heel bone growth) confirmed ho ya jin cases mein fascia bahut thick aur hard ho gayi ho. Chronic cases jinhein badhne mein zyada waqt laga ho.',
+      ],
       hopeReason: 'Calcarea Fluor bony tissues aur fibrous tissue ki hardness ko address karta hai. Spur-associated cases mein aur fascia ke chronic thickening mein iska documented clinical use hai.',
     },
     {
       _key: 'med4',
       name: 'Hekla Lava',
-      forWhom: 'Calcaneal spur ke cases jinmein X-ray pe bony growth confirm ho aur dard constant ho — especially touchy, nodular tenderness heel pe ho.',
+      bestFor: 'Calcaneal spur ke cases jinmein X-ray pe bony growth confirm ho aur dard constant ho — especially touchy, nodular tenderness heel pe ho.',
+      keyIndications: [
+        'Calcaneal spur ke cases jinmein X-ray pe bony growth confirm ho aur dard constant ho — especially touchy',
+        'nodular tenderness heel pe ho.',
+      ],
       hopeReason: 'Hekla Lava bone growths aur exostoses (extra bony deposits) ke liye specific action rakhta hai. Dental aur calcaneal bony overgrowth dono mein historically aur clinically use hota hai.',
     },
     {
       _key: 'med5',
       name: 'Bryonia Alba',
-      forWhom: 'Jinhein any movement se dard bahut badhe — bilkul rest mein hi better feel ho. Pressure se thoda relief milta ho. Ye Rhus Tox se ulta pattern hai.',
+      bestFor: 'Jinhein any movement se dard bahut badhe — bilkul rest mein hi better feel ho. Pressure se thoda relief milta ho. Ye Rhus Tox se ulta pattern hai.',
+      keyIndications: [
+        'Jinhein any movement se dard bahut badhe — bilkul rest mein hi better feel ho. Pressure se thoda relief milta ho. Ye Rhus Tox se ulta pattern hai.',
+      ],
       hopeReason: 'Bryonia "worse by every motion, better by rest and pressure" ka classical remedy hai. Kuch plantar fasciitis patients ka exact pattern ye hota hai — especially acute inflammatory phase mein.',
     },
   ],

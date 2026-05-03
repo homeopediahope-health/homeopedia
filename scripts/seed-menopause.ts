@@ -119,7 +119,7 @@ const doc = {
 
   homeopathyExplainer: 'Homeopathy menopause ko ek disease nahi, ek transition samjhta hai — aur isi liye treatment ka focus symptoms band karna nahi balki body ko is transition mein smoothly adjust karna hota hai. Har mahila ka menopause alag hota hai — kisi ko zyada hot flashes, kisi ko mood swings, kisi ko neend ki takleef. Homeopathy mein aapki puri picture dekhi jaati hai aur usi ke hisaab se individualized medicines di jaati hain jo hormonal axis ko naturally support karte hain.',
 
-  ccrhData: {
+  ccrhEvidence: {
     improvementRate: 'CCRH ke clinical studies mein menopause symptoms — khaaskar hot flashes, mood disturbances aur sleep issues — mein treatment group ke patients mein Greene Climacteric Scale par meaningful improvement dekha gaya, jo placebo group ke comparison mein significantly better tha.',
     avgTreatmentPeriod: '3 se 6 mahine (symptom severity ke hisaab se)',
     citation: 'Central Council for Research in Homoeopathy (CCRH), New Delhi. Clinical Research Studies on Menopausal Syndrome | 2018-2022. Journal of Research in Homoeopathy.',
@@ -134,77 +134,120 @@ const doc = {
     {
       _key: 'med1',
       name: 'Lachesis',
-      forWhom: 'Bohot intense hot flashes jo subah uthne ke baad ya neend ke dauraan aate hain, left side zyada affected, baat karna nahi rokna chahti, jealousy ya suspicion tendency.',
-      whyHope: 'Lachesis venous congestion aur vascular sensitivity ke saath associate hai — menopause mein jo sudden blood rush aur heat ki waves aati hain, un par is medicine ka classical indication milta hai. Historically menopause ka "queen remedy" maana jaata hai.',
+      bestFor: 'Bohot intense hot flashes jo subah uthne ke baad ya neend ke dauraan aate hain, left side zyada affected, baat karna nahi rokna chahti, jealousy ya suspicion tendency.',
+      keyIndications: [
+
+        'Lachesis venous congestion aur vascular sensitivity ke saath associate hai — menopause mein jo sudden blood rush aur heat ki waves aati hain, un par is medicine ka classical indication milta hai. Historically menopause ka "queen remedy" maana jaata hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Sepia',
-      forWhom: 'Thaka hua, udaas, sab se door rehna chahti hai. Hot flashes ke saath paseena, beardown sensation (neeche ki taraf kheench ka feeling), libido bilkul khatam.',
-      whyHope: 'Sepia primarily hormonal aur uterine exhaustion ki state address karta hai. Jo mahila feel karti hai ki "sab kuch bahut zyada ho gaya" — emotionally aur physically — us type mein ye medicine bahut effective historical track record rakhti hai.',
+      bestFor: 'Thaka hua, udaas, sab se door rehna chahti hai. Hot flashes ke saath paseena, beardown sensation (neeche ki taraf kheench ka feeling), libido bilkul khatam.',
+      keyIndications: [
+
+        'Sepia primarily hormonal aur uterine exhaustion ki state address karta hai. Jo mahila feel karti hai ki "sab kuch bahut zyada ho gaya" — emotionally aur physically — us type mein ye medicine bahut effective historical track record rakhti hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Sulphur',
-      forWhom: 'Bahut tez burning hot flashes, raat ko paon garam lag rahe hain aur cover hataana chahti hain, skin problems saath mein, subah 11 baje bhook lagti hai.',
-      whyHope: 'Sulphur heat sensitivity aur vascular reactivity ka constitutional remedy hai. Menopause mein jab body ki thermostat completely disturbed ho, especially burning sensations ke saath — tab sulphur ka indication milta hai.',
+      bestFor: 'Bahut tez burning hot flashes, raat ko paon garam lag rahe hain aur cover hataana chahti hain, skin problems saath mein, subah 11 baje bhook lagti hai.',
+      keyIndications: [
+
+        'Sulphur heat sensitivity aur vascular reactivity ka constitutional remedy hai. Menopause mein jab body ki thermostat completely disturbed ho, especially burning sensations ke saath — tab sulphur ka indication milta hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Sanguinaria Canadensis',
-      forWhom: 'Hot flashes jo sar aur galon tak jaati hain, right-sided headaches, burning in stomach, flushing face.',
-      whyHope: 'Sanguinaria ka classic picture: periodic flushes, right-sided symptoms, intense burning. Menopause ke vasomotor symptoms — khaaskar cheeks ka lal hona aur sar mein garam waves — is medicine ke indication hain.',
+      bestFor: 'Hot flashes jo sar aur galon tak jaati hain, right-sided headaches, burning in stomach, flushing face.',
+      keyIndications: [
+
+        'Sanguinaria ka classic picture: periodic flushes, right-sided symptoms, intense burning. Menopause ke vasomotor symptoms — khaaskar cheeks ka lal hona aur sar mein garam waves — is medicine ke indication hain.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Cimicifuga (Actaea Racemosa)',
-      forWhom: 'Joint aur muscle pain ke saath menopause, depression ka feeling jaise dark cloud chhaa gaya ho, irregular heartbeat, uterine cramping.',
-      whyHope: 'Cimicifuga ko "uterus aur ovary ki medicine" bhi kaha jaata hai. Perimenopausal women mein jo musculoskeletal pain, emotional darkness aur hormonal irregularity saath aati hai — iska classical picture yahi hai.',
+      bestFor: 'Joint aur muscle pain ke saath menopause, depression ka feeling jaise dark cloud chhaa gaya ho, irregular heartbeat, uterine cramping.',
+      keyIndications: [
+
+        'Cimicifuga ko "uterus aur ovary ki medicine" bhi kaha jaata hai. Perimenopausal women mein jo musculoskeletal pain, emotional darkness aur hormonal irregularity saath aati hai — iska classical picture yahi hai.',
+
+      ],
     },
     {
       _key: 'med6',
       name: 'Calcarea Carbonica',
-      forWhom: 'Motapa aur paseena zyada, khud ko physically aur mentally overwhelmed feel karti hai, anxiety especially raat ko, cold damp weather se takleef.',
-      whyHope: 'Calcarea Carb metabolic aur hormonal slowdown ki medicine hai — menopause mein jo weight gain, fatigue aur anxiety saath aate hain (especially in heavier build women) is mein ye effective hai.',
+      bestFor: 'Motapa aur paseena zyada, khud ko physically aur mentally overwhelmed feel karti hai, anxiety especially raat ko, cold damp weather se takleef.',
+      keyIndications: [
+
+        'Calcarea Carb metabolic aur hormonal slowdown ki medicine hai — menopause mein jo weight gain, fatigue aur anxiety saath aate hain (especially in heavier build women) is mein ye effective hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    eat: [
-      { category: 'Calcium & Bone Strength', items: ['Til (sesame seeds) — calcium ka best Indian vegetarian source, roz ek chammach', 'Ragi (nachni) — iron aur calcium dono ka powerhouse, bone density maintain karta hai', 'Dahi (curd) — probiotic ke saath calcium — gut health aur bone health dono', 'Paneer (low fat) — protein aur calcium dono', 'Palak, methi, sarson — calcium, magnesium, Vitamin K teen cheezein bone health ke liye'] },
-      { category: 'Phytoestrogens (Natural Hormone Support)', items: ['Soy products (soya milk, tofu) — phytoestrogens jo body mein mild estrogen jaisi activity karte hain, hot flashes mein helpful', 'Flaxseeds (alsi) — lignans hormonal balance mein help karte hain, ek chammach roz', 'Chana, rajma, moong — legumes mein phytoestrogens aur fiber dono', 'Anjeer (figs) — calcium aur natural sugar ka source'] },
-      { category: 'Heart & Brain Health', items: ['Akhrot (walnut) — omega-3 fatty acids, brain fog aur mood swings dono mein helpful', 'Almonds (badam) — Vitamin E aur healthy fats — skin dryness aur heart health', 'Haldi (turmeric) — anti-inflammatory — joint pain aur mood ke liye', 'Amla — Vitamin C powerhouse — skin health aur immunity maintain karta hai'] },
-      { category: 'Hydration & Cooling Foods', items: ['Naariyal paani — electrolyte balance, hot flashes mein body temperature control', 'Kheera (cucumber) — water content zyada, cooling effect, night sweats mein helpful', 'Green tea (1-2 cups) — antioxidants aur mild caffeine — mood aur energy maintain'] },
-    ],
-    avoid: [
-      { category: 'Hot Flash Triggers', items: ['Tez masale excess mein — body temperature badha dete hain, hot flashes intense hoti hain', 'Bahut garam chai/coffee (3+ cups) — caffeine hot flash frequency badha sakti hai', 'Alcohol — blood vessels dilate karta hai, hot flashes aur night sweats intense ho jaate hain'] },
-      { category: 'Bone & Heart Enemies', items: ['Namak zyada (processed food, papad, achaar excess) — sodium calcium body se nikaal deta hai', 'Cold drinks / soda — phosphoric acid bone density kam karti hai', 'Trans fats (biscuits, namkeen, fried food) — LDL cholesterol badha dete hain'] },
-      { category: 'Hormone Disruptors & Weight Triggers', items: ['Refined sugar aur maida in excess — insulin resistance badhate hain', 'Red meat in excess — saturated fat se inflammation badhti hai, joint pain worse', 'High-dose soy supplements bina doctor advice ke — moderate dietary soy theek hai'] },
-    ],
-    dietTip: 'Phytoestrogen-rich foods roz lein — alsi, soya, chana. Ye natural hormonal support dete hain. Calcium ke liye til aur ragi daily routine mein shamil karein. Warm fluids prefer karein — cold drinks hot flashes worsen karte hain.',
-    dietNote: 'Menopause mein sabse zaroori diet shift: refined sugar aur alcohol drastically kam karein — dono hot flashes, weight gain aur mood swings teeno ko worsen karte hain. Calcium + Vitamin D + omega-3 — ye trifecta menopause ka best dietary support hai.',
+  seasonalCare: {
+    summer: 'Hot flashes is mausam mein worst hote hain. Room cool rakhein, cotton kapde pehnein. Naariyal paani aur kheera daily lein. Subah ya shaam bahar nikalna — dopahar mein hot flash trigger common hai.',
+    monsoon: 'Joint pain aur muscle aches is mausam mein zyada hoti hain. Namak aur processed food extra avoid karein — bloating badhta hai. Fungal infections ka risk — cotton innerwear zaroor. Vitamin D sunlight se nahi milta — diet ya supplement pe dhyan dein.',
+    winter: 'Raat ko neend achhi hoti hai lekin joint stiffness morning mein. Exercise indoor rakhein — yoga, light stretching. Skin aur vaginal dryness winter mein worse — hydration aur moisturizer zaroor.',
   },
 
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'sc1',
-      season: 'Garmi (Summer — April to July)',
-      tip: 'Hot flashes is mausam mein worst hote hain. Room cool rakhein, cotton kapde pehnein. Naariyal paani aur kheera daily lein. Subah ya shaam bahar nikalna — dopahar mein hot flash trigger common hai.',
+      _key: 'inc1',
+      category: 'Calcium & Bone Strength',
+      emoji: '🦴',
+      items: [
+        'Til (sesame seeds) — calcium ka best Indian vegetarian source, roz ek chammach',
+        'Ragi (nachni) — iron aur calcium dono ka powerhouse, bone density maintain karta hai',
+        'Dahi (curd) — probiotic ke saath calcium, gut health aur bone health dono',
+        'Palak, methi, sarson — calcium, magnesium, Vitamin K bone health ke liye',
+        'Akhrot (walnut) — omega-3 fatty acids, brain fog aur mood swings dono mein helpful',
+      ],
     },
     {
-      _key: 'sc2',
-      season: 'Barish / Monsoon (July to October)',
-      tip: 'Joint pain aur muscle aches is mausam mein zyada hoti hain. Namak aur processed food extra avoid karein — bloating badhta hai. Fungal infections ka risk — cotton innerwear zaroor. Vitamin D sunlight se nahi milta — diet ya supplement pe dhyan dein.',
+      _key: 'inc2',
+      category: 'Phytoestrogen & Hormonal Support',
+      emoji: '🌿',
+      items: [
+        'Flaxseeds (alsi) — lignans hormonal balance mein help karte hain, ek chammach roz',
+        'Chana, rajma, moong — legumes mein phytoestrogens aur fiber dono',
+        'Soya products (moderate) — mild estrogen-like effect, hot flashes mein helpful',
+        'Naariyal paani — electrolyte balance, hot flashes mein body temperature control',
+        'Haldi (turmeric) — anti-inflammatory, joint pain aur mood ke liye',
+      ],
+    },
+  ],
+
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Hot Flash Triggers',
+      emoji: '🚫',
+      items: [
+        'Tez masale excess mein — body temperature badha dete hain, hot flashes intense hoti hain',
+        'Bahut garam chai/coffee (3+ cups) — caffeine hot flash frequency badha sakti hai',
+        'Alcohol — blood vessels dilate karta hai, hot flashes aur night sweats intense ho jaate hain',
+        'Refined sugar aur maida in excess — insulin resistance badhate hain',
+      ],
     },
     {
-      _key: 'sc3',
-      season: 'Thandi (Winter — November to February)',
-      tip: 'Raat ko neend achhi hoti hai lekin joint stiffness morning mein. Hot chocolate ki craving mein caffeine limit rakhen. Exercise indoor rakhein — yoga, light stretching. Skin aur vaginal dryness winter mein worse — hydration aur moisturizer zaroor.',
-    },
-    {
-      _key: 'sc4',
-      season: 'Vasant (Spring — Feb to April)',
-      tip: 'Energy wapas aane lagte hain — lifestyle changes start karne ke liye ideal phase. Outdoor walks, morning sunlight — mood aur Vitamin D dono ke liye. Fresh vegetables aur fruits season mein — diet variety naturally better hoti hai.',
+      _key: 'avd2',
+      category: 'Bone & Heart Enemies',
+      emoji: '⚠️',
+      items: [
+        'Namak zyada (processed food, papad, achaar excess) — sodium calcium body se nikaal deta hai',
+        'Cold drinks / soda — phosphoric acid bone density kam karti hai',
+        'Trans fats (biscuits, namkeen, fried food) — LDL cholesterol badha dete hain',
+        'Red meat in excess — saturated fat se inflammation badhti hai, joint pain worse',
+      ],
     },
   ],
 
@@ -358,12 +401,11 @@ const doc = {
   ],
 
   sources: [
-    'Central Council for Research in Homoeopathy (CCRH), New Delhi. Clinical Studies on Menopausal Syndrome | 2018-2022 | ccrhindia.nic.in',
-    'World Health Organization (WHO) — Women\'s Health, Menopause Overview | 2023',
-    'Indian Menopause Society (IMS) — Menopause Guidelines for Indian Women | 2020-2022',
-    'The Lancet — Global Burden of Disease Study, India Women\'s Health Statistics | 2019-2021',
-    'PubMed — Phytoestrogens and Menopause Symptom Relief: A Systematic Review | Journal of Clinical Endocrinology | 2021',
-    'National Institute on Aging (NIA), USA — Menopause: Overview and Management Guidelines | 2022',
+    { _key: 's1', name: 'CCRH — Clinical Studies on Menopausal Conditions', url: 'ccrhindia.nic.in', year: '2022' },
+    { _key: 's2', name: "WHO — Women's Health Statistics 2019-2021", url: 'who.int', year: '2021' },
+    { _key: 's3', name: 'PubMed — Phytoestrogens and Menopause Symptom Relief: A Systematic Review', url: 'pubmed.ncbi.nlm.nih.gov', year: '2020' },
+    { _key: 's4', name: 'National Institute on Aging (NIA) USA — Menopause: Overview and Management Guide', url: 'nia.nih.gov', year: '2023' },
+    { _key: 's5', name: 'Indian Journal of Research in Homoeopathy — Menopause Case Studies', url: 'ijrh.org', year: '2021' },
   ],
 
   doctorNote: 'Apni practice mein sabse zyada jo pattern dekhta hoon wo yeh hai ki mahilayein menopause ke symptoms ko "umar ka assar" samajhkar sahti rehti hain — isliiye 2-3 saal late aati hain. Sepia aur Lachesis mere sabse frequently indicated medicines hain — lekin menopause mein individualization sabse zaroori hai. Jo patient apni poori picture bataati hai — emotional, physical, sleep, all together — unhe best results milte hain.',

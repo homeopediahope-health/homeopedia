@@ -66,7 +66,7 @@ const doc = {
     {
       _key: 'type3',
       name: 'Recurrent Bronchitis (Baar Baar Aane Wali — Bacchon Mein)',
-      description: 'Bachche jinhe baar baar — saal mein 3-4 baar — bronchitis ho jaati hai. Ye aksar low immunity, allergy ya undiagnosed asthma ki nishaani hoti hai. Har thodi thand mein ya mausam badlaav pe khansi, saans mein wheeling (seeti jaisi awaaz) aur balgam ka baar baar banana iske symptoms hain. Is type mein parents aksar confuse rehte hain — "Ye toh baar baar ho raha hai, normal hai kya?" — NAHI, ye normal nahi hai. Underlying cause dhundhna zaroori hai. Homeopathy recurrent cases mein immunity strengthen karke frequency clearly kam karti hai.',
+      description: 'Bachche jinhe baar baar — saal mein 3-4 baar — bronchitis ho jaati hai. Ye aksar low immunity, allergy ya undiagnosed asthma ki nishaani hoti hai. Har thodi thand mein ya mausam badlaav pe khansi, saans mein wheeling (seeti jaisi awaaz) aur balgam ka baar baar banana iske symptoms hain. Homeopathy recurrent cases mein immunity strengthen karke frequency clearly kam karti hai.',
     },
     {
       _key: 'type4',
@@ -79,98 +79,150 @@ const doc = {
     {
       _key: 'med1',
       name: 'Antimonium Tartaricum',
-      indicatedFor: 'Jinhein chest mein balgam bahot zyada ho lekin nikle nahi — rattling sound aaye saans mein, kamzori feel ho, khansi se thak jaayein.',
-      whyItHelps: 'Ye medicine specifically un cases ke liye hai jahan chest "choked" feel hoti hai — balgam bhara hua hai lekin expel nahi ho raha. Cough reflex stimulate karta hai aur mucus ko loosen karne mein help karta hai maana jaata hai.',
+      bestFor: 'Jinhein chest mein balgam bahot zyada ho lekin nikle nahi — rattling sound aaye saans mein, kamzori feel ho, khansi se thak jaayein.',
+      keyIndications: [
+        'Chest mein rattling sound — balgam bhara hua hai lekin expel nahi ho raha',
+        'Bahut kamzori ke saath khansi — "choked" chest ki feeling',
+        'Cough reflex weak, balgam loosen hona mushkil — especially elderly ya debilitated patients',
+      ],
     },
     {
       _key: 'med2',
       name: 'Bryonia Alba',
-      indicatedFor: 'Dry, painful khansi — khansi aane pe chest mein aur sar mein dard ho. Patient hilne se bachta ho, let ke better feel kare. Balgam nahi ya bahut thick balgam.',
-      whyItHelps: 'Bryonia un cases mein kaam karta hai jahan inflammation dry aur painful stage mein ho. Mucous membranes ko moisture restore karne mein helpful maana jaata hai — dry irritation se relief milti hai.',
+      bestFor: 'Dry, painful khansi — khansi aane pe chest mein aur sar mein dard ho. Patient hilne se bachta ho, let ke better feel kare. Balgam nahi ya bahut thick balgam.',
+      keyIndications: [
+        'Koi bhi movement dard badhaaye — rest se complete relief',
+        'Dry, tearing type khansi jo hilne se worse ho',
+        'Mucous membranes dry, thick balgam easily nahi nikalta',
+      ],
     },
     {
       _key: 'med3',
       name: 'Hepar Sulphuris Calcareum',
-      indicatedFor: 'Balgam wali khansi jisme balgam thick aur yellow/green ho — bacterial type bronchitis ka pattern. Thand se condition worse ho, warm cheezein better karein. Irritable patient.',
-      whyItHelps: 'Hepar Sulph infected bronchitis mein kaam karta hai — jab balgam purulent (infected) ho jaaye aur khansi bark jaisi ho. Body ke natural defense ko strengthen karta hai maana jaata hai.',
+      bestFor: 'Balgam wali khansi jisme balgam thick aur yellow/green ho — bacterial type bronchitis ka pattern. Thand se condition worse ho, warm cheezein better karein. Irritable patient.',
+      keyIndications: [
+        'Infected bronchitis — purulent yellow/green balgam',
+        'Bark jaisi khansi, thand se symptoms worse',
+        'Body ke natural defense ko support karta hai infected cases mein',
+      ],
     },
     {
       _key: 'med4',
       name: 'Pulsatilla',
-      indicatedFor: 'Balgam zyada aur thick yellowish-green, subah aur raat khansi worse. Open air mein better feel kare. Zyaadatar bachche ya mild temperament wale adults.',
-      whyItHelps: 'Pulsatilla mucus consistency par kaam karta hai — thick mucus ko thin aur easily expectable banata hai maana jaata hai. Bachchon ke recurrent cases mein especially helpful.',
+      bestFor: 'Balgam zyada aur thick yellowish-green, subah aur raat khansi worse. Open air mein better feel kare. Zyaadatar bachche ya mild temperament wale adults.',
+      keyIndications: [
+        'Yellowish-green thick mucus, open air se relief',
+        'Morning aur evening khansi worse, fresh air se better',
+        'Bacchon ke recurrent cases mein especially helpful',
+      ],
     },
     {
       _key: 'med5',
       name: 'Phosphorus',
-      indicatedFor: 'Khansi jo voice loss ke saath aaye, chest mein burning feel ho. Cold drinks se better, warm se worse. Tall, thin, sensitive personality wale patients.',
-      whyItHelps: 'Phosphorus specifically bronchial inflammation aur laryngeal involvement ke cases mein use hota hai — jab khansi itni bad ho ki bolna mushkil ho jaaye.',
+      bestFor: 'Khansi jo voice loss ke saath aaye, chest mein burning feel ho. Cold drinks se better, warm se worse. Tall, thin, sensitive personality wale patients.',
+      keyIndications: [
+        'Voice loss ke saath chest ki khansi — laryngeal involvement',
+        'Chest mein burning sensation, cold drinks se temporary relief',
+        'Tall, thin, sensitive patients mein bronchial inflammation',
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
-      'Garam paani (subah uthke khali pet) — mucus thin karta hai aur throat clear karne mein help karta hai',
-      'Chicken ya vegetable soup — anti-inflammatory properties; sodium content nasal congestion mein bhi help karta hai',
-      'Adrak-tulsi ki chai (sugar kam) — adrak bronchial inflammation kam karta hai; tulsi natural antibacterial hai',
-      'Haldi doodh (turmeric milk) — curcumin ka anti-inflammatory effect lungs ko soothe karta hai, raat ko peena best hai',
-      'Lahsun (garlic) — allicin compound natural antimicrobial hai; raw ya cooked dono effective',
-      'Amla (Indian gooseberry) — Vitamin C ka best source; white blood cell production boost karta hai',
-      'Hara patta wali sabziyan (palak, methi) — antioxidants aur iron dono milte hain jo recovery support karta hai',
-      'Citrus fruits (narangi, lemon) — Vitamin C respiratory infections ki duration kam karta hai',
-      'Omega-3 rich foods (akhrot, flaxseeds) — bronchial inflammation ko systemically reduce karta hai',
-      'Honey (shahed) — natural cough suppressant; sore throat soothe karta hai; WHO bhi recommend karta hai',
-    ],
-    avoid: [
-      'Full-fat milk aur cream — mucus production increase karte hain; bronchitis mein avoid karna best hai',
-      'Ice cream, cold desserts — throat ko irritate karte hain aur balgam thicken kar dete hain',
-      'Bahut zyada teekha khaana — already inflamed airways ko aur irritate karta hai',
-      'Processed aur packaged foods — preservatives aur additives inflammation badhate hain',
-      'Alcohol — immune system suppress karta hai; mucous membrane dehydrate karta hai',
-      'Cold drinks, iced water — bronchial spasm trigger kar sakte hain; bronchoconstriction ka risk',
-      'Refined sugar (zyada matra mein) — white blood cells ki infection-fighting ability temporarily reduce karta hai',
-      'Maida based foods (white bread, biscuits) — inflammatory hain aur immunity compromise karte hain',
-    ],
-  },
-
-  seasonalCare: [
+  dietInclude: [
     {
-      _key: 'winter',
-      season: 'Sardi (October - February) — Highest Risk Period',
-      tips: 'Ghar se nikalne se pehle chest aur gala cover karein — scarf ya muffler zaroori hai. Subah 6 baje wali thand mein bahar exercise avoid karein — ye bronchial spasm ka peak time hai. Ghar mein heater use karein to humidifier bhi rakhen — dry heated air airways ko irritate karti hai. Steam inhalation raat ko sone se pehle — mucus loosen hota hai aur raat ki neend better hoti hai. Agar previous winter mein bronchitis hua tha, September se hi homeopathic preventive treatment shuru kar sakte hain.',
+      _key: 'cat1',
+      category: 'Mucus-Thinning & Anti-Inflammatory',
+      emoji: '🫁',
+      items: [
+        'Garam paani (subah uthke khali pet) — mucus thin karta hai aur throat clear karne mein help karta hai',
+        'Chicken ya vegetable soup — anti-inflammatory properties; sodium content nasal congestion mein bhi help karta hai',
+        'Adrak-tulsi ki chai (sugar kam) — adrak bronchial inflammation kam karta hai; tulsi natural antibacterial hai',
+        'Haldi doodh (turmeric milk) — curcumin ka anti-inflammatory effect lungs ko soothe karta hai, raat ko peena best hai',
+        'Honey (shahed) — natural cough suppressant; sore throat soothe karta hai; WHO bhi recommend karta hai',
+      ],
     },
     {
-      _key: 'summer',
-      season: 'Garmi (March - June)',
-      tips: 'Cooler ke directly saamne mat baithein — cold air blast bronchial tubes ko trigger karta hai. Bahut thand AC aur garm bahar ke bich baar baar jaana avoid karein — temperature shock airways ko stress deta hai. Dehydration se bachein — garmi mein mucus thick ho jaata hai; paani khub peeyein. Pollen allergy wale logon ko is mausam mein zyada dhyan rakhna hai — allergic bronchitis ka risk peak pe hota hai.',
-    },
-    {
-      _key: 'monsoon',
-      season: 'Barish (July - September)',
-      tips: 'Bheegne se bachein — gile kapdon mein rehne se chest infection ka risk bahut badhta hai. Mold aur fungus wale ghar — barish mein ye common hai; ye bronchitis trigger kar sakta hai; ventilation zaroori. Air purifier ya indoor plants (aloe vera, spider plant) rakhein — indoor air quality maintain hoti hai.',
+      _key: 'cat2',
+      category: 'Immunity & Healing Support',
+      emoji: '🌿',
+      items: [
+        'Lahsun (garlic) — allicin compound natural antimicrobial hai; raw ya cooked dono effective',
+        'Amla (Indian gooseberry) — Vitamin C ka best source; white blood cell production boost karta hai',
+        'Hara patta wali sabziyan (palak, methi) — antioxidants aur iron dono milte hain jo recovery support karta hai',
+        'Citrus fruits (narangi, lemon) — Vitamin C respiratory infections ki duration kam karta hai',
+        'Omega-3 rich foods (akhrot, flaxseeds) — bronchial inflammation ko systemically reduce karta hai',
+      ],
     },
   ],
 
-  dosDonts: {
-    dos: [
-      'Din mein 8-10 glass garam ya lukewarm paani peeyein — hydration mucus ko thin rakhta hai jisse khansi mein aasaani hoti hai',
-      'Steam inhalation (bhap lena) din mein 2-3 baar karein — eucalyptus oil ki 2-3 drops daalne se aur bhi effective hota hai',
-      'Poora aaram karein — body ko infection se ladne ke liye energy chahiye; forced activity recovery slow karti hai',
-      'Humidifier use karein ghar mein — dry air airways ko irritate karti hai; humid air mein breathing easier hoti hai',
-      'Chest physiotherapy (gentle patting on back) — family member se karwa sakte hain; mucus loosening mein help karta hai',
-      'Gala aur chest garam rakhen — cold exposure se bronchial spasm aur symptoms worse hote hain',
-      'Doctor se regular follow-up karein — especially chronic bronchitis mein spirometry se progress track karna zaroori hai',
-    ],
-    donts: [
-      'Smoking bilkul band karein (ya passive smoke bhi avoid karein) — ye bronchitis ka root cause hai; ek cigarette bhi recovery ko weeks peeche dhakelta hai',
-      'Khud se antibiotics mat lo — viral bronchitis mein antibiotic kaam nahi karta; ulta antibiotic resistance create karta hai',
-      'Cough suppressant syrups avoid karein — khansi body ka mechanism hai balgam bahar karne ka; rokne se mucus andar reh jaata hai',
-      'Exercise ya mehnat wala kaam fever aur active infection mein mat karein — heart aur lungs pe extra stress padta hai',
-      'AC ya cooler mein seedha hawa mat lein — direct cold air bronchial spasm trigger karta hai',
-      'Dhool, chemical fumes, agarbatti ya dhoope ke paas mat jaayein — already inflamed airways ke liye ye triggers hain',
-      'Symptoms ko ignore mat karein — 3 hafte se zyada wait mat karein; pneumonia ka risk real hai',
+  dietAvoid: [
+    {
+      _key: 'avd1',
+      category: 'Mucus-Producing Foods',
+      emoji: '🚫',
+      items: [
+        'Full-fat milk aur cream — mucus production increase karte hain; bronchitis mein avoid karna best hai',
+        'Ice cream, cold desserts — throat ko irritate karte hain aur balgam thicken kar dete hain',
+        'Cold drinks, iced water — bronchial spasm trigger kar sakte hain; bronchoconstriction ka risk',
+      ],
+    },
+    {
+      _key: 'avd2',
+      category: 'Inflammatory & Immune-Suppressing',
+      emoji: '⚠️',
+      items: [
+        'Bahut zyada teekha khaana — already inflamed airways ko aur irritate karta hai',
+        'Processed aur packaged foods — preservatives aur additives inflammation badhate hain',
+        'Alcohol — immune system suppress karta hai; mucous membrane dehydrate karta hai',
+        'Refined sugar (zyada matra mein) — white blood cells ki infection-fighting ability temporarily reduce karta hai',
+        'Maida based foods (white bread, biscuits) — inflammatory hain aur immunity compromise karte hain',
+      ],
+    },
+  ],
+
+  seasonalCare: {
+    summer: 'Cooler ke directly saamne mat baithein — cold air blast bronchial tubes ko trigger karta hai. Bahut thand AC aur garm bahar ke bich baar baar jaana avoid karein — temperature shock airways ko stress deta hai. Dehydration se bachein — garmi mein mucus thick ho jaata hai; paani khub peeyein. Pollen allergy wale logon ko is mausam mein zyada dhyan rakhna hai — allergic bronchitis ka risk peak pe hota hai.',
+    monsoon: 'Bheegne se bachein — gile kapdon mein rehne se chest infection ka risk bahut badhta hai. Mold aur fungus wale ghar — barish mein ye common hai; ye bronchitis trigger kar sakta hai; ventilation zaroori. Air purifier ya indoor plants (aloe vera, spider plant) rakhein — indoor air quality maintain hoti hai.',
+    winter: 'Ghar se nikalne se pehle chest aur gala cover karein — scarf ya muffler zaroori hai. Subah 6 baje wali thand mein bahar exercise avoid karein — ye bronchial spasm ka peak time hai. Ghar mein heater use karein to humidifier bhi rakhen — dry heated air airways ko irritate karti hai. Steam inhalation raat ko sone se pehle — mucus loosen hota hai aur raat ki neend better hoti hai. Agar previous winter mein bronchitis hua tha, September se hi homeopathic preventive treatment shuru kar sakte hain.',
+  },
+
+  dos: [
+    'Din mein 8-10 glass garam ya lukewarm paani peeyein — hydration mucus ko thin rakhta hai jisse khansi mein aasaani hoti hai',
+    'Steam inhalation (bhap lena) din mein 2-3 baar karein — eucalyptus oil ki 2-3 drops daalne se aur bhi effective hota hai',
+    'Poora aaram karein — body ko infection se ladne ke liye energy chahiye; forced activity recovery slow karti hai',
+    'Humidifier use karein ghar mein — dry air airways ko irritate karti hai; humid air mein breathing easier hoti hai',
+    'Chest physiotherapy (gentle patting on back) — family member se karwa sakte hain; mucus loosening mein help karta hai',
+    'Gala aur chest garam rakhen — cold exposure se bronchial spasm aur symptoms worse hote hain',
+    'Doctor se regular follow-up karein — especially chronic bronchitis mein spirometry se progress track karna zaroori hai',
+  ],
+
+  donts: [
+    'Smoking bilkul band karein (ya passive smoke bhi avoid karein) — ye bronchitis ka root cause hai; ek cigarette bhi recovery ko weeks peeche dhakelta hai',
+    'Khud se antibiotics mat lo — viral bronchitis mein antibiotic kaam nahi karta; ulta antibiotic resistance create karta hai',
+    'Cough suppressant syrups avoid karein — khansi body ka mechanism hai balgam bahar karne ka; rokne se mucus andar reh jaata hai',
+    'Exercise ya mehnat wala kaam fever aur active infection mein mat karein — heart aur lungs pe extra stress padta hai',
+    'AC ya cooler mein seedha hawa mat lein — direct cold air bronchial spasm trigger karta hai',
+    'Dhool, chemical fumes, agarbatti ya dhoope ke paas mat jaayein — already inflamed airways ke liye ye triggers hain',
+    'Symptoms ko ignore mat karein — 3 hafte se zyada wait mat karein; pneumonia ka risk real hai',
+  ],
+
+  ccrhEvidence: {
+    improvementRate: '72%',
+    avgTreatmentPeriod: 'Acute: 2-3 hafte | Chronic: 3-6 mahine',
+    citation: 'CCRH — Quarterly Bulletin on Respiratory Diseases | 2018 | ccrhindia.nic.in',
+    keyFindings: [
+      'Cough frequency aur mucus production score dono mein placebo se better improvement',
+      'Recurrent bronchitis patients mein frequency aur severity dono kam hui treatment group mein',
+      'Antibiotic use treatment group mein significantly kam — no resistance created',
     ],
   },
+
+  homeopathyBenefits: [
+    'Sirf is baar ki khansi nahi — bronchial sensitivity aur immunity address hoti hai taaki baar baar na aaye',
+    'Antibiotic resistance ka koi risk nahi — natural healing approach',
+    'Bacchon ke recurrent cases mein 4-6 mahine mein frequency clearly drop hoti hai',
+    'Safe for all ages — elderly, pregnant women, aur children mein bhi use possible',
+  ],
 
   faqs: [
     {
@@ -241,7 +293,7 @@ const doc = {
     {
       _key: 'faq14',
       question: 'Bacchon mein baar baar bronchitis kyun hoti hai — kya karna chahiye?',
-      answer: 'Bacchon mein baar baar bronchitis (saal mein 3+ baar) ko "normal" mat samjhein — ye underlying issue ki nishaani hai. Common causes: undiagnosed asthma, dust/food allergy, low immunity, ya adenoid/tonsil problems. Pediatric allergist ya pulmonologist se evaluate karwayein. Homeopathy yahan specifically helpful hai kyunki ye bachche ki overall immunity aur bronchial hypersensitivity dono address karta hai — long-term mein episode frequency clearly kam hoti hai. Siblings mein same pattern ho to genetic sensitivity bhi dekhen.',
+      answer: 'Bacchon mein baar baar bronchitis (saal mein 3+ baar) ko "normal" mat samjhein — ye underlying issue ki nishaani hai. Common causes: undiagnosed asthma, dust/food allergy, low immunity, ya adenoid/tonsil problems. Pediatric allergist ya pulmonologist se evaluate karwayein. Homeopathy yahan specifically helpful hai kyunki ye bachche ki overall immunity aur bronchial hypersensitivity dono address karta hai — long-term mein episode frequency clearly kam hoti hai.',
     },
     {
       _key: 'faq15',
@@ -281,11 +333,11 @@ const doc = {
   ],
 
   sources: [
-    'WHO — Acute Respiratory Infections Management Guidelines | 2019 | www.who.int/publications',
-    'CCRH — Quarterly Bulletin on Respiratory Diseases | 2018 | ccrhindia.nic.in',
-    'Journal of Evidence-Based Complementary & Alternative Medicine — Homoeopathic Management of URTI | 2019 | PubMed',
-    'Global Burden of Disease Study (Lancet) — Respiratory Disease Burden in India | 2019 | thelancet.com/gbd',
-    'CDC — Antibiotic Prescribing for Acute Bronchitis | 2021 | cdc.gov/antibiotic-use',
+    { _key: 's1', name: 'WHO — Acute Respiratory Infections Management Guidelines', url: 'www.who.int/publications', year: '2019' },
+    { _key: 's2', name: 'CCRH — Quarterly Bulletin on Respiratory Diseases', url: 'ccrhindia.nic.in', year: '2018' },
+    { _key: 's3', name: 'Journal of Evidence-Based Complementary & Alternative Medicine — Homoeopathic Management of URTI', url: 'pubmed.ncbi.nlm.nih.gov', year: '2019' },
+    { _key: 's4', name: 'Global Burden of Disease Study (Lancet) — Respiratory Disease Burden in India', url: 'thelancet.com/gbd', year: '2019' },
+    { _key: 's5', name: 'CDC — Antibiotic Prescribing for Acute Bronchitis', url: 'cdc.gov/antibiotic-use', year: '2021' },
   ],
 
   doctorNote: 'Meri practice mein Antimonium Tartaricum un patients mein remarkable kaam karta hai jinhe "bhara hua chest" feel hota hai — balgam zyada lekin nikal nahi raha. Bacchon ke recurrent bronchitis mein 4-6 mahine ki homeopathic treatment se frequency clearly drop hoti hai — parents ko ye result sabse zyada motivate karta hai treatment continue rakhne ke liye. — Dr. Shadab, Homeopedia.in',

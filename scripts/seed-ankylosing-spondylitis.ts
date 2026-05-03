@@ -132,43 +132,66 @@ const ankylosingSpondylitis = {
     {
       _key: 'med1',
       name: 'Rhus Toxicodendron',
-      forWhom: 'Jinka dard aur stiffness subah uthne pe worst ho, thodi movement ke baad better mile, aur damp/cold weather mein zyada badhe.',
-      whyHope: 'Ye medicine musculoskeletal stiffness ke us specific pattern mein kaam karti hai jahan "rest se dard badhta hai, movement se ghatta hai" — jo AS ka classic inflammatory pattern hai.',
+      bestFor: 'Jinka dard aur stiffness subah uthne pe worst ho, thodi movement ke baad better mile, aur damp/cold weather mein zyada badhe.',
+      keyIndications: [
+
+        'Ye medicine musculoskeletal stiffness ke us specific pattern mein kaam karti hai jahan "rest se dard badhta hai, movement se ghatta hai" — jo AS ka classic inflammatory pattern hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Aesculus Hippocastanum',
-      forWhom: 'Jinhe sacroiliac joint mein zyada dard ho — lower back ke neeche, pelvis area, aur dard jhukne ya uthne-baithne pe badhe.',
-      whyHope: 'Sacroiliac joint aur lumbo-sacral junction ki inflammation pe is medicine ki specific affinity dekhi jaati hai — AS ka exact target area yahi hai.',
+      bestFor: 'Jinhe sacroiliac joint mein zyada dard ho — lower back ke neeche, pelvis area, aur dard jhukne ya uthne-baithne pe badhe.',
+      keyIndications: [
+
+        'Sacroiliac joint aur lumbo-sacral junction ki inflammation pe is medicine ki specific affinity dekhi jaati hai — AS ka exact target area yahi hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Kalmia Latifolia',
-      forWhom: 'Jab dard ek jagah se doosri jagah shift karta ho — spine se peripheral joints tak — aur saath mein heart symptoms ya aankhon ki problem bhi ho.',
-      whyHope: 'AS ke extra-articular manifestations (uveitis, cardiac involvement) wale patients mein is medicine ka constitutional use helpful hota hai.',
+      bestFor: 'Jab dard ek jagah se doosri jagah shift karta ho — spine se peripheral joints tak — aur saath mein heart symptoms ya aankhon ki problem bhi ho.',
+      keyIndications: [
+
+        'AS ke extra-articular manifestations (uveitis, cardiac involvement) wale patients mein is medicine ka constitutional use helpful hota hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Medorrhinum',
-      forWhom: 'Jinhe raat ko dard zyada ho, ulta letne pe (face down) relief mile, aur disease bahut aggressive aur rapid progression wali ho.',
-      whyHope: 'Ye nosode deep-seated inflammatory aur autoimmune patterns mein constitutional level pe kaam karta hai — genetic predisposition wale patients mein.',
+      bestFor: 'Jinhe raat ko dard zyada ho, ulta letne pe (face down) relief mile, aur disease bahut aggressive aur rapid progression wali ho.',
+      keyIndications: [
+
+        'Ye nosode deep-seated inflammatory aur autoimmune patterns mein constitutional level pe kaam karta hai — genetic predisposition wale patients mein.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Sulphur',
-      forWhom: 'Jinhe heat se dard badhta ho, garm maheene mein zyada takleef ho, aur saath mein skin problems (psoriasis) ya digestive issues bhi hon.',
-      whyHope: 'AS with psoriasis ya AS with IBD ke combination mein Sulphur ka constitutional use — dono conditions ko simultaneously address karne mein help karta hai.',
+      bestFor: 'Jinhe heat se dard badhta ho, garm maheene mein zyada takleef ho, aur saath mein skin problems (psoriasis) ya digestive issues bhi hon.',
+      keyIndications: [
+
+        'AS with psoriasis ya AS with IBD ke combination mein Sulphur ka constitutional use — dono conditions ko simultaneously address karne mein help karta hai.',
+
+      ],
     },
     {
       _key: 'med6',
       name: 'Bryonia Alba',
-      forWhom: 'Jinhe any movement se dard bahut badhe — bilkul still rehna chahein — aur dry, cold weather mein zyada takleef ho.',
-      whyHope: 'Inflammation ka "stillness-seeking" pattern jo AS ke acute flare-ups mein milta hai, uspe Bryonia bahot specifically kaam karti hai.',
+      bestFor: 'Jinhe any movement se dard bahut badhe — bilkul still rehna chahein — aur dry, cold weather mein zyada takleef ho.',
+      keyIndications: [
+
+        'Inflammation ka "stillness-seeking" pattern jo AS ke acute flare-ups mein milta hai, uspe Bryonia bahot specifically kaam karti hai.',
+
+      ],
     },
   ],
 
-  diet: {
-    recommended: [
+  dietInclude: [
       {
         _key: 'dr1',
         category: 'Anti-Inflammatory Foods',
@@ -201,8 +224,9 @@ const ankylosingSpondylitis = {
           'Vitamin K2 foods: Paneer, fermented dal — calcium ko bones mein direct karta hai',
         ],
       },
-    ],
-    avoid: [
+  ],
+
+  dietAvoid: [
       {
         _key: 'da1',
         category: 'Pro-Inflammatory Foods',
@@ -212,7 +236,7 @@ const ankylosingSpondylitis = {
           'Processed meats (sausage, packaged chicken) — AGEs joint inflammation trigger karte hain',
           'Vegetable oils high in Omega-6 (sunflower, corn oil) — Omega-3:Omega-6 imbalance inflammation badhata hai',
         ],
-      },
+    },
       {
         _key: 'da2',
         category: 'Gut-Disrupting Foods',
@@ -233,8 +257,6 @@ const ankylosingSpondylitis = {
         ],
       },
     ],
-  },
-
   seasonalCare: {
     winter: 'AS patients ke liye ye sabse mushkil season hota hai. Cold temperature muscle spasm aur joint stiffness badhata hai. Subah uthne se pehle 5-10 min bed pe hi gentle stretching karein. Garma-garm Epsom salt bath — magnesium sulphate muscle relaxation deta hai. Layered warm clothing — especially kamar aur lower back pe — neoprene lumbar support bhi helpful. Indoor exercises prefer karein — heated pool mein hydrotherapy ideal hai. Vitamin D supplement — sun exposure kam hoti hai, deficiency AS mein common hai.',
     summer: 'Warmth muscles ko relax karti hai — morning stiffness thodi kam hoti hai. Lekin dehydration se blood viscosity badh jaati hai — paani 3-3.5 litres daily. Direct dhoop mein peak hours (11-4) exercise se bachein — uveitis wale patients mein UV exposure risk hai. Cooling anti-inflammatory foods: Cucumber, nariyal pani, sattu. Subah 6-7 baje ki dhoop — Vitamin D aur movement dono milti hai.',
@@ -245,7 +267,6 @@ const ankylosingSpondylitis = {
       'Vitamin D level regularly check karwate rahein — AS mein D deficiency bahot common aur bones ke liye dangerous hai',
     ],
   },
-
   dos: [
     'Roz subah physiotherapy ya stretching routine follow karein — spine flexibility maintain karna AS management ka #1 pillar hai',
     'Swimming ya hydrotherapy ko exercise option banayein — water mein gravity kam hoti hai, joints pe stress nahi, mobility improve hoti hai',
@@ -386,48 +407,9 @@ const ankylosingSpondylitis = {
   ],
 
   sources: [
-    {
-      _key: 'src1',
-      title: 'CCRH — Clinical Research in Spondyloarthropathies | Journal of Research in Homeopathy',
-      year: '2019',
-      url: 'https://ccrhindia.nic.in',
-    },
-    {
-      _key: 'src2',
-      title: 'Witt CM et al. — Homeopathic treatment of patients with chronic low back pain | Complementary Medicine Research',
-      year: '2009',
-      url: '',
-    },
-    {
-      _key: 'src3',
-      title: 'Ghosh AK et al. — Randomized placebo-controlled trial, musculoskeletal disorders | Indian Journal of Research in Homoeopathy',
-      year: '2018',
-      url: 'https://www.ijrh.org',
-    },
-    {
-      _key: 'src4',
-      title: 'Sieper J et al. — Ankylosing Spondylitis: An Overview | Annals of the Rheumatic Diseases',
-      year: '2002',
-      url: '',
-    },
-    {
-      _key: 'src5',
-      title: 'Braun J, Sieper J — Ankylosing Spondylitis | The Lancet',
-      year: '2007',
-      url: '',
-    },
-    {
-      _key: 'src6',
-      title: 'van der Heijde D et al. — ASAS Recommendations for AS Management | Arthritis & Rheumatism',
-      year: '2006',
-      url: '',
-    },
-    {
-      _key: 'src7',
-      title: 'WHO — Musculoskeletal Conditions Global Report',
-      year: '2022',
-      url: 'https://www.who.int',
-    },
+    { _key: 's1', name: 'CCRH — Clinical Research in Spondyloarthropathies', url: 'ccrhindia.nic.in', year: '2019' },
+    { _key: 's2', name: 'Witt CM et al — Homeopathic treatment of patients with chronic low back pain', url: 'pubmed.ncbi.nlm.nih.gov', year: '2009' },
+    { _key: 's3', name: 'National Ankylosing Spondylitis Society — Disease Overview', url: 'nass.co.uk', year: '2022' },
   ],
 
   doctorNote: 'Mere clinic mein aane wale kaafi AS patients pehle saalon tak "mechanical back pain" ka ilaaj karte rahe. Sahi keh raha hoon — average 7 saal ki delay hoti hai diagnosis mein. Jo patients mujhse milte hain early stage mein — Rhus Tox, Aesculus, ya Medorrhinum pe depend karta hai patient ka constitution — unme inflammation markers aur mobility dono mein main change clearly notice karta hoon 6-9 mahine ke andar, especially jab wo physiotherapy bhi saath rakhte hain. Ankylosing Spondylitis ko darr ki zaroorat nahi — samajhne ki zaroorat hai.',

@@ -130,32 +130,52 @@ const disease = {
     {
       _key: 'med1',
       name: 'Rhus Toxicodendron',
-      forWhom: 'Jin logon ki gardan subah uthne pe bahut akdi hoti hai lekin thodi movement karne ke baad thodi theek lagti hai — aur cold/wet weather mein dard badhta hai',
-      whyHope: 'Ye medicine joint stiffness aur nerve irritation dono pe kaam karti hai — specially jab rest se dard badhe aur motion se ghate, ye characteristic symptom pattern iska strong indicator hai.',
+      bestFor: 'Jin logon ki gardan subah uthne pe bahut akdi hoti hai lekin thodi movement karne ke baad thodi theek lagti hai — aur cold/wet weather mein dard badhta hai',
+      keyIndications: [
+
+        'Ye medicine joint stiffness aur nerve irritation dono pe kaam karti hai — specially jab rest se dard badhe aur motion se ghate, ye characteristic symptom pattern iska strong indicator hai.',
+
+      ],
     },
     {
       _key: 'med2',
       name: 'Hypericum Perforatum',
-      forWhom: 'Jin logon ko shooting, electric-shock jaisa dard gardan se haath-unglion tak jaata hai — nerve compression ka classic presentation',
-      whyHope: 'Hypericum ko "nerve medicine" kaha jaata hai homeopathy mein — spinal nerves aur peripheral nerves ki injury ya irritation mein ye khaas taur pe kaam karta hai.',
+      bestFor: 'Jin logon ko shooting, electric-shock jaisa dard gardan se haath-unglion tak jaata hai — nerve compression ka classic presentation',
+      keyIndications: [
+
+        'Hypericum ko "nerve medicine" kaha jaata hai homeopathy mein — spinal nerves aur peripheral nerves ki injury ya irritation mein ye khaas taur pe kaam karta hai.',
+
+      ],
     },
     {
       _key: 'med3',
       name: 'Calcarea Phosphorica',
-      forWhom: 'Jab cervical bones weakening ke saath numbness ho, khichav ho — specially young patients ya teenagers mein growing pains ke saath',
-      whyHope: 'Calcium aur phosphate metabolism ko support karta hai — bones aur discs ki integrity maintain karne mein helpful maana jaata hai.',
+      bestFor: 'Jab cervical bones weakening ke saath numbness ho, khichav ho — specially young patients ya teenagers mein growing pains ke saath',
+      keyIndications: [
+
+        'Calcium aur phosphate metabolism ko support karta hai — bones aur discs ki integrity maintain karne mein helpful maana jaata hai.',
+
+      ],
     },
     {
       _key: 'med4',
       name: 'Bryonia Alba',
-      forWhom: 'Jin logon ka dard zyada tab hota hai jab halka bhi hilein — completely still rehne se thoda aaram milta ho; dard pressure ya touch se bhi badhta ho',
-      whyHope: 'Movement se aggravation Bryonia ka hallmark hai — isme anti-inflammatory effect bhi hota hai jo acute flare-ups mein kaam aata hai.',
+      bestFor: 'Jin logon ka dard zyada tab hota hai jab halka bhi hilein — completely still rehne se thoda aaram milta ho; dard pressure ya touch se bhi badhta ho',
+      keyIndications: [
+
+        'Movement se aggravation Bryonia ka hallmark hai — isme anti-inflammatory effect bhi hota hai jo acute flare-ups mein kaam aata hai.',
+
+      ],
     },
     {
       _key: 'med5',
       name: 'Gelsemium Sempervirens',
-      forWhom: 'Jab cervical dard ke saath chakkar aata ho, sir bhaari lagta ho, aankhon pe dabaav ho aur overall weakness feel ho — cervicogenic headache pattern',
-      whyHope: 'Gelsemium nervous system pe kaam karta hai — vertigo, heaviness aur nerve-weakness ke combination mein effective maana jaata hai.',
+      bestFor: 'Jab cervical dard ke saath chakkar aata ho, sir bhaari lagta ho, aankhon pe dabaav ho aur overall weakness feel ho — cervicogenic headache pattern',
+      keyIndications: [
+
+        'Gelsemium nervous system pe kaam karta hai — vertigo, heaviness aur nerve-weakness ke combination mein effective maana jaata hai.',
+
+      ],
     },
   ],
 

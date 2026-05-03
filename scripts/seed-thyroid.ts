@@ -123,11 +123,6 @@ async function seed() {
       'Prevention of progression: Subclinical stage mein treat karein to overt hypothyroidism mein convert hone se bachaya ja sakta hai',
     ],
 
-    homeopathyLimitations: [
-      'Overt hypothyroidism (TSH >10, T4 clearly low) mein levothyroxine se fast aur reliable results milte hain — homeopathy is case mein complementary role mein hai',
-      'Congenital hypothyroidism mein conventional hormone replacement absolutely zaroori hai — sirf homeopathy se kaam nahi chalega, bachche ka brain development risk pe aa sakta hai',
-    ],
-
     medicines: [
       {
         _key: 'med1',

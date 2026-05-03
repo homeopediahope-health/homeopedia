@@ -130,11 +130,6 @@ async function seed() {
       'Children aur pregnant mahilaon mein bhi safe use ki ja sakti hai',
     ],
 
-    homeopathyLimitations: [
-      'Scarring Alopecia (daag wali ganjapan) mein results limited ho sakte hain — follicles permanently damaged hoti hain',
-      'Nutrient deficiency se hone wale hair fall mein supplementation ke saath homeopathy better kaam karti hai — akele nahi',
-    ],
-
     medicines: [
       {
         _key: 'med1',
