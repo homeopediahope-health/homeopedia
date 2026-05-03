@@ -32,6 +32,7 @@ const ALL_DISEASES = [
   { slug: 'ulcerative-colitis',         title: 'Ulcerative Colitis',      hindi: 'अल्सरेटिव कोलाइटिस',  hinglish: 'colitis' },
   { slug: 'fatty-liver',               title: 'Fatty Liver / NAFLD',     hindi: 'जिगर में चर्बी',        hinglish: 'fatty liver jigar charbi NAFLD SGPT grade 1 2' },
   { slug: 'mouth-ulcer',               title: 'Mouth Ulcer (Munh ke Chhale)', hindi: 'मुँह के छाले',     hinglish: 'munh ke chhale ka ilaaj baar baar munh ke chhale recurrent aphthous ulcer chhale ka upay' },
+  { slug: 'gastritis',                 title: 'Gastritis',               hindi: 'पेट की सूजन / गैस्ट्राइटिस', hinglish: 'gastritis pet ki sujan pet dard H pylori pet mein jalan khali pet dard' },
   { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',             hinglish: 'sar dard headache' },
   { slug: 'anxiety',                    title: 'Anxiety',                 hindi: 'चिंता',                hinglish: 'chinta tension' },
   { slug: 'depression',                 title: 'Depression',              hindi: 'अवसाद',                hinglish: 'udaasi' },
