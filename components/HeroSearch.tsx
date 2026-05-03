@@ -23,6 +23,7 @@ const ALL_DISEASES = [
   { slug: 'ankylosing-spondylitis',     title: 'Ankylosing Spondylitis',  hindi: 'रीढ़ की सूजन',         hinglish: 'ridh dard' },
   { slug: 'frozen-shoulder',            title: 'Frozen Shoulder',         hindi: 'जमा हुआ कंधा',        hinglish: 'kandha dard' },
   { slug: 'plantar-fasciitis',          title: 'Plantar Fasciitis',       hindi: 'एड़ी का दर्द',          hinglish: 'edi ka dard paon tale heel pain plantar' },
+  { slug: 'tennis-elbow',               title: 'Tennis Elbow',            hindi: 'कोहनी का दर्द',         hinglish: 'kohni ka dard tennis elbow lateral epicondylitis computer wrist pain IT' },
   { slug: 'osteoarthritis',            title: 'Osteoarthritis',          hindi: 'घुटने का दर्द',         hinglish: 'ghutne ka dard jodon ki ghisaw OA knee pain cartilage ghisaw' },
   { slug: 'acidity',                     title: 'Acidity / GERD',          hindi: 'तेज़ाब / सीने की जलन',  hinglish: 'seene ki jalan khatta dakaar tezaab acid reflux gerd' },
   { slug: 'ibs',                        title: 'IBS',                     hindi: 'आईबीएस',               hinglish: 'pet dard loose motion' },

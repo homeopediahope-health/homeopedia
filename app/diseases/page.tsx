@@ -27,6 +27,7 @@ const ALL_DISEASES = [
   { slug: 'ankylosing-spondylitis',     title: 'Ankylosing Spondylitis',  hindi: 'रीढ़ की सूजन',            cat: 'Joints',      min: 8,              h: 'ridh ki haddi dard' },
   { slug: 'frozen-shoulder',            title: 'Frozen Shoulder',         hindi: 'जमा हुआ कंधा',           cat: 'Joints',      min: 7,              h: 'kandha dard shoulder' },
   { slug: 'plantar-fasciitis',          title: 'Plantar Fasciitis',       hindi: 'एड़ी का दर्द',             cat: 'Joints',      min: 7,              h: 'edi ka dard paon tale heel pain' },
+  { slug: 'tennis-elbow',               title: 'Tennis Elbow',            hindi: 'कोहनी का दर्द',            cat: 'Joints',      min: 9,  hot: true,  h: 'kohni ka dard tennis elbow lateral epicondylitis IT professional computer use homeopathy' },
   { slug: 'osteoarthritis',            title: 'Osteoarthritis',          hindi: 'घुटने का दर्द / जोड़ों की घिसाव', cat: 'Joints', min: 9, hot: true, h: 'ghutne ka dard jodon ki ghisaw OA knee pain cartilage' },
   // Digestive
   { slug: 'acidity',                    title: 'Acidity / GERD',          hindi: 'तेज़ाब / सीने की जलन',    cat: 'Digestive',   min: 6,  hot: true,  h: 'seene ki jalan khatta dakaar tezaab acid reflux' },
