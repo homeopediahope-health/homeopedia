@@ -62,6 +62,7 @@ const ALL_DISEASES = [
   { slug: 'sinusitis',                  title: 'Sinusitis',               hindi: 'साइनसाइटिस',              cat: 'Respiratory', min: 5,              h: 'sinus naak band' },
   { slug: 'nasal-polyp',               title: 'Nasal Polyp',             hindi: 'नाक की रसौली / गांठ',    cat: 'Respiratory', min: 9, hot: true,   h: 'naak ki rasoli naak ki gaanth naak mein gaanth surgery ke bina polyp' },
   { slug: 'recurrent-cold',             title: 'Recurrent Cold / Weak Immunity', hindi: 'बार बार सर्दी-जुकाम / Weak Immunity', cat: 'Respiratory', min: 9, hot: true, h: 'baar baar sardi zukam ka ilaaj immunity boost homeopathy bacchon mein baar baar sardi weak immunity treatment' },
+  { slug: 'bronchitis',                 title: 'Bronchitis',              hindi: 'श्वास नली की सूजन / खांसी की बीमारी', cat: 'Respiratory', min: 9, hot: true, h: 'bronchitis ka ilaj khansi balgam chest tightness shwas nali ki sujan homeopathy' },
   // Endocrine
   { slug: 'thyroid',                    title: 'Hypothyroidism',          hindi: 'थायरॉइड की कमी',          cat: 'Endocrine',   min: 10, hot: true,  h: 'thyroid' },
   { slug: 'hyperthyroidism',            title: 'Hyperthyroidism',         hindi: 'थायरॉइड का बढ़ना',        cat: 'Endocrine',   min: 9,              h: 'thyroid badhna' },
