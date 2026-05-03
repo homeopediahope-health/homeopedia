@@ -79,6 +79,8 @@ const ALL_DISEASES = [
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',       cat: "Children's",  min: 6,              h: 'bistar geela bacche' },
   // Circulatory
   { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',            cat: 'Circulatory', min: 7,              h: 'naso ki sujan phuli hui naasein paon dard' },
+  // Men's Health
+  { slug: 'male-infertility',            title: 'Male Infertility',        hindi: 'पुरुष निःशक्तता / बीज दोष', cat: "Men's",      min: 10, hot: true,  h: 'male infertility purush nishfalta sperm count badhana shukranu beej dosh mardana kamzori homeopathy' },
   // Urinary
   { slug: 'kidney-stone',             title: 'Kidney Stone (Pathri)',   hindi: 'गुर्दे की पथरी',           cat: 'Urinary',     min: 9,  hot: true,  h: 'pathri gurde ki pathri stone NAFLD uric acid calcium' },
 ]

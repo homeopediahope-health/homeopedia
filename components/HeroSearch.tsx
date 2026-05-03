@@ -67,6 +67,7 @@ const ALL_DISEASES = [
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',    hinglish: 'bistar geela' },
   { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',         hinglish: 'naso ki sujan phuli hui naasein paon dard vein' },
   { slug: 'kidney-stone',             title: 'Kidney Stone (Pathri)',   hindi: 'गुर्दे की पथरी',        hinglish: 'pathri gurde ki pathri stone uric acid calcium renal' },
+  { slug: 'male-infertility',          title: 'Male Infertility',        hindi: 'पुरुष निःशक्तता / बीज दोष', hinglish: 'male infertility purush nishfalta sperm count badhana shukranu beej dosh mardana kamzori' },
 ]
 
 const popular = ['Psoriasis', 'Sciatica', 'Thyroid', 'PCOD', 'Migraine', 'Tonsillitis']
