@@ -12,6 +12,7 @@ const ALL_DISEASES = [
   { slug: 'acanthosis-nigricans',       title: 'Acanthosis Nigricans',    hindi: 'काली गठीली त्वचा',     hinglish: 'kaali gathili skin gardan kaali kala pan insulin resistance' },
   { slug: 'ringworm',                   title: 'Ringworm (Daad)',          hindi: 'दाद / दाद-खाज',        hinglish: 'daad daad khaj tinea fungal skin athlete foot jock itch' },
   { slug: 'wart',                       title: 'Wart (Masar)',             hindi: 'मस्सा / मसा',           hinglish: 'masar masa wart hatane ka upay haath pair chehre pe wart removal' },
+  { slug: 'molluscum-contagiosum',      title: 'Molluscum Contagiosum',   hindi: 'चेचक जैसी फुंसियां',    hinglish: 'molluscum contagiosum ke daane bacchon mein viral skin bumps pani wale daane chechak jaisi phunsiyan' },
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',              hinglish: 'kamar pair dard' },
   { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',         hinglish: 'disc slip' },
   { slug: 'back-pain',                  title: 'Back Pain',               hindi: 'कमर दर्द',             hinglish: 'kamar dard' },
