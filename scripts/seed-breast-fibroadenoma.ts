@@ -136,32 +136,52 @@ const doc = {
     {
       _key: 'med1',
       name: 'Conium Maculatum',
-      forPatient: 'Hard, immovable ya slowly growing breast lump – khaskar jab gaanth periods ke baad bhi kam na ho aur bruised feeling ho breast mein.',
-      hopeReason: 'Conium breast ke glandular tissue pe specifically kaam karta hai – induration (hardening) aur abnormal growth ko address karta hai. Classical homeopathy mein breast glands ki pathology ke liye pehli line medicine maani jaati hai.',
+      bestFor: 'Hard, immovable ya slowly growing breast lump – khaskar jab gaanth periods ke baad bhi kam na ho aur bruised feeling ho breast mein. Breast ki pathology ke liye pehli line medicine.',
+      keyIndications: [
+        'Gaanth hard aur immovable – haath se dabane par bilkul nahi khisak ti',
+        'Bruised pain breast mein – touch se worse, periods se independent',
+        'Glandular tissue mein hardening – slowly size badh raha hai months mein',
+      ],
     },
     {
       _key: 'med2',
       name: 'Phytolacca Decandra',
-      forPatient: 'Tender, painful breast lump – khaskar jab gaanth mein dard periods ke time ya touch se badhe. Multiple lumps mein bhi indicated.',
-      hopeReason: 'Phytolacca breast glands ka ek powerful remedy hai – inflammation, tenderness aur glandular enlargement dono pe kaam karta hai. Traditional homeopathic practice mein breast conditions ke liye extensively use hoti aai hai.',
+      bestFor: 'Tender, painful breast lump – khaskar jab gaanth mein dard periods ke time ya touch se badhe. Multiple lumps wale cases mein bhi clearly indicated.',
+      keyIndications: [
+        'Touch se dard – haath lagane par sharp pain, periods mein worse',
+        'Gaanth sensitive aur tender – koi bhi pressure nahi saha jaata',
+        'Multiple lumps tendency – ek se zyada gaanthen banne ki history',
+      ],
     },
     {
       _key: 'med3',
       name: 'Calcarea Carbonica',
-      forPatient: 'Overweight ya fair-complexioned mahilaen – jinhein periods heavy ya irregular hain, thakaan bahut hoti hai, aur fibroadenoma ke saath hormonal complaints bhi hain.',
-      hopeReason: 'Calcarea constitutional remedy hai jo metabolism aur hormonal system dono regulate karta hai – fibroadenoma ke hormonal root cause pe seedha kaam karta hai. Estrogen dominance aur thyroid sluggishness dono address hote hain.',
+      bestFor: 'Overweight ya fair-complexioned mahilaen – jinhein periods heavy ya irregular hain, thakaan bahut hoti hai aur fibroadenoma ke saath hormonal complaints bhi hain.',
+      keyIndications: [
+        'Metabolism slow – weight gain, thakaan aur sweating easily ho jaati hai',
+        'Periods heavy ya irregular – hormonal imbalance clearly dikh raha hai',
+        'Thanda pasand – garm khana aur environment nahi chahiye, thanda prefer',
+      ],
     },
     {
       _key: 'med4',
       name: 'Lapis Albus',
-      forPatient: 'Elastic, slightly soft breast lump – jab gaanth clearly benign feel kare aur slowly growing ho; thyroid issues bhi saath ho to especially useful.',
-      hopeReason: 'Lapis Albus glandular conditions aur benign growths mein specifically indicated hai – silicic acid aur fluorine ka combination glandular tissue pe kaam karta hai. Thyroid + breast involvement wale cases mein khaas faydemand.',
+      bestFor: 'Elastic, slightly soft breast lump – jab gaanth clearly benign feel kare aur slowly growing ho; thyroid issues bhi saath ho to especially useful.',
+      keyIndications: [
+        'Soft elastic gaanth – rubber jaisi feel, clearly defined edges',
+        'Thyroid + breast dono involved – glandular system ka overall involvement',
+        'Slowly growing benign lump – aggressive nahi hai, steady pace pe badh raha hai',
+      ],
     },
     {
       _key: 'med5',
       name: 'Thuja Occidentalis',
-      forPatient: 'Multiple fibroadenomas – jab ek se zyada gaanthen hoon, ya vaccination ke baad se problem shuru hui ho. PCOS ya hormonal imbalance saath ho to bhi.',
-      hopeReason: 'Thuja anti-sycotic remedy hai – body mein abnormal growth tendencies ko systematically address karta hai. Multiple gaanthen ya recurrent cases mein effective constitutional choice hai; new gaanthen banne se bhi rokti hai.',
+      bestFor: 'Multiple fibroadenomas – jab ek se zyada gaanthen hoon, ya vaccination ke baad se problem shuru hui ho. PCOS ya hormonal imbalance saath ho to bhi.',
+      keyIndications: [
+        'Multiple gaanthen – ek ya dono breast mein, ek saath kaafi gaanthen hain',
+        'Abnormal growth tendency – body mein growths banne ki habit, warts bhi hain',
+        'Vaccination ke baad shuru hua – is specific history mein clearly indicated',
+      ],
     },
   ],
 

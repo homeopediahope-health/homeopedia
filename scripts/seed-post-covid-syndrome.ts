@@ -148,32 +148,52 @@ const doc = {
     {
       _key: 'med1',
       name: 'Arsenicum Album',
-      forPatient: 'Jo log COVID ke baad extreme weakness, anxiety, aur restlessness se guzar rahe hain – raat ko zyada takleef, saanch lene mein bhi takleef.',
-      hopeReason: 'Arsenicum Album immune system ki reactivity ko regulate karne mein kaafi effective maani jaati hai. Post-viral exhaustion aur respiratory lingering symptoms ke liye classically use hoti hai – COVID ke baad iske indications bahut closely match karte hain.',
+      bestFor: 'Jo log COVID ke baad extreme weakness, anxiety aur restlessness se guzar rahe hain – raat ko zyada takleef, saanch lene mein bhi takleef. Post-viral exhaustion type patients.',
+      keyIndications: [
+        'Extreme restlessness ke saath thakaan – uthne ki koshish karte hain lekin lete rehna padta hai',
+        'Raat 12-2 baje symptoms zyada badh jaate hain – sleep disturbed',
+        'Saanch lene mein takleef saath mein burning sensation – respiratory lingering type',
+      ],
     },
     {
       _key: 'med2',
       name: 'Gelsemium Sempervirens',
-      forPatient: 'Jab extreme fatigue aisa ho ki legs bhaari lagein, uthne ka mann hi nahi kare, neend zyada aaye, aur dimag slow feel ho (brain fog type).',
-      hopeReason: 'Gelsemium viral illness ke baad ki debility ke liye ek classical homeopathic medicine hai. "Flu-like aftermath" ke symptoms – heaviness, drowsiness, weakness – isme bahut achhe results aate hain.',
+      bestFor: 'Jab extreme fatigue aisa ho ki legs bhaari lagein, uthne ka mann hi nahi kare, neend zyada aaye, aur dimag slow feel ho – classic brain fog type Long COVID.',
+      keyIndications: [
+        'Legs itni bhaari ki uthna mushkil – "lead-like heaviness" ka sensation',
+        'Dimag slow aur drowsy – concentrate karna impossible feel hota hai',
+        'Dil ki dhadkan slow, blood pressure low, shivering bina bukhar ke',
+      ],
     },
     {
       _key: 'med3',
       name: 'Phosphoric Acid',
-      forPatient: 'Jab mental aur physical dono thakaan saath ho – khaas taur pe jo log COVID ke baad depression, apathy (kuch bhi karne ki ichha na hona), aur hair fall suffer kar rahe hain.',
-      hopeReason: 'Phosphoric Acid "debility after acute illness" ke liye specifically indicated hai. Post-COVID mein jo "hollowed out" feeling aati hai – jisme dimag nahi chalta, emotions numb lagte hain – isme ye khaas faydemand hai.',
+      bestFor: 'Jab mental aur physical dono thakaan saath ho – jo log COVID ke baad depression, apathy (kuch karne ki ichha na hona) aur hair fall suffer kar rahe hain.',
+      keyIndications: [
+        'Poori udaasi – kuch bhi karne ki ichha nahi, emotions numb lagte hain',
+        'Hair fall zyada – COVID ke 2-3 mahine baad shuru hua aur band nahi ho raha',
+        'Dimag bilkul khaali feel – concentration zero, memory weak',
+      ],
     },
     {
       _key: 'med4',
       name: 'Carbo Vegetabilis',
-      forPatient: 'Jo log COVID mein oxygen level drop se guzre hain aur abhi bhi saanch lene mein takleef hai, seene mein bhaari pan hai, thodi si activity pe dam phoolna hai.',
-      hopeReason: 'Carbo Veg ko "the great reviver" kaha jaata hai homeopathy mein – ye respiratory recovery aur oxygenation support ke liye use hoti hai. Post-COVID respiratory lingering mein promising results hain.',
+      bestFor: 'Jo log COVID mein oxygen level drop se guzre hain aur abhi bhi saanch lene mein takleef hai, seene mein bhaari pan hai, thodi si activity pe dam phoolna hai.',
+      keyIndications: [
+        'Dam phoolna thodi si activity pe – seedhi chadne pe bhi saans phool jaata hai',
+        'Seene mein bhaari pan – oxygen meter normal dikhata hai phir bhi takleef',
+        'Thanda hawa chahiye – fan ke saamne baithna achha lagta hai, hawa se aaram',
+      ],
     },
     {
       _key: 'med5',
       name: 'Kali Phosphoricum',
-      forPatient: 'Students, professionals jinhe COVID ke baad brain fog, concentration problem, mental exhaustion, aur nervous system weakness hai.',
-      hopeReason: 'Kali Phos nervous system ka ek major homeopathic tonic maana jaata hai. Memory, concentration, aur sleep normalization – teeno mein ye effective hai. Post-COVID neurological recovery mein bahut use hoti hai.',
+      bestFor: 'Students, professionals jinhe COVID ke baad brain fog, concentration problem, mental exhaustion aur nervous system weakness hai – neurological Long COVID type.',
+      keyIndications: [
+        'Memory aur concentration bilkul weak – pehle jo yaad rehta tha ab nahi rehta',
+        'Nervous exhaustion – thodi bhi mental mehnat ke baad haath kaanpna ya chakkar',
+        'Neend irregular – ya bilkul nahi aati ya bahut zyada aati hai',
+      ],
     },
   ],
 
