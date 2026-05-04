@@ -81,6 +81,7 @@ const ALL_DISEASES = [
   { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',            cat: 'Circulatory', min: 7,              h: 'naso ki sujan phuli hui naasein paon dard' },
   // Men's Health
   { slug: 'male-infertility',            title: 'Male Infertility',        hindi: 'पुरुष निःशक्तता / बीज दोष', cat: "Men's",      min: 10, hot: true,  h: 'male infertility purush nishfalta sperm count badhana shukranu beej dosh mardana kamzori homeopathy' },
+  { slug: 'erectile-dysfunction',        title: 'Erectile Dysfunction',    hindi: 'नपुंसकता / मर्दों की कमज़ोरी', cat: "Men's",   min: 10, hot: true,  h: 'napunsakta mardana kamzori ED erection nahi aati ling mein tanav nahi mardon ki problem' },
   // Urinary
   { slug: 'kidney-stone',             title: 'Kidney Stone (Pathri)',   hindi: 'गुर्दे की पथरी',           cat: 'Urinary',     min: 9,  hot: true,  h: 'pathri gurde ki pathri stone NAFLD uric acid calcium' },
   { slug: 'recurrent-uti',            title: 'Recurrent UTI',           hindi: 'बार बार मूत्र संक्रमण',      cat: 'Urinary',     min: 8,  hot: true,  h: 'baar baar peshab infection UTI burning urine mahila urinary tract infection' },
