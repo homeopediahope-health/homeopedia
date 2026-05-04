@@ -72,6 +72,7 @@ const ALL_DISEASES = [
   { slug: 'thyroid',                    title: 'Hypothyroidism',          hindi: 'थायरॉइड की कमी',          cat: 'Endocrine',   min: 10, hot: true,  h: 'thyroid' },
   { slug: 'hyperthyroidism',            title: 'Hyperthyroidism',         hindi: 'थायरॉइड का बढ़ना',        cat: 'Endocrine',   min: 9,              h: 'thyroid badhna' },
   { slug: 'hashimoto-thyroiditis',      title: 'Hashimoto Thyroiditis',   hindi: 'हाशिमोटो थायरॉइड',       cat: 'Endocrine',   min: 7,              h: 'hashimoto thyroid' },
+  { slug: 'prediabetes',               title: 'Prediabetes / Insulin Resistance', hindi: 'प्रीशुगर / इंसुलिन रेज़िस्टेंस', cat: 'Endocrine', min: 10, hot: true, h: 'prediabetes insulin resistance blood sugar control preshugur HbA1c borderline diabetes' },
   // Autoimmune
   { slug: 'sjogrens-syndrome',          title: "Sjogren's Syndrome",      hindi: 'स्जोग्रेन सिंड्रोम',     cat: 'Autoimmune',  min: 8,              h: 'dry eyes mouth' },
   // Children's Health
