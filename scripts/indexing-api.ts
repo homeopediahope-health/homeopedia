@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/male-infertility',
+  'https://homeopedia.in/diseases/melasma',
 ]
 
 const ALL_URLS = [
@@ -95,6 +95,19 @@ const ALL_URLS = [
   'https://homeopedia.in/diseases/tennis-elbow',
   'https://homeopedia.in/diseases/molluscum-contagiosum',
   'https://homeopedia.in/diseases/male-infertility',
+  'https://homeopedia.in/diseases/carpal-tunnel-syndrome',
+  'https://homeopedia.in/diseases/bells-palsy',
+  'https://homeopedia.in/diseases/recurrent-uti',
+  'https://homeopedia.in/diseases/dysmenorrhoea',
+  'https://homeopedia.in/diseases/bph',
+  'https://homeopedia.in/diseases/trigeminal-neuralgia',
+  'https://homeopedia.in/diseases/vertigo',
+  'https://homeopedia.in/diseases/erectile-dysfunction',
+  'https://homeopedia.in/diseases/gallstones',
+  'https://homeopedia.in/diseases/juvenile-arthritis',
+  'https://homeopedia.in/diseases/nail-fungus',
+  'https://homeopedia.in/diseases/prediabetes',
+  'https://homeopedia.in/diseases/melasma',
 ]
 
 const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS

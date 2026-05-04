@@ -17,6 +17,7 @@ const ALL_DISEASES = [
   { slug: 'wart',                       title: 'Wart (Masar)',             hindi: 'मस्सा / मसा / गड्ढा मसा',  cat: 'Skin',        min: 7,  hot: true,  h: 'masar masa wart hatane ka upay haath pair chehre pe wart removal bina surgery' },
   { slug: 'molluscum-contagiosum',      title: 'Molluscum Contagiosum',   hindi: 'चेचक जैसी फुंसियां / वायरल दाने', cat: 'Skin', min: 8, hot: true, h: 'molluscum contagiosum ke daane bacchon mein viral skin bumps chechak jaisi phunsiyan homeopathy' },
   { slug: 'nail-fungus',               title: 'Nail Fungus (Onychomycosis)', hindi: 'नाखून का फंगस',            cat: 'Skin',        min: 9,  hot: true,  h: 'nakhoon ka fungas peela nakhoon mota nakhoon nail fungus onychomycosis paon ke nakhoon' },
+  { slug: 'melasma',                   title: 'Melasma / Pigmentation',      hindi: 'झाइयां / चेहरे का दाग',   cat: 'Skin',        min: 10, hot: true,  h: 'melasma jhaiyan chehre ka daag pigmentation dark spots facial pigmentation homeopathy' },
   // Joints
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
   { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',            cat: 'Joints',      min: 7,              h: 'disc slip' },
