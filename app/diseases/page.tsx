@@ -54,6 +54,7 @@ const ALL_DISEASES = [
   { slug: 'gastritis',                 title: 'Gastritis',               hindi: 'पेट की सूजन / गैस्ट्राइटिस', cat: 'Digestive',   min: 9,  hot: true,  h: 'gastritis pet ki sujan pet dard ka ilaaj H pylori pet mein jalan homeopathy' },
   { slug: 'gallstones',               title: 'Gallstones (Pitt Pathri)', hindi: 'पित्ताशय की पथरी',           cat: 'Digestive',   min: 10, hot: true,  h: 'pitt ki pathri pittashay pathri gall attack surgery alternative gallbladder stone' },
   { slug: 'gerd',                    title: 'GERD / Acid Reflux',       hindi: 'अम्लपित्त / सीने की जलन',    cat: 'Digestive',   min: 9,  hot: true,  h: 'seene ki jalan acid reflux amlapitta gerd pet ki gas khatti dakar homeopathy' },
+  { slug: 'dyspepsia',              title: 'Dyspepsia',                hindi: 'बदहज़मी / अपच / अजीर्ण',      cat: 'Digestive',   min: 9,  hot: true,  h: 'badhazmi apach khana hazm nahi hota pet mein gas bloating jalan homeopathy' },
   // Mental
   { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',                cat: 'Mental',      min: 5,  hot: true,  h: 'sar dard headache' },
   { slug: 'anxiety',                    title: 'Anxiety',                 hindi: 'चिंता',                   cat: 'Mental',      min: 5,              h: 'chinta tension ghabrahat' },
