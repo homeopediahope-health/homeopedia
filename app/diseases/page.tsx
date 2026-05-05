@@ -7,6 +7,7 @@ import SL from '@/components/SL'
 const ALL_DISEASES = [
   // Skin
   { slug: 'psoriasis',                  title: 'Psoriasis',               hindi: 'चम्बल (सोरायसिस)',         cat: 'Skin',        min: 12, hot: true,  h: 'chambal chanbmal' },
+  { slug: 'scalp-psoriasis',           title: 'Scalp Psoriasis',         hindi: 'सर की चम्बल / बालों वाली चम्बल', cat: 'Skin',   min: 10, hot: true,  h: 'sar ki chambal baalon wali chambal sir pe scale khujli silver patches khopdi homeopathy' },
   { slug: 'eczema',                     title: 'Eczema',                  hindi: 'एक्जिमा',                  cat: 'Skin',        min: 5,              h: 'khujli rash' },
   { slug: 'vitiligo',                   title: 'Vitiligo',                hindi: 'सफेद दाग',                 cat: 'Skin',        min: 6,              h: 'safed daag' },
   { slug: 'acne',                       title: 'Acne',                    hindi: 'मुहांसे',                  cat: 'Skin',        min: 4,              h: 'muhanse pimple' },
