@@ -56,6 +56,7 @@ const ALL_DISEASES = [
   { slug: 'insomnia',                   title: 'Insomnia',                hindi: 'अनिद्रा',                 cat: 'Mental',      min: 4,              h: 'neend nahi aati' },
   { slug: 'obsessive-compulsive-disorder', title: 'OCD',                  hindi: 'ओसीडी',                  cat: 'Mental',      min: 7,              h: 'obsessive compulsive' },
   { slug: 'chronic-fatigue-syndrome',     title: 'Chronic Fatigue Syndrome (CFS)', hindi: 'Chronic Thakan Rog / हमेशा थकान', cat: 'Mental', min: 10, hot: true, h: 'hamesha thakaan rehna CFS chronic fatigue post covid thakaan brain fog PEM kaam ke baad thakaan' },
+  { slug: 'ptsd',                          title: 'PTSD',                           hindi: 'मानसिक आघात विकार / Post-Traumatic', cat: 'Mental', min: 10, hot: true, h: 'ptsd trauma ke baad mansik takleef flashback nightmare panic attack mansik aaghat homeopathy' },
   // Women's Health
   { slug: 'pcod',                       title: 'PCOD/PCOS',               hindi: 'पीसीओडी',                 cat: "Women's",     min: 8,  hot: true,  h: 'periods irregular mahavari' },
   { slug: 'leucorrhoea',                title: 'Leucorrhoea',             hindi: 'श्वेत प्रदर',             cat: "Women's",     min: 4,              h: 'safed pani leucorrhea' },
