@@ -20,6 +20,7 @@ const ALL_DISEASES = [
   { slug: 'melasma',                   title: 'Melasma / Pigmentation',      hindi: 'झाइयां / चेहरे का दाग',   cat: 'Skin',        min: 10, hot: true,  h: 'melasma jhaiyan chehre ka daag pigmentation dark spots facial pigmentation homeopathy' },
   { slug: 'post-covid-syndrome',       title: 'Post-COVID Syndrome / Long COVID', hindi: 'पोस्ट-कोरोना थकान / Long COVID', cat: 'Respiratory', min: 10, hot: true,  h: 'post covid thakaan long covid brain fog covid ke baad kamzori corona ke baad ilaaj' },
   { slug: 'breast-fibroadenoma',       title: 'Breast Fibroadenoma',             hindi: 'छाती की गांठ / स्तन गांठ',        cat: "Women's",     min: 10, hot: true,  h: 'chhaati ki ganth breast lump fibroadenoma cancer nahi surgery bina ilaaj young girls' },
+  { slug: 'allergic-rhinitis',         title: 'Allergic Rhinitis',               hindi: 'नाक की एलर्जी / प्रतिरोधी नज़ला',  cat: 'Respiratory', min: 9,  hot: true,  h: 'naak ki allergy dust allergy chhink bar bar naak behna pollen allergy homeopathy' },
   // Joints
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
   { slug: 'disc-bulge',                 title: 'Disc Bulge',              hindi: 'डिस्क खिसकना',            cat: 'Joints',      min: 7,              h: 'disc slip' },
