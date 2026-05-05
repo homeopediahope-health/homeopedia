@@ -189,7 +189,7 @@ export const disease = defineType({
         ],
       })],
     }),
-    defineField({ name: 'category', title: 'Category', type: 'string', options: { list: ['Skin','Joints','Digestive','Mental','Women\'s','Respiratory','Hair','Endocrine','Neurological'] } }),
+    defineField({ name: 'category', title: 'Category', type: 'string', options: { list: ['Skin','Joints','Digestive','Mental','Women\'s','Respiratory','Hair','Endocrine','Neurological','ENT'] } }),
     defineField({ name: 'relatedDiseases', title: 'Related Diseases (names)', type: 'array', of: [{ type: 'string' }] }),
     defineField({
       name: 'exercise',

@@ -22,7 +22,9 @@ const ALL_DISEASES = [
   { slug: 'breast-fibroadenoma',       title: 'Breast Fibroadenoma',             hindi: 'छाती की गांठ / स्तन गांठ',        cat: "Women's",     min: 10, hot: true,  h: 'chhaati ki ganth breast lump fibroadenoma cancer nahi surgery bina ilaaj young girls' },
   { slug: 'postpartum-depression',     title: 'Postpartum Depression',           hindi: 'प्रसव के बाद का अवसाद',           cat: "Women's",     min: 10, hot: true,  h: 'delivery ke baad depression prasav ke baad udaasi baby blues nai maa ka mansik dard PPD homeopathy' },
   { slug: 'allergic-rhinitis',         title: 'Allergic Rhinitis',               hindi: 'नाक की एलर्जी / प्रतिरोधी नज़ला',  cat: 'Respiratory', min: 9,  hot: true,  h: 'naak ki allergy dust allergy chhink bar bar naak behna pollen allergy homeopathy' },
-  { slug: 'recurrent-ear-infection',  title: 'Recurrent Ear Infection',         hindi: 'बार बार कान का दर्द / कान पकना',   cat: 'Respiratory', min: 9,  hot: true,  h: 'kaan dard baar baar kaan ka infection kaan bahna kaan pakna ear pain homeopathy bacchon mein kaan' },
+  // ENT (Ear, Nose, Throat)
+  { slug: 'recurrent-ear-infection',  title: 'Recurrent Ear Infection',         hindi: 'बार बार कान का दर्द / कान पकना',   cat: 'ENT',         min: 9,  hot: true,  h: 'kaan dard baar baar kaan ka infection kaan bahna kaan pakna ear pain homeopathy bacchon mein kaan' },
+  { slug: 'tinnitus',                 title: 'Tinnitus',                        hindi: 'कान में सीटी / भनभनाहट',           cat: 'ENT',         min: 9,  hot: true,  h: 'kaan mein seeti bhanbhanahat kaan mein awaaz tinnitus ka ilaaj homeopathy' },
   { slug: 'delayed-milestones',        title: 'Delayed Milestones / GDD',        hindi: 'विकास में देरी / बच्चे का धीरे बढ़ना', cat: 'Neurological', min: 12, hot: true, h: 'bachche ka vikas deri late walking late talking speech delay motor delay GDD homeopathy' },
   // Joints
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
