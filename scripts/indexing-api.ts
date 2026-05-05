@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/recurrent-ear-infection',
+  'https://homeopedia.in/diseases/anal-fistula',
 ]
 
 const ALL_URLS = [
@@ -116,6 +116,7 @@ const ALL_URLS = [
   'https://homeopedia.in/diseases/ptsd',
   'https://homeopedia.in/diseases/postpartum-depression',
   'https://homeopedia.in/diseases/recurrent-ear-infection',
+  'https://homeopedia.in/diseases/anal-fistula',
 ]
 
 const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS
