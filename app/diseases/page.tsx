@@ -56,7 +56,7 @@ const ALL_DISEASES = [
   { slug: 'gallstones',               title: 'Gallstones (Pitt Pathri)', hindi: 'पित्ताशय की पथरी',           cat: 'Digestive',   min: 10, hot: true,  h: 'pitt ki pathri pittashay pathri gall attack surgery alternative gallbladder stone' },
   { slug: 'gerd',                    title: 'GERD / Acid Reflux',       hindi: 'अम्लपित्त / सीने की जलन',    cat: 'Digestive',   min: 9,  hot: true,  h: 'seene ki jalan acid reflux amlapitta gerd pet ki gas khatti dakar homeopathy' },
   { slug: 'dyspepsia',              title: 'Dyspepsia',                hindi: 'बदहज़मी / अपच / अजीर्ण',      cat: 'Digestive',   min: 9,  hot: true,  h: 'badhazmi apach khana hazm nahi hota pet mein gas bloating jalan homeopathy' },
-  { slug: 'worm-infestation',      title: 'Worm Infestation',         hindi: 'पेट के कीड़े / आंत के परजीवी',  cat: 'Digestive',   min: 9,  hot: true,  h: 'pet ke keede bachchon mein keede pinworm roundworm hookworm deworming homeopathy cina' },
+  { slug: 'worm-infestation',      title: 'Worm Infestation',         hindi: 'Intestinal Worms / Pet Worms',   cat: 'Digestive',   min: 9,  hot: true,  h: 'pet worms intestinal worms pinworm roundworm hookworm deworming bacchon homeopathy cina' },
   // Mental
   { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',                cat: 'Mental',      min: 5,  hot: true,  h: 'sar dard headache' },
   { slug: 'anxiety',                    title: 'Anxiety',                 hindi: 'चिंता',                   cat: 'Mental',      min: 5,              h: 'chinta tension ghabrahat' },
