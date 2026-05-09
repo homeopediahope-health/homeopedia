@@ -72,11 +72,11 @@ const doc = {
     'Chronic laryngitis, hoarseness, aur dental erosion — acid ka regularly throat aur teeth tak pahunchna',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Seene aur Pet ke Symptoms (Sabse Common)',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Seene aur Pet ke Symptoms (Sabse Common)',
+      items: [
         'Heartburn — khana khane ke 30-60 min baad seene mein burning',
         'Regurgitation — khaana ya khatta liquid gale mein aa jaana',
         'Epigastric pain — upper abdomen mein dard ya heaviness',
@@ -84,9 +84,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Gale aur Upar ke Symptoms',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Gale aur Upar ke Symptoms',
+      items: [
         'Gale mein khattaas ya titehaas (sour/bitter taste)',
         'Chronic khaansi — khaaskar raat ko ya subah uthte waqt',
         'Hoarseness ya awaaz baithna — acid vocal cords tak pahunche',
@@ -94,9 +94,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Red Flag Signs (Turant Doctor Ke Paas Jaayein)',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Red Flag Signs (Turant Doctor Ke Paas Jaayein)',
+      items: [
         'Black ya tarry stool — andar bleeding ki nishani, TURANT doctor',
         'Unexplained weight loss saath acidity — zaroori jaanch',
         'Vomiting with blood — emergency',

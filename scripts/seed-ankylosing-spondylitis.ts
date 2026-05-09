@@ -57,11 +57,11 @@ const ankylosingSpondylitis = {
     'Depression aur social isolation: Chronic pain aur mobility loss mental health ko bhi deeply affect karta hai',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Reedh aur Kamar Ke Symptoms — Main Group',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Reedh aur Kamar Ke Symptoms — Main Group',
+      items: [
         'Subah uthne pe lower back aur kamar mein ghante bhar ki stiffness — jo chhalne ya exercise se thodi better hoti hai (rest se nahi)',
         'Sacroiliac joint pain — lower back ke bilkul neeche, ek ya dono taraf',
         'Raat ko ya subah ke waqt dard zyada — inflammatory back pain ka classic sign',
@@ -70,9 +70,9 @@ const ankylosingSpondylitis = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Joints aur Muscles Ke Symptoms',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Joints aur Muscles Ke Symptoms',
+      items: [
         'Hip, knee, ya ankle joints mein dard aur sujan — especially ek taraf',
         'Heel mein dard (Enthesitis) — jahan tendon haddi se milta hai, wahan inflammation',
         'Chest mein dard aur gehri saans lene mein takleef — rib joints ki inflammation se',
@@ -81,9 +81,9 @@ const ankylosingSpondylitis = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Extra-Articular Symptoms — Joints Ke Bahar',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Extra-Articular Symptoms — Joints Ke Bahar',
+      items: [
         'Aankhon mein laalii, dard, dhundli vision (Uveitis) — jaldi doctor dikhana zaroori',
         'Skin pe psoriasis jaisi patches',
         'Loose motions ya pet mein baar baar takleef — IBD connection',

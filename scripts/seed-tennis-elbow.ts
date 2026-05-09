@@ -76,6 +76,29 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Elbow Aur Forearm Ke Signs',
+      items: [
+        'Kuhni ke baahri taraf (lateral epicondyle) mein dard — touch karne pe bhi',
+        'Hath pakadne ya mutthi bandhne mein kamzori aur dard',
+        'Cheezein uthane mein takleef — chaai ka cup, phone, pen bhi mushkil',
+        'Wrist movement se kuhni mein dard badh jaana',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Dard Ka Pattern',
+      items: [
+        'Subah uthke kuhni stiff aur dard karti hai',
+        'Computer mouse ya keyboard use karte waqt forearm mein burning',
+        'Rest karne pe dard thoda kam lekin kaam resume karne pe wapas aa jaata hai',
+        'Dard shoulder ya wrist tak bhi ja sakta hai kuch logon mein',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

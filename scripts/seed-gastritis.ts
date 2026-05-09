@@ -79,6 +79,30 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Pet Mein Dard Aur Jalan (Sabse Common)',
+      items: [
+        'Upper abdomen mein jalan ya dard — khali pet mein ya khaana khane ke baad',
+        'Nausea — especially subah ya khaane ke baad',
+        'Bloating — pet mein gas bhar jaana, bhaari lagta hai',
+        'Belching (daakarein) — baar baar, relief nahi milta',
+        'Appetite bilkul nahi hoti — khaane ka mann hi nahi karta',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Red Flag Signs (Turant Doctor)',
+      items: [
+        'Black ya tarry stool — andar bleeding ka warning sign',
+        'Vomiting mein blood ya coffee-ground jaisa material — emergency',
+        'Unexplained weight loss ke saath pet dard — specialist zaroor dikhao',
+        'Symptoms jo antacid se bilkul nahi sudharte — endoscopy zaroori',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

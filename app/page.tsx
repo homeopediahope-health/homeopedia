@@ -57,7 +57,7 @@ export default async function HomePage() {
         name: 'HomeoPedia.in',
         url: 'https://homeopedia.in',
         logo: 'https://homeopedia.in/favicon.ico',
-        description: "India's patient-first homeopathy knowledge portal — evidence-based, CCRH-backed, always free.",
+        description: "India's patient-first homeopathy knowledge portal — evidence-based, CCRH-backed.",
         medicalSpecialty: 'Homeopathic Medicine',
         founder: { '@type': 'Physician', name: 'Dr. Shadab Khan', honorificSuffix: 'MD Homoeopathy' },
       },
@@ -114,7 +114,7 @@ export default async function HomePage() {
           </h1>
 
           <p style={{ fontSize: 17, color: 'var(--ink3)', maxWidth: 520, margin: '0 auto 40px', lineHeight: 1.8, fontWeight: 300 }}>
-            Simple language mein disease guides, diet charts, dos &amp; don&apos;ts, aur homeopathy ka science. Free, doctor reviewed.
+            Simple language mein disease guides, diet charts, dos &amp; don&apos;ts, aur homeopathy ka science. Doctor reviewed.
           </p>
 
           {/* Search */}
@@ -192,10 +192,10 @@ export default async function HomePage() {
       <section style={{ background: 'linear-gradient(135deg,rgba(184,145,42,.1) 0%,rgba(184,145,42,.03) 100%)', borderTop: '1px solid rgba(184,145,42,.15)', borderBottom: '1px solid rgba(184,145,42,.15)', padding: '60px clamp(16px,4vw,32px)' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 32, alignItems: 'center' }}>
           <div>
-            <SL c="Free Resource" />
+            <SL c="Diet Resource" />
             <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 'clamp(22px,4vw,36px)', fontWeight: 700, color: 'var(--ink)', margin: '10px 0 12px' }}>Disease-Wise Diet Charts</h2>
             <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.8, fontWeight: 300, marginBottom: 20 }}>
-              Psoriasis, PCOD, Thyroid, IBS, Sciatica, Hair Fall — har disease ke liye detailed diet chart. Kya khayein, kya nahi, sample day plan — bilkul free.
+              Psoriasis, PCOD, Thyroid, IBS, Sciatica, Hair Fall — har disease ke liye detailed diet chart. Kya khayein, kya nahi, sample day plan — complete guide.
             </p>
             <Link href="/diet" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 24px', background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', color: '#fff', borderRadius: 100, fontSize: 14, fontWeight: 600, textDecoration: 'none', boxShadow: '0 3px 14px rgba(184,145,42,.35)' }}>
               🥗 Dekhein Diet Charts →
@@ -277,7 +277,7 @@ export default async function HomePage() {
             <SL c="Medically Reviewed" />
             <h2 style={{ fontFamily: 'var(--font-playfair, Georgia, serif)', fontSize: 30, fontWeight: 700, color: 'var(--ink)', margin: '12px 0 16px' }}>Every Article Personally Reviewed</h2>
             <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, fontWeight: 300, marginBottom: 24 }}>
-              HomeoPedia pe har article Dr. Shadab Khan ne personally review kiya hai. 15+ saal ki clinical experience aur 10,000+ patients ki real-world knowledge se backed content — sirf aapke liye, bilkul free.
+              HomeoPedia pe har article Dr. Shadab Khan ne personally review kiya hai. 15+ saal ki clinical experience aur 10,000+ patients ki real-world knowledge se backed content — sirf aapke liye.
             </p>
             <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600, boxShadow: '0 4px 16px rgba(37,162,68,.3)' }}>
               📲 WhatsApp Consultation

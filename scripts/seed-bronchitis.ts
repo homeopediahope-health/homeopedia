@@ -75,6 +75,29 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Khaansi Ke Signs (Main Complaint)',
+      items: [
+        'Lagaataar khaansi — 2-3 hafte se zyada chalti hai',
+        'Khaansi mein balgam — rang yellow, green, ya brown ho sakta hai',
+        'Seene mein dard ya pressure — khaanste waqt zyada',
+        'Raat ko khaansi zyada — neend mein takleef',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Breathing Aur General Signs',
+      items: [
+        'Saas phoolna — seedhiya chadhne ya thodi activity pe',
+        'Seene mein rattling sound — balgam ki wajah se saans lene ki awaaz',
+        'Bukhaar — acute bronchitis mein low-grade',
+        'Thakaan aur weakness — body infection se lad rahi hai',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

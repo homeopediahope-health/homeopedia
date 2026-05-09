@@ -98,6 +98,29 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Mukhya Signs (Zyaatar Koi Symptom Nahi Hota)',
+      items: [
+        'Aam taur pe koi direct symptom nahi — sirf pregnancy nahi hoti',
+        'Semen analysis mein low sperm count ya abnormal motility',
+        'Hormonal imbalance ke signs — fatigue, mood changes, low energy',
+        'Varicocele — scrotum mein visible dilated veins, kabhi dull ache',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Associated Signs (Jo Kaaran Se Aate Hain)',
+      items: [
+        'Sexual dysfunction — erection ya ejaculation mein problem',
+        'Low libido — sexual desire ka kum hona',
+        'Testicular swelling, pain, ya lump — doctor consultation zaroor',
+        'Gynecomastia — chest tissue ka badhna (hormonal issue ka sign)',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

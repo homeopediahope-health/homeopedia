@@ -11,7 +11,7 @@ export default function Footer() {
               <div style={{ width: 34, height: 34, borderRadius: 8, background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-playfair,Georgia,serif)', fontWeight: 700, color: '#fff', fontSize: 15 }}>H</div>
               <span style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 17, fontWeight: 700, color: 'var(--ink)' }}>HomeoPedia.in</span>
             </div>
-            <p style={{ fontSize: 13, color: 'var(--ink4)', lineHeight: 1.8, maxWidth: 260, fontWeight: 300 }}>India&apos;s patient-first homeopathy knowledge portal. Evidence-based, CCRH-backed. Always free.</p>
+            <p style={{ fontSize: 13, color: 'var(--ink4)', lineHeight: 1.8, maxWidth: 260, fontWeight: 300 }}>India&apos;s patient-first homeopathy knowledge portal. Evidence-based, CCRH-backed.</p>
             <div style={{ marginTop: 14, padding: '11px 14px', background: 'var(--gold-bg)', borderRadius: 9, border: '1px solid rgba(184,145,42,.2)' }}>
               <p style={{ fontSize: 11, color: 'var(--ink4)', lineHeight: 1.7 }}>⚕️ Sirf educational purpose ke liye. Treatment ke liye qualified doctor se milein.</p>
             </div>
@@ -48,7 +48,7 @@ export default function Footer() {
 
         <div style={{ borderTop: '1px solid var(--border)', paddingTop: 20, display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 10 }}>
           <div style={{ fontSize: 12, color: 'var(--ink4)' }}>Medically reviewed by <strong style={{ color: 'var(--ink3)' }}>Dr. Shadab Khan, MD Homeopath</strong> · © 2026 HomeoPedia.in</div>
-          <div style={{ fontSize: 12, color: 'var(--ink4)' }}>✓ CCRH Aligned · ✓ Evidence Based · ✓ Free to Read</div>
+          <div style={{ fontSize: 12, color: 'var(--ink4)' }}>✓ CCRH Aligned · ✓ Evidence Based · ✓ Doctor Reviewed</div>
         </div>
       </div>
     </footer>

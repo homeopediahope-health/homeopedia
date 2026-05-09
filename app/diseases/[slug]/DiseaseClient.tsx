@@ -307,7 +307,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
           )}
 
           {/* VIDEOS — standalone section, always shows channel link */}
-          <CollapsibleSection id="videos" icon="📺" title="Dr. Shadab Khan ke Videos" sub="YouTube pe aur bhi videos dekhein — free education" defaultOpen={true}>
+          <CollapsibleSection id="videos" icon="📺" title="Dr. Shadab Khan ke Videos" sub="YouTube pe aur bhi videos dekhein" defaultOpen={true}>
             {/* Specific video(s) for this disease */}
             {disease.youtubeVideos?.length > 0 ? (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16, marginBottom: 20 }}>
@@ -342,7 +342,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
               <span style={{ fontSize: 32, flexShrink: 0 }}>▶️</span>
               <div>
                 <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)', marginBottom: 3 }}>@drshadabshomoeopathy</div>
-                <div style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>{disease.title} aur aur bimariyon ke baare mein free videos — subscribe karein</div>
+                <div style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>{disease.title} aur aur bimariyon ke baare mein videos — subscribe karein</div>
               </div>
               <span style={{ marginLeft: 'auto', fontSize: 12, fontWeight: 600, color: '#cc0000', flexShrink: 0 }}>Subscribe →</span>
             </a>
@@ -609,8 +609,8 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
           {/* Post-FAQ CTA */}
           <div style={{ marginBottom: 52, padding: '28px', background: 'linear-gradient(135deg,rgba(184,145,42,.08),rgba(184,145,42,.02))', border: '1px solid rgba(184,145,42,.25)', borderRadius: 16, textAlign: 'center' }}>
             <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 20, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>Abhi bhi confusion hai?</div>
-            <p style={{ fontSize: 14, color: 'var(--ink3)', marginBottom: 20, fontWeight: 300 }}>Dr. Shadab se seedha poochho — free WhatsApp consultation</p>
-            <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', background: 'var(--ink)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>📲 Book Free Consultation</a>
+            <p style={{ fontSize: 14, color: 'var(--ink3)', marginBottom: 20, fontWeight: 300 }}>Dr. Shadab se seedha poochho — WhatsApp pe consultation</p>
+            <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', background: 'var(--ink)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>📲 Book Consultation</a>
           </div>
 
           {/* SOURCES */}
@@ -684,7 +684,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
           <Link href="/diet" style={{ display: 'block', padding: '16px 18px', background: 'rgba(58,125,82,.05)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 12, textDecoration: 'none', marginBottom: 16 }}>
             <div style={{ fontSize: 20, marginBottom: 8 }}>🥗</div>
             <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>Diet Charts Dekhein</div>
-            <div style={{ fontSize: 11, color: 'var(--ink4)', fontWeight: 300 }}>Disease-wise complete diet guide — free</div>
+            <div style={{ fontSize: 11, color: 'var(--ink4)', fontWeight: 300 }}>Disease-wise complete diet guide</div>
           </Link>
         </div>
       </div>

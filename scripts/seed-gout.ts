@@ -57,11 +57,11 @@ const gout = {
     'Cardiovascular risk — studies mein high uric acid ko heart disease se link kiya gaya hai',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Acute Attack Ke Dard Ke Signs',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Acute Attack Ke Dard Ke Signs',
+      items: [
         'Achanak raat ko ya subah uthte waqt joint mein bahut tez dard',
         'Pair ka angutha (big toe) sabse common — chalte bhi nahi banta',
         'Joint garam, laal, aur sparsh se bhi dard kare',
@@ -70,9 +70,9 @@ const gout = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Uric Acid Barhne Ke Signals',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Uric Acid Barhne Ke Signals',
+      items: [
         'Blood test mein uric acid 7 mg/dL se upar (men) / 6 mg/dL se upar (women)',
         'Frequent joint pain, especially raat ko',
         'Ankles, ghutne, kuhni mein bhi dard — sirf anguthe mein nahi',
@@ -81,9 +81,9 @@ const gout = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Chronic / Advanced Stage Signs',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Chronic / Advanced Stage Signs',
+      items: [
         'Joints ke aas paas hard, chalky lumps (tophi)',
         'Ek baar theek hone ke baad dobara dobara attack — har baar jaldi',
         'Joint stiffness jo subah kaafi der tak rehti hai',

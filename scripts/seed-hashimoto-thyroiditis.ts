@@ -59,11 +59,11 @@ const hashimotoThyroiditis = {
     'Thyroid lymphoma — very rare, lekin long-standing chronic inflammation se risk slightly elevated',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Metabolic + Energy Symptoms',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Metabolic + Energy Symptoms',
+      items: [
         'Extreme thakaan — poori neend ke baad bhi fresh nahi lagta',
         'Unexplained weight gain — diet control ke baad bhi',
         'Thanda zyada lagana — dusron ko normal lage, aapko sweater chahiye',
@@ -72,9 +72,9 @@ const hashimotoThyroiditis = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Physical + External Symptoms',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Physical + External Symptoms',
+      items: [
         'Baal bahut jhadna ya baal patla hona',
         'Skin dry, rough aur pale hona',
         'Face, haath, pair mein sujan (puffiness) — subah zyada',
@@ -85,9 +85,9 @@ const hashimotoThyroiditis = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Neurological + Mood Symptoms',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Neurological + Mood Symptoms',
+      items: [
         'Brain fog — yaaddasht kamzor, concentrate karna mushkil',
         'Depression ya mood swings',
         'Anxiety — Hashitoxicosis phase mein',

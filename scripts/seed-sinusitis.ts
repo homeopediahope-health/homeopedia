@@ -55,11 +55,11 @@ const sinusitis = {
     'Quality of life severely affected — neend nahi, kaam mein dhyan nahi, constant fatigue',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Face aur Naak Ke Signs (Sabse Common)',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Face aur Naak Ke Signs (Sabse Common)',
+      items: [
         'Chehra bhaari ya dard karta hua — especially aankh ke neeche, naak ke dono taraf, ya mathe pe',
         'Naak poori tarah band — ek taraf ya dono taraf se, saas lena mushkil',
         'Thick discharge — naak se ya gale mein jaata hua (post-nasal drip), rang peela/green ho sakta hai',
@@ -67,9 +67,9 @@ const sinusitis = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Body Ke General Signs',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Body Ke General Signs',
+      items: [
         'Sar dard — khaaskar subah uthte waqt ya aage jhukne pe barhta hai',
         'Thakan aur kamzori — body infection se lad rahi hoti hai',
         'Bukhaar (acute cases mein) — usually low-grade 99-100°F',
@@ -77,9 +77,9 @@ const sinusitis = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Chronic Cases Mein (Long-Term Signs)',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Chronic Cases Mein (Long-Term Signs)',
+      items: [
         'Raat ko naak band hona — neend mein takleef, muh se saas',
         'Gala kharaash rehna — post-nasal drip se constant irritation',
         'Chronic fatigue — infection lambe waqt se drain kar rahi hoti hai energy',

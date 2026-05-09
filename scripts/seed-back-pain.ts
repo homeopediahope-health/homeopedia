@@ -60,11 +60,11 @@ const backPain = {
     'Mental health impact — long-term pain anxiety aur depression trigger kar sakta hai; vicious cycle banta hai',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Muscle & Mechanical Symptoms (Sabse Common)',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Muscle & Mechanical Symptoms (Sabse Common)',
+      items: [
         'Kamar mein dard jo movement se badhta hai, rest se thoda kam',
         'Subah uthne par akad aur stiffness — thodi der mein theek hoti hai',
         'Ek jagah jhukte ya uthte waqt "kuch khichne" jaisi feeling',
@@ -73,9 +73,9 @@ const backPain = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Nerve-Related Symptoms (Sciatica / Disc)',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Nerve-Related Symptoms (Sciatica / Disc)',
+      items: [
         'Dard jo kamar se lekar ek ya dono pairon mein jaaye',
         'Pair mein jalan, bijli, ya "suit" jaisi sensation',
         'Pair ya paon mein numbness ya pins-and-needles',
@@ -84,9 +84,9 @@ const backPain = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Serious Warning Signs — Doctor Turant Milein',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Serious Warning Signs — Doctor Turant Milein',
+      items: [
         'Pair mein weakness — chalte waqt ladkhadana',
         'Bladder ya bowel control kho dena — emergency sign',
         'Raat ko zyada dard badhna bina kisi wajah ke',

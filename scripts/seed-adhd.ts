@@ -78,6 +78,31 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Hyperactivity & Impulsivity (Active Bachon Mein)',
+      items: [
+        'Ek jagah baithe nahi rahta — uthke daudta hai, hamesha hilta rehta hai',
+        'Class mein ya ghar mein kaam karte waqt dhyaan nahi lagta',
+        'Baat karne se pehle soch nahi pata — doosron ki baat kaat deta hai',
+        'Baar baar instructions maanne mein takleef — bhool jaata hai',
+        'Risk-taking behavior — bina soche dangerous cheezein kar baithta hai',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Inattention & Focus Problems',
+      items: [
+        'School mein dhyaan nahi lagta — homework bohot mushkil',
+        'Cheezein baar baar kho deta hai — books, toys, daily items',
+        'Ek kaam se doosre mein jump karta hai — koi kaam poora nahi karta',
+        'Aasaani se distract ho jaata hai — awaaz, movement pe focus toot jaata hai',
+        'Boring ya repetitive tasks mein patience bilkul nahi hota',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

@@ -55,11 +55,11 @@ const sjogrens = {
     'Mental health impact — chronic dry eyes aur fatigue se depression aur anxiety common ho jaati hai',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Gland Symptoms — Sabse Common',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Gland Symptoms — Sabse Common',
+      items: [
         'Aankhein bahut dry, jalti hui, aur sandy-gritty feeling — jaise aankhon mein reti pad gayi ho',
         'Muh bilkul sukha rehna — especially raat ko aur subah',
         'Swallowing mein taklif — khana bina paani ke nahi utarta',
@@ -68,9 +68,9 @@ const sjogrens = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Systemic Symptoms — Poore Body Mein',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Systemic Symptoms — Poore Body Mein',
+      items: [
         'Chronic thakaan — bahut zyada, jo rest se bhi theek nahi hoti',
         'Joints mein dard aur swelling — especially haath, ghutne',
         'Dry skin aur vaginal dryness (in women — very common, rarely discussed)',
@@ -79,9 +79,9 @@ const sjogrens = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Neurological & Other Symptoms — Less Common',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Neurological & Other Symptoms — Less Common',
+      items: [
         'Brain fog — concentrate nahi kar paate, yaaddasht weak',
         'Numbness ya tingling in hands/feet (peripheral neuropathy)',
         'Chronic dry cough — throat dry rehne se',

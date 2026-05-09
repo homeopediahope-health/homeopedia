@@ -31,7 +31,7 @@ export default function DietListClient({ diets }: { diets: any[] }) {
       {/* Hero */}
       <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: '52px clamp(16px,4vw,32px) 40px' }}>
         <div style={{ maxWidth: 960, margin: '0 auto', textAlign: 'center' }}>
-          <span style={{ fontSize: 10, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)', letterSpacing: 1.5, textTransform: 'uppercase' }}>Free Diet Charts</span>
+          <span style={{ fontSize: 10, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)', letterSpacing: 1.5, textTransform: 'uppercase' }}>Diet Charts</span>
           <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 700, color: 'var(--ink)', margin: '14px 0 10px' }}>Disease-Wise Diet Charts</h1>
           <p style={{ fontSize: 15, color: 'var(--ink3)', marginBottom: 28, fontWeight: 300, lineHeight: 1.7 }}>Kya khayein, kya nahi — har disease ke liye doctor recommended. Indian foods ke hisaab se.</p>
           <div style={{ maxWidth: 440, margin: '0 auto' }}>
@@ -54,7 +54,7 @@ export default function DietListClient({ diets }: { diets: any[] }) {
           <div style={{ fontSize: 26 }}>🥗</div>
           <div>
             <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Diet se hi shuru hoti hai healing</div>
-            <div style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}>Homeopathy + sahi diet = 2x fast results. Har chart free hai — no signup needed.</div>
+            <div style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}>Homeopathy + sahi diet = 2x fast results. Har chart doctor reviewed hai.</div>
           </div>
         </div>
 
@@ -69,7 +69,7 @@ export default function DietListClient({ diets }: { diets: any[] }) {
                     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(to right,var(--gold-dk),var(--gold-lt))', borderRadius: '14px 14px 0 0' }} />
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
                       <span style={{ fontSize: 10, fontWeight: 600, padding: '3px 10px', borderRadius: 100, background: `${catColor}18`, color: catColor, border: `1px solid ${catColor}40` }}>{d.category}</span>
-                      <span style={{ fontSize: 11, color: 'var(--ink4)' }}>Free</span>
+                      <span style={{ fontSize: 11, color: 'var(--ink4)' }}>Dr. Reviewed</span>
                     </div>
                     <h3 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 19, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>{d.title}</h3>
                     {d.hindiName && <div style={{ fontSize: 12, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-playfair,Georgia,serif)', marginBottom: 8 }}>{d.hindiName}</div>}

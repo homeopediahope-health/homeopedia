@@ -76,11 +76,11 @@ const doc = {
     'Bleeding — bahut phuli hue veins kabhi kabhi skin ke neeche ya bahar se bleed kar sakti hain, especially injury pe',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Visible Signs (Jo Dikhai Deta Hai)',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Visible Signs (Jo Dikhai Deta Hai)',
+      items: [
         'Tangon mein blue, purple ya green color ki uthri hui, twisted veins',
         'Spider veins — makadijaala jaisi pattern skin pe',
         'Ankle aur paon mein sujan (shaam ko zyada)',
@@ -89,9 +89,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Pain & Discomfort Symptoms (Jo Feel Hota Hai)',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Pain & Discomfort Symptoms (Jo Feel Hota Hai)',
+      items: [
         'Tangon mein heaviness ya bhaari bhaari feeling — khaas taur pe shaam ko',
         'Khada rehne ya baithne ke baad burning ya throbbing sensation',
         'Muscle cramps — raat ko zyada, neend todne wale',
@@ -101,9 +101,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Progressive / Advanced Symptoms',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Progressive / Advanced Symptoms',
+      items: [
         'Ankle ke paas skin ka darkening (hyperpigmentation)',
         'Eczema-like rash veins ke aaspaas (Varicose Eczema)',
         'Atrophie Blanche — white, scarred skin patches ankles ke paas',

@@ -88,6 +88,29 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Dard Ke Symptoms',
+      items: [
+        'Ek taraf pait ke neeche dard — right ya left — period ke aaspaas ya kabhi bhi',
+        'Bloating ya pet bhaari lagna — khaana khane ke baad zyada',
+        'Intercourse ke waqt ya baad mein dard',
+        'Sudden severe pain — agar cyst toot jaaye (emergency sign)',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Cycle Aur Hormonal Signs',
+      items: [
+        'Periods irregular — zyada ya kam, samay pe nahi',
+        'Heavy bleeding ya clots ke saath period',
+        'Nausea ya vomiting — periods ke aaspaas',
+        'Frequent urination ya bladder pe pressure feel hona',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

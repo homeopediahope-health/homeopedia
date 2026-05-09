@@ -80,6 +80,41 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Skin Pe Dikhne Wale Signs (Physical)',
+      items: [
+        'Chote, gol, chamkile daane — 2 se 5 mm tak, bilkul moti jaisi surface',
+        'Beech mein ek gehri dot ya dimple — ye molluscum ki khas pehchaan hai',
+        'Rang: skin-color, slightly peelaahat, ya white-pearl jaisa',
+        'Daane cluster mein aate hain — ek saath 5-20 ya zyada',
+        'Face, neck, arms, chest, ya intimate areas pe — kisi bhi jagah ho sakta hai',
+        'Dard nahi hota aam taur pe — bas dikh ta hai aur thodi khujli hoti hai',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Sensation Aur Spread Ke Signs',
+      items: [
+        'Halki khujli — scratching se auto-inoculation hoti hai (ek jagah se doosri jagah failna)',
+        'Daane dhire dhire barhte hain — hafte ya mahine mein',
+        'Naye daane paas mein ya scratch ki line mein nikalte hain',
+        'Agar daana phoot jaaye — thoda dard ya discharge, phir wahan naya daana',
+      ],
+    },
+    {
+      _key: 'sym3',
+      category: 'Red Flags — Doctor Zaroor Dikhana',
+      items: [
+        'Daane bahut tezi se fail rahe hain — 2 hafte mein double ho gaye',
+        'Aankh ke paas daane hain — conjunctivitis ka risk',
+        'Daane laal, sujan, ya pus ke saath — bacterial infection shuru ho gayi',
+        'Adult mein genital area pe naye daane — STI screening bhi zaroori',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

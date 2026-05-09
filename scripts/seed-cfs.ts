@@ -79,6 +79,29 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Thakaan Ke Signs (Post-Exertional Malaise)',
+      items: [
+        'Bahut tez thakaan jo rest se theek nahi hoti — 6 mahine se zyada',
+        'Physical ya mental kaam ke baad symptoms aur bura ho jaate hain (PEM)',
+        'Subah uthke bhi fresh nahi lagta — poori raat ki neend ke baad bhi',
+        'Chhoti activity — nahana, kapde pehnna — bhi bahut effort lagti hai',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Mind Aur Body Ke Associated Signs',
+      items: [
+        'Brain fog — concentrate nahi kar paate, words bhool jaate hain',
+        'Neend disturbed — ya to bahut neend, ya bilkul nahi',
+        'Muscles ya joints mein dard — bina kisi injury ke',
+        'Sore throat ya lymph nodes ka bhaari lagna — flare-up mein',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

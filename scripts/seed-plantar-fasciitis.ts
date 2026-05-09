@@ -72,11 +72,11 @@ const doc = {
     'Activity limitation aur quality of life mein giravat — khas tor pe active logon mein depression aur frustration bhi aata hai',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Heel Pain Ke Typical Signs',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Heel Pain Ke Typical Signs',
+      items: [
         'Subah bistar se uthte hi pehla qadam rakhne par tez, cutting-type dard — ye plantar fasciitis ki sabse khas pehchaan hai',
         'Heel ke neeche ya beech mein dard — exact location fascia ke type pe depend karta hai',
         'Lambe waqt baithne ke baad uthne par phir se dard — jaise office mein kaam karte waqt ya car se nikalte waqt',
@@ -84,9 +84,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Dard Ka Pattern Aur Behavior',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Dard Ka Pattern Aur Behavior',
+      items: [
         'Thodi der chalne ke baad dard thoda kam hota hai (warm-up effect) — lekin zyada derne par phir badhta hai',
         'Seedhi ya tilted surface pe chalne mein difference feel hona',
         'Zyada activity wale din raat ko heel mein thakan aur heaviness',
@@ -94,9 +94,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Associated Signs',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Associated Signs',
+      items: [
         'Paon ke arch mein tightness ya pulling sensation',
         'Calf muscles mein tightness (Achilles tendon tight hona)',
         'Subah uthne ke baad paon mein stiffness jo kuch qadam ke baad thodi theek hoti hai',

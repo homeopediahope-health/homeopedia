@@ -56,11 +56,11 @@ const ulcerativeColitis = {
     'Joint pain (arthritis), eye inflammation, skin rashes — UC ke systemic complications jo aant se bahar bhi dikhte hain',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Digestive Symptoms — Aant Se Related',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Digestive Symptoms — Aant Se Related',
+      items: [
         'Baar baar dast (diarrhea) — din mein 4 se 20+ baar bhi ho sakta hai',
         'Khoon ya mucus (balgam) ke saath stool — sabse common complaint',
         'Tenesmus — lagta hai pakhana nahi nikla, baar baar jaana padta hai',
@@ -69,9 +69,9 @@ const ulcerativeColitis = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Systemic Symptoms — Poore Body Pe Asar',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Systemic Symptoms — Poore Body Pe Asar',
+      items: [
         'Thakaan aur kamzori — anemia aur chronic inflammation se',
         'Fever — flare up ke waqt low-grade se high fever tak',
         'Weight loss — appetite kam hona aur nutrients absorb na hona',
@@ -79,9 +79,9 @@ const ulcerativeColitis = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Extra-Intestinal Symptoms — Aant Se Bahar',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Extra-Intestinal Symptoms — Aant Se Bahar',
+      items: [
         'Joint pain — ghutne, kamar, fingers affect hote hain',
         'Aankhon mein laali ya dard (uveitis/episcleritis)',
         'Muh mein chhale (aphthous ulcers) — flare up ke saath aate hain',

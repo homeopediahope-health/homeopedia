@@ -112,7 +112,7 @@ export default function ContactPage() {
             { q: 'Kya online consultation mein sahi treatment milti hai?', a: 'Ji haan. Homeopathy mein patient ki poori history — symptoms, triggers, nature, past treatments — sab dekh ke medicine dete hain. Ye sab WhatsApp pe detail mein share ho sakta hai. 60%+ patients online consultation se hi treat hote hain.' },
             { q: 'Medicine courier se kaise milegi?', a: 'Dr. Shadab prescription bhejte hain. Aap kisi bhi nearby homeopathic pharmacy se le sakte hain, ya hum courier arrangement bhi karte hain. India ke kisi bhi city mein possible hai.' },
             { q: 'Pehle WhatsApp message mein kya likhein?', a: 'Apna naam, age, bimari ka naam, aur kitne samay se hai — bas itna likho. Dr. Shadab khud reply karte hain aur further details poochte hain.' },
-            { q: 'Fees kitni hai?', a: 'First query pe WhatsApp pe free advice milti hai. Detailed case analysis aur prescription ke liye nominal fees hain. WhatsApp pe poochhein.' },
+            { q: 'Fees kitni hai?', a: 'Detailed case analysis aur prescription ke liye fees hain. WhatsApp pe poochhein.' },
           ].map((item, i) => (
             <div key={i} style={{ borderBottom: '1px solid var(--border)', padding: '18px 0' }}>
               <div style={{ fontWeight: 600, fontSize: 15, color: 'var(--ink)', marginBottom: 8 }}>{item.q}</div>

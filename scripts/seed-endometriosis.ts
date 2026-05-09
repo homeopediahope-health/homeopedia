@@ -55,11 +55,11 @@ const endometriosis = {
     'Bowel aur Bladder Problems — Advanced stage mein urination aur digestion dono affected ho sakte hain',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Dard Ke Lakshan (Pain Symptoms)',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Dard Ke Lakshan (Pain Symptoms)',
+      items: [
         'Dysmenorrhea — Period ke pehle aur dauran extreme dard jo painkiller se bhi control nahi hota',
         'Dyspareunia — Physical intimacy (intercourse) ke waqt ya baad mein dard',
         'Chronic Pelvic Pain — Period ke bina bhi pet ke neeche dard rehna',
@@ -67,18 +67,18 @@ const endometriosis = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Bleeding Aur Cycle Problems',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Bleeding Aur Cycle Problems',
+      items: [
         'Heavy Menstrual Bleeding (Menorrhagia) — Bahut zyada blood, clots ke saath',
         'Irregular Periods — Cycle unpredictable rehna',
         'Spotting Between Periods — Bich bich mein daag aana',
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'General / Fertility Related',
-      symptoms: [
+      _key: 'sym3',
+      category: 'General / Fertility Related',
+      items: [
         'Infertility ya Pregnancy Mein Difficulty — Conceive karne mein problem',
         'Fatigue / Thakaan — Khaaskar period ke aaspaas extreme tiredness',
         'Bloating / Gas — "Endo belly" — pet period ke time balloon jaisi feel hoti hai',

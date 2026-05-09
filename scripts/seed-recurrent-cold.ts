@@ -88,6 +88,29 @@ const doc = {
     },
   ],
 
+  symptoms: [
+    {
+      _key: 'sym1',
+      category: 'Naak Aur Gale Ke Signs',
+      items: [
+        'Baar baar naak behna — clear ya yellow discharge',
+        'Naak band hona — sone mein takleef, muh se saas lena padta hai',
+        'Gale mein kharaash ya khichav — sard cheezein ke turant baad',
+        'Chheenkein — subah uthke ya dhool, dhuaan mein aane pe',
+      ],
+    },
+    {
+      _key: 'sym2',
+      category: 'Immunity Ke Signs (Baar Baar Aana Hi Problem Hai)',
+      items: [
+        'Saal mein 4+ baar sardi lagti hai — seasonal ya kabhi bhi',
+        'Ek cold se theek hote hote doosra shuru — kabhi poori tarah theek nahi hote',
+        'Thakaan aur weakness — har cold ke baad kaafi din tak',
+        'Kuch logon mein sinus ya kaan mein bhi spread ho jaata hai',
+      ],
+    },
+  ],
+
   medicines: [
     {
       _key: 'med1',

@@ -29,7 +29,7 @@ export default function BottomNav() {
       })}
       <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3, textDecoration: 'none', flex: 1, padding: '6px 6px' }}>
         <span style={{ display: 'inline-block', padding: '4px 12px', background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', color: '#fff', borderRadius: 100, fontSize: 10, fontWeight: 600, whiteSpace: 'nowrap' }}>Consult</span>
-        <span style={{ fontSize: 10, color: 'var(--gold-dk)', fontWeight: 500 }}>Free</span>
+        <span style={{ fontSize: 10, color: 'var(--gold-dk)', fontWeight: 500 }}>Consult</span>
       </a>
     </nav>
   )

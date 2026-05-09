@@ -137,7 +137,7 @@ export default function DiseasesPage() {
         <div style={{ maxWidth: 1160, margin: '0 auto' }}>
           <SL c="All Diseases" />
           <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, color: 'var(--ink)', marginBottom: 8, textAlign: 'center' }}>Disease Library</h1>
-          <p style={{ textAlign: 'center', color: 'var(--ink4)', fontSize: 14, marginBottom: 28, fontWeight: 300 }}>{ALL_DISEASES.length} conditions · Doctor reviewed · Free to read</p>
+          <p style={{ textAlign: 'center', color: 'var(--ink4)', fontSize: 14, marginBottom: 28, fontWeight: 300 }}>{ALL_DISEASES.length} conditions · Doctor reviewed · CCRH-backed</p>
           <div style={{ maxWidth: 480, margin: '0 auto' }}>
             <input
               value={q}

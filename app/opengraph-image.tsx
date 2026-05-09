@@ -98,7 +98,7 @@ export default function OgImage() {
             gap: '24px',
             marginBottom: '40px',
           }}>
-            {['🔬 CCRH-Backed', '👨‍⚕️ Doctor-Reviewed', '🇮🇳 Hindi Mein', '✅ Free'].map((item) => (
+            {['🔬 CCRH-Backed', '👨‍⚕️ Doctor-Reviewed', '🇮🇳 Hindi Mein', '✅ Verified'].map((item) => (
               <div key={item} style={{
                 display: 'flex',
                 alignItems: 'center',

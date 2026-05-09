@@ -83,11 +83,11 @@ const doc = {
     'Nutritional deficiencies — limited food preferences se iron, zinc, omega-3 ki kami',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Social Communication Challenges (Sabse Pehle Dikhte Hain)',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Social Communication Challenges (Sabse Pehle Dikhte Hain)',
+      items: [
         '12 months tak "mama/papa" ya ek bhi word nahi bola',
         '18 months tak koi single meaningful word nahi',
         '24 months tak 2-word phrase nahi',
@@ -99,9 +99,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Repetitive Behaviors & Restricted Interests (Stimming & Fixations)',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Repetitive Behaviors & Restricted Interests (Stimming & Fixations)',
+      items: [
         'Haath hiltana (hand flapping), rocking, spinning — "stimming" behavior',
         'Ek hi routine mein change hone pe extreme distress',
         'Toy ek hi tarike se arrange karna — khelta nahi, line lagata hai',
@@ -112,9 +112,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Developmental & Cognitive Patterns',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Developmental & Cognitive Patterns',
+      items: [
         'Speech delay ya regression — bola tha, phir band ho gaya',
         'Rote memory kaafi strong ho sakti hai — numbers, dates yaad rakhna',
         'Executive function weak — planning, sequencing mein difficulty',

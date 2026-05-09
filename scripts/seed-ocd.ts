@@ -56,11 +56,11 @@ const ocd = {
     'Self-harm risk: Severe, long-untreated OCD mein suicidal thoughts ka risk badh jaata hai — professional help urgent hoti hai is situation mein',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Obsessions — Unwanted, Recurring Thoughts',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Obsessions — Unwanted, Recurring Thoughts',
+      items: [
         'Germs, infection, ya gandagi ka baar baar darr jo logic se nahi jaata',
         'Violent ya sexual thoughts jo mann mein bina chaahe aate hain aur distress dete hain (patient unhe act nahi karna chahta)',
         '"Maine gas band nahi kiya" ya "darwaza lock nahi kiya" ka persistent doubt',
@@ -70,9 +70,9 @@ const ocd = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Compulsions — Repetitive Actions / Mental Rituals',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Compulsions — Repetitive Actions / Mental Rituals',
+      items: [
         'Haath baar baar dhona jab tak "sahi" na lage — skin damage tak',
         'Gas, lock, switches ka 10-20-30 baar check karna ek hi session mein',
         'Silently mantra, prayer, ya certain words baar baar repeat karna',
@@ -82,9 +82,9 @@ const ocd = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Impact Signs — Ye OCD Hai, Normal Habit Nahi',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Impact Signs — Ye OCD Hai, Normal Habit Nahi',
+      items: [
         'Compulsions mein roz 1+ ghante jaate hain',
         'Compulsion incomplete rehne pe panic/extreme distress hota hai',
         'Social situations, office, ya family functions se bachne laga hai',

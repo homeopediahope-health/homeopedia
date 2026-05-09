@@ -88,11 +88,11 @@ const doc = {
     'Skin mein secondary fungal/bacterial infections — kyunki folds mein moisture trap hoti hai',
   ],
 
-  symptomGroups: [
+  symptoms: [
     {
-      _key: 'sg1',
-      groupName: 'Skin Changes (Sabse Pehle Ye Dikhega)',
-      symptoms: [
+      _key: 'sym1',
+      category: 'Skin Changes (Sabse Pehle Ye Dikhega)',
+      items: [
         'Neck ke peeche ya side mein kaali, thick skin',
         'Bagal (underarms) mein kaala aur rough patch',
         'Kamar ke neeche (belt area) ya groin mein kaali skin',
@@ -101,9 +101,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg2',
-      groupName: 'Associated Body Signals',
-      symptoms: [
+      _key: 'sym2',
+      category: 'Associated Body Signals',
+      items: [
         'Unusual weight gain, khaaskar pet ke aaspaas',
         'Irregular menstrual cycles (mahilaon mein)',
         'Excessive thirst ya bar bar peshab aana (diabetes signs)',
@@ -113,9 +113,9 @@ const doc = {
       ],
     },
     {
-      _key: 'sg3',
-      groupName: 'Warning Signs (Serious Type Ke Liye — Turant Doctor)',
-      symptoms: [
+      _key: 'sym3',
+      category: 'Warning Signs (Serious Type Ke Liye — Turant Doctor)',
+      items: [
         'Bahut tezi se failna — kuch hafton mein',
         'Sirf neck nahi, pure body pe patches',
         'Saath mein bhookh na lagna, unexplained weight loss',
