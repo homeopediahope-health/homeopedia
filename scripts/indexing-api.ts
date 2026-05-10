@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/dry-eye-syndrome',
+  'https://homeopedia.in/diseases/chickenpox',
 ]
 
 const ALL_URLS = [
@@ -123,6 +123,10 @@ const ALL_URLS = [
   'https://homeopedia.in/diseases/teething-trouble',
   'https://homeopedia.in/diseases/worm-infestation',
   'https://homeopedia.in/diseases/guttate-psoriasis',
+  'https://homeopedia.in/diseases/atopic-dermatitis',
+  'https://homeopedia.in/diseases/stye',
+  'https://homeopedia.in/diseases/dry-eye-syndrome',
+  'https://homeopedia.in/diseases/chickenpox',
 ]
 
 const URLS = CODE_ARG === 'new' ? NEW_URLS : ALL_URLS
