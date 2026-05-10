@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/stye',
+  'https://homeopedia.in/diseases/dry-eye-syndrome',
 ]
 
 const ALL_URLS = [

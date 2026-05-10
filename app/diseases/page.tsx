@@ -101,6 +101,7 @@ const ALL_DISEASES = [
   { slug: 'teething-trouble',          title: 'Teething Trouble',        hindi: 'दाँत निकलने की तकलीफ',    cat: "Children's",  min: 7,  hot: true,  h: 'daant nikalna daant aana bachche ke daant dard drooling chamomilla homeopathy shishu' },
   // Eye
   { slug: 'stye',                       title: 'Stye (Guheri)',           hindi: 'गुहेरी / आँखों की फुंसी',    cat: 'Eye',         min: 7,  hot: true,  h: 'guheri aankh ki phunsi stye aankhon mein phunsi palak sujan billi aankhiya warm compress' },
+  { slug: 'dry-eye-syndrome',           title: 'Dry Eye Syndrome',        hindi: 'आँखों की जलन / सूखी आँखें',  cat: 'Eye',         min: 8,  hot: true,  h: 'dry eye aankhon mein jalan sukhapan screen se aankh jalan AC aankhon mein sukhapan ka ilaaj' },
   // Circulatory
   { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',            cat: 'Circulatory', min: 7,              h: 'naso ki sujan phuli hui naasein paon dard' },
   // Men's Health
