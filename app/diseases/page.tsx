@@ -62,6 +62,7 @@ const ALL_DISEASES = [
   { slug: 'gerd',                    title: 'GERD / Acid Reflux',       hindi: 'अम्लपित्त / सीने की जलन',    cat: 'Digestive',   min: 9,  hot: true,  h: 'seene ki jalan acid reflux amlapitta gerd pet ki gas khatti dakar homeopathy' },
   { slug: 'dyspepsia',              title: 'Dyspepsia',                hindi: 'बदहज़मी / अपच / अजीर्ण',      cat: 'Digestive',   min: 9,  hot: true,  h: 'badhazmi apach khana hazm nahi hota pet mein gas bloating jalan homeopathy' },
   { slug: 'worm-infestation',      title: 'Worms in Children',        hindi: 'Worms in Children',              cat: 'Digestive',   min: 9,  hot: true,  h: 'worms in children pinworm roundworm hookworm deworming bacchon homeopathy cina' },
+  { slug: 'lactose-intolerance',   title: 'Lactose Intolerance',      hindi: 'दूध न पचना / डेयरी से परेशानी',  cat: 'Digestive',   min: 9,  hot: true,  h: 'lactose intolerance doodh na pachna doodh se gas pet dard dahi paneer kha sakte hain homeopathy' },
   // Mental
   { slug: 'migraine',                   title: 'Migraine',                hindi: 'माइग्रेन',                cat: 'Mental',      min: 5,  hot: true,  h: 'sar dard headache' },
   { slug: 'anxiety',                    title: 'Anxiety',                 hindi: 'चिंता',                   cat: 'Mental',      min: 5,              h: 'chinta tension ghabrahat' },
