@@ -222,7 +222,7 @@ h1, h2, h3, h4 {
   /* Collapsible sections on mobile */
   .sec-toggle { display: flex !important; }
   .sec-toggle-hidden { display: none !important; }
-  .sec-body-closed { display: none !important; }
+  .sec-body-closed { max-height: 0 !important; overflow: hidden !important; }
   .sec-body-open { display: block !important; }
   .fab { display: none !important; }
   /* Content clears bottom nav */

@@ -112,7 +112,6 @@ function MobConsultBar({ title }: { title: string }) {
 
 export default function DiseaseClient({ disease, related }: { disease: any; related: any[] }) {
   const [activeSection, setActiveSection] = useState('overview')
-  const [showAllFaqs, setShowAllFaqs] = useState(false)
   const FAQ_PREVIEW = 7
 
   // Scroll spy
@@ -576,16 +575,9 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
             <p style={{ fontSize: 14, color: 'var(--ink4)', fontWeight: 300, marginBottom: 24 }}>Clinic mein patients jo questions poochte hain — unke honest jawab</p>
             {disease.faqs?.length > 0 ? (
               <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px clamp(12px,4vw,24px)' }}>
-                {(showAllFaqs ? disease.faqs : disease.faqs.slice(0, FAQ_PREVIEW)).map((f: any, i: number) => (
+                {disease.faqs.map((f: any, i: number) => (
                   <FaqItem key={i} q={f.question || f.q} a={f.answer || f.a} />
                 ))}
-                {disease.faqs.length > FAQ_PREVIEW && (
-                  <div style={{ padding: '16px 0', borderTop: '1px solid var(--border)', textAlign: 'center' }}>
-                    <button onClick={() => setShowAllFaqs(!showAllFaqs)} style={{ background: 'none', border: '1px solid var(--border2)', borderRadius: 100, padding: '10px 24px', cursor: 'pointer', fontSize: 13, fontWeight: 600, color: 'var(--gold-dk)', transition: 'all .2s' }}>
-                      {showAllFaqs ? '▲ Kam Sawaal Dikhao' : `▼ Aur ${disease.faqs.length - FAQ_PREVIEW} Sawaal Dekhein`}
-                    </button>
-                  </div>
-                )}
               </div>
             ) : (
               <div style={{ textAlign: 'center', padding: '36px', background: 'var(--bg2)', borderRadius: 12, border: '1px dashed var(--border2)' }}>
