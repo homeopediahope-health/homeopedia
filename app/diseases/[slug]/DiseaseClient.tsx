@@ -135,7 +135,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
     disease.quickFacts?.whatItIs   && { emoji: '🧠', label: 'Ye Bimari Kya Hai',       value: disease.quickFacts.whatItIs },
     disease.quickFacts?.howCommon  && { emoji: '🇮🇳', label: 'India Mein Kitni Common', value: disease.quickFacts.howCommon },
     disease.quickFacts?.treatmentDuration && { emoji: '🕐', label: 'Treatment Duration', value: disease.quickFacts.treatmentDuration },
-    disease.ccrhEvidence?.citation && { emoji: '🔬', label: 'Research',                 value: `Peer-Reviewed Study (${(disease.ccrhEvidence.citation.match(/\d{4}/) || [''])[0]})` },
+    disease.quickFacts?.successRate && { emoji: '🔬', label: 'Treatment Success',         value: disease.quickFacts.successRate },
   ].filter(Boolean) as { emoji: string; label: string; value: string }[]
 
   const reviewDate = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long' })
@@ -350,29 +350,12 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
 
           {/* HOMEOPATHY */}
           <CollapsibleSection id="homeo" icon="🌿" title="Homoeopathy Se Kaise Thik Hoga?" sub="Sirf symptoms nahi — root cause treat hota hai" defaultOpen={false}>
-            {disease.ccrhEvidence && (
-              <div style={{ padding: '22px 24px', background: 'var(--gold-bg)', border: '1px solid rgba(184,145,42,.25)', borderRadius: 12, marginBottom: 24 }}>
-                <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--gold-dk)', letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 10 }}>CCRH Research Evidence</div>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.9, fontWeight: 300 }}>
-                  {disease.ccrhEvidence.improvementRate && <><strong>{disease.ccrhEvidence.improvementRate}</strong> patients mein significant improvement. </>}
-                  {disease.ccrhEvidence.avgTreatmentPeriod && <>Average treatment period: <strong>{disease.ccrhEvidence.avgTreatmentPeriod}</strong>.</>}
-                  {disease.ccrhEvidence.citation && <><br /><em style={{ fontSize: 12, color: 'var(--ink4)' }}>Source: {disease.ccrhEvidence.citation}</em></>}
-                </p>
-                {disease.ccrhEvidence.keyFindings?.length > 0 && (
-                  <ul style={{ marginTop: 12, paddingLeft: 0, listStyle: 'none' }}>
-                    {disease.ccrhEvidence.keyFindings.map((f: string, i: number) => (
-                      <li key={i} style={{ display: 'flex', gap: 8, marginBottom: 6, fontSize: 13, color: 'var(--ink2)' }}><span style={{ color: 'var(--gold)', flexShrink: 0 }}>✓</span>{f}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            )}
             <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }}>
               {[
                 { i: '🎯', h: 'Root Cause Treatment', b: 'Sirf symptoms nahi — underlying immune trigger ko address karta hai.' },
                 { i: '🧬', h: 'Constitutional Medicine', b: 'Har patient ke liye unique medicine — symptoms, nature, triggers ke hisaab se.' },
                 { i: '🌿', h: 'Zero Side Effects', b: 'Natural medicines — safe for children, elderly, pregnant women bhi.' },
-                { i: '📊', h: 'CCRH Research Backed', b: 'Government of India ke research council ne homeopathy ko validate kiya hai.' },
+                { i: '📊', h: 'Evidence-Based Practice', b: 'Homeopathy AYUSH Ministry ke under recognized system hai — clinical practice se proven.' },
               ].map(c => (
                 <div key={c.h} style={{ padding: '20px', background: 'var(--card)', borderRadius: 12, border: '1px solid var(--border)' }}>
                   <div style={{ fontSize: 26, marginBottom: 10 }}>{c.i}</div>
