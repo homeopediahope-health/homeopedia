@@ -16,7 +16,7 @@ const CODE_ARG = process.argv[2]
 
 // Sirf naye URLs — har baar naye disease add hone pe yahan add karo
 const NEW_URLS = [
-  'https://homeopedia.in/diseases/atopic-dermatitis',
+  'https://homeopedia.in/diseases/stye',
 ]
 
 const ALL_URLS = [

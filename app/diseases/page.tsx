@@ -99,6 +99,8 @@ const ALL_DISEASES = [
   { slug: 'tonsillitis',                title: 'Tonsillitis',             hindi: 'टॉन्सिल की सूजन',        cat: "Children's",  min: 6,  hot: true,  h: 'tonsil gala dard' },
   { slug: 'bedwetting',                 title: 'Bedwetting',              hindi: 'बिस्तर गीला करना',       cat: "Children's",  min: 6,              h: 'bistar geela bacche' },
   { slug: 'teething-trouble',          title: 'Teething Trouble',        hindi: 'दाँत निकलने की तकलीफ',    cat: "Children's",  min: 7,  hot: true,  h: 'daant nikalna daant aana bachche ke daant dard drooling chamomilla homeopathy shishu' },
+  // Eye
+  { slug: 'stye',                       title: 'Stye (Guheri)',           hindi: 'गुहेरी / आँखों की फुंसी',    cat: 'Eye',         min: 7,  hot: true,  h: 'guheri aankh ki phunsi stye aankhon mein phunsi palak sujan billi aankhiya warm compress' },
   // Circulatory
   { slug: 'varicose-veins',            title: 'Varicose Veins',          hindi: 'नसों की सूजन',            cat: 'Circulatory', min: 7,              h: 'naso ki sujan phuli hui naasein paon dard' },
   // Men's Health
@@ -116,7 +118,7 @@ const ALL_DISEASES = [
   { slug: 'dysmenorrhoea',            title: 'Dysmenorrhoea',           hindi: 'माहवारी का दर्द',             cat: "Women's",     min: 8,  hot: true,  h: 'mahavari ka dard periods mein dard dysmenorrhea masik dard period pain' },
 ]
 
-const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's", 'Circulatory', 'Urinary', 'Neurological', "Men's"]
+const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's", 'Circulatory', 'Urinary', 'Neurological', "Men's", 'Eye']
 
 export default function DiseasesPage() {
   const [cat, setCat] = useState('All')
