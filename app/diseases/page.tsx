@@ -30,6 +30,7 @@ const ALL_DISEASES = [
   { slug: 'recurrent-ear-infection',  title: 'Recurrent Ear Infection',         hindi: 'बार बार कान का दर्द / कान पकना',   cat: 'ENT',         min: 9,  hot: true,  h: 'kaan dard baar baar kaan ka infection kaan bahna kaan pakna ear pain homeopathy bacchon mein kaan' },
   { slug: 'tinnitus',                 title: 'Tinnitus',                        hindi: 'कान में सीटी / भनभनाहट',           cat: 'ENT',         min: 9,  hot: true,  h: 'kaan mein seeti bhanbhanahat kaan mein awaaz tinnitus ka ilaaj homeopathy' },
   { slug: 'chronic-otitis-media',    title: 'Chronic Otitis Media',            hindi: 'कान का पुराना दर्द / कान बाहर',    cat: 'ENT',         min: 9,  hot: true,  h: 'kaan bahar hona chronic otitis media kaan se pani aana kaan ka purana infection kaan ka parda ched glue ear' },
+  { slug: 'vocal-cord-nodule',       title: 'Vocal Cord Nodule',               hindi: 'आवाज़ की गांठ / गले की गांठ',       cat: 'ENT',         min: 9,  hot: true,  h: 'vocal cord nodule awaaz baithi gale ki gaanth bina operation singer teacher gale mein gaanth homeopathy' },
   { slug: 'delayed-milestones',        title: 'Delayed Milestones / GDD',        hindi: 'विकास में देरी / बच्चे का धीरे बढ़ना', cat: 'Neurological', min: 12, hot: true, h: 'bachche ka vikas deri late walking late talking speech delay motor delay GDD homeopathy' },
   // Joints
   { slug: 'sciatica',                   title: 'Sciatica',                hindi: 'सायटिका',                 cat: 'Joints',      min: 5,  hot: true,  h: 'kamar pair dard' },
