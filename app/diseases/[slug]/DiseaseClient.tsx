@@ -381,6 +381,11 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                 ))}
               </div>
             )}
+            {disease.ccrhEvidence?.citation && (
+              <p style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 14, fontWeight: 300, lineHeight: 1.6 }}>
+                📄 Reference: {disease.ccrhEvidence.citation}
+              </p>
+            )}
           </CollapsibleSection>
 
           {/* MEDICINES */}
