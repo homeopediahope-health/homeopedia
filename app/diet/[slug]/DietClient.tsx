@@ -4,6 +4,22 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { WA_BASE } from '@/lib/constants'
 
+const TABS = [
+  { id: 'green',    l: 'Kya Khayein',   icon: '✅' },
+  { id: 'red',      l: 'Kya Na Khayein',icon: '❌' },
+  { id: 'plan',     l: 'Meal Plan',      icon: '🕐' },
+  { id: 'sample',   l: '4-Day Plan',     icon: '📅' },
+  { id: 'special',  l: 'Special Tips',   icon: '🎯' },
+  { id: 'faq',      l: 'FAQ',            icon: '❓' },
+]
+
+function scrollTo(id: string) {
+  const el = document.getElementById(id)
+  if (!el) return
+  const top = el.getBoundingClientRect().top + window.scrollY - 130
+  window.scrollTo({ top, behavior: 'smooth' })
+}
+
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
   return (
@@ -75,6 +91,20 @@ export default function DietClient({ diet }: { diet: any }) {
         <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 14, fontWeight: 300 }}>Dr. Shadab Khan, MD Homoeopath | Reviewed {diet.reviewDate || 'May 2026'}</p>
       </div>
 
+      {/* Sticky Tab Bar */}
+      <div style={{ position: 'sticky', top: 64, zIndex: 100, background: 'var(--card)', borderBottom: '1px solid var(--border)', boxShadow: '0 2px 8px rgba(26,21,16,.06)' }}>
+        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 clamp(16px,4vw,32px)', display: 'flex', gap: 0, overflowX: 'auto', scrollbarWidth: 'none' }} className="hide-scrollbar tabs-bar">
+          {TABS.map(t => (
+            <button key={t.id} onClick={() => scrollTo(t.id)}
+              style={{ flexShrink: 0, padding: '13px 16px', background: 'none', border: 'none', borderBottom: '2px solid transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600, color: 'var(--ink3)', whiteSpace: 'nowrap', transition: 'all .2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--gold-dk)'; (e.currentTarget as HTMLElement).style.borderBottomColor = 'var(--gold)' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--ink3)'; (e.currentTarget as HTMLElement).style.borderBottomColor = 'transparent' }}>
+              <span>{t.icon}</span> {t.l}
+            </button>
+          ))}
+        </div>
+      </div>
+
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '40px clamp(16px,4vw,32px) 80px' }}>
 
         {/* 3 Eating Habits */}
@@ -94,7 +124,7 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* Green List */}
         {vegGreen.length > 0 && (
-          <div style={{ marginBottom: 8 }}>
+          <div id="green" style={{ marginBottom: 8 }}>
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--green)', marginBottom: 6 }}>✅ Green List — Ye Zaroor Khayein</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Ye foods {diet.hindiName || diet.title?.split(' ')[0]} mein healing support karte hain</p>
             <div style={{ background: 'rgba(58,125,82,.04)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 16, padding: '24px' }}>
@@ -158,7 +188,7 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* Red List */}
         {redList.length > 0 && (
-          <div style={{ marginBottom: 36 }}>
+          <div id="red" style={{ marginBottom: 36 }}>
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--red)', marginBottom: 6 }}>❌ Red List — Ye Bilkul Mat Khayein</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Ye foods symptoms/attack trigger karte hain — temporarily ya permanently avoid karein</p>
             <div style={{ background: 'rgba(176,64,64,.04)', border: '1px solid rgba(176,64,64,.2)', borderRadius: 16, padding: '24px' }}>
@@ -184,7 +214,7 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* Daily Meal Plan */}
         {mealPlan.length > 0 && (
-          <div style={{ marginBottom: 36 }}>
+          <div id="plan" style={{ marginBottom: 36 }}>
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>🕐 Ek Din Ka Meal Plan</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Veg default — non-veg toggle karein upar se aur relevant slots mein option dikhega</p>
             <div style={{ display: 'grid', gap: 10 }}>
@@ -216,7 +246,7 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* 4-Day Sample Plan */}
         {plan4.length > 0 && (
-          <div style={{ marginBottom: 36 }}>
+          <div id="sample" style={{ marginBottom: 36 }}>
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>📅 4 Din Ka Sample Plan</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Baaki dinon ke liye upar diya Daily Meal Plan use karein — apni pasand se choose karein</p>
             <div style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
@@ -257,7 +287,7 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* Special Situations */}
         {situations.length > 0 && (
-          <div style={{ marginBottom: 36 }}>
+          <div id="special" style={{ marginBottom: 36 }}>
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>🎯 Special Situations</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 14 }}>
               {situations.map((s: any) => (
@@ -337,7 +367,7 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* FAQs */}
         {faqs.length > 0 && (
-          <div style={{ marginBottom: 36 }}>
+          <div id="faq" style={{ marginBottom: 36 }}>
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>❓ Aksar Pooche Jaane Wale Sawaal</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>{diet.title} ke baare mein common diet questions</p>
             <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px 24px' }}>
