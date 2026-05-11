@@ -59,6 +59,21 @@ export default function DietClient({ diet }: { diet: any }) {
 
   return (
     <div className="page-in" style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: 66 }}>
+      <style>{`
+        .meal-slot { display: grid; grid-template-columns: 140px 1fr; gap: 16px; align-items: start; }
+        .plan4-table { display: block; }
+        .plan4-cards { display: none; }
+        .diet-tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+        .diet-tab { flex-shrink: 0; }
+        @media (max-width: 640px) {
+          .meal-slot { display: block; }
+          .meal-slot-time { margin-bottom: 10px; }
+          .plan4-table { display: none; }
+          .plan4-cards { display: grid !important; gap: 12px; }
+          .diet-tabs { flex-wrap: wrap; overflow-x: visible; }
+          .diet-tab { flex: 1 1 30%; min-width: 0; justify-content: center; padding: 10px 4px !important; font-size: 11px !important; }
+        }
+      `}</style>
 
       {/* Breadcrumb */}
       <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', padding: '11px clamp(16px,4vw,32px)' }}>
@@ -93,10 +108,10 @@ export default function DietClient({ diet }: { diet: any }) {
 
       {/* Sticky Tab Bar */}
       <div style={{ position: 'sticky', top: 64, zIndex: 100, background: 'var(--card)', borderBottom: '1px solid var(--border)', boxShadow: '0 2px 8px rgba(26,21,16,.06)' }}>
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 clamp(16px,4vw,32px)', display: 'flex', gap: 0, overflowX: 'auto', scrollbarWidth: 'none' }} className="hide-scrollbar tabs-bar">
+        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 clamp(16px,4vw,32px)' }} className="diet-tabs">
           {TABS.map(t => (
-            <button key={t.id} onClick={() => scrollTo(t.id)}
-              style={{ flexShrink: 0, padding: '13px 16px', background: 'none', border: 'none', borderBottom: '2px solid transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600, color: 'var(--ink3)', whiteSpace: 'nowrap', transition: 'all .2s' }}
+            <button key={t.id} onClick={() => scrollTo(t.id)} className="diet-tab"
+              style={{ padding: '13px 16px', background: 'none', border: 'none', borderBottom: '2px solid transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600, color: 'var(--ink3)', whiteSpace: 'nowrap', transition: 'all .2s' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--gold-dk)'; (e.currentTarget as HTMLElement).style.borderBottomColor = 'var(--gold)' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--ink3)'; (e.currentTarget as HTMLElement).style.borderBottomColor = 'transparent' }}>
               <span>{t.icon}</span> {t.l}
@@ -133,11 +148,11 @@ export default function DietClient({ diet }: { diet: any }) {
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
                   <div style={{ display: 'grid', gap: 6 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '9px 12px', background: 'rgba(58,125,82,.06)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 1 }}>✓</span>
+                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(58,125,82,.06)', borderRadius: 8, alignItems: 'flex-start' }}>
+                        <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✓</span>
                         <div>
-                          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <span style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}> — {item.reason}</span>}
+                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -151,11 +166,11 @@ export default function DietClient({ diet }: { diet: any }) {
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>🍗 Non-Veg Mein Kya Allowed</p>
                   <div style={{ display: 'grid', gap: 6 }}>
                     {diet.nonVegAllowed.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '9px 12px', background: 'rgba(58,125,82,.06)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 1 }}>✓</span>
+                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(58,125,82,.06)', borderRadius: 8, alignItems: 'flex-start' }}>
+                        <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✓</span>
                         <div>
-                          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <span style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}> — {item.reason}</span>}
+                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -169,11 +184,11 @@ export default function DietClient({ diet }: { diet: any }) {
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>🚫 Non-Veg Mein Ye Avoid Karein</p>
                   <div style={{ display: 'grid', gap: 6 }}>
                     {diet.nonVegAvoid.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '9px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 1 }}>✕</span>
+                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, alignItems: 'flex-start' }}>
+                        <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✕</span>
                         <div>
-                          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <span style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}> — {item.reason}</span>}
+                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -197,11 +212,11 @@ export default function DietClient({ diet }: { diet: any }) {
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
                   <div style={{ display: 'grid', gap: 6 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '9px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 1 }}>✕</span>
+                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, alignItems: 'flex-start' }}>
+                        <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✕</span>
                         <div>
-                          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <span style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}> — {item.reason}</span>}
+                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -219,22 +234,22 @@ export default function DietClient({ diet }: { diet: any }) {
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Veg default — non-veg toggle karein upar se aur relevant slots mein option dikhega</p>
             <div style={{ display: 'grid', gap: 10 }}>
               {mealPlan.map((slot: any) => (
-                <div key={slot.slotName} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 20px', display: 'grid', gridTemplateColumns: '140px 1fr', gap: 16, alignItems: 'start' }}>
-                  <div>
-                    <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--gold-dk)', marginBottom: 2 }}>{slot.slotEmoji} {slot.slotName}</p>
-                    <p style={{ fontSize: 11, color: 'var(--ink4)', fontWeight: 300 }}>{slot.slotTime}</p>
+                <div key={slot.slotName} className="meal-slot" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 20px' }}>
+                  <div className="meal-slot-time">
+                    <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--gold-dk)', marginBottom: 2 }}>{slot.slotEmoji} {slot.slotName}</p>
+                    <p style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>{slot.slotTime}</p>
                   </div>
                   <div>
                     {slot.vegOptions?.map((opt: string, i: number) => (
-                      <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 4 }}>
-                        <span style={{ color: 'var(--green)', fontSize: 11, fontWeight: 700, marginTop: 2, flexShrink: 0 }}>🌿</span>
-                        <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.5 }}>{opt}</span>
+                      <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 6 }}>
+                        <span style={{ color: 'var(--green)', fontSize: 12, fontWeight: 700, marginTop: 2, flexShrink: 0 }}>🌿</span>
+                        <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.55 }}>{opt}</span>
                       </div>
                     ))}
                     {nonVeg && slot.nonVegOption && (
-                      <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginTop: 4, paddingTop: 6, borderTop: '1px dashed var(--border)' }}>
-                        <span style={{ fontSize: 11, fontWeight: 700, marginTop: 2, flexShrink: 0 }}>🍗</span>
-                        <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.5 }}>{slot.nonVegOption}</span>
+                      <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginTop: 6, paddingTop: 8, borderTop: '1px dashed var(--border)' }}>
+                        <span style={{ fontSize: 12, fontWeight: 700, marginTop: 2, flexShrink: 0 }}>🍗</span>
+                        <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.55 }}>{slot.nonVegOption}</span>
                       </div>
                     )}
                   </div>
@@ -249,7 +264,8 @@ export default function DietClient({ diet }: { diet: any }) {
           <div id="sample" style={{ marginBottom: 36 }}>
             <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>📅 4 Din Ka Sample Plan</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Baaki dinon ke liye upar diya Daily Meal Plan use karein — apni pasand se choose karein</p>
-            <div style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
+            {/* Desktop: table */}
+            <div className="plan4-table" style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 580 }}>
                 <thead>
                   <tr style={{ background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))' }}>
@@ -280,6 +296,34 @@ export default function DietClient({ diet }: { diet: any }) {
                   ))}
                 </tbody>
               </table>
+            </div>
+
+            {/* Mobile: cards */}
+            <div className="plan4-cards">
+              {plan4.map((row: any, i: number) => (
+                <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden' }}>
+                  <div style={{ background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', padding: '10px 16px' }}>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>{row.day}</span>
+                  </div>
+                  <div style={{ padding: '14px 16px', display: 'grid', gap: 10 }}>
+                    {[
+                      { label: '🌅 Subah', veg: row.vegSubah, nonv: null },
+                      { label: '🍽️ Nashta', veg: row.vegNashta, nonv: row.nonVegNashta },
+                      { label: '🍱 Dopahar', veg: row.vegDopahar, nonv: row.nonVegDopahar },
+                      { label: '🌇 Shaam', veg: row.vegShaam, nonv: null },
+                      { label: '🌙 Raat', veg: row.vegRaat, nonv: row.nonVegRaat },
+                    ].map(slot => (
+                      <div key={slot.label} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+                        <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--gold-dk)', minWidth: 72, paddingTop: 2 }}>{slot.label}</span>
+                        <div style={{ flex: 1 }}>
+                          <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.5 }}>{slot.veg}</span>
+                          {nonVeg && slot.nonv && <div style={{ fontSize: 12, color: 'var(--ink3)', marginTop: 3 }}>🍗 {slot.nonv}</div>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </div>
             {diet.shareTextMealPlan && <WaShareBtn text={diet.shareTextMealPlan} label="4-day plan share karein →" />}
           </div>
