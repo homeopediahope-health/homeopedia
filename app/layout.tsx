@@ -10,9 +10,9 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], weight: ['300', '400', '
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair', style: ['normal', 'italic'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://homeopedia.in'),
+  metadataBase: new URL('https://www.homeopedia.in'),
   alternates: {
-    canonical: 'https://homeopedia.in',
+    canonical: 'https://www.homeopedia.in',
   },
   title: {
     default: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'hi_IN',
-    url: 'https://homeopedia.in',
+    url: 'https://www.homeopedia.in',
     siteName: 'HomeoPedia.in',
     title: "HomeoPedia.in — India's Homeopathy Knowledge Portal",
     description: 'Evidence-based homeopathy. Disease guides, diet charts, medicines — CCRH-backed. By Dr. Shadab Khan MD.',

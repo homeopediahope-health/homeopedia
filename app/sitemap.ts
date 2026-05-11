@@ -3,7 +3,7 @@ import { getAllDiseases, getAllDiets, getAllMedicines, getAllSymptoms } from '@/
 
 export const revalidate = 3600
 
-const BASE = 'https://homeopedia.in'
+const BASE = 'https://www.homeopedia.in'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [diseases, diets, medicines, symptoms] = await Promise.all([

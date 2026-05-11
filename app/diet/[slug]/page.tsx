@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const title = diet.metaTitle || `${diet.title} — Dr. Shadab Khan | Homeopedia`
   const description = diet.metaDescription || diet.intro?.slice(0, 155) || `${diet.title} ka complete Indian diet chart. Kya khayein, kya avoid karein — veg aur non-veg dono.`
-  const url = `https://homeopedia.in/diet/${slug}`
+  const url = `https://www.homeopedia.in/diet/${slug}`
 
   return {
     title: { absolute: title },
@@ -50,14 +50,14 @@ export default async function DietDetailPage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
     name: diet.title,
-    url: `https://homeopedia.in/diet/${slug}`,
+    url: `https://www.homeopedia.in/diet/${slug}`,
     description: diet.metaDescription || diet.intro,
     about: { '@type': 'MedicalCondition', name: diet.title?.replace(' Diet Chart', '') },
     author: {
       '@type': 'Physician',
       name: 'Dr. Shadab Khan',
       honorificSuffix: 'MD Homoeopath',
-      url: 'https://homeopedia.in/about',
+      url: 'https://www.homeopedia.in/about',
     },
     reviewedBy: {
       '@type': 'Physician',

@@ -25,21 +25,21 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: title },
     description,
     alternates: {
-      canonical: `https://homeopedia.in/diseases/${slug}`,
+      canonical: `https://www.homeopedia.in/diseases/${slug}`,
     },
     openGraph: {
       title,
       description,
       type: 'article',
-      url: `https://homeopedia.in/diseases/${slug}`,
+      url: `https://www.homeopedia.in/diseases/${slug}`,
       locale: 'hi_IN',
-      images: [{ url: `https://homeopedia.in/diseases/${slug}/opengraph-image`, width: 1200, height: 630 }],
+      images: [{ url: `https://www.homeopedia.in/diseases/${slug}/opengraph-image`, width: 1200, height: 630 }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description,
-      images: [`https://homeopedia.in/diseases/${slug}/opengraph-image`],
+      images: [`https://www.homeopedia.in/diseases/${slug}/opengraph-image`],
     },
   }
 }
@@ -81,16 +81,16 @@ export default async function DiseasePage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
     name: disease.title,
-    url: `https://homeopedia.in/diseases/${slug}`,
+    url: `https://www.homeopedia.in/diseases/${slug}`,
     description: disease.metaDescription || disease.heroText,
     author: {
       '@type': 'Physician',
       name: 'Dr. Shadab Khan',
       honorificSuffix: 'MD Homoeopathy',
       description: '15+ years clinical experience, 10,000+ patients. Maharashtra Council Reg. No. 54130.',
-      url: 'https://homeopedia.in/about',
+      url: 'https://www.homeopedia.in/about',
       sameAs: ['https://www.youtube.com/@drshadabshomoeopathy'],
-      worksFor: { '@type': 'MedicalOrganization', name: 'HomeoPedia.in', url: 'https://homeopedia.in' },
+      worksFor: { '@type': 'MedicalOrganization', name: 'HomeoPedia.in', url: 'https://www.homeopedia.in' },
     },
     reviewedBy: {
       '@type': 'Physician',
