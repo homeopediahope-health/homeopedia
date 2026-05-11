@@ -78,7 +78,7 @@ export default function DietListClient({ diets }: { diets: any[] }) {
                       <div style={{ display: 'flex', gap: 10 }}>
                         {d.includeCount > 0 && <span style={{ fontSize: 10, color: 'var(--green)' }}>✓ {d.includeCount} foods</span>}
                         {d.avoidCount > 0 && <span style={{ fontSize: 10, color: 'var(--red)' }}>✕ {d.avoidCount} avoid</span>}
-                        {d.hasWeeklyPlan && <span style={{ fontSize: 10, color: 'var(--gold-dk)' }}>📅 Weekly Plan</span>}
+                        {d.hasSamplePlan && <span style={{ fontSize: 10, color: 'var(--gold-dk)' }}>📅 4-Day Plan</span>}
                       </div>
                       <span style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>View →</span>
                     </div>

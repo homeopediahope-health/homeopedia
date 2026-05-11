@@ -73,10 +73,10 @@ export async function getDiseaseTypeBySlug(diseaseSlug: string, typeSlug: string
 
 export async function getAllDiets() {
   return client.fetch(`*[_type == "diet"] | order(publishedAt desc) {
-    title, hindiName, slug, category, heroText, metaDescription, keyRule,
-    "hasWeeklyPlan": defined(weeklyPlan) && length(weeklyPlan) > 0,
-    "includeCount": count(dietInclude[].items[]),
-    "avoidCount": count(dietAvoid[].items[])
+    title, hindiName, slug, category, intro, metaDescription,
+    "hasSamplePlan": defined(samplePlan4Day) && length(samplePlan4Day) > 0,
+    "includeCount": count(vegGreenList[].items[]),
+    "avoidCount": count(redList[].items[])
   }`)
 }
 

@@ -162,7 +162,7 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
           <div>
             <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 18, flexWrap: 'wrap' }}>
               <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.3)' }}>🌿 {disease.category || 'Homoeopathy'}</span>
-              <span style={{ fontSize: 12, color: 'var(--ink4)' }}>· ✓ CCRH Backed · Doctor Reviewed</span>
+              <span style={{ fontSize: 12, color: 'var(--ink4)' }}>· ✓ Doctor Reviewed</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 700, lineHeight: 1.12, color: 'var(--ink)', marginBottom: 8 }}>{disease.title}</h1>
             {disease.hindiName && <div style={{ fontSize: 22, color: 'var(--gold-dk)', fontFamily: 'var(--font-playfair,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{disease.hindiName}</div>}

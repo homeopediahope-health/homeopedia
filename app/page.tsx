@@ -102,7 +102,7 @@ export default async function HomePage() {
           {/* Badge */}
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '7px 18px', border: '1px solid rgba(184,145,42,.4)', borderRadius: 100, marginBottom: 28, background: 'rgba(184,145,42,.06)' }}>
             <Starsvg s={9} />
-            <span style={{ fontSize: 11, color: 'var(--gold-dk)', letterSpacing: 2.2, fontWeight: 600 }}>CCRH ALIGNED · EVIDENCE BASED · DOCTOR REVIEWED</span>
+            <span style={{ fontSize: 11, color: 'var(--gold-dk)', letterSpacing: 2.2, fontWeight: 600 }}>EVIDENCE BASED · DOCTOR REVIEWED</span>
           </div>
 
           {/* H1 with shimmer */}
@@ -248,7 +248,7 @@ export default async function HomePage() {
               { ic: '🎯', t: 'Root Cause',       d: 'Sirf symptoms nahi — underlying trigger ko heal karta hai permanently.' },
               { ic: '🧬', t: 'Constitutional',    d: 'Har patient ke liye alag medicine — aapki nature ke hisaab se.' },
               { ic: '🌿', t: 'Zero Side Effects', d: 'Natural medicines — safe for children, elderly, pregnant women.' },
-              { ic: '📊', t: 'CCRH Backed',       d: 'Government of India ke research council ki scientific approval.' },
+              { ic: '📊', t: 'Evidence Based',    d: 'Clinical research aur 15+ saal ke practice experience pe based.' },
             ].map(b => (
               <div key={b.t} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '22px', textAlign: 'center' }}>
                 <div style={{ fontSize: 28, marginBottom: 12 }}>{b.ic}</div>
