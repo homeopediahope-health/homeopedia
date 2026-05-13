@@ -81,7 +81,10 @@ export async function getAllDiets() {
 }
 
 export async function getDietBySlug(slug: string) {
-  return client.fetch(`*[_type == "diet" && slug.current == $slug][0]`, { slug })
+  return client.fetch(
+    `*[_type == "diet" && (slug.current == $slug || relatedDiseaseSlug == $slug)][0]`,
+    { slug }
+  )
 }
 
 export async function searchAll(query: string) {
