@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases } from '@/lib/queries'
+import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases, getDietBySlug } from '@/lib/queries'
 import DiseaseClient from './DiseaseClient'
 
 export const revalidate = 0
@@ -46,9 +46,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DiseasePage({ params }: Props) {
   const { slug } = await params
-  const [disease, related] = await Promise.all([
+  const [disease, related, diet] = await Promise.all([
     getDiseaseBySlug(slug),
     getRelatedDiseases(slug, 3),
+    getDietBySlug(slug).catch(() => null),
   ])
 
   if (!disease) notFound()
@@ -106,7 +107,7 @@ export default async function DiseasePage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
-      <DiseaseClient disease={disease} related={related} />
+      <DiseaseClient disease={disease} related={related} hasDietPage={!!diet} />
     </>
   )
 }

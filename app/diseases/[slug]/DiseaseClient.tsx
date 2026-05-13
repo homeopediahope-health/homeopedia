@@ -110,7 +110,7 @@ function MobConsultBar({ title }: { title: string }) {
   )
 }
 
-export default function DiseaseClient({ disease, related }: { disease: any; related: any[] }) {
+export default function DiseaseClient({ disease, related, hasDietPage }: { disease: any; related: any[]; hasDietPage?: boolean }) {
   const [activeSection, setActiveSection] = useState('overview')
   const FAQ_PREVIEW = 7
 
@@ -484,6 +484,20 @@ export default function DiseaseClient({ disease, related }: { disease: any; rela
                   <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>Important Note</p>
                   <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{disease.dietNote}</p>
                 </div>
+              </div>
+            )}
+
+            {/* Link to full diet page */}
+            {hasDietPage && (
+              <div style={{ marginTop: 20 }}>
+                <Link href={`/diet/${disease.slug?.current}`}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '16px 20px', background: 'linear-gradient(135deg,rgba(58,125,82,.08),rgba(58,125,82,.04))', border: '1px solid rgba(58,125,82,.3)', borderRadius: 12, textDecoration: 'none' }}>
+                  <div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)', marginBottom: 2 }}>Complete Diet Chart Dekhein</div>
+                    <div style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>Green list, Red list, Daily meal plan, FAQs — sab ek jagah</div>
+                  </div>
+                  <span style={{ fontSize: 18, color: 'var(--green)' }}>→</span>
+                </Link>
               </div>
             )}
 
