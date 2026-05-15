@@ -72,7 +72,7 @@ export default async function HomePage() {
         '@type': 'Physician',
         name: 'Dr. Shadab Khan',
         honorificSuffix: 'MD Homoeopathy',
-        description: '15+ years experience, 10,000+ patients treated. Specialization in chronic diseases.',
+        description: '15+ years experience, 10,000+ patients treated. Specialisation in chronic diseases.',
         medicalSpecialty: 'Homeopathic Medicine',
         worksFor: { '@type': 'MedicalOrganization', name: 'HomeoPedia.in' },
         url: 'https://www.homeopedia.in/about',
@@ -245,7 +245,7 @@ export default async function HomePage() {
             <div style={{ fontSize: 12, color: 'var(--sage-dk)', marginTop: 5, fontStyle: 'italic' }}>MD Homoeopath · Reg. No. 54130</div>
             {/* 4 stats */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, marginTop: 18 }}>
-              {[['12+', 'Years'], ['50K+', 'Patients'], ['200+', 'Conditions'], ['4.9★', 'Rating']].map(([n, l]) => (
+              {[['15+', 'Years'], ['10K+', 'Patients'], ['200+', 'Conditions'], ['4.9★', 'Rating']].map(([n, l]) => (
                 <div key={l} style={{ background: 'var(--sage-bg)', border: '1px solid rgba(63,107,77,.15)', borderRadius: 10, padding: '10px 8px', textAlign: 'center' }}>
                   <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 600, color: 'var(--sage)', lineHeight: 1 }}>{n}</div>
                   <div style={{ fontSize: 10, color: 'var(--ink4)', marginTop: 3 }}>{l}</div>
@@ -257,7 +257,7 @@ export default async function HomePage() {
             <SL c="Medically Reviewed" />
             <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 30, fontWeight: 600, color: 'var(--ink)', margin: '12px 0 16px', letterSpacing: '-0.02em' }}>Every Article Personally Reviewed</h2>
             <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, fontWeight: 300, marginBottom: 24 }}>
-              HomeoPedia pe har article Dr. Shadab Khan ne personally review kiya hai. 12+ saal ki clinical experience aur 50,000+ patients ki real-world knowledge se backed content — sirf aapke liye.
+              HomeoPedia pe har article Dr. Shadab Khan ne personally review kiya hai. 15+ saal ki clinical experience aur 10,000+ patients ki real-world knowledge se backed content — sirf aapke liye.
             </p>
             <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 26px', background: 'linear-gradient(135deg,#1a6b33,#25a244)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600, boxShadow: '0 4px 16px rgba(37,162,68,.3)' }}>
               📲 WhatsApp Consultation
