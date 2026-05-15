@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation'
 import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases, getDietBySlug } from '@/lib/queries'
 import DiseaseClient from './DiseaseClient'
 
-export const revalidate = 0
+export const revalidate = 3600
 
 export async function generateStaticParams() {
   const diseases = await getAllDiseases()

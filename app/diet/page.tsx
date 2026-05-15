@@ -7,9 +7,13 @@ export const revalidate = 3600
 export const metadata: Metadata = {
   title: 'Disease-Wise Diet Charts — Kya Khayein Kya Na Khayein | HomeoPedia.in',
   description: 'Psoriasis, PCOD, Thyroid, IBS, Hair Fall ke liye Indian doctor recommended diet charts. Kya khayein, kya avoid karein — free guide Hindi mein.',
+  alternates: {
+    canonical: 'https://www.homeopedia.in/diet',
+  },
   openGraph: {
     title: 'Disease-Wise Diet Charts | HomeoPedia.in',
     description: 'Har disease ke liye expert diet chart — Indian foods ke saath. Free, no signup.',
+    url: 'https://www.homeopedia.in/diet',
   },
 }
 
