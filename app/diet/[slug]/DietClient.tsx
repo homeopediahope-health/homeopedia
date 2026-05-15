@@ -45,8 +45,21 @@ function WaShareBtn({ text, label }: { text: string; label: string }) {
   )
 }
 
+const CAT_TONES: Record<string,string> = {
+  'Skin': '#e8d2c4', 'Hair': '#dde6cd', 'Joints': '#dde6cd', 'Digestive': '#f0e3c4',
+  'Mental': '#dcd8ec', "Women's Health": '#eccfd9', 'Respiratory': '#f5d7d7',
+  'Hormonal': '#cce0e0', 'Children': '#e8e0c4',
+}
+const CAT_ICONS: Record<string,string> = {
+  'Skin': '🌸', 'Hair': '✨', 'Joints': '🦴', 'Digestive': '🌾',
+  'Mental': '🧠', "Women's Health": '🌷', 'Respiratory': '🫁',
+  'Hormonal': '💧', 'Children': '🧸',
+}
+
 export default function DietClient({ diet }: { diet: any }) {
   const [nonVeg, setNonVeg] = useState(false)
+  const catTone = CAT_TONES[diet.category || ''] || '#f0e3c4'
+  const catIcon = CAT_ICONS[diet.category || ''] || '🌿'
 
   const vegGreen = diet.vegGreenList || []
   const redList = diet.redList || []
@@ -65,6 +78,7 @@ export default function DietClient({ diet }: { diet: any }) {
         .plan4-cards { display: none; }
         .diet-tabs { display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
         .diet-tab { flex-shrink: 0; }
+        .cat-icon-hide { display: block; }
         @media (max-width: 640px) {
           .meal-slot { display: block; }
           .meal-slot-time { margin-bottom: 10px; }
@@ -72,6 +86,7 @@ export default function DietClient({ diet }: { diet: any }) {
           .plan4-cards { display: grid !important; gap: 12px; }
           .diet-tabs { flex-wrap: wrap; overflow-x: visible; }
           .diet-tab { flex: 1 1 30%; min-width: 0; justify-content: center; padding: 10px 4px !important; font-size: 11px !important; }
+          .cat-icon-hide { display: none; }
         }
       `}</style>
 
@@ -86,24 +101,32 @@ export default function DietClient({ diet }: { diet: any }) {
         </div>
       </div>
 
-      {/* Hero */}
-      <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: '44px clamp(16px,4vw,32px) 36px', textAlign: 'center' }}>
-        {diet.category && (
-          <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)' }}>{diet.category}</span>
-        )}
-        <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(24px,5vw,46px)', fontWeight: 700, color: 'var(--ink)', margin: '14px 0 6px' }}>{diet.title}</h1>
-        {diet.hindiName && <div style={{ fontSize: 18, color: 'var(--gold-dk)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 12 }}>{diet.hindiName}</div>}
-        {diet.intro && <p style={{ fontSize: 15, color: 'var(--ink3)', maxWidth: 600, margin: '0 auto 20px', lineHeight: 1.75, fontWeight: 300, whiteSpace: 'pre-line' }}>{diet.intro}</p>}
-
-        {/* Non-veg toggle */}
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 16px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 100, cursor: 'pointer' }} onClick={() => setNonVeg(!nonVeg)}>
-          <div style={{ width: 36, height: 20, borderRadius: 10, background: nonVeg ? '#25d366' : 'var(--border2)', position: 'relative', transition: 'background .2s' }}>
-            <div style={{ position: 'absolute', top: 3, left: nonVeg ? 18 : 3, width: 14, height: 14, borderRadius: '50%', background: '#fff', transition: 'left .2s', boxShadow: '0 1px 3px rgba(0,0,0,.2)' }} />
+      {/* Hero card */}
+      <div style={{ maxWidth:960,margin:'0 auto',padding:'clamp(16px,4vw,32px)',paddingTop:24 }}>
+        <div style={{ background:catTone,borderRadius:24,padding:'clamp(24px,4vw,40px)',display:'grid',gridTemplateColumns:'1fr auto',gap:24,alignItems:'center',position:'relative',overflow:'hidden' }}>
+          <div>
+            {diet.category && <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--sage-dk)',marginBottom:12 }}>
+              <div style={{ width:14,height:1,background:'var(--sage-dk)',opacity:0.6 }} />
+              {diet.category} · Diet Plan
+            </div>}
+            <h1 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(26px,5vw,44px)',fontWeight:600,letterSpacing:'-0.03em',lineHeight:1.05,color:'var(--ink)',marginBottom:8 }}>{diet.title}</h1>
+            {diet.hindiName && <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontStyle:'italic',color:'var(--sage)',fontSize:'clamp(15px,2vw,20px)',fontWeight:500,marginBottom:14 }}>{diet.hindiName}</div>}
+            {diet.intro && <p style={{ fontSize:'clamp(13px,1.5vw,15px)',color:'var(--ink2)',lineHeight:1.7,maxWidth:520,fontWeight:300,marginBottom:18 }}>{diet.intro}</p>}
+            <div style={{ display:'flex',gap:8,flexWrap:'wrap',alignItems:'center' }}>
+              <span style={{ fontSize:11,fontWeight:600,padding:'5px 12px',borderRadius:99,background:'rgba(255,255,255,.7)',color:'var(--ink2)' }}>⏱ Daily plan</span>
+              <span style={{ fontSize:11,fontWeight:600,padding:'5px 12px',borderRadius:99,background:'rgba(255,255,255,.7)',color:'var(--ink2)' }}>✓ Doctor reviewed</span>
+              {/* Non-veg toggle */}
+              <div style={{ display:'inline-flex',alignItems:'center',gap:8,padding:'5px 12px',background:'rgba(255,255,255,.7)',borderRadius:100,cursor:'pointer' }} onClick={() => setNonVeg(!nonVeg)}>
+                <div style={{ width:32,height:18,borderRadius:9,background:nonVeg?'#25d366':'rgba(0,0,0,.2)',position:'relative',transition:'background .2s' }}>
+                  <div style={{ position:'absolute',top:2,left:nonVeg?15:2,width:14,height:14,borderRadius:'50%',background:'#fff',transition:'left .2s',boxShadow:'0 1px 3px rgba(0,0,0,.2)' }} />
+                </div>
+                <span style={{ fontSize:11,fontWeight:600,color:'var(--ink2)' }}>Non-Veg {nonVeg?'On 🍗':'Off 🌿'}</span>
+              </div>
+            </div>
+            <p style={{ fontSize:11,color:'var(--ink3)',marginTop:14,fontWeight:300 }}>Dr. Shadab Khan, MD Homoeopath | Reviewed {diet.reviewDate || 'May 2026'}</p>
           </div>
-          <span style={{ fontSize: 13, fontWeight: 600, color: 'var(--ink2)' }}>Non-Veg Options {nonVeg ? 'On 🍗' : 'Off 🌿'}</span>
+          <div style={{ fontSize:'clamp(60px,10vw,100px)',opacity:0.5,lineHeight:1,flexShrink:0 }} className="cat-icon-hide">{catIcon}</div>
         </div>
-
-        <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 14, fontWeight: 300 }}>Dr. Shadab Khan, MD Homoeopath | Reviewed {diet.reviewDate || 'May 2026'}</p>
       </div>
 
       {/* Sticky Tab Bar */}
@@ -146,14 +169,11 @@ export default function DietClient({ diet }: { diet: any }) {
               {vegGreen.map((cat: any) => (
                 <div key={cat.categoryName} style={{ marginBottom: 20 }}>
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
-                  <div style={{ display: 'grid', gap: 6 }}>
+                  <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(58,125,82,.06)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✓</span>
-                        <div>
-                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
-                        </div>
+                      <div key={item.food} style={{ display:'flex',alignItems:'center',gap:10,fontSize:13,color:'var(--ink2)',padding:'8px 10px',background:'rgba(58,125,82,.04)',borderRadius:8 }}>
+                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(58,125,82,.12)',color:'var(--green)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700 }}>✓</div>
+                        <span style={{ fontWeight:500 }}>{item.food}</span>
                       </div>
                     ))}
                   </div>
@@ -210,14 +230,11 @@ export default function DietClient({ diet }: { diet: any }) {
               {redList.map((cat: any) => (
                 <div key={cat.categoryName} style={{ marginBottom: 20 }}>
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
-                  <div style={{ display: 'grid', gap: 6 }}>
+                  <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✕</span>
-                        <div>
-                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
-                        </div>
+                      <div key={item.food} style={{ display:'flex',alignItems:'center',gap:10,fontSize:13,color:'var(--ink2)',padding:'8px 10px',background:'rgba(176,64,64,.04)',borderRadius:8 }}>
+                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(176,64,64,.12)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700 }}>✕</div>
+                        <span style={{ fontWeight:500 }}>{item.food}</span>
                       </div>
                     ))}
                   </div>
@@ -232,28 +249,27 @@ export default function DietClient({ diet }: { diet: any }) {
           <div id="plan" style={{ marginBottom: 36 }}>
             <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>🕐 Ek Din Ka Meal Plan</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 24, fontWeight: 300 }}>Veg default — non-veg toggle karein upar se aur relevant slots mein option dikhega</p>
-            <div style={{ position: 'relative', paddingLeft: 50 }}>
-              <div style={{ position: 'absolute', left: 17, top: 0, bottom: 0, width: 2, background: 'linear-gradient(180deg,var(--sage),var(--sage-lt))', borderRadius: 2 }} />
+            <div style={{ position:'relative',paddingLeft:60 }}>
+              <div style={{ position:'absolute',left:25,top:16,bottom:16,width:2,background:'linear-gradient(180deg,var(--sage),var(--sage-lt))',borderRadius:2 }} />
               {mealPlan.map((slot: any, idx: number) => (
-                <div key={slot.slotName} style={{ position: 'relative', marginBottom: 20 }}>
-                  <div style={{ position: 'absolute', left: -50, top: 0, width: 34, height: 34, borderRadius: '50%', background: 'linear-gradient(135deg,var(--sage-dk),var(--sage))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, boxShadow: '0 2px 8px rgba(63,107,77,.25)', flexShrink: 0 }}>
-                    {slot.slotEmoji || <span style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>{idx + 1}</span>}
+                <div key={slot.slotName} style={{ position:'relative',marginBottom:16 }}>
+                  <div style={{ position:'absolute',left:-60,top:0,width:50,height:50,borderRadius:'50%',background:'linear-gradient(135deg,var(--sage-dk),var(--sage))',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontSize:slot.slotEmoji?18:14,fontWeight:700,boxShadow:'0 6px 18px rgba(63,107,77,.3)',zIndex:1 }}>
+                    {slot.slotEmoji || String(idx+1).padStart(2,'0')}
                   </div>
-                  <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 20px' }}>
-                    <div style={{ display: 'flex', gap: 8, alignItems: 'baseline', marginBottom: 10 }}>
-                      <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--sage-dk)' }}>{slot.slotName}</span>
-                      {slot.slotTime && <span style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>{slot.slotTime}</span>}
+                  <div style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:14,padding:'18px 22px' }}>
+                    <div style={{ display:'flex',gap:8,alignItems:'baseline',marginBottom:10 }}>
+                      <span style={{ fontSize:11,fontWeight:700,letterSpacing:'0.12em',color:'var(--warm)',textTransform:'uppercase' }}>{slot.slotName}{slot.slotTime?` · ${slot.slotTime}`:''}</span>
                     </div>
                     {slot.vegOptions?.map((opt: string, i: number) => (
-                      <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 6 }}>
-                        <span style={{ color: 'var(--green)', fontSize: 12, fontWeight: 700, marginTop: 2, flexShrink: 0 }}>🌿</span>
-                        <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.55 }}>{opt}</span>
+                      <div key={i} style={{ display:'flex',alignItems:'flex-start',marginBottom:6,gap:8 }}>
+                        <span style={{ position:'relative',top:9,width:6,height:6,borderRadius:'50%',background:'var(--sage)',opacity:0.7,flexShrink:0,marginTop:-4 }} />
+                        <span style={{ fontSize:14,color:'var(--ink2)',lineHeight:1.55 }}>{opt}</span>
                       </div>
                     ))}
                     {nonVeg && slot.nonVegOption && (
-                      <div style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginTop: 6, paddingTop: 8, borderTop: '1px dashed var(--border)' }}>
-                        <span style={{ fontSize: 12, fontWeight: 700, marginTop: 2, flexShrink: 0 }}>🍗</span>
-                        <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.55 }}>{slot.nonVegOption}</span>
+                      <div style={{ display:'flex',gap:8,alignItems:'flex-start',marginTop:8,paddingTop:8,borderTop:'1px dashed var(--border)' }}>
+                        <span style={{ fontSize:12,fontWeight:700,marginTop:2,flexShrink:0 }}>🍗</span>
+                        <span style={{ fontSize:14,color:'var(--ink2)',lineHeight:1.55 }}>{slot.nonVegOption}</span>
                       </div>
                     )}
                   </div>
@@ -354,6 +370,37 @@ export default function DietClient({ diet }: { diet: any }) {
             </div>
           </div>
         )}
+
+        {/* Universal Principles */}
+        <div style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:22,padding:'clamp(22px,3vw,36px)',marginBottom:36 }}>
+          <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:12 }}>
+            <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+            Universal principles
+          </div>
+          <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(20px,3vw,28px)',fontWeight:600,letterSpacing:'-0.025em',marginBottom:20,lineHeight:1 }}>
+            Sab plans mein common 8 rules.
+          </h2>
+          <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:14 }}>
+            {[
+              ['🕐','Regular meal timing','Body ko predictable rhythm chahiye'],
+              ['💧','3 litre water roz','Subah uthte hi 1 glass warm'],
+              ['🍽️','Mindful eating','Phone band, slowly chabaayein'],
+              ['🌙','Light dinner','Sone se 3 ghante pehle kha lo'],
+              ['🌡️','Warm > cold food','Body ki agni ke liye warm best'],
+              ['🌾','Whole > refined','Atta, chawal sabut grain prefer'],
+              ['🌿','Seasonal & local','Body ko adapt karne mein madad'],
+              ['🚫','No skipping meals','Specially breakfast mat skip karo'],
+            ].map(([ic,t,d],i) => (
+              <div key={i} style={{ display:'flex',alignItems:'flex-start',gap:12 }}>
+                <div style={{ fontSize:22,flexShrink:0 }}>{ic}</div>
+                <div>
+                  <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:600,color:'var(--ink)',lineHeight:1.2 }}>{t}</div>
+                  <div style={{ fontSize:12,color:'var(--ink4)',marginTop:3,lineHeight:1.5 }}>{d}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
         {/* 3 Boxes */}
         <div style={{ display: 'grid', gap: 14, marginBottom: 36 }}>
