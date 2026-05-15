@@ -161,7 +161,7 @@ export default function DiseasesPage() {
             <div style={{ width: 14, height: 1, background: 'var(--warm)', opacity: 0.6 }} />
           </div>
           <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(28px,4vw,52px)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.05, color: 'var(--ink)', marginBottom: 10 }}>
-            {ALL_DISEASES.length} Conditions — Ek Jagah
+            Apni bimari ka <em className="sage-shimmer" style={{ fontStyle: 'italic' }}>poora guide.</em>
           </h1>
           <p style={{ fontSize: 15, color: 'var(--ink3)', marginBottom: 28, fontWeight: 300, lineHeight: 1.7, maxWidth: 520, margin: '0 auto 28px' }}>
             Har bimari ka Hinglish mein poora guide — causes, symptoms, homeopathic medicines, aur diet chart.
@@ -180,7 +180,7 @@ export default function DiseasesPage() {
           <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap', marginTop: 20 }}>
             {[
               ['✓ Doctor Reviewed', 'var(--sage-bg)', 'var(--sage-dk)', 'rgba(63,107,77,.2)'],
-              [`🔥 ${hotCount} Popular Guides`, 'rgba(192,132,56,.1)', 'var(--warm)', 'rgba(192,132,56,.25)'],
+              ['🔥 Popular Guides', 'rgba(192,132,56,.1)', 'var(--warm)', 'rgba(192,132,56,.25)'],
               ['🌿 Root Cause Focus', 'var(--bg2)', 'var(--ink3)', 'var(--border)'],
               ['🇮🇳 Hinglish Mein', 'var(--bg2)', 'var(--ink3)', 'var(--border)'],
             ].map(([l, bg, c, b]) => (
