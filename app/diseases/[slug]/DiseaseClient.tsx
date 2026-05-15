@@ -44,10 +44,16 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
   )
 }
 
-function SecHead({ title, sub }: { title: string; sub?: string }) {
+function SecHead({ title, sub, eyebrow }: { title: string; sub?: string; eyebrow?: string }) {
   return (
     <div style={{ marginBottom: 24 }}>
-      <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: sub ? 6 : 0 }}>{title}</h2>
+      {eyebrow && (
+        <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:10 }}>
+          <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+          {eyebrow}
+        </div>
+      )}
+      <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(24px,3vw,34px)',fontWeight:600,letterSpacing:'-0.025em',lineHeight:1.05,color:'var(--ink)',marginTop:8,marginBottom:sub?6:0 }}>{title}</h2>
       {sub && <p style={{ fontSize: 14, color: 'var(--ink4)', fontWeight: 300 }}>{sub}</p>}
     </div>
   )
@@ -69,10 +75,10 @@ function ReadingProgress() {
   )
 }
 
-function CollapsibleSection({ id, icon, title, sub, defaultOpen = true, children }: { id: string; icon: string; title: string; sub?: string; defaultOpen?: boolean; children: React.ReactNode }) {
+function CollapsibleSection({ id, icon, title, sub, eyebrow, defaultOpen = true, children }: { id: string; icon: string; title: string; sub?: string; eyebrow?: string; defaultOpen?: boolean; children: React.ReactNode }) {
   const [open, setOpen] = useState(defaultOpen)
   return (
-    <section id={id} style={{ marginBottom: 52 }}>
+    <section id={id} style={{ marginBottom: 52, scrollMarginTop: 160 }}>
       <button
         className="sec-toggle"
         onClick={() => setOpen(!open)}
@@ -85,7 +91,7 @@ function CollapsibleSection({ id, icon, title, sub, defaultOpen = true, children
         <span style={{ fontSize: 22, color: 'var(--sage)', fontWeight: 700, flexShrink: 0, marginLeft: 12, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform .2s' }}>+</span>
       </button>
       <div className="sec-toggle-hidden" style={{}}>
-        <SecHead title={`${icon} ${title}`} sub={sub} />
+        <SecHead title={`${icon} ${title}`} sub={sub} eyebrow={eyebrow} />
       </div>
       <div className={open ? 'sec-body-open' : 'sec-body-closed'}>
         {children}
@@ -307,16 +313,17 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
         <div>
 
           {/* OVERVIEW */}
-          <CollapsibleSection id="overview" icon="🧬" title={`${disease.title} Kya Hai?`} defaultOpen={true}>
+          <CollapsibleSection id="overview" icon="🧬" title={`${disease.title} Kya Hai?`} eyebrow="Overview" defaultOpen={true}>
             <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.9, marginBottom: 28, fontWeight: 300 }}>{disease.heroText || 'Ye ek chronic condition hai jo homeopathic treatment se bahut achhi response deti hai.'}</p>
 
             {disease.causes?.length > 0 && (
               <div style={{ marginBottom: 28 }}>
                 <h3 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 14 }}>Ye Bimari Kyun Hoti Hai?</h3>
-                <div style={{ display: 'grid', gap: 8 }}>
+                <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(240px,1fr))',gap:10 }}>
                   {disease.causes.map((c: string, i: number) => (
-                    <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', padding: '12px 16px', background: 'var(--card)', borderRadius: 10, border: '1px solid var(--border)', borderLeft: `4px solid ${CAUSE_COLORS[i % 4]}` }}>
-                      <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.65 }}>{c}</span>
+                    <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'center',gap:12 }}>
+                      <div style={{ width:4,height:36,borderRadius:99,background:CAUSE_COLORS[i%4],flexShrink:0 }} />
+                      <span style={{ fontSize:14,fontWeight:600,color:'var(--ink)',lineHeight:1.5 }}>{c}</span>
                     </div>
                   ))}
                 </div>
@@ -351,7 +358,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
 
           {/* TYPES */}
           {disease.types?.length > 0 && (
-            <CollapsibleSection id="types" icon="📋" title={`${disease.title} Ke Prakar`} sub="Har type alag hoti hai — sahi diagnosis treatment ko guide karta hai" defaultOpen={false}>
+            <CollapsibleSection id="types" icon="📋" title={`${disease.title} Ke Prakar`} sub="Har type alag hoti hai — sahi diagnosis treatment ko guide karta hai" eyebrow="Disease types" defaultOpen={false}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
                 {disease.types.map((t: any) => (
                   <div key={t._key} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px', position: 'relative' }}>
@@ -371,7 +378,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
 
           {/* SYMPTOMS */}
           {disease.symptoms?.length > 0 && (
-            <CollapsibleSection id="symptoms" icon="🩺" title="Symptoms — Kya Mehsoos Hota Hai?" sub="In symptoms mein se kuch aapko hain? Ek baar doctor se zaroor milein." defaultOpen={false}>
+            <CollapsibleSection id="symptoms" icon="🩺" title="Symptoms — Kya Mehsoos Hota Hai?" sub="In symptoms mein se kuch aapko hain? Ek baar doctor se zaroor milein." eyebrow="What you'll feel" defaultOpen={false}>
               {disease.symptoms.map((s: any, i: number) => (
                 <div key={i} style={{ marginBottom: 16 }}>
                   {s.category && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--sage-dk)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{s.category}</div>}
@@ -389,7 +396,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           )}
 
           {/* VIDEOS — standalone section, always shows channel link */}
-          <CollapsibleSection id="videos" icon="📺" title="Dr. Shadab Khan ke Videos" sub="YouTube pe aur bhi videos dekhein" defaultOpen={true}>
+          <CollapsibleSection id="videos" icon="📺" title="Dr. Shadab Khan ke Videos" sub="YouTube pe aur bhi videos dekhein" eyebrow="Watch & learn" defaultOpen={true}>
             {/* Specific video(s) for this disease */}
             {disease.youtubeVideos?.length > 0 ? (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: 16, marginBottom: 20 }}>
@@ -431,7 +438,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           </CollapsibleSection>
 
           {/* HOMEOPATHY */}
-          <CollapsibleSection id="homeo" icon="🌿" title="Homoeopathy Se Kaise Thik Hoga?" sub="Sirf symptoms nahi — root cause treat hota hai" defaultOpen={false}>
+          <CollapsibleSection id="homeo" icon="🌿" title="Homoeopathy Se Kaise Thik Hoga?" sub="Sirf symptoms nahi — root cause treat hota hai" eyebrow="Why homeopathy?" defaultOpen={false}>
             <div className="grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginBottom: 20 }}>
               {[
                 { i: '🎯', h: 'Root Cause Treatment', b: 'Sirf symptoms nahi — underlying immune trigger ko address karta hai.' },
@@ -471,22 +478,20 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           </CollapsibleSection>
 
           {/* MEDICINES */}
-          <CollapsibleSection id="medicines" icon="💊" title="Homoeopathic Medicines" sub={`${disease.title} mein commonly used medicines — doctor guidance ke saath`} defaultOpen={false}>
+          <CollapsibleSection id="medicines" icon="💊" title="Homoeopathic Medicines" sub={`${disease.title} mein commonly used medicines — doctor guidance ke saath`} eyebrow="Classical remedies" defaultOpen={false}>
             <div style={{ padding: '12px 18px', background: 'rgba(192,132,56,.07)', border: '1px solid rgba(192,132,56,.2)', borderRadius: 9, marginBottom: 20, fontSize: 13, color: 'var(--warm)' }}>
               ⚠️ Ye sirf educational information hai — doctor se consult ke bina koi bhi medicine mat lein
             </div>
             {disease.medicines?.length > 0 ? (
-              <div style={{ display: 'grid', gap: 14 }}>
+              <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:12 }}>
                 {disease.medicines.map((m: any, i: number) => (
-                  <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '20px 22px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                      <span style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>{m.name}</span>
-                    </div>
-                    {m.bestFor && <div style={{ fontSize: 13, color: 'var(--warm)', fontStyle: 'italic', marginBottom: 10 }}>Best for: {m.bestFor}</div>}
+                  <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'18px 20px' }}>
+                    <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:17,fontWeight:700,color:'var(--ink)',marginBottom:6 }}>{m.name}</div>
+                    {m.bestFor && <div style={{ fontSize:12,color:'var(--warm)',fontWeight:600,marginBottom:10,fontStyle:'italic' }}>Best for: {m.bestFor}</div>}
                     {m.keyIndications?.length > 0 && (
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
+                      <div style={{ display:'flex',flexWrap:'wrap',gap:6 }}>
                         {m.keyIndications.map((ind: string, j: number) => (
-                          <span key={j} style={{ fontSize: 12, padding: '4px 10px', borderRadius: 7, background: 'var(--bg2)', color: 'var(--ink3)', border: '1px solid var(--border)' }}>{ind}</span>
+                          <span key={j} style={{ fontSize:11,padding:'3px 10px',borderRadius:7,background:'var(--bg2)',color:'var(--ink3)',border:'1px solid var(--border)' }}>{ind}</span>
                         ))}
                       </div>
                     )}
@@ -502,42 +507,36 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           </CollapsibleSection>
 
           {/* DIET */}
-          <CollapsibleSection id="diet" icon="🥗" title="Diet Chart" sub={`${disease.title} ke patients ke liye doctor-recommended diet`} defaultOpen={false}>
+          <CollapsibleSection id="diet" icon="🥗" title="Diet Chart" sub={`${disease.title} ke patients ke liye doctor-recommended diet`} eyebrow="Food matters" defaultOpen={false}>
             {(() => {
               const dietInclude = disease.dietInclude || disease.dietRecommended
               const dietAvoid = disease.dietAvoid
               return (dietInclude?.length > 0 || dietAvoid?.length > 0) ? (
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="grid-2">
                 {dietInclude?.length > 0 && (
-                  <div style={{ background: 'rgba(58,125,82,.04)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 16, padding: '22px' }}>
-                    <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--green)', marginBottom: 14 }}>✓ Ye Zaroor Khayein</h3>
-                    {dietInclude.map((cat: any) => (
-                      <div key={cat.category} style={{ marginBottom: 14 }}>
-                        <p style={{ fontSize: 11, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{cat.category} {cat.emoji}</p>
-                        {cat.items?.map((item: string) => (
-                          <div key={item} style={{ display: 'flex', gap: 8, padding: '7px 10px', background: 'rgba(58,125,82,.05)', borderRadius: 7, marginBottom: 4, alignItems: 'flex-start' }}>
-                            <span style={{ color: 'var(--green)', flexShrink: 0, marginTop: 1 }}>✓</span>
-                            <span style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400 }}>{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                  <div style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:16,overflow:'hidden' }}>
+                    <div style={{ padding:'12px 18px',background:'var(--sage-bg)',fontSize:11,fontWeight:700,color:'var(--sage)',letterSpacing:'0.12em',textTransform:'uppercase',borderBottom:'1px solid rgba(63,107,77,.15)' }}>✓ Khaayein</div>
+                    <div style={{ padding:'14px 18px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px 12px' }}>
+                      {dietInclude.map((cat: any) => cat.items?.map((item: string, j: number) => (
+                        <div key={item} style={{ display:'flex',alignItems:'center',gap:8,fontSize:13,color:'var(--ink2)' }}>
+                          <div style={{ width:20,height:20,borderRadius:'50%',background:'var(--sage-bg)',color:'var(--sage)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700 }}>✓</div>
+                          <span>{item}</span>
+                        </div>
+                      )))}
+                    </div>
                   </div>
                 )}
                 {dietAvoid?.length > 0 && (
-                  <div style={{ background: 'rgba(176,64,64,.04)', border: '1px solid rgba(176,64,64,.2)', borderRadius: 16, padding: '22px' }}>
-                    <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--red)', marginBottom: 14 }}>✕ Ye Bilkul Mat Khayein</h3>
-                    {dietAvoid.map((cat: any) => (
-                      <div key={cat.category} style={{ marginBottom: 14 }}>
-                        <p style={{ fontSize: 11, fontWeight: 600, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>{cat.category} {cat.emoji}</p>
-                        {cat.items?.map((item: string) => (
-                          <div key={item} style={{ display: 'flex', gap: 8, padding: '7px 10px', background: 'rgba(176,64,64,.05)', borderRadius: 7, marginBottom: 4, alignItems: 'flex-start' }}>
-                            <span style={{ color: 'var(--red)', flexShrink: 0, marginTop: 1 }}>✕</span>
-                            <span style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400 }}>{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
+                  <div style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:16,overflow:'hidden' }}>
+                    <div style={{ padding:'12px 18px',background:'rgba(162,56,56,.08)',fontSize:11,fontWeight:700,color:'var(--red)',letterSpacing:'0.12em',textTransform:'uppercase',borderBottom:'1px solid rgba(162,56,56,.15)' }}>✕ Avoid Karein</div>
+                    <div style={{ padding:'14px 18px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'8px 12px' }}>
+                      {dietAvoid.map((cat: any) => cat.items?.map((item: string, j: number) => (
+                        <div key={item} style={{ display:'flex',alignItems:'center',gap:8,fontSize:13,color:'var(--ink2)' }}>
+                          <div style={{ width:20,height:20,borderRadius:'50%',background:'rgba(162,56,56,.08)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700 }}>✕</div>
+                          <span>{item}</span>
+                        </div>
+                      )))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -618,36 +617,27 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           </CollapsibleSection>
 
           {/* DOS & DON'TS */}
-          <CollapsibleSection id="dosdont" icon="✅" title="Dos & Don'ts" sub="Lifestyle changes jo treatment mein help karte hain" defaultOpen={false}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }} className="grid-2">
-              {disease.dos?.length > 0 && (
-                <div style={{ background: 'rgba(58,125,82,.04)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 16, padding: '22px' }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--green)', marginBottom: 14 }}>✓ Ye Zaroor Karein</h3>
-                  {disease.dos.map((d: string, i: number) => (
-                    <div key={i} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(58,125,82,.05)', borderRadius: 8, marginBottom: 8, alignItems: 'flex-start' }}>
-                      <span style={{ color: 'var(--green)', flexShrink: 0 }}>✓</span>
-                      <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.65 }}>{d}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {disease.donts?.length > 0 && (
-                <div style={{ background: 'rgba(176,64,64,.04)', border: '1px solid rgba(176,64,64,.2)', borderRadius: 16, padding: '22px' }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--red)', marginBottom: 14 }}>✕ Ye Bilkul Mat Karein</h3>
-                  {disease.donts.map((d: string, i: number) => (
-                    <div key={i} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, marginBottom: 8, alignItems: 'flex-start' }}>
-                      <span style={{ color: 'var(--red)', flexShrink: 0 }}>✕</span>
-                      <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.65 }}>{d}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {!disease.dos?.length && !disease.donts?.length && (
-                <div style={{ gridColumn: '1/-1', textAlign: 'center', padding: '36px', background: 'var(--bg2)', borderRadius: 12, border: '1px dashed var(--border2)' }}>
-                  <p style={{ color: 'var(--ink4)', fontWeight: 300 }}>Dos &amp; Don&apos;ts jald add honge.</p>
-                </div>
-              )}
-            </div>
+          <CollapsibleSection id="dosdont" icon="✅" title="Dos & Don'ts" sub="Lifestyle changes jo treatment mein help karte hain" eyebrow="Daily habits" defaultOpen={false}>
+            {(disease.dos?.length > 0 || disease.donts?.length > 0) ? (
+              <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:10 }}>
+                {disease.dos?.map((d: string, i: number) => (
+                  <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
+                    <div style={{ width:32,height:32,borderRadius:8,background:'var(--sage-bg)',color:'var(--sage)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:16,fontWeight:700 }}>✓</div>
+                    <span style={{ fontSize:13,fontWeight:500,color:'var(--ink)',lineHeight:1.55,paddingTop:4 }}>{d}</span>
+                  </div>
+                ))}
+                {disease.donts?.map((d: string, i: number) => (
+                  <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
+                    <div style={{ width:32,height:32,borderRadius:8,background:'rgba(162,56,56,.08)',color:'#a23838',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:16,fontWeight:700 }}>✕</div>
+                    <span style={{ fontSize:13,fontWeight:500,color:'var(--ink)',lineHeight:1.55,paddingTop:4 }}>{d}</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div style={{ textAlign: 'center', padding: '36px', background: 'var(--bg2)', borderRadius: 12, border: '1px dashed var(--border2)' }}>
+                <p style={{ color: 'var(--ink4)', fontWeight: 300 }}>Dos &amp; Don&apos;ts jald add honge.</p>
+              </div>
+            )}
           </CollapsibleSection>
 
           {/* LIFESTYLE TIPS */}
@@ -779,14 +769,12 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           )}
 
           {/* FAQ */}
-          <section id="faq" style={{ marginBottom: 52 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6 }}>
-              <SL c="Frequently Asked Questions" />
-              {disease.faqs?.length > 0 && (
-                <span style={{ fontSize: 12, padding: '3px 10px', borderRadius: 100, background: 'var(--sage-bg)', color: 'var(--sage-dk)', border: '1px solid rgba(63,107,77,.2)' }}>{disease.faqs.length} FAQs</span>
-              )}
+          <section id="faq" style={{ marginBottom: 52, scrollMarginTop: 160 }}>
+            <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:10 }}>
+              <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+              {disease.faqs?.length > 0 ? `${disease.faqs.length} sawaal` : 'Frequently asked'}
             </div>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Sabse Zyada Pooche Jaane Wale Sawal</h2>
+            <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(24px,3vw,34px)',fontWeight:600,letterSpacing:'-0.025em',lineHeight:1.05,color:'var(--ink)',marginTop:8,marginBottom:6 }}>Sabse Zyada Pooche Jaane Wale Sawal</h2>
             <p style={{ fontSize: 14, color: 'var(--ink4)', fontWeight: 300, marginBottom: 24 }}>Clinic mein patients jo questions poochte hain — unke honest jawab</p>
             {disease.faqs?.length > 0 ? (
               <div style={{ display:'flex',flexDirection:'column',gap:8 }}>

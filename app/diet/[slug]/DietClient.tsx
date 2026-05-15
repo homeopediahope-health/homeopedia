@@ -162,62 +162,63 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* Green List */}
         {vegGreen.length > 0 && (
-          <div id="green" style={{ marginBottom: 8 }}>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--green)', marginBottom: 6 }}>✅ Green List — Ye Zaroor Khayein</h2>
-            <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Ye foods {diet.hindiName || diet.title?.split(' ')[0]} mein healing support karte hain</p>
-            <div style={{ background: 'rgba(58,125,82,.04)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 16, padding: '24px' }}>
-              {vegGreen.map((cat: any) => (
-                <div key={cat.categoryName} style={{ marginBottom: 20 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
-                  <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
-                    {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(58,125,82,.04)',borderRadius:10,border:'1px solid rgba(58,125,82,.1)' }}>
-                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(58,125,82,.15)',color:'var(--green)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700,marginTop:1 }}>✓</div>
-                        <div>
-                          <div style={{ fontSize:13,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
-                          {item.reason && <div style={{ fontSize:11,color:'var(--ink4)',lineHeight:1.5,marginTop:3,fontWeight:300 }}>{item.reason}</div>}
+          <div style={{ marginBottom: 8 }}>
+            <div style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:18,overflow:'hidden',marginBottom:36 }} id="green">
+              <div style={{ padding:'14px 20px',background:'var(--sage-bg)',fontSize:11,fontWeight:700,color:'var(--sage)',letterSpacing:'0.12em',textTransform:'uppercase',borderBottom:'1px solid rgba(63,107,77,.15)' }}>✅ Khaayein — yes!</div>
+              <div style={{ padding:'16px 20px' }}>
+                {vegGreen.map((cat: any) => (
+                  <div key={cat.categoryName} style={{ marginBottom:18 }}>
+                    <div style={{ fontSize:11,fontWeight:700,color:'var(--sage)',textTransform:'uppercase',letterSpacing:'0.08em',marginBottom:8 }}>{cat.emoji} {cat.categoryName}</div>
+                    <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
+                      {cat.items?.map((item: any) => (
+                        <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(63,107,77,.04)',borderRadius:10,border:'1px solid rgba(63,107,77,.1)' }}>
+                          <div style={{ width:22,height:22,borderRadius:'50%',background:'var(--sage-bg)',color:'var(--sage)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700,marginTop:1 }}>✓</div>
+                          <div>
+                            <div style={{ fontSize:13,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
+                            {item.reason && <div style={{ fontSize:11,color:'var(--ink4)',lineHeight:1.5,marginTop:3,fontWeight:300 }}>{item.reason}</div>}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              {/* Non-veg allowed section */}
-              {nonVeg && diet.nonVegAllowed?.length > 0 && (
-                <div style={{ marginTop: 8, paddingTop: 16, borderTop: '1px dashed rgba(58,125,82,.3)' }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>🍗 Non-Veg Mein Kya Allowed</p>
-                  <div style={{ display: 'grid', gap: 6 }}>
-                    {diet.nonVegAllowed.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(58,125,82,.06)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✓</span>
-                        <div>
-                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
+                {/* Non-veg allowed section */}
+                {nonVeg && diet.nonVegAllowed?.length > 0 && (
+                  <div style={{ marginTop: 8, paddingTop: 16, borderTop: '1px dashed rgba(58,125,82,.3)' }}>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>🍗 Non-Veg Mein Kya Allowed</p>
+                    <div style={{ display: 'grid', gap: 6 }}>
+                      {diet.nonVegAllowed.map((item: any) => (
+                        <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(58,125,82,.06)', borderRadius: 8, alignItems: 'flex-start' }}>
+                          <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✓</span>
+                          <div>
+                            <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
+                            {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
 
-              {/* Non-veg avoid section */}
-              {nonVeg && diet.nonVegAvoid?.length > 0 && (
-                <div style={{ marginTop: 16, padding: '16px', background: 'rgba(176,64,64,.05)', border: '1px solid rgba(176,64,64,.15)', borderRadius: 10 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>🚫 Non-Veg Mein Ye Avoid Karein</p>
-                  <div style={{ display: 'grid', gap: 6 }}>
-                    {diet.nonVegAvoid.map((item: any) => (
-                      <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✕</span>
-                        <div>
-                          <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
+                {/* Non-veg avoid section */}
+                {nonVeg && diet.nonVegAvoid?.length > 0 && (
+                  <div style={{ marginTop: 16, padding: '16px', background: 'rgba(176,64,64,.05)', border: '1px solid rgba(176,64,64,.15)', borderRadius: 10 }}>
+                    <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>🚫 Non-Veg Mein Ye Avoid Karein</p>
+                    <div style={{ display: 'grid', gap: 6 }}>
+                      {diet.nonVegAvoid.map((item: any) => (
+                        <div key={item.food} style={{ display: 'flex', gap: 10, padding: '10px 12px', background: 'rgba(176,64,64,.05)', borderRadius: 8, alignItems: 'flex-start' }}>
+                          <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✕</span>
+                          <div>
+                            <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
+                            {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
 
             {diet.shareTextGreenRed && <WaShareBtn text={diet.shareTextGreenRed} label="Ye list share karein →" />}
@@ -226,17 +227,16 @@ export default function DietClient({ diet }: { diet: any }) {
 
         {/* Red List */}
         {redList.length > 0 && (
-          <div id="red" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--red)', marginBottom: 6 }}>❌ Red List — Ye Bilkul Mat Khayein</h2>
-            <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Ye foods symptoms/attack trigger karte hain — temporarily ya permanently avoid karein</p>
-            <div style={{ background: 'rgba(176,64,64,.04)', border: '1px solid rgba(176,64,64,.2)', borderRadius: 16, padding: '24px' }}>
+          <div style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:18,overflow:'hidden',marginBottom:36 }} id="red">
+            <div style={{ padding:'14px 20px',background:'rgba(162,56,56,.08)',fontSize:11,fontWeight:700,color:'var(--red)',letterSpacing:'0.12em',textTransform:'uppercase',borderBottom:'1px solid rgba(162,56,56,.15)' }}>❌ Avoid Karein</div>
+            <div style={{ padding:'16px 20px' }}>
               {redList.map((cat: any) => (
-                <div key={cat.categoryName} style={{ marginBottom: 20 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
+                <div key={cat.categoryName} style={{ marginBottom:18 }}>
+                  <div style={{ fontSize:11,fontWeight:700,color:'var(--red)',textTransform:'uppercase',letterSpacing:'0.08em',marginBottom:8 }}>{cat.emoji} {cat.categoryName}</div>
                   <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(176,64,64,.04)',borderRadius:10,border:'1px solid rgba(176,64,64,.1)' }}>
-                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(176,64,64,.15)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700,marginTop:1 }}>✕</div>
+                      <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(162,56,56,.04)',borderRadius:10,border:'1px solid rgba(162,56,56,.1)' }}>
+                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(162,56,56,.1)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700,marginTop:1 }}>✕</div>
                         <div>
                           <div style={{ fontSize:13,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
                           {item.reason && <div style={{ fontSize:11,color:'var(--ink4)',lineHeight:1.5,marginTop:3,fontWeight:300 }}>{item.reason}</div>}
@@ -253,7 +253,11 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* Daily Meal Plan — Timeline */}
         {mealPlan.length > 0 && (
           <div id="plan" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>🕐 Ek Din Ka Meal Plan</h2>
+            <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:10 }}>
+              <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+              Daily meal plan
+            </div>
+            <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(22px,3vw,32px)',fontWeight:600,letterSpacing:'-0.025em',lineHeight:1.05,color:'var(--ink)',marginTop:8,marginBottom:6 }}>🕐 Ek Din Ka Meal Plan</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 24, fontWeight: 300 }}>Veg default — non-veg toggle karein upar se aur relevant slots mein option dikhega</p>
             <div style={{ position:'relative',paddingLeft:60 }}>
               <div style={{ position:'absolute',left:25,top:16,bottom:16,width:2,background:'linear-gradient(180deg,var(--sage),var(--sage-lt))',borderRadius:2 }} />
@@ -288,7 +292,11 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* 4-Day Sample Plan */}
         {plan4.length > 0 && (
           <div id="sample" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>📅 4 Din Ka Sample Plan</h2>
+            <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:10 }}>
+              <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+              4-day plan
+            </div>
+            <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(22px,3vw,32px)',fontWeight:600,letterSpacing:'-0.025em',lineHeight:1.05,color:'var(--ink)',marginTop:8,marginBottom:6 }}>📅 4 Din Ka Sample Plan</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Baaki dinon ke liye upar diya Daily Meal Plan use karein — apni pasand se choose karein</p>
             {/* Desktop: table */}
             <div className="plan4-table" style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
@@ -358,7 +366,11 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* Special Situations */}
         {situations.length > 0 && (
           <div id="special" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>🎯 Special Situations</h2>
+            <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:10 }}>
+              <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+              Special cases
+            </div>
+            <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(22px,3vw,32px)',fontWeight:600,letterSpacing:'-0.025em',lineHeight:1.05,color:'var(--ink)',marginTop:8,marginBottom:16 }}>🎯 Special Situations</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 14 }}>
               {situations.map((s: any) => (
                 <div key={s.situationType} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px' }}>
@@ -492,7 +504,11 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* FAQs */}
         {faqs.length > 0 && (
           <div id="faq" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>❓ Aksar Pooche Jaane Wale Sawaal</h2>
+            <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:10 }}>
+              <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+              Frequently asked
+            </div>
+            <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(22px,3vw,32px)',fontWeight:600,letterSpacing:'-0.025em',lineHeight:1.05,color:'var(--ink)',marginTop:8,marginBottom:4 }}>❓ Aksar Pooche Jaane Wale Sawaal</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>{diet.title} ke baare mein common diet questions</p>
             <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px 24px' }}>
               {faqs.map((f: any, i: number) => (
