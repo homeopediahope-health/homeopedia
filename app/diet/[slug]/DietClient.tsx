@@ -130,7 +130,7 @@ export default function DietClient({ diet }: { diet: any }) {
       </div>
 
       {/* Sticky Tab Bar */}
-      <div style={{ position: 'sticky', top: 64, zIndex: 100, background: 'var(--card)', borderBottom: '1px solid var(--border)', boxShadow: '0 2px 8px rgba(26,21,16,.06)' }}>
+      <div style={{ position: 'sticky', top: 64, zIndex: 100, background: 'rgba(247,245,239,.88)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', boxShadow: '0 2px 8px rgba(26,21,16,.06)' }}>
         <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 clamp(16px,4vw,32px)' }} className="diet-tabs">
           {TABS.map(t => (
             <button key={t.id} onClick={() => scrollTo(t.id)} className="diet-tab"
@@ -151,7 +151,7 @@ export default function DietClient({ diet }: { diet: any }) {
             <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>⏰ 3 Zaruri Khaane Ki Aadatein</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 12 }}>
               {habits.map((h: any, i: number) => (
-                <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderLeft: '4px solid var(--sage)', borderRadius: '0 12px 12px 0', boxShadow: 'var(--sh-sm)' }}>
+                <div key={i} className="hov" style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderLeft: '4px solid var(--sage)', borderRadius: '0 12px 12px 0', boxShadow: 'var(--sh-sm)' }}>
                   <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>{h.habit}</p>
                   <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.6, fontWeight: 300 }}>{h.reason}</p>
                 </div>
@@ -373,7 +373,7 @@ export default function DietClient({ diet }: { diet: any }) {
             <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:'clamp(22px,3vw,32px)',fontWeight:600,letterSpacing:'-0.025em',lineHeight:1.05,color:'var(--ink)',marginTop:8,marginBottom:16 }}>🎯 Special Situations</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 14 }}>
               {situations.map((s: any) => (
-                <div key={s.situationType} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px' }}>
+                <div key={s.situationType} className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px' }}>
                   <p style={{ fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 12 }}>{s.emoji} {s.title}</p>
                   <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
                     {s.tips?.map((tip: string, i: number) => (

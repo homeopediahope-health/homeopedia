@@ -274,7 +274,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
         <div style={{ background:'var(--bg2)',borderBottom:'1px solid var(--border)',padding:'clamp(16px,3vw,24px) clamp(16px,4vw,32px)' }}>
           <div style={{ maxWidth:1160,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:12 }}>
             {WOW_FACTS.map((f,i) => (
-              <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:14,padding:'16px 18px' }}>
+              <div key={i} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:14,padding:'16px 18px' }}>
                 <div style={{ fontSize:22,marginBottom:8 }}>{f.emoji}</div>
                 <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:600,color:'var(--ink)',marginBottom:4,lineHeight:1.3 }}>{f.label}</div>
                 <div style={{ fontSize:12,color:'var(--ink4)',lineHeight:1.5 }}>{f.value}</div>
@@ -285,7 +285,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
       )}
 
       {/* Jump Navigation — Desktop tabs | Mobile: hidden, jump grid used instead */}
-      <div className="mob-hide-tabs" style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 64, zIndex: 100 }}>
+      <div className="mob-hide-tabs" style={{ background: 'rgba(247,245,239,.88)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 64, zIndex: 100 }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', display: 'flex', overflowX: 'auto', padding: '0 clamp(16px,4vw,32px)' }} className="hide-scrollbar tabs-bar">
           {SECTIONS.map(s => (
             <button key={s.id} onClick={() => scrollTo(s.id)} style={{ background: 'none', border: 'none', padding: '16px 18px', cursor: 'pointer', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap', color: activeSection === s.id ? 'var(--sage)' : 'var(--ink4)', borderBottom: activeSection === s.id ? '2px solid var(--sage)' : '2px solid transparent', transition: 'all .2s', display: 'flex', alignItems: 'center', gap: 5 }}>
@@ -321,7 +321,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 <h3 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 14 }}>Ye Bimari Kyun Hoti Hai?</h3>
                 <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(240px,1fr))',gap:10 }}>
                   {disease.causes.map((c: string, i: number) => (
-                    <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'center',gap:12 }}>
+                    <div key={i} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'center',gap:12 }}>
                       <div style={{ width:4,height:36,borderRadius:99,background:CAUSE_COLORS[i%4],flexShrink:0 }} />
                       <span style={{ fontSize:14,fontWeight:600,color:'var(--ink)',lineHeight:1.5 }}>{c}</span>
                     </div>
@@ -361,7 +361,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             <CollapsibleSection id="types" icon="📋" title={`${disease.title} Ke Prakar`} sub="Har type alag hoti hai — sahi diagnosis treatment ko guide karta hai" eyebrow="Disease types" defaultOpen={false}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
                 {disease.types.map((t: any) => (
-                  <div key={t._key} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px', position: 'relative' }}>
+                  <div key={t._key} className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px', position: 'relative' }}>
                     {t.percentage && <span style={{ position: 'absolute', top: 14, right: 14, fontSize: 10, padding: '3px 8px', borderRadius: 100, background: 'var(--sage-bg)', color: 'var(--sage-dk)', fontWeight: 600 }}>{t.percentage}</span>}
                     <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 16, fontWeight: 700, color: 'var(--ink)', marginBottom: 8, paddingRight: t.percentage ? 60 : 0 }}>{t.name}</div>
                     {t.description && <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>{t.description}</p>}
@@ -384,7 +384,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                   {s.category && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--sage-dk)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{s.category}</div>}
                   <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:8 }}>
                     {s.items?.map((item: string, j: number) => (
-                      <div key={j} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
+                      <div key={j} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
                         <div style={{ width:28,height:28,borderRadius:8,background:'var(--sage-bg)',color:'var(--sage)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700 }}>{j+1}</div>
                         <span style={{ fontSize:14,color:'var(--ink2)',lineHeight:1.65,paddingTop:2 }}>{item}</span>
                       </div>
@@ -446,7 +446,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 { i: '🌿', h: 'Zero Side Effects', b: 'Natural medicines — safe for children, elderly, pregnant women bhi.' },
                 { i: '📊', h: 'Evidence-Based Practice', b: 'Homeopathy AYUSH Ministry ke under recognized system hai — clinical practice se proven.' },
               ].map(c => (
-                <div key={c.h} style={{ padding: '20px', background: 'var(--card)', borderRadius: 12, border: '1px solid var(--border)' }}>
+                <div key={c.h} className="hov" style={{ padding: '20px', background: 'var(--card)', borderRadius: 12, border: '1px solid var(--border)' }}>
                   <div style={{ fontSize: 26, marginBottom: 10 }}>{c.i}</div>
                   <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>{c.h}</div>
                   <div style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.7, fontWeight: 300 }}>{c.b}</div>
@@ -485,7 +485,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             {disease.medicines?.length > 0 ? (
               <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:12 }}>
                 {disease.medicines.map((m: any, i: number) => (
-                  <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'18px 20px' }}>
+                  <div key={i} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'18px 20px' }}>
                     <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:17,fontWeight:700,color:'var(--ink)',marginBottom:6 }}>{m.name}</div>
                     {m.bestFor && <div style={{ fontSize:12,color:'var(--warm)',fontWeight:600,marginBottom:10,fontStyle:'italic' }}>Best for: {m.bestFor}</div>}
                     {m.keyIndications?.length > 0 && (
@@ -621,13 +621,13 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             {(disease.dos?.length > 0 || disease.donts?.length > 0) ? (
               <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:10 }}>
                 {disease.dos?.map((d: string, i: number) => (
-                  <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
+                  <div key={i} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
                     <div style={{ width:32,height:32,borderRadius:8,background:'var(--sage-bg)',color:'var(--sage)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:16,fontWeight:700 }}>✓</div>
                     <span style={{ fontSize:13,fontWeight:500,color:'var(--ink)',lineHeight:1.55,paddingTop:4 }}>{d}</span>
                   </div>
                 ))}
                 {disease.donts?.map((d: string, i: number) => (
-                  <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
+                  <div key={i} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
                     <div style={{ width:32,height:32,borderRadius:8,background:'rgba(162,56,56,.08)',color:'#a23838',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:16,fontWeight:700 }}>✕</div>
                     <span style={{ fontSize:13,fontWeight:500,color:'var(--ink)',lineHeight:1.55,paddingTop:4 }}>{d}</span>
                   </div>
@@ -645,7 +645,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             <CollapsibleSection id="lifestyle" icon="🌿" title="Lifestyle Guide" sub="Rozaana ki habits jo treatment mein madad karti hain" defaultOpen={false}>
               <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:12 }}>
                 {disease.lifestyle.map((tip: any, i: number) => (
-                  <div key={i} style={{ padding:'18px 20px',background:'var(--card)',border:'1px solid var(--border)',borderLeft:`4px solid ${CAUSE_COLORS[i%4]}`,borderRadius:'0 12px 12px 0',boxShadow:'var(--sh-sm)' }}>
+                  <div key={i} className="hov" style={{ padding:'18px 20px',background:'var(--card)',border:'1px solid var(--border)',borderLeft:`4px solid ${CAUSE_COLORS[i%4]}`,borderRadius:'0 12px 12px 0',boxShadow:'var(--sh-sm)' }}>
                     <p style={{ fontSize:14,fontWeight:700,color:'var(--ink)',marginBottom:4 }}>{tip.title}</p>
                     {tip.description && <p style={{ fontSize:13,color:'var(--ink3)',lineHeight:1.6,fontWeight:300 }}>{tip.description}</p>}
                   </div>
@@ -659,21 +659,21 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             <CollapsibleSection id="exercise" icon="🧘" title="Exercise & Yoga Guide" sub="Daily routine jo recovery speed up karta hai" defaultOpen={false}>
               <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:14,marginBottom:16 }}>
                 {disease.exercise.dailyWalk && (
-                  <div style={{ padding:'20px',background:'var(--card)',border:'1px solid var(--border)',borderRadius:14 }}>
+                  <div className="hov" style={{ padding:'20px',background:'var(--card)',border:'1px solid var(--border)',borderRadius:14 }}>
                     <div style={{ fontSize:26,marginBottom:10 }}>🚶</div>
                     <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:700,color:'var(--ink)',marginBottom:6 }}>Daily Walk</div>
                     <p style={{ fontSize:13,color:'var(--ink3)',lineHeight:1.7,fontWeight:300 }}>{disease.exercise.dailyWalk}</p>
                   </div>
                 )}
                 {disease.exercise.yogaAsanas && (
-                  <div style={{ padding:'20px',background:'var(--card)',border:'1px solid var(--border)',borderRadius:14 }}>
+                  <div className="hov" style={{ padding:'20px',background:'var(--card)',border:'1px solid var(--border)',borderRadius:14 }}>
                     <div style={{ fontSize:26,marginBottom:10 }}>🧘</div>
                     <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:700,color:'var(--ink)',marginBottom:6 }}>Yoga Asanas</div>
                     <p style={{ fontSize:13,color:'var(--ink3)',lineHeight:1.7,fontWeight:300 }}>{disease.exercise.yogaAsanas}</p>
                   </div>
                 )}
                 {disease.exercise.pranayama && (
-                  <div style={{ padding:'20px',background:'var(--card)',border:'1px solid var(--border)',borderRadius:14 }}>
+                  <div className="hov" style={{ padding:'20px',background:'var(--card)',border:'1px solid var(--border)',borderRadius:14 }}>
                     <div style={{ fontSize:26,marginBottom:10 }}>🫁</div>
                     <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:700,color:'var(--ink)',marginBottom:6 }}>Pranayama</div>
                     <p style={{ fontSize:13,color:'var(--ink3)',lineHeight:1.7,fontWeight:300 }}>{disease.exercise.pranayama}</p>
@@ -698,21 +698,21 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             <CollapsibleSection id="seasonal" icon="🌤️" title="Mausam Ke Hisab Se Care" sub="Har season mein alag precautions lena zaroori hai" defaultOpen={false}>
               <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(220px,1fr))',gap:14 }}>
                 {disease.seasonalCare.summer && (
-                  <div style={{ padding:'20px',background:'rgba(255,170,0,.05)',border:'1px solid rgba(255,170,0,.2)',borderRadius:14 }}>
+                  <div className="hov" style={{ padding:'20px',background:'rgba(255,170,0,.05)',border:'1px solid rgba(255,170,0,.2)',borderRadius:14 }}>
                     <div style={{ fontSize:26,marginBottom:10 }}>☀️</div>
                     <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:700,color:'var(--ink)',marginBottom:8 }}>Garmi (Summer)</div>
                     <p style={{ fontSize:13,color:'var(--ink3)',lineHeight:1.7,fontWeight:300 }}>{disease.seasonalCare.summer}</p>
                   </div>
                 )}
                 {disease.seasonalCare.winter && (
-                  <div style={{ padding:'20px',background:'rgba(80,120,255,.05)',border:'1px solid rgba(80,120,255,.2)',borderRadius:14 }}>
+                  <div className="hov" style={{ padding:'20px',background:'rgba(80,120,255,.05)',border:'1px solid rgba(80,120,255,.2)',borderRadius:14 }}>
                     <div style={{ fontSize:26,marginBottom:10 }}>❄️</div>
                     <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:700,color:'var(--ink)',marginBottom:8 }}>Sardi (Winter)</div>
                     <p style={{ fontSize:13,color:'var(--ink3)',lineHeight:1.7,fontWeight:300 }}>{disease.seasonalCare.winter}</p>
                   </div>
                 )}
                 {disease.seasonalCare.monsoon && (
-                  <div style={{ padding:'20px',background:'rgba(0,160,120,.05)',border:'1px solid rgba(0,160,120,.2)',borderRadius:14 }}>
+                  <div className="hov" style={{ padding:'20px',background:'rgba(0,160,120,.05)',border:'1px solid rgba(0,160,120,.2)',borderRadius:14 }}>
                     <div style={{ fontSize:26,marginBottom:10 }}>🌧️</div>
                     <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:700,color:'var(--ink)',marginBottom:8 }}>Barsaat (Monsoon)</div>
                     <p style={{ fontSize:13,color:'var(--ink3)',lineHeight:1.7,fontWeight:300 }}>{disease.seasonalCare.monsoon}</p>
@@ -733,7 +733,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               <p style={{ fontSize:14,color:'var(--ink4)',fontWeight:300,marginBottom:24 }}>Anonymized clinical cases — Dr. Shadab ki practice se</p>
               <div style={{ display:'grid',gap:14 }}>
                 {disease.caseStudies.map((c: any, i: number) => (
-                  <div key={i} style={{ background:'var(--card)',border:'1px solid var(--border)',borderLeft:`4px solid ${CAUSE_COLORS[i%4]}`,borderRadius:'0 14px 14px 0',padding:'20px 24px' }}>
+                  <div key={i} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderLeft:`4px solid ${CAUSE_COLORS[i%4]}`,borderRadius:'0 14px 14px 0',padding:'20px 24px' }}>
                     <div style={{ display:'flex',flexWrap:'wrap',gap:8,marginBottom:12 }}>
                       {c.profile && <span style={{ fontSize:11,fontWeight:700,padding:'3px 12px',borderRadius:99,background:'var(--sage-bg)',color:'var(--sage-dk)' }}>👤 {c.profile}</span>}
                       {c.duration && <span style={{ fontSize:11,fontWeight:600,padding:'3px 12px',borderRadius:99,background:'var(--bg2)',color:'var(--ink3)',border:'1px solid var(--border)' }}>⏱ {c.duration}</span>}
