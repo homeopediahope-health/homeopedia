@@ -161,7 +161,7 @@ export default function DiseasesPage() {
             <div style={{ width: 14, height: 1, background: 'var(--warm)', opacity: 0.6 }} />
           </div>
           <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(28px,4vw,52px)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.05, color: 'var(--ink)', marginBottom: 10 }}>
-            Apni bimari ka <em className="sage-shimmer" style={{ fontStyle: 'italic' }}>poora guide.</em>
+            Aapki disease ka <em className="sage-shimmer" style={{ fontStyle: 'italic' }}>pura guide.</em>
           </h1>
           <p style={{ fontSize: 15, color: 'var(--ink3)', marginBottom: 28, fontWeight: 300, lineHeight: 1.7, maxWidth: 520, margin: '0 auto 28px' }}>
             Har bimari ka Hinglish mein poora guide — causes, symptoms, homeopathic medicines, aur diet chart.
@@ -196,8 +196,8 @@ export default function DiseasesPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', background: 'var(--sage-bg)', border: '1px solid rgba(63,107,77,.2)', borderRadius: 12, marginBottom: 28, flexWrap: 'wrap' }}>
           <div style={{ fontSize: 26 }}>🌿</div>
           <div>
-            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Homeopathy mein har bimari ka ilaaj sambhav hai</div>
-            <div style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}>Root cause treat hota hai — sirf symptoms nahi. Constitutional medicine, zero side effects.</div>
+            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Sirf dawa nahi — root cause ka ilaaj</div>
+            <div style={{ fontSize: 14, color: 'var(--ink3)', fontWeight: 400 }}>Homeopathy mein constitution ke hisaab se treatment hoti hai. Permanent relief, zero side effects.</div>
           </div>
           <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto', flexShrink: 0, padding: '8px 16px', background: 'var(--sage)', color: '#fff', borderRadius: 99, fontSize: 12, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}>💬 Consult Now</a>
         </div>
