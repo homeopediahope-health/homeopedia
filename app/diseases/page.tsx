@@ -196,7 +196,7 @@ export default function DiseasesPage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', background: 'var(--sage-bg)', border: '1px solid rgba(63,107,77,.2)', borderRadius: 12, marginBottom: 28, flexWrap: 'wrap' }}>
           <div style={{ fontSize: 26 }}>🌿</div>
           <div>
-            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Sirf dawa nahi — root cause ka ilaaj</div>
+            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Treat the root. Not the symptoms.</div>
             <div style={{ fontSize: 14, color: 'var(--ink3)', fontWeight: 400 }}>Homeopathy mein constitution ke hisaab se treatment hoti hai. Permanent relief, zero side effects.</div>
           </div>
           <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto', flexShrink: 0, padding: '8px 16px', background: 'var(--sage)', color: '#fff', borderRadius: 99, fontSize: 12, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}>💬 Consult Now</a>
