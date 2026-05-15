@@ -91,8 +91,8 @@ export default function DietClient({ diet }: { diet: any }) {
         {diet.category && (
           <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)' }}>{diet.category}</span>
         )}
-        <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(24px,5vw,46px)', fontWeight: 700, color: 'var(--ink)', margin: '14px 0 6px' }}>{diet.title}</h1>
-        {diet.hindiName && <div style={{ fontSize: 18, color: 'var(--gold-dk)', fontFamily: 'var(--font-playfair,Georgia,serif)', fontStyle: 'italic', marginBottom: 12 }}>{diet.hindiName}</div>}
+        <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(24px,5vw,46px)', fontWeight: 700, color: 'var(--ink)', margin: '14px 0 6px' }}>{diet.title}</h1>
+        {diet.hindiName && <div style={{ fontSize: 18, color: 'var(--gold-dk)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 12 }}>{diet.hindiName}</div>}
         {diet.intro && <p style={{ fontSize: 15, color: 'var(--ink3)', maxWidth: 600, margin: '0 auto 20px', lineHeight: 1.75, fontWeight: 300, whiteSpace: 'pre-line' }}>{diet.intro}</p>}
 
         {/* Non-veg toggle */}
@@ -125,7 +125,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* 3 Eating Habits */}
         {habits.length > 0 && (
           <div style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>⏰ 3 Zaruri Khaane Ki Aadatein</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>⏰ 3 Zaruri Khaane Ki Aadatein</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 12 }}>
               {habits.map((h: any, i: number) => (
                 <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderLeft: '4px solid var(--gold)', borderRadius: '0 12px 12px 0', boxShadow: 'var(--sh-sm)' }}>
@@ -140,7 +140,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* Green List */}
         {vegGreen.length > 0 && (
           <div id="green" style={{ marginBottom: 8 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--green)', marginBottom: 6 }}>✅ Green List — Ye Zaroor Khayein</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--green)', marginBottom: 6 }}>✅ Green List — Ye Zaroor Khayein</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Ye foods {diet.hindiName || diet.title?.split(' ')[0]} mein healing support karte hain</p>
             <div style={{ background: 'rgba(58,125,82,.04)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 16, padding: '24px' }}>
               {vegGreen.map((cat: any) => (
@@ -152,7 +152,7 @@ export default function DietClient({ diet }: { diet: any }) {
                         <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✓</span>
                         <div>
                           <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -170,7 +170,7 @@ export default function DietClient({ diet }: { diet: any }) {
                         <span style={{ color: 'var(--green)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✓</span>
                         <div>
                           <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -188,7 +188,7 @@ export default function DietClient({ diet }: { diet: any }) {
                         <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✕</span>
                         <div>
                           <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -204,7 +204,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* Red List */}
         {redList.length > 0 && (
           <div id="red" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--red)', marginBottom: 6 }}>❌ Red List — Ye Bilkul Mat Khayein</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--red)', marginBottom: 6 }}>❌ Red List — Ye Bilkul Mat Khayein</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Ye foods symptoms/attack trigger karte hain — temporarily ya permanently avoid karein</p>
             <div style={{ background: 'rgba(176,64,64,.04)', border: '1px solid rgba(176,64,64,.2)', borderRadius: 16, padding: '24px' }}>
               {redList.map((cat: any) => (
@@ -216,7 +216,7 @@ export default function DietClient({ diet }: { diet: any }) {
                         <span style={{ color: 'var(--red)', flexShrink: 0, fontWeight: 700, marginTop: 2 }}>✕</span>
                         <div>
                           <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)' }}>{item.food}</span>
-                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink3)', fontWeight: 300, marginTop: 2, lineHeight: 1.5 }}>{item.reason}</div>}
+                          {item.reason && <div style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 400, marginTop: 4, lineHeight: 1.6 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
@@ -227,19 +227,23 @@ export default function DietClient({ diet }: { diet: any }) {
           </div>
         )}
 
-        {/* Daily Meal Plan */}
+        {/* Daily Meal Plan — Timeline */}
         {mealPlan.length > 0 && (
           <div id="plan" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>🕐 Ek Din Ka Meal Plan</h2>
-            <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Veg default — non-veg toggle karein upar se aur relevant slots mein option dikhega</p>
-            <div style={{ display: 'grid', gap: 10 }}>
-              {mealPlan.map((slot: any) => (
-                <div key={slot.slotName} className="meal-slot" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 20px' }}>
-                  <div className="meal-slot-time">
-                    <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--gold-dk)', marginBottom: 2 }}>{slot.slotEmoji} {slot.slotName}</p>
-                    <p style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>{slot.slotTime}</p>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>🕐 Ek Din Ka Meal Plan</h2>
+            <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 24, fontWeight: 300 }}>Veg default — non-veg toggle karein upar se aur relevant slots mein option dikhega</p>
+            <div style={{ position: 'relative', paddingLeft: 50 }}>
+              <div style={{ position: 'absolute', left: 17, top: 0, bottom: 0, width: 2, background: 'linear-gradient(180deg,var(--sage),var(--sage-lt))', borderRadius: 2 }} />
+              {mealPlan.map((slot: any, idx: number) => (
+                <div key={slot.slotName} style={{ position: 'relative', marginBottom: 20 }}>
+                  <div style={{ position: 'absolute', left: -50, top: 0, width: 34, height: 34, borderRadius: '50%', background: 'linear-gradient(135deg,var(--sage-dk),var(--sage))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, boxShadow: '0 2px 8px rgba(63,107,77,.25)', flexShrink: 0 }}>
+                    {slot.slotEmoji || <span style={{ color: '#fff', fontSize: 13, fontWeight: 700 }}>{idx + 1}</span>}
                   </div>
-                  <div>
+                  <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 20px' }}>
+                    <div style={{ display: 'flex', gap: 8, alignItems: 'baseline', marginBottom: 10 }}>
+                      <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--sage-dk)' }}>{slot.slotName}</span>
+                      {slot.slotTime && <span style={{ fontSize: 12, color: 'var(--ink4)', fontWeight: 300 }}>{slot.slotTime}</span>}
+                    </div>
                     {slot.vegOptions?.map((opt: string, i: number) => (
                       <div key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start', marginBottom: 6 }}>
                         <span style={{ color: 'var(--green)', fontSize: 12, fontWeight: 700, marginTop: 2, flexShrink: 0 }}>🌿</span>
@@ -262,7 +266,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* 4-Day Sample Plan */}
         {plan4.length > 0 && (
           <div id="sample" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>📅 4 Din Ka Sample Plan</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>📅 4 Din Ka Sample Plan</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>Baaki dinon ke liye upar diya Daily Meal Plan use karein — apni pasand se choose karein</p>
             {/* Desktop: table */}
             <div className="plan4-table" style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
@@ -332,7 +336,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* Special Situations */}
         {situations.length > 0 && (
           <div id="special" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>🎯 Special Situations</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>🎯 Special Situations</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: 14 }}>
               {situations.map((s: any) => (
                 <div key={s.situationType} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px' }}>
@@ -385,7 +389,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* Quick Facts */}
         {diet.quickFacts && (
           <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '24px', marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>⚡ Quick Facts</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>⚡ Quick Facts</h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {diet.quickFacts.mistake && (
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
@@ -412,7 +416,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* FAQs */}
         {faqs.length > 0 && (
           <div id="faq" style={{ marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>❓ Aksar Pooche Jaane Wale Sawaal</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>❓ Aksar Pooche Jaane Wale Sawaal</h2>
             <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 16, fontWeight: 300 }}>{diet.title} ke baare mein common diet questions</p>
             <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px 24px' }}>
               {faqs.map((f: any, i: number) => (
@@ -448,7 +452,7 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* CTA */}
         <div style={{ background: 'linear-gradient(135deg,#1a3d30 0%,#0f2a1e 100%)', borderRadius: 16, padding: '28px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 20, marginBottom: 20 }}>
           <div>
-            <h3 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', color: 'white', fontSize: '1.15rem', marginBottom: 5 }}>Personal Diet Advice Chahiye?</h3>
+            <h3 style={{ fontFamily: 'var(--font-display,Georgia,serif)', color: 'white', fontSize: '1.15rem', marginBottom: 5 }}>Personal Diet Advice Chahiye?</h3>
             <p style={{ color: 'rgba(255,255,255,.75)', fontSize: '0.85rem', margin: 0 }}>Dr. Shadab aapki condition dekh ke customized plan banate hain</p>
           </div>
           <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>

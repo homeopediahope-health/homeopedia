@@ -45,7 +45,7 @@ function FaqItem({ q, a, defaultOpen = false }: { q: string; a: string; defaultO
 function SecHead({ title, sub }: { title: string; sub?: string }) {
   return (
     <div style={{ marginBottom: 24 }}>
-      <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: sub ? 6 : 0 }}>{title}</h2>
+      <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: sub ? 6 : 0 }}>{title}</h2>
       {sub && <p style={{ fontSize: 14, color: 'var(--ink4)', fontWeight: 300 }}>{sub}</p>}
     </div>
   )
@@ -63,7 +63,7 @@ function ReadingProgress() {
     return () => window.removeEventListener('scroll', fn)
   }, [])
   return (
-    <div style={{ position: 'fixed', top: 0, left: 0, width: `${progress}%`, height: 4, background: 'linear-gradient(90deg,var(--gold-dk),var(--gold-lt))', zIndex: 9999, transition: 'width .1s', pointerEvents: 'none' }} />
+    <div style={{ position: 'fixed', top: 0, left: 0, width: `${progress}%`, height: 3, background: 'linear-gradient(90deg,var(--sage-dk),var(--sage-lt))', zIndex: 9999, transition: 'width .1s', pointerEvents: 'none' }} />
   )
 }
 
@@ -77,7 +77,7 @@ function CollapsibleSection({ id, icon, title, sub, defaultOpen = true, children
         style={{ width: '100%', background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left', display: 'none', justifyContent: 'space-between', alignItems: 'center', marginBottom: open ? 20 : 0 }}
       >
         <div>
-          <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 8 }}><span>{icon}</span>{title}</div>
+          <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 8 }}><span>{icon}</span>{title}</div>
           {sub && !open && <div style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 3, fontWeight: 300 }}>{sub}</div>}
         </div>
         <span style={{ fontSize: 22, color: 'var(--gold)', fontWeight: 700, flexShrink: 0, marginLeft: 12, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform .2s' }}>+</span>
@@ -89,6 +89,36 @@ function CollapsibleSection({ id, icon, title, sub, defaultOpen = true, children
         {children}
       </div>
     </section>
+  )
+}
+
+const CAUSE_COLORS = ['var(--red)', 'var(--warm)', 'var(--sage)', '#7c4dbe']
+
+function ImprovementRing({ pct = 72 }: { pct?: number }) {
+  const [animPct, setAnimPct] = useState(0)
+  useEffect(() => {
+    const t = setTimeout(() => setAnimPct(pct), 120)
+    return () => clearTimeout(t)
+  }, [pct])
+  const r = 40, circ = 2 * Math.PI * r
+  const offset = circ * (1 - animPct / 100)
+  return (
+    <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '18px', marginBottom: 16, textAlign: 'center' }}>
+      <div style={{ fontSize: 10, fontWeight: 600, color: 'var(--sage-dk)', letterSpacing: 1.5, textTransform: 'uppercase', marginBottom: 12 }}>Treatment Response</div>
+      <div style={{ position: 'relative', display: 'inline-block' }}>
+        <svg width="104" height="104" viewBox="0 0 104 104">
+          <circle cx="52" cy="52" r={r} fill="none" stroke="var(--bg3)" strokeWidth="8" />
+          <circle cx="52" cy="52" r={r} fill="none" stroke="var(--sage)" strokeWidth="8"
+            strokeLinecap="round" strokeDasharray={circ} strokeDashoffset={offset}
+            style={{ transition: 'stroke-dashoffset 1.6s ease-out', transform: 'rotate(-90deg)', transformOrigin: '52px 52px' }}
+          />
+        </svg>
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', lineHeight: 1 }}>
+          <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 26, fontWeight: 700, color: 'var(--sage-dk)' }}>{animPct}%</div>
+        </div>
+      </div>
+      <div style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300, marginTop: 8, lineHeight: 1.5 }}>Homeopathic treatment ke baad improvement</div>
+    </div>
   )
 }
 
@@ -164,8 +194,8 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.3)' }}>🌿 {disease.category || 'Homoeopathy'}</span>
               <span style={{ fontSize: 12, color: 'var(--ink4)' }}>· ✓ Doctor Reviewed</span>
             </div>
-            <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 700, lineHeight: 1.12, color: 'var(--ink)', marginBottom: 8 }}>{disease.title}</h1>
-            {disease.hindiName && <div style={{ fontSize: 22, color: 'var(--gold-dk)', fontFamily: 'var(--font-playfair,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{disease.hindiName}</div>}
+            <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 700, lineHeight: 1.12, color: 'var(--ink)', marginBottom: 8 }}>{disease.title}</h1>
+            {disease.hindiName && <div style={{ fontSize: 22, color: 'var(--gold-dk)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{disease.hindiName}</div>}
             {disease.heroText && <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, maxWidth: 540, fontWeight: 300 }}>{disease.heroText}</p>}
 
             {/* Medically Reviewed badge */}
@@ -230,11 +260,10 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
 
             {disease.causes?.length > 0 && (
               <div style={{ marginBottom: 28 }}>
-                <h3 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 14 }}>Ye Bimari Kyun Hoti Hai?</h3>
+                <h3 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 14 }}>Ye Bimari Kyun Hoti Hai?</h3>
                 <div style={{ display: 'grid', gap: 8 }}>
                   {disease.causes.map((c: string, i: number) => (
-                    <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '12px 16px', background: 'var(--card)', borderRadius: 10, border: '1px solid var(--border)' }}>
-                      <span style={{ color: 'var(--gold)', fontWeight: 700, flexShrink: 0, marginTop: 1 }}>◆</span>
+                    <div key={i} style={{ display: 'flex', gap: 14, alignItems: 'flex-start', padding: '12px 16px', background: 'var(--card)', borderRadius: 10, border: '1px solid var(--border)', borderLeft: `4px solid ${CAUSE_COLORS[i % 4]}` }}>
                       <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.65 }}>{c}</span>
                     </div>
                   ))}
@@ -244,7 +273,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
 
             {disease.riskFactors?.length > 0 && (
               <div style={{ marginBottom: 28 }}>
-                <h3 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 12 }}>Kise Zyada Hoti Hai?</h3>
+                <h3 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 12 }}>Kise Zyada Hoti Hai?</h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {disease.riskFactors.map((r: string, i: number) => (
                     <span key={i} style={{ fontSize: 13, padding: '6px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--ink2)', border: '1px solid rgba(184,145,42,.2)', fontWeight: 400 }}>{r}</span>
@@ -275,7 +304,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 {disease.types.map((t: any) => (
                   <div key={t._key} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px', position: 'relative' }}>
                     {t.percentage && <span style={{ position: 'absolute', top: 14, right: 14, fontSize: 10, padding: '3px 8px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', fontWeight: 600 }}>{t.percentage}</span>}
-                    <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 16, fontWeight: 700, color: 'var(--ink)', marginBottom: 8, paddingRight: t.percentage ? 60 : 0 }}>{t.name}</div>
+                    <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 16, fontWeight: 700, color: 'var(--ink)', marginBottom: 8, paddingRight: t.percentage ? 60 : 0 }}>{t.name}</div>
                     {t.description && <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>{t.description}</p>}
                     {t.diseasePageSlug && (
                       <Link href={`/diseases/${t.diseasePageSlug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 12, fontSize: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>
@@ -358,7 +387,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               ].map(c => (
                 <div key={c.h} style={{ padding: '20px', background: 'var(--card)', borderRadius: 12, border: '1px solid var(--border)' }}>
                   <div style={{ fontSize: 26, marginBottom: 10 }}>{c.i}</div>
-                  <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>{c.h}</div>
+                  <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>{c.h}</div>
                   <div style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.7, fontWeight: 300 }}>{c.b}</div>
                 </div>
               ))}
@@ -397,7 +426,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 {disease.medicines.map((m: any, i: number) => (
                   <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '20px 22px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                      <span style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>{m.name}</span>
+                      <span style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>{m.name}</span>
                     </div>
                     {m.bestFor && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', marginBottom: 10 }}>Best for: {m.bestFor}</div>}
                     {m.keyIndications?.length > 0 && (
@@ -585,7 +614,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 <span style={{ fontSize: 12, padding: '3px 10px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.2)' }}>{disease.faqs.length} FAQs</span>
               )}
             </div>
-            <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Sabse Zyada Pooche Jaane Wale Sawal</h2>
+            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Sabse Zyada Pooche Jaane Wale Sawal</h2>
             <p style={{ fontSize: 14, color: 'var(--ink4)', fontWeight: 300, marginBottom: 24 }}>Clinic mein patients jo questions poochte hain — unke honest jawab</p>
             {disease.faqs?.length > 0 ? (
               <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '8px clamp(12px,4vw,24px)' }}>
@@ -602,7 +631,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
 
           {/* Post-FAQ CTA */}
           <div style={{ marginBottom: 52, padding: '28px', background: 'linear-gradient(135deg,rgba(184,145,42,.08),rgba(184,145,42,.02))', border: '1px solid rgba(184,145,42,.25)', borderRadius: 16, textAlign: 'center' }}>
-            <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 20, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>Abhi bhi confusion hai?</div>
+            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 20, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>Abhi bhi confusion hai?</div>
             <p style={{ fontSize: 14, color: 'var(--ink3)', marginBottom: 20, fontWeight: 300 }}>Dr. Shadab se seedha poochho — WhatsApp pe consultation</p>
             <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', background: 'var(--ink)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>📲 Book Consultation</a>
           </div>
@@ -635,15 +664,15 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           {/* Ye Bhi Padein */}
           {related.length > 0 && (
             <section style={{ marginBottom: 40 }}>
-              <h2 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>Ye Bhi Padein</h2>
+              <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>Ye Bhi Padein</h2>
               <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 20, fontWeight: 300 }}>Related conditions jo aapke kaam aa sakti hain</p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(190px,1fr))', gap: 12 }}>
                 {related.map((r: any) => (
                   <Link key={r.slug?.current} href={`/diseases/${r.slug?.current}`} style={{ textDecoration: 'none' }}>
                     <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '18px', cursor: 'pointer', height: '100%' }}>
                       <div style={{ fontSize: 11, color: 'var(--ink4)', marginBottom: 8 }}>{r.category || 'Homoeopathy'}</div>
-                      <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{r.title}</div>
-                      {r.hindiName && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-playfair,Georgia,serif)', marginBottom: 10 }}>{r.hindiName}</div>}
+                      <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{r.title}</div>
+                      {r.hindiName && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-display,Georgia,serif)', marginBottom: 10 }}>{r.hindiName}</div>}
                       <div style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>Read guide →</div>
                     </div>
                   </Link>
@@ -657,11 +686,13 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
         <div className="dis-sidebar" style={{ position: 'sticky', top: 130 }}>
           <div style={{ background: 'linear-gradient(135deg,#1a3d30 0%,#0f2419 100%)', borderRadius: 14, padding: '24px', marginBottom: 16, textAlign: 'center' }}>
             <div style={{ fontSize: 28, marginBottom: 8 }}>📲</div>
-            <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>Consult Dr. Shadab</div>
+            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 17, fontWeight: 700, color: '#fff', marginBottom: 6 }}>Consult Dr. Shadab</div>
             <p style={{ fontSize: 12, color: 'rgba(255,255,255,.7)', marginBottom: 16, fontWeight: 300 }}>Personal consultation — case dekh ke treatment plan</p>
             <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ display: 'block', padding: '12px', background: '#25d366', color: '#fff', borderRadius: 9, textDecoration: 'none', fontSize: 13, fontWeight: 600, marginBottom: 8 }}>WhatsApp Karein</a>
             <a href="tel:+918983458889" style={{ display: 'block', padding: '10px', background: 'rgba(255,255,255,.1)', color: 'rgba(255,255,255,.85)', borderRadius: 9, textDecoration: 'none', fontSize: 12, border: '1px solid rgba(255,255,255,.15)' }}>📞 8983458889</a>
           </div>
+
+          <ImprovementRing />
 
           {related.length > 0 && (
             <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '18px', marginBottom: 16 }}>
