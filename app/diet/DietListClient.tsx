@@ -31,8 +31,12 @@ export default function DietListClient({ diets }: { diets: any[] }) {
       {/* Hero */}
       <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: '52px clamp(16px,4vw,32px) 40px' }}>
         <div style={{ maxWidth: 960, margin: '0 auto', textAlign: 'center' }}>
-          <span style={{ fontSize: 10, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)', letterSpacing: 1.5, textTransform: 'uppercase' }}>Diet Charts</span>
-          <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 700, color: 'var(--ink)', margin: '14px 0 10px' }}>Disease-Wise Diet Charts</h1>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--warm)', marginBottom: 14 }}>
+            <div style={{ width: 14, height: 1, background: 'var(--warm)', opacity: 0.6 }} />
+            Disease-wise Diet Charts
+            <div style={{ width: 14, height: 1, background: 'var(--warm)', opacity: 0.6 }} />
+          </div>
+          <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(28px,5vw,52px)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.05, color: 'var(--ink)', margin: '0 0 10px' }}>Kya Khayein, Kya Na Khayein</h1>
           <p style={{ fontSize: 15, color: 'var(--ink3)', marginBottom: 28, fontWeight: 300, lineHeight: 1.7 }}>Kya khayein, kya nahi — har disease ke liye doctor recommended. Indian foods ke hisaab se.</p>
           <div style={{ maxWidth: 440, margin: '0 auto' }}>
             <input
@@ -40,7 +44,7 @@ export default function DietListClient({ diets }: { diets: any[] }) {
               onChange={e => setQ(e.target.value)}
               placeholder="Disease dhundo — Psoriasis, PCOD, Thyroid..."
               style={{ width: '100%', padding: '14px 20px', background: 'var(--card)', border: '1px solid var(--border2)', borderRadius: 100, color: 'var(--ink)', fontSize: 14, boxShadow: 'var(--sh-sm)', outline: 'none', fontFamily: 'inherit', boxSizing: 'border-box' }}
-              onFocus={e => { e.target.style.borderColor = 'var(--gold)'; e.target.style.boxShadow = '0 0 0 3px rgba(184,145,42,.1)' }}
+              onFocus={e => { e.target.style.borderColor = 'var(--sage)'; e.target.style.boxShadow = '0 0 0 3px rgba(63,107,77,.1)' }}
               onBlur={e => { e.target.style.borderColor = 'var(--border2)'; e.target.style.boxShadow = 'var(--sh-sm)' }}
             />
           </div>
@@ -50,10 +54,10 @@ export default function DietListClient({ diets }: { diets: any[] }) {
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '40px clamp(16px,4vw,32px) 80px' }}>
 
         {/* Banner */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', background: 'rgba(184,145,42,.07)', border: '1px solid rgba(184,145,42,.2)', borderRadius: 12, marginBottom: 28, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', background: 'var(--sage-bg)', border: '1px solid rgba(63,107,77,.2)', borderRadius: 12, marginBottom: 28, flexWrap: 'wrap' }}>
           <div style={{ fontSize: 26 }}>🥗</div>
           <div>
-            <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Diet se hi shuru hoti hai healing</div>
+            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Jo aap khaate hain, wahi aapki healing hai</div>
             <div style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}>Homeopathy + sahi diet = 2x fast results. Har chart doctor reviewed hai.</div>
           </div>
         </div>
@@ -66,21 +70,21 @@ export default function DietListClient({ diets }: { diets: any[] }) {
               return (
                 <Link key={d.slug?.current} href={`/diet/${d.slug?.current}`} style={{ textDecoration: 'none' }}>
                   <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '22px', cursor: 'pointer', position: 'relative', overflow: 'hidden', height: '100%', boxSizing: 'border-box' }}>
-                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(to right,var(--gold-dk),var(--gold-lt))', borderRadius: '14px 14px 0 0' }} />
+                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg,${catColor},${catColor}99)`, borderRadius: '14px 14px 0 0' }} />
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
                       <span style={{ fontSize: 10, fontWeight: 600, padding: '3px 10px', borderRadius: 100, background: `${catColor}18`, color: catColor, border: `1px solid ${catColor}40` }}>{d.category}</span>
                       <span style={{ fontSize: 11, color: 'var(--ink4)' }}>Dr. Reviewed</span>
                     </div>
-                    <h3 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 19, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>{d.title}</h3>
-                    {d.hindiName && <div style={{ fontSize: 12, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-playfair,Georgia,serif)', marginBottom: 8 }}>{d.hindiName}</div>}
+                    <h3 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 600, color: 'var(--ink)', marginBottom: 4, lineHeight: 1.3 }}>{d.title}</h3>
+                    {d.hindiName && <div style={{ fontSize: 12, color: 'var(--warm)', fontStyle: 'italic', fontFamily: 'var(--font-display,Georgia,serif)', marginBottom: 8, fontWeight: 500 }}>{d.hindiName}</div>}
                     {d.keyRule && <p style={{ fontSize: 12, color: 'var(--ink4)', lineHeight: 1.5, marginBottom: 10, fontWeight: 300 }}>💡 {d.keyRule}</p>}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 10, borderTop: '1px solid var(--border)', marginTop: 'auto' }}>
                       <div style={{ display: 'flex', gap: 10 }}>
                         {d.includeCount > 0 && <span style={{ fontSize: 10, color: 'var(--green)' }}>✓ {d.includeCount} foods</span>}
                         {d.avoidCount > 0 && <span style={{ fontSize: 10, color: 'var(--red)' }}>✕ {d.avoidCount} avoid</span>}
-                        {d.hasSamplePlan && <span style={{ fontSize: 10, color: 'var(--gold-dk)' }}>📅 4-Day Plan</span>}
+                        {d.hasSamplePlan && <span style={{ fontSize: 10, color: 'var(--warm)' }}>📅 4-Day Plan</span>}
                       </div>
-                      <span style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>View →</span>
+                      <span style={{ fontSize: 12, color: 'var(--sage)', fontWeight: 600 }}>View →</span>
                     </div>
                   </div>
                 </Link>

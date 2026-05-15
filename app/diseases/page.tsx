@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-import { WA_BASE, WA_CONSULT } from '@/lib/constants'
+import { WA_BASE } from '@/lib/constants'
 import Link from 'next/link'
 import SL from '@/components/SL'
 
@@ -26,7 +26,7 @@ const ALL_DISEASES = [
   { slug: 'breast-fibroadenoma',       title: 'Breast Fibroadenoma',             hindi: 'छाती की गांठ / स्तन गांठ',        cat: "Women's",     min: 10, hot: true,  h: 'chhaati ki ganth breast lump fibroadenoma cancer nahi surgery bina ilaaj young girls' },
   { slug: 'postpartum-depression',     title: 'Postpartum Depression',           hindi: 'प्रसव के बाद का अवसाद',           cat: "Women's",     min: 10, hot: true,  h: 'delivery ke baad depression prasav ke baad udaasi baby blues nai maa ka mansik dard PPD homeopathy' },
   { slug: 'allergic-rhinitis',         title: 'Allergic Rhinitis',               hindi: 'नाक की एलर्जी / प्रतिरोधी नज़ला',  cat: 'Respiratory', min: 9,  hot: true,  h: 'naak ki allergy dust allergy chhink bar bar naak behna pollen allergy homeopathy' },
-  // ENT (Ear, Nose, Throat)
+  // ENT
   { slug: 'recurrent-ear-infection',  title: 'Recurrent Ear Infection',         hindi: 'बार बार कान का दर्द / कान पकना',   cat: 'ENT',         min: 9,  hot: true,  h: 'kaan dard baar baar kaan ka infection kaan bahna kaan pakna ear pain homeopathy bacchon mein kaan' },
   { slug: 'tinnitus',                 title: 'Tinnitus',                        hindi: 'कान में सीटी / भनभनाहट',           cat: 'ENT',         min: 9,  hot: true,  h: 'kaan mein seeti bhanbhanahat kaan mein awaaz tinnitus ka ilaaj homeopathy' },
   { slug: 'chronic-otitis-media',    title: 'Chronic Otitis Media',            hindi: 'कान का पुराना दर्द / कान बाहर',    cat: 'ENT',         min: 9,  hot: true,  h: 'kaan bahar hona chronic otitis media kaan se pani aana kaan ka purana infection kaan ka parda ched glue ear' },
@@ -78,6 +78,7 @@ const ALL_DISEASES = [
   { slug: 'uterine-fibroid',            title: 'Uterine Fibroid',         hindi: 'बच्चेदानी की गांठ / रसौली', cat: "Women's",  min: 9,  hot: true,  h: 'bacchedani ki ganth rasoli fibroid bina operation' },
   { slug: 'menopause',                  title: 'Menopause',               hindi: 'रजोवृत्ति / महावारी बंद',   cat: "Women's",  min: 10, hot: true,  h: 'rajovritti mahavari band hot flashes mood swings menopause ke upay 45 ke baad' },
   { slug: 'ovarian-cyst',               title: 'Ovarian Cyst',            hindi: 'अंडाशय की गांठ / सिस्ट',    cat: "Women's",  min: 10, hot: true,  h: 'andashay ki ganthi ovarian cyst ka ilaj bina surgery ovarian cyst homeopathy pcod aur cyst mein fark' },
+  { slug: 'dysmenorrhoea',            title: 'Dysmenorrhoea',           hindi: 'माहवारी का दर्द',             cat: "Women's",     min: 8,  hot: true,  h: 'mahavari ka dard periods mein dard dysmenorrhea masik dard period pain' },
   // Hair
   { slug: 'hairfall',                   title: 'Hair Fall',               hindi: 'बाल झड़ना',               cat: 'Hair',        min: 8,              h: 'baal jhadna' },
   { slug: 'alopecia',                   title: 'Alopecia Areata',         hindi: 'गंजापन',                  cat: 'Hair',        min: 6,  hot: true,  h: 'ganjapan baal' },
@@ -120,10 +121,17 @@ const ALL_DISEASES = [
   { slug: 'carpal-tunnel-syndrome',   title: 'Carpal Tunnel Syndrome',  hindi: 'हाथ सुन्नपन / CTS',         cat: 'Neurological', min: 9,  hot: true, h: 'haath sunnapan jhanjhanahat CTS karpal tunal computer use office worker' },
   { slug: 'trigeminal-neuralgia',     title: 'Trigeminal Neuralgia',    hindi: 'चेहरे में बिजली का दर्द',    cat: 'Neurological', min: 10, hot: true, h: 'chehra bijli dard face pain TN tic douloureux nerve pain jaw teeth pain' },
   { slug: 'vertigo',                  title: "Vertigo / Meniere's",     hindi: 'चक्कर आना / सर घूमना',      cat: 'Neurological', min: 9,  hot: true, h: 'chakkar aana sar ghoomna vertigo menieres BPPV vestibular' },
-  { slug: 'dysmenorrhoea',            title: 'Dysmenorrhoea',           hindi: 'माहवारी का दर्द',             cat: "Women's",     min: 8,  hot: true,  h: 'mahavari ka dard periods mein dard dysmenorrhea masik dard period pain' },
 ]
 
-const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's", 'Circulatory', 'Urinary', 'Neurological', "Men's", 'Eye']
+const CATS = ['All', 'Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Hair', 'Respiratory', 'Endocrine', 'Autoimmune', "Children's", 'Circulatory', 'Urinary', 'Neurological', "Men's", 'Eye', 'ENT']
+
+const CAT_COLORS: Record<string, string> = {
+  Skin: '#e67c52', Joints: '#5b8dd9', Digestive: '#5aaa6a',
+  Mental: '#9b6ec8', "Women's": '#e0629a', Hair: '#c4993e',
+  Respiratory: '#4bafc7', Endocrine: '#d47c3e', Autoimmune: '#6db89a',
+  "Children's": '#e8a84e', Circulatory: '#d45b5b', Urinary: '#5b9dd9',
+  Neurological: '#7c7cb8', "Men's": '#5b8a6d', Eye: '#7aad8a', ENT: '#b07a5e',
+}
 
 export default function DiseasesPage() {
   const [cat, setCat] = useState('All')
@@ -137,50 +145,106 @@ export default function DiseasesPage() {
       d.h.toLowerCase().includes(qL) ||
       d.slug.replace(/-/g, ' ').includes(qL))
   )
+  const hotCount = ALL_DISEASES.filter(d => d.hot).length
 
   return (
     <div className="page-in" style={{ paddingTop: 66, background: 'var(--bg)', minHeight: '100vh' }}>
+      <SL c="All Diseases" />
+
       {/* Hero */}
-      <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: '52px clamp(16px,4vw,32px) 40px' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto' }}>
-          <SL c="All Diseases" />
-          <h1 style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 'clamp(28px,4vw,48px)', fontWeight: 700, color: 'var(--ink)', marginBottom: 8, textAlign: 'center' }}>Disease Library</h1>
-          <p style={{ textAlign: 'center', color: 'var(--ink4)', fontSize: 14, marginBottom: 28, fontWeight: 300 }}>{ALL_DISEASES.length} conditions · Doctor reviewed · Evidence-based</p>
+      <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: '52px clamp(16px,4vw,32px) 40px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -60, right: -60, width: 320, height: 320, borderRadius: '50%', background: 'radial-gradient(circle,rgba(63,107,77,.08) 0%,transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ maxWidth: 1160, margin: '0 auto', textAlign: 'center', position: 'relative' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--warm)', marginBottom: 14 }}>
+            <div style={{ width: 14, height: 1, background: 'var(--warm)', opacity: 0.6 }} />
+            Homeopathic Disease Library
+            <div style={{ width: 14, height: 1, background: 'var(--warm)', opacity: 0.6 }} />
+          </div>
+          <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(28px,4vw,52px)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.05, color: 'var(--ink)', marginBottom: 10 }}>
+            {ALL_DISEASES.length} Conditions — Ek Jagah
+          </h1>
+          <p style={{ fontSize: 15, color: 'var(--ink3)', marginBottom: 28, fontWeight: 300, lineHeight: 1.7, maxWidth: 520, margin: '0 auto 28px' }}>
+            Har bimari ka Hinglish mein poora guide — causes, symptoms, homeopathic medicines, aur diet chart.
+          </p>
           <div style={{ maxWidth: 480, margin: '0 auto' }}>
             <input
               value={q}
               onChange={e => setQ(e.target.value)}
-              placeholder="Search any disease..."
-              style={{ width: '100%', padding: '14px 20px', background: 'var(--card)', border: '1px solid var(--border2)', borderRadius: 100, color: 'var(--ink)', fontSize: 14, boxShadow: 'var(--sh-sm)', outline: 'none', fontFamily: 'inherit' }}
-              onFocus={e => { e.target.style.borderColor = 'var(--gold)'; e.target.style.boxShadow = '0 0 0 3px rgba(184,145,42,.1)' }}
+              placeholder="Koi bhi disease dhundo — Psoriasis, Thyroid, IBS..."
+              style={{ width: '100%', padding: '14px 20px', background: 'var(--card)', border: '1px solid var(--border2)', borderRadius: 100, color: 'var(--ink)', fontSize: 14, boxShadow: 'var(--sh-sm)', outline: 'none', fontFamily: 'inherit', boxSizing: 'border-box' }}
+              onFocus={e => { e.target.style.borderColor = 'var(--sage)'; e.target.style.boxShadow = '0 0 0 3px rgba(63,107,77,.1)' }}
               onBlur={e => { e.target.style.borderColor = 'var(--border2)'; e.target.style.boxShadow = 'var(--sh-sm)' }}
             />
+          </div>
+          {/* Trust pills */}
+          <div style={{ display: 'flex', gap: 10, justifyContent: 'center', flexWrap: 'wrap', marginTop: 20 }}>
+            {[
+              ['✓ Doctor Reviewed', 'var(--sage-bg)', 'var(--sage-dk)', 'rgba(63,107,77,.2)'],
+              [`🔥 ${hotCount} Popular Guides`, 'rgba(192,132,56,.1)', 'var(--warm)', 'rgba(192,132,56,.25)'],
+              ['🌿 Root Cause Focus', 'var(--bg2)', 'var(--ink3)', 'var(--border)'],
+              ['🇮🇳 Hinglish Mein', 'var(--bg2)', 'var(--ink3)', 'var(--border)'],
+            ].map(([l, bg, c, b]) => (
+              <span key={l as string} style={{ fontSize: 11, fontWeight: 600, padding: '5px 14px', borderRadius: 100, background: bg as string, color: c as string, border: `1px solid ${b}` }}>{l}</span>
+            ))}
           </div>
         </div>
       </div>
 
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '32px clamp(16px,4vw,32px) 80px' }}>
-        {/* Category filter */}
-        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 32 }}>
-          {CATS.map(c => (
-            <button key={c} onClick={() => setCat(c)} style={{ padding: '7px 16px', borderRadius: 100, fontSize: 13, cursor: 'pointer', border: `1px solid ${cat === c ? 'var(--gold)' : 'var(--border2)'}`, background: cat === c ? 'var(--gold-bg)' : 'var(--card)', color: cat === c ? 'var(--gold)' : 'var(--ink3)', fontWeight: cat === c ? 600 : 400, transition: 'all .2s' }}>{c}</button>
-          ))}
-        </div>
-        <div style={{ fontSize: 12, color: 'var(--ink4)', marginBottom: 20 }}>{shown.length} results</div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: 12 }}>
-          {shown.map(d => (
-            <Link key={d.slug} href={`/diseases/${d.slug}`} style={{ textDecoration: 'none' }}>
-              <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '18px', cursor: 'pointer', position: 'relative', height: '100%' }}>
-                {d.hot && <span style={{ position: 'absolute', top: 12, right: 12, fontSize: 9, padding: '2px 7px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)', fontWeight: 600, letterSpacing: 0.5 }}>POPULAR</span>}
-                <div style={{ fontSize: 11, color: 'var(--ink4)', marginBottom: 8 }}>{d.cat} · {d.min} min</div>
-                <div style={{ fontFamily: 'var(--font-playfair,Georgia,serif)', fontSize: 17, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{d.title}</div>
-                <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-playfair,Georgia,serif)', marginBottom: 10 }}>{d.hindi}</div>
-                <div style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>Read guide →</div>
-              </div>
-            </Link>
+        {/* Info banner */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, padding: '16px 22px', background: 'var(--sage-bg)', border: '1px solid rgba(63,107,77,.2)', borderRadius: 12, marginBottom: 28, flexWrap: 'wrap' }}>
+          <div style={{ fontSize: 26 }}>🌿</div>
+          <div>
+            <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 15, fontWeight: 700, color: 'var(--ink)', marginBottom: 2 }}>Homeopathy mein har bimari ka ilaaj sambhav hai</div>
+            <div style={{ fontSize: 12, color: 'var(--ink3)', fontWeight: 300 }}>Root cause treat hota hai — sirf symptoms nahi. Constitutional medicine, zero side effects.</div>
+          </div>
+          <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ marginLeft: 'auto', flexShrink: 0, padding: '8px 16px', background: 'var(--sage)', color: '#fff', borderRadius: 99, fontSize: 12, fontWeight: 600, textDecoration: 'none', whiteSpace: 'nowrap' }}>💬 Consult Now</a>
+        </div>
+
+        {/* Category filter */}
+        <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
+          {CATS.map(c => (
+            <button key={c} onClick={() => setCat(c)}
+              style={{ padding: '7px 16px', borderRadius: 100, fontSize: 13, cursor: 'pointer', border: `1px solid ${cat === c ? 'var(--sage)' : 'var(--border2)'}`, background: cat === c ? 'var(--sage-bg)' : 'var(--card)', color: cat === c ? 'var(--sage-dk)' : 'var(--ink3)', fontWeight: cat === c ? 700 : 400, transition: 'all .2s' }}>
+              {c}
+            </button>
           ))}
         </div>
+
+        <div style={{ fontSize: 12, color: 'var(--ink4)', marginBottom: 20 }}>{shown.length} conditions {cat !== 'All' ? `in ${cat}` : 'total'}</div>
+
+        {/* Grid */}
+        {shown.length > 0 ? (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(210px,1fr))', gap: 14 }}>
+            {shown.map(d => {
+              const catColor = CAT_COLORS[d.cat] || 'var(--sage-dk)'
+              return (
+                <Link key={d.slug} href={`/diseases/${d.slug}`} style={{ textDecoration: 'none' }}>
+                  <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '20px', cursor: 'pointer', position: 'relative', height: '100%', boxSizing: 'border-box', overflow: 'hidden' }}>
+                    {/* Colored top bar */}
+                    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg,${catColor},${catColor}99)`, borderRadius: '14px 14px 0 0' }} />
+                    {d.hot && <span style={{ position: 'absolute', top: 14, right: 12, fontSize: 9, padding: '2px 7px', borderRadius: 100, background: 'rgba(192,132,56,.12)', color: 'var(--warm)', border: '1px solid rgba(192,132,56,.3)', fontWeight: 700, letterSpacing: 0.5 }}>POPULAR</span>}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 10, marginTop: 4 }}>
+                      <span style={{ fontSize: 10, fontWeight: 600, padding: '2px 9px', borderRadius: 100, background: `${catColor}18`, color: catColor, border: `1px solid ${catColor}40` }}>{d.cat}</span>
+                      <span style={{ fontSize: 10, color: 'var(--ink4)' }}>· {d.min} min</span>
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 4, lineHeight: 1.3, paddingRight: d.hot ? 52 : 0 }}>{d.title}</div>
+                    <div style={{ fontSize: 12, color: 'var(--warm)', fontStyle: 'italic', fontFamily: 'var(--font-display,Georgia,serif)', marginBottom: 12, fontWeight: 500 }}>{d.hindi}</div>
+                    <div style={{ fontSize: 12, color: 'var(--sage)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 4 }}>
+                      Read guide <span style={{ fontSize: 14 }}>→</span>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        ) : (
+          <div style={{ textAlign: 'center', padding: 48 }}>
+            <div style={{ fontSize: 36, marginBottom: 12 }}>🔍</div>
+            <p style={{ color: 'var(--ink3)', fontWeight: 300 }}>"{q}" ke liye koi result nahi mila. Hindi ya English mein try karein.</p>
+          </div>
+        )}
       </div>
 
       <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
