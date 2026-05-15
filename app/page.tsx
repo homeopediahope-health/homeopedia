@@ -155,7 +155,7 @@ export default async function HomePage() {
                 YouTube · explainers
               </div>
               <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(26px,4vw,38px)', fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.025em', lineHeight: 1 }}>
-                Watch, samjho, theek ho jao.
+                Dekho. Samjho. Jaano.
               </h2>
             </div>
             <Link href="/blog" style={{ fontSize: 13, color: 'var(--sage)', fontWeight: 600, textDecoration: 'none' }}>All videos →</Link>
@@ -176,7 +176,7 @@ export default async function HomePage() {
                   <div style={{ padding: '14px 16px' }}>
                     <div style={{ fontSize: 11, color: 'var(--warm)', fontWeight: 600, marginBottom: 5 }}>{v.topic}</div>
                     <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--ink)', lineHeight: 1.55, marginBottom: 6 }}>{v.title}</div>
-                    <div style={{ fontSize: 11, color: 'var(--ink4)' }}>{v.date} · Dr. Shadab</div>
+                    <div style={{ fontSize: 11, color: 'var(--ink4)' }}>{v.date ? (v.date.includes('T') ? new Date(v.date).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : v.date) : ''} · Dr. Shadab</div>
                   </div>
                 </div>
               </a>
