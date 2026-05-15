@@ -169,13 +169,13 @@ export default function DietClient({ diet }: { diet: any }) {
                 {vegGreen.map((cat: any) => (
                   <div key={cat.categoryName} style={{ marginBottom:18 }}>
                     <div style={{ fontSize:11,fontWeight:700,color:'var(--sage)',textTransform:'uppercase',letterSpacing:'0.08em',marginBottom:8 }}>{cat.emoji} {cat.categoryName}</div>
-                    <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
+                    <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:8 }}>
                       {cat.items?.map((item: any) => (
-                        <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(63,107,77,.04)',borderRadius:10,border:'1px solid rgba(63,107,77,.1)' }}>
-                          <div style={{ width:22,height:22,borderRadius:'50%',background:'var(--sage-bg)',color:'var(--sage)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700,marginTop:1 }}>✓</div>
+                        <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'12px 14px',background:'rgba(63,107,77,.04)',borderRadius:10,border:'1px solid rgba(63,107,77,.1)' }}>
+                          <div style={{ width:22,height:22,borderRadius:'50%',background:'var(--sage-bg)',color:'var(--sage)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700,marginTop:2 }}>✓</div>
                           <div>
-                            <div style={{ fontSize:13,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
-                            {item.reason && <div style={{ fontSize:11,color:'var(--ink4)',lineHeight:1.5,marginTop:3,fontWeight:300 }}>{item.reason}</div>}
+                            <div style={{ fontSize:14,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
+                            {item.reason && <div style={{ fontSize:13,color:'var(--ink2)',lineHeight:1.6,marginTop:5,fontWeight:400 }}>{item.reason}</div>}
                           </div>
                         </div>
                       ))}
@@ -233,13 +233,13 @@ export default function DietClient({ diet }: { diet: any }) {
               {redList.map((cat: any) => (
                 <div key={cat.categoryName} style={{ marginBottom:18 }}>
                   <div style={{ fontSize:11,fontWeight:700,color:'var(--red)',textTransform:'uppercase',letterSpacing:'0.08em',marginBottom:8 }}>{cat.emoji} {cat.categoryName}</div>
-                  <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
+                  <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(200px,1fr))',gap:8 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(162,56,56,.04)',borderRadius:10,border:'1px solid rgba(162,56,56,.1)' }}>
-                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(162,56,56,.1)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700,marginTop:1 }}>✕</div>
+                      <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'12px 14px',background:'rgba(162,56,56,.04)',borderRadius:10,border:'1px solid rgba(162,56,56,.1)' }}>
+                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(162,56,56,.1)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:10,fontWeight:700,marginTop:2 }}>✕</div>
                         <div>
-                          <div style={{ fontSize:13,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
-                          {item.reason && <div style={{ fontSize:11,color:'var(--ink4)',lineHeight:1.5,marginTop:3,fontWeight:300 }}>{item.reason}</div>}
+                          <div style={{ fontSize:14,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
+                          {item.reason && <div style={{ fontSize:13,color:'var(--ink2)',lineHeight:1.6,marginTop:5,fontWeight:400 }}>{item.reason}</div>}
                         </div>
                       </div>
                     ))}
