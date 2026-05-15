@@ -151,7 +151,7 @@ export default function DietClient({ diet }: { diet: any }) {
             <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>⏰ 3 Zaruri Khaane Ki Aadatein</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 12 }}>
               {habits.map((h: any, i: number) => (
-                <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderLeft: '4px solid var(--gold)', borderRadius: '0 12px 12px 0', boxShadow: 'var(--sh-sm)' }}>
+                <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderLeft: '4px solid var(--sage)', borderRadius: '0 12px 12px 0', boxShadow: 'var(--sh-sm)' }}>
                   <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>{h.habit}</p>
                   <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.6, fontWeight: 300 }}>{h.reason}</p>
                 </div>
@@ -171,9 +171,12 @@ export default function DietClient({ diet }: { diet: any }) {
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
                   <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display:'flex',alignItems:'center',gap:10,fontSize:13,color:'var(--ink2)',padding:'8px 10px',background:'rgba(58,125,82,.04)',borderRadius:8 }}>
-                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(58,125,82,.12)',color:'var(--green)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700 }}>✓</div>
-                        <span style={{ fontWeight:500 }}>{item.food}</span>
+                      <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(58,125,82,.04)',borderRadius:10,border:'1px solid rgba(58,125,82,.1)' }}>
+                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(58,125,82,.15)',color:'var(--green)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700,marginTop:1 }}>✓</div>
+                        <div>
+                          <div style={{ fontSize:13,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
+                          {item.reason && <div style={{ fontSize:11,color:'var(--ink4)',lineHeight:1.5,marginTop:3,fontWeight:300 }}>{item.reason}</div>}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -232,9 +235,12 @@ export default function DietClient({ diet }: { diet: any }) {
                   <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{cat.emoji} {cat.categoryName}</p>
                   <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:8 }}>
                     {cat.items?.map((item: any) => (
-                      <div key={item.food} style={{ display:'flex',alignItems:'center',gap:10,fontSize:13,color:'var(--ink2)',padding:'8px 10px',background:'rgba(176,64,64,.04)',borderRadius:8 }}>
-                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(176,64,64,.12)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700 }}>✕</div>
-                        <span style={{ fontWeight:500 }}>{item.food}</span>
+                      <div key={item.food} style={{ display:'flex',alignItems:'flex-start',gap:10,padding:'10px 12px',background:'rgba(176,64,64,.04)',borderRadius:10,border:'1px solid rgba(176,64,64,.1)' }}>
+                        <div style={{ width:22,height:22,borderRadius:'50%',background:'rgba(176,64,64,.15)',color:'var(--red)',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0,fontSize:11,fontWeight:700,marginTop:1 }}>✕</div>
+                        <div>
+                          <div style={{ fontSize:13,fontWeight:600,color:'var(--ink)',lineHeight:1.3 }}>{item.food}</div>
+                          {item.reason && <div style={{ fontSize:11,color:'var(--ink4)',lineHeight:1.5,marginTop:3,fontWeight:300 }}>{item.reason}</div>}
+                        </div>
                       </div>
                     ))}
                   </div>
@@ -360,7 +366,7 @@ export default function DietClient({ diet }: { diet: any }) {
                   <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'grid', gap: 8 }}>
                     {s.tips?.map((tip: string, i: number) => (
                       <li key={i} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}>
-                        <span style={{ color: 'var(--gold)', flexShrink: 0, marginTop: 3, fontSize: 10 }}>●</span>
+                        <span style={{ color: 'var(--sage)', flexShrink: 0, marginTop: 3, fontSize: 10 }}>●</span>
                         <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.6, fontWeight: 300 }}>{tip}</span>
                       </li>
                     ))}
@@ -370,6 +376,29 @@ export default function DietClient({ diet }: { diet: any }) {
             </div>
           </div>
         )}
+
+        {/* YouTube Video */}
+        {diet.youtubeUrl && (() => {
+          const m = diet.youtubeUrl.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/)
+          const embedUrl = m ? `https://www.youtube.com/embed/${m[1]}` : diet.youtubeUrl
+          return (
+            <div style={{ marginBottom: 36 }}>
+              <div style={{ display:'inline-flex',alignItems:'center',gap:6,fontSize:10,fontWeight:700,letterSpacing:'0.15em',textTransform:'uppercase',color:'var(--warm)',marginBottom:10 }}>
+                <div style={{ width:14,height:1,background:'var(--warm)',opacity:0.6 }} />
+                Dr. Shadab ka video
+              </div>
+              <h2 style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:22,fontWeight:700,color:'var(--ink)',marginBottom:16 }}>
+                {diet.title} — Dr. Shadab Explain Karte Hain
+              </h2>
+              <div style={{ position:'relative',paddingBottom:'56.25%',borderRadius:16,overflow:'hidden',border:'1px solid var(--border)',boxShadow:'var(--sh)' }}>
+                <iframe src={embedUrl} loading="lazy" style={{ position:'absolute',top:0,left:0,width:'100%',height:'100%',border:'none' }} allowFullScreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title={`Dr. Shadab explains ${diet.title}`} />
+              </div>
+              <a href="https://www.youtube.com/@drshadabshomoeopathy" target="_blank" rel="noopener noreferrer" style={{ display:'inline-flex',alignItems:'center',gap:8,marginTop:12,fontSize:13,color:'var(--ink3)',textDecoration:'none',fontWeight:400 }}>
+                ▶️ Aur videos ke liye <span style={{ color:'#cc0000',fontWeight:600 }}>@drshadabshomoeopathy</span> subscribe karein →
+              </a>
+            </div>
+          )
+        })()}
 
         {/* Universal Principles */}
         <div style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:22,padding:'clamp(22px,3vw,36px)',marginBottom:36 }}>
@@ -405,10 +434,10 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* 3 Boxes */}
         <div style={{ display: 'grid', gap: 14, marginBottom: 36 }}>
           {diet.proTip && (
-            <div style={{ padding: '18px 22px', background: 'rgba(184,145,42,.08)', border: '1px solid rgba(184,145,42,.25)', borderLeft: '4px solid var(--gold)', borderRadius: '0 12px 12px 0', display: 'flex', gap: 14, alignItems: 'flex-start' }}>
+            <div style={{ padding: '18px 22px', background: 'rgba(192,132,56,.08)', border: '1px solid rgba(192,132,56,.25)', borderLeft: '4px solid var(--warm)', borderRadius: '0 12px 12px 0', display: 'flex', gap: 14, alignItems: 'flex-start' }}>
               <span style={{ fontSize: 22, flexShrink: 0 }}>💡</span>
               <div>
-                <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6 }}>Pro Tip</p>
+                <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--warm)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 6 }}>Pro Tip</p>
                 <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300 }}>{diet.proTip}</p>
               </div>
             </div>
@@ -453,7 +482,7 @@ export default function DietClient({ diet }: { diet: any }) {
               {diet.quickFacts.mustAvoid && (
                 <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                   <span style={{ fontSize: 20, flexShrink: 0 }}>🚫</span>
-                  <div><p style={{ fontSize: 11, fontWeight: 700, color: 'var(--gold-dk)', textTransform: 'uppercase', marginBottom: 3 }}>Bilkul Avoid Karein</p><p style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 300, lineHeight: 1.6 }}>{diet.quickFacts.mustAvoid}</p></div>
+                  <div><p style={{ fontSize: 11, fontWeight: 700, color: 'var(--warm)', textTransform: 'uppercase', marginBottom: 3 }}>Bilkul Avoid Karein</p><p style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 300, lineHeight: 1.6 }}>{diet.quickFacts.mustAvoid}</p></div>
                 </div>
               )}
             </div>
