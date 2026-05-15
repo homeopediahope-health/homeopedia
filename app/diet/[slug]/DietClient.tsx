@@ -26,10 +26,10 @@ function FaqItem({ q, a }: { q: string; a: string }) {
     <div style={{ borderBottom: '1px solid var(--border)', padding: '18px 0' }}>
       <button onClick={() => setOpen(!open)} style={{ width: '100%', background: 'none', border: 'none', textAlign: 'left', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12 }}>
         <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.5, flex: 1 }}>{q}</span>
-        <span style={{ color: 'var(--gold)', fontSize: 22, fontWeight: 700, flexShrink: 0, transition: 'transform .2s', transform: open ? 'rotate(45deg)' : 'none' }}>+</span>
+        <span style={{ color: 'var(--sage)', fontSize: 22, fontWeight: 700, flexShrink: 0, transition: 'transform .2s', transform: open ? 'rotate(45deg)' : 'none' }}>+</span>
       </button>
       {open && (
-        <div style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.9, marginTop: 12, fontWeight: 300, borderLeft: '3px solid var(--gold)', paddingLeft: 16, whiteSpace: 'pre-line' }}>{a}</div>
+        <div style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.9, marginTop: 12, fontWeight: 300, borderLeft: '3px solid var(--sage)', paddingLeft: 16, whiteSpace: 'pre-line' }}>{a}</div>
       )}
     </div>
   )
@@ -93,9 +93,9 @@ export default function DietClient({ diet }: { diet: any }) {
       {/* Breadcrumb */}
       <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', padding: '11px clamp(16px,4vw,32px)' }}>
         <div style={{ maxWidth: 960, margin: '0 auto', display: 'flex', gap: 8, fontSize: 13, color: 'var(--ink4)', flexWrap: 'wrap' }}>
-          <Link href="/" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Home</Link>
+          <Link href="/" style={{ color: 'var(--sage-dk)', textDecoration: 'none' }}>Home</Link>
           <span>›</span>
-          <Link href="/diet" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Diet Charts</Link>
+          <Link href="/diet" style={{ color: 'var(--sage-dk)', textDecoration: 'none' }}>Diet Charts</Link>
           <span>›</span>
           <span style={{ color: 'var(--ink2)' }}>{diet.title}</span>
         </div>
@@ -135,7 +135,7 @@ export default function DietClient({ diet }: { diet: any }) {
           {TABS.map(t => (
             <button key={t.id} onClick={() => scrollTo(t.id)} className="diet-tab"
               style={{ padding: '13px 16px', background: 'none', border: 'none', borderBottom: '2px solid transparent', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600, color: 'var(--ink3)', whiteSpace: 'nowrap', transition: 'all .2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--gold-dk)'; (e.currentTarget as HTMLElement).style.borderBottomColor = 'var(--gold)' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = 'var(--sage-dk)'; (e.currentTarget as HTMLElement).style.borderBottomColor = 'var(--sage)' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = 'var(--ink3)'; (e.currentTarget as HTMLElement).style.borderBottomColor = 'transparent' }}>
               <span>{t.icon}</span> {t.l}
             </button>
@@ -288,7 +288,7 @@ export default function DietClient({ diet }: { diet: any }) {
             <div className="plan4-table" style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
               <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 580 }}>
                 <thead>
-                  <tr style={{ background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))' }}>
+                  <tr style={{ background: 'linear-gradient(135deg,var(--sage-dk),var(--sage-lt))' }}>
                     {['Din', '🌅 Subah', '🍽️ Nashta', '🍱 Dopahar', '🌇 Shaam', '🌙 Raat'].map(h => (
                       <th key={h} style={{ padding: '11px 12px', fontSize: 11, fontWeight: 700, color: '#fff', textAlign: 'left', letterSpacing: '0.05em', whiteSpace: 'nowrap' }}>{h}</th>
                     ))}
@@ -297,7 +297,7 @@ export default function DietClient({ diet }: { diet: any }) {
                 <tbody>
                   {plan4.map((row: any, i: number) => (
                     <tr key={i} style={{ background: i % 2 === 0 ? 'var(--bg)' : 'var(--bg2)', borderBottom: '1px solid var(--border)' }}>
-                      <td style={{ padding: '12px', fontSize: 12, fontWeight: 700, color: 'var(--gold-dk)', whiteSpace: 'nowrap' }}>{row.day}</td>
+                      <td style={{ padding: '12px', fontSize: 12, fontWeight: 700, color: 'var(--sage-dk)', whiteSpace: 'nowrap' }}>{row.day}</td>
                       <td style={{ padding: '10px 12px', fontSize: 12, color: 'var(--ink2)', lineHeight: 1.5 }}>{row.vegSubah}</td>
                       <td style={{ padding: '10px 12px', fontSize: 12, color: 'var(--ink2)', lineHeight: 1.5 }}>
                         {row.vegNashta}
@@ -322,7 +322,7 @@ export default function DietClient({ diet }: { diet: any }) {
             <div className="plan4-cards">
               {plan4.map((row: any, i: number) => (
                 <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden' }}>
-                  <div style={{ background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))', padding: '10px 16px' }}>
+                  <div style={{ background: 'linear-gradient(135deg,var(--sage-dk),var(--sage-lt))', padding: '10px 16px' }}>
                     <span style={{ fontSize: 13, fontWeight: 700, color: '#fff' }}>{row.day}</span>
                   </div>
                   <div style={{ padding: '14px 16px', display: 'grid', gap: 10 }}>
@@ -334,7 +334,7 @@ export default function DietClient({ diet }: { diet: any }) {
                       { label: '🌙 Raat', veg: row.vegRaat, nonv: row.nonVegRaat },
                     ].map(slot => (
                       <div key={slot.label} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                        <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--gold-dk)', minWidth: 72, paddingTop: 2 }}>{slot.label}</span>
+                        <span style={{ fontSize: 11, fontWeight: 700, color: 'var(--sage-dk)', minWidth: 72, paddingTop: 2 }}>{slot.label}</span>
                         <div style={{ flex: 1 }}>
                           <span style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.5 }}>{slot.veg}</span>
                           {nonVeg && slot.nonv && <div style={{ fontSize: 12, color: 'var(--ink3)', marginTop: 3 }}>🍗 {slot.nonv}</div>}
@@ -476,8 +476,8 @@ export default function DietClient({ diet }: { diet: any }) {
         {/* Doctor Note */}
         {diet.doctorNote && (
           <div style={{ background: 'linear-gradient(135deg,var(--bg2),var(--card))', border: '1px solid var(--border2)', borderRadius: 14, padding: '24px 28px', marginBottom: 36 }}>
-            <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10 }}>👨‍⚕️ Doctor Ka Personal Note</p>
-            <blockquote style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.9, fontStyle: 'italic', fontWeight: 300, margin: 0, borderLeft: '3px solid var(--gold)', paddingLeft: 16 }}>{diet.doctorNote}</blockquote>
+            <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--sage-dk)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 10 }}>👨‍⚕️ Doctor Ka Personal Note</p>
+            <blockquote style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.9, fontStyle: 'italic', fontWeight: 300, margin: 0, borderLeft: '3px solid var(--sage)', paddingLeft: 16 }}>{diet.doctorNote}</blockquote>
           </div>
         )}
 
@@ -489,7 +489,7 @@ export default function DietClient({ diet }: { diet: any }) {
               {sources.map((s: any, i: number) => (
                 <div key={i} style={{ fontSize: 12, color: 'var(--ink4)', lineHeight: 1.5 }}>
                   {i + 1}. {s.name} ({s.year})
-                  {s.url && <> — <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold-dk)' }}>Link</a></>}
+                  {s.url && <> — <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--sage-dk)' }}>Link</a></>}
                 </div>
               ))}
             </div>

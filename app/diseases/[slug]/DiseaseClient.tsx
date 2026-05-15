@@ -82,7 +82,7 @@ function CollapsibleSection({ id, icon, title, sub, defaultOpen = true, children
           <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 700, color: 'var(--ink)', display: 'flex', alignItems: 'center', gap: 8 }}><span>{icon}</span>{title}</div>
           {sub && !open && <div style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 3, fontWeight: 300 }}>{sub}</div>}
         </div>
-        <span style={{ fontSize: 22, color: 'var(--gold)', fontWeight: 700, flexShrink: 0, marginLeft: 12, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform .2s' }}>+</span>
+        <span style={{ fontSize: 22, color: 'var(--sage)', fontWeight: 700, flexShrink: 0, marginLeft: 12, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform .2s' }}>+</span>
       </button>
       <div className="sec-toggle-hidden" style={{}}>
         <SecHead title={`${icon} ${title}`} sub={sub} />
@@ -182,9 +182,9 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
       {/* Breadcrumb */}
       <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', padding: '11px clamp(16px,4vw,32px)' }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', display: 'flex', gap: 8, fontSize: 13, color: 'var(--ink4)' }}>
-          <Link href="/" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Home</Link>
+          <Link href="/" style={{ color: 'var(--sage-dk)', textDecoration: 'none' }}>Home</Link>
           <span>›</span>
-          <Link href="/diseases" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Diseases</Link>
+          <Link href="/diseases" style={{ color: 'var(--sage-dk)', textDecoration: 'none' }}>Diseases</Link>
           <span>›</span>
           <span>{disease.title}</span>
         </div>
@@ -192,7 +192,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
 
       {/* Hero */}
       <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: 'clamp(28px,4vw,52px) clamp(16px,4vw,32px)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -80, right: -80, width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(184,145,42,.1) 0%,transparent 70%)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', top: -80, right: -80, width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(63,107,77,.08) 0%,transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 1160, margin: '0 auto', display: 'grid', gridTemplateColumns: '3fr 2fr', gap: 48, alignItems: 'center', position: 'relative' }} className="dis-hero">
           <div>
             <div style={{ display:'flex',gap:8,marginBottom:14,flexWrap:'wrap' }}>
@@ -201,7 +201,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               <span style={{ fontSize:11,fontWeight:500,padding:'4px 14px',borderRadius:100,background:'var(--bg2)',color:'var(--ink3)',border:'1px solid var(--border)' }}>⏱ ~8 min read</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 700, lineHeight: 1.12, color: 'var(--ink)', marginBottom: 8 }}>{disease.title}</h1>
-            {disease.hindiName && <div style={{ fontSize: 22, color: 'var(--gold-dk)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{disease.hindiName}</div>}
+            {disease.hindiName && <div style={{ fontSize: 22, color: 'var(--warm)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{disease.hindiName}</div>}
             {disease.heroText && <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, maxWidth: 540, fontWeight: 300 }}>{disease.heroText}</p>}
 
             {/* Medically Reviewed badge */}
@@ -275,7 +275,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
       <div className="mob-hide-tabs" style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 64, zIndex: 100 }}>
         <div style={{ maxWidth: 1160, margin: '0 auto', display: 'flex', overflowX: 'auto', padding: '0 clamp(16px,4vw,32px)' }} className="hide-scrollbar tabs-bar">
           {SECTIONS.map(s => (
-            <button key={s.id} onClick={() => scrollTo(s.id)} style={{ background: 'none', border: 'none', padding: '16px 18px', cursor: 'pointer', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap', color: activeSection === s.id ? 'var(--gold)' : 'var(--ink4)', borderBottom: activeSection === s.id ? '2px solid var(--gold)' : '2px solid transparent', transition: 'all .2s', display: 'flex', alignItems: 'center', gap: 5 }}>
+            <button key={s.id} onClick={() => scrollTo(s.id)} style={{ background: 'none', border: 'none', padding: '16px 18px', cursor: 'pointer', fontSize: 13, fontWeight: 500, whiteSpace: 'nowrap', color: activeSection === s.id ? 'var(--sage)' : 'var(--ink4)', borderBottom: activeSection === s.id ? '2px solid var(--sage)' : '2px solid transparent', transition: 'all .2s', display: 'flex', alignItems: 'center', gap: 5 }}>
               <span style={{ fontSize: 14 }}>{s.icon}</span>{s.l}
             </button>
           ))}
@@ -321,7 +321,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 <h3 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 20, fontWeight: 600, color: 'var(--ink)', marginBottom: 12 }}>Kise Zyada Hoti Hai?</h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
                   {disease.riskFactors.map((r: string, i: number) => (
-                    <span key={i} style={{ fontSize: 13, padding: '6px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--ink2)', border: '1px solid rgba(184,145,42,.2)', fontWeight: 400 }}>{r}</span>
+                    <span key={i} style={{ fontSize: 13, padding: '6px 14px', borderRadius: 100, background: 'var(--sage-bg)', color: 'var(--ink2)', border: '1px solid rgba(63,107,77,.2)', fontWeight: 400 }}>{r}</span>
                   ))}
                 </div>
               </div>
@@ -348,11 +348,11 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 14 }}>
                 {disease.types.map((t: any) => (
                   <div key={t._key} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '20px', position: 'relative' }}>
-                    {t.percentage && <span style={{ position: 'absolute', top: 14, right: 14, fontSize: 10, padding: '3px 8px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', fontWeight: 600 }}>{t.percentage}</span>}
+                    {t.percentage && <span style={{ position: 'absolute', top: 14, right: 14, fontSize: 10, padding: '3px 8px', borderRadius: 100, background: 'var(--sage-bg)', color: 'var(--sage-dk)', fontWeight: 600 }}>{t.percentage}</span>}
                     <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 16, fontWeight: 700, color: 'var(--ink)', marginBottom: 8, paddingRight: t.percentage ? 60 : 0 }}>{t.name}</div>
                     {t.description && <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>{t.description}</p>}
                     {t.diseasePageSlug && (
-                      <Link href={`/diseases/${t.diseasePageSlug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 12, fontSize: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>
+                      <Link href={`/diseases/${t.diseasePageSlug}`} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, marginTop: 12, fontSize: 12, color: 'var(--sage)', fontWeight: 600, textDecoration: 'none' }}>
                         Poora guide padhein →
                       </Link>
                     )}
@@ -367,7 +367,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             <CollapsibleSection id="symptoms" icon="🩺" title="Symptoms — Kya Mehsoos Hota Hai?" sub="In symptoms mein se kuch aapko hain? Ek baar doctor se zaroor milein." defaultOpen={false}>
               {disease.symptoms.map((s: any, i: number) => (
                 <div key={i} style={{ marginBottom: 16 }}>
-                  {s.category && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{s.category}</div>}
+                  {s.category && <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--sage-dk)', textTransform: 'uppercase', letterSpacing: '0.07em', marginBottom: 8 }}>{s.category}</div>}
                   <div style={{ display:'grid',gridTemplateColumns:'repeat(auto-fill,minmax(260px,1fr))',gap:8 }}>
                     {s.items?.map((item: string, j: number) => (
                       <div key={j} style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:12,padding:'14px 16px',display:'flex',alignItems:'flex-start',gap:12 }}>
@@ -465,7 +465,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
 
           {/* MEDICINES */}
           <CollapsibleSection id="medicines" icon="💊" title="Homoeopathic Medicines" sub={`${disease.title} mein commonly used medicines — doctor guidance ke saath`} defaultOpen={false}>
-            <div style={{ padding: '12px 18px', background: 'rgba(184,145,42,.07)', border: '1px solid rgba(184,145,42,.2)', borderRadius: 9, marginBottom: 20, fontSize: 13, color: 'var(--gold-dk)' }}>
+            <div style={{ padding: '12px 18px', background: 'rgba(192,132,56,.07)', border: '1px solid rgba(192,132,56,.2)', borderRadius: 9, marginBottom: 20, fontSize: 13, color: 'var(--warm)' }}>
               ⚠️ Ye sirf educational information hai — doctor se consult ke bina koi bhi medicine mat lein
             </div>
             {disease.medicines?.length > 0 ? (
@@ -475,7 +475,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                       <span style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)' }}>{m.name}</span>
                     </div>
-                    {m.bestFor && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', marginBottom: 10 }}>Best for: {m.bestFor}</div>}
+                    {m.bestFor && <div style={{ fontSize: 13, color: 'var(--warm)', fontStyle: 'italic', marginBottom: 10 }}>Best for: {m.bestFor}</div>}
                     {m.keyIndications?.length > 0 && (
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
                         {m.keyIndications.map((ind: string, j: number) => (
@@ -489,7 +489,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             ) : (
               <div style={{ textAlign: 'center', padding: '36px', background: 'var(--bg2)', borderRadius: 12, border: '1px dashed var(--border2)' }}>
                 <p style={{ color: 'var(--ink4)', fontWeight: 300 }}>Medicines list jald add hogi.</p>
-                <Link href="/medicines" style={{ display: 'inline-block', marginTop: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>Medicine Library Dekhein →</Link>
+                <Link href="/medicines" style={{ display: 'inline-block', marginTop: 12, color: 'var(--sage)', fontWeight: 600, textDecoration: 'none' }}>Medicine Library Dekhein →</Link>
               </div>
             )}
           </CollapsibleSection>
@@ -538,7 +538,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               <div style={{ textAlign: 'center', padding: '36px', background: 'var(--bg2)', borderRadius: 12, border: '1px dashed var(--border2)' }}>
                 <div style={{ fontSize: 32, marginBottom: 12 }}>🥗</div>
                 <p style={{ color: 'var(--ink3)', fontWeight: 300 }}>Is disease ka diet chart jald add hoga.</p>
-                <Link href="/diet" style={{ display: 'inline-block', marginTop: 12, color: 'var(--gold)', fontWeight: 600, textDecoration: 'none' }}>Sabhi Diet Charts Dekhein →</Link>
+                <Link href="/diet" style={{ display: 'inline-block', marginTop: 12, color: 'var(--sage)', fontWeight: 600, textDecoration: 'none' }}>Sabhi Diet Charts Dekhein →</Link>
               </div>
             )
             })()}
@@ -548,7 +548,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               <div style={{ marginTop: 20, padding: '16px 20px', background: 'rgba(184,145,42,.08)', border: '1px solid rgba(184,145,42,.25)', borderRadius: 12, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
                 <span style={{ fontSize: 20, flexShrink: 0 }}>💡</span>
                 <div>
-                  <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>Pro Tip</p>
+                  <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--warm)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>Pro Tip</p>
                   <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{disease.dietTip}</p>
                 </div>
               </div>
@@ -585,7 +585,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 <div style={{ overflowX: 'auto', borderRadius: 14, border: '1px solid var(--border)' }}>
                   <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 640 }}>
                     <thead>
-                      <tr style={{ background: 'linear-gradient(135deg,var(--gold-dk),var(--gold-lt))' }}>
+                      <tr style={{ background: 'linear-gradient(135deg,var(--sage-dk),var(--sage-lt))' }}>
                         {['Din', 'Subah (Naashta)', 'Mid Morning', 'Dopahar (Lunch)', 'Shaam (4-5 PM)', 'Raat (Dinner)'].map((h) => (
                           <th key={h} style={{ padding: '12px 14px', fontSize: 11, fontWeight: 700, color: '#fff', textAlign: 'left', textTransform: 'uppercase', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>{h}</th>
                         ))}
@@ -594,7 +594,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                     <tbody>
                       {disease.weeklyPlan.map((row: any, i: number) => (
                         <tr key={i} style={{ background: i % 2 === 0 ? 'var(--bg)' : 'var(--bg2)', borderBottom: '1px solid var(--border)' }}>
-                          <td style={{ padding: '12px 14px', fontSize: 13, fontWeight: 700, color: 'var(--gold-dk)', whiteSpace: 'nowrap' }}>{row.day}</td>
+                          <td style={{ padding: '12px 14px', fontSize: 13, fontWeight: 700, color: 'var(--sage-dk)', whiteSpace: 'nowrap' }}>{row.day}</td>
                           <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.breakfast || '—'}</td>
                           <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.midMorning || '—'}</td>
                           <td style={{ padding: '12px 14px', fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>{row.lunch || '—'}</td>
@@ -658,7 +658,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 6 }}>
               <SL c="Frequently Asked Questions" />
               {disease.faqs?.length > 0 && (
-                <span style={{ fontSize: 12, padding: '3px 10px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.2)' }}>{disease.faqs.length} FAQs</span>
+                <span style={{ fontSize: 12, padding: '3px 10px', borderRadius: 100, background: 'var(--sage-bg)', color: 'var(--sage-dk)', border: '1px solid rgba(63,107,77,.2)' }}>{disease.faqs.length} FAQs</span>
               )}
             </div>
             <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 28, fontWeight: 700, color: 'var(--ink)', marginBottom: 6 }}>Sabse Zyada Pooche Jaane Wale Sawal</h2>
@@ -677,7 +677,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           </section>
 
           {/* Post-FAQ CTA */}
-          <div style={{ marginBottom: 52, padding: '28px', background: 'linear-gradient(135deg,rgba(184,145,42,.08),rgba(184,145,42,.02))', border: '1px solid rgba(184,145,42,.25)', borderRadius: 16, textAlign: 'center' }}>
+          <div style={{ marginBottom: 52, padding: '28px', background: 'linear-gradient(135deg,rgba(63,107,77,.08),rgba(63,107,77,.02))', border: '1px solid rgba(63,107,77,.2)', borderRadius: 16, textAlign: 'center' }}>
             <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 20, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>Abhi bhi confusion hai?</div>
             <p style={{ fontSize: 14, color: 'var(--ink3)', marginBottom: 20, fontWeight: 300 }}>Dr. Shadab se seedha poochho — WhatsApp pe consultation</p>
             <a href={WA_CONSULT} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '13px 28px', background: 'var(--ink)', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 14, fontWeight: 600 }}>📲 Book Consultation</a>
@@ -721,8 +721,8 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                     <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 'var(--r)', padding: '18px', cursor: 'pointer', height: '100%' }}>
                       <div style={{ fontSize: 11, color: 'var(--ink4)', marginBottom: 8 }}>{r.category || 'Homoeopathy'}</div>
                       <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{r.title}</div>
-                      {r.hindiName && <div style={{ fontSize: 13, color: 'var(--gold-dk)', fontStyle: 'italic', fontFamily: 'var(--font-display,Georgia,serif)', marginBottom: 10 }}>{r.hindiName}</div>}
-                      <div style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>Read guide →</div>
+                      {r.hindiName && <div style={{ fontSize: 13, color: 'var(--warm)', fontStyle: 'italic', fontFamily: 'var(--font-display,Georgia,serif)', marginBottom: 10 }}>{r.hindiName}</div>}
+                      <div style={{ fontSize: 12, color: 'var(--sage)', fontWeight: 600 }}>Read guide →</div>
                     </div>
                   </Link>
                 ))}
