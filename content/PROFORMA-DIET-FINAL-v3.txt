@@ -1,0 +1,418 @@
+================================================================
+HOMEOPEDIA.IN — DIET PAGE PROFORMA (FINAL v3)
+Standalone Diet Chart Page — Disease ke saath linked
+================================================================
+Agent Instructions:
+- Ye ek separate Sanity document type hai: dietPage
+- Disease page se reference hoga via disease slug
+- Page URL: homeopedia.in/[disease-slug]-diet-chart
+- Style: Note-making — short bullets, scannable, mobile-first
+- Non-veg toggle: Frontend pe switch karega — dono variants
+  Sanity mein store honge alag fields mein
+- WhatsApp share button: Har section ke baad ya page ke end pe
+================================================================
+
+─── BASIC INFO (Sanity Fields) ─────────────────────────────
+
+DISEASE NAME (English):
+HINDI / LOCAL NAAM:        (e.g. Chambal, Gathiya, Madhumeh)
+DISEASE SLUG:              (e.g. eczema — disease page se match karna)
+DIET PAGE SLUG:            (auto: /[disease-slug]-diet-chart)
+CATEGORY:                  [Skin / Joints / Digestive / Mental /
+                            Women's / Respiratory / Endocrine / Urinary]
+LAST REVIEWED:
+DOCTOR NAME:               Dr. Shadab Khan, MD Homoeopath
+
+─── SEO ────────────────────────────────────────────────────
+
+SEO TITLE (60 chars max):
+Formula: [Disease] ([Hindi Naam]) Diet — Kya Khayein Kya Nahi | Homeopedia
+Example: "Eczema (Chambal) Diet — Kya Khayein Kya Nahi | Homeopedia"
+Example: "Thyroid Diet Hindi — Kya Khayein, Kya Avoid Karein | Homeopedia"
+
+SEO DESCRIPTION (150 chars max):
+Formula: [Disease] diet chart — green list, red list, daily
+meal plan, veg aur non-veg dono options. Dr. Shadab Khan.
+Doctor-reviewed. Homeopedia.in
+
+─── PAGE INTRO (2 lines only) ──────────────────────────────
+[Disease page ki diet summary ko REPEAT nahi karna —
+ye page uska deep dive hai]
+[Line 1: Is disease mein diet kyun matter karta hai — 1 line mechanism]
+[Line 2: Is page pe kya milega — 1 line]
+
+Example (Eczema):
+Line 1: "Eczema mein kuch foods skin inflammation directly
+         trigger karte hain — aur kuch healing mein help karte hain."
+Line 2: "Neeche complete guide hai — green list, red list,
+         daily plan aur vrat/travel jaise special situations."
+
+─── KHAANE KI 3 ZARURI AADATEIN ────────────────────────────
+[Sirf 3 — disease-specific, actionable, 1 line each]
+[Generic "nashta zaroor khao" nahi — disease se directly connected reason]
+
+⏰ 1. [Habit] — [Kyun, disease se connected, 8-10 words]
+⏰ 2. [Habit] — [Reason]
+⏰ 3. [Habit] — [Reason]
+
+Example (Thyroid):
+⏰ 1. Subah 8 baje tak nashta karo — thyroid metabolism
+      morning mein active hota hai
+⏰ 2. Raat 7 baje ke baad heavy khaana avoid — digestion
+      slow hoti hai jo T3/T4 conversion affect karta hai
+⏰ 3. Har 3-4 ghante mein kuch khao — blood sugar stable
+      rakho — thyroid ke liye zaroori
+
+─── GREEN LIST ✅ — KYA KHAYEIN ────────────────────────────
+[Note style: Food naam — reason (8-10 words max, disease-specific)]
+[Easily available Indian foods only — no exotic items]
+[Default: Vegetarian | Toggle karke Non-veg bhi dikhega]
+
+== VEGETARIAN OPTIONS ==
+
+🌾 Anaj / Grains:
+• [Food] — [disease-specific reason, 8-10 words]
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+🥦 Sabziyaan / Vegetables:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+🍎 Phal / Fruits:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+🫘 Dal aur Protein:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason]
+
+🫖 Drinks, Masale aur Tel:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+== NON-VEGETARIAN OPTIONS ==
+[Sirf tab dikhega jab reader Non-veg toggle kare]
+[Veg categories wahi rahengi — sirf ye extra section add hoga]
+
+🍗 Non-veg Mein Kya Allowed Hai:
+• [Food] — [disease-specific reason]
+• [Food] — [reason]
+• [Food] — [reason]
+
+🚫 Non-veg Mein Kya Avoid Karein:
+• [Food] — [disease-specific reason kyun nahi]
+• [Food] — [reason]
+• [Food] — [reason]
+
+[NOTE for agent: Sanity mein ye 4 alag fields honge:
+vegGreenList (array) | nonVegAllowed (array) | nonVegAvoid (array)
+redList (array — veg/non-veg dono ke liye same avoid list]
+
+─── RED LIST ❌ — KYA NA KHAYEIN ───────────────────────────
+[Yahan veg/non-veg toggle nahi — avoid list mostly same hoti hai]
+[Tone: Calm, informative — darrana nahi, samjhana hai]
+[Reason mein disease ka naam ya specific body mechanism — "unhealthy hai" nahi]
+
+🚫 Processed aur Maida:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+🚫 Dairy aur Heavy Foods:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+🚫 Teekha, Meetha aur Oily:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+🚫 Drinks:
+• [Food] — [reason]
+• [Food] — [reason]
+• [Food] — [reason, optional]
+
+[💬 WHATSAPP SHARE BUTTON — "Ye list apne ghar walo ko bhejo →"]
+[Agent note: Share karne pe sirf Green + Red list ka
+ summary text share hoga — full page URL ke saath]
+
+─── EK DIN KA MEAL PLAN ────────────────────────────────────
+[Note style — compact, 2 options per slot, 1 line each]
+[Veg default — Non-veg toggle pe relevant slots mein
+ non-veg option bhi dikhega]
+
+🌅 Subah Uthke (6-7 AM):
+  • [Option A — e.g. Lukewarm paani + nimbu]
+  • [Option B — e.g. Bheegi methi seeds 1 tsp]
+
+🍽️ Nashta (8-9 AM):
+  • [Option A — e.g. Daliya with vegetables]
+  • [Option B — e.g. Moong dal chilla + chutney]
+  • [Option C non-veg — e.g. 2 ande (boiled) + roti]
+    ↑ [Agent: ye line sirf non-veg toggle mein dikhegi]
+
+☀️ Mid-Morning (11 AM):
+  • [Option A — e.g. 1 seasonal fruit]
+  • [Option B — e.g. Bhuna chana handful]
+
+🍱 Dopahar (1-2 PM):
+  • [Option A — e.g. 2 roti + moong dal + sabzi]
+  • [Option B — e.g. Brown rice + dal + salad]
+  • [Option C non-veg — e.g. Grilled fish/chicken + roti + sabzi]
+    ↑ [Agent: sirf non-veg toggle mein]
+
+🌇 Shaam (4-5 PM):
+  • [Option A — e.g. Herbal chai + akhrot 4-5]
+  • [Option B — e.g. Roasted makhana]
+
+🌙 Raat (7-8 PM):
+  • [Option A — e.g. 2 roti + sabzi + dal]
+  • [Option B — e.g. Khichdi + ghee]
+  • [Option C non-veg — e.g. Chicken soup (no cream) + roti]
+    ↑ [Agent: sirf non-veg toggle mein]
+
+😴 Sone Se Pehle (9 PM) — Zaroorat Ho To:
+  • [Option A — e.g. Warm haldi doodh]
+  • [Option B — e.g. Warm paani + saunf]
+
+─── 4 DIN KA SAMPLE PLAN ───────────────────────────────────
+[Compact format — mobile pe ek nazar mein samajh aaye]
+[Variety: ek food 4 din mein max 2 baar]
+[Veg default — agent non-veg version bhi store karega alag field mein]
+
+DIN 1:
+  🌅 [1 line]  🍽️ [1 line]  🍱 [1 line]  🌇 [1 line]  🌙 [1 line]
+
+DIN 2:
+  🌅 [1 line]  🍽️ [1 line]  🍱 [1 line]  🌇 [1 line]  🌙 [1 line]
+
+DIN 3:
+  🌅 [1 line]  🍽️ [1 line]  🍱 [1 line]  🌇 [1 line]  🌙 [1 line]
+
+DIN 4:
+  🌅 [1 line]  🍽️ [1 line]  🍱 [1 line]  🌇 [1 line]  🌙 [1 line]
+
+[Page pe auto-note: "Baaki dinon ke liye upar diya
+ Daily Meal Plan use karein — apni pasand se choose karein."]
+
+[💬 WHATSAPP SHARE BUTTON — "Ye 4-day plan share karein →"]
+[Agent note: Share text mein 4-day plan + page URL aayega]
+
+─── SPECIAL SITUATIONS ─────────────────────────────────────
+[Short bullets — 2-3 points per situation, 1 line each]
+[Ye section competitors mein nahi hota — high SEO + genuinely useful]
+
+😣 Flare-Up / Takleef Zyada Ho Tab:
+• [Kya khayein us din]
+• [Kya avoid karein]
+• [Ek practical tip]
+
+🙏 Vrat / Fasting:
+• [Safe option 1]
+• [Safe option 2]
+• [Kya avoid karein vrat mein]
+
+🍽️ Bahar Khana Ho (Restaurant / Dhaba):
+• [Tip 1 — kya order karein]
+• [Tip 2 — kya avoid karein]
+• [Tip 3 — practical hack]
+
+✈️ Travel Mein:
+• [Tip 1 — carry-on food]
+• [Tip 2 — hotel/dhaba mein kya order karein]
+
+─── BOXES ───────────────────────────────────────────────────
+
+🟡 PRO TIP:
+[1-2 lines — Doctor ka ek actionable tip jo patients ko
+ clinic mein dete hain — timing ya technique se related]
+
+🟢 IMPORTANT NOTE:
+[2 lines — YMYL disclaimer, reassuring tone]
+"Ye chart ek general guide hai. Apni condition ke hisaab
+se apne homoeopath se personalized plan banwayein."
+
+🔵 HOMEOPATHY + DIET:
+[2 lines — natural connection, no overclaim]
+[Angle: Sahi diet → medicines better kaam karti hain →
+ healing faster hoti hai — ek line mein]
+
+─── FAQs ────────────────────────────────────────────────────
+(Minimum 10 — Google People Also Ask + Featured Snippet target)
+[Note style answers — direct, short, scannable]
+[Pehli line = direct answer — Google snippet ke liye]
+[Max 5-6 lines per answer — mobile pe readable]
+
+[7 TYPES ZAROOR COVER KARO:]
+
+TYPE 1 — Specific Indian Food (2 Qs minimum):
+Q: Kya [controversial Indian food] [disease] mein allowed hai?
+
+TYPE 2 — Duration:
+Q: Diet se [disease] mein kitne din mein fark dikhta hai?
+
+TYPE 3 — Drinks:
+Q: [Disease] mein chai/coffee/juice peena theek hai?
+
+TYPE 4 — Fasting:
+Q: [Disease] mein vrat/fast kar sakte hain?
+
+TYPE 5 — Indian Habit:
+Q: [Disease] mein [common habit — late khaana/mirch/bahar
+   ka khaana] theek hai kya?
+
+TYPE 6 — Homeopathy + Diet:
+Q: Homeopathic medicine ke saath koi khaana band karna padta hai?
+
+TYPE 7 — Non-veg:
+Q: [Disease] mein non-veg khana chahiye ya band karna padega?
+
+Q1:
+A1:
+
+Q2:
+A2:
+
+Q3:
+A3:
+
+Q4:
+A4:
+
+Q5:
+A5:
+
+Q6:
+A6:
+
+Q7:
+A7:
+
+Q8:
+A8:
+
+Q9:
+A9:
+
+Q10:
+A10:
+
+[💬 WHATSAPP SHARE BUTTON — page ke end pe]
+[Share text: "[Disease] Diet Guide — Kya Khayein Kya Nahi.
+ Complete guide yahan: [URL]" — simple, shareable]
+
+─── SOURCES ─────────────────────────────────────────────────
+Source 1: [Naam] | [Year] | [URL optional]
+Source 2: [Naam] | [Year]
+Source 3: [Naam] | [Year]
+[Accepted: WHO, ICMR, NIN, CCRH, PubMed, Mayo Clinic, NHS]
+
+─── EXTRAS ──────────────────────────────────────────────────
+YOUTUBE VIDEO URL:
+QUICK FACT 1 — Sabse common diet mistake [disease] mein:
+QUICK FACT 2 — Ek food jo zaroor khaana chahiye:
+QUICK FACT 3 — Ek food jo bilkul avoid karein:
+REVIEW DATE:
+DOCTOR NOTE (1-2 lines — personal clinical observation):
+[Specific pattern jo aapne patients mein observe kiya —
+ E-E-A-T ke liye sabse important element]
+
+================================================================
+SANITY SCHEMA — FIELD REFERENCE (Agent ke liye)
+================================================================
+
+Document Type: dietPage
+
+Fields:
+  disease           → reference (disease document)
+  diseaseSlug       → string
+  dietPageSlug      → string (auto-generated)
+  seoTitle          → string (60 char limit)
+  seoDescription    → string (150 char limit)
+  intro             → array (2 portable text blocks)
+  eatingHabits      → array of objects {habit, reason}
+  vegGreenList      → array of objects per category:
+                        {categoryName, emoji, items: [{food, reason}]}
+  nonVegAllowed     → array of objects {food, reason}
+  nonVegAvoid       → array of objects {food, reason}
+  redList           → array of objects per category:
+                        {categoryName, emoji, items: [{food, reason}]}
+  dailyMealPlan     → array of objects per slot:
+                        {slotName, slotTime, vegOptions: [string],
+                         nonVegOption: string}
+  samplePlan4Day    → array of objects per day:
+                        {day, subah, nashta, dopahar, shaam, raat,
+                         nonVegVariant: {nashta, dopahar, raat}}
+  specialSituations → object:
+                        {flareUp: [string], fasting: [string],
+                         eatingOut: [string], travel: [string]}
+  proTip            → string
+  importantNote     → string
+  homeopathyDiet    → string
+  faqs              → array of objects {question, answer}
+  sources           → array of objects {name, year, url}
+  youtubeUrl        → string
+  quickFacts        → object {mistake, mustEat, mustAvoid}
+  reviewDate        → date
+  doctorNote        → text
+
+WhatsApp Share:
+  shareTextGreenRed → auto-generated from vegGreenList + redList
+  shareTextMealPlan → auto-generated from samplePlan4Day
+  shareTextPage     → "[Disease] Diet Guide: [URL]"
+  [Agent note: Teen alag share buttons — teen alag share texts]
+
+================================================================
+POST-GENERATION AUDIT CHECKLIST
+================================================================
+
+SEO:
+[ ] Title 60 chars se kam
+[ ] Title mein English + Hindi naam dono
+[ ] Title mein "Diet" + "Homeopedia" hai
+[ ] Meta 150 chars se kam, "doctor-reviewed" hai
+[ ] Intro 2 lines — disease-specific, disease page repeat nahi
+
+CONTENT:
+[ ] Har green item ka reason disease-specific hai (generic nahi)
+[ ] Har red item ka reason disease-specific hai (fear-based nahi)
+[ ] Sirf Indian, easily available foods
+[ ] Non-veg — allowed aur avoid dono filled hain
+[ ] Daily meal plan mein har slot pe 2+ options
+[ ] Non-veg option nashta/dopahar/raat mein diya
+[ ] 4-day plan mein variety hai (ek food 2 baar se zyada nahi)
+[ ] Special Situations — charon sections filled hain
+
+YMYL:
+[ ] Koi "guaranteed" ya "100% theek" nahi
+[ ] Koi specific dose/quantity recommend nahi
+[ ] "Doctor se milein" advice hai
+[ ] Honest disclaimer filled hai
+
+FAQs:
+[ ] Minimum 10 FAQs
+[ ] Saatho 7 types cover hue
+[ ] Pehli line direct answer hai
+[ ] Max 5-6 lines per answer
+[ ] Non-veg question included
+
+E-E-A-T:
+[ ] Doctor Note personal observation se bhara
+[ ] Minimum 3 verified sources
+[ ] Koi fabricated stat nahi
+
+WhatsApp:
+[ ] Teen share points mark kiye (Green/Red list, 4-day plan, page URL)
+[ ] Share text natural aur short hai
+
+================================================================
