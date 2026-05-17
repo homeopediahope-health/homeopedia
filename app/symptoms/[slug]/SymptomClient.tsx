@@ -83,7 +83,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
               {symptom.indiaContextSource && <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 8, marginBottom: 0, fontStyle: 'italic' }}>Source: {symptom.indiaContextSource}</p>}
             </div>
           )}
-          <p style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 18, fontWeight: 300 }}>Dr. Shadab Khan, MD Homoeopath — Clinically Reviewed | {symptom.reviewDate || 'May 2026'}</p>
+          <p style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 18, fontWeight: 300 }}><Link href="/about" style={{ color: 'var(--gold-dk)', textDecoration: 'none', fontWeight: 500 }}>Dr. Shadab Khan, MD Homoeopath</Link> — Clinically Reviewed | {symptom.reviewDate || 'May 2026'}</p>
         </div>
       </div>
 
