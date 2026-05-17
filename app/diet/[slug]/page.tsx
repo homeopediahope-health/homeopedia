@@ -46,6 +46,16 @@ export default async function DietDetailPage({ params }: Props) {
     }))
   } : null
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.homeopedia.in' },
+      { '@type': 'ListItem', position: 2, name: 'Diet Charts', item: 'https://www.homeopedia.in/diet' },
+      { '@type': 'ListItem', position: 3, name: diet.title, item: `https://www.homeopedia.in/diet/${slug}` },
+    ],
+  }
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
@@ -70,6 +80,7 @@ export default async function DietDetailPage({ params }: Props) {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
       <DietClient diet={diet} />
