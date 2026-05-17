@@ -47,6 +47,13 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: 66 }}>
 
+      {/* Medical Disclaimer Strip */}
+      <div style={{ background: 'rgba(220,38,38,.04)', borderBottom: '1px solid rgba(220,38,38,.12)', padding: '8px clamp(16px,4vw,32px)' }}>
+        <p style={{ maxWidth: 820, margin: '0 auto', fontSize: 12, color: '#b91c1c', fontWeight: 400, lineHeight: 1.5 }}>
+          ⚕️ <strong>Medical Disclaimer:</strong> Ye page sirf educational information ke liye hai. Isko professional medical advice, diagnosis ya treatment ka substitute mat samjhein. Koi bhi decision lene se pehle doctor se zaroor milein.
+        </p>
+      </div>
+
       {/* Breadcrumb */}
       <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', padding: '11px clamp(16px,4vw,32px)' }}>
         <div style={{ maxWidth: 820, margin: '0 auto', display: 'flex', gap: 8, fontSize: 13, color: 'var(--ink4)', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -206,7 +213,8 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
             {/* Part B */}
             {symptom.medicalCauses?.length > 0 && (
               <div style={{ marginBottom: 28 }}>
-                <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--ink)', marginBottom: 14, paddingBottom: 8, borderBottom: '1px solid var(--border)' }}>Part B — Bimari Ki Wajah Se</h3>
+                <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--ink)', marginBottom: 8, paddingBottom: 8, borderBottom: '1px solid var(--border)' }}>Part B — Bimari Ki Wajah Se</h3>
+                <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 14, fontWeight: 300, fontStyle: 'italic' }}>Neeche kuch common aur major diseases hain jinmein ye symptom hota hai. Ye poori list nahi hai — aur bhi kai causes ho sakte hain. Sahi wajah janane ke liye doctor se milna zaroori hai.</p>
                 <div style={{ display: 'grid', gap: 12 }}>
                   {symptom.medicalCauses.map((d: any, i: number) => (
                     <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
