@@ -1,9 +1,14 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getDietBySlug } from '@/lib/queries'
+import { getDietBySlug, getAllDiets } from '@/lib/queries'
 import DietClient from './DietClient'
 
 export const revalidate = 3600
+
+export async function generateStaticParams() {
+  const diets = await getAllDiets()
+  return diets.map((d: any) => ({ slug: d.slug?.current })).filter((d: any) => d.slug)
+}
 
 type Props = { params: Promise<{ slug: string }> }
 
