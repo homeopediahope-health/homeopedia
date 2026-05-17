@@ -1,6 +1,6 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases, getDietBySlug } from '@/lib/queries'
+import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases, getAllDiseasesForLinking, getDietBySlug } from '@/lib/queries'
 import DiseaseClient from './DiseaseClient'
 
 export const revalidate = 3600
@@ -50,7 +50,7 @@ export default async function DiseasePage({ params }: Props) {
     getDiseaseBySlug(slug),
     getRelatedDiseases(slug, 8),
     getDietBySlug(slug).catch(() => null),
-    getAllDiseases(),
+    getAllDiseasesForLinking(),
   ])
 
   if (!disease) notFound()

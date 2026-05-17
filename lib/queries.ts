@@ -6,6 +6,10 @@ export async function getAllDiseases() {
   }`)
 }
 
+export async function getAllDiseasesForLinking() {
+  return client.fetch(`*[_type == "disease"] { title, hindiName, slug }`)
+}
+
 export async function getDiseaseDiet(slug: string) {
   return client.fetch(`*[_type == "disease" && slug.current == $slug][0]{
     title, hindiName, slug, category,
@@ -22,18 +26,22 @@ export async function getAllDiseasesDiet() {
 }
 
 export async function getRelatedDiseases(currentSlug: string, limit = 4) {
-  const current = await client.fetch(
-    `*[_type == "disease" && slug.current == $currentSlug][0]{ category }`,
-    { currentSlug }
-  )
+  // Single query: fetch current disease category + related diseases together
+  const [current, allRelated] = await Promise.all([
+    client.fetch(`*[_type == "disease" && slug.current == $slug][0]{ category }`, { slug: currentSlug }),
+    client.fetch(
+      `*[_type == "disease" && slug.current != $currentSlug && $currentSlug in types[].diseasePageSlug] | order(publishedAt desc) [0...$limit] { title, slug, hindiName, category }`,
+      { currentSlug, limit }
+    ),
+  ])
   const category = current?.category
-  // Same category + diseases that cross-link to this page via types[].diseasePageSlug
-  return client.fetch(
-    `*[_type == "disease" && slug.current != $currentSlug && (category == $category || $currentSlug in types[].diseasePageSlug)] | order(publishedAt desc) [0...$limit] {
-      title, slug, hindiName, category
-    }`,
-    { currentSlug, category, limit }
+  if (allRelated.length >= limit) return allRelated.slice(0, limit)
+  // Fill remaining slots with same-category diseases
+  const sameCategory = await client.fetch(
+    `*[_type == "disease" && slug.current != $currentSlug && category == $category && !($currentSlug in types[].diseasePageSlug)] | order(publishedAt desc) [0...$fill] { title, slug, hindiName, category }`,
+    { currentSlug, category, fill: limit - allRelated.length }
   )
+  return [...allRelated, ...sameCategory].slice(0, limit)
 }
 
 export async function getDiseaseBySlug(slug: string) {

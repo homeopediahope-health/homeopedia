@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Fragment } from 'react'
+import { Fragment, useMemo } from 'react'
 
 interface AutoLinkProps {
   text: string
@@ -10,15 +10,17 @@ interface AutoLinkProps {
 }
 
 export default function AutoLink({ text, currentSlug, diseaseMap }: AutoLinkProps) {
-  if (!text || !diseaseMap || Object.keys(diseaseMap).length === 0) return <>{text}</>
+  const regex = useMemo(() => {
+    if (!diseaseMap || Object.keys(diseaseMap).length === 0) return null
+    const names = Object.keys(diseaseMap).filter(
+      name => diseaseMap[name] !== currentSlug && name.length > 2
+    )
+    if (names.length === 0) return null
+    const escaped = names.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+    return new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi')
+  }, [diseaseMap, currentSlug])
 
-  const names = Object.keys(diseaseMap).filter(
-    name => diseaseMap[name] !== currentSlug && name.length > 2
-  )
-  if (names.length === 0) return <>{text}</>
-
-  const escaped = names.map(n => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
-  const regex = new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi')
+  if (!text || !regex) return <>{text}</>
 
   const parts = text.split(regex)
   const linked = new Set<string>()
