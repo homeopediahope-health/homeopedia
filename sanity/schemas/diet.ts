@@ -14,7 +14,7 @@ export const diet = defineType({
     defineField({ name: 'hindiName', title: 'Disease Name (Hindi/Urdu)', type: 'string' }),
     defineField({ name: 'slug', title: 'URL Slug', type: 'slug', options: { source: 'title' }, validation: r => r.required() }),
     defineField({ name: 'relatedDiseaseSlug', title: 'Related Disease Slug', type: 'string' }),
-    defineField({ name: 'category', title: 'Category', type: 'string', options: { list: ['Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Respiratory', 'Hair', 'Endocrine', 'Urinary', "Men's Health"] } }),
+    defineField({ name: 'category', title: 'Category', type: 'string', options: { list: ['Skin', 'Joints', 'Digestive', 'Mental', "Women's", 'Respiratory', 'Hair', 'Endocrine', 'Urinary', "Men's Health", 'Circulatory'] } }),
     defineField({ name: 'metaTitle', title: 'SEO Title (60 chars)', type: 'string' }),
     defineField({ name: 'metaDescription', title: 'SEO Description (150 chars)', type: 'text', rows: 2 }),
     defineField({ name: 'intro', title: 'Page Intro (2 lines)', type: 'text', rows: 3 }),
