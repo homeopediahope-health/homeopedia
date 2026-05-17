@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Starsvg from '@/components/Starsvg'
 import SL from '@/components/SL'
 import { WA_BASE, WA_CONSULT } from '@/lib/constants'
+import AutoLink from '@/components/AutoLink'
 
 const SECTIONS = [
   { id: 'overview',  l: 'Overview',     icon: '🧬' },
@@ -24,7 +25,7 @@ function scrollTo(id: string) {
   window.scrollTo({ top, behavior: 'smooth' })
 }
 
-function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
+function FaqItem({ q, a, index }: { q: string; a: React.ReactNode; index: number }) {
   const [open, setOpen] = useState(false)
   return (
     <div onClick={() => setOpen(!open)} style={{ background:'var(--card)',border:`1px solid ${open?'var(--sage)':'var(--border)'}`,borderRadius:14,cursor:'pointer',overflow:'hidden',boxShadow:open?'0 8px 24px rgba(63,107,77,.1)':'none',transition:'all .35s cubic-bezier(.2,.8,.2,1)' }}>
@@ -148,10 +149,12 @@ function MobConsultBar({ title }: { title: string }) {
   )
 }
 
-export default function DiseaseClient({ disease, related, hasDietPage }: { disease: any; related: any[]; hasDietPage?: boolean }) {
+export default function DiseaseClient({ disease, related, hasDietPage, diseaseMap }: { disease: any; related: any[]; hasDietPage?: boolean; diseaseMap?: Record<string, string> }) {
   const [activeSection, setActiveSection] = useState('overview')
   const [animPct, setAnimPct] = useState(0)
   const FAQ_PREVIEW = 7
+  const currentSlug = disease.slug?.current || ''
+  const dm = diseaseMap || {}
 
   const ringPct = (() => {
     const fromData = parseInt(disease.ccrhEvidence?.improvementRate || '')
@@ -215,7 +218,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             </div>
             <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 700, lineHeight: 1.12, color: 'var(--ink)', marginBottom: 8 }}>{disease.title}</h1>
             {disease.hindiName && <div style={{ fontSize: 22, color: 'var(--warm)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{disease.hindiName}</div>}
-            {disease.heroText && <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, maxWidth: 540, fontWeight: 300 }}>{disease.heroText}</p>}
+            {disease.heroText && <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, maxWidth: 540, fontWeight: 300 }}><AutoLink text={disease.heroText} currentSlug={currentSlug} diseaseMap={dm} /></p>}
 
             {/* Medically Reviewed badge */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 20, padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 8, fontSize: 12, color: 'var(--ink3)' }}>
@@ -457,7 +460,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
               <div style={{ marginBottom: 16 }}>
                 {disease.homeopathyBenefits.map((b: string, i: number) => (
                   <div key={i} style={{ display: 'flex', gap: 10, padding: '10px 0', borderBottom: '1px solid var(--border)', fontSize: 14, color: 'var(--ink2)' }}>
-                    <span style={{ color: 'var(--green)', flexShrink: 0 }}>✓</span>{b}
+                    <span style={{ color: 'var(--green)', flexShrink: 0 }}>✓</span><AutoLink text={b} currentSlug={currentSlug} diseaseMap={dm} />
                   </div>
                 ))}
               </div>
@@ -555,7 +558,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
                 <span style={{ fontSize: 20, flexShrink: 0 }}>💡</span>
                 <div>
                   <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--warm)', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 4 }}>Pro Tip</p>
-                  <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{disease.dietTip}</p>
+                  <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}><AutoLink text={disease.dietTip} currentSlug={currentSlug} diseaseMap={dm} /></p>
                 </div>
               </div>
             )}
@@ -764,7 +767,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
           {disease.selfCheck && (
             <div style={{ padding:'16px 20px',background:'rgba(63,107,77,.06)',border:'1px solid rgba(63,107,77,.2)',borderRadius:12,marginBottom:32,display:'flex',gap:12,alignItems:'center' }}>
               <span style={{ fontSize:22,flexShrink:0 }}>🔍</span>
-              <p style={{ fontSize:14,color:'var(--ink2)',lineHeight:1.65,fontWeight:400,margin:0 }}>{disease.selfCheck}</p>
+              <p style={{ fontSize:14,color:'var(--ink2)',lineHeight:1.65,fontWeight:400,margin:0 }}><AutoLink text={disease.selfCheck} currentSlug={currentSlug} diseaseMap={dm} /></p>
             </div>
           )}
 
@@ -779,7 +782,7 @@ export default function DiseaseClient({ disease, related, hasDietPage }: { disea
             {disease.faqs?.length > 0 ? (
               <div style={{ display:'flex',flexDirection:'column',gap:8 }}>
                 {disease.faqs.map((f: any, i: number) => (
-                  <FaqItem key={i} q={f.question || f.q} a={f.answer || f.a} index={i} />
+                  <FaqItem key={i} q={f.question || f.q} a={<AutoLink text={f.answer || f.a || ''} currentSlug={currentSlug} diseaseMap={dm} />} index={i} />
                 ))}
               </div>
             ) : (

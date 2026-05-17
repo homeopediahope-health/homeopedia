@@ -46,13 +46,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DiseasePage({ params }: Props) {
   const { slug } = await params
-  const [disease, related, diet] = await Promise.all([
+  const [disease, related, diet, allDiseases] = await Promise.all([
     getDiseaseBySlug(slug),
-    getRelatedDiseases(slug, 3),
+    getRelatedDiseases(slug, 8),
     getDietBySlug(slug).catch(() => null),
+    getAllDiseases(),
   ])
 
   if (!disease) notFound()
+
+  const diseaseMap: Record<string, string> = {}
+  allDiseases.forEach((d: any) => {
+    if (d.slug?.current && d.title) {
+      diseaseMap[d.title.toLowerCase()] = d.slug.current
+      if (d.hindiName) diseaseMap[d.hindiName.toLowerCase()] = d.slug.current
+    }
+  })
 
   const faqSchema = disease.faqs?.length > 0 ? {
     '@context': 'https://schema.org',
@@ -102,12 +111,37 @@ export default async function DiseasePage({ params }: Props) {
     specialty: { '@type': 'MedicalSpecialty', name: 'Homeopathic Medicine' },
   }
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: disease.metaTitle || `${disease.title} Ka Homeopathic Ilaj`,
+    description: disease.metaDescription || disease.heroText?.slice(0, 155),
+    author: { '@type': 'Person', name: 'Dr. Shadab Khan', url: 'https://www.homeopedia.in/about' },
+    publisher: { '@type': 'Organization', name: 'HomeoPedia.in', url: 'https://www.homeopedia.in' },
+    datePublished: disease.publishedAt || '2025-01-01',
+    dateModified: disease._updatedAt || new Date().toISOString(),
+    mainEntityOfPage: `https://www.homeopedia.in/diseases/${slug}`,
+    image: `https://www.homeopedia.in/diseases/${slug}/opengraph-image`,
+  }
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.homeopedia.in' },
+      { '@type': 'ListItem', position: 2, name: 'Diseases', item: 'https://www.homeopedia.in/diseases' },
+      { '@type': 'ListItem', position: 3, name: disease.title, item: `https://www.homeopedia.in/diseases/${slug}` },
+    ],
+  }
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(authorSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       {faqSchema && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />}
-      <DiseaseClient disease={disease} related={related} hasDietPage={!!diet} />
+      <DiseaseClient disease={disease} related={related} hasDietPage={!!diet} diseaseMap={diseaseMap} />
     </>
   )
 }
