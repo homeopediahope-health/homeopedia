@@ -349,7 +349,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
           <Section title="Aksar Pooche Jaane Wale Sawal">
             <p style={{ fontSize: 15, color: 'var(--ink4)', marginBottom: 18, fontWeight: 300 }}>{symptom.faqs.length} FAQs — pehli line mein direct answer</p>
             {symptom.faqs.map((f: any, i: number) => (
-              <FaqItem key={i} q={f.question} a={f.answer} index={i} />
+              <FaqItem key={i} q={f.question || f.q || ''} a={f.answer || f.a || ''} index={i} />
             ))}
           </Section>
         )}
