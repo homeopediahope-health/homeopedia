@@ -102,7 +102,7 @@ const symptom = {
       recognition:
         'Aaina mein munh kholke dekho – agar gale ke dono taraf lal ya white patches wali soojan dikh rahi hai, aur dard bahut intense hai tez bukhar ke saath – ye tonsillitis ke signs hain.',
       diseaseSlug: 'tonsillitis',
-      isAvailable: false,
+      isAvailable: true,
     },
     {
       _key: 'mc2',
@@ -135,7 +135,7 @@ const symptom = {
       recognition:
         'Gale ka dard khane ke baad ya letne ke baad badh jaata hai. Koi clear infection signs nahi. Aksar heartburn bhi hoti hai lekin hamesha nahi.',
       diseaseSlug: 'gerd',
-      isAvailable: false,
+      isAvailable: true,
     },
     {
       _key: 'mc5',
@@ -146,7 +146,7 @@ const symptom = {
       recognition:
         'Dard typically moderate hota hai, aane-jaane wala – dust ya pollution mein badhta hai. Saath mein naak band rehna ya behna. Koi tez bukhar nahi.',
       diseaseSlug: 'allergic-rhinitis',
-      isAvailable: false,
+      isAvailable: true,
     },
   ],
 
@@ -196,7 +196,11 @@ const symptom = {
   homeopathyAngle3:
     'Khaaskar bachon mein gale ka dard bahut common hai – aur parents naturally pareshaan hote hain frequent antibiotics se. Homeopathy highly diluted medicines ka use karti hai jisse practically koi side-effects nahi hote – isliye ye bacchon, pregnant women, aur elderly patients mein safely use ho sakti hai conventional treatment ke saath-saath. Severe infections ya aisa case jahan antibiotics doctor ne diagnose karke diye hain – unhe pehle lein. Homeopathy complementary role mein kaam karta hai – replacement nahi.',
 
-  homeopathyDiseaseLinks: [],
+  homeopathyDiseaseLinks: [
+    { _key: 'hdl1', diseaseName: 'Tonsillitis (Tonsil Ka Infection)', diseaseSlug: 'tonsillitis' },
+    { _key: 'hdl2', diseaseName: 'GERD / Acid Reflux', diseaseSlug: 'gerd' },
+    { _key: 'hdl3', diseaseName: 'Allergic Rhinitis', diseaseSlug: 'allergic-rhinitis' },
+  ],
 
   homeopathyIsFor: [
     'Gale ka dard baar baar aata hai – aap pattern todna chahte hain sirf ek baar treat karne ke nahi',
@@ -209,7 +213,11 @@ const symptom = {
     'Doctor ne confirmed infection ke liye specific medicine di hai – pehle wo poori karo',
   ],
 
-  linkedDiseaseCards: [],
+  linkedDiseaseCards: [
+    { _key: 'ldc1', title: 'Tonsillitis', hindiName: 'Tonsil Ki Sujan', slug: 'tonsillitis' },
+    { _key: 'ldc2', title: 'GERD / Acid Reflux', hindiName: 'Pait Ka Tezab', slug: 'gerd' },
+    { _key: 'ldc3', title: 'Allergic Rhinitis', hindiName: 'Naak Ki Allergy', slug: 'allergic-rhinitis' },
+  ],
 
   faqs: [
     {
