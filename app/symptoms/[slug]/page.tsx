@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const symptom = await getSymptomBySlug(slug).catch(() => null)
   if (!symptom) return { title: 'Symptom Guide' }
 
-  const title = symptom.metaTitle || `${symptom.name} — Karan, Ilaaj aur Homeopathy | HomeoPedia.in`
-  const description = symptom.metaDescription || `${symptom.name} (${symptom.hindiName || ''}) ke karan, severity aur ghar pe safe steps. Verified Hinglish guide, Dr. Shadab reviewed.`
+  const title = symptom.metaTitle || `${symptom.title} — Karan, Ilaaj aur Homeopathy | HomeoPedia.in`
+  const description = symptom.metaDescription || `${symptom.title} (${symptom.hindiName || ''}) ke karan, severity aur ghar pe safe steps. Verified Hinglish guide, Dr. Shadab reviewed.`
   const url = `https://www.homeopedia.in/symptoms/${slug}`
 
   return {
@@ -51,14 +51,14 @@ export default async function SymptomPage({ params }: Props) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home',     item: 'https://www.homeopedia.in' },
       { '@type': 'ListItem', position: 2, name: 'Symptoms', item: 'https://www.homeopedia.in/symptoms' },
-      { '@type': 'ListItem', position: 3, name: symptom.name, item: `https://www.homeopedia.in/symptoms/${slug}` },
+      { '@type': 'ListItem', position: 3, name: symptom.title, item: `https://www.homeopedia.in/symptoms/${slug}` },
     ],
   }
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
-    name: symptom.name,
+    name: symptom.title,
     url: `https://www.homeopedia.in/symptoms/${slug}`,
     description: symptom.metaDescription || symptom.whatIsThis?.slice(0, 155),
     author: {

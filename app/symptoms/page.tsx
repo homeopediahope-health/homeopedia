@@ -38,7 +38,7 @@ export default async function SymptomsPage() {
                   <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 18px', cursor: 'pointer', position: 'relative', overflow: 'hidden' }}>
                     <div style={{ position: 'absolute', top: 0, left: 0, width: 3, bottom: 0, background: 'linear-gradient(to bottom,var(--gold-dk),var(--gold-lt))', borderRadius: '12px 0 0 12px' }} />
                     <div style={{ paddingLeft: 10 }}>
-                      <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{s.name}</h3>
+                      <h3 style={{ fontSize: 14, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{s.title}</h3>
                       {s.shortDescription && <p style={{ fontSize: 12, color: 'var(--ink4)', lineHeight: 1.55, fontWeight: 300 }}>{s.shortDescription}</p>}
                       <span style={{ display: 'inline-block', marginTop: 8, fontSize: 11, color: 'var(--gold)', fontWeight: 600 }}>Jaano →</span>
                     </div>

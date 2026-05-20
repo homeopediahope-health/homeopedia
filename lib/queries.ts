@@ -59,8 +59,8 @@ export async function getMedicineBySlug(slug: string) {
 }
 
 export async function getAllSymptoms() {
-  return client.fetch(`*[_type == "symptom"] | order(name asc) {
-    name, slug, shortDescription
+  return client.fetch(`*[_type == "symptom"] | order(title asc) {
+    title, hindiName, slug, shortDescription
   }`)
 }
 

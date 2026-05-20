@@ -42,7 +42,7 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
 }
 
 export default function SymptomClient({ symptom }: { symptom: any }) {
-  const waLink = `${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(symptom.name)}%20ke%20baare%20mein%20guidance%20chahiye.`
+  const waLink = `${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(symptom.title)}%20ke%20baare%20mein%20guidance%20chahiye.`
 
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: 66 }}>
@@ -61,7 +61,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
           <span>›</span>
           <Link href="/symptoms" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Symptoms</Link>
           <span>›</span>
-          <span style={{ color: 'var(--ink2)' }}>{symptom.name}</span>
+          <span style={{ color: 'var(--ink2)' }}>{symptom.title}</span>
         </div>
       </div>
 
@@ -72,9 +72,9 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
             <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)', letterSpacing: 1.5, textTransform: 'uppercase' }}>Symptom Guide</span>
             {symptom.bodySystem && <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'rgba(58,125,82,.08)', color: 'var(--sage)', border: '1px solid rgba(58,125,82,.2)', letterSpacing: 1.2, textTransform: 'uppercase' }}>{symptom.bodySystem}</span>}
           </div>
-          <h1 style={{ fontFamily: serif, fontSize: 'clamp(28px,4vw,46px)', fontWeight: 700, color: 'var(--ink)', margin: '0 0 8px' }}>{symptom.name}</h1>
+          <h1 style={{ fontFamily: serif, fontSize: 'clamp(28px,4vw,46px)', fontWeight: 700, color: 'var(--ink)', margin: '0 0 8px' }}>{symptom.title}</h1>
           {symptom.hindiName && <p style={{ fontSize: 18, color: 'var(--ink3)', marginBottom: 20, fontWeight: 400 }}>{symptom.hindiName}{symptom.hinglishName ? ` — "${symptom.hinglishName}"` : ''}</p>}
-          {symptom.whatIsThis && symptom.whatIsThis.split('\n\n').map((para: string, i: number) => (
+          {symptom.heroText && symptom.heroText.split('\n\n').map((para: string, i: number) => (
             <p key={i} style={{ fontSize: 16, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, marginBottom: 12, maxWidth: 680 }}>{para}</p>
           ))}
           {symptom.indiaContext && (
@@ -90,26 +90,14 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
       <div style={{ maxWidth: 820, margin: '0 auto', padding: '44px clamp(16px,4vw,32px) 80px' }}>
 
         {/* Quick Facts */}
-        {(symptom.quickFactSymptom || symptom.quickFactIndiaStats || symptom.quickFactDoctorWhen) && (
+        {symptom.quickFacts?.length > 0 && (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 12, marginBottom: 44 }}>
-            {symptom.quickFactSymptom && (
-              <div style={{ padding: '16px 18px', background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: 12, borderLeft: '3px solid var(--gold-dk)' }}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--gold-dk)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>Quick Fact</p>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.65, fontWeight: 300, margin: 0 }}>{symptom.quickFactSymptom}</p>
+            {symptom.quickFacts.map((fact: string, i: number) => (
+              <div key={i} style={{ padding: '16px 18px', background: i === 0 ? 'var(--bg2)' : i === 1 ? 'rgba(58,125,82,.05)' : 'rgba(220,38,38,.04)', border: `1px solid ${i === 0 ? 'var(--border)' : i === 1 ? 'rgba(58,125,82,.2)' : 'rgba(220,38,38,.15)'}`, borderRadius: 12, borderLeft: `3px solid ${i === 0 ? 'var(--gold-dk)' : i === 1 ? 'var(--sage)' : '#dc2626'}` }}>
+                <p style={{ fontSize: 11, fontWeight: 700, color: i === 0 ? 'var(--gold-dk)' : i === 1 ? 'var(--sage)' : '#dc2626', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>{i === 0 ? 'Quick Fact' : i === 1 ? 'India Stats' : 'Doctor Kab'}</p>
+                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.65, fontWeight: 300, margin: 0 }}>{fact}</p>
               </div>
-            )}
-            {symptom.quickFactDoctorWhen && (
-              <div style={{ padding: '16px 18px', background: 'rgba(220,38,38,.04)', border: '1px solid rgba(220,38,38,.15)', borderRadius: 12, borderLeft: '3px solid #dc2626' }}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: '#dc2626', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>Doctor Kab</p>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.65, fontWeight: 300, margin: 0 }}>{symptom.quickFactDoctorWhen}</p>
-              </div>
-            )}
-            {symptom.quickFactIndiaStats && (
-              <div style={{ padding: '16px 18px', background: 'rgba(58,125,82,.05)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 12, borderLeft: '3px solid var(--sage)' }}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--sage)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>India Stats</p>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.65, fontWeight: 300, margin: 0 }}>{symptom.quickFactIndiaStats}</p>
-              </div>
-            )}
+            ))}
           </div>
         )}
 
@@ -201,9 +189,9 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
                 <div style={{ display: 'grid', gap: 12 }}>
                   {symptom.lifestyleCauses.map((c: any, i: number) => (
                     <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                      <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 10 }}>{i + 1}. {c.causeName}</p>
-                      {c.mechanism && <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: c.howToIdentify ? 10 : 0 }}><span style={{ fontWeight: 600, color: 'var(--ink3)' }}>Kaise hota hai:</span> {c.mechanism}</p>}
-                      {c.howToIdentify && <p style={{ fontSize: 15, color: 'var(--sage)', lineHeight: 1.7, fontWeight: 400, margin: 0 }}>🔍 {c.howToIdentify}</p>}
+                      <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 10 }}>{i + 1}. {c.title}</p>
+                      {c.mechanism && <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: c.recognition ? 10 : 0 }}><span style={{ fontWeight: 600, color: 'var(--ink3)' }}>Kaise hota hai:</span> {c.mechanism}</p>}
+                      {c.recognition && <p style={{ fontSize: 15, color: 'var(--sage)', lineHeight: 1.7, fontWeight: 400, margin: 0 }}>🔍 {c.recognition}</p>}
                     </div>
                   ))}
                 </div>
@@ -221,16 +209,16 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 12, flexWrap: 'wrap', marginBottom: 10 }}>
                         <div>
                           <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', margin: 0 }}>{d.diseaseName}</p>
-                          {d.diseaseHindiName && <p style={{ fontSize: 13, color: 'var(--ink4)', margin: '3px 0 0', fontWeight: 300 }}>{d.diseaseHindiName}</p>}
+                          {d.hindiName && <p style={{ fontSize: 13, color: 'var(--ink4)', margin: '3px 0 0', fontWeight: 300 }}>{d.hindiName}</p>}
                         </div>
-                        {d.isAvailable && d.homeopediaSlug ? (
-                          <Link href={`/diseases/${d.homeopediaSlug}`} style={{ fontSize: 12, padding: '5px 14px', background: 'rgba(58,125,82,.1)', color: 'var(--sage)', border: '1px solid rgba(58,125,82,.25)', borderRadius: 100, textDecoration: 'none', fontWeight: 600, flexShrink: 0 }}>Full Guide →</Link>
+                        {d.isAvailable && d.diseaseSlug ? (
+                          <Link href={`/diseases/${d.diseaseSlug}`} style={{ fontSize: 12, padding: '5px 14px', background: 'rgba(58,125,82,.1)', color: 'var(--sage)', border: '1px solid rgba(58,125,82,.25)', borderRadius: 100, textDecoration: 'none', fontWeight: 600, flexShrink: 0 }}>Full Guide →</Link>
                         ) : (
                           <span style={{ fontSize: 12, padding: '5px 14px', background: 'var(--bg2)', color: 'var(--ink4)', border: '1px solid var(--border)', borderRadius: 100, fontWeight: 400, flexShrink: 0 }}>Coming Soon</span>
                         )}
                       </div>
-                      {d.howSymptomPresents && <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: d.howToIdentify ? 8 : 0 }}>{d.howSymptomPresents}</p>}
-                      {d.howToIdentify && <p style={{ fontSize: 15, color: 'var(--gold-dk)', lineHeight: 1.7, fontWeight: 400, margin: 0 }}>🔍 {d.howToIdentify}</p>}
+                      {d.description && <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: d.recognition ? 8 : 0 }}>{d.description}</p>}
+                      {d.recognition && <p style={{ fontSize: 15, color: 'var(--gold-dk)', lineHeight: 1.7, fontWeight: 400, margin: 0 }}>🔍 {d.recognition}</p>}
                     </div>
                   ))}
                 </div>
@@ -263,8 +251,8 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
                 <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, display: 'flex', gap: 16 }}>
                   <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--gold-bg)', border: '1px solid rgba(184,145,42,.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 14, fontWeight: 700, color: 'var(--gold-dk)' }}>{i + 1}</div>
                   <div>
-                    <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>{step.action}</p>
-                    {step.whyItWorks && <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{step.whyItWorks}</p>}
+                    <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 6 }}>{step.step}</p>
+                    {step.reason && <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{step.reason}</p>}
                   </div>
                 </div>
               ))}
@@ -273,35 +261,35 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
         )}
 
         {/* Homeopathy Section */}
-        {(symptom.homeopathyIndividualization || symptom.homeopathyRootCause || symptom.homeopathySafety) && (
+        {(symptom.homeopathyAngle1 || symptom.homeopathyAngle2 || symptom.homeopathyAngle3) && (
           <Section title="Homeopathy Is Symptom Mein Kaise Kaam Karta Hai">
             <div style={{ display: 'grid', gap: 14 }}>
-              {symptom.homeopathyIndividualization && (
+              {symptom.homeopathyAngle1 && (
                 <div style={{ padding: '20px 22px', background: 'rgba(58,125,82,.05)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 12 }}>
                   <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--sage)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 }}>Individualization — Aapka Treatment Alag Kyun</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{symptom.homeopathyIndividualization}</p>
+                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{symptom.homeopathyAngle1}</p>
                 </div>
               )}
-              {symptom.homeopathyRootCause && (
+              {symptom.homeopathyAngle2 && (
                 <div style={{ padding: '20px 22px', background: 'rgba(58,125,82,.05)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 12 }}>
                   <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--sage)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 }}>Root Cause Approach</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{symptom.homeopathyRootCause}</p>
+                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{symptom.homeopathyAngle2}</p>
                 </div>
               )}
-              {symptom.homeopathySafety && (
+              {symptom.homeopathyAngle3 && (
                 <div style={{ padding: '20px 22px', background: 'rgba(58,125,82,.05)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 12 }}>
                   <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--sage)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 }}>Safety</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{symptom.homeopathySafety}</p>
+                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{symptom.homeopathyAngle3}</p>
                 </div>
               )}
             </div>
 
-            {(symptom.isForYouIf?.length > 0 || symptom.notForYouIf?.length > 0) && (
+            {(symptom.homeopathyIsFor?.length > 0 || symptom.homeopathyNotFor?.length > 0) && (
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: 14, marginTop: 16 }}>
-                {symptom.isForYouIf?.length > 0 && (
+                {symptom.homeopathyIsFor?.length > 0 && (
                   <div style={{ padding: '18px 20px', background: 'rgba(34,197,94,.04)', border: '1px solid rgba(34,197,94,.2)', borderRadius: 12 }}>
                     <p style={{ fontSize: 13, fontWeight: 700, color: '#16a34a', marginBottom: 12 }}>✅ Ye Approach Aapke Liye Hai Agar</p>
-                    {symptom.isForYouIf.map((pt: string, i: number) => (
+                    {symptom.homeopathyIsFor.map((pt: string, i: number) => (
                       <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                         <span style={{ color: '#16a34a', flexShrink: 0, marginTop: 2 }}>•</span>
                         <span style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{pt}</span>
@@ -309,10 +297,10 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
                     ))}
                   </div>
                 )}
-                {symptom.notForYouIf?.length > 0 && (
+                {symptom.homeopathyNotFor?.length > 0 && (
                   <div style={{ padding: '18px 20px', background: 'rgba(220,38,38,.04)', border: '1px solid rgba(220,38,38,.15)', borderRadius: 12 }}>
                     <p style={{ fontSize: 13, fontWeight: 700, color: '#dc2626', marginBottom: 12 }}>⚠️ Ye Approach Abhi Nahi Agar</p>
-                    {symptom.notForYouIf.map((pt: string, i: number) => (
+                    {symptom.homeopathyNotFor.map((pt: string, i: number) => (
                       <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 8 }}>
                         <span style={{ color: '#dc2626', flexShrink: 0, marginTop: 2 }}>•</span>
                         <span style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{pt}</span>
@@ -369,7 +357,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
         {/* CTA */}
         <div style={{ background: 'linear-gradient(135deg,#1a3d30 0%,#0f2a1e 100%)', borderRadius: 16, padding: '32px 28px', marginBottom: 44 }}>
           <p style={{ fontFamily: serif, color: 'white', fontSize: 'clamp(18px,2.5vw,24px)', fontWeight: 700, marginBottom: 8 }}>Apna Symptom Samajh Aa Gaya — Ab Kya Karein?</p>
-          <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 15, marginBottom: 22, fontWeight: 300, lineHeight: 1.75 }}>Har insaan ki {symptom.hindiName || symptom.name} ki wajah alag hoti hai — aur ilaaj bhi alag hoga. Dr. Shadab se ek consultation mein aap jaanenge ki aapke is symptom ke peeche exactly kya hai.</p>
+          <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 15, marginBottom: 22, fontWeight: 300, lineHeight: 1.75 }}>Har insaan ki {symptom.hindiName || symptom.title} ki wajah alag hoti hai — aur ilaaj bhi alag hoga. Dr. Shadab se ek consultation mein aap jaanenge ki aapke is symptom ke peeche exactly kya hai.</p>
           <a href={waLink} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 30px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>💬 Dr. Shadab Se Milein →</a>
           <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 14, marginBottom: 0 }}>15+ Saalon Ka Clinical Experience | Nagpur</p>
         </div>
@@ -380,7 +368,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
               {symptom.relatedSymptoms.map((rs: any, i: number) => (
                 <Link key={i} href={`/symptoms/${rs.slug}`} style={{ padding: '10px 18px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 100, textDecoration: 'none', fontSize: 14, color: 'var(--ink)', fontWeight: 400 }}>
-                  {rs.name}{rs.hindiName && <span style={{ color: 'var(--ink4)', fontSize: 13 }}> — {rs.hindiName}</span>}
+                  {rs.title}{rs.hindiName && <span style={{ color: 'var(--ink4)', fontSize: 13 }}> — {rs.hindiName}</span>}
                 </Link>
               ))}
             </div>
@@ -403,7 +391,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
               {symptom.sources.map((s: any, i: number) => (
                 <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'baseline', fontSize: 14, color: 'var(--ink4)' }}>
                   <span style={{ flexShrink: 0, fontWeight: 600 }}>{i + 1}.</span>
-                  <span>{s.name}{s.year && ` (${s.year})`}{s.url && <> — <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold-dk)', textDecoration: 'underline' }}>Link</a></>}</span>
+                  <span>{s.title}{s.year && ` (${s.year})`}{s.url && <> — <a href={s.url} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--gold-dk)', textDecoration: 'underline' }}>Link</a></>}</span>
                 </div>
               ))}
             </div>
