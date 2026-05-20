@@ -191,7 +191,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
                   {symptom.lifestyleCauses.map((c: any, i: number) => (
                     <div key={i} style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
                       <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', marginBottom: 10 }}>{i + 1}. {c.title || c.causeName}</p>
-                      {(c.mechanism) && <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: (c.recognition || c.howToIdentify) ? 10 : 0 }}><span style={{ fontWeight: 600, color: 'var(--ink3)' }}>Kaise hota hai:</span> {c.mechanism}</p>}
+                      {(c.mechanism || c.description) && <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: (c.recognition || c.howToIdentify) ? 10 : 0 }}><span style={{ fontWeight: 600, color: 'var(--ink3)' }}>Kaise hota hai:</span> {c.mechanism || c.description}</p>}
                       {(c.recognition || c.howToIdentify) && <p style={{ fontSize: 15, color: 'var(--sage)', lineHeight: 1.7, fontWeight: 400, margin: 0 }}>🔍 {c.recognition || c.howToIdentify}</p>}
                     </div>
                   ))}
@@ -329,18 +329,27 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
         {symptom.linkedDiseaseCards?.length > 0 && (
           <Section title="In Bimariyoon Mein Ye Symptom Hota Hai">
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 12 }}>
-              {symptom.linkedDiseaseCards.map((d: any, i: number) => (
-                <Link key={i} href={`/diseases/${d.slug}`} style={{ textDecoration: 'none' }}>
-                  <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 18px', cursor: 'pointer', position: 'relative', overflow: 'hidden' }}>
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: 3, bottom: 0, background: 'linear-gradient(to bottom,var(--gold-dk),var(--gold-lt))', borderRadius: '12px 0 0 12px' }} />
+              {symptom.linkedDiseaseCards.map((d: any, i: number) => {
+                const name = d.diseaseName || d.title || ''
+                const hindi = d.diseaseHindiName || d.hindiName || ''
+                const slug = d.diseaseSlug || d.slug || ''
+                const available = d.isAvailable && slug
+                const card = (
+                  <div className={available ? 'hov' : ''} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 18px', cursor: available ? 'pointer' : 'default', position: 'relative', overflow: 'hidden', opacity: available ? 1 : 0.7 }}>
+                    <div style={{ position: 'absolute', top: 0, left: 0, width: 3, bottom: 0, background: available ? 'linear-gradient(to bottom,var(--gold-dk),var(--gold-lt))' : 'var(--border)', borderRadius: '12px 0 0 12px' }} />
                     <div style={{ paddingLeft: 10 }}>
-                      <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{d.title}</p>
-                      <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 10, fontWeight: 300 }}>{d.hindiName}</p>
-                      <span style={{ fontSize: 12, color: 'var(--gold)', fontWeight: 600 }}>Full Guide →</span>
+                      <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 4 }}>{name}</p>
+                      <p style={{ fontSize: 13, color: 'var(--ink4)', marginBottom: 10, fontWeight: 300 }}>{hindi}</p>
+                      <span style={{ fontSize: 12, color: available ? 'var(--gold)' : 'var(--ink4)', fontWeight: 600 }}>{available ? 'Full Guide →' : 'Coming Soon'}</span>
                     </div>
                   </div>
-                </Link>
-              ))}
+                )
+                return available ? (
+                  <Link key={i} href={`/diseases/${slug}`} style={{ textDecoration: 'none' }}>{card}</Link>
+                ) : (
+                  <div key={i}>{card}</div>
+                )
+              })}
             </div>
           </Section>
         )}
