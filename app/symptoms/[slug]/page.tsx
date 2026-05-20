@@ -17,8 +17,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const symptom = await getSymptomBySlug(slug).catch(() => null)
   if (!symptom) return { title: 'Symptom Guide' }
 
-  const title = symptom.metaTitle || `${symptom.title} — Karan, Ilaaj aur Homeopathy | HomeoPedia.in`
-  const description = symptom.metaDescription || `${symptom.title} (${symptom.hindiName || ''}) ke karan, severity aur ghar pe safe steps. Verified Hinglish guide, Dr. Shadab reviewed.`
+  const displayTitle = symptom.title || symptom.name || ''
+  const title = symptom.metaTitle || `${displayTitle} — Karan, Ilaaj aur Homeopathy | HomeoPedia.in`
+  const description = symptom.metaDescription || `${displayTitle} (${symptom.hindiName || ''}) ke karan, severity aur ghar pe safe steps. Verified Hinglish guide, Dr. Shadab reviewed.`
   const url = `https://www.homeopedia.in/symptoms/${slug}`
 
   return {
@@ -34,6 +35,8 @@ export default async function SymptomPage({ params }: Props) {
   const { slug } = await params
   const symptom = await getSymptomBySlug(slug).catch(() => null)
   if (!symptom) notFound()
+
+  const displayTitle = symptom.title || symptom.name || ''
 
   const faqSchema = symptom.faqs?.length > 0 ? {
     '@context': 'https://schema.org',
@@ -51,14 +54,14 @@ export default async function SymptomPage({ params }: Props) {
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home',     item: 'https://www.homeopedia.in' },
       { '@type': 'ListItem', position: 2, name: 'Symptoms', item: 'https://www.homeopedia.in/symptoms' },
-      { '@type': 'ListItem', position: 3, name: symptom.title, item: `https://www.homeopedia.in/symptoms/${slug}` },
+      { '@type': 'ListItem', position: 3, name: displayTitle, item: `https://www.homeopedia.in/symptoms/${slug}` },
     ],
   }
 
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
-    name: symptom.title,
+    name: displayTitle,
     url: `https://www.homeopedia.in/symptoms/${slug}`,
     description: symptom.metaDescription || symptom.whatIsThis?.slice(0, 155),
     author: {

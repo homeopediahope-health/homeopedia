@@ -42,7 +42,8 @@ function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
 }
 
 export default function SymptomClient({ symptom }: { symptom: any }) {
-  const waLink = `${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(symptom.title)}%20ke%20baare%20mein%20guidance%20chahiye.`
+  const displayTitle = symptom.title || symptom.name || ''
+  const waLink = `${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(displayTitle)}%20ke%20baare%20mein%20guidance%20chahiye.`
 
   return (
     <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: 66 }}>
@@ -61,7 +62,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
           <span>›</span>
           <Link href="/symptoms" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Symptoms</Link>
           <span>›</span>
-          <span style={{ color: 'var(--ink2)' }}>{symptom.title}</span>
+          <span style={{ color: 'var(--ink2)' }}>{displayTitle}</span>
         </div>
       </div>
 
@@ -72,7 +73,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
             <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)', letterSpacing: 1.5, textTransform: 'uppercase' }}>Symptom Guide</span>
             {symptom.bodySystem && <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'rgba(58,125,82,.08)', color: 'var(--sage)', border: '1px solid rgba(58,125,82,.2)', letterSpacing: 1.2, textTransform: 'uppercase' }}>{symptom.bodySystem}</span>}
           </div>
-          <h1 style={{ fontFamily: serif, fontSize: 'clamp(28px,4vw,46px)', fontWeight: 700, color: 'var(--ink)', margin: '0 0 8px' }}>{symptom.title}</h1>
+          <h1 style={{ fontFamily: serif, fontSize: 'clamp(28px,4vw,46px)', fontWeight: 700, color: 'var(--ink)', margin: '0 0 8px' }}>{displayTitle}</h1>
           {symptom.hindiName && <p style={{ fontSize: 18, color: 'var(--ink3)', marginBottom: 20, fontWeight: 400 }}>{symptom.hindiName}{symptom.hinglishName ? ` — "${symptom.hinglishName}"` : ''}</p>}
           {symptom.heroText && symptom.heroText.split('\n\n').map((para: string, i: number) => (
             <p key={i} style={{ fontSize: 16, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, marginBottom: 12, maxWidth: 680 }}>{para}</p>
@@ -357,7 +358,7 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
         {/* CTA */}
         <div style={{ background: 'linear-gradient(135deg,#1a3d30 0%,#0f2a1e 100%)', borderRadius: 16, padding: '32px 28px', marginBottom: 44 }}>
           <p style={{ fontFamily: serif, color: 'white', fontSize: 'clamp(18px,2.5vw,24px)', fontWeight: 700, marginBottom: 8 }}>Apna Symptom Samajh Aa Gaya — Ab Kya Karein?</p>
-          <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 15, marginBottom: 22, fontWeight: 300, lineHeight: 1.75 }}>Har insaan ki {symptom.hindiName || symptom.title} ki wajah alag hoti hai — aur ilaaj bhi alag hoga. Dr. Shadab se ek consultation mein aap jaanenge ki aapke is symptom ke peeche exactly kya hai.</p>
+          <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 15, marginBottom: 22, fontWeight: 300, lineHeight: 1.75 }}>Har insaan ki {symptom.hindiName || displayTitle} ki wajah alag hoti hai — aur ilaaj bhi alag hoga. Dr. Shadab se ek consultation mein aap jaanenge ki aapke is symptom ke peeche exactly kya hai.</p>
           <a href={waLink} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 30px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>💬 Dr. Shadab Se Milein →</a>
           <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 14, marginBottom: 0 }}>15+ Saalon Ka Clinical Experience | Nagpur</p>
         </div>
