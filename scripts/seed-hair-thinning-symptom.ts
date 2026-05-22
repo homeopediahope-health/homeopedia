@@ -82,7 +82,7 @@ Ye page aapko 2 minute mein batayega: aapka case normal hai ya doctor zaroori ha
     },
   ],
 
-  causesPartA: [
+  lifestyleCauses: [
     {
       title: 'Nutritional Deficiency (Iron, Zinc, Vitamin D, Biotin)',
       description: 'Hair follicle ek continuously active structure hai — isko constant nutrients chahiye. Jab blood mein iron (ferritin) ya zinc ki matra kam hoti hai, to body prioritization karta hai — vital organs pehle, baal baad mein. Follicle "rest mode" mein chala jaata hai. Ye diffuse thinning hai — poore scalp pe ek saath density kam lagti hai.',
@@ -105,7 +105,7 @@ Ye page aapko 2 minute mein batayega: aapka case normal hai ya doctor zaroori ha
     },
   ],
 
-  causesPartB: [
+  medicalCauses: [
     {
       diseaseName: 'Thyroid Disorder (Hypothyroidism / Hyperthyroidism)',
       diseaseHindiName: 'Thaayroid Ki Bimari',
@@ -144,7 +144,7 @@ Ye page aapko 2 minute mein batayega: aapka case normal hai ya doctor zaroori ha
     'Sudden Massive Shedding Without Trigger: Agar hafte bhar mein achanak bahut zyada baal gaye bina kisi obvious reason ke — ye kisi serious systemic illness ka sign ho sakta hai. Blood tests immediate.',
   ],
 
-  selfCareSteps: [
+  homeSteps: [
     {
       step: 'Scalp Massage (Gentle Circular Motion)',
       reason: 'Roz 5 minute — fingertips se (nakhun nahi), light pressure se circular motion mein scalp massage karo. Scalp mein blood circulation badhta hai aur follicle tak zyada nutrients pahunchen — ye mechanically proven hai.',

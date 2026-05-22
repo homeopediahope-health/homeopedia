@@ -81,7 +81,7 @@ WHO ke data ke mutabik, duniya bhar mein adults ki ek badi tadaad mein kisi na k
     },
   ],
 
-  causesPartA: [
+  lifestyleCauses: [
     {
       title: 'Galat Brushing Technique',
       description: 'Bahut zyada pressure se brush karna ya hard bristle brush use karna — masede ki upar ki soft skin (gingival tissue) ko physically injure karta hai. Har baar brush karne pe ye tissue damage hoti hai aur khoon niklta hai.',
@@ -104,7 +104,7 @@ WHO ke data ke mutabik, duniya bhar mein adults ki ek badi tadaad mein kisi na k
     },
   ],
 
-  causesPartB: [
+  medicalCauses: [
     {
       diseaseName: 'Gingivitis',
       diseaseHindiName: 'Masedon Ki Sujan',
@@ -143,7 +143,7 @@ WHO ke data ke mutabik, duniya bhar mein adults ki ek badi tadaad mein kisi na k
     'Oral Cancer (Munh Ka Cancer) — agar muh mein koi non-healing sore ya growth hai saath mein — bleeding ke saath — to ek baar dentist ya ENT se zaroor dikhaayein.',
   ],
 
-  selfCareSteps: [
+  homeSteps: [
     {
       step: 'Brushing Technique Sudharo',
       reason: 'Soft bristle brush lein aur gum line pe circular, gentle motion use karein — sawing motion nahi. Masede ki soft tissue ko time chahiye heal hone ka.',
