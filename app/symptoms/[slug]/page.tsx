@@ -43,8 +43,8 @@ export default async function SymptomPage({ params }: Props) {
     '@type': 'FAQPage',
     mainEntity: symptom.faqs.map((f: any) => ({
       '@type': 'Question',
-      name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      name: f.question || f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer || f.a },
     })),
   } : null
 
