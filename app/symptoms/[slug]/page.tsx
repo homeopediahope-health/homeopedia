@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function SymptomPage({ params }: Props) {
   const { slug } = await params
   const symptom = await getSymptomBySlug(slug).catch(() => null)
-  if (!symptom || (!symptom.heroText && !symptom.whatIsThis)) notFound()
+  if (!symptom) notFound()
 
   const displayTitle = symptom.title || symptom.name || ''
 
