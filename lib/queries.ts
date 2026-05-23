@@ -95,6 +95,16 @@ export async function getDietBySlug(slug: string) {
   )
 }
 
+export async function getAllLabTests() {
+  return client.fetch(`*[_type == "labTest"] | order(name asc) {
+    name, hindiName, fullForm, slug, category, metaDescription
+  }`)
+}
+
+export async function getLabTestBySlug(slug: string) {
+  return client.fetch(`*[_type == "labTest" && slug.current == $slug][0]`, { slug })
+}
+
 export async function searchAll(query: string) {
   return client.fetch(`*[
     (_type == "disease" || _type == "medicine" || _type == "symptom") &&
