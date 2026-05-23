@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { getAllLabTests } from '@/lib/queries'
 import LabsListClient from './LabsListClient'
 
-export const revalidate = 3600
+export const revalidate = 60
 
 export const metadata: Metadata = {
   title: 'Lab Tests Guide — Normal Range, High/Low Matlab | HomeoPedia.in',
