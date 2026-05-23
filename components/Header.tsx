@@ -5,11 +5,13 @@ import { usePathname } from 'next/navigation'
 import { WA_CONSULT } from '@/lib/constants'
 
 const NAV = [
-  ['/diseases', 'Conditions'],
-  ['/diet',     'Diet Plans'],
-  ['/symptoms', 'Symptoms'],
-  ['/blog',     'Videos'],
-  ['/about',    'About'],
+  ['/',          'Home'],
+  ['/diseases',  'Conditions'],
+  ['/lab-tests', 'Labs'],
+  ['/vitamins',  'Vitamins'],
+  ['/diet',      'Diet'],
+  ['/symptoms',  'Symptoms'],
+  ['/about',     'About'],
 ] as const
 
 export default function Header() {
@@ -42,7 +44,7 @@ export default function Header() {
         {/* Desktop nav */}
         <div className="nav-links" style={{ display: 'flex', gap: 20, marginLeft: 'auto', alignItems: 'center' }}>
           {NAV.map(([href, lbl]) => {
-            const active = pathname === href || pathname.startsWith(href)
+            const active = href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href)
             return (
               <Link key={href} href={href}
                 style={{ cursor: 'pointer', fontSize: 13, fontWeight: 500, color: active ? 'var(--sage)' : 'var(--ink3)', textDecoration: 'none', transition: 'color .2s', position: 'relative', paddingBottom: 2 }}
@@ -81,7 +83,7 @@ export default function Header() {
       {mopen && (
         <div style={{ borderTop: '1px solid var(--border)', background: 'rgba(247,245,239,.97)', padding: '12px 20px 20px' }}>
           {NAV.map(([href, lbl]) => (
-            <Link key={href} href={href} onClick={() => setMopen(false)} style={{ display: 'block', padding: '13px 0', fontSize: 15, fontWeight: 500, color: pathname === href ? 'var(--sage)' : 'var(--ink2)', borderBottom: '1px solid var(--border)', textDecoration: 'none' }}>{lbl}</Link>
+            <Link key={href} href={href} onClick={() => setMopen(false)} style={{ display: 'block', padding: '13px 0', fontSize: 15, fontWeight: 500, color: (href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href)) ? 'var(--sage)' : 'var(--ink2)', borderBottom: '1px solid var(--border)', textDecoration: 'none' }}>{lbl}</Link>
           ))}
           <div style={{ marginTop: 14, display: 'flex', alignItems: 'center', gap: 6 }}>
             <span className="online-dot" style={{ width: 7, height: 7 }} />

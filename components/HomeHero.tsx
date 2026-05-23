@@ -242,13 +242,21 @@ export default function HomeHero() {
         </div>
       </div>
 
-      {/* Stats strip */}
-      <div style={{ background: 'var(--card)', borderTop: '1px solid var(--border)', padding: '18px clamp(16px,4vw,32px)' }}>
-        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', maxWidth: 640, width: '100%', margin: '0 auto' }} className="hero-stats">
-          {[['200+', 'Disease Guides'], ['50+', 'Lab Tests'], ['17+', 'Diet Charts'], ['100%', 'Doctor Reviewed']].map(([n, l], i, arr) => (
-            <div key={l} style={{ flex: 1, textAlign: 'center', padding: '14px 10px', borderRight: i < arr.length - 1 ? '1px solid var(--border)' : 'none', minWidth: 90 }}>
-              <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 26, fontWeight: 600, color: 'var(--sage)', lineHeight: 1 }}>{n}</div>
-              <div style={{ fontSize: 10, color: 'var(--ink4)', marginTop: 4, fontWeight: 500 }}>{l}</div>
+      {/* Trust strip */}
+      <div style={{ background: 'var(--card)', borderTop: '1px solid var(--border)', padding: '22px clamp(16px,4vw,48px)' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', maxWidth: 900, width: '100%', margin: '0 auto', gap: 0 }} className="hero-stats">
+          {([
+            ['⚕️', 'Doctor reviewed',   'Dr. Shadab Khan, MD Homoeopath'],
+            ['📚', 'Evidence-based',     'Boericke, Allen & 15+ yrs clinical'],
+            ['🇮🇳', 'Hinglish first',   'Aapki bhasha mein, simple'],
+            ['▶',  'Video explainers',  'Har condition ka video guide'],
+          ] as const).map(([ic, title, sub], i, arr) => (
+            <div key={title} style={{ flex: '1 1 200px', display: 'flex', alignItems: 'center', gap: 12, padding: '14px clamp(12px,2vw,28px)', borderRight: i < arr.length - 1 ? '1px solid var(--border)' : 'none' }}>
+              <span style={{ fontSize: 24, flexShrink: 0, lineHeight: 1 }}>{ic}</span>
+              <div>
+                <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', lineHeight: 1.2 }}>{title}</div>
+                <div style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 2, lineHeight: 1.35 }}>{sub}</div>
+              </div>
             </div>
           ))}
         </div>
