@@ -43,7 +43,9 @@ Is test mein mainly ye measure hota hai: RBC (oxygen carry karte hain), WBC (inf
     'Unexplained weight loss ya raat ko paseena aaye — doctor further evaluation ke liye CBC likhta hai',
     'Koi medicine chal rahi ho jo blood affect kare — chemotherapy, antibiotics ya kuch BP medicines',
   ],
-  whatItDetects: `CBC ek akela test hai jo anemia, infection, inflammation, clotting disorders, aur kabhi kabhi blood-related serious conditions ko indicate kar sakta hai. Ye test diagnosis nahi karta — ye doctor ko direction deta hai ki aage kaunse tests karwane hain.`,
+  whatItDetects: `CBC ek akela test hai jo anemia, infection, inflammation, aur clotting disorders ko indicate kar sakta hai. Ye test diagnosis nahi karta — ye doctor ko direction deta hai ki aage kaunse tests karwane hain.
+
+Ye ek bahut hi basic test hai — lagbhag har bimari ki initial jaanch mein doctor pehle CBC hi likhta hai. Koi bhi symptom ho — thakaan, bukhar, dard — CBC pehla step hota hai.`,
 
   normalRanges: [
     { _key: 'rbc-male',        parameter: 'RBC (Mard)',               normalRange: '4.5 – 5.5',        unit: 'million/µL', highBrief: 'Dehydration, Polycythemia',       lowBrief: 'Anemia, Blood Loss' },
@@ -212,12 +214,12 @@ Koi infection theek ho rahi ho: Antibiotics course khatam hone ke 1-2 hafte baad
 Chronic bimari (diabetes, kidney) mein: Doctor 3-6 mahine mein regular monitoring recommend karta hai.`,
 
   linkedDiseases: [
-    { _key: 'ld-anaemia',    diseaseName: 'Anaemia (Khoon Ki Kami)',  diseaseSlug: 'anaemia',    isAvailable: false },
-    { _key: 'ld-dengue',     diseaseName: 'Dengue',                   diseaseSlug: 'dengue',     isAvailable: false },
-    { _key: 'ld-typhoid',    diseaseName: 'Typhoid',                  diseaseSlug: 'typhoid',    isAvailable: false },
-    { _key: 'ld-leukaemia',  diseaseName: 'Leukaemia (Blood Cancer)', diseaseSlug: 'leukaemia',  isAvailable: false },
-    { _key: 'ld-thyroid',    diseaseName: 'Thyroid Bimari',           diseaseSlug: 'thyroid',    isAvailable: true },
-    { _key: 'ld-diabetes',   diseaseName: 'Diabetes',                 diseaseSlug: 'diabetes',   isAvailable: false },
+    { _key: 'ld-infection', diseaseName: 'Infection (Bacterial / Viral)', diseaseSlug: 'infection', isAvailable: false },
+    { _key: 'ld-anaemia',   diseaseName: 'Anaemia (Khoon Ki Kami)',       diseaseSlug: 'anaemia',   isAvailable: false },
+    { _key: 'ld-dengue',    diseaseName: 'Dengue',                        diseaseSlug: 'dengue',    isAvailable: false },
+    { _key: 'ld-typhoid',   diseaseName: 'Typhoid',                       diseaseSlug: 'typhoid',   isAvailable: false },
+    { _key: 'ld-thyroid',   diseaseName: 'Thyroid Bimari',                diseaseSlug: 'thyroid',   isAvailable: true },
+    { _key: 'ld-diabetes',  diseaseName: 'Diabetes',                      diseaseSlug: 'diabetes',  isAvailable: false },
   ],
 
   relatedTests: [
