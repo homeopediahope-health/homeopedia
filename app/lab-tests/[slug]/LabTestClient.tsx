@@ -6,449 +6,434 @@ import { WA_BASE } from '@/lib/constants'
 
 const serif = 'var(--font-display,Georgia,serif)'
 
-function Section({ title, children, mb = 44 }: { title?: string; children: React.ReactNode; mb?: number }) {
+function LSec({ id, eyebrow, title, children }: { id: string; eyebrow?: string; title: string; children: React.ReactNode }) {
   return (
-    <div style={{ marginBottom: mb }}>
-      {title && <h2 style={{ fontFamily: serif, fontSize: 'clamp(20px,3vw,26px)', fontWeight: 700, color: 'var(--ink)', marginBottom: 18 }}>{title}</h2>}
-      {children}
-    </div>
-  )
-}
-
-function FaqItem({ q, a, index }: { q: string; a: string; index: number }) {
-  const [open, setOpen] = useState(index === 0)
-  return (
-    <div style={{ border: '1px solid var(--border)', borderRadius: 12, overflow: 'hidden', marginBottom: 10 }}>
-      <button onClick={() => setOpen(!open)} style={{ width: '100%', textAlign: 'left', padding: '18px 20px', background: open ? 'var(--bg2)' : 'var(--card)', border: 'none', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
-        <span style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', lineHeight: 1.5 }}>{q}</span>
-        <span style={{ fontSize: 20, color: 'var(--gold-dk)', flexShrink: 0, transform: open ? 'rotate(45deg)' : 'none', transition: 'transform .2s' }}>+</span>
-      </button>
-      {open && (
-        <div style={{ padding: '4px 20px 20px', background: 'var(--card)' }}>
-          {a.split('\n').map((line, i) =>
-            line.trim().startsWith('-') ? (
-              <div key={i} style={{ display: 'flex', gap: 8, marginBottom: 6 }}>
-                <span style={{ color: 'var(--gold-dk)', flexShrink: 0, marginTop: 2 }}>•</span>
-                <span style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300 }}>{line.replace(/^-\s*/, '')}</span>
-              </div>
-            ) : line.trim() ? (
-              <p key={i} style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: 8 }}>{line}</p>
-            ) : <div key={i} style={{ height: 8 }} />
-          )}
+    <div id={`sec-${id}`} style={{ marginTop: 48, scrollMarginTop: 160 }}>
+      {eyebrow && (
+        <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase' as const, color: 'var(--sage-dk)', marginBottom: 8, display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div style={{ width: 14, height: 1, background: 'var(--sage-dk)', opacity: 0.6 }} />
+          {eyebrow}
         </div>
       )}
+      <h2 style={{ fontFamily: serif, fontSize: 'clamp(22px,3vw,32px)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.05, color: 'var(--ink)' }}>{title}</h2>
+      <div style={{ marginTop: 16 }}>{children}</div>
     </div>
   )
 }
 
-export default function LabTestClient({ test }: { test: any }) {
-  const waLink = `${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20${encodeURIComponent(test.name)}%20report%20ke%20baare%20mein%20guidance%20chahiye.`
+function FaqItem({ q, a, index, open, toggle }: { q: string; a: string; index: number; open: boolean; toggle: () => void }) {
+  return (
+    <div onClick={toggle} style={{ background: 'var(--card)', border: `1px solid ${open ? 'var(--sage)' : 'var(--border)'}`, borderRadius: 14, cursor: 'pointer', overflow: 'hidden', boxShadow: open ? '0 8px 24px rgba(63,107,77,.1)' : 'none', transition: 'all .35s cubic-bezier(.2,.8,.2,1)' }}>
+      <div style={{ padding: '18px 22px', display: 'flex', alignItems: 'center', gap: 14 }}>
+        <div style={{ width: 30, height: 30, borderRadius: '50%', background: open ? 'var(--sage)' : 'var(--bg2)', color: open ? '#fff' : 'var(--ink3)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 11, fontWeight: 700, flexShrink: 0 }}>{String(index + 1).padStart(2, '0')}</div>
+        <div style={{ flex: 1, fontFamily: serif, fontSize: 'clamp(14px,1.8vw,16px)', fontWeight: 600, letterSpacing: '-0.01em' }}>{q}</div>
+        <div style={{ width: 26, height: 26, borderRadius: '50%', background: 'var(--bg2)', display: 'flex', alignItems: 'center', justifyContent: 'center', transform: open ? 'rotate(45deg)' : 'rotate(0)', transition: 'transform .3s', fontSize: 14, flexShrink: 0 }}>+</div>
+      </div>
+      <div style={{ maxHeight: open ? 600 : 0, overflow: 'hidden', transition: 'max-height .5s cubic-bezier(.2,.8,.2,1)' }}>
+        <div style={{ padding: '4px 22px 22px 66px', fontSize: 'clamp(13px,1.5vw,14px)', color: 'var(--ink2)', lineHeight: 1.7, borderTop: '1px dashed var(--border)' }}>
+          <p style={{ marginTop: 14 }}>{a}</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const TABS = [
+  { k: 'overview', l: 'Overview' },
+  { k: 'range',    l: 'Range' },
+  { k: 'results',  l: 'High/Low' },
+  { k: 'prep',     l: 'Prep' },
+  { k: 'myths',    l: 'Myths' },
+  { k: 'faq',      l: 'FAQ' },
+]
+
+export default function LabTestClient({ test: t }: { test: any }) {
+  const [openFaq, setOpenFaq] = useState(0)
+  const [activeTab, setActiveTab] = useState('overview')
+
+  const catIc = t.category === 'Blood' ? '🩸' : t.category === 'Hormone' ? '🔬' : t.category === 'Urine' ? '🧪' : t.category === 'Stool' ? '🧫' : t.category === 'Imaging' ? '📡' : '🔬'
+  const catTone = t.category === 'Blood' ? '#f5d7d7' : t.category === 'Hormone' ? '#dde6cd' : t.category === 'Urine' ? '#cce0e0' : '#e8d2c4'
+
+  const scrollTo = (id: string) => {
+    setActiveTab(id)
+    document.getElementById(`sec-${id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   return (
-    <div style={{ background: 'var(--bg)', minHeight: '100vh', paddingTop: 66 }}>
-
-      {/* Medical Disclaimer Strip */}
-      <div style={{ background: 'rgba(220,38,38,.04)', borderBottom: '1px solid rgba(220,38,38,.12)', padding: '8px clamp(16px,4vw,32px)' }}>
-        <p style={{ maxWidth: 820, margin: '0 auto', fontSize: 12, color: '#b91c1c', fontWeight: 400, lineHeight: 1.5 }}>
-          ⚕️ <strong>Medical Disclaimer:</strong> Ye jaankari sirf educational purpose ke liye hai. Lab report apne doctor ko dikhaye aur unki salah ke bina koi medicine na le.
-        </p>
-      </div>
+    <div style={{ paddingTop: 66, background: 'var(--bg)', minHeight: '100vh' }}>
 
       {/* Breadcrumb */}
-      <div style={{ background: 'var(--bg2)', borderBottom: '1px solid var(--border)', padding: '11px clamp(16px,4vw,32px)' }}>
-        <div style={{ maxWidth: 820, margin: '0 auto', display: 'flex', gap: 8, fontSize: 13, color: 'var(--ink4)', flexWrap: 'wrap', alignItems: 'center' }}>
-          <Link href="/" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Home</Link>
-          <span>›</span>
-          <Link href="/lab-tests" style={{ color: 'var(--gold-dk)', textDecoration: 'none' }}>Lab Tests</Link>
-          <span>›</span>
-          <span style={{ color: 'var(--ink2)' }}>{test.name}</span>
-        </div>
+      <div style={{ maxWidth: 1160, margin: '0 auto', padding: '20px clamp(16px,4vw,32px) 0', fontSize: 11, color: 'var(--ink4)', letterSpacing: '0.04em' }}>
+        <Link href="/" style={{ color: 'var(--ink4)', textDecoration: 'none' }}>Home</Link> ›{' '}
+        <Link href="/lab-tests" style={{ color: 'var(--ink4)', textDecoration: 'none' }}>Lab Tests</Link> ›{' '}
+        {t.category && <><Link href={`/lab-tests?cat=${t.category}`} style={{ color: 'var(--ink4)', textDecoration: 'none' }}>{t.category}</Link> › </>}
+        <strong style={{ color: 'var(--ink2)', fontWeight: 700 }}>{t.name}</strong>
       </div>
 
-      {/* Hero */}
-      <div style={{ background: 'linear-gradient(135deg,var(--bg) 60%,var(--bg2) 100%)', borderBottom: '1px solid var(--border)', padding: '44px clamp(16px,4vw,32px) 36px' }}>
-        <div style={{ maxWidth: 820, margin: '0 auto' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: 14 }}>
-            <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'var(--gold-bg)', color: 'var(--gold-dk)', border: '1px solid rgba(184,145,42,.25)', letterSpacing: 1.5, textTransform: 'uppercase' }}>Lab Test Guide</span>
-            {test.category && <span style={{ fontSize: 11, fontWeight: 600, padding: '4px 14px', borderRadius: 100, background: 'rgba(58,125,82,.08)', color: 'var(--sage)', border: '1px solid rgba(58,125,82,.2)', letterSpacing: 1.2, textTransform: 'uppercase' }}>{test.category} Test</span>}
+      {/* Hero — two column */}
+      <div style={{ maxWidth: 1160, margin: '0 auto', padding: '32px clamp(16px,4vw,32px) 28px', display: 'grid', gridTemplateColumns: 'minmax(0,1.4fr) minmax(0,1fr)', gap: 48, alignItems: 'flex-start' }} className="grid-2">
+        <div>
+          <div style={{ display: 'flex', gap: 7, marginBottom: 16, flexWrap: 'wrap' as const }}>
+            <span style={{ padding: '4px 10px', background: 'var(--sage-bg)', color: 'var(--sage-dk)', borderRadius: 99, fontSize: 10, fontWeight: 700, border: '1px solid rgba(63,107,77,.2)' }}>✓ Doctor reviewed</span>
+            <span style={{ padding: '4px 10px', background: catTone, borderRadius: 99, fontSize: 10, fontWeight: 700, color: 'var(--ink2)' }}>{catIc} {t.category}</span>
           </div>
-          <h1 style={{ fontFamily: serif, fontSize: 'clamp(26px,4vw,44px)', fontWeight: 700, color: 'var(--ink)', margin: '0 0 8px' }}>{test.name} Kya Hai?</h1>
-          {test.fullForm && <p style={{ fontSize: 16, color: 'var(--ink3)', marginBottom: 6, fontWeight: 400 }}>Full Form: <strong>{test.fullForm}</strong></p>}
-          {test.hindiName && <p style={{ fontSize: 16, color: 'var(--ink3)', marginBottom: 20, fontWeight: 300 }}>{test.hindiName}</p>}
-          {test.heroText && test.heroText.split('\n\n').map((para: string, i: number) => (
-            <p key={i} style={{ fontSize: 16, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, marginBottom: 12, maxWidth: 680 }}>{para}</p>
-          ))}
-          <p style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 18, fontWeight: 300 }}>
-            <Link href="/about" style={{ color: 'var(--gold-dk)', textDecoration: 'none', fontWeight: 500 }}>Dr. Shadab Khan, MD Homoeopath</Link> — Clinically Reviewed | {test.reviewDate || 'May 2026'}
-          </p>
+          <h1 style={{ fontFamily: serif, fontSize: 'clamp(40px,7vw,76px)', fontWeight: 600, letterSpacing: '-0.035em', lineHeight: 0.95, color: 'var(--ink)' }}>{t.name}</h1>
+          {t.fullForm && <div style={{ fontFamily: serif, fontStyle: 'italic', color: 'var(--sage)', fontSize: 'clamp(15px,2vw,21px)', marginTop: 10, fontWeight: 500 }}>{t.fullForm}{t.hindiName ? ` · ${t.hindiName}` : ''}</div>}
+          {t.heroText && <p style={{ fontSize: 'clamp(14px,1.8vw,17px)', color: 'var(--ink2)', marginTop: 20, lineHeight: 1.65, maxWidth: 580, fontWeight: 300 }}>{t.heroText}</p>}
+
+          {/* Section nav pills */}
+          <div style={{ marginTop: 28, display: 'flex', gap: 6, flexWrap: 'wrap' as const }}>
+            {TABS.map(({ k, l }) => (
+              <button key={k} onClick={() => scrollTo(k)} style={{
+                padding: '8px 14px', borderRadius: 99, fontSize: 11, fontWeight: 700, cursor: 'pointer',
+                background: activeTab === k ? 'var(--ink)' : 'var(--card)', color: activeTab === k ? '#fff' : 'var(--ink2)',
+                border: `1px solid ${activeTab === k ? 'var(--ink)' : 'var(--border)'}`,
+                textTransform: 'uppercase' as const, letterSpacing: '0.04em',
+              }}>{l}</button>
+            ))}
+          </div>
+        </div>
+
+        {/* Sidebar card — test details quick info */}
+        <div style={{ padding: 24, background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 20, boxShadow: '0 12px 30px rgba(38,74,48,.06)' }}>
+          <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: 'var(--sage)', textTransform: 'uppercase' as const }}>Test Details</div>
+          <div style={{ marginTop: 14, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            {[
+              ['🩸', 'Sample', t.sampleInfo?.sampleType || 'Blood'],
+              ['🍽', 'Fasting', t.preparation?.fastingRequired ? `${t.preparation?.fastingHours || 8}–10 hrs` : 'Not needed'],
+              ['⏱', 'Report', t.sampleInfo?.reportTime || '24 hrs'],
+              ['💉', 'Amount', t.sampleInfo?.sampleAmount || '3–5 mL'],
+            ].map(([ic, label, val]) => (
+              <div key={label as string} style={{ padding: '12px 14px', background: 'var(--bg)', borderRadius: 10 }}>
+                <div style={{ fontSize: 20 }}>{ic}</div>
+                <div style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', color: 'var(--ink4)', textTransform: 'uppercase' as const, marginTop: 6 }}>{label}</div>
+                <div style={{ fontFamily: serif, fontSize: 14, fontWeight: 600, marginTop: 3 }}>{val}</div>
+              </div>
+            ))}
+          </div>
+          <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ marginTop: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '12px 16px', background: 'var(--sage)', color: '#fff', borderRadius: 12, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>💬 Report doctor ko dikhayein</a>
         </div>
       </div>
 
-      <div style={{ maxWidth: 820, margin: '0 auto', padding: '44px clamp(16px,4vw,32px) 80px' }}>
+      {/* Main content + sticky sidebar — two column */}
+      <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 clamp(16px,4vw,32px) 80px', display: 'grid', gridTemplateColumns: 'minmax(0,1.6fr) minmax(0,1fr)', gap: 48, alignItems: 'flex-start' }} className="grid-2">
 
-        {/* Section 3: Kab Karaye */}
-        {(test.whenToTest?.length > 0 || test.whatItDetects) && (
-          <Section title="Ye Test Kab Aur Kyun Karwate Hain?">
-            {test.whenToTest?.length > 0 && (
-              <div style={{ marginBottom: test.whatItDetects ? 20 : 0 }}>
-                <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 14 }}>Doctor ye test likhta hai jab:</p>
-                <div style={{ display: 'grid', gap: 10 }}>
-                  {test.whenToTest.map((item: string, i: number) => (
-                    <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', padding: '12px 16px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 10 }}>
-                      <span style={{ color: 'var(--gold-dk)', flexShrink: 0, fontSize: 16, marginTop: 1 }}>→</span>
-                      <span style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{item}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-            {test.whatItDetects && (
-              <div style={{ padding: '18px 20px', background: 'rgba(58,125,82,.05)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 12, marginTop: 16 }}>
-                <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--sage)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 10 }}>Is Test Se Kya Detect Hota Hai</p>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{test.whatItDetects}</p>
-              </div>
-            )}
-          </Section>
-        )}
+        {/* ─── LEFT: content ─── */}
+        <div>
 
-        {/* Section 4: Normal Range Table */}
-        {test.normalRanges?.length > 0 && (
-          <Section title="Normal Range Table">
-            <p style={{ fontSize: 14, color: 'var(--ink4)', marginBottom: 14, fontWeight: 300 }}>⭐ Sabse important section — apni age/gender ke hisaab se range check karo</p>
-            <div style={{ overflowX: 'auto', borderRadius: 12, border: '1px solid var(--border)' }}>
-              <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, minWidth: 500 }}>
-                <thead>
-                  <tr style={{ background: 'rgba(58,125,82,.1)', borderBottom: '2px solid rgba(58,125,82,.3)' }}>
-                    {['Parameter', 'Normal Range', 'Unit', 'High Matlab', 'Low Matlab'].map(h => (
-                      <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontWeight: 700, color: 'var(--sage)', fontSize: 13, whiteSpace: 'nowrap' }}>{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {test.normalRanges.map((row: any, i: number) => (
-                    <tr key={i} style={{ borderBottom: '1px solid var(--border)', background: i % 2 === 0 ? 'var(--card)' : 'var(--bg)' }}>
-                      <td style={{ padding: '12px 14px', fontWeight: 600, color: 'var(--ink)', lineHeight: 1.5 }}>{row.parameter}</td>
-                      <td style={{ padding: '12px 14px', color: 'var(--sage)', fontWeight: 700 }}>{row.normalRange}</td>
-                      <td style={{ padding: '12px 14px', color: 'var(--ink3)', fontWeight: 400 }}>{row.unit}</td>
-                      <td style={{ padding: '12px 14px', color: '#b45309', fontWeight: 400, fontSize: 13 }}>{row.highBrief || '—'}</td>
-                      <td style={{ padding: '12px 14px', color: '#2563eb', fontWeight: 400, fontSize: 13 }}>{row.lowBrief || '—'}</td>
+          {/* OVERVIEW — When & why */}
+          {t.whenToTest?.length > 0 && (
+            <LSec id="overview" eyebrow="Overview" title="Ye test kab aur kyun karwayein?">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: 10 }}>
+                {t.whenToTest.map((item: string, i: number) => (
+                  <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '14px 16px', display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                    <div style={{ width: 28, height: 28, borderRadius: 8, background: 'var(--sage-bg)', color: 'var(--sage)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 12, fontWeight: 700 }}>{i + 1}</div>
+                    <div style={{ fontSize: 13, color: 'var(--ink)', lineHeight: 1.55 }}>{item}</div>
+                  </div>
+                ))}
+              </div>
+              {t.whatItDetects && (
+                <>
+                  <h3 style={{ fontFamily: serif, fontSize: 'clamp(18px,2.5vw,22px)', fontWeight: 600, marginTop: 28, letterSpacing: '-0.02em' }}>Is test se kya pata chalta hai?</h3>
+                  <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, marginTop: 10 }}>{t.whatItDetects}</p>
+                </>
+              )}
+            </LSec>
+          )}
+
+          {/* NORMAL RANGE */}
+          {t.normalRanges?.length > 0 && (
+            <LSec id="range" eyebrow="⭐ Most important" title="Normal range — category wise">
+              <div style={{ overflowX: 'auto', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14 }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 'clamp(11px,1.5vw,13px)' }}>
+                  <thead>
+                    <tr style={{ background: 'var(--sage-bg)' }}>
+                      {['Category', 'Normal Range', 'Unit', 'High → meaning', 'Low → meaning'].map(h => (
+                        <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase' as const, color: 'var(--ink3)', whiteSpace: 'nowrap' }}>{h}</th>
+                      ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <p style={{ fontSize: 12, color: 'var(--ink4)', marginTop: 10, fontWeight: 300, fontStyle: 'italic' }}>Note: Ye ranges approximate hain. Different labs ki values thodi alag ho sakti hain — apni lab ki reference range zaroor dekho.</p>
-          </Section>
-        )}
+                  </thead>
+                  <tbody>
+                    {t.normalRanges.map((r: any, i: number) => (
+                      <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                        <td style={{ padding: '11px 14px', fontWeight: 700, color: 'var(--ink)', lineHeight: 1.4 }}>{r.parameter}</td>
+                        <td style={{ padding: '11px 14px', fontFamily: serif, fontSize: 14, fontWeight: 600, color: 'var(--sage-dk)', whiteSpace: 'nowrap' }}>{r.normalRange}</td>
+                        <td style={{ padding: '11px 14px', color: 'var(--ink3)', whiteSpace: 'nowrap' }}>{r.unit}</td>
+                        <td style={{ padding: '11px 14px', color: '#a23838', fontSize: 12 }}>{r.highBrief}</td>
+                        <td style={{ padding: '11px 14px', color: 'var(--warm)', fontSize: 12 }}>{r.lowBrief}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
 
-        {/* Section 5: Pregnancy */}
-        {test.pregnancyInfo?.applicable && (
-          <Section title="Pregnancy Mein Ye Test 🤰">
-            <div style={{ padding: '22px 24px', background: 'rgba(236,72,153,.04)', border: '1px solid rgba(236,72,153,.2)', borderRadius: 14 }}>
-              {test.pregnancyInfo.normalRange && (
-                <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 16, padding: '12px 16px', background: 'rgba(236,72,153,.08)', borderRadius: 10 }}>
-                  <span style={{ fontSize: 20 }}>🤰</span>
-                  <div>
-                    <p style={{ fontSize: 12, fontWeight: 700, color: '#be185d', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 }}>Pregnancy Mein Normal Range</p>
-                    <p style={{ fontSize: 18, fontWeight: 700, color: 'var(--ink)', margin: 0 }}>{test.pregnancyInfo.normalRange}</p>
+              {/* Pregnancy section */}
+              {t.pregnancyInfo?.applicable && (
+                <div style={{ marginTop: 16, padding: '18px 20px', background: '#fff5f8', border: '1px solid #e8c4d4', borderLeft: '4px solid #d97e9b', borderRadius: 14 }}>
+                  <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: '#a04d6c', textTransform: 'uppercase' as const, display: 'flex', alignItems: 'center', gap: 8, marginBottom: 10 }}>
+                    <span style={{ fontSize: 18 }}>🤰</span> Pregnancy mein
                   </div>
+                  {t.pregnancyInfo.normalRange && <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.65, marginBottom: 6 }}><strong>Normal range:</strong> {t.pregnancyInfo.normalRange}</p>}
+                  {t.pregnancyInfo.riskNote && <p style={{ fontSize: 13, color: '#7a3055', lineHeight: 1.65, marginBottom: 6 }}>{t.pregnancyInfo.riskNote}</p>}
+                  {t.pregnancyInfo.whenDoctor && <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.6, fontStyle: 'italic' }}>Doctor ko kab dikhaye: {t.pregnancyInfo.whenDoctor}</p>}
                 </div>
               )}
-              {test.pregnancyInfo.riskNote && <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.8, fontWeight: 300, marginBottom: 12 }}>{test.pregnancyInfo.riskNote}</p>}
-              {test.pregnancyInfo.whenDoctor && (
-                <div style={{ borderTop: '1px solid rgba(236,72,153,.15)', paddingTop: 12 }}>
-                  <p style={{ fontSize: 13, fontWeight: 600, color: '#be185d', marginBottom: 6 }}>Doctor kab likhta hai ye test pregnancy mein:</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{test.pregnancyInfo.whenDoctor}</p>
-                </div>
-              )}
-            </div>
-          </Section>
-        )}
+            </LSec>
+          )}
 
-        {/* Section 6: High Matlab */}
-        {(test.highMeans?.length > 0 || test.highReassurance) && (
-          <Section title={`${test.name} High Hone Ka Matlab?`}>
-            <p style={{ fontSize: 14, color: 'var(--ink4)', marginBottom: 14, fontWeight: 300 }}>⭐ Sabse zyada search hone wala question</p>
-            {test.highMeans?.length > 0 && (
-              <div style={{ padding: '18px 20px', background: 'rgba(234,179,8,.04)', border: '1.5px solid rgba(234,179,8,.3)', borderRadius: 12, marginBottom: 14 }}>
-                <p style={{ fontSize: 14, fontWeight: 700, color: '#b45309', marginBottom: 14 }}>⬆️ High Hone Ke Karan</p>
-                {test.highMeans.map((cause: string, i: number) => (
-                  <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
-                    <span style={{ color: '#b45309', flexShrink: 0, marginTop: 3, fontSize: 8 }}>●</span>
-                    <span style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300 }}>{cause}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {test.highReassurance && (
-              <div style={{ padding: '14px 18px', background: 'rgba(34,197,94,.05)', border: '1px solid rgba(34,197,94,.25)', borderRadius: 10 }}>
-                <p style={{ fontSize: 15, color: '#16a34a', lineHeight: 1.7, fontWeight: 500, margin: 0 }}>✅ {test.highReassurance}</p>
-              </div>
-            )}
-          </Section>
-        )}
-
-        {/* Section 7: Low Matlab */}
-        {(test.lowMeans?.length > 0 || test.lowConcern) && (
-          <Section title={`${test.name} Low Hone Ka Matlab?`}>
-            {test.lowMeans?.length > 0 && (
-              <div style={{ padding: '18px 20px', background: 'rgba(37,99,235,.04)', border: '1.5px solid rgba(37,99,235,.2)', borderRadius: 12, marginBottom: 14 }}>
-                <p style={{ fontSize: 14, fontWeight: 700, color: '#2563eb', marginBottom: 14 }}>⬇️ Low Hone Ke Karan</p>
-                {test.lowMeans.map((cause: string, i: number) => (
-                  <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
-                    <span style={{ color: '#2563eb', flexShrink: 0, marginTop: 3, fontSize: 8 }}>●</span>
-                    <span style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300 }}>{cause}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {test.lowConcern && (
-              <div style={{ padding: '14px 18px', background: 'rgba(37,99,235,.05)', border: '1px solid rgba(37,99,235,.15)', borderRadius: 10 }}>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}><strong style={{ color: '#2563eb' }}>Kab concern karein:</strong> {test.lowConcern}</p>
-              </div>
-            )}
-          </Section>
-        )}
-
-        {/* Section 8: Doctor Ko Dikhaye */}
-        {(test.redFlags?.length > 0 || test.emergencyLevel || test.selfTreatWarning) && (
-          <Section title="Kab Doctor Ko Turant Dikhaye?">
-            {test.redFlags?.length > 0 && (
-              <div style={{ padding: '18px 20px', background: 'rgba(220,38,38,.04)', border: '2px solid rgba(220,38,38,.25)', borderRadius: 12, marginBottom: 14 }}>
-                <p style={{ fontSize: 14, fontWeight: 700, color: '#dc2626', marginBottom: 14 }}>🚨 Danger Signs — Ye Ho Toh Doctor Zaruri</p>
-                {test.redFlags.map((flag: string, i: number) => (
-                  <div key={i} style={{ display: 'flex', gap: 10, marginBottom: 10, alignItems: 'flex-start' }}>
-                    <span style={{ color: '#dc2626', flexShrink: 0, fontSize: 15, marginTop: 1 }}>!</span>
-                    <span style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300 }}>{flag}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {test.emergencyLevel && (
-              <div style={{ padding: '14px 18px', background: 'rgba(220,38,38,.06)', border: '1px solid rgba(220,38,38,.2)', borderRadius: 10, marginBottom: 12 }}>
-                <p style={{ fontSize: 14, fontWeight: 700, color: '#dc2626', marginBottom: 6 }}>Emergency Level:</p>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300, margin: 0 }}>{test.emergencyLevel}</p>
-              </div>
-            )}
-            {test.selfTreatWarning && (
-              <div style={{ padding: '14px 18px', background: 'rgba(184,145,42,.06)', border: '1px solid rgba(184,145,42,.25)', borderRadius: 10 }}>
-                <p style={{ fontSize: 15, color: 'var(--gold-dk)', lineHeight: 1.7, fontWeight: 500, margin: 0 }}>⚠️ {test.selfTreatWarning}</p>
-              </div>
-            )}
-          </Section>
-        )}
-
-        {/* Section 9: Preparation */}
-        {test.preparation && (
-          <Section title="Test Ki Taiyari Kaise Karein?">
-            <p style={{ fontSize: 14, color: 'var(--ink4)', marginBottom: 18, fontWeight: 300 }}>⭐ Test se pehle ye zaroor padho — accurate report ke liye</p>
-            <div style={{ display: 'grid', gap: 12 }}>
-              <div style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 16 }}>
-                  <div>
-                    <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--ink4)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>Fasting Chahiye?</p>
-                    <p style={{ fontSize: 16, fontWeight: 700, color: test.preparation.fastingRequired ? '#dc2626' : '#16a34a', margin: 0 }}>
-                      {test.preparation.fastingRequired ? `Haan — ${test.preparation.fastingHours || '8-10'} ghante khali pet` : 'Nahi — Fasting Zaruri Nahi'}
-                    </p>
-                  </div>
-                  {test.preparation.bestTime && (
-                    <div>
-                      <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--ink4)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 6 }}>Best Time</p>
-                      <p style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)', margin: 0 }}>{test.preparation.bestTime}</p>
+          {/* HIGH / LOW */}
+          {(t.highMeans?.length > 0 || t.lowMeans?.length > 0) && (
+            <LSec id="results" eyebrow="High / Low explained" title="Result ka matlab?">
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(240px,1fr))', gap: 14 }}>
+                {t.highMeans?.length > 0 && (
+                  <div style={{ background: 'rgba(162,56,56,0.07)', border: '1px solid rgba(162,56,56,0.2)', borderRadius: 14, padding: '18px 20px' }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: '#a23838', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <span style={{ fontSize: 16 }}>↑</span> Value HIGH hai to?
                     </div>
-                  )}
-                </div>
-              </div>
-              {test.preparation.whatToEat && (
-                <div style={{ padding: '16px 18px', background: 'rgba(34,197,94,.04)', border: '1px solid rgba(34,197,94,.2)', borderRadius: 12 }}>
-                  <p style={{ fontSize: 13, fontWeight: 700, color: '#16a34a', marginBottom: 8 }}>✅ Kha Sakte Hain</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{test.preparation.whatToEat}</p>
-                </div>
-              )}
-              {test.preparation.whatToAvoid && (
-                <div style={{ padding: '16px 18px', background: 'rgba(220,38,38,.04)', border: '1px solid rgba(220,38,38,.15)', borderRadius: 12 }}>
-                  <p style={{ fontSize: 13, fontWeight: 700, color: '#dc2626', marginBottom: 8 }}>🚫 Avoid Karein</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{test.preparation.whatToAvoid}</p>
-                </div>
-              )}
-              {test.preparation.medicineNote && (
-                <div style={{ padding: '16px 18px', background: 'rgba(184,145,42,.05)', border: '1px solid rgba(184,145,42,.2)', borderRadius: 12 }}>
-                  <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--gold-dk)', marginBottom: 8 }}>💊 Medicine Ke Baare Mein</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{test.preparation.medicineNote}</p>
-                </div>
-              )}
-              {test.preparation.accuracyNote && (
-                <div style={{ padding: '16px 18px', background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                  <p style={{ fontSize: 13, fontWeight: 700, color: 'var(--ink)', marginBottom: 8 }}>🎯 Accurate Report Ke Liye</p>
-                  <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>{test.preparation.accuracyNote}</p>
-                </div>
-              )}
-            </div>
-          </Section>
-        )}
-
-        {/* Section 10: Sample Info */}
-        {test.sampleInfo && (
-          <Section title="Sample Type & Report Time">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(180px,1fr))', gap: 12 }}>
-              {test.sampleInfo.sampleType && (
-                <div style={{ padding: '16px 18px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--ink4)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>Sample Type</p>
-                  <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', margin: 0 }}>{test.sampleInfo.sampleType}</p>
-                </div>
-              )}
-              {test.sampleInfo.sampleAmount && (
-                <div style={{ padding: '16px 18px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--ink4)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>Kitna Sample</p>
-                  <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--ink)', margin: 0 }}>{test.sampleInfo.sampleAmount}</p>
-                </div>
-              )}
-              {test.sampleInfo.reportTime && (
-                <div style={{ padding: '16px 18px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                  <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--ink4)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>Report Aane Ka Time</p>
-                  <p style={{ fontSize: 16, fontWeight: 600, color: 'var(--sage)', margin: 0 }}>{test.sampleInfo.reportTime}</p>
-                </div>
-              )}
-              <div style={{ padding: '16px 18px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: 'var(--ink4)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>Online Report</p>
-                <p style={{ fontSize: 16, fontWeight: 600, color: test.sampleInfo.onlineAvailable ? '#16a34a' : 'var(--ink3)', margin: 0 }}>{test.sampleInfo.onlineAvailable ? 'Milti Hai ✓' : 'Lab Pe Lena Padega'}</p>
-              </div>
-            </div>
-          </Section>
-        )}
-
-        {/* Section 11: Myths */}
-        {test.myths?.length > 0 && (
-          <Section title="Myths & Galat Fehmiyan 🚫">
-            <p style={{ fontSize: 14, color: 'var(--ink4)', marginBottom: 18, fontWeight: 300 }}>Ye aam galat soch hain — sahi baat jaano</p>
-            <div style={{ display: 'grid', gap: 12 }}>
-              {test.myths.map((item: any, i: number) => (
-                <div key={i} style={{ borderRadius: 12, overflow: 'hidden', border: '1px solid var(--border)' }}>
-                  <div style={{ padding: '12px 16px', background: 'rgba(220,38,38,.05)', borderBottom: '1px solid rgba(220,38,38,.12)' }}>
-                    <p style={{ fontSize: 14, fontWeight: 600, color: '#dc2626', margin: 0 }}>🚫 Myth: {item.myth}</p>
-                  </div>
-                  <div style={{ padding: '12px 16px', background: 'rgba(34,197,94,.04)' }}>
-                    <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.75, fontWeight: 300, margin: 0 }}>✅ <strong style={{ color: '#16a34a' }}>Sahi Baat:</strong> {item.truth}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Section>
-        )}
-
-        {/* Section 12: Comparison */}
-        {test.comparisons?.length > 0 && (
-          <Section title="Test Comparison">
-            <div style={{ display: 'grid', gap: 14 }}>
-              {test.comparisons.map((comp: any, i: number) => (
-                <div key={i} style={{ padding: '20px 22px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, flexWrap: 'wrap', marginBottom: 14 }}>
-                    <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink)', margin: 0 }}>{test.name} vs {comp.comparedTest}</h3>
-                    {comp.comparedTestSlug && (
-                      <Link href={`/lab-tests/${comp.comparedTestSlug}`} style={{ fontSize: 12, padding: '5px 14px', background: 'rgba(58,125,82,.1)', color: 'var(--sage)', border: '1px solid rgba(58,125,82,.25)', borderRadius: 100, textDecoration: 'none', fontWeight: 600 }}>{comp.comparedTest} Guide →</Link>
-                    )}
-                  </div>
-                  {comp.differencePoints?.length > 0 && (
-                    <div style={{ display: 'grid', gap: 8 }}>
-                      {comp.differencePoints.map((pt: string, j: number) => (
-                        <div key={j} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
-                          <span style={{ color: 'var(--gold-dk)', flexShrink: 0, marginTop: 2 }}>•</span>
-                          <span style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7, fontWeight: 300 }}>{pt}</span>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      {t.highMeans.map((item: string, i: number) => (
+                        <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>
+                          <span style={{ width: 6, height: 6, borderRadius: '50%', background: '#a23838', marginTop: 6, flexShrink: 0 }} />
+                          {item}
                         </div>
                       ))}
                     </div>
+                    {t.highReassurance && <p style={{ marginTop: 12, fontSize: 12, color: '#a23838', fontStyle: 'italic', lineHeight: 1.55 }}>{t.highReassurance}</p>}
+                  </div>
+                )}
+                {t.lowMeans?.length > 0 && (
+                  <div style={{ background: 'var(--bg2)', border: '1px solid var(--border2)', borderRadius: 14, padding: '18px 20px' }}>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, color: 'var(--warm)', marginBottom: 12, display: 'flex', alignItems: 'center', gap: 6 }}>
+                      <span style={{ fontSize: 16 }}>↓</span> Value LOW hai to?
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      {t.lowMeans.map((item: string, i: number) => (
+                        <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8, fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55 }}>
+                          <span style={{ width: 6, height: 6, borderRadius: '50%', background: 'var(--warm)', marginTop: 6, flexShrink: 0 }} />
+                          {item}
+                        </div>
+                      ))}
+                    </div>
+                    {t.lowConcern && <p style={{ marginTop: 12, fontSize: 12, color: 'var(--warm)', fontStyle: 'italic', lineHeight: 1.55 }}>{t.lowConcern}</p>}
+                  </div>
+                )}
+              </div>
+
+              {/* Danger signs */}
+              {t.redFlags?.length > 0 && (
+                <div style={{ marginTop: 16, padding: '16px 18px', background: 'rgba(162,56,56,0.06)', border: '1px solid rgba(162,56,56,0.18)', borderRadius: 12, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                  <div style={{ fontSize: 22, flexShrink: 0 }}>⚠️</div>
+                  <div>
+                    <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: '#a23838', textTransform: 'uppercase' as const, marginBottom: 8 }}>Doctor ko turant dikhayein — emergency signs</div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: 5 }}>
+                      {t.redFlags.map((flag: string, i: number) => (
+                        <div key={i} style={{ fontSize: 13, color: 'var(--ink2)', lineHeight: 1.55, display: 'flex', gap: 8 }}>
+                          <span style={{ color: '#a23838', flexShrink: 0 }}>→</span> {flag}
+                        </div>
+                      ))}
+                    </div>
+                    {t.emergencyLevel && <p style={{ marginTop: 10, fontSize: 12, color: '#a23838', fontStyle: 'italic' }}>{t.emergencyLevel}</p>}
+                  </div>
+                </div>
+              )}
+            </LSec>
+          )}
+
+          {/* PREPARATION */}
+          {t.preparation && (
+            <LSec id="prep" eyebrow="⭐ Before you go" title="Test ki taiyari — best time & tips">
+              <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 16, padding: '24px 28px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: 20 }}>
+                  {[
+                    ['🍽', 'Fasting', t.preparation.fastingRequired ? `${t.preparation.fastingHours || 8}–10 ghante fasting required` : 'Fasting required nahi'],
+                    ['⏰', 'Best Time', t.preparation.bestTime],
+                    ['✅', 'Kya Khayein', t.preparation.whatToEat],
+                    ['🚫', 'Kya Avoid Karein', t.preparation.whatToAvoid],
+                    ['💊', 'Medicines', t.preparation.medicineNote],
+                  ].filter(([, , val]) => val).map(([ic, label, val]) => (
+                    <div key={label as string} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                      <div style={{ fontSize: 22, flexShrink: 0 }}>{ic}</div>
+                      <div>
+                        <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: 'var(--sage)', textTransform: 'uppercase' as const }}>{label}</div>
+                        <div style={{ fontSize: 13, color: 'var(--ink2)', marginTop: 5, lineHeight: 1.55 }}>{val}</div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                {t.preparation.accuracyNote && (
+                  <div style={{ marginTop: 18, padding: '12px 16px', background: 'var(--bg2)', borderRadius: 10, fontSize: 13, color: 'var(--ink2)', lineHeight: 1.6, fontStyle: 'italic', fontFamily: serif }}>
+                    💡 {t.preparation.accuracyNote}
+                  </div>
+                )}
+              </div>
+            </LSec>
+          )}
+
+          {/* MYTHS */}
+          {t.myths?.length > 0 && (
+            <LSec id="myths" eyebrow="🚫 Bust the myth" title="Common myths & sach kya hai?">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {t.myths.map((m: any, i: number) => (
+                  <div key={i} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '18px 22px' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                      <span style={{ padding: '2px 8px', background: 'rgba(162,56,56,0.1)', color: '#a23838', borderRadius: 99, fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', flexShrink: 0 }}>MYTH</span>
+                      <div style={{ fontFamily: serif, fontSize: 'clamp(14px,1.8vw,16px)', fontWeight: 600, letterSpacing: '-0.01em', color: 'var(--ink)' }}>{m.myth}</div>
+                    </div>
+                    <div style={{ marginTop: 10, display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                      <span style={{ padding: '2px 8px', background: 'var(--sage-bg)', color: 'var(--sage)', borderRadius: 99, fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', flexShrink: 0 }}>FACT</span>
+                      <div style={{ fontSize: 'clamp(13px,1.5vw,14px)', color: 'var(--ink2)', lineHeight: 1.65 }}>{m.truth}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </LSec>
+          )}
+
+          {/* COMPARISON */}
+          {t.comparisons?.length > 0 && (
+            <LSec id="vs" eyebrow="Comparison" title="Dusre tests se kya fark hai?">
+              {t.comparisons.map((comp: any, ci: number) => (
+                <div key={ci} style={{ marginBottom: 24, overflowX: 'auto', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14 }}>
+                  <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+                    <thead>
+                      <tr style={{ background: 'var(--bg2)' }}>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: 'var(--ink3)' }}>Parameter</th>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: 'var(--ink3)' }}>{t.name}</th>
+                        <th style={{ padding: '12px 16px', textAlign: 'left', fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: 'var(--ink3)' }}>{comp.comparedTest}</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {comp.differencePoints?.map((point: string, i: number) => {
+                        const parts = point.split('|')
+                        return (
+                          <tr key={i} style={{ borderTop: '1px solid var(--border)' }}>
+                            <td style={{ padding: '11px 16px', fontWeight: 700, color: 'var(--ink)' }}>{parts[0]?.trim()}</td>
+                            <td style={{ padding: '11px 16px', color: 'var(--ink2)' }}>{parts[1]?.trim()}</td>
+                            <td style={{ padding: '11px 16px', color: 'var(--ink2)' }}>{parts[2]?.trim()}</td>
+                          </tr>
+                        )
+                      })}
+                    </tbody>
+                  </table>
+                  {comp.comparedTestSlug && (
+                    <div style={{ padding: '12px 16px', borderTop: '1px solid var(--border)' }}>
+                      <Link href={`/lab-tests/${comp.comparedTestSlug}`} style={{ fontSize: 13, color: 'var(--sage)', fontWeight: 700, textDecoration: 'none' }}>View {comp.comparedTest} guide →</Link>
+                    </div>
                   )}
                 </div>
               ))}
-            </div>
-          </Section>
-        )}
+            </LSec>
+          )}
 
-        {/* Section 13: Repeat Info */}
-        {test.repeatInfo && (
-          <Section title="Repeat Kab Karaye?">
-            <div style={{ padding: '18px 20px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12 }}>
-              <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.85, fontWeight: 300, margin: 0 }}>{test.repeatInfo}</p>
-            </div>
-          </Section>
-        )}
+          {/* REPEAT INFO */}
+          {t.repeatInfo && (
+            <LSec id="repeat" eyebrow="Follow-up" title="Repeat kab karwayein?">
+              <div style={{ padding: '20px 24px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14 }}>
+                <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7 }}>{t.repeatInfo}</p>
+              </div>
+            </LSec>
+          )}
 
-        {/* Section 14: Linked Diseases */}
-        {test.linkedDiseases?.length > 0 && (
-          <Section title="In Bimariyoon Mein Ye Test Hota Hai 🔗">
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 12 }}>
-              {test.linkedDiseases.map((d: any, i: number) => {
-                const available = d.isAvailable && d.diseaseSlug
-                const card = (
-                  <div className={available ? 'hov' : ''} style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 12, padding: '16px 18px', cursor: available ? 'pointer' : 'default', position: 'relative', overflow: 'hidden', opacity: available ? 1 : 0.75 }}>
-                    <div style={{ position: 'absolute', top: 0, left: 0, width: 3, bottom: 0, background: available ? 'linear-gradient(to bottom,var(--gold-dk),var(--gold-lt))' : 'var(--border)', borderRadius: '12px 0 0 12px' }} />
-                    <div style={{ paddingLeft: 10 }}>
-                      <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--ink)', marginBottom: 10 }}>{d.diseaseName}</p>
-                      <span style={{ fontSize: 12, color: available ? 'var(--gold)' : 'var(--ink4)', fontWeight: 600 }}>{available ? 'Full Guide →' : 'Coming Soon'}</span>
-                    </div>
+          {/* LINKED DISEASES */}
+          {t.linkedDiseases?.length > 0 && (
+            <LSec id="linked" eyebrow="Related conditions" title="Yeh test kin bimariyon mein hota hai?">
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
+                {t.linkedDiseases.map((d: any) => (
+                  d.isAvailable
+                    ? <Link key={d.diseaseName} href={`/diseases/${d.diseaseSlug}`} style={{ padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 99, fontSize: 12, fontWeight: 600, color: 'var(--ink2)', textDecoration: 'none' }}>🩺 {d.diseaseName}</Link>
+                    : <span key={d.diseaseName} style={{ padding: '8px 14px', background: 'var(--bg2)', border: '1px dashed var(--border)', borderRadius: 99, fontSize: 12, color: 'var(--ink4)' }}>🩺 {d.diseaseName} <span style={{ fontSize: 10, color: 'var(--sage-dk)' }}>Soon</span></span>
+                ))}
+              </div>
+              {t.relatedTests?.length > 0 && (
+                <>
+                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: 'var(--warm)', textTransform: 'uppercase' as const, marginTop: 24, marginBottom: 10 }}>Related tests</div>
+                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
+                    {t.relatedTests.map((rt: any) => (
+                      rt.isAvailable
+                        ? <Link key={rt.testName} href={`/lab-tests/${rt.testSlug}`} style={{ padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 99, fontSize: 12, fontWeight: 600, color: 'var(--ink2)', textDecoration: 'none' }}>🔬 {rt.testName}</Link>
+                        : <span key={rt.testName} style={{ padding: '8px 14px', background: 'var(--bg2)', border: '1px dashed var(--border)', borderRadius: 99, fontSize: 12, color: 'var(--ink4)' }}>🔬 {rt.testName} <span style={{ fontSize: 10, color: 'var(--sage-dk)' }}>Soon</span></span>
+                    ))}
                   </div>
-                )
-                return available ? (
-                  <Link key={i} href={`/diseases/${d.diseaseSlug}`} style={{ textDecoration: 'none' }}>{card}</Link>
-                ) : (
-                  <div key={i}>{card}</div>
-                )
-              })}
-            </div>
-          </Section>
-        )}
-
-        {/* Section 16: Homeopathy */}
-        {test.homeopathyAngle && (
-          <Section title="Homeopathy Ka Nazar — Ye Report Aaye Toh?">
-            <div style={{ padding: '22px 24px', background: 'rgba(58,125,82,.05)', border: '1px solid rgba(58,125,82,.2)', borderRadius: 14 }}>
-              <p style={{ fontSize: 12, fontWeight: 700, color: 'var(--sage)', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 12 }}>Homeopathy Perspective</p>
-              <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.9, fontWeight: 300, margin: 0 }}>{test.homeopathyAngle}</p>
-            </div>
-          </Section>
-        )}
-
-        {/* FAQs */}
-        {test.faqs?.length > 0 && (
-          <Section title="Aksar Pooche Jaane Wale Sawal">
-            <p style={{ fontSize: 15, color: 'var(--ink4)', marginBottom: 18, fontWeight: 300 }}>{test.faqs.length} FAQs — pehli line mein direct jawab</p>
-            {test.faqs.map((f: any, i: number) => (
-              <FaqItem key={i} q={f.question} a={f.answer} index={i} />
-            ))}
-          </Section>
-        )}
-
-        {/* CTA */}
-        <div style={{ background: 'linear-gradient(135deg,#1a3d30 0%,#0f2a1e 100%)', borderRadius: 16, padding: '32px 28px', marginBottom: 44 }}>
-          <p style={{ fontFamily: serif, color: 'white', fontSize: 'clamp(18px,2.5vw,22px)', fontWeight: 700, marginBottom: 8 }}>Report Aa Gayi — Ab Kya Karein?</p>
-          <p style={{ color: 'rgba(255,255,255,.75)', fontSize: 15, marginBottom: 22, fontWeight: 300, lineHeight: 1.75 }}>Sirf normal range dekhna kaafi nahi hota — aapki bimari, doosri medicines, aur symptoms sab milake hi sahi ilaaj tay hota hai. Dr. Shadab se ek consultation mein seedha guidance milegi.</p>
-          <a href={waLink} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 30px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 15, fontWeight: 700 }}>💬 Dr. Shadab Se Milein →</a>
-          <p style={{ color: 'rgba(255,255,255,.5)', fontSize: 13, marginTop: 14, marginBottom: 0 }}>15+ Saalon Ka Clinical Experience | Nagpur</p>
-        </div>
-
-        {/* Section 15: Related Tests */}
-        {test.relatedTests?.length > 0 && (
-          <Section title="Related Tests — Saath Mein Jo Tests Hote Hain 🔗">
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
-              {test.relatedTests.map((t: any, i: number) =>
-                t.isAvailable && t.testSlug ? (
-                  <Link key={i} href={`/lab-tests/${t.testSlug}`} style={{ padding: '10px 18px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 100, textDecoration: 'none', fontSize: 14, color: 'var(--gold-dk)', fontWeight: 500 }}>{t.testName} →</Link>
-                ) : (
-                  <span key={i} style={{ padding: '10px 18px', background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: 100, fontSize: 14, color: 'var(--ink4)', fontWeight: 400 }}>{t.testName}</span>
-                )
+                </>
               )}
-            </div>
-          </Section>
-        )}
+            </LSec>
+          )}
 
-        {/* Disclaimer */}
-        <div style={{ padding: '20px 22px', background: 'rgba(184,145,42,.04)', border: '1px solid rgba(184,145,42,.15)', borderRadius: 12 }}>
-          <p style={{ fontSize: 13, color: 'var(--ink4)', lineHeight: 1.7, fontWeight: 300, margin: 0, fontStyle: 'italic' }}>
-            "Ye jaankari educational purpose ke liye hai. Lab report apne doctor ko dikhaye aur unki salah ke bina koi medicine na le."
-          </p>
-          <p style={{ fontSize: 13, color: 'var(--ink4)', marginTop: 8, marginBottom: 0, fontWeight: 500 }}>— Dr. Shadab Khan, MD Homoeopath | Reg. No. 54130</p>
+          {/* HOMEOPATHY ANGLE */}
+          {t.homeopathyAngle && (
+            <LSec id="homeo" eyebrow="Treatment angle" title="Homeopathy mein kya?">
+              <div style={{ padding: '20px 24px', background: 'linear-gradient(135deg,var(--sage-bg),var(--bg2))', border: '1px solid var(--border)', borderRadius: 14 }}>
+                <p style={{ fontSize: 14, color: 'var(--ink2)', lineHeight: 1.7 }}>{t.homeopathyAngle}</p>
+              </div>
+            </LSec>
+          )}
+
+          {/* FAQs */}
+          {t.faqs?.length > 0 && (
+            <LSec id="faq" eyebrow={`${t.faqs.length} sawaal`} title="Frequently Asked Questions">
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {t.faqs.map((f: any, i: number) => (
+                  <FaqItem key={i} q={f.question} a={f.answer} index={i} open={openFaq === i} toggle={() => setOpenFaq(openFaq === i ? -1 : i)} />
+                ))}
+              </div>
+            </LSec>
+          )}
+
+          {/* Disclaimer */}
+          <div style={{ marginTop: 40, padding: '16px 20px', background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: 12 }}>
+            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.16em', color: 'var(--warm)', textTransform: 'uppercase' as const }}>Disclaimer</div>
+            <p style={{ fontSize: 13, color: 'var(--ink2)', marginTop: 8, lineHeight: 1.7, fontStyle: 'italic', fontFamily: serif }}>
+              "Ye jaankari educational purpose ke liye hai. Lab report apne doctor ko dikhayein aur unki salah ke bina koi medicine na lein."
+            </p>
+            <div style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 6, letterSpacing: '0.04em' }}>— Dr. Shadab Khan (MD Homoeopath) · {t.reviewDate || 'May 2026'}</div>
+          </div>
         </div>
 
+        {/* ─── RIGHT: sticky sidebar ─── */}
+        <div style={{ position: 'sticky', top: 100, display: 'flex', flexDirection: 'column', gap: 14 }} className="sidebar-sticky">
+
+          {/* Consult CTA */}
+          <div style={{ padding: 24, background: 'linear-gradient(135deg,var(--sage) 0%,var(--sage-dk) 100%)', borderRadius: 18, color: '#fff', position: 'relative', overflow: 'hidden', boxShadow: '0 16px 40px rgba(63,107,77,.26)' }}>
+            <div style={{ position: 'absolute', right: -30, top: -30, width: 140, height: 140, borderRadius: '50%', background: 'rgba(255,255,255,0.08)' }} />
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' as const, opacity: 0.85 }}>Report explained</div>
+              <div style={{ fontFamily: serif, fontSize: 20, fontWeight: 600, letterSpacing: '-0.02em', marginTop: 8, lineHeight: 1.15 }}>Report dekhi nahi samajh aayi?</div>
+              <div style={{ fontSize: 12, opacity: 0.88, marginTop: 10, lineHeight: 1.55 }}>Dr. Shadab ko WhatsApp pe bhejein — interpretation aur next steps milenge.</div>
+              <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ marginTop: 14, display: 'inline-flex', alignItems: 'center', gap: 6, padding: '10px 16px', background: '#fff', color: 'var(--sage-dk)', borderRadius: 99, fontSize: 12, fontWeight: 700, textDecoration: 'none' }}>💬 Doctor ko bhejein</a>
+            </div>
+          </div>
+
+          {/* Self-treat warning */}
+          {t.selfTreatWarning && (
+            <div style={{ padding: '14px 16px', background: 'rgba(162,56,56,0.06)', border: '1px solid rgba(162,56,56,0.18)', borderRadius: 12 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: '#a23838', textTransform: 'uppercase' as const, marginBottom: 6 }}>⚠ Warning</div>
+              <p style={{ fontSize: 12, color: 'var(--ink2)', lineHeight: 1.6 }}>{t.selfTreatWarning}</p>
+            </div>
+          )}
+
+          {/* Related tests */}
+          {t.relatedTests?.length > 0 && (
+            <div style={{ padding: 18, background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: 'var(--sage-dk)', textTransform: 'uppercase' as const, marginBottom: 10 }}>Related Tests</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {t.relatedTests.slice(0, 4).map((rt: any) => (
+                  rt.isAvailable
+                    ? <Link key={rt.testName} href={`/lab-tests/${rt.testSlug}`} style={{ padding: '10px 12px', background: 'var(--bg)', borderRadius: 8, fontSize: 13, fontWeight: 600, color: 'var(--ink2)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', textDecoration: 'none' }}>
+                        <span>🔬 {rt.testName}</span><span style={{ color: 'var(--ink4)' }}>›</span>
+                      </Link>
+                    : <div key={rt.testName} style={{ padding: '10px 12px', background: 'var(--bg)', borderRadius: 8, fontSize: 13, color: 'var(--ink4)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span>🔬 {rt.testName}</span><span style={{ fontSize: 10, color: 'var(--sage-dk)' }}>Soon</span>
+                      </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* References */}
+          <div style={{ padding: 14, background: 'var(--bg2)', border: '1px solid var(--border)', borderRadius: 12, fontSize: 11, color: 'var(--ink3)', lineHeight: 1.55 }}>
+            <strong style={{ color: 'var(--ink)' }}>References:</strong> Boericke, Allen · Lab Tests Online (NIH) · ICMR guidelines · Dr. Shadab Khan's 15+ yrs clinical practice.
+          </div>
+        </div>
       </div>
 
       <a href={WA_BASE} target="_blank" rel="noopener noreferrer" className="fab">📲 Consult Now</a>
