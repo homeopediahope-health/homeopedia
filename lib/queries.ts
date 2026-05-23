@@ -97,7 +97,10 @@ export async function getDietBySlug(slug: string) {
 
 export async function getAllLabTests() {
   return client.fetch(`*[_type == "labTest"] | order(name asc) {
-    name, hindiName, fullForm, slug, category, metaDescription
+    name, hindiName, fullForm, slug, category, metaDescription,
+    "fastingRequired": preparation.fastingRequired,
+    "reportTime": sampleInfo.reportTime,
+    "sampleType": sampleInfo.sampleType
   }`)
 }
 

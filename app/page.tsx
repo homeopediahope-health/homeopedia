@@ -1,6 +1,7 @@
 import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import Link from 'next/link'
 import { getLatestYouTubeVideos } from '@/lib/youtube'
+import { getAllLabTests } from '@/lib/queries'
 import SL from '@/components/SL'
 import HomeHero from '@/components/HomeHero'
 
@@ -42,7 +43,11 @@ const VIDEOS_FALLBACK = [
 ]
 
 export default async function HomePage() {
-  const rawVideos = await getLatestYouTubeVideos(YT_CHANNEL_ID, 4).catch(() => [])
+  const [rawVideos, allLabTests] = await Promise.all([
+    getLatestYouTubeVideos(YT_CHANNEL_ID, 4).catch(() => []),
+    getAllLabTests().catch(() => []),
+  ])
+  const topLabs = allLabTests.slice(0, 5)
   const videos: Array<{ id: string; title: string; date: string; topic: string }> =
     rawVideos.length > 0
       ? rawVideos.map((v: any) => ({ id: v.id, title: v.title, date: v.published || v.date || '', topic: v.topic || 'General' }))
@@ -110,6 +115,31 @@ export default async function HomePage() {
         </div>
       </div>
 
+      {/* ── QUICK ACCESS ── */}
+      <section style={{ maxWidth: 1160, margin: '0 auto', padding: '40px clamp(16px,4vw,32px) 8px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 12 }}>
+          {[
+            { href: '/diseases', ic: '🩺', n: 'Conditions',  d: 'Symptoms · medicines · cure',   count: '200+ guides', tone: '#dde6cd' },
+            { href: '/lab-tests',ic: '🔬', n: 'Lab Tests',   d: 'Reports samjho, action lo',       count: '50+ tests',  tone: '#f0e3c4' },
+            { href: '/vitamins', ic: '💊', n: 'Vitamins',    d: 'Kya · kab · kaisa · kitna',       count: '50+ entries',tone: '#e8d2c4' },
+            { href: '/diet',     ic: '🥗', n: 'Diet Plans',  d: 'Body-system specific',             count: '50+ plans',  tone: '#cce0e0' },
+            { href: '/symptoms', ic: '⚕️', n: 'Symptoms',   d: 'Symptom-first lookup',             count: '50+ lookups',tone: '#dcd8ec' },
+          ].map((c, i) => (
+            <Link key={i} href={c.href} style={{ textDecoration: 'none' }}>
+              <div className="hov" style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 18, padding: '20px 18px', cursor: 'pointer', position: 'relative', overflow: 'hidden', height: '100%' }}>
+                <div style={{ position: 'absolute', right: -18, top: -18, width: 72, height: 72, borderRadius: '50%', background: c.tone, opacity: 0.5 }} />
+                <div style={{ position: 'relative', zIndex: 1 }}>
+                  <div style={{ width: 48, height: 48, borderRadius: 13, background: c.tone, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>{c.ic}</div>
+                  <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 600, letterSpacing: '-0.02em', marginTop: 14 }}>{c.n}</div>
+                  <div style={{ fontSize: 11, color: 'var(--ink3)', marginTop: 3, lineHeight: 1.4 }}>{c.d}</div>
+                  <div style={{ marginTop: 12, fontSize: 11, color: 'var(--sage)', fontWeight: 700 }}>{c.count} →</div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* ── CATEGORIES ── */}
       <section style={{ padding: 'clamp(52px,8vw,80px) clamp(16px,4vw,32px)', maxWidth: 1160, margin: '0 auto' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', marginBottom: 'clamp(24px,4vw,36px)', gap: 14, flexWrap: 'wrap' }}>
@@ -142,6 +172,66 @@ export default async function HomePage() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* ── FEATURED LABS ── */}
+      <section style={{ maxWidth: 1160, margin: '0 auto', padding: '0 clamp(16px,4vw,32px) clamp(52px,8vw,80px)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }} className="grid-2">
+          {/* Lab tests column */}
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 20, padding: '28px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
+              <div>
+                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--sage-dk)', marginBottom: 6 }}>Investigations</div>
+                <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.1 }}>Top Lab Tests</div>
+              </div>
+              <Link href="/lab-tests" style={{ fontSize: 12, color: 'var(--sage)', fontWeight: 700, textDecoration: 'none', flexShrink: 0 }}>All →</Link>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {topLabs.length > 0 ? topLabs.map((t: any) => (
+                <Link key={t.slug?.current} href={`/lab-tests/${t.slug?.current}`} style={{ textDecoration: 'none', color: 'var(--ink)' }}>
+                  <div className="hov" style={{ padding: '13px 15px', background: 'var(--bg)', borderRadius: 12, display: 'flex', alignItems: 'center', gap: 12, transition: 'transform .2s' }}>
+                    <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--sage-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 17, flexShrink: 0 }}>🔬</div>
+                    <div style={{ minWidth: 0, flex: 1 }}>
+                      <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 14, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{t.name}</div>
+                      {t.fullForm && <div style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontStyle: 'italic' }}>{t.fullForm}</div>}
+                    </div>
+                    <span style={{ color: 'var(--ink4)', fontSize: 14 }}>›</span>
+                  </div>
+                </Link>
+              )) : (
+                <div style={{ padding: '20px', textAlign: 'center', color: 'var(--ink4)', fontSize: 13 }}>Loading…</div>
+              )}
+            </div>
+          </div>
+
+          {/* Vitamins column — coming soon */}
+          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 20, padding: '28px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 18 }}>
+              <div>
+                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--warm)', marginBottom: 6 }}>Supplements</div>
+                <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 22, fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.1 }}>Vitamins Guide</div>
+              </div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[
+                { n: 'Vitamin D', alt: 'Cholecalciferol — sunshine vitamin', sym: 'D' },
+                { n: 'Vitamin B12', alt: 'Cobalamin — nerve health', sym: 'B12' },
+                { n: 'Iron', alt: 'Ferrous sulfate — blood builder', sym: 'Fe' },
+                { n: 'Calcium', alt: 'Calcium carbonate — bone strength', sym: 'Ca' },
+                { n: 'Magnesium', alt: 'Magnesium glycinate — muscles', sym: 'Mg' },
+              ].map(v => (
+                <div key={v.n} style={{ padding: '13px 15px', background: 'var(--bg)', borderRadius: 12, display: 'flex', alignItems: 'center', gap: 12, position: 'relative' }}>
+                  <div style={{ width: 40, height: 40, borderRadius: 10, background: '#f0e3c4', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 13, fontWeight: 700, flexShrink: 0, letterSpacing: '-0.02em' }}>{v.sym}</div>
+                  <div style={{ minWidth: 0, flex: 1 }}>
+                    <div style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 14, fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{v.n}</div>
+                    <div style={{ fontSize: 11, color: 'var(--ink4)', marginTop: 1, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', fontStyle: 'italic' }}>{v.alt}</div>
+                  </div>
+                  <span style={{ fontSize: 10, padding: '3px 9px', background: 'var(--sage-bg)', color: 'var(--sage-dk)', borderRadius: 99, fontWeight: 600, flexShrink: 0 }}>Soon</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -271,7 +361,7 @@ export default async function HomePage() {
               Patient stories
             </div>
             <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(26px,4vw,40px)', fontWeight: 600, color: 'var(--ink)', letterSpacing: '-0.025em', lineHeight: 1 }}>
-              Healing aaya hai. Yahan hai.
+              Asli logon ki,<br /><em style={{ color: 'var(--sage)', fontStyle: 'italic' }}>asli zubaani.</em>
             </h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: 18 }} className="grid-auto">
@@ -305,7 +395,7 @@ export default async function HomePage() {
               <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', opacity: 0.8 }}>Personal consultation</div>
               <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(26px,4vw,44px)', fontWeight: 600, letterSpacing: '-0.03em', marginTop: 14, lineHeight: 1.05, maxWidth: 480 }}>
                 Aap akele nahi hain.<br />
-                <em style={{ opacity: 0.88 }}>Ek doctor, ek roadmap.</em>
+                <em style={{ opacity: 0.92 }}>Hum saath hain.</em>
               </h2>
               <p style={{ fontSize: 'clamp(13px,1.5vw,15px)', opacity: 0.88, marginTop: 14, lineHeight: 1.65, maxWidth: 480, fontWeight: 300 }}>
                 Apna case Dr. Shadab ko WhatsApp pe bhejein — symptoms, history, reports. Personalised homeopathic plan banta hai, Hinglish mein.
