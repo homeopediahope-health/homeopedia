@@ -1,16 +1,17 @@
 import { MetadataRoute } from 'next'
-import { getAllDiseases, getAllDiets, getAllMedicines, getAllSymptoms } from '@/lib/queries'
+import { getAllDiseases, getAllDiets, getAllMedicines, getAllSymptoms, getAllLabTests } from '@/lib/queries'
 
 export const revalidate = 3600
 
 const BASE = 'https://www.homeopedia.in'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [diseases, diets, medicines, symptoms] = await Promise.all([
+  const [diseases, diets, medicines, symptoms, labTests] = await Promise.all([
     getAllDiseases().catch(() => []),
     getAllDiets().catch(() => []),
     getAllMedicines().catch(() => []),
     getAllSymptoms().catch(() => []),
+    getAllLabTests().catch(() => []),
   ])
 
   const diseaseUrls = diseases.map((d: any) => ({
@@ -41,18 +42,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }))
 
+  const labTestUrls = labTests.map((t: any) => ({
+    url: `${BASE}/lab-tests/${t.slug?.current}`,
+    lastModified: new Date('2026-05-01'),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
   return [
-    { url: BASE,                  lastModified: new Date('2026-05-01'), changeFrequency: 'daily'   as const, priority: 1.0 },
-    { url: `${BASE}/diseases`,    lastModified: new Date('2026-05-01'), changeFrequency: 'daily'   as const, priority: 0.9 },
-    { url: `${BASE}/diet`,        lastModified: new Date('2026-05-01'), changeFrequency: 'weekly'  as const, priority: 0.8 },
-    { url: `${BASE}/medicines`,   lastModified: new Date('2026-04-30'), changeFrequency: 'weekly'  as const, priority: 0.8 },
-    { url: `${BASE}/blog`,        lastModified: new Date('2026-04-01'), changeFrequency: 'weekly'  as const, priority: 0.7 },
-    { url: `${BASE}/about`,       lastModified: new Date('2026-01-01'), changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${BASE}/contact`,     lastModified: new Date('2026-01-01'), changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: `${BASE}/symptoms`,    lastModified: new Date('2026-04-01'), changeFrequency: 'weekly'  as const, priority: 0.6 },
+    { url: BASE,                   lastModified: new Date('2026-05-01'), changeFrequency: 'daily'   as const, priority: 1.0 },
+    { url: `${BASE}/diseases`,     lastModified: new Date('2026-05-01'), changeFrequency: 'daily'   as const, priority: 0.9 },
+    { url: `${BASE}/diet`,         lastModified: new Date('2026-05-01'), changeFrequency: 'weekly'  as const, priority: 0.8 },
+    { url: `${BASE}/medicines`,    lastModified: new Date('2026-04-30'), changeFrequency: 'weekly'  as const, priority: 0.8 },
+    { url: `${BASE}/lab-tests`,    lastModified: new Date('2026-05-01'), changeFrequency: 'weekly'  as const, priority: 0.8 },
+    { url: `${BASE}/blog`,         lastModified: new Date('2026-04-01'), changeFrequency: 'weekly'  as const, priority: 0.7 },
+    { url: `${BASE}/about`,        lastModified: new Date('2026-01-01'), changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${BASE}/contact`,      lastModified: new Date('2026-01-01'), changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${BASE}/symptoms`,     lastModified: new Date('2026-04-01'), changeFrequency: 'weekly'  as const, priority: 0.6 },
     ...diseaseUrls,
     ...dietUrls,
     ...medicineUrls,
     ...symptomUrls,
+    ...labTestUrls,
   ]
 }
