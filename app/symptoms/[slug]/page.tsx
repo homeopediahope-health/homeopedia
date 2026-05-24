@@ -41,11 +41,16 @@ export default async function SymptomPage({ params }: Props) {
   const faqSchema = symptom.faqs?.length > 0 ? {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: symptom.faqs.map((f: any) => ({
-      '@type': 'Question',
-      name: f.question || f.q,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer || f.a },
-    })),
+    mainEntity: symptom.faqs
+      .map((f: any) => ({
+        '@type': 'Question',
+        name: ((f.question || f.q) ?? '').replace(/\s+/g, ' ').trim(),
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: ((f.answer || f.a) ?? '').replace(/\n+/g, ' ').replace(/\s+/g, ' ').trim(),
+        },
+      }))
+      .filter((item: any) => item.name && item.acceptedAnswer.text),
   } : null
 
   const breadcrumbSchema = {
