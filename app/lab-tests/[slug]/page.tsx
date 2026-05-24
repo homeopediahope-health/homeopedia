@@ -3,7 +3,8 @@ import { notFound } from 'next/navigation'
 import { getLabTestBySlug, getAllLabTests } from '@/lib/queries'
 import LabTestClient from './LabTestClient'
 
-export const revalidate = 3600
+export const revalidate = 60
+export const dynamicParams = true
 
 export async function generateStaticParams() {
   const tests = await getAllLabTests().catch(() => [])
