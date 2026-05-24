@@ -95,26 +95,6 @@ export default async function HomePage() {
       {/* ── HERO (client component — two-column with visual) ── */}
       <HomeHero />
 
-      {/* ── TRUST STRIP ── */}
-      <div style={{ background: 'var(--card)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)', padding: '16px clamp(16px,4vw,32px)' }}>
-        <div style={{ maxWidth: 1160, margin: '0 auto', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 10 }}>
-          {[
-            { icon: '⚕️', text: 'Doctor Reviewed',   detail: 'Dr. Shadab Khan, MD' },
-            { icon: '📚', text: 'Evidence-based',     detail: 'Boericke & clinical practice' },
-            { icon: '🇮🇳', text: 'Hinglish First',    detail: 'Aapki bhasha mein' },
-            { icon: '▶️', text: 'Video Explainers',   detail: 'Har condition ka video' },
-          ].map(b => (
-            <div key={b.text} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '10px 20px', background: 'var(--sage-bg)', border: '1px solid rgba(63,107,77,.18)', borderRadius: 100 }}>
-              <span style={{ fontSize: 16 }}>{b.icon}</span>
-              <div>
-                <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--sage-dk)', lineHeight: 1.2 }}>{b.text}</div>
-                <div style={{ fontSize: 10, color: 'var(--ink4)', fontWeight: 300 }}>{b.detail}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* ── QUICK ACCESS ── */}
       <section style={{ maxWidth: 1160, margin: '0 auto', padding: '40px clamp(16px,4vw,32px) 8px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(180px,1fr))', gap: 12 }}>
