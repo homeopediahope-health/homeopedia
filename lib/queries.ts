@@ -108,6 +108,19 @@ export async function getLabTestBySlug(slug: string) {
   return client.fetch(`*[_type == "labTest" && slug.current == $slug][0]`, { slug })
 }
 
+export async function getAllVitamins() {
+  return client.fetch(`*[_type == "vitamin"] | order(name asc) {
+    name, hindiName, slug, category, metaDescription,
+    "quickFacts": quickFacts,
+    "prevalence": quickFacts.indiaPrevalence,
+    "normalRange": quickFacts.normalRangeQuick
+  }`)
+}
+
+export async function getVitaminBySlug(slug: string) {
+  return client.fetch(`*[_type == "vitamin" && slug.current == $slug][0]`, { slug })
+}
+
 export async function searchAll(query: string) {
   return client.fetch(`*[
     (_type == "disease" || _type == "medicine" || _type == "symptom") &&
