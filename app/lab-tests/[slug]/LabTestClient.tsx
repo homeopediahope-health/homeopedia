@@ -343,6 +343,22 @@ export default function LabTestClient({ test: t }: { test: any }) {
                     ? <Link key={d.diseaseName} href={`/diseases/${d.diseaseSlug}`} style={{ padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 99, fontSize: 12, fontWeight: 600, color: 'var(--ink2)', textDecoration: 'none' }}>🩺 {d.diseaseName}</Link>
                     : <span key={d.diseaseName} style={{ padding: '8px 14px', background: 'var(--bg2)', border: '1px dashed var(--border)', borderRadius: 99, fontSize: 12, color: 'var(--ink4)' }}>🩺 {d.diseaseName} <span style={{ fontSize: 10, color: 'var(--sage-dk)' }}>Soon</span></span>
                 ))}
+                {t.linkedSymptoms?.length > 0 && (
+                  <>
+                    <div style={{ width: '100%', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: 'var(--warm)', textTransform: 'uppercase' as const, marginTop: 16, marginBottom: 4 }}>Related Symptoms</div>
+                    {t.linkedSymptoms.map((s: any) => (
+                      <Link key={s.symptomSlug} href={`/symptoms/${s.symptomSlug}`} style={{ padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 99, fontSize: 12, fontWeight: 600, color: 'var(--ink2)', textDecoration: 'none' }}>🔎 {s.symptomName}</Link>
+                    ))}
+                  </>
+                )}
+                {t.linkedDiets?.length > 0 && (
+                  <>
+                    <div style={{ width: '100%', fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: 'var(--warm)', textTransform: 'uppercase' as const, marginTop: 16, marginBottom: 4 }}>Diet Charts</div>
+                    {t.linkedDiets.map((d: any) => (
+                      <Link key={d.dietSlug} href={`/diet/${d.dietSlug}`} style={{ padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 99, fontSize: 12, fontWeight: 600, color: 'var(--ink2)', textDecoration: 'none' }}>🥗 {d.dietName}</Link>
+                    ))}
+                  </>
+                )}
               </div>
               {t.relatedTests?.length > 0 && (
                 <>

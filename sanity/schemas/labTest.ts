@@ -155,6 +155,26 @@ export const labTest = defineType({
       ]})],
     }),
 
+    // ── LINKED SYMPTOMS ─────────────────────────────────────────
+    defineField({
+      group: 'linked', name: 'linkedSymptoms', title: 'Linked Symptoms — Related Symptom Pages',
+      type: 'array',
+      of: [defineArrayMember({ type: 'object', fields: [
+        { name: 'symptomName', title: 'Symptom Name', type: 'string' },
+        { name: 'symptomSlug', title: 'Symptom Slug (e.g. joint-pain)', type: 'string' },
+      ]})],
+    }),
+
+    // ── LINKED DIETS ─────────────────────────────────────────────
+    defineField({
+      group: 'linked', name: 'linkedDiets', title: 'Linked Diet Pages — Related Disease Diet Charts',
+      type: 'array',
+      of: [defineArrayMember({ type: 'object', fields: [
+        { name: 'dietName', title: 'Diet Page Name', type: 'string' },
+        { name: 'dietSlug', title: 'Diet Slug (e.g. rheumatoid-arthritis)', type: 'string' },
+      ]})],
+    }),
+
     // ── RELATED TESTS (Section 15) ───────────────────────────────
     defineField({
       group: 'linked', name: 'relatedTests', title: 'Related Tests — Saath Mein Jo Tests Hote Hain',
