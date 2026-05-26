@@ -50,6 +50,27 @@ function buildFacts(v: any) {
   ]
 }
 
+function getAdultDailyDose(v: any): string | null {
+  const reqs: any[] = v.dailyRequirement || []
+  const adult = reqs.find((r: any) => {
+    const ag = (r.ageGroup || '').toLowerCase()
+    return ag.includes('19') || ag.includes('adult') || ag.includes('men') || ag.includes('women')
+  }) || reqs[3] || reqs[0]
+  if (!adult) return null
+  const val = adult.male || adult.female
+  if (!val) return null
+  return `${val} ${adult.unit || ''}`.trim()
+}
+
+function splitFn(fn: string): { title: string; desc: string } {
+  const sep = fn.includes(' — ') ? ' — ' : fn.includes(' – ') ? ' – ' : fn.includes(' - ') ? ' - ' : null
+  if (sep) {
+    const idx = fn.indexOf(sep)
+    return { title: fn.slice(0, idx).trim(), desc: fn.slice(idx + sep.length).trim() }
+  }
+  return { title: fn, desc: '' }
+}
+
 function buildDeficiencySymptoms(v: any): Record<string, string[]> | null {
   const ds = v.deficiencySymptoms || {}
   const result: Record<string, string[]> = {}
@@ -255,6 +276,7 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: isMobile ? '14px 18px 0' : '20px 40px 0', fontSize: 11, color: T.ink4, fontFamily: T.mono, letterSpacing: '0.04em' }}>
         <Link href="/"         style={{ color: T.ink4, textDecoration: 'none' }}>Home</Link> ›{' '}
         <Link href="/vitamins" style={{ color: T.ink4, textDecoration: 'none' }}>Vitamins</Link> ›{' '}
+        {v.category && <><Link href={`/vitamins?cat=${v.category}`} style={{ color: T.ink4, textDecoration: 'none' }}>{v.category}s</Link> ›{' '}</>}
         <strong style={{ color: T.ink2, fontWeight: 700 }}>{v.name}</strong>
       </div>
 
@@ -303,11 +325,21 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
           <div style={{ padding: 24, background: T.card, border: `1px solid ${T.border}`, borderRadius: 20, boxShadow: '0 12px 30px rgba(38,74,48,.06)' }}>
             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.sage, textTransform: 'uppercase', fontFamily: T.mono }}>Quick reference</div>
             <div style={{ marginTop: 14 }}>
+              {/* Daily Requirement — primary stat */}
               <div style={{ padding: '14px 16px', background: T.sageBg, borderRadius: 12, marginBottom: 8 }}>
-                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.sage, textTransform: 'uppercase', fontFamily: T.mono }}>Normal Range</div>
-                <div style={{ fontFamily: T.serif, fontSize: 26, fontWeight: 700, color: T.ink, letterSpacing: '-0.02em', marginTop: 4 }}>{v.quickFacts?.normalRangeQuick || '—'}</div>
-                <div style={{ fontSize: 11, color: T.ink4, marginTop: 2 }}>Blood level (adults)</div>
+                <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.sage, textTransform: 'uppercase', fontFamily: T.mono }}>Daily Requirement</div>
+                <div style={{ fontFamily: T.serif, fontSize: 26, fontWeight: 700, color: T.ink, letterSpacing: '-0.02em', marginTop: 4 }}>
+                  {getAdultDailyDose(v) || v.quickFacts?.normalRangeQuick || '—'}
+                </div>
+                <div style={{ fontSize: 11, color: T.ink4, marginTop: 2 }}>Adults (19–50 yrs)</div>
               </div>
+              {/* Normal range — secondary */}
+              {v.quickFacts?.normalRangeQuick && (
+                <div style={{ padding: '10px 14px', background: T.bg, borderRadius: 10, marginBottom: 8 }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.ink4, textTransform: 'uppercase', fontFamily: T.mono }}>Blood Normal Range</div>
+                  <div style={{ fontFamily: T.mono, fontSize: 14, fontWeight: 700, color: T.sage, marginTop: 4 }}>{v.quickFacts.normalRangeQuick}</div>
+                </div>
+              )}
               {v.labTestInfo?.testName && (
                 <Link href={`/lab-tests/${v.labTestInfo.testSlug}`} style={{ display: 'block', padding: '12px 14px', background: T.bg, borderRadius: 10, textDecoration: 'none', marginBottom: 8 }}>
                   <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.warm, textTransform: 'uppercase', fontFamily: T.mono }}>Test for this</div>
@@ -343,12 +375,18 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
           {v.bodyFunctions?.length > 0 && (
             <VSec id="overview" title="Body mein kya kaam karta hai?" eyebrow="Functions" isMobile={isMobile}>
               <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: 10 }}>
-                {v.bodyFunctions.map((fn: string, i: number) => (
-                  <div key={i} style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 12, padding: '14px 16px', display: 'flex', alignItems: 'flex-start', gap: 12 }}>
-                    <div style={{ width: 28, height: 28, borderRadius: 8, background: T.sageBg, color: T.sage, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 12, fontWeight: 700, fontFamily: T.mono }}>{i + 1}</div>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: T.ink, lineHeight: 1.5 }}>{fn}</div>
-                  </div>
-                ))}
+                {v.bodyFunctions.map((fn: string, i: number) => {
+                  const { title, desc } = splitFn(fn)
+                  return (
+                    <div key={i} style={{ background: T.card, border: `1px solid ${T.border}`, borderRadius: 12, padding: '14px 16px', display: 'flex', alignItems: 'flex-start', gap: 12 }}>
+                      <div style={{ width: 32, height: 32, borderRadius: 10, background: T.sageBg, color: T.sage, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: 13, fontWeight: 700, fontFamily: T.mono }}>{i + 1}</div>
+                      <div>
+                        <div style={{ fontSize: 13, fontWeight: 700, color: T.ink, lineHeight: 1.4 }}>{title}</div>
+                        {desc && <div style={{ fontSize: 12, color: T.ink3, marginTop: 4, lineHeight: 1.5 }}>{desc}</div>}
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
             </VSec>
           )}
@@ -370,6 +408,23 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
                     </ul>
                   </div>
                 ))}
+              </div>
+            </VSec>
+          )}
+
+          {/* Root causes — Kami kyun ho jaati hai? */}
+          {v.causesOfDeficiency?.length > 0 && (
+            <VSec id="causes" title="Kami kyun ho jaati hai?" eyebrow="Root causes" isMobile={isMobile}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {v.causesOfDeficiency.map((cause: string, i: number) => {
+                  const { title, desc } = splitFn(cause)
+                  return (
+                    <div key={i} style={{ background: T.card, border: `1px solid ${T.border}`, borderLeft: `4px solid ${T.sage}`, borderRadius: 12, padding: '14px 18px' }}>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: T.ink, lineHeight: 1.4 }}>{title}</div>
+                      {desc && <div style={{ fontSize: 12, color: T.ink3, marginTop: 4, lineHeight: 1.55 }}>{desc}</div>}
+                    </div>
+                  )
+                })}
               </div>
             </VSec>
           )}
@@ -737,12 +792,12 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
         {/* ════ RIGHT SIDEBAR ════ */}
         <div style={{ position: isMobile ? 'static' : 'sticky', top: 90, display: 'flex', flexDirection: 'column', gap: 14 }}>
 
-          {/* Mobile: normal range card */}
+          {/* Mobile: daily requirement card */}
           {isMobile && (
             <div style={{ padding: 18, background: T.card, border: `1px solid ${T.border}`, borderRadius: 16 }}>
-              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.sage, textTransform: 'uppercase', fontFamily: T.mono }}>Normal Range</div>
-              <div style={{ fontFamily: T.serif, fontSize: 32, fontWeight: 700, color: T.sage, letterSpacing: '-0.03em', marginTop: 6 }}>{v.quickFacts?.normalRangeQuick || '—'}</div>
-              <div style={{ fontSize: 11, color: T.ink4 }}>Blood level (adults)</div>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.sage, textTransform: 'uppercase', fontFamily: T.mono }}>Daily Requirement</div>
+              <div style={{ fontFamily: T.serif, fontSize: 32, fontWeight: 700, color: T.sage, letterSpacing: '-0.03em', marginTop: 6 }}>{getAdultDailyDose(v) || v.quickFacts?.normalRangeQuick || '—'}</div>
+              <div style={{ fontSize: 11, color: T.ink4 }}>Adults (19–50 yrs)</div>
             </div>
           )}
 
