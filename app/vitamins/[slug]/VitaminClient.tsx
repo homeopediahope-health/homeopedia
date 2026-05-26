@@ -151,8 +151,11 @@ function buildTimeline(tl: any) {
 
 function buildCombinations(combs: any) {
   if (!combs) return null
-  const good = (combs.beneficial || []).map((s: string) => ({ t: s, d: '' }))
-  const bad  = (combs.avoid      || []).map((s: string) => ({ t: s, d: '' }))
+  const toItem = (s: any) => typeof s === 'string'
+    ? { t: s, d: '' }
+    : { t: s.nutrient || s.name || s.t || '', d: s.reason || s.d || '' }
+  const good = (combs.beneficial || []).map(toItem)
+  const bad  = (combs.avoid      || []).map(toItem)
   return (good.length || bad.length) ? { good, bad } : null
 }
 
@@ -446,7 +449,13 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
                   <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.12em', color: T.warm, textTransform: 'uppercase', fontFamily: T.mono, display: 'flex', alignItems: 'center', gap: 8 }}>
                     <span>🧸</span> Bachhon mein
                   </div>
-                  <p style={{ fontSize: isMobile ? 13 : 14, color: T.ink2, marginTop: 8, lineHeight: 1.7 }}>{v.childrenInfo}</p>
+                  <p style={{ fontSize: isMobile ? 13 : 14, color: T.ink2, marginTop: 8, lineHeight: 1.7 }}>
+                    {typeof v.childrenInfo === 'string'
+                      ? v.childrenInfo
+                      : v.childrenInfo?.ageWiseRequirement
+                        ? `Zaroorat: ${v.childrenInfo.ageWiseRequirement}${v.childrenInfo.supplementNote ? ' | ' + v.childrenInfo.supplementNote : ''}`
+                        : v.childrenInfo?.supplementNote || ''}
+                  </p>
                 </div>
               )}
             </VSec>
