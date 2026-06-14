@@ -251,10 +251,9 @@ Ye page aapko 2 minute mein batayega: aapke bache ka case serious hai ya ghar pe
   ],
 
   relatedSymptoms: [
-    { _key: 'rs1', name: 'Sore Throat',                 hindiName: 'Gale Mein Dard',             slug: 'sore-throat'             },
+    { _key: 'rs1', name: 'Sore Throat',                 hindiName: 'Gale Mein Dard',             slug: 'gale-mein-dard'          },
     { _key: 'rs2', name: 'Fever in Children',           hindiName: 'Bacho Mein Bukhaar',         slug: 'fever-in-children'       },
     { _key: 'rs3', name: 'Difficulty Swallowing',       hindiName: 'Khana Nigalne Mein Takleef', slug: 'difficulty-swallowing'   },
-    { _key: 'rs4', name: 'Mouth Breathing in Children', hindiName: 'Muh Se Saans Lena',          slug: 'mouth-breathing-children'},
   ],
 
   sources: [

@@ -50,7 +50,7 @@ export async function getDiseaseBySlug(slug: string) {
 
 export async function getAllMedicines() {
   return client.fetch(`*[_type == "medicine"] | order(name asc) {
-    name, slug, commonUses
+    name, slug, category, alt, commonUses, source, readMin, hasVideo, severity, metaDescription
   }`)
 }
 

@@ -265,8 +265,6 @@ Ye page aapko 2 minute mein batayega: aapka case kahan aata hai, ghar pe ruk sak
   relatedSymptoms: [
     { _key: 'rs1', name: 'Constipation',     hindiName: 'Kabz / Pet Saaf Na Hona',  slug: 'constipation'  },
     { _key: 'rs2', name: 'Rectal Pain',       hindiName: 'Anal Dard',                slug: 'rectal-pain'   },
-    { _key: 'rs3', name: 'Abdominal Pain',    hindiName: 'Pet Dard',                 slug: 'abdominal-pain'},
-    { _key: 'rs4', name: 'Mucus in Stool',    hindiName: 'Latrine Mein Balgam',      slug: 'mucus-in-stool'},
   ],
 
   sources: [

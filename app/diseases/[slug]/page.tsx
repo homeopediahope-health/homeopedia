@@ -47,10 +47,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function DiseasePage({ params }: Props) {
   const { slug } = await params
   const [disease, related, diet, allDiseases] = await Promise.all([
-    getDiseaseBySlug(slug),
-    getRelatedDiseases(slug, 8),
+    getDiseaseBySlug(slug).catch(() => null),
+    getRelatedDiseases(slug, 8).catch(() => []),
     getDietBySlug(slug).catch(() => null),
-    getAllDiseasesForLinking(),
+    getAllDiseasesForLinking().catch(() => []),
   ])
 
   if (!disease) notFound()

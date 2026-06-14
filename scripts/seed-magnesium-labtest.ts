@@ -228,7 +228,7 @@ Blood volume badhne ki wajah se serum magnesium thoda diluted ho sakta hai. Pre-
 
   linkedDiseases: [
     { _key: 'ld1', diseaseName: 'Diabetes (Type 2)', diseaseSlug: 'diabetes', isAvailable: true },
-    { _key: 'ld2', diseaseName: 'Kidney Disease (CKD)', diseaseSlug: 'kidney-disease', isAvailable: true },
+    { _key: 'ld2', diseaseName: 'Kidney Disease (CKD)', diseaseSlug: 'kidney-disease', isAvailable: false },
     { _key: 'ld3', diseaseName: 'Hypertension (High BP)', diseaseSlug: 'hypertension', isAvailable: false },
     { _key: 'ld4', diseaseName: 'Hypothyroidism', diseaseSlug: 'hypothyroidism', isAvailable: false },
     { _key: 'ld5', diseaseName: "Crohn's Disease", diseaseSlug: 'crohns-disease', isAvailable: false },

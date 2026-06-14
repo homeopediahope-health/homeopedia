@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'ovarian-cyst' },
   relatedDiseaseSlug: 'ovarian-cyst',
   category: 'Women',
-  metaTitle: 'Ovarian Cyst (Gathaan) Diet — Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Ovarian cyst (andashay ki gathaan) diet chart — green list, red list, daily meal plan, veg aur non-veg dono. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Ovarian Cyst Diet Chart — Kya Khayein Kya Nahi | Homeopedia',
+  metaDescription: 'Ovarian cyst diet chart — kya khayein kya nahi, green list, red list, Indian daily meal plan, veg aur non-veg dono. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
   intro: 'Ovarian cyst mein insulin resistance aur estrogen dominance do main problems hain — aur khaana seedha in dono ko better ya worse karta hai.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg/non-veg dono options, aur flare-up/vrat jaise special situations.',
 
   eatingHabits: [

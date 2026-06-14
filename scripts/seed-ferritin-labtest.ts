@@ -161,7 +161,7 @@ Ferritin below 30 ng/mL pregnancy mein iron supplement ki zarurat indicate karta
     {
       _key: 'comp1',
       comparedTest: 'Serum Iron Test',
-      comparedTestSlug: 'serum-iron-test',
+      comparedTestSlug: 'serum-iron-study',
       differencePoints: [
         'Kya measure karta hai | Body ke iron STORES | Blood mein circulating iron',
         'Stability | Stable, dhire badlata hai | Daily fluctuation bahut zyada hoti hai',
@@ -218,7 +218,7 @@ High risk groups jaise vegetarian, heavy periods, ya chronic disease wale 6 mahi
   relatedTests: [
     { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
     { _key: 'rt2', testName: 'LFT (Liver Function Test)', testSlug: 'liver-function-test-lft', isAvailable: true },
-    { _key: 'rt3', testName: 'Serum Iron Test', testSlug: 'serum-iron-test', isAvailable: false },
+    { _key: 'rt3', testName: 'Serum Iron Test', testSlug: 'serum-iron-study', isAvailable: false },
     { _key: 'rt4', testName: 'TIBC Test', testSlug: 'tibc-test', isAvailable: false },
     { _key: 'rt5', testName: 'CRP Test', testSlug: 'crp-test', isAvailable: false },
     { _key: 'rt6', testName: 'Thyroid Profile (TSH)', testSlug: 'thyroid-profile-tsh', isAvailable: true },

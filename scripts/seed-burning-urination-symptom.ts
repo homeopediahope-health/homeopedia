@@ -318,12 +318,6 @@ const symptom = {
       slug: 'blood-in-urine',
     },
     {
-      _key: 'rs3',
-      title: 'Lower Abdominal Pain (Pet ke Nichle Hisse Mein Dard)',
-      hindiName: 'Pait ke Nichle Bhaag Mein Dard',
-      slug: 'lower-abdominal-pain',
-    },
-    {
       _key: 'rs4',
       title: 'Back Pain (Peeth Dard)',
       hindiName: 'Kamar Dard',

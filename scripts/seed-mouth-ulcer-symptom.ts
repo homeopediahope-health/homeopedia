@@ -297,7 +297,7 @@ const symptom = {
       _key: 'rs1',
       title: 'Sore Throat (Gale Mein Kharash)',
       hindiName: 'Gale Mein Dard ya Kharash',
-      slug: 'sore-throat',
+      slug: 'gale-mein-dard',
     },
     {
       _key: 'rs2',

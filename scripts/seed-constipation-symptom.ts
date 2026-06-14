@@ -263,8 +263,7 @@ Ye bahut common hai — India mein har 5 mein se 1 insaan kabz se regularly affe
 
   relatedSymptoms: [
     { _key: 'rs1', name: 'Bloating',       hindiName: 'Pet Phoolna',    slug: 'bloating'       },
-    { _key: 'rs2', name: 'Abdominal Pain', hindiName: 'Pet Dard',       slug: 'abdominal-pain' },
-    { _key: 'rs3', name: 'Acidity',        hindiName: 'Pet Mein Jalan', slug: 'acidity'        },
+    { _key: 'rs3', name: 'Acidity',        hindiName: 'Pet Mein Jalan', slug: 'acidity-heartburn' },
     { _key: 'rs4', name: 'Blood in Stool', hindiName: 'Maal Mein Khoon', slug: 'blood-in-stool' },
   ],
 

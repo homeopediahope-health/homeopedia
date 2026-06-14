@@ -287,7 +287,7 @@ Ye page aapko 2 minute mein batayega: aapka case ghar pe manage ho sakta hai ya 
   relatedSymptoms: [
     { _key: 'rs1', name: 'Skin Rash',        hindiName: 'Twacha Pe Daane',   slug: 'skin-rash'       },
     { _key: 'rs2', name: 'Dry Skin',          hindiName: 'Rookhi Twacha',     slug: 'dry-skin'        },
-    { _key: 'rs3', name: 'Hives / Urticaria', hindiName: 'Pitthi / Chhapaki', slug: 'hives-urticaria' },
+    { _key: 'rs3', name: 'Hives / Urticaria', hindiName: 'Pitthi / Chhapaki', slug: 'skin-allergy' },
     { _key: 'rs4', name: 'Scalp Itching',     hindiName: 'Sir Ki Khujli',     slug: 'scalp-itching'   },
   ],
 

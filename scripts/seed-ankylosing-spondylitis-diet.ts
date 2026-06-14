@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'ankylosing-spondylitis' },
   relatedDiseaseSlug: 'ankylosing-spondylitis',
   category: 'Joints',
-  metaTitle: 'Ankylosing Spondylitis Diet — Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Ankylosing Spondylitis (Kamar-Reehdh Sujan) diet chart — green list, red list, meal plan, veg aur non-veg dono. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'HLA-B27 Positive Ankylosing Spondylitis Diet Chart | Homeopedia',
+  metaDescription: 'HLA-B27 positive Ankylosing Spondylitis diet chart — kya khayein kya nahi, green list, red list, Indian meal plan. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
   intro: 'Ankylosing Spondylitis mein gut aur immune system ka directly connection hota hai — aur kuch foods gut inflammation badhaake spine aur joints ki sujan aur bhi tez kar dete hain.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg aur non-veg dono options, aur flare-up aur travel jaise special situations.',
 
   eatingHabits: [

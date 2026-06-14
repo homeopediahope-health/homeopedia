@@ -252,7 +252,6 @@ Ye page aapko 2 minute mein batayega: aapka case ghar pe manage ho sakta hai ya 
     { _key: 'rs1', name: 'Bloating',    hindiName: 'Gas / Aafara',          slug: 'bloating'   },
     { _key: 'rs2', name: 'Nausea',      hindiName: 'Ji Machalna / Matli',   slug: 'nausea'     },
     { _key: 'rs3', name: 'Chest Pain',  hindiName: 'Seene Mein Dard',       slug: 'chest-pain' },
-    { _key: 'rs4', name: 'Indigestion', hindiName: 'Apach / Badhazmi',      slug: 'indigestion'},
   ],
 
   sources: [

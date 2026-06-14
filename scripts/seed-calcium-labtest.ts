@@ -241,7 +241,7 @@ AIIMS Delhi ke ek study (696 pregnant women, North India) mein paya gaya ki calc
   linkedDiseases: [
     { _key: 'ld1', diseaseName: 'Osteoporosis', diseaseSlug: 'osteoporosis', isAvailable: false },
     { _key: 'ld2', diseaseName: 'Thyroid Disorders', diseaseSlug: 'thyroid', isAvailable: false },
-    { _key: 'ld3', diseaseName: 'Kidney Disease (CKD)', diseaseSlug: 'kidney-disease', isAvailable: true },
+    { _key: 'ld3', diseaseName: 'Kidney Disease (CKD)', diseaseSlug: 'kidney-disease', isAvailable: false },
     { _key: 'ld4', diseaseName: 'Hyperparathyroidism', diseaseSlug: 'hyperparathyroidism', isAvailable: false },
     { _key: 'ld5', diseaseName: 'Vitamin D Deficiency', diseaseSlug: 'vitamin-d-deficiency', isAvailable: false },
     { _key: 'ld6', diseaseName: 'Kidney Stones', diseaseSlug: 'kidney-stone', isAvailable: true },

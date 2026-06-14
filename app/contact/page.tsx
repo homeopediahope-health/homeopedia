@@ -30,7 +30,7 @@ export default function ContactPage() {
               label: 'WhatsApp',
               val: '+91 89834 58889',
               sub: 'Sabse fast response — message karein',
-              href: '${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20mujhe%20consultation%20chahiye.',
+              href: WA_CONSULT,
               bg: '#25d366',
               cta: 'WhatsApp Karein',
             },
@@ -98,7 +98,7 @@ export default function ContactPage() {
             <p style={{ fontSize: 13, color: 'var(--ink3)', lineHeight: 1.8, fontWeight: 300, marginBottom: 16 }}>
               Aap India mein kaheen bhi hon — WhatsApp pe case share karein. Reports, photos, symptoms bhejein. Dr. Shadab personally review karte hain aur medicine courier se bhi milti hai.
             </p>
-            <a href="${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20online%20consultation%20chahiye." target="_blank" rel="noopener noreferrer"
+            <a href={`${WA_BASE}?text=Namaste%20Dr.%20Shadab%2C%20online%20consultation%20chahiye.`} target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '12px 22px', background: '#25d366', color: '#fff', borderRadius: 100, textDecoration: 'none', fontSize: 13, fontWeight: 600 }}>
               📲 Start WhatsApp Consultation
             </a>

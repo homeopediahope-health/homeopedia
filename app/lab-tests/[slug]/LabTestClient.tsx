@@ -339,7 +339,7 @@ export default function LabTestClient({ test: t }: { test: any }) {
             <LSec id="linked" eyebrow="Related conditions" title="Yeh test kin bimariyon mein hota hai?">
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' as const }}>
                 {t.linkedDiseases.map((d: any) => (
-                  d.isAvailable
+                  d.isAvailable && d.diseaseSlug
                     ? <Link key={d.diseaseName} href={`/diseases/${d.diseaseSlug}`} style={{ padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 99, fontSize: 12, fontWeight: 600, color: 'var(--ink2)', textDecoration: 'none' }}>🩺 {d.diseaseName}</Link>
                     : <span key={d.diseaseName} style={{ padding: '8px 14px', background: 'var(--bg2)', border: '1px dashed var(--border)', borderRadius: 99, fontSize: 12, color: 'var(--ink4)' }}>🩺 {d.diseaseName} <span style={{ fontSize: 10, color: 'var(--sage-dk)' }}>Soon</span></span>
                 ))}

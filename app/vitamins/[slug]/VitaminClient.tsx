@@ -32,7 +32,21 @@ const CAT_COLORS: Record<string, string> = {
   'Fatty Acid': '#f5d7d7',
 }
 
-const TABS = ['overview','deficiency','range','food','dose','forms','timing','interactions','timeline','myths','faq']
+// All possible tabs — rendered only when matching data exists
+const ALL_TABS = ['overview','deficiency','range','food','dose','forms','timing','interactions','timeline','myths','faq']
+
+// Disease slugs that have diet pages on homeopedia.in
+const DIET_SLUGS = new Set([
+  'acanthosis-nigricans','acidity','acne','adenoids','adhd','alopecia-areata',
+  'ankylosing-spondylitis','anxiety-neurosis','arthritis','asthma',
+  'chronic-fatigue-syndrome','constipation','depression','diabetes','dysmenorrhoea',
+  'eczema','endometriosis','erectile-dysfunction','fatty-liver','frozen-shoulder',
+  'gallstones','gastritis','gerd','gout','hairfall','hashimotos-thyroiditis',
+  'hypertension','hyperthyroidism','hypothyroidism','ibs','insomnia','kidney-stone',
+  'lactose-intolerance','leucorrhoea','male-infertility','menopause','migraine',
+  'ovarian-cyst','pcod','piles','psoriasis','ra','recurrent-mouth-ulcer',
+  'recurrent-uti','sciatica','uc','urticaria','uterine-fibroid','varicose-veins','vitiligo',
+])
 
 // ─── Data adapters ───
 
@@ -266,6 +280,27 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
   const myths        = (v.myths || []).map((m: any) => ({ q: m.myth,     a: m.truth  }))
   const faqs         = (v.faqs  || []).map((f: any) => ({ q: f.question, a: f.answer }))
   const catBg        = CAT_COLORS[v.category] || 'var(--sage-bg)'
+
+  // Dynamic tabs — only show tabs that have data
+  const TABS = ALL_TABS.filter(tab => {
+    if (tab === 'interactions') return !!drugInter
+    if (tab === 'overview')    return v.bodyFunctions?.length > 0
+    if (tab === 'deficiency')  return !!defSymptoms
+    if (tab === 'range')       return !!normalRanges
+    if (tab === 'food')        return !!foodSources
+    if (tab === 'dose')        return !!dailyReq
+    if (tab === 'forms')       return !!suppForms
+    if (tab === 'timing')      return !!howToTake
+    if (tab === 'timeline')    return !!timeline
+    if (tab === 'myths')       return myths.length > 0
+    if (tab === 'faq')         return faqs.length > 0
+    return true
+  })
+
+  // Diet pages available for linked diseases
+  const linkedDietPages = (v.linkedDiseases || []).filter((d: any) =>
+    d.isAvailable && DIET_SLUGS.has(d.diseaseSlug)
+  )
 
   const scrollTo = (id: string) => {
     setActiveTab(id)
@@ -749,9 +784,22 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
             <VSec id="linked" title="Related conditions" eyebrow="Linked diseases" isMobile={isMobile}>
               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                 {v.linkedDiseases.map((d: any, i: number) => (
-                  d.isAvailable
+                  d.isAvailable && d.diseaseSlug
                     ? <Link key={i} href={`/diseases/${d.diseaseSlug}`} style={{ padding: '8px 14px', background: T.card, border: `1px solid ${T.border}`, borderRadius: 99, fontSize: 12, fontWeight: 600, color: T.ink2, textDecoration: 'none' }}>🩺 {d.diseaseName}</Link>
                     : <span   key={i} style={{ padding: '8px 14px', background: T.bg2,  border: `1px solid ${T.border}`, borderRadius: 99, fontSize: 12, color: T.ink4 }}>🩺 {d.diseaseName}</span>
+                ))}
+              </div>
+            </VSec>
+          )}
+
+          {/* Linked symptoms */}
+          {v.linkedSymptoms?.length > 0 && (
+            <VSec id="symptoms" title="Related symptoms" eyebrow="Symptom pages" isMobile={isMobile}>
+              <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                {v.linkedSymptoms.map((s: any, i: number) => (
+                  <Link key={i} href={`/symptoms/${s.symptomSlug}`} style={{ padding: '8px 14px', background: T.card, border: `1px solid ${T.border}`, borderRadius: 99, fontSize: 12, fontWeight: 600, color: T.ink2, textDecoration: 'none' }}>
+                    🔍 {s.symptomName}
+                  </Link>
                 ))}
               </div>
             </VSec>
@@ -842,6 +890,42 @@ export default function VitaminClient({ vitamin: v }: { vitamin: any }) {
                   <Link key={i} href={`/vitamins/${r.vitaminSlug}`} style={{ padding: '10px 12px', background: T.bg, borderRadius: 8, fontSize: 13, fontWeight: 600, color: T.ink2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', textDecoration: 'none' }}>
                     <span>💊 {r.vitaminName}</span>
                     <span style={{ color: T.ink4 }}>›</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Related lab tests */}
+          {v.relatedTests?.length > 0 && (
+            <div style={{ padding: 18, background: T.card, border: `1px solid ${T.border}`, borderRadius: 14 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.warm, textTransform: 'uppercase', fontFamily: T.mono }}>Lab tests</div>
+              <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {v.relatedTests.map((t: any, i: number) => (
+                  t.isAvailable
+                    ? <Link key={i} href={`/lab-tests/${t.testSlug}`} style={{ padding: '10px 12px', background: T.bg, borderRadius: 8, fontSize: 13, fontWeight: 600, color: T.ink2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', textDecoration: 'none' }}>
+                        <span>🔬 {t.testName}</span>
+                        <span style={{ color: T.ink4 }}>›</span>
+                      </Link>
+                    : <div key={i} style={{ padding: '10px 12px', background: T.bg2, borderRadius: 8, fontSize: 13, color: T.ink4, display: 'flex', alignItems: 'center', gap: 8 }}>
+                        <span>🔬 {t.testName}</span>
+                        <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.06em', padding: '2px 6px', background: T.border, borderRadius: 99 }}>SOON</span>
+                      </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Diet chart links */}
+          {linkedDietPages.length > 0 && (
+            <div style={{ padding: 18, background: T.card, border: `1px solid ${T.border}`, borderRadius: 14 }}>
+              <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.12em', color: T.sage, textTransform: 'uppercase', fontFamily: T.mono }}>Diet charts</div>
+              <div style={{ fontSize: 11, color: T.ink4, marginTop: 4, marginBottom: 10, lineHeight: 1.4 }}>{v.name} deficiency se judi bimariyon ke liye Indian diet charts</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {linkedDietPages.map((d: any, i: number) => (
+                  <Link key={i} href={`/diet/${d.diseaseSlug}`} style={{ padding: '10px 12px', background: T.sageBg, borderRadius: 8, fontSize: 13, fontWeight: 600, color: T.ink2, display: 'flex', alignItems: 'center', justifyContent: 'space-between', textDecoration: 'none' }}>
+                    <span>🥗 {d.diseaseName} diet</span>
+                    <span style={{ color: T.sage }}>›</span>
                   </Link>
                 ))}
               </div>

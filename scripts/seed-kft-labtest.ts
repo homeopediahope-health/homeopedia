@@ -312,7 +312,7 @@ Preeclampsia (high BP + protein in urine) ek serious condition hai jo samay pe p
   repeatInfo: `Diabetes mein: har 3–6 mahine — diabetes kidney ko silently damage karta hai. High BP mein: har 6–12 mahine — BP meds ka asar bhi monitor karna hota hai. CKD diagnosis ke baad: doctor ke schedule ke hisaab se — har 1–3 mahine bhi ho sakta hai. Nephrotoxic medicines chal rahi hon: har 2–4 hafte. Surgery ke baad: 2–4 hafte mein follow-up. Normal result (no risk factors): 40–50 saal mein har saal ek baar. 50+ saal ke baad: har 6 mahine. Treatment shuru karne ke baad: usually 4–8 hafte baad repeat hota hai.`,
 
   linkedDiseases: [
-    { _key: 'ld1', diseaseName: 'Kidney Disease / CKD', diseaseSlug: 'kidney-disease', isAvailable: true },
+    { _key: 'ld1', diseaseName: 'Kidney Disease / CKD', diseaseSlug: 'kidney-disease', isAvailable: false },
     { _key: 'ld2', diseaseName: 'Kidney Stones', diseaseSlug: 'kidney-stone', isAvailable: true },
     { _key: 'ld3', diseaseName: 'UTI (Urinary Tract Infection)', diseaseSlug: 'uti', isAvailable: true },
     { _key: 'ld4', diseaseName: 'Diabetes', diseaseSlug: 'diabetes', isAvailable: true },

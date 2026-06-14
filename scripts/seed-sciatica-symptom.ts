@@ -264,7 +264,7 @@ Ye page aapko 2 minute mein batayega: aapka dard serious hai kya, ghar pe kya ka
   ],
 
   relatedSymptoms: [
-    { _key: 'rs1', name: 'Lower Back Pain', hindiName: 'Kamar Dard', slug: 'lower-back-pain' },
+    { _key: 'rs1', name: 'Lower Back Pain', hindiName: 'Kamar Dard', slug: 'back-pain' },
     { _key: 'rs2', name: 'Leg Numbness', hindiName: 'Taang Mein Sunn Hona', slug: 'leg-numbness' },
     { _key: 'rs3', name: 'Hip Pain', hindiName: 'Kadhe Ka Dard', slug: 'hip-pain' },
     { _key: 'rs4', name: 'Foot Tingling', hindiName: 'Panje Mein Jhanjhanahat', slug: 'foot-tingling' },

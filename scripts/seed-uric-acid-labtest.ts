@@ -20,7 +20,7 @@ const uricAcid = {
   slug: { _type: 'slug', current: 'uric-acid-test' },
   category: 'Blood',
   metaTitle: 'Uric Acid Test Normal Range Kya Hai? High Low Matlab Samjho (2026)',
-  metaDescription: 'Uric Acid test ki normal range, high ya low hone ka matlab, kab karaye aur kya samjhe. Doctor-reviewed Hinglish guide. Homeopedia.in',
+  metaDescription: 'Uric Acid normal range: Men 3.5–7.2 mg/dL, Women 2.6–6.0 mg/dL. High ya low hone ka matlab, gout se connection, kab test karaye. Doctor-reviewed. Homeopedia.in',
   reviewDate: 'May 2026',
 
   heroText: `Uric Acid Test ek simple blood test hai jo aapke khoon mein uric acid ki maatra maapata hai. Uric acid ek waste product hota hai jo purine naam ke chemicals ke tutne par banta hai.

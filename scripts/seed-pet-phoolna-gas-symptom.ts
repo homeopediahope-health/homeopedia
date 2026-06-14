@@ -303,7 +303,7 @@ const symptom = {
 
   relatedSymptoms: [
     { _key: 'rs1', title: 'Acidity / Heartburn', hindiName: 'Seene Mein Jalan', slug: 'acidity-heartburn' },
-    { _key: 'rs2', title: 'Constipation', hindiName: 'Kabj', slug: 'kabj-constipation' },
+    { _key: 'rs2', title: 'Constipation', hindiName: 'Kabj', slug: 'constipation' },
     { _key: 'rs3', title: 'Nausea / Vomiting', hindiName: 'Ulti Ka Man', slug: 'nausea-ulti' },
     { _key: 'rs4', title: 'Abdominal Pain', hindiName: 'Pet Dard', slug: 'pet-dard' },
   ],

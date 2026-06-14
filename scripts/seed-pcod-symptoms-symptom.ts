@@ -248,8 +248,7 @@ Ye aaj ke waqt mein India mein bahut common ho gaya hai. Aap akeli nahi hain —
 
   relatedSymptoms: [
     { _key: 'rs1', name: 'Irregular Periods', hindiName: 'Irregular Masik Dharm', slug: 'irregular-periods' },
-    { _key: 'rs2', name: 'Excessive Hair Growth (Hirsutism)', hindiName: 'Zyada Baal Aana', slug: 'excessive-hair-growth' },
-    { _key: 'rs3', name: 'Unexplained Weight Gain', hindiName: 'Bina Wajah Weight Badna', slug: 'unexplained-weight-gain' },
+    { _key: 'rs3', name: 'Weight Gain', hindiName: 'Bina Wajah Weight Badna', slug: 'weight-gain' },
     { _key: 'rs4', name: 'Acne (Persistent)', hindiName: 'Baar Baar Pimple Aana', slug: 'persistent-acne' },
   ],
 
