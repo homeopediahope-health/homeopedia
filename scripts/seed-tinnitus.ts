@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'tinnitus' },
   category: 'ENT',
   publishedAt: '2026-05-05T00:00:00.000Z',
-  metaTitle: 'Tinnitus | Kaan Ki Awaaz Ka Ilaaj | Homeopedia',
-  metaDescription: 'Tinnitus (kaan mein seeti/awaaz) ke causes, types, homeopathic treatment, diet aur tips – simple Hinglish mein. Verified info, doctor-reviewed.',
+  metaTitle: 'Kaan Mein Ghunghaat (Tinnitus) Ka Homeopathic Ilaaj | Homeopedia',
+  metaDescription: 'Kaan mein awaaz, ghunghaat ya seeti — tinnitus ke karan, kab serious hota hai aur homeopathic treatment kya kaam karta hai? Hindi mein. Homeopedia pe padho.',
 
   heroText: 'Tinnitus ek aisi condition hai jisme aapke kaan mein bina kisi bahari awaaz ke – seeti jaisi, ghanti jaisi, ya bhanbhanahat jaisi awaaz sunai deti rehti hai. Ye awaaz kabhi dheemi hoti hai, kabhi itni tej ki neend nahi aati aur kaam karna mushkil ho jaata hai. India mein karodon log is problem se pareshan hain – lekin zyaadatar log isko "normal" samajhkar ignore karte rehte hain. Tinnitus koi alag bimari nahi hai – ye aapke hearing system ya nervous system mein kisi underlying problem ka signal hoti hai jo treat ho sakti hai.',
 

@@ -18,8 +18,8 @@ const doc = {
   slug: { _type: 'slug', current: 'blood-in-stool' },
   bodySystem: 'Digestive',
 
-  metaTitle: 'Blood in Stool in Hindi — Karan, Ilaaj aur Homeopathy | Homeopedia',
-  metaDescription: 'Latrine mein khoon aana (blood in stool) ke karan, severity aur ghar pe safe steps — Hinglish mein. Verified info, Dr. Shadab reviewed.',
+  metaTitle: 'Latrine Mein Khoon Aana — Karan aur Kab Doctor Dikhayein | Homeopedia',
+  metaDescription: 'Potty mein khoon aane ki wajah kya hai? Bawaseer, fissure ya kuch serious? Kab ghabrana chahiye aur kab nahi — sab Hindi mein. Homeopedia pe padho.',
   publishedAt: new Date('2026-05-18').toISOString(),
 
   whatIsThis: `Subah uthke fresh hone jaate hain — aur toilet mein laal rang dikhta hai. Ek second ke liye dil dhaak se reh jaata hai.

@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'nail-fungus' },
   category: 'Skin',
   publishedAt: '2026-05-04T00:00:00.000Z',
-  metaTitle: 'Nail Fungus Treatment in Hindi | Causes, Cure & Homeopathy',
-  metaDescription: 'Nail fungus (nakhoon ka fungas) ke karan, pehchaan, homeopathic treatment aur diet tips – simple Hinglish mein. Verified info, doctor-reviewed.',
+  metaTitle: 'Nail Fungus Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+  metaDescription: 'Nakhoon mein fungus (onychomycosis) ka homeopathic treatment, karan, lakshan aur parhej — sab kuch Hindi mein. Dr. Shadab Khan dwara. Homeopedia pe padho.',
 
   heroText: 'Nail fungus – jise medically Onychomycosis kehte hain – ek aisi infection hai jisme nakhoon ke andar fungus ghus jaata hai aur wahan palata-barhta rehta hai. Shuru mein nakhoon thoda peela ya safed hone lagta hai, phir dheere-dheere mota, toota-phuta aur badsoorat ho jaata hai. Ye zyaatar paon ke nakhoonon mein hoti hai – isliye baar baar ho sakti hai agar theek se treat na karein. India jaise garmi aur nami wale desh mein ye infection bahot common hai – especially unhe jinhein zyada paseena aata hai ya jo public bathroom/pool use karte hain.',
 

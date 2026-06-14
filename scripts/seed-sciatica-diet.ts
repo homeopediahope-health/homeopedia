@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'sciatica' },
   relatedDiseaseSlug: 'sciatica',
   category: 'Joints',
-  metaTitle: 'Sciatica Diet — Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Sciatica diet chart — green list, red list, daily meal plan, veg aur non-veg dono options. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Sciatica Diet Chart — Kya Khayein Kya Nahi | Homeopedia',
+  metaDescription: 'Sciatica dard mein kaun se foods inflammation badhate hain aur kaunsa diet nerve pain kam karta hai? Indian diet guide with food list. Homeopedia pe padho.',
   intro: 'Sciatica mein inflammation (sujan) sciatic nerve ko compress karti hai — aur pro-inflammatory foods ye sujan aur bhi badhate hain, dard zyada hota hai.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg/non-veg dono options, aur vrat/travel jaise special situations.',
 
   eatingHabits: [

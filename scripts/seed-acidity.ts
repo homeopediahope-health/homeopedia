@@ -15,8 +15,8 @@ const doc = {
   title: 'Acidity / Acid Reflux / GERD',
   hindiName: 'Tezaab / Seene ki Jalan / Khatta Dakaar',
   category: 'Digestive',
-  seoTitle: 'Acidity Treatment in Hindi | Causes, Diet & Homeopathy | Homeopedia',
-  seoDescription: 'Acidity (seene ki jalan) ka best treatment, karan, diet chart aur homeopathic ilaaj – verified info, doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Acidity (Badhazmi) Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+  metaDescription: 'Seene mein jalan, khatti dakar, badhazmi — acidity ke asli karan aur homeopathic ilaaj kya kaam karta hai? Diet tips ke saath. Homeopedia pe padho.',
   whatIsIt: `Acidity tab hoti hai jab aapke pet ka acid (gastric acid) apni seema tod kar upar food pipe (esophagus) mein aa jaata hai. Normal digestion ke liye acid zaroori hota hai — lekin jab ye zyada banta hai ya galat jagah jaata hai, to seene mein jalan, khatta dil, aur pair uthne lagti hai. India mein har 5 mein se 1 insaan acidity se pareshaan rehta hai — aur iska sabse bada reason hai khaane ki galat timing, stress, aur fast food ka zyada use.\n\nZyada log acidity ko "chhoti bimari" samajh ke baar baar antacid kha lete hain — lekin bina root cause treat kiye ye bar baar aati hai aur waqt ke saath chronic (GERD) ban jaati hai.`,
 
   types: [

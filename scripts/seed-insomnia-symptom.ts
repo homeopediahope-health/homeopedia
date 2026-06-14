@@ -16,9 +16,9 @@ const symptom = {
   title: 'Insomnia (Neend Na Aana)',
   hindiName: 'Neend Na Aana',
   slug: { _type: 'slug', current: 'insomnia' },
-  metaTitle: 'Insomnia in Hindi – Neend Na Aana, Karan aur Homeopathy',
+  metaTitle: 'Neend Na Aana (Insomnia) — Karan, Lakshan aur Ilaaj | Homeopedia',
   metaDescription:
-    'Insomnia (neend na aana) ke karan, severity aur ghar pe safe steps – simple Hinglish mein. Verified info, doctor-reviewed. Dr. Shadab.',
+    'Neend na aane ki wajah kya hai? Insomnia ke karan, lakshan, ghar pe kya karein aur kab doctor dikhayein — puri jaankari Hindi mein. Homeopedia pe padho.',
   heroText:
     'Raat ko bistar pe lait jaate ho – thake hue bhi – lekin aankhein band nahi hoti. Ghante guzar jaate hain, neend nahi aati. Subah uthte ho toh fresh feel karne ki jagah aur zyada exhausted lagte ho.\n\nInsomnia (neend na aana) mein brain us "off switch" ko nahi dhundh pata jo neend ke liye zaruri hai. Kuch logon ko neend aati hi nahi, kuch ko aati hai lekin baar baar toot jaati hai.\n\nYe akela problem nahi hai aapka – WHO ke mutabiq duniya mein lagbhag 30% adults kabhi na kabhi insomnia experience karte hain.\n\nYe page aapko 2 minute mein batayega: aapka case kaisa hai, serious hai ya nahi, aur aage kya karna chahiye.',
 

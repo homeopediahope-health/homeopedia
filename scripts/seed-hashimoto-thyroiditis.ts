@@ -16,8 +16,8 @@ const hashimotoThyroiditis = {
   hindiName: 'Hashimoto Rog / Thyroid Swelling Disease / Aankhon Wali Thyroid',
   slug: { _type: 'slug', current: 'hashimoto-thyroiditis' },
 
-  metaTitle: 'Hashimoto Thyroiditis — Treatment, Causes aur Homeopathy',
-  metaDescription: 'Hashimoto thyroiditis ke causes, types, homeopathic treatment, diet chart aur recovery guide — verified, doctor-reviewed Hinglish mein.',
+  metaTitle: 'Hashimoto Thyroiditis — Karan, Lakshan aur Homeopathic Ilaaj | Homeopedia',
+  metaDescription: 'Hashimoto ek autoimmune thyroid bimari hai jo hypothyroidism karti hai. Karan, lakshan, TSH numbers aur homeopathic treatment Hindi mein. Homeopedia pe padho.',
 
   heroText: "Hashimoto Thyroiditis ek autoimmune thyroid disease hai jisme aapka khud ka immune system galti se thyroid gland ko attack karna shuru kar deta hai. Isko Hashimoto's disease, chronic lymphocytic thyroiditis, ya autoimmune hypothyroidism bhi kehte hain. Ye attack dheere-dheere thyroid tissue ko damage karta hai — jis wajah se thyroid kam hormone (T3, T4) banata hai aur body ko hypothyroidism ke signs milne lagte hain: thakaan, weight gain, thanda lagana, baal jhadte hain. India mein ye mostly 30-50 saal ki mahilaon mein dekha jaata hai, lekin young girls aur men ko bhi ho sakta hai. Interesting baat ye hai ki kai log saalon tak bina jaane is bimari ke saath jeete hain — kyunki starting mein symptoms bahut common lagte hain jaise 'zyada thakaan' ya 'mota hona'.",
 

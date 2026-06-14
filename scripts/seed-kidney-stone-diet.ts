@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'kidney-stone' },
   relatedDiseaseSlug: 'kidney-stone',
   category: 'Urinary',
-  metaTitle: 'Kidney Stone (Pathri) Diet — Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Kidney stone (pathri) diet chart — green list, red list, daily meal plan, veg aur non-veg dono. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Pathri (Kidney Stone) Diet Chart — Kya Khayein Kya Nahi | Homeopedia',
+  metaDescription: 'Pathri mein kya khana safe hai aur kya bilkul avoid karein? Pani kitna piyein, oxalate foods, calcium — puri diet guide Hindi mein. Homeopedia pe padho.',
   intro: 'Kidney stone mein calcium, oxalate ya uric acid urine mein concentrate hoke crystal banata hai — aur khaane peene se ye concentration directly control hoti hai.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg/non-veg dono options, aur vrat/travel jaise special situations.',
 
   eatingHabits: [

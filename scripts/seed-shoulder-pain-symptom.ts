@@ -16,9 +16,9 @@ const symptom = {
   title: 'Shoulder Pain (Kandhe Ka Dard)',
   hindiName: 'Kandhe Ka Dard / Kandhe Mein Dard',
   slug: { _type: 'slug', current: 'shoulder-pain' },
-  metaTitle: 'Shoulder Pain in Hindi – Karan, Ilaaj aur Homeopathy | Homeopedia',
+  metaTitle: 'Kandhe Mein Dard (Shoulder Pain) — Karan aur Ilaaj | Homeopedia',
   metaDescription:
-    'Kandhe ka dard (shoulder pain) ke karan, severity aur ghar pe safe steps – simple Hinglish mein. Verified info, doctor-reviewed.',
+    'Kandhe mein dard kyun hota hai? Frozen shoulder, rotator cuff ya posture — sab karan, lakshan aur homeopathic upay Hindi mein. Homeopedia pe padho.',
   heroText:
     'Kabhi kabhi ek kaam karte waqt kandha uthao – aur ek teez jhurjhuri si. Ya subah uthne pe pata chale ki daaya ya baaya kandha hilta hi nahi. Shoulder pain sirf dard nahi – ye routine kaam bhi rok deta hai: kapde pehanna, gaadi chalana, ek glass uthana bhi mushkil ho jaata hai.\n\nShoulder ek bahut complex joint hai – teen haddiyan, kai muscles, aur tendons ek saath kaam karte hain. Issi wajah se kandhe mein dard ke causes bhi zyada hain – aur akser log samajh nahi paate ki ye kab apne aap theek hoga aur kab doctor zaroori hai.\n\nYe page aapko 2 minute mein batayega: aapka kandhe ka dard kahan se aa raha hai, kitna serious hai, aur aapko abhi kya karna chahiye.',
 

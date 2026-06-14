@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'bells-palsy' },
   category: 'Neurological',
   publishedAt: '2026-05-03T00:00:00.000Z',
-  metaTitle: "Bell's Palsy Treatment in Hindi | Munh Tirchha – Homeopedia",
-  metaDescription: "Bell's Palsy (munh tedha hona) ka treatment, recovery time, exercises aur homeopathic medicines – verified info, doctor-reviewed. Jaldi recovery guide.",
+  metaTitle: "Bell's Palsy (Chehra Tircha) Ka Homeopathic Ilaaj | Homeopedia",
+  metaDescription: "Bell's palsy mein chehra ek taraf se tircha ho jaata hai — karan, lakshan, kab theek hota hai aur homeopathic treatment. Hindi mein. Homeopedia pe padho.",
 
   heroText: "Bell's Palsy ek aisi condition hai jisme achanak – aksar ek raat mein – chehra ek taraf se crooked ya tedha ho jaata hai. Ye chehra ka laqwa ek temporary facial nerve weakness hai jisme 7th cranial nerve (facial nerve) inflamed ya compressed ho jaati hai. Munh ka ek corner neeche gir jaata hai, aankhein poori tarah band nahi hoti, aur bolne-khaane mein takleef hoti hai. Ye condition scary lagti hai lekin zyaadatar cases mein – sahi treatment se – 2-6 mahine mein poori recovery bilkul possible hai.",
 

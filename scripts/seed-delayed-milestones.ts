@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'delayed-milestones' },
   category: 'Neurological',
   publishedAt: '2026-05-05T00:00:00.000Z',
-  metaTitle: 'Bachche Ka Vikas Rokna – Homeopathic Treatment | Homeopedia',
-  metaDescription: 'Bachche ke chalne, bolne, ya baithne mein deri? Jaanein delayed milestones ke karan, prakar, diet, aur homeopathic treatment ke baare mein.',
+  metaTitle: 'Bacho Mein Delayed Milestones — Karan aur Homeopathy | Homeopedia',
+  metaDescription: 'Bacha der se chalna ya bolna seekh raha hai? Delayed milestones ke karan, kab doctor dikhayein aur homeopathic help kaise milti hai. Homeopedia pe padho.',
 
   heroText: 'Jab ek bachcha apni umar ke hisaab se expected skills – jaise baithna, khada hona, chalna, bolna, ya cheezein pakadna – expected time pe achieve nahi karta, isse Delayed Milestones ya Global Developmental Delay (GDD) kehte hain. Ye koi ek bimari nahi hai, balki ek aisi condition hai jisme bachche ka nervous system, muscles, ya brain development normal speed se nahi hota. India mein approximately 10-15% bacchon mein kisi na kisi prakar ki developmental delay dekhi jaati hai. Sahi samay pe diagnosis aur treatment shuru ho to bahut se bacchon mein remarkable improvement possible hai – homeopathy is process mein nervous system ko naturally support karne mein help karta hai.',
 

@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'urticaria' },
   relatedDiseaseSlug: 'urticaria',
   category: 'Skin',
-  metaTitle: 'Urticaria (Pittikaa) Diet — Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Urticaria (Pittikaa) diet chart — green list, red list, daily meal plan, veg aur non-veg dono options. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Urticaria (Pitthi) Diet Chart — Kya Khayein Kya Nahi | Homeopedia',
+  metaDescription: 'Urticaria ya pitthi mein kaun sa khana trigger karta hai aur kya khana safe hai? Puri diet list — triggers, safe foods, Indian meals. Homeopedia pe padho.',
   intro: 'Urticaria mein skin ke andar histamine release hoti hai — aur kuch foods is histamine release ko directly trigger ya badha dete hain, jisse welts aur itching aur bhi tez hoti hai.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg aur non-veg dono options, aur flare-up/vrat/travel jaise special situations.',
 
   eatingHabits: [

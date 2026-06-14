@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'arthritis' },
   relatedDiseaseSlug: 'arthritis',
   category: 'Joints',
-  metaTitle: 'Arthritis (Gathiya) Diet – Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Arthritis (Gathiya) diet chart – green list, red list, daily meal plan, veg aur non-veg dono options. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Arthritis Diet Chart India — Kya Khayein Kya Nahi | Homeopedia',
+  metaDescription: 'Arthritis (gathiya) mein kaun se Indian foods joint dard badhaate hain aur kaun se kam karte hain? Complete diet chart with meal plan. Homeopedia pe padho.',
   intro: 'Arthritis mein body ke joints mein chronic inflammation (sujan) hoti hai – aur kuch foods ye sujan seedha badhate hain, kuch kam karte hain – isliye diet directly joint pain aur stiffness ko affect karti hai.\n\nNeeche complete guide hai – green list, red list, daily meal plan, veg/non-veg dono options, aur vrat/travel jaise special situations.',
 
   eatingHabits: [

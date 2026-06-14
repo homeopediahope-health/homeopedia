@@ -17,9 +17,9 @@ const doc = {
   relatedDiseaseSlug: 'acanthosis-nigricans',
   hindiName: 'Kali Gardan / Kaali Chamdi (Gardan, Baghlon, Jaangh pe)',
   category: 'Skin',
-  metaTitle: 'Acanthosis Nigricans (Kali Gardan) Diet – Kya Khayein | Homeopedia',
+  metaTitle: 'Acanthosis Nigricans Diet Chart — Kya Khayein | Homeopedia',
   metaDescription:
-    'Acanthosis Nigricans diet – green list, red list, meal plan. Insulin aur skin ke liye. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+    'Acanthosis nigricans mein kaale daag kum karne ke liye kaun sa diet follow karein? Insulin resistance diet guide Indian foods ke saath. Homeopedia pe padho.',
   intro:
     'Acanthosis Nigricans mein body ke cells insulin ko theek se respond nahi karte – aur ye excess insulin skin cells ko overstimulate karke gardan, baghlon aur jaangh pe kali, moti chamdi banata hai. Neeche complete guide hai – green list, red list, daily meal plan, veg aur non-veg dono options, natural skin care tips, aur vrat/travel jaise special situations.',
   reviewDate: 'May 2026',

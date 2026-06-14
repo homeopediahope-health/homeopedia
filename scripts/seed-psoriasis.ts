@@ -18,8 +18,8 @@ async function seed() {
     hindiName: 'चम्बल (सोरायसिस)',
     slug: { _type: 'slug', current: 'psoriasis' },
     category: 'Skin',
-    metaTitle: 'Psoriasis (Chambal) Ka Homeopathic Ilaj — Diet, Types & Treatment',
-    metaDescription: 'Psoriasis (Chambal) ka permanent control, homeopathic treatment, diet chart, types aur seasonal care — doctor-reviewed, verified Hinglish guide by Dr. Shadab Khan MD.',
+    metaTitle: 'Chambal (Psoriasis) Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+    metaDescription: 'Chambal (psoriasis) kyun hoti hai, kaun se triggers hain aur homeopathic treatment kab kaam karta hai? Triggers, diet aur ilaaj Hindi mein. Homeopedia pe padho.',
     publishedAt: new Date('2026-04-25').toISOString(),
     heroText: 'Psoriasis — jise India mein log "Chambal" kehte hain — ek chronic skin condition hai jisme skin cells bahut tezi se bannte hain aur body ke upar thick, silvery-white ya red patches banate hain. Ye koi chhoot jaane wali bimari nahi hai. Psoriasis ek autoimmune condition hai — matlab body ka immune system galti se apni hi healthy skin ko attack karne lagta hai. Sahi treatment se iska bahut achha control ho sakta hai.',
 

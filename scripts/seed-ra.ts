@@ -16,8 +16,8 @@ const ra = {
   hindiName: 'Gathiya / Vaat Rog / Jodo Ka Dard',
   slug: { _type: 'slug', current: 'rheumatoid-arthritis' },
 
-  metaTitle: 'Rheumatoid Arthritis — Jodo Ka Dard, Karan aur Homeopathy',
-  metaDescription: 'Rheumatoid Arthritis (gathiya) ke karan, symptoms, diet aur homeopathic treatment — simple Hinglish mein. Verified info, doctor-reviewed.',
+  metaTitle: 'Rheumatoid Arthritis Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+  metaDescription: 'Rheumatoid arthritis (RA) mein jodo mein sujan, akad aur dard — homeopathic treatment kab kaam karta hai? RA factor test ke baare mein bhi. Homeopedia pe padho.',
 
   heroText: 'Rheumatoid Arthritis (RA) ek autoimmune bimari hai jisme body ka immune system khud apne joints par attack karta hai. Isse joints mein sujan, akadpan (stiffness), aur dard hota hai — khaaskar haath, pair, aur ghutno mein. Ye bimari sirf bujurgon ko nahi — 30 se 50 saal ke logon mein bhi bahot hoti hai. Agar sahi waqt par ilaaj na ho to joints permanently damage ho sakte hain, isliye early treatment bahot zaroori hai.',
 

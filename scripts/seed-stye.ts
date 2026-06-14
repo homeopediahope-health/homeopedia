@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'stye' },
   category: 'Eye',
   publishedAt: '2026-05-10T00:00:00.000Z',
-  metaTitle: 'Stye (Guheri) Treatment in Hindi | Homeopathic Ilaaj',
-  metaDescription: 'Guheri (stye) ka ilaaj, karan, gharelu upay aur homeopathic treatment – simple Hinglish mein. Verified info, doctor-reviewed. Jaldi theek karein.',
+  metaTitle: 'Guheri (Stye) Ka Homeopathic Ilaaj aur Gharelu Upay | Homeopedia',
+  metaDescription: 'Aankhon mein guheri (stye/billi) kyun hoti hai? Homeopathic dawa, gharelu nuskhe aur baar baar aane ki wajah — sab Hindi mein. Homeopedia pe padho.',
 
   heroText: 'Guheri (Stye) aankhon ki palkon ke kinare ya andar hone wali ek chhoti si phunsi hai – bilkul ek dane ki tarah. Ye tab hoti hai jab palak mein maujood ek chhoti oil gland ya hair follicle mein bacteria (zyada tar Staphylococcus) infection kar deta hai. Guheri mein palak sujan jaati hai, dard hota hai, aur kabhi kabhi aankhon se paani bhi aata hai. Ye aksar apne aap 7-10 din mein theek ho jaati hai – lekin baar baar aana, ya andar ki taraf guheri hona, tab doctor ki zaroorat padti hai.',
 

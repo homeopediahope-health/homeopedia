@@ -19,8 +19,8 @@ const doc = {
   bodySystem: 'Skin',
 
   // SEO
-  metaTitle: 'Body Itching in Hindi — Karan, Ilaaj aur Homeopathy',
-  metaDescription: 'Poore sharir mein khujli (body itching) ke karan, severity aur ghar pe safe steps. Verified Hinglish guide, Dr. Shadab reviewed.',
+  metaTitle: 'Pure Badan Mein Khujli — Karan aur Homeopathic Ilaaj | Homeopedia',
+  metaDescription: 'Puri body mein khujli hone ki wajah kya hai? Allergy, liver, thyroid ya kuch aur? Karan, lakshan aur homeopathic treatment Hindi mein. Homeopedia pe padho.',
   publishedAt: new Date('2026-05-17').toISOString(),
 
   // Opening

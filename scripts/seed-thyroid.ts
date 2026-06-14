@@ -18,8 +18,8 @@ async function seed() {
     hindiName: 'थायरॉइड की कमी',
     slug: { _type: 'slug', current: 'thyroid' },
     category: 'Endocrine',
-    metaTitle: 'Hypothyroidism Ka Homeopathic Ilaj — Causes, Diet & Treatment',
-    metaDescription: 'Hypothyroidism (thyroid ki kami) ke causes, weight gain, thakan, diet chart aur homeopathic treatment — verified info by Dr. Shadab Khan MD Homoeopathy.',
+    metaTitle: 'Thyroid Bimari — Karan, Lakshan aur Homeopathic Ilaaj | Homeopedia',
+    metaDescription: 'Thyroid gland kya hoti hai, hypothyroidism aur hyperthyroidism mein kya fark hai, aur homeopathic treatment kya kaam karta hai? Hindi mein. Homeopedia pe padho.',
     publishedAt: new Date('2026-04-25').toISOString(),
     heroText: 'Hypothyroidism ek aisi condition hai jisme thyroid gland — jo gaale mein butterfly shape ki hoti hai — kafi kam hormones (T3, T4) banati hai. Ye hormones body ki poori metabolism control karte hain: energy, weight, heartbeat, body temperature, mood — sab kuch. Jab ye hormones kam hote hain to body literally "slow ho jaati hai" — aap thake hue rehte hain, weight badhta hai, yaaddasht kamzor hoti hai, aur kabj rehti hai. India mein 42 million log thyroid disorders se prabhavit hain — khaskar mahilaon mein ye 5-8 guna zyada hoti hai.',
 

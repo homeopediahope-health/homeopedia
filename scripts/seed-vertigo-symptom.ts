@@ -19,8 +19,8 @@ const symptom = {
   slug: { _type: 'slug', current: 'vertigo' },
   bodySystem: 'Neurological',
   shortDescription: 'Duniya ghumti hui lagti hai — position change karne pe khataak se chakkar aana. India mein BPPV aur cervical-related vertigo sabse common causes hain.',
-  metaTitle: 'Vertigo in Hindi — Chakkar Ke Karan aur Homeopathy | HomeoPedia.in',
-  metaDescription: 'Vertigo (chakkar aana) ke karan, severity aur ghar pe safe steps — simple Hinglish mein. Verified info, Dr. Shadab reviewed.',
+  metaTitle: 'Chakkar Aana (Vertigo) — Karan, Lakshan aur Ilaaj | Homeopedia',
+  metaDescription: 'Chakkar kyun aata hai? BPPV, inner ear ya BP — vertigo ke karan, lakshan aur homeopathic upay Hindi mein. Homeopedia pe padho.',
   reviewDate: 'May 2026',
 
   heroText: `Achanak sar ghoomne lagta hai — jaise zameen khisak rahi ho ya kamra ghoom raha ho. Uthne ki koshish karo to lagta hai kahin gir na jaao. Raat ko pehlu badlo to sar mein ek jhatka sa aata hai. Ye vertigo hai — aur ye sirf "dizziness" nahi hai.

@@ -19,8 +19,8 @@ const ana = {
   hindiName: 'Antinuclear Antibody Jaanch',
   slug: { _type: 'slug', current: 'ana-test' },
   category: 'Blood',
-  metaTitle: 'ANA Test Kya Hai? Normal Range, High/Low & Kab Karaye (2026)',
-  metaDescription: 'ANA test ka normal range, positive/negative matlab aur kab karaye. Complete guide, verified, doctor-reviewed. Homeopedia.in',
+  metaTitle: 'ANA Test Kya Hota Hai — Normal Range aur Matlab | Homeopedia',
+  metaDescription: 'ANA test kyun hota hai, positive ANA ka matlab kya hai, aur kaunsi bimariyan detect hoti hain? Puri jaankari Hindi mein doctor se. Homeopedia pe padho.',
   reviewDate: 'May 2026',
 
   heroText: `ANA ya Antinuclear Antibody Test ek blood test hai jo aapke khoon mein anti-nuclear antibodies ki presence detect karta hai. Ye woh antibodies hain jo galti se aapke apne body ke cells ke nucleus pe attack karne lagte hain.

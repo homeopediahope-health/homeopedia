@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'allergic-rhinitis' },
   category: 'Respiratory',
   publishedAt: '2026-05-05T00:00:00.000Z',
-  metaTitle: 'Naak Ki Allergy Ka Homeopathic Ilaj | Allergic Rhinitis Treatment',
-  metaDescription: 'Naak ki allergy (Allergic Rhinitis) se permanent relief paayein. Homeopathic treatment se jad se theek karein – bina side effects ke. Expert guide.',
+  metaTitle: 'Naak Ki Allergy (Allergic Rhinitis) Ka Ilaaj | Homeopedia',
+  metaDescription: 'Naak ki allergy (allergic rhinitis) mein baar baar chheekhein, naak bund — karan, triggers aur homeopathic ilaaj Hindi mein. Homeopedia pe padho.',
 
   heroText: 'Allergic Rhinitis ek aisi condition hai jisme naak ki andar ki skin – kisi allergen (jaise dust, pollen, dhool, pet ke baal) ke sampark mein aane par – sujan aur irritation se react karti hai. Iska matlab yeh hai ki aapka immune system un chezon ko "khatra" samajhta hai jo actually harmless hain, aur woh chemicals release karta hai jo naak behne, aankhen paani aane aur saans mein takleef jaisi problems create karte hain. India mein yeh ek bahut common problem ban gayi hai – khaaskar cities mein air pollution, dust mites aur seasonal pollen ki wajah se. Agar sahi samay par treatment na li jaye toh yeh condition asthma tak badh sakti hai.',
 

@@ -18,8 +18,8 @@ async function seed() {
     hindiName: 'लाइकेन प्लेनस (चमड़ी की सूजन / खुजली वाली छातें)',
     slug: { _type: 'slug', current: 'lichen' },
     category: 'Skin',
-    metaTitle: 'Lichen Planus Treatment in Hindi — Causes, Cure & Homeopathy',
-    metaDescription: 'Lichen Planus ke causes, types, homeopathic treatment, diet aur cure — verified info, doctor-reviewed. Oral, skin, nails sab cover.',
+    metaTitle: 'Lichen Planus Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+    metaDescription: 'Lichen planus kya hoti hai, munh mein kyun hoti hai (oral lichen planus), aur homeopathic treatment kya fark dalta hai? Hindi mein. Homeopedia pe padho.',
     publishedAt: new Date('2026-04-25').toISOString(),
     heroText: 'Lichen Planus ek chronic inflammatory (sujan wali) bimari hai jo skin, muh ke andar, nakhun aur kabhi kabhi genitals ko affect karti hai. Is bimari mein body ka immune system galti se apni hi skin cells pe attack karna shuru kar deta hai. Skin pe flat, itchy, purplish-violet rang ke chote chote dhabbe ya patches bante hain — jinhe medical bhasha mein "violaceous papules" kehte hain. Ye bimari contagious nahi hai — iska matlab hai aap kisi se pakad nahi sakte ya kisi ko de nahi sakte.',
 

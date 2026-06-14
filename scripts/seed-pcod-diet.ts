@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'pcod' },
   relatedDiseaseSlug: 'pcod',
   category: "Women's",
-  metaTitle: 'PCOD Diet Chart Hindi — Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'PCOD (PCOS) diet chart — green list, red list, daily meal plan, veg aur non-veg dono options. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'PCOD Diet Chart Hindi Mein — Kya Khayein Kya Nahi | Homeopedia',
+  metaDescription: 'PCOD/PCOS mein kaunsa khana hormones balance karta hai aur kya avoid karein? Complete Indian diet chart Hindi mein with meal plan. Homeopedia pe padho.',
   intro: 'PCOD mein insulin resistance aur androgen imbalance hota hai — galat khaana in dono ko aur bada deta hai aur symptoms worse karta hai.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg/non-veg dono options, aur vrat/travel jaise special situations.',
 
   eatingHabits: [

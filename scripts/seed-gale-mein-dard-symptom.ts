@@ -16,9 +16,9 @@ const symptom = {
   title: 'Gale Mein Dard (Throat Pain / Sore Throat)',
   hindiName: 'Gale Mein Dard / Gala Kharab Hona',
   slug: { _type: 'slug', current: 'gale-mein-dard' },
-  metaTitle: 'Gale Mein Dard in Hindi – Karan, Ilaaj aur Homeopathy',
+  metaTitle: 'Gale Mein Dard — Karan, Lakshan aur Homeopathic Ilaaj | Homeopedia',
   metaDescription:
-    'Gale mein dard (throat pain) ke karan, severity aur ghar pe safe steps – simple Hinglish mein. Verified info, doctor-reviewed.',
+    'Gale mein dard ya kharash kyun hoti hai? Infection, tonsils ya kuch aur? Karan, lakshan aur homeopathic upay — Hindi mein. Homeopedia pe padho.',
   heroText:
     'Gale mein dard hona ek aisi takleef hai jo har cheez mein rukawat daal deti hai – kuch peena mushkil, kuch khana aur baat karna bhi dard karta hai. Kabhi subah uthte hi gala raspta hai, kabhi chai peene ke baad ek ajeeb si jalan – aur kabhi sirf nigalne mein itna dard hota hai ki pata nahi kya karein.\n\nGale mein dard (throat pain) India mein saal bhar – khaaskar sardi ke mausam mein aur garmiyon mein AC ke zarurat se – bahut common complaint hai. Ye page aapko 2 minute mein batayega: aapka case serious hai ya ghar pe manage ho sakta hai, aur aage kya karna chahiye.',
 

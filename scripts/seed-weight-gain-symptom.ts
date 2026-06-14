@@ -18,8 +18,8 @@ const doc = {
   slug: { _type: 'slug', current: 'weight-gain' },
   bodySystem: 'Hormonal',
 
-  metaTitle: 'Weight Gain in Hindi — Wajan Badhne Ke Karan aur Homeopathy | Homeopedia',
-  metaDescription: 'Wajan badhna (weight gain) ke karan, kaunsi bimari ka lakshan ho sakta hai, aur homeopathic ilaaj — simple Hinglish mein. Doctor-reviewed info.',
+  metaTitle: 'Wajan Badhna — Karan, Lakshan aur Homeopathic Ilaaj | Homeopedia',
+  metaDescription: 'Achanak wajan kyu badhta hai? Thyroid, PCOD, dawai ya lifestyle — wajan badhne ke asli karan aur homeopathic upay Hindi mein. Homeopedia pe padho.',
   publishedAt: new Date('2026-05-18').toISOString(),
 
   whatIsThis: `Aap diet control kar rahe hain, thoda walk bhi kar rahe hain — phir bhi wajan badhta ja raha hai. Ya achanak bina kisi wajah ke 4-5 kg badh gaya. Ye frustrating hota hai — aur aksar sirf "zyada khana" ka result nahi hota.

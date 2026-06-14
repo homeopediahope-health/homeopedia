@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'molluscum-contagiosum' },
   category: 'Skin',
   publishedAt: '2026-05-03T00:00:00.000Z',
-  metaTitle: 'Molluscum Contagiosum Treatment in Hindi | Homeopedia',
-  metaDescription: 'Molluscum Contagiosum ke daane ka homeopathic treatment, types, diet aur care — verified info, doctor-reviewed. Bacchon aur adults dono ke liye.',
+  metaTitle: 'Molluscum Contagiosum Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+  metaDescription: 'Molluscum contagiosum (paani wale daane) kya hai, kaise failta hai aur homeopathic treatment se kaise theek hota hai? Hindi mein. Homeopedia pe padho.',
   heroText: 'Molluscum Contagiosum ek viral skin infection hai jo Molluscum Contagiosum Virus (MCV) se hoti hai. Is mein skin pe chote, gol, chamkile daane nikalte hain — bilkul moti jaise, beech mein ek gehri dot ke saath. Ye daane face, neck, chest, arms, aur intimate areas pe ho sakte hain. Ye bimari chune se ya infected cheez share karne se failti hai — isliye bacchon mein bahut common hai. Akele mein bhi theek ho sakti hai, lekin sahi treatment se jaldi aur cleanly resolve hoti hai.',
 
   quickFacts: {

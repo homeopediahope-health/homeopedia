@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'varicose-veins' },
   relatedDiseaseSlug: 'varicose-veins',
   category: 'Circulatory',
-  metaTitle: 'Varicose Veins Diet – Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Varicose Veins (naso ki sujan) diet chart – green list, red list, daily meal plan, veg aur non-veg dono. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Varicose Veins Diet Chart — Kya Khayein Kya Nahi | Homeopedia',
+  metaDescription: 'Varicose veins mein kaun se foods nason ko strengthen karte hain aur kaun se avoid karein? Indian diet guide with food list. Homeopedia pe padho.',
   intro: 'Varicose veins mein blood circulation slow hoti hai aur naso ki diwaaron pe pressure badhta hai – galat khaana is inflammation aur fluid retention ko aur badha deta hai.\n\nNeeche complete guide hai – green list, red list, daily meal plan, veg aur non-veg dono options, aur flare-up/vrat/travel jaise special situations.',
 
   eatingHabits: [

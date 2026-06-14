@@ -17,7 +17,7 @@ const doc = {
   relatedDiseaseSlug: 'ankylosing-spondylitis',
   category: 'Joints',
   metaTitle: 'HLA-B27 Positive Ankylosing Spondylitis Diet Chart | Homeopedia',
-  metaDescription: 'HLA-B27 positive Ankylosing Spondylitis diet chart — kya khayein kya nahi, green list, red list, Indian meal plan. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaDescription: 'Ankylosing spondylitis aur HLA-B27 positive mein kya khayein? Indian diet chart — anti-inflammatory foods, avoid list, spine health ke liye. Homeopedia pe padho.',
   intro: 'Ankylosing Spondylitis mein gut aur immune system ka directly connection hota hai — aur kuch foods gut inflammation badhaake spine aur joints ki sujan aur bhi tez kar dete hain.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg aur non-veg dono options, aur flare-up aur travel jaise special situations.',
 
   eatingHabits: [

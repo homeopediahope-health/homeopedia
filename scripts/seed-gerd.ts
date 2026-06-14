@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'gerd' },
   category: 'Digestive',
   publishedAt: '2026-05-05T00:00:00.000Z',
-  metaTitle: 'GERD & Acid Reflux Treatment | Homeopathy | Homeopedia',
-  metaDescription: 'GERD (seene ki jalan, acid reflux) ka ilaaj, karan, diet aur homeopathic treatment – simple Hinglish mein. Verified info, doctor-reviewed.',
+  metaTitle: 'GERD (Acid Reflux) Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+  metaDescription: 'GERD mein baar baar acidity, khana wapas aana — karan, Indian diet tips aur homeopathic treatment. Kya khayein kya nahi? Homeopedia pe padho.',
 
   heroText: 'GERD yaani Gastroesophageal Reflux Disease ek aisi digestive condition hai jisme pet ka acid baar baar upar esophagus (food pipe) mein aata hai aur seene mein jalan, khatti dakar, ya gale mein khattas feel hoti hai. Kabhi kabhi ise sirf "acidity" ya "gas" samajh liya jaata hai – lekin jab ye problem hafte mein 2 ya zyada baar ho aur mahino tak chale, tab ise GERD kehte hain. India mein estimated 7-19% adults GERD se affected hain, aur tier 2-3 cities mein spicy food aur irregular lifestyle ki wajah se ye number tezi se badh raha hai. Sahi ilaaj aur lifestyle changes se is condition ko effectively control kiya ja sakta hai.',
 

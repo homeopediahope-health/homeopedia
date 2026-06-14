@@ -16,8 +16,8 @@ const urticaria = {
   hindiName: 'Pitti / Sheetal Pitta / Pitti Ubharna',
   slug: { _type: 'slug', current: 'urticaria' },
 
-  metaTitle: 'Urticaria (Pitti) — Homeopathic Treatment, Diet & Permanent Relief',
-  metaDescription: 'Urticaria (pitti) ke causes, types, homeopathic treatment aur diet guide — simple Hinglish mein. Verified info, doctor-reviewed. Permanent relief possible hai.',
+  metaTitle: 'Urticaria (Pitti) Ka Homeopathic Ilaaj Hindi Mein | Homeopedia',
+  metaDescription: 'Pitti ya urticaria mein chaale, kharish aur sujan — triggers kya hain aur homeopathic treatment kaise kaam karta hai? Diet tips bhi. Homeopedia pe padho.',
 
   heroText: 'Urticaria — jise common language mein "pitti ubharna" ya "hives" kehte hain — ek aisi skin condition hai jisme achanak shareer pe laal, suji hui, khujli wali patches nikal aati hain. Ye patches kuch ghanton mein jagah badalti rehti hain — aaj kamar pe, kal pet pe. Zyada tar cases mein ye immune system ki ek overreaction hoti hai kisi trigger ke against. 6 hafte se zyada rahe to "chronic urticaria" kehte hain — aur tab proper homeopathic treatment se long-term relief milti hai.',
 

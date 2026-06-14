@@ -16,8 +16,8 @@ const doc = {
   slug: { _type: 'slug', current: 'vitiligo' },
   relatedDiseaseSlug: 'vitiligo',
   category: 'Skin',
-  metaTitle: 'Vitiligo (Safed Daag) Diet — Kya Khayein Kya Nahi | Homeopedia',
-  metaDescription: 'Vitiligo (Safed Daag) diet chart — green list, red list, daily meal plan, veg aur non-veg dono options. Dr. Shadab Khan. Doctor-reviewed. Homeopedia.in',
+  metaTitle: 'Vitiligo (Safed Daag) Diet Chart — Kya Khayein | Homeopedia',
+  metaDescription: 'Vitiligo mein kaun se foods melanin badhate hain aur kaun se avoid karein? Complete Indian diet chart safed daag ke liye. Homeopedia pe padho.',
   intro: 'Vitiligo mein melanocytes (pigment banane wale cells) pe oxidative stress (free radicals ka attack) hota hai — aur kuch foods ye stress badhate hain, kuch kam karte hain.\n\nNeeche complete guide hai — green list, red list, daily meal plan, veg/non-veg dono options, aur vrat/travel jaise special situations.',
 
   eatingHabits: [
