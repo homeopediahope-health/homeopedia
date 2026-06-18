@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { WA_BASE } from '@/lib/constants'
+import DietSummaryBox from '@/components/DietSummaryBox'
 
 const TABS = [
   { id: 'green',    l: 'Kya Khayein',   icon: '✅' },
@@ -128,6 +129,9 @@ export default function DietClient({ diet }: { diet: any }) {
           <div style={{ fontSize:'clamp(60px,10vw,100px)',opacity:0.5,lineHeight:1,flexShrink:0 }} className="cat-icon-hide">{catIcon}</div>
         </div>
       </div>
+
+      {/* At-a-glance summary box */}
+      <DietSummaryBox diet={diet} />
 
       {/* Sticky Tab Bar */}
       <div style={{ position: 'sticky', top: 64, zIndex: 100, background: 'rgba(247,245,239,.88)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', boxShadow: '0 2px 8px rgba(26,21,16,.06)' }}>
@@ -474,32 +478,6 @@ export default function DietClient({ diet }: { diet: any }) {
           )}
         </div>
 
-        {/* Quick Facts */}
-        {diet.quickFacts && (
-          <div style={{ background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 14, padding: '24px', marginBottom: 36 }}>
-            <h2 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 18, fontWeight: 700, color: 'var(--ink)', marginBottom: 16 }}>⚡ Quick Facts</h2>
-            <div style={{ display: 'grid', gap: 12 }}>
-              {diet.quickFacts.mistake && (
-                <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: 20, flexShrink: 0 }}>❌</span>
-                  <div><p style={{ fontSize: 11, fontWeight: 700, color: 'var(--red)', textTransform: 'uppercase', marginBottom: 3 }}>Sabse Common Mistake</p><p style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 300, lineHeight: 1.6 }}>{diet.quickFacts.mistake}</p></div>
-                </div>
-              )}
-              {diet.quickFacts.mustEat && (
-                <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: 20, flexShrink: 0 }}>✅</span>
-                  <div><p style={{ fontSize: 11, fontWeight: 700, color: 'var(--green)', textTransform: 'uppercase', marginBottom: 3 }}>Zaroor Khayein</p><p style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 300, lineHeight: 1.6 }}>{diet.quickFacts.mustEat}</p></div>
-                </div>
-              )}
-              {diet.quickFacts.mustAvoid && (
-                <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                  <span style={{ fontSize: 20, flexShrink: 0 }}>🚫</span>
-                  <div><p style={{ fontSize: 11, fontWeight: 700, color: 'var(--warm)', textTransform: 'uppercase', marginBottom: 3 }}>Bilkul Avoid Karein</p><p style={{ fontSize: 13, color: 'var(--ink2)', fontWeight: 300, lineHeight: 1.6 }}>{diet.quickFacts.mustAvoid}</p></div>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
 
         {/* FAQs */}
         {faqs.length > 0 && (
