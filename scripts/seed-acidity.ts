@@ -385,10 +385,16 @@ const doc = {
     { _key: 's5', text: 'National Institute of Diabetes and Digestive and Kidney Diseases (NIDDK) — Acid Reflux / GERD', url: 'https://www.niddk.nih.gov', year: '2023' },
   ],
 
-  quickFacts: [
-    'Acidity India mein 10-30% adult population ko affect karti hai — urban aur IT workers mein prevalence aur zyada',
-    'GERD prevalence India mein lagbhag 7.6-18.7% — Lancet GBD aur gastroenterology journals ke anusaar',
-    'Simple acidity — 2-6 hafte; Chronic GERD homeopathy — 3-6 months for significant pattern change',
+  quickFacts: {
+    whatItIs: 'Pet ka acid esophagus mein aata hai — seene mein jalan, khatti dakar, aur chronic cases mein GERD ban jaata hai',
+    howCommon: 'India mein 10-30% adults affected; urban aur IT workers mein prevalence aur zyada',
+  },
+
+  homeopathyBenefits: [
+    'Antacid ki jagah root cause fix — acid production ki tendency address karna',
+    'Trigger-specific individual treatment — har case ka pattern alag hota hai',
+    'Antacid band karne ke baad rebound acidity nahi aati',
+    'Long-term remission ka goal, sirf turant relief nahi',
   ],
 
   doctorNote: 'Mere clinic mein acidity ke most patients woh hote hain jinhe saalon se antacids khane ki aadat ho gayi hai — aur tab tak aate hain jab acidity ka level badh chuka hota hai. Main usually Nux Vomica ya Lycopodium se shuru karta hoon based on their trigger pattern, aur saath mein khaane ki timing theek karne pe focus karta hoon — 70-80% patients mein 6-8 hafte mein meaningful improvement aati hai bina antacid ke.',

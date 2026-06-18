@@ -388,10 +388,16 @@ const doc = {
     { _key: 's6', text: 'Cochrane Review — Compression Therapy for Varicose Veins', url: '', year: '2021' },
   ],
 
-  quickFacts: [
-    'Varicose veins ek chronic venous disorder hai jisme leg veins ke valves weak ho jaate hain aur blood neeche pool hone lagta hai',
-    'India mein approximately 10-15% adults mein varicose veins hai — standing occupation wale logon mein ye 25-30% tak ho sakta hai',
-    'Early stage homeopathic treatment: 3-6 mahine; Laser/Sclerotherapy: 1-3 sittings; Surgical stripping: ek procedure',
+  quickFacts: {
+    whatItIs: 'Pair ki naason ke valves weak ho jaate hain — khoon neeche pool hota hai, naasein ubhar aati hain, heaviness aur dard',
+    howCommon: 'India mein 10-15% adults affected; standing jobs wale logon mein 25-30% tak',
+  },
+
+  homeopathyBenefits: [
+    'Venous circulation aur vein wall tone improve karna',
+    'Early-mid stage mein surgical alternative ke taur pe support',
+    'Leg heaviness, sujan, aur dard mein relief without side effects',
+    'Compression therapy ke saath combined approach for better results',
   ],
 
   doctorNote: 'Hamari practice mein varicose veins ke jo patients Hamamelis aur Calcarea Fluorica pe consistent treatment karte hain unme 4-6 mahine mein leg heaviness aur swelling mein clearly measurable improvement aati hai — khaas taur pe wo patients jinmein surgical intervention abhi indicated nahi tha. Compression stockings saath mein consistently pehnaana results aur double karta hai.',

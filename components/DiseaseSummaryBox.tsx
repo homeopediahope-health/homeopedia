@@ -81,11 +81,11 @@ export default function DiseaseSummaryBox({ disease }: { disease: any }) {
 
             {/* Footer: trust line + consult */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap', marginTop: 16, paddingTop: 13, borderTop: '1px solid var(--border)' }}>
-              <span style={{ fontSize: 11.5, color: 'var(--ink4)', display: 'flex', alignItems: 'center', gap: 6 }}>
-                <span style={{ color: 'var(--green)' }}>✓</span> Dr. Shadab Khan, MD Homoeopathy dwara reviewed
+              <span style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 14, fontStyle: 'italic', color: 'var(--sage)', display: 'flex', alignItems: 'center', gap: 7 }}>
+                🌱 Hope lives here
               </span>
               <a href={waLink} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 7, padding: '9px 16px', background: '#25d366', color: '#fff', borderRadius: 99, textDecoration: 'none', fontSize: 12.5, fontWeight: 600 }}>
-                💬 Dr. Shadab se poochhein
+                💬 Consult Now
               </a>
             </div>
 

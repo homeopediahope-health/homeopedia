@@ -413,10 +413,16 @@ const doc = {
     { _key: 's7', text: 'RPwD Act 2016 — Rights of Persons with Disabilities, Govt. of India', url: 'https://disabilityaffairs.gov.in', year: '2016' },
   ],
 
-  quickFacts: [
-    'Autism Spectrum Disorder — 5 types, 3 severity levels; "spectrum" isliye hai kyunki har autistic person unique hota hai',
-    'India mein estimated 1 in 68 children autism spectrum par hain (Lancet GBD / BAPIN estimates)',
-    'Early intervention (age 2-5) mein: 2-4 saal intensive therapy se significant improvement. Homeopathic support: 6-18 months associated symptoms ke liye.',
+  quickFacts: {
+    whatItIs: 'Autism Spectrum Disorder — social, communication, aur behavior mein differences; "spectrum" isliye ki har autistic person unique hota hai',
+    howCommon: 'India mein estimated har 68 mein se 1 bacha autism spectrum par hai',
+  },
+
+  homeopathyBenefits: [
+    'Associated symptoms pe focus — sleep problems, meltdowns, gut issues, hyperactivity',
+    'Side-effect free support — conventional therapy ke saath ya complementary taur pe',
+    'Constitutional approach — har bacha unique, individualized treatment',
+    'Parent-guided detailed case history se personalized prescribing',
   ],
 
   doctorNote: 'Clinic mein maine bahut autistic bacchon ke parents ko dekha hai jo diagnosis ke baad dum tod dete hain — ye galat hai. Mera experience hai ki jo bachche jaldi aaye, therapy + homeopathic support combination se — unka social engagement, sleep, aur meltdown frequency sab improve hoa. Akele homeopathy nahi — integrated approach. Jaldi aao, ummeed rakho, consistent raho — results aate hain.',

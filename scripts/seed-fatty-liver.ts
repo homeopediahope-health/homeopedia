@@ -332,10 +332,16 @@ const doc = {
     { _key: 's6', name: ' | 2021', url: 'ccrhindia.nic.in', year: '2024' },
     { _key: 's7', name: 'Indian Journal of Gastroenterology – NAFLD Prevalence India | 2022', url: 'ccrhindia.nic.in', year: '2024' },
   ],
-  quickFacts: [
-    'NAFLD affects approximately 25% of Indian adults – India mein sabse underdiagnosed liver condition',
-    'Har 4 mein se 1 adult ko fatty liver hai – urban areas mein ratio aur zyada',
-    'Grade 1: 2-3 months | Grade 2: 4-6 months | Strict lifestyle + treatment se reversal possible',
+  quickFacts: {
+    whatItIs: 'Liver cells mein fat ka jama hona (NAFLD) — aksar koi lakshan nahi, lekin waqt ke saath liver ko nuksan pohuncha sakta hai',
+    howCommon: 'India mein lagbhag har 4 mein se 1 adult ko fatty liver hai; urban areas mein aur zyada, sabse underdiagnosed condition',
+  },
+
+  homeopathyBenefits: [
+    'Liver cells ki healing ko support karna — sirf symptoms nahi, tissue level pe kaam',
+    'Diet aur lifestyle guidance ke saath combined approach for better results',
+    'No extra liver burden — homeopathic medicines liver pe additional load nahi dalti',
+    'Grade 1-2 NAFLD mein reversal support karna',
   ],
   doctorNote: 'Mere clinic mein fatty liver ke jo patients seriously diet + homeopathy combination pe chale hain – unke 3-month LFT mein SGPT normalization bahut commonly dekha hai. Jo cheez most patients miss karte hain: raat ka khana late khaate hain aur sugar ka hidden intake (chai ke saath biscuits, shaam ka namkeen). In dono ko pehle theek karo – liver khud help karna shuru kar deta hai.',
   reviewDate: 'April 2026',

@@ -325,10 +325,16 @@ const doc = {
     { _key: 's6', name: 'Lancet GBD Study – Prevalence of skin/hair conditions India | 2021 update', url: 'ccrhindia.nic.in', year: '2024' },
     { _key: 's7', name: 'PCOD/PCOS Androgen-related hair loss – Journal of Clinical Endocrinology & Metab', url: 'ccrhindia.nic.in', year: '2024' },
   ],
-  quickFacts: [
-    'Alopecia ek autoimmune + hormonal + genetic spectrum condition hai – India mein 2-8% population affected',
-    'Androgenetic alopecia: 50%+ mard 50+ saal ki umar mein; Alopecia Areata: 1-2% population; Telogen Effluvium: 40%+ postpartum women',
-    'Active treatment 6-12 mahine; Maintenance phase additional 6 mahine recommended',
+  quickFacts: {
+    whatItIs: 'Baalon ka jhadna — autoimmune, hormonal ya genetic wajah se; Alopecia Areata se Androgenetic tak ka spectrum',
+    howCommon: 'India mein 2-8% population affected; 50+ saal ke mard aur postpartum mahilaon mein zyada',
+  },
+
+  homeopathyBenefits: [
+    'Autoimmune trigger aur hormonal imbalance dono address karta hai — root cause pe kaam',
+    'Constitutional medicine — immune system ko rebalance karna',
+    'Stress aur anxiety (major trigger) ko bhi simultaneously handle karta hai',
+    'No scalp irritation — topical treatments jaisi side effects nahi',
   ],
   doctorNote: 'Meri clinic mein alopecia areata ke sabse surprising recoveries un patients mein hue hain jinhone consistent treatment ke saath stress management seriously liya – often 3-4 mahine mein patches close hone lagte hain. Sab se bada challenge patients ko ye samjhana hai ki homeopathy mein time lagta hai – jo patience rakhte hain, unhe results milte hain.',
   reviewDate: 'April 2026',

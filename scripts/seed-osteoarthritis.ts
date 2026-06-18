@@ -313,10 +313,16 @@ const doc = {
     { _key: 's5', name: 'National Health Portal India – Osteoarthritis | Ministry of Health & Family Welf', url: 'ccrhindia.nic.in', year: '2024' },
     { _key: 's6', name: 'Journal of Evidence-Based Integrative Medicine – Homeopathy in Osteoarthritis: S', url: 'ccrhindia.nic.in', year: '2024' },
   ],
-  quickFacts: [
-    'Osteoarthritis India ka #1 joint disorder hai – 60 million se zyada Indians affect hain. Diabetes ke baad dusri sabse common chronic disability cause hai India mein 45+ age group mein.',
-    'India mein 45+ umar ke 25-28% logon mein kisi na kisi degree ki knee OA present hoti hai. Mahilaon mein rate men se 2x zyada hai especially post-menopause.',
-    'Homeopathy mein Grade 1-2 OA mein meaningful improvement 6-12 hafte mein, significant relief 3-4 mahine mein. Grade 3 mein 4-6 mahine. Grade 4 mein conventional treatment saath zaroori.',
+  quickFacts: {
+    whatItIs: 'Joints ki cartilage ka ghisna — dard, sujan, aur akdhan; India ka #1 joint disorder, 45+ age mein common',
+    howCommon: 'India mein 45+ umar ke 25-28% logon mein knee OA; mahilaon mein rate men se 2x zyada, especially post-menopause',
+  },
+
+  homeopathyBenefits: [
+    'Cartilage degeneration ko slow karna — sirf dard theek nahi, progression rokna',
+    'Inflammation aur subah ki akadhan dono address karna',
+    'NSAIDs jaisi gut problems nahi — long-term safe use',
+    'Weight management aur exercise guidance ke saath combined approach',
   ],
   doctorNote: 'Meri practice mein sabse zyada OA ke jo cases aate hain wo hain 45-65 saal ki mahilayein jinhe knee OA hai weight ke saath. Jab Calcarea Carb ya Rhus Tox sahi constitution match karta hai, aur saath mein weight counselling bhi hoti hai, to 3-4 mahine mein ghutne ka dard aur subah ki akadhan dono mein dramatic improvement dekhi hai – bina kisi side effect ke. Key hai ki patient exercise bhi continue kare – dono saath milke kaam karte hain.',
   reviewDate: 'April 2026',

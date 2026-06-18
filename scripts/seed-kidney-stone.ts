@@ -300,10 +300,16 @@ const doc = {
     { _key: 's5', name: 'Indian Journal of Urology – Epidemiology of Urolithiasis in India | 2020', url: 'ccrhindia.nic.in', year: '2024' },
     { _key: 's6', name: 'WHO – Global Kidney Disease Burden Report | 2021', url: 'ccrhindia.nic.in', year: '2024' },
   ],
-  quickFacts: [
-    'Kidney stone (pathri) – gurde mein mineral crystals ka jama hona',
-    'India mein ~12% population kabhi na kabhi kidney stone se affected – hot climate aur dietary habits major contributors hain',
-    'Chhoti stone (≤6mm): 2–6 weeks natural passage. Homeopathic constitutional treatment: 3–6 months for recurrence prevention',
+  quickFacts: {
+    whatItIs: 'Gurde mein mineral crystals ka jama hona (pathri) — dard, blood in urine ya koi symptom nahi bhi; size pe depend karta hai',
+    howCommon: 'India mein lagbhag 12% population kabhi na kabhi affected; hot climate aur dietary habits major contributors hain',
+  },
+
+  homeopathyBenefits: [
+    'Stone pass karne mein help + recurrence rokna — dono pe kaam karta hai',
+    'Constitutional treatment — stone banane ki underlying tendency address karna',
+    'Dard aur inflammation dono kam karna without side effects',
+    'Long-term protection — pathri nikal jaane ke baad bhi tendency control',
   ],
   doctorNote: 'Mere clinic mein jo common pattern dikhta hai – patients pathri nikalne ke baad treatment band kar dete hain. Asal kaam tab shuru hota hai – tendency address karna. Berberis vulgaris aur Lycopodium mujhe recurrence prevention mein consistent results dete hain jab constitution ke basis pe prescribe karein.',
   reviewDate: 'April 2026',

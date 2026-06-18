@@ -425,10 +425,16 @@ const doc = {
     { _key: 's6', text: 'Journal of Research in Homoeopathy — Metabolic Skin Disorders', url: '', year: '2020-2021' },
   ],
 
-  quickFacts: [
-    'Acanthosis Nigricans sirf skin problem nahi — ye body ka internal signal hai. Aksar diabetes ya PCOS se 2-5 saal pehle dikhti hai.',
-    'India mein estimated 30-40% insulin-resistant Indians mein AN ke visible signs hote hain',
-    'Cause pe depend: 3-9 months mein visible improvement possible with proper treatment + lifestyle changes',
+  quickFacts: {
+    whatItIs: 'Skin pe kaale, mote patches — insulin resistance ya hormonal imbalance (PCOS/diabetes) ka body signal, sirf skin problem nahi',
+    howCommon: 'India mein insulin-resistant adults mein common; aksar diabetes ya PCOS se 2-5 saal pehle dikh sakti hai',
+  },
+
+  homeopathyBenefits: [
+    'Root cause pe kaam — insulin resistance aur hormonal imbalance address karna, na sirf skin pe cream',
+    'Individual constitutional approach — har patient ki unique triggers ke hisaab se medicine',
+    'Skin improvement ke saath PCOS/insulin symptoms mein bhi positive changes',
+    'Long-term use safe — koi harmful side effects nahi',
   ],
 
   doctorNote: 'Mere clinic mein AN ke jo cases aate hain unme se zyada tar 20-35 saal ki mahilayein hain jinhe PCOS ki wajah se ye condition develop hui hoti hai — aur kaafi log 2-3 saal se "fairness cream" laga rahe hote hain bina kisi fayade ke. Jab inhe pehli baar explain karta hoon ki ye skin ki nahi, insulin ki problem hai — tab se treatment sahi direction mein shuru hoti hai. Homeopathic treatment se in cases mein hormonal balance ke saath skin bhi systematically improve hoti hai — aur sustainable results milte hain.',

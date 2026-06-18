@@ -366,10 +366,16 @@ const doc = {
     { _key: 's5', text: 'Journal of Bone and Joint Surgery — Conservative Management of Plantar Fasciitis: Systematic Review', url: '', year: '2020' },
   ],
 
-  quickFacts: [
-    'Plantar Fasciitis duniya ka sabse common heel pain problem hai — lagbhag 10% logo ko kabhi na kabhi hoti hai',
-    'India mein 40-60 saal ke adults mein lagbhag 1 mein se 8 logon ko significant heel pain hota hai — khas tor pe standing jobs wale',
-    'Acute cases: 6-12 hafte | Chronic cases: 3-6 mahine | Surgery: 5% se kam cases mein zaroorat',
+  quickFacts: {
+    whatItIs: 'Pairaaon ki tali (heel) mein dard — plantar fascia ligament ki sujan; subah pehla kadam sabse takleef deh hota hai',
+    howCommon: 'Lagbhag 10% logon ko kabhi na kabhi; India mein standing jobs wale 40-60 saal ke adults mein khas',
+  },
+
+  homeopathyBenefits: [
+    'Fascia inflammation ko heal karna — sirf dard nahi, tissue level pe kaam',
+    'Constitutional approach — body ki natural healing capacity strengthen karna',
+    'Footwear aur stretching guidance ke saath comprehensive management',
+    'Steroid injection jaisi side effects nahi',
   ],
 
   doctorNote: 'Clinic mein sabse zyada ek complaint jo miss ho jaati hai — log "edi mein dard" ko aging ya "thakaan" samajh ke ignore karte hain. Jab tak aate hain tab tak chronic ho chuka hota hai. Mera experience ye hai ki jo patients 3-4 mahine mein aate hain aur Ruta ya Rhus Tox pe individually selected treatment lete hain unme surgery ki naobat bahut rare aati hai. Sabse badi cheez jo main emphasize karta hoon: footwear change karo aur daily stretching karo — medicine ke saath — nahi to koi bhi treatment temporary rehta hai.',
