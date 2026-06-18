@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { WA_BASE } from '@/lib/constants'
+import SymptomSummaryBox from '@/components/SymptomSummaryBox'
 
 const serif = 'var(--font-display,Georgia,serif)'
 
@@ -90,17 +91,8 @@ export default function SymptomClient({ symptom }: { symptom: any }) {
 
       <div style={{ maxWidth: 820, margin: '0 auto', padding: '44px clamp(16px,4vw,32px) 80px' }}>
 
-        {/* Quick Facts */}
-        {symptom.quickFacts?.length > 0 && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: 12, marginBottom: 44 }}>
-            {symptom.quickFacts.map((fact: string, i: number) => (
-              <div key={i} style={{ padding: '16px 18px', background: i === 0 ? 'var(--bg2)' : i === 1 ? 'rgba(58,125,82,.05)' : 'rgba(220,38,38,.04)', border: `1px solid ${i === 0 ? 'var(--border)' : i === 1 ? 'rgba(58,125,82,.2)' : 'rgba(220,38,38,.15)'}`, borderRadius: 12, borderLeft: `3px solid ${i === 0 ? 'var(--gold-dk)' : i === 1 ? 'var(--sage)' : '#dc2626'}` }}>
-                <p style={{ fontSize: 11, fontWeight: 700, color: i === 0 ? 'var(--gold-dk)' : i === 1 ? 'var(--sage)' : '#dc2626', textTransform: 'uppercase', letterSpacing: 1, marginBottom: 8 }}>{i === 0 ? 'Quick Fact' : i === 1 ? 'India Stats' : 'Doctor Kab'}</p>
-                <p style={{ fontSize: 15, color: 'var(--ink2)', lineHeight: 1.65, fontWeight: 300, margin: 0 }}>{fact}</p>
-              </div>
-            ))}
-          </div>
-        )}
+        {/* At-a-glance summary box */}
+        <SymptomSummaryBox symptom={symptom} />
 
         {/* Severity Scale */}
         {(symptom.severityLevel1?.length > 0 || symptom.severityLevel2?.length > 0 || symptom.severityLevel3?.length > 0) && (
