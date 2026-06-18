@@ -6,6 +6,7 @@ import Starsvg from '@/components/Starsvg'
 import SL from '@/components/SL'
 import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import AutoLink from '@/components/AutoLink'
+import DiseaseSummaryBox from '@/components/DiseaseSummaryBox'
 
 const SECTIONS = [
   { id: 'overview',  l: 'Overview',     icon: '🧬' },
@@ -181,13 +182,6 @@ export default function DiseaseClient({ disease, related, hasDietPage, diseaseMa
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
-  const WOW_FACTS = [
-    disease.quickFacts?.whatItIs   && { emoji: '🧠', label: 'Ye Bimari Kya Hai',       value: disease.quickFacts.whatItIs },
-    disease.quickFacts?.howCommon  && { emoji: '🇮🇳', label: 'India Mein Kitni Common', value: disease.quickFacts.howCommon },
-    disease.quickFacts?.treatmentDuration && { emoji: '🕐', label: 'Treatment Duration', value: disease.quickFacts.treatmentDuration },
-    disease.quickFacts?.successRate && { emoji: '🔬', label: 'Treatment Success',         value: disease.quickFacts.successRate },
-  ].filter(Boolean) as { emoji: string; label: string; value: string }[]
-
   const reviewDate = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long' })
 
   return (
@@ -272,20 +266,8 @@ export default function DiseaseClient({ disease, related, hasDietPage, diseaseMa
         </div>
       </div>
 
-      {/* Did-you-know strip */}
-      {WOW_FACTS.length > 0 && (
-        <div style={{ background:'var(--bg2)',borderBottom:'1px solid var(--border)',padding:'clamp(16px,3vw,24px) clamp(16px,4vw,32px)' }}>
-          <div style={{ maxWidth:1160,margin:'0 auto',display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))',gap:12 }}>
-            {WOW_FACTS.map((f,i) => (
-              <div key={i} className="hov" style={{ background:'var(--card)',border:'1px solid var(--border)',borderRadius:14,padding:'16px 18px' }}>
-                <div style={{ fontSize:22,marginBottom:8 }}>{f.emoji}</div>
-                <div style={{ fontFamily:'var(--font-display,Georgia,serif)',fontSize:14,fontWeight:600,color:'var(--ink)',marginBottom:4,lineHeight:1.3 }}>{f.label}</div>
-                <div style={{ fontSize:12,color:'var(--ink4)',lineHeight:1.5 }}>{f.value}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
+      {/* At-a-glance summary box */}
+      <DiseaseSummaryBox disease={disease} />
 
       {/* Jump Navigation — Desktop tabs | Mobile: hidden, jump grid used instead */}
       <div className="mob-hide-tabs" style={{ background: 'rgba(247,245,239,.88)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', borderBottom: '1px solid var(--border)', position: 'sticky', top: 64, zIndex: 100 }}>
