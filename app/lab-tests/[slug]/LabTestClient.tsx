@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { WA_BASE } from '@/lib/constants'
+import LabTestSummaryBox from '@/components/LabTestSummaryBox'
 
 const serif = 'var(--font-display,Georgia,serif)'
 
@@ -114,6 +115,9 @@ export default function LabTestClient({ test: t }: { test: any }) {
           <a href={WA_BASE} target="_blank" rel="noopener noreferrer" style={{ marginTop: 16, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: '12px 16px', background: 'var(--sage)', color: '#fff', borderRadius: 12, fontSize: 13, fontWeight: 700, textDecoration: 'none' }}>💬 Report doctor ko dikhayein</a>
         </div>
       </div>
+
+      {/* At-a-glance summary box */}
+      <LabTestSummaryBox test={t} />
 
       {/* Main content + sticky sidebar — two column */}
       <div style={{ maxWidth: 1160, margin: '0 auto', padding: '0 clamp(16px,4vw,32px) 80px', display: 'grid', gridTemplateColumns: 'minmax(0,1.6fr) minmax(0,1fr)', gap: 48, alignItems: 'flex-start' }} className="grid-2">
