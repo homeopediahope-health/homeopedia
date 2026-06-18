@@ -220,7 +220,7 @@ Allopurinol ya dusri uric acid lowering medicine shuru ki ho toh pehle 6 hafte m
     { _key: 'rt2', testName: 'Creatinine Test', testSlug: 'creatinine', isAvailable: false },
     { _key: 'rt3', testName: 'ESR Test', testSlug: 'esr', isAvailable: true },
     { _key: 'rt4', testName: 'CRP Test', testSlug: 'crp', isAvailable: false },
-    { _key: 'rt5', testName: 'CBC Test', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt5', testName: 'CBC Test', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt6', testName: 'Lipid Profile', testSlug: 'lipid-profile', isAvailable: true },
   ],
 

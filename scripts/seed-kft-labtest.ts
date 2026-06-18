@@ -302,7 +302,7 @@ Preeclampsia (high BP + protein in urine) ek serious condition hai jo samay pe p
     {
       _key: 'comp3',
       comparedTest: 'Urine Routine & Microscopy',
-      comparedTestSlug: 'urine-routine',
+      comparedTestSlug: 'urine-routine-test',
       differencePoints: [
         'KFT blood mein waste levels check karta hai|Urine Routine mein protein, cells, sugar check hoti hai|Early kidney damage ke liye Urine Routine zyada sensitive; mid-to-late stage ke liye KFT|Doctor dono saath mein likhte hain zyaadatar',
       ],
@@ -327,9 +327,9 @@ Preeclampsia (high BP + protein in urine) ek serious condition hai jo samay pe p
     { _key: 'rt2', testName: 'HbA1c', testSlug: 'hba1c', isAvailable: true },
     { _key: 'rt3', testName: 'Blood Sugar (FBS/RBS/PPBS)', testSlug: 'blood-sugar', isAvailable: true },
     { _key: 'rt4', testName: 'Lipid Profile', testSlug: 'lipid-profile', isAvailable: true },
-    { _key: 'rt5', testName: 'Vitamin D', testSlug: 'vitamin-d', isAvailable: true },
+    { _key: 'rt5', testName: 'Vitamin D', testSlug: 'vitamin-d-test', isAvailable: true },
     { _key: 'rt6', testName: 'LFT (Liver Function Test)', testSlug: 'lft', isAvailable: false },
-    { _key: 'rt7', testName: 'Urine Routine & Microscopy', testSlug: 'urine-routine', isAvailable: false },
+    { _key: 'rt7', testName: 'Urine Routine & Microscopy', testSlug: 'urine-routine-test', isAvailable: false },
     { _key: 'rt8', testName: 'Microalbuminuria Test', testSlug: 'microalbuminuria', isAvailable: false },
   ],
 

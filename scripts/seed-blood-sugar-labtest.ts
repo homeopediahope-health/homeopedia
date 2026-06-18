@@ -188,7 +188,7 @@ GDM ko control na karna risky hota hai dono ke liye. Zyada pyas, baar baar urine
     {
       _key: 'comp2',
       comparedTest: 'OGTT (Oral Glucose Tolerance Test)',
-      comparedTestSlug: 'ogtt',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya hai | Simple blood glucose snapshot | 75g glucose pilake multiple readings',
         'Duration | 5-10 minute | 2-3 ghante',
@@ -231,7 +231,7 @@ Nayi medicine shuru ki toh 1-2 mahine baad repeat. Dose change ki toh 1 mahine b
 
   relatedTests: [
     { _key: 'rt1', testName: 'HbA1c Test', testSlug: 'hba1c', isAvailable: true },
-    { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt3', testName: 'Lipid Profile', testSlug: 'lipid-profile', isAvailable: true },
     { _key: 'rt4', testName: 'Urine Routine Test', testSlug: 'urine-routine-test', isAvailable: true },
     { _key: 'rt5', testName: 'TSH (Thyroid)', testSlug: 'thyroid-profile-tsh', isAvailable: true },

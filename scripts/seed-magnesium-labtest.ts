@@ -243,7 +243,7 @@ Blood volume badhne ki wajah se serum magnesium thoda diluted ho sakta hai. Pre-
     { _key: 'rt1', testName: 'KFT (Kidney Function Test)', testSlug: 'kidney-function-test', isAvailable: true },
     { _key: 'rt2', testName: 'HbA1c Test', testSlug: 'hba1c', isAvailable: true },
     { _key: 'rt3', testName: 'Blood Sugar (FBS/RBS/PPBS)', testSlug: 'blood-sugar', isAvailable: true },
-    { _key: 'rt4', testName: 'Vitamin D Test', testSlug: 'vitamin-d', isAvailable: true },
+    { _key: 'rt4', testName: 'Vitamin D Test', testSlug: 'vitamin-d-test', isAvailable: true },
     { _key: 'rt5', testName: 'Serum Calcium Test', testSlug: 'serum-calcium-test', isAvailable: false },
     { _key: 'rt6', testName: 'Serum Potassium Test', testSlug: 'serum-potassium-test', isAvailable: false },
     { _key: 'rt7', testName: 'Parathyroid Hormone (PTH)', testSlug: 'pth-test', isAvailable: false },

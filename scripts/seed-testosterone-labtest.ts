@@ -168,7 +168,7 @@ Pregnancy mein mildly elevated testosterone akele koi problem nahi hoti. Doctor 
     {
       _key: 'comp1',
       comparedTest: 'Free Testosterone Test',
-      comparedTestSlug: 'free-testosterone-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya measure karta hai | Khoon mein kul testosterone (bound + free) | Sirf active unbound testosterone',
         'Kab likhate hain | Routine screening ke liye pehle | Borderline total T ya obesity mein baad mein',
@@ -180,7 +180,7 @@ Pregnancy mein mildly elevated testosterone akele koi problem nahi hoti. Doctor 
     {
       _key: 'comp2',
       comparedTest: 'LH / FSH Test',
-      comparedTestSlug: 'lh-fsh-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | Hormone ka actual level in blood | Brain signals jo testosterone banwaate hain',
         'Problem ki jagah | Testis ya ovary ki problem | Brain ya pituitary ki problem identify karta hai',

@@ -185,7 +185,7 @@ Agar maa ka thyroid zyada ya kam active ho aur pata na chale, to baby ki mental 
     {
       _key: 'vs-tsh-only',
       comparedTest: 'TSH Only Test',
-      comparedTestSlug: 'tsh-only',
+      comparedTestSlug: '',
       differencePoints: [
         'TSH Only sirf ek hormone (Thyroid Stimulating Hormone) check karta hai — basic screening ya monitoring ke liye. Thyroid Profile mein TSH + T3 + T4 teeno measure hote hain',
         'Pehli baar diagnosis ke liye: Thyroid Profile better hai — complete picture milti hai. Regular monitoring mein dawai pe: akela TSH kaafi hota hai',
@@ -197,7 +197,7 @@ Agar maa ka thyroid zyada ya kam active ho aur pata na chale, to baby ki mental 
     {
       _key: 'vs-anti-tpo',
       comparedTest: 'Anti-TPO Test',
-      comparedTestSlug: 'anti-tpo',
+      comparedTestSlug: '',
       differencePoints: [
         'Thyroid Profile (TSH/T3/T4) batata hai ki thyroid kitna kaam kar raha hai — hormonal function check. Anti-TPO batata hai ki autoimmune attack hai ya nahi',
         'Hashimoto\'s ya Graves\' Disease suspect ho — Anti-TPO kiya jaata hai. Routine thyroid check ke liye — Thyroid Profile kiya jaata hai',
@@ -208,7 +208,7 @@ Agar maa ka thyroid zyada ya kam active ho aur pata na chale, to baby ki mental 
     {
       _key: 'vs-ft4-vs-t4',
       comparedTest: 'Free T4 (FT4) vs Total T4',
-      comparedTestSlug: 'free-t4',
+      comparedTestSlug: '',
       differencePoints: [
         'Total T4 mein protein se bound hormone bhi count hota hai — jo actually kaam nahi karta. Free T4 sirf active, unbound T4 measure karta hai jo body use karti hai',
         'Free T4 (FT4) zyada accurate indicator hai — protein levels se affect nahi hota. Total T4 naturally pregnancy ya kuch medicines mein badh jaata hai misleadingly',
@@ -246,7 +246,7 @@ Thyroid surgery ke baad:
     { _key: 'rt-anti-tpo',      testName: 'Anti-TPO Test',              testSlug: 'anti-tpo',           isAvailable: false },
     { _key: 'rt-cbc',           testName: 'CBC Test',                   testSlug: 'cbc',                isAvailable: true  },
     { _key: 'rt-esr',           testName: 'ESR Test',                   testSlug: 'esr',                isAvailable: true  },
-    { _key: 'rt-vitamin-d',     testName: 'Vitamin D Test',             testSlug: 'vitamin-d',          isAvailable: false },
+    { _key: 'rt-vitamin-d',     testName: 'Vitamin D Test',             testSlug: 'vitamin-d-test',          isAvailable: false },
     { _key: 'rt-ft3',           testName: 'Free T3 (FT3)',              testSlug: 'free-t3',            isAvailable: false },
     { _key: 'rt-ft4',           testName: 'Free T4 (FT4)',              testSlug: 'free-t4',            isAvailable: false },
     { _key: 'rt-anti-tgab',     testName: 'Anti-TgAb Test',            testSlug: 'anti-tgab',          isAvailable: false },

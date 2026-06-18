@@ -171,7 +171,7 @@ ANA positive pregnant women mein, khaaskar high titers pe, miscarriage, preterm 
     {
       _key: 'comp1',
       comparedTest: 'ENA Panel Test',
-      comparedTestSlug: 'ena-panel',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya hai | Broad screening test | Specific follow-up panel (8-18 antigens)',
         'Kab hota hai | Pehle hota hai | ANA positive ke baad',
@@ -183,7 +183,7 @@ ANA positive pregnant women mein, khaaskar high titers pe, miscarriage, preterm 
     {
       _key: 'comp2',
       comparedTest: 'Anti-dsDNA Test',
-      comparedTestSlug: 'anti-dsdna',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya hai | General autoimmune screening | Lupus-specific antibody test',
         'Sensitivity for Lupus | 98% high sensitivity | 70% moderate sensitivity',
@@ -195,7 +195,7 @@ ANA positive pregnant women mein, khaaskar high titers pe, miscarriage, preterm 
     {
       _key: 'comp3',
       comparedTest: 'Rheumatoid Factor (RF)',
-      comparedTestSlug: 'rheumatoid-factor',
+      comparedTestSlug: 'ra-test',
       differencePoints: [
         'Primary use | Lupus aur multiple autoimmune | Rheumatoid Arthritis diagnosis',
         'ANA mein overlap | RA mein bhi positive ho sakta hai | Kuch other conditions mein positive',
@@ -226,7 +226,7 @@ Pregnancy mein har trimester pe doctor decide karta hai frequency. Normal aur ko
 
   relatedTests: [
     { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr', isAvailable: true },
-    { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt3', testName: 'CRP Test', testSlug: 'crp-test', isAvailable: false },
     { _key: 'rt4', testName: 'ENA Panel Test', testSlug: 'ena-panel', isAvailable: false },
     { _key: 'rt5', testName: 'Anti-dsDNA Test', testSlug: 'anti-dsdna', isAvailable: false },

@@ -166,7 +166,7 @@ Pregnancy mein red blood cells zyada banti hain aur jaldi nayi ho jaati hain. Is
     {
       _key: 'comp1',
       comparedTest: 'Fasting Blood Sugar (FBS)',
-      comparedTestSlug: 'fasting-blood-sugar',
+      comparedTestSlug: 'blood-sugar',
       differencePoints: [
         'Kya measure karta hai | Pichle 2-3 mahine ka average sugar | Sirf us subah ka fasting sugar',
         'Fasting chahiye | Nahi, anytime | Haan, 8 ghante strict',
@@ -178,7 +178,7 @@ Pregnancy mein red blood cells zyada banti hain aur jaldi nayi ho jaati hain. Is
     {
       _key: 'comp2',
       comparedTest: 'PPBS (Post Prandial Blood Sugar)',
-      comparedTestSlug: 'ppbs',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya measure karta hai | 3 mahine ka average | Khana khane ke 2 ghante baad sugar',
         'Best use | Long-term monitoring | Post-meal control check',
@@ -190,7 +190,7 @@ Pregnancy mein red blood cells zyada banti hain aur jaldi nayi ho jaati hain. Is
     {
       _key: 'comp3',
       comparedTest: 'Fructosamine Test',
-      comparedTestSlug: 'fructosamine',
+      comparedTestSlug: '',
       differencePoints: [
         'Time period | Pichle 2-3 mahine | Pichle 2-3 hafte',
         'Anemia mein | Unreliable ho sakta hai | Accurate, preferred in anemia',
@@ -225,7 +225,7 @@ Golden rule: HbA1c ko 3 mahine se pehle repeat karna zyada useful nahi hota. Nay
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt2', testName: 'Lipid Profile', testSlug: 'lipid-profile', isAvailable: true },
     { _key: 'rt3', testName: 'Fasting Blood Sugar (FBS)', testSlug: 'fasting-blood-sugar', isAvailable: false },
     { _key: 'rt4', testName: 'Post Prandial Blood Sugar (PPBS)', testSlug: 'ppbs', isAvailable: false },

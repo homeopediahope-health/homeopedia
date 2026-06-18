@@ -170,7 +170,7 @@ Protein positive aur BP high ek saath aaye toh turant doctor ko dikhao. Pus cell
     {
       _key: 'comp1',
       comparedTest: 'Urine Culture & Sensitivity Test',
-      comparedTestSlug: 'urine-culture-sensitivity',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | Color, pH, cells, protein, sugar | Exact bacteria ka naam aur antibiotic sensitivity',
         'Kab use hota hai | Screening, UTI suspect, kidney check | Confirmed UTI diagnosis ya antibiotic selection',
@@ -182,7 +182,7 @@ Protein positive aur BP high ek saath aaye toh turant doctor ko dikhao. Pus cell
     {
       _key: 'comp2',
       comparedTest: 'Urine Pregnancy Test (UPT)',
-      comparedTestSlug: 'urine-pregnancy-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | Cells, protein, sugar, RBC, bacteria | hCG hormone (pregnancy)',
         'Kab use hota hai | UTI, kidney, diabetes, liver check | Pregnancy confirm karna',
@@ -232,7 +232,7 @@ Abnormal result ke baad doctor jab bole tabhi repeat karo, khud se decide mat ka
     { _key: 'rt2', testName: 'KFT (Kidney Function Test)', testSlug: 'kidney-function-test', isAvailable: false },
     { _key: 'rt3', testName: 'Fasting Blood Sugar / HbA1c', testSlug: 'fasting-blood-sugar', isAvailable: false },
     { _key: 'rt4', testName: 'LFT (Liver Function Test)', testSlug: 'liver-function-test-lft', isAvailable: true },
-    { _key: 'rt5', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt5', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt6', testName: 'Uric Acid Test', testSlug: 'uric-acid-test', isAvailable: true },
   ],
 

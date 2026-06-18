@@ -219,7 +219,7 @@ Sirf is ek test se diagnosis complete nahi hoti — doctor aage HBV DNA, HBeAg, 
     {
       _key: 'c1',
       comparedTest: 'Anti-HBs (HBsAb)',
-      comparedTestSlug: 'anti-hbs',
+      comparedTestSlug: '',
       differencePoints: [
         'HbsAg detect karta hai virus ka antigen (protein) = Active infection',
         'Anti-HBs detect karta hai aapke antibodies = Recovery ya vaccine immunity',
@@ -230,7 +230,7 @@ Sirf is ek test se diagnosis complete nahi hoti — doctor aage HBV DNA, HBeAg, 
     {
       _key: 'c2',
       comparedTest: 'HBV DNA PCR',
-      comparedTestSlug: 'hbv-dna',
+      comparedTestSlug: '',
       differencePoints: [
         'HbsAg detect karta hai antigen (protein) — screening ke liye',
         'HBV DNA actual virus ka genetic material detect karta hai — viral load',
@@ -241,7 +241,7 @@ Sirf is ek test se diagnosis complete nahi hoti — doctor aage HBV DNA, HBeAg, 
     {
       _key: 'c3',
       comparedTest: 'Anti-HBc (Core Antibody)',
-      comparedTestSlug: 'anti-hbc',
+      comparedTestSlug: '',
       differencePoints: [
         'HbsAg dikhata hai current active infection',
         'Anti-HBc dikhata hai past ya current exposure — window period mein bhi positive ho sakta hai',

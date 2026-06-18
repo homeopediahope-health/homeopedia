@@ -185,7 +185,7 @@ Agar deficiency below 20 ng/mL aaye toh baby mein Rickets ya weak bones ho sakti
     {
       _key: 'comp2',
       comparedTest: 'PTH Test',
-      comparedTestSlug: 'pth-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya naapata hai | Vitamin D ki maatra | Parathyroid hormone',
         'Kab zaruri | Deficiency aur monitoring | Calcium imbalance ya bone disease',
@@ -228,7 +228,7 @@ Ek baar levels theek ho jaayein toh lifestyle maintain karo yaani dhoop aur bala
     { _key: 'rt1', testName: 'Calcium Test', testSlug: 'calcium-test', isAvailable: false },
     { _key: 'rt2', testName: 'PTH Test', testSlug: 'pth-test', isAvailable: false },
     { _key: 'rt3', testName: 'Phosphorus Test', testSlug: 'phosphorus-test', isAvailable: false },
-    { _key: 'rt4', testName: 'CBC Test', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt4', testName: 'CBC Test', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt5', testName: 'Thyroid Profile (TSH)', testSlug: 'thyroid-profile-tsh', isAvailable: true },
     { _key: 'rt6', testName: 'Lipid Profile', testSlug: 'lipid-profile', isAvailable: true },
   ],

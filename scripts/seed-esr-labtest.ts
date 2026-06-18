@@ -154,7 +154,7 @@ ESR test aaj bhi India mein sabse zyada kiye jaane wale blood tests mein se ek h
     {
       _key: 'vs-crp',
       comparedTest: 'CRP Test',
-      comparedTestSlug: 'crp',
+      comparedTestSlug: 'crp-test',
       differencePoints: [
         'Kya measure karta | RBC sedimentation rate | C-Reactive Protein level',
         'Inflammation peak | 24–48 ghante baad dikhta hai | 6–12 ghante mein dikhta hai',

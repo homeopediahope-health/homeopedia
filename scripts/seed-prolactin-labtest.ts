@@ -205,7 +205,7 @@ Ye test pregnancy CONFIRM nahi karta — uske liye beta-hCG (pregnancy test) hot
     {
       _key: 'comp1',
       comparedTest: 'TSH (Thyroid Stimulating Hormone)',
-      comparedTestSlug: 'tsh-test',
+      comparedTestSlug: 'thyroid-profile-tsh',
       differencePoints: [
         'Prolactin pituitary aur reproductive health check karta hai; TSH thyroid function|Prolactin ke liye fasting zaroor nahi; TSH ke liye subah khali pet preferred|Hypothyroidism prolactin badha sakta hai — isliye dono aksar saath mein likhte hain',
       ],
@@ -231,7 +231,7 @@ Ye test pregnancy CONFIRM nahi karta — uske liye beta-hCG (pregnancy test) hot
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'TSH Test', testSlug: 'tsh-test', isAvailable: true },
+    { _key: 'rt1', testName: 'TSH Test', testSlug: 'thyroid-profile-tsh', isAvailable: true },
     { _key: 'rt2', testName: 'Testosterone Test', testSlug: 'testosterone-test', isAvailable: true },
     { _key: 'rt3', testName: 'LH Test', testSlug: 'lh-test', isAvailable: false },
     { _key: 'rt4', testName: 'FSH Test', testSlug: 'fsh-test', isAvailable: false },

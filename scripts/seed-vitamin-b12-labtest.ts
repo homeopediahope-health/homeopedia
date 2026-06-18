@@ -161,7 +161,7 @@ Agar B12 low rahe toh baby mein neural tube defects ho sakte hain (spine aur bra
     {
       _key: 'comp1',
       comparedTest: 'Folate (Folic Acid) Test',
-      comparedTestSlug: 'folate-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | Blood mein Vitamin B12 levels | Blood mein Folic Acid levels',
         'Kab likhte hain | Fatigue, nerve symptoms, anaemia | Anaemia, pregnancy, nerve symptoms',
@@ -173,7 +173,7 @@ Agar B12 low rahe toh baby mein neural tube defects ho sakte hain (spine aur bra
     {
       _key: 'comp2',
       comparedTest: 'MMA Test (Methylmalonic Acid)',
-      comparedTestSlug: 'mma-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | B12 levels directly | B12 deficiency ka zyada sensitive marker',
         'Kab likhte hain | First step screening | Jab B12 borderline ho (200-300 pg/mL)',
@@ -185,7 +185,7 @@ Agar B12 low rahe toh baby mein neural tube defects ho sakte hain (spine aur bra
     {
       _key: 'comp3',
       comparedTest: 'CBC (Complete Blood Count)',
-      comparedTestSlug: 'cbc-test',
+      comparedTestSlug: 'cbc',
       differencePoints: [
         'Kya check karta hai | B12 vitamin levels | Saari blood cells ka count',
         'Anaemia detect karta hai | B12 deficiency se megaloblastic anaemia | Megaloblastic aur iron deficiency dono',
@@ -218,7 +218,7 @@ Metformin users mein doctor generally har 1 se 2 saal mein check karte hain.`,
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt2', testName: 'Folate / Folic Acid Test', testSlug: 'folate-test', isAvailable: false },
     { _key: 'rt3', testName: 'MMA Test (Methylmalonic Acid)', testSlug: 'mma-test', isAvailable: false },
     { _key: 'rt4', testName: 'Homocysteine Test', testSlug: 'homocysteine-test', isAvailable: false },

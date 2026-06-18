@@ -173,7 +173,7 @@ Ferritin below 30 ng/mL pregnancy mein iron supplement ki zarurat indicate karta
     {
       _key: 'comp2',
       comparedTest: 'CBC (Complete Blood Count)',
-      comparedTestSlug: 'cbc-test',
+      comparedTestSlug: 'cbc',
       differencePoints: [
         'Kya detect karta hai | Iron stores, early stage | Anemia confirm, late stage',
         'Anemia se pehle | Ferritin low hota hai pehle | CBC normal reh sakta hai pehle',
@@ -216,7 +216,7 @@ High risk groups jaise vegetarian, heavy periods, ya chronic disease wale 6 mahi
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt2', testName: 'LFT (Liver Function Test)', testSlug: 'liver-function-test-lft', isAvailable: true },
     { _key: 'rt3', testName: 'Serum Iron Test', testSlug: 'serum-iron-study', isAvailable: false },
     { _key: 'rt4', testName: 'TIBC Test', testSlug: 'tibc-test', isAvailable: false },

@@ -233,7 +233,7 @@ Ek zaroori baat: PSA test akela cancer confirm nahi karta. High PSA ka matlab si
   relatedTests: [
     { _key: 'rt1', testName: 'Testosterone Test', testSlug: 'testosterone-test', isAvailable: true },
     { _key: 'rt2', testName: 'KFT (Kidney Function Test)', testSlug: 'kidney-function-test', isAvailable: true },
-    { _key: 'rt3', testName: 'Urine Routine Test', testSlug: 'urine-routine', isAvailable: true },
+    { _key: 'rt3', testName: 'Urine Routine Test', testSlug: 'urine-routine-test', isAvailable: true },
     { _key: 'rt4', testName: 'Free PSA Test', testSlug: 'free-psa-test', isAvailable: false },
     { _key: 'rt5', testName: 'Ultrasound Prostate', testSlug: 'ultrasound-prostate', isAvailable: false },
   ],

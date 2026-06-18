@@ -158,7 +158,7 @@ Ye test nahi detect karta: Direct bacteria nahi pakadta, sirf unke against bane 
     {
       _key: 'comp1',
       comparedTest: 'Typhidot Test',
-      comparedTestSlug: 'typhidot-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya detect karta hai | O aur H antigen ke antibodies | IgM aur IgG antibodies specifically',
         'Accuracy | Moderate 53-73% sensitivity | Better, 93% sensitivity',
@@ -170,7 +170,7 @@ Ye test nahi detect karta: Direct bacteria nahi pakadta, sirf unke against bane 
     {
       _key: 'comp2',
       comparedTest: 'Blood Culture',
-      comparedTestSlug: 'blood-culture',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya detect karta hai | O aur H antibodies (indirect) | Direct bacteria pakadta hai',
         'Accuracy | Moderate | Highest, Gold Standard',
@@ -182,7 +182,7 @@ Ye test nahi detect karta: Direct bacteria nahi pakadta, sirf unke against bane 
     {
       _key: 'comp3',
       comparedTest: 'CBC Test',
-      comparedTestSlug: 'cbc-test',
+      comparedTestSlug: 'cbc',
       differencePoints: [
         'Kya detect karta hai | Typhoid-specific antibodies | Overall blood count',
         'Typhoid mein role | Primary diagnostic test | Infection severity aur complications dekhne ke liye',
@@ -210,7 +210,7 @@ Healthy logon mein routine check ke liye Widal test recommended nahi. Sirf sympt
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt1', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt2', testName: 'LFT (Liver Function Test)', testSlug: 'liver-function-test-lft', isAvailable: true },
     { _key: 'rt3', testName: 'Blood Culture Test', testSlug: 'blood-culture', isAvailable: false },
     { _key: 'rt4', testName: 'Typhidot Test', testSlug: 'typhidot-test', isAvailable: false },

@@ -166,7 +166,7 @@ Total Motile Count (TMC) = Total Sperm Count x Progressive Motility%. TMC 20 mil
     {
       _key: 'comp1',
       comparedTest: 'DNA Fragmentation Test',
-      comparedTestSlug: 'sperm-dna-fragmentation',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | Sperm quantity aur quality | Sperm DNA damage level',
         'Kab kiya jaata hai | First step in infertility workup | 2 abnormal semen tests ke baad',
@@ -178,7 +178,7 @@ Total Motile Count (TMC) = Total Sperm Count x Progressive Motility%. TMC 20 mil
     {
       _key: 'comp2',
       comparedTest: 'Hormone Panel (FSH/LH/Testosterone)',
-      comparedTestSlug: 'hormone-panel-male',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | Sperm count, motility, morphology | Hormonal causes of problem',
         'Kab kiya jaata | Pehla test | Jab count bahut low ho',
@@ -190,7 +190,7 @@ Total Motile Count (TMC) = Total Sperm Count x Progressive Motility%. TMC 20 mil
     {
       _key: 'comp3',
       comparedTest: 'Scrotal Ultrasound',
-      comparedTestSlug: 'scrotal-ultrasound',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya check karta hai | Sperm quality parameters | Testicle structure aur varicocele',
         'Kab kiya jaata | First line screening | Jab varicocele suspect ho',
@@ -222,7 +222,7 @@ Normal result pe routine check ki zaroorat nahi hoti. Vasectomy ke baad effectiv
     { _key: 'rt3', testName: 'Scrotal Ultrasound', testSlug: 'scrotal-ultrasound', isAvailable: false },
     { _key: 'rt4', testName: 'Karyotyping / Genetic Test', testSlug: 'karyotyping', isAvailable: false },
     { _key: 'rt5', testName: 'Anti-Sperm Antibody Test', testSlug: 'anti-sperm-antibody', isAvailable: false },
-    { _key: 'rt6', testName: 'CBC Test', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt6', testName: 'CBC Test', testSlug: 'cbc', isAvailable: true },
   ],
 
   homeopathyAngle: `Ek abnormal report se ghabrana zaruri nahi, bahut se causes treatable hain.

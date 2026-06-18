@@ -196,7 +196,7 @@ Agar report pregnancy mein "borderline high" dikhe toh ye usually normal change 
     {
       _key: 'vs-crp',
       comparedTest: 'CRP (C-Reactive Protein)',
-      comparedTestSlug: 'crp',
+      comparedTestSlug: 'crp-test',
       differencePoints: [
         'Lipid Profile cholesterol aur fats measure karta hai — long-term artery blockage risk. CRP body mein acute inflammation measure karta hai',
         'Lipid Profile primary cardiovascular risk marker hai. CRP secondary inflammation marker hai — dono milake better heart risk picture dete hain',

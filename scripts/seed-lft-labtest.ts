@@ -176,7 +176,7 @@ Pregnant hone ki baat lab pe ya apni report pe zaroor note karein — doctor alr
     {
       _key: 'vs-usg',
       comparedTest: 'Ultrasound Abdomen',
-      comparedTestSlug: 'usg-abdomen',
+      comparedTestSlug: '',
       differencePoints: [
         'LFT blood test hai — liver ke enzymes aur proteins ka level measure karta hai. Ultrasound imaging hai — liver ka size, texture, fatty deposits dikhata hai',
         'LFT pehla step hai — screening. Ultrasound LFT abnormal aane ke baad kiya jaata hai confirm karne ke liye',
@@ -187,7 +187,7 @@ Pregnant hone ki baat lab pe ya apni report pe zaroor note karein — doctor alr
     {
       _key: 'vs-kft',
       comparedTest: 'KFT (Kidney Function Test)',
-      comparedTestSlug: 'kft',
+      comparedTestSlug: 'kidney-function-test',
       differencePoints: [
         'LFT liver (jigar) check karta hai — ALT, AST, ALP, GGT, Bilirubin, Albumin. KFT kidney (gurde) check karta hai — Creatinine, Urea, Uric Acid',
         'LFT kab: jaundice, fatty liver, hepatitis, liver damage doubt mein. KFT kab: swelling, urine kam aana, kidney disease doubt mein',

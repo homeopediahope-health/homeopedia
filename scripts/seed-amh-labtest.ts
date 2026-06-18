@@ -158,7 +158,7 @@ IVF ya fertility treatment ke baad pregnancy confirm hone par monitoring ke liye
     {
       _key: 'comp1',
       comparedTest: 'FSH Test',
-      comparedTestSlug: 'fsh-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya measure karta hai | Ovarian reserve directly | Pituitary signal jo ovaries ko stimulate karta hai',
         'Kab karna hai | Kisi bhi din cycle mein | Sirf cycle Day 2-3 pe',

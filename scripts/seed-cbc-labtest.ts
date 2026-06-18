@@ -193,7 +193,7 @@ Ye ek bahut hi basic test hai — lagbhag har bimari ki initial jaanch mein doct
     {
       _key: 'vs-crp',
       comparedTest: 'CRP (C-Reactive Protein)',
-      comparedTestSlug: 'crp',
+      comparedTestSlug: 'crp-test',
       differencePoints: [
         'CBC blood cells measure karta hai. CRP inflammation protein (C-Reactive Protein) measure karta hai',
         'Infection detect: CBC WBC count se karta hai. CRP direct inflammation marker hai — bahut jaldi badh jaata hai',

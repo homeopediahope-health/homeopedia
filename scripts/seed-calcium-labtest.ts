@@ -213,7 +213,7 @@ AIIMS Delhi ke ek study (696 pregnant women, North India) mein paya gaya ki calc
     {
       _key: 'comp1',
       comparedTest: 'Vitamin D Test (25-OH Vitamin D)',
-      comparedTestSlug: 'vitamin-d',
+      comparedTestSlug: 'vitamin-d-test',
       differencePoints: [
         'Calcium test blood mein calcium level naapata hai; Vitamin D test body mein Vitamin D level check karta hai|Calcium absorb hone ke liye Vitamin D zaroori hai — dono connected hain|Calcium low aaye toh doctor aksar Vitamin D bhi check karta hai',
       ],
@@ -250,7 +250,7 @@ AIIMS Delhi ke ek study (696 pregnant women, North India) mein paya gaya ki calc
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'Vitamin D Test (25-OH Vitamin D)', testSlug: 'vitamin-d', isAvailable: true },
+    { _key: 'rt1', testName: 'Vitamin D Test (25-OH Vitamin D)', testSlug: 'vitamin-d-test', isAvailable: true },
     { _key: 'rt2', testName: 'KFT (Kidney Function Test)', testSlug: 'kidney-function-test', isAvailable: true },
     { _key: 'rt3', testName: 'Magnesium Test', testSlug: 'magnesium-test', isAvailable: true },
     { _key: 'rt4', testName: 'PTH Test (Parathyroid Hormone)', testSlug: 'pth-test', isAvailable: false },

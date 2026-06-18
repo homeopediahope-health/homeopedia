@@ -172,7 +172,7 @@ Rheumatoid Arthritis wali kuch mahilaon mein pregnancy ke dauran symptoms tempor
     {
       _key: 'comp1',
       comparedTest: 'Anti-CCP Test',
-      comparedTestSlug: 'anti-ccp-test',
+      comparedTestSlug: '',
       differencePoints: [
         'Kya detect karta hai | Rheumatoid Factor antibody | Citrullinated Peptide antibodies',
         'RA ke liye specificity | Moderate, kai conditions mein positive | HIGH, RA ke liye zyada specific',
@@ -225,7 +225,7 @@ Normal health checkup mein, agar koi symptoms nahi hain toh routine basis pe RF 
 
   relatedTests: [
     { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr', isAvailable: true },
-    { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
+    { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt3', testName: 'ANA Test', testSlug: 'ana-test', isAvailable: true },
     { _key: 'rt4', testName: 'Uric Acid Test', testSlug: 'uric-acid-test', isAvailable: true },
     { _key: 'rt5', testName: 'Anti-CCP Test', testSlug: 'anti-ccp-test', isAvailable: false },
