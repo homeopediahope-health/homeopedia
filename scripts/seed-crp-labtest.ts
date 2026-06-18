@@ -241,7 +241,7 @@ Isliye pregnancy mein 3 mg/dL (30 mg/L) tak ka level concern nahi maana jaata â€
     {
       _key: 'comp1',
       comparedTest: 'ESR Test',
-      comparedTestSlug: 'esr-test',
+      comparedTestSlug: 'esr',
       differencePoints: [
         'CRP fast respond karta hai (6â€“12 ghante); ESR slow hai (24â€“48 ghante)|CRP anemia se affect nahi hota; ESR pregnancy aur anemia se affect hota hai|Infection mein CRP zyada reliable hai; dono saath mein aksar kiye jaate hain',
       ],
@@ -276,7 +276,7 @@ Isliye pregnancy mein 3 mg/dL (30 mg/L) tak ka level concern nahi maana jaata â€
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr-test', isAvailable: true },
+    { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr', isAvailable: true },
     { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc', isAvailable: true },
     { _key: 'rt3', testName: 'RA Factor Test', testSlug: 'ra-test', isAvailable: true },
     { _key: 'rt4', testName: 'Widal Test', testSlug: 'widal-test', isAvailable: true },

@@ -225,7 +225,7 @@ Pregnancy mein har trimester pe doctor decide karta hai frequency. Normal aur ko
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr-test', isAvailable: true },
+    { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr', isAvailable: true },
     { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
     { _key: 'rt3', testName: 'CRP Test', testSlug: 'crp-test', isAvailable: false },
     { _key: 'rt4', testName: 'ENA Panel Test', testSlug: 'ena-panel', isAvailable: false },

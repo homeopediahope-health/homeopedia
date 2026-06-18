@@ -196,7 +196,7 @@ Rheumatoid Arthritis wali kuch mahilaon mein pregnancy ke dauran symptoms tempor
     {
       _key: 'comp3',
       comparedTest: 'ESR Test',
-      comparedTestSlug: 'esr-test',
+      comparedTestSlug: 'esr',
       differencePoints: [
         'Kya measure karta hai | Specific autoantibody (RF) | General inflammation marker',
         'RA ke liye | Specific marker | Non-specific, sujan hai ya nahi batata',
@@ -224,7 +224,7 @@ Normal health checkup mein, agar koi symptoms nahi hain toh routine basis pe RF 
   ],
 
   relatedTests: [
-    { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr-test', isAvailable: true },
+    { _key: 'rt1', testName: 'ESR Test', testSlug: 'esr', isAvailable: true },
     { _key: 'rt2', testName: 'CBC (Complete Blood Count)', testSlug: 'cbc-test', isAvailable: true },
     { _key: 'rt3', testName: 'ANA Test', testSlug: 'ana-test', isAvailable: true },
     { _key: 'rt4', testName: 'Uric Acid Test', testSlug: 'uric-acid-test', isAvailable: true },
