@@ -220,15 +220,6 @@ export default function DiseaseClient({ disease, related, hasDietPage, diseaseMa
               <span>Medically reviewed by <strong style={{ color: 'var(--ink2)' }}>Dr. Shadab Khan MD Homoeopath</strong>{reviewDate ? ` · ${reviewDate}` : ''}</span>
             </div>
 
-            {/* Anchor tabs */}
-            <div style={{ marginTop:20,display:'flex',gap:6,flexWrap:'wrap' }}>
-              {[['overview','Overview'],['symptoms','Symptoms'],['homeo','Homoeopathy'],['medicines','Medicines'],['diet','Diet'],['dosdont','Lifestyle'],['faq','FAQ']].map(([id,l]) => (
-                <a key={id} href={'#'+id} onClick={e => { e.preventDefault(); scrollTo(id); setActiveSection(id) }}
-                  style={{ padding:'7px 14px',borderRadius:99,fontSize:12,fontWeight:600,cursor:'pointer',background:activeSection===id?'var(--ink)':'var(--card)',color:activeSection===id?'#fff':'var(--ink2)',border:`1px solid ${activeSection===id?'var(--ink)':'var(--border)'}`,transition:'all .25s',textDecoration:'none' }}>
-                  {l}
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Hero sidebar — improvement ring + consult */}
