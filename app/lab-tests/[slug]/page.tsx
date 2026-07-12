@@ -18,8 +18,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const test = await getLabTestBySlug(slug).catch(() => null)
   if (!test) return { title: 'Lab Test Guide' }
 
-  const title = test.metaTitle || `${test.name} — Normal Range, High/Low Matlab & Kab Karaye | HomeoPedia.in`
-  const description = test.metaDescription || `${test.name}${test.fullForm ? ` (${test.fullForm})` : ''} ki normal range, high/low hone ka matlab, aur kab test karwana chahiye — verified, doctor-reviewed Hinglish guide.`
+  // GSC data (Jul 2026): lab-test queries ka pattern "X test kya hai hindi me" + "normal range" hai
+  // — title mein "Kya Hai" + "Hindi" chahiye. Curated metaTitle sirf tab use karo jab intent markers hon.
+  const hasIntent = test.metaTitle && /kya|hindi|[ऀ-ॿ]/i.test(test.metaTitle)
+  const title = hasIntent
+    ? test.metaTitle
+    : `${test.name} Kya Hai — Normal Range, Report ka Matlab (Hindi) | HomeoPedia`
+  const description = test.metaDescription || `${test.name}${test.fullForm ? ` (${test.fullForm})` : ''} kya hai, normal range kya hoti hai, high/low ka matlab aur kab karwana chahiye — doctor-reviewed guide Hindi me.`
   const url = `https://www.homeopedia.in/lab-tests/${slug}`
 
   return {

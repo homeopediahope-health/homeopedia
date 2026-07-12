@@ -17,7 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const diet = await getDietBySlug(slug).catch(() => null)
   if (!diet) return { title: 'Diet Chart' }
 
-  const title = diet.metaTitle || `${diet.title} — Dr. Shadab Khan | Homeopedia`
+  // GSC data (Jul 2026): diet queries ka pattern "X diet chart in hindi" / "X me kya khana chahiye"
+  const title = diet.metaTitle || `${diet.title} in Hindi — Kya Khayein, Kya Nahi | HomeoPedia`
   const description = diet.metaDescription || diet.intro?.slice(0, 155) || `${diet.title} ka complete Indian diet chart. Kya khayein, kya avoid karein — veg aur non-veg dono.`
   const url = `https://www.homeopedia.in/diet/${slug}`
 

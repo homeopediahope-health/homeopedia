@@ -7,6 +7,7 @@ import SL from '@/components/SL'
 import { WA_BASE, WA_CONSULT } from '@/lib/constants'
 import AutoLink from '@/components/AutoLink'
 import DiseaseSummaryBox from '@/components/DiseaseSummaryBox'
+import { HINDI_NAMES } from '@/lib/hindiNames'
 
 const SECTIONS = [
   { id: 'overview',  l: 'Overview',     icon: '🧬' },
@@ -184,6 +185,13 @@ export default function DiseaseClient({ disease, related, hasDietPage, diseaseMa
 
   const reviewDate = new Date().toLocaleDateString('en-IN', { year: 'numeric', month: 'long' })
 
+  // Devanagari name — Hindi searcher ko pehli second mein language match dikhe (bounce fix)
+  const devName = HINDI_NAMES[currentSlug]
+  const hindiDisplay = [
+    disease.hindiName,
+    devName && !/[ऀ-ॿ]/.test(disease.hindiName || '') ? devName : null,
+  ].filter(Boolean).join(' · ')
+
   return (
     <div className="page-in" style={{ paddingTop: 66, background: 'var(--bg)', minHeight: '100vh' }}>
       <ReadingProgress />
@@ -211,8 +219,17 @@ export default function DiseaseClient({ disease, related, hasDietPage, diseaseMa
               <span style={{ fontSize:11,fontWeight:500,padding:'4px 14px',borderRadius:100,background:'var(--bg2)',color:'var(--ink3)',border:'1px solid var(--border)' }}>⏱ ~8 min read</span>
             </div>
             <h1 style={{ fontFamily: 'var(--font-display,Georgia,serif)', fontSize: 'clamp(32px,5vw,54px)', fontWeight: 700, lineHeight: 1.12, color: 'var(--ink)', marginBottom: 8 }}>{disease.title}</h1>
-            {disease.hindiName && <div style={{ fontSize: 22, color: 'var(--warm)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{disease.hindiName}</div>}
+            {hindiDisplay && <div style={{ fontSize: 22, color: 'var(--warm)', fontFamily: 'var(--font-display,Georgia,serif)', fontStyle: 'italic', marginBottom: 20 }}>{hindiDisplay}</div>}
             {disease.heroText && <p style={{ fontSize: 15, color: 'var(--ink3)', lineHeight: 1.85, maxWidth: 540, fontWeight: 300 }}><AutoLink text={disease.heroText} currentSlug={currentSlug} diseaseMap={dm} /></p>}
+
+            {/* Answer-first quick jumps — visitor jo dhundhne aaya, pehle 5 second mein wahan pahunche (bounce fix) */}
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 18 }}>
+              {[['medicines', '💊 Medicines'], ['diet', '🥗 Diet Chart'], ['homeo', '🌿 Treatment Kaise Hoga'], ['faq', '❓ Sawal-Jawab']].map(([id, l]) => (
+                <button key={id} onClick={() => scrollTo(id)} style={{ cursor: 'pointer', fontSize: 12, fontWeight: 600, padding: '8px 16px', borderRadius: 100, background: 'var(--card)', color: 'var(--sage-dk)', border: '1px solid var(--border)', boxShadow: 'var(--sh)', transition: 'all .2s' }}>
+                  {l} ↓
+                </button>
+              ))}
+            </div>
 
             {/* Medically Reviewed badge */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 20, padding: '8px 14px', background: 'var(--card)', border: '1px solid var(--border)', borderRadius: 8, fontSize: 12, color: 'var(--ink3)' }}>

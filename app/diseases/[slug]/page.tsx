@@ -1,7 +1,30 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getDiseaseBySlug, getRelatedDiseases, getAllDiseases, getAllDiseasesForLinking, getDietBySlug } from '@/lib/queries'
+import { hindiShort, HINDI_NAMES } from '@/lib/hindiNames'
 import DiseaseClient from './DiseaseClient'
+
+const DEVANAGARI = /[ऀ-ॿ]/
+
+// Title jo searcher ki bhasha se match kare:
+// - Hindi searcher Devanagari mein search karta hai ("सोरायसिस का इलाज")
+// - Hinglish searcher "psoriasis ka ilaj" type karta hai
+// English-only metaTitle high-competition English queries target karta tha jo winnable nahi —
+// isliye Devanagari-wala curated metaTitle ho to wahi use karo, warna intent-matched title banao.
+function buildTitle(disease: any, slug: string): string {
+  if (disease.metaTitle && DEVANAGARI.test(disease.metaTitle)) return disease.metaTitle
+  const hindi = hindiShort(slug) || (DEVANAGARI.test(disease.hindiName || '') ? disease.hindiName : null)
+  if (hindi) return `${disease.title} ka Homeopathic Ilaj (${hindi}) — Medicine, Diet | HomeoPedia`
+  return disease.metaTitle || `${disease.title} ka Homeopathic Ilaj — Symptoms, Medicine, Diet | HomeoPedia`
+}
+
+function buildDescription(disease: any, slug: string): string {
+  if (disease.metaDescription && DEVANAGARI.test(disease.metaDescription)) return disease.metaDescription
+  const hindi = hindiShort(slug)
+  const base = disease.metaDescription
+    || (disease.heroText ? disease.heroText.slice(0, 120) : `${disease.title} ka homeopathic treatment, medicines, diet chart aur FAQs — Dr. Shadab Khan MD Homoeopathy.`)
+  return hindi ? `${hindi} — ${base}`.slice(0, 158) : base.slice(0, 158)
+}
 
 export const revalidate = 3600
 
@@ -17,9 +40,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const disease = await getDiseaseBySlug(slug)
   if (!disease) return { title: 'Disease Guide' }
 
-  const title = disease.metaTitle || `${disease.title} Ka Homeopathic Ilaj — Dr. Shadab Khan`
-  const description = disease.metaDescription ||
-    (disease.heroText ? disease.heroText.slice(0, 155) : `${disease.title} mein homeopathic treatment, diet chart, medicines aur dos & don'ts — Dr. Shadab Khan MD Homoeopathy.`)
+  const title = buildTitle(disease, slug)
+  const description = buildDescription(disease, slug)
 
   return {
     title: { absolute: title },
@@ -77,7 +99,7 @@ export default async function DiseasePage({ params }: Props) {
     '@context': 'https://schema.org',
     '@type': 'MedicalCondition',
     name: disease.title,
-    alternateName: disease.hindiName,
+    alternateName: [disease.hindiName, HINDI_NAMES[slug]].filter(Boolean),
     description: disease.heroText,
     relevantSpecialty: 'Homoeopathy',
     possibleTreatment: {
@@ -114,8 +136,8 @@ export default async function DiseasePage({ params }: Props) {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: disease.metaTitle || `${disease.title} Ka Homeopathic Ilaj`,
-    description: disease.metaDescription || disease.heroText?.slice(0, 155),
+    headline: buildTitle(disease, slug),
+    description: buildDescription(disease, slug),
     author: { '@type': 'Person', name: 'Dr. Shadab Khan', url: 'https://www.homeopedia.in/about' },
     publisher: { '@type': 'Organization', name: 'HomeoPedia.in', url: 'https://www.homeopedia.in' },
     datePublished: disease.publishedAt || '2025-01-01',
